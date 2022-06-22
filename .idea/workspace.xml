@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="" />
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Angelegte Nutzer" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,8 +111,16 @@
       <workItem from="1655479661852" duration="5686000" />
       <workItem from="1655882181208" duration="1006000" />
       <workItem from="1655894310049" duration="5070000" />
-      <workItem from="1655906091828" duration="13000" />
+      <workItem from="1655906091828" duration="326000" />
     </task>
+    <task id="LOCAL-00001" summary="Angelegte Nutzer">
+      <created>1655906374022</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1655906374022</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +141,8 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
+    <MESSAGE value="Angelegte Nutzer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Angelegte Nutzer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
