@@ -293,7 +293,7 @@ public class Foo {
             }
         };
 */
-        if (adminList.contains(Path.of(adminPath + fileSeperator + username + ).toFile()) ||
+        if (adminList.contains(Path.of(adminPath + fileSeperator + username).toFile()) ||
                 adminList.contains(Path.of(adminPath + fileSeperator + username.toLowerCase()).toFile()) ||
                 adminList.contains(Path.of(adminPath + fileSeperator + username.toUpperCase()))){
             return true;
