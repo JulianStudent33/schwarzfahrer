@@ -1,3 +1,3 @@
 public class hallotest {
-    // du hunde
+    // du hundesohn
 }
