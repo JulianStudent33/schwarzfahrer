@@ -152,11 +152,11 @@ public class Foo {
 
         if(result.equals(optionsUse[1])){
 
-                String input = JOptionPane.showInputDialog("Gebe deinen Benutzernamen ein.");
+                String input = JOptionPane.showInputDialog(loginDialog, "Gebe deinen Benutzernamen ein.");
                 if (!checkForUsernameExistance(input)){
                     boolean userFound = false;
                     while(userFound == false){
-                        String newInput = JOptionPane.showInputDialog("Benutzer nicht gefunden. Nochmal probieren?");
+                        String newInput = JOptionPane.showInputDialog(loginDialog, "Benutzer nicht gefunden. Nochmal probieren?");
                         userFound = checkForUsernameExistance(newInput);
                     }
                 }

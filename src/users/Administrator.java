@@ -20,7 +20,7 @@ public class Administrator extends Mitarbeiter{
     String benutzername;
     String passwort;
     * */
-    File userFile;
+
 
     //Konstruktoren
     public Administrator(String name, String vorname, String namenszusatz, String geschlecht,

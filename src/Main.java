@@ -16,12 +16,15 @@ public class Main {
 
                 try {
                     System.out.println(adminPath);
+                    deleteDirs();
                     startRun();
+                    currentAdmin.setBenutzername("Admin2");
                     deleteDirs();
                 }catch (Exception e){
                     System.err.println(e.getMessage());
                     System.out.println("Exception in Main");
                 }finally {
+
                     System.exit(420);
                 }
 

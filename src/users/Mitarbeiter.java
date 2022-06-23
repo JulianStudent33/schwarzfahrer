@@ -1,7 +1,10 @@
 package src.users;
 
+import src.PersFile;
+
 import javax.swing.*;
 import java.io.File;
+import java.io.IOException;
 
 public abstract class Mitarbeiter extends Person{
 
@@ -20,6 +23,7 @@ public abstract class Mitarbeiter extends Person{
 
     final String[] benutzerTypen = {"Kontrolleur", "Sachbearbeiter", "Administrator"};
     String benutzerTyp;
+    File userFile;
 
     //Methoden
     public void setBenutzername(String oldBenutzername, String newBenutzername){
@@ -64,24 +68,28 @@ public abstract class Mitarbeiter extends Person{
     }
     //Getter und setter
 
-    public void setMitarbeiternummer(String mitarbeiternummer) {
+    public void setMitarbeiternummer(String mitarbeiternummer) throws IOException {
         this.mitarbeiternummer = mitarbeiternummer;
+        PersFile.writeInFile(this, this.userFile);
     }
 
     public String getBenutzername() {
         return benutzername;
     }
 
-    public void setBenutzername(String benutzername) {
+    public void setBenutzername(String benutzername) throws IOException {
         this.benutzername = benutzername;
+        PersFile.writeInFile(this, this.userFile);
     }
 
     public String getPasswort() {
         return passwort;
     }
 
-    public void setPasswort(String passwort) {
+    public void setPasswort(String passwort) throws IOException {
         this.passwort = passwort;
+        PersFile.writeInFile(this, this.userFile);
+
     }
 
     public String[] getBenutzerTypen() {
