@@ -75,7 +75,7 @@ public class Foo {
 
     }
 
-    public static boolean startRun() throws IOException {
+    public static boolean startFenster() throws IOException {
         //Check ob File existiert
         System.out.println("Starting Application");
         System.out.println(adminPath);
@@ -96,9 +96,14 @@ public class Foo {
             firstRegistration();
         }else{
             try{
-                loginWindow();
+                if(loginWindow()){
+                    return true;
+                }else{
+                    return false;
+                }
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException(e);
+
             }
 
         }
@@ -139,7 +144,7 @@ public class Foo {
             System.out.println("Cancelled");
         }
     }
-    private static void loginWindow() throws IOException, ClassNotFoundException {
+    private static boolean loginWindow() throws IOException, ClassNotFoundException {
         JOptionPane myOptionPane = new JOptionPane("Select",
                 JOptionPane.QUESTION_MESSAGE, JOptionPane.YES_NO_OPTION,
                 null, optionsUse, optionsUse[1]);
@@ -153,16 +158,25 @@ public class Foo {
         if(result.equals(optionsUse[1])){
 
                 String input = JOptionPane.showInputDialog(loginDialog, "Gebe deinen Benutzernamen ein.");
-                if (!checkForUsernameExistance(input)){
+                if(input==null){
+                   okWindow();
+                    return false;
+                }
+                if (!checkForUsernameExistanceAndLogin(input)){
                     boolean userFound = false;
                     while(userFound == false){
                         String newInput = JOptionPane.showInputDialog(loginDialog, "Benutzer nicht gefunden. Nochmal probieren?");
-                        userFound = checkForUsernameExistance(newInput);
+                        if (newInput==null){
+                             okWindow();
+                             return false;
+                        }
+                        userFound = checkForUsernameExistanceAndLogin(newInput);
                     }
                 }
-
+                return true; //wenn der compiler hier landet, dann hat die Username suche und die Passwortabfrage geklappt.
         }else{
             System.out.println("Cancelled");
+            return false;
         }
 
 
@@ -297,7 +311,7 @@ public class Foo {
         }
 
     }
-    private static boolean checkForUsernameExistance(String username) throws IOException, ClassNotFoundException {
+    private static boolean checkForUsernameExistanceAndLogin(String username) throws IOException, ClassNotFoundException {
         //search Lists for username
         /* FilenameFilter filter = new FilenameFilter() {
 
@@ -312,15 +326,17 @@ public class Foo {
                 Administrator ob = (Administrator) PersFile.readOuttaFile(Path.of(adminPath + fileSeperator + username).toFile());
                 if(ob.login()){
                     currentAdmin = ob;
+                    return true;
                 }else{
                     System.out.println("Anmeldung fehlgeschlagen.");
+                    return false;
                 }
             }catch (Exception e){
                 System.err.println(e.getMessage());
             }
 
 
-            return true;
+
         }else if (sbList.contains(Path.of(sbPath + fileSeperator + username).toFile())){
             return true;
         } else if (konList.contains(Path.of(konPath + fileSeperator + username).toFile())) {
@@ -328,6 +344,7 @@ public class Foo {
         }else {
             return false;
         }
+        return false;
     }
     private static String loginInto(){
         String pw;
@@ -346,11 +363,19 @@ public class Foo {
         sfCount = sfList.size();
         sftCount = sftList.size();
     }
+    public static void okWindow(){
+        String[] option = {"OK"};
+        JPanel panel = new JPanel();
+        JLabel lbl = new JLabel("Vorgang abgebrochen");
+        panel.add(lbl);
+        int selectedOption = JOptionPane.showOptionDialog(null, panel, "", JOptionPane.NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, option , option[0]);
+    }
     public static void deleteDirs(){ //Methode, damit ich die firstRegistration testen kann
-        if(adminDir.delete() && sbDir.delete() && konDir.delete() && sfDir.delete() && sftDir.delete() && userDir.delete()){
-            System.out.println("Alle Directories gelöscht");
+        if(adminDir.delete() || sbDir.delete() || konDir.delete() || sfDir.delete() || sftDir.delete() || userDir.delete()){
+            System.out.println("Directories gelöscht");
         }
     }
+
 
     //Wird noch gelöscht, brauch ich nur für die struktur
     public static int actionRequest() {

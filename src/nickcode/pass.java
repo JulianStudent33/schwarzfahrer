@@ -1,3 +1,5 @@
+package src.nickcode;
+
 import javax.swing.*;
 
 public class pass {
@@ -10,6 +12,10 @@ public class pass {
 
     public static String passwordinput(){
         String input = JOptionPane.showInputDialog("Passwort eingeben");
+        if(input == null){
+            System.out.println("Cancelled.");
+            System.exit(1);
+        }
         if (passwordOk(input) == false){
             System.out.println("Passwort ungueltig! \n Password muss enthalten: \n 6-10 zeichen \n Mindestens 1 Großbuchstabe \n Mindestens 1 Kleinbuchstabe \n Mindestens eine Zahl");
             passwordinput();

@@ -17,8 +17,17 @@ public class Main {
                 try {
                     System.out.println(adminPath);
                     deleteDirs();
-                    startRun();
-                    currentAdmin.setBenutzername("Admin2");
+
+                    while(!startFenster()){
+                        System.out.println("Anmeldung nicht erfolgreich. Wieder im Startfenster");
+                    }
+                    System.out.println("Wenn ein  zurückkommt, also nach Erfolgreicher Registrierung oder Anmeldung," +
+                            " dann geht's weiter mit Menü. Wenn Ein Falsch zurückkommt");
+
+
+
+
+                    //currentAdmin.setPasswort("IGEL");
                     deleteDirs();
                 }catch (Exception e){
                     System.err.println(e.getMessage());

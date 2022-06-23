@@ -1,5 +1,6 @@
 package src.users;
 
+import src.Foo;
 import src.PersFile;
 
 import javax.swing.*;
@@ -43,9 +44,17 @@ public abstract class Mitarbeiter extends Person{
         boolean correctPW = false;
         try{
         String input = JOptionPane.showInputDialog("Gib dein Passwort ein.");
+        if(input==null){
+            Foo.okWindow();
+            return false;
+        }
         if(!input.equals(this.passwort)){
             while (correctPW == false){
                 String newInput = JOptionPane.showInputDialog("Falsches Passwort. Nochmal probieren?");
+                if(newInput==null){
+                    Foo.okWindow();
+                    return false;
+                }
                 if(newInput.equals(this.passwort)){
                     correctPW = true;
                 }
