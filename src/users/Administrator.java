@@ -45,7 +45,7 @@ public class Administrator extends Mitarbeiter{
                 (Foo.adminPath + Foo.fileSeperator + benutzername + "_" + mitarbeiternummer + ".mb").toFile();
         System.out.println(this.benutzername);
         createAdminFile(benutzername, mitarbeiternummer);
-        System.out.println("Created Admin mit benutzername " + benutzername + " und mitarbeiternummer " + mitarbeiternummer);
+        System.out.println("Created Admin mit Benutzername " + benutzername + " und mitarbeiternummer " + mitarbeiternummer);
         System.out.println("Gespeichert: " + this.userFile);
     }
         private void createAdminFile(String benutzername, String mitarbeiternummer) throws IOException {

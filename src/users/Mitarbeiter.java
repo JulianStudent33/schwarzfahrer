@@ -1,5 +1,6 @@
 package src.users;
 
+import javax.swing.*;
 import java.io.File;
 
 public abstract class Mitarbeiter extends Person{
@@ -33,6 +34,30 @@ public abstract class Mitarbeiter extends Person{
         }
 
     }
+    public boolean login(){
+        //Login Window
+        boolean correctPW = false;
+        try{
+        String input = JOptionPane.showInputDialog("Gib dein Passwort ein.");
+        if(!input.equals(this.passwort)){
+            while (correctPW == false){
+                String newInput = JOptionPane.showInputDialog("Falsches Passwort. Nochmal probieren?");
+                if(newInput.equals(this.passwort)){
+                    correctPW = true;
+                }
+            }
+            return correctPW;
+        }else {
+            correctPW = true;
+            System.out.println("Passwort korrekt.");
+            return correctPW;
+        }}catch (Exception e){
+            System.err.println(e.getMessage());
+            return false;
+        }
+
+    }
+
     public String getMitarbeiternummer(){
         System.out.println(this.mitarbeiternummer);
         return this.mitarbeiternummer;

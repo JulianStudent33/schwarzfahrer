@@ -84,6 +84,7 @@ public class Foo {
             System.out.println("Erste Benutzung");
             firstUsage = true; //First Usage true gesetzt, weil keine Directories mit Benutzern vorhanden sind,
             createDirectories();
+
         }else{
             //Check ob die unterVerzeichnisse existieren und falls ja ob sie leer sind.
             getDirectoryData();
@@ -94,7 +95,12 @@ public class Foo {
         if (firstUsage){
             firstRegistration();
         }else{
-            loginWindow();
+            try{
+                loginWindow();
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+
         }
 
         //First Window
@@ -106,7 +112,7 @@ public class Foo {
 
     return true;
     }
-    private static void firstRegistration(){
+    private static void firstRegistration() throws IOException {
 
         JOptionPane myOptionPane = new JOptionPane("Select",
                 JOptionPane.QUESTION_MESSAGE, JOptionPane.YES_NO_OPTION,
@@ -119,13 +125,21 @@ public class Foo {
         Object result = myOptionPane.getValue();
 
         if (result.equals(optionsUse[0])){
-            String input = JOptionPane.showInputDialog("Wähle einen Benutzernamen für den ersten Administrator.");
+            String nameInput = JOptionPane.showInputDialog("Wähle einen Benutzernamen für den ersten Administrator.");
+            String pwInput = JOptionPane.showInputDialog("Wähle dein Passwort");
+            String pwConfirm = JOptionPane.showInputDialog("Bestätige dein Passwort");
+            if (pwConfirm.equals(pwInput)){
+                JOptionPane.showMessageDialog(registerDialog, "Passwort Bestätigt");//Eventuell ein anderes Parent Component
+                currentAdmin = new Administrator(nameInput, pwInput);
 
+            }else{
+
+            }
         }else{
             System.out.println("Cancelled");
         }
     }
-    private static void loginWindow(){
+    private static void loginWindow() throws IOException, ClassNotFoundException {
         JOptionPane myOptionPane = new JOptionPane("Select",
                 JOptionPane.QUESTION_MESSAGE, JOptionPane.YES_NO_OPTION,
                 null, optionsUse, optionsUse[1]);
@@ -146,7 +160,7 @@ public class Foo {
                         userFound = checkForUsernameExistance(newInput);
                     }
                 }
-                loginInto();
+
         }else{
             System.out.println("Cancelled");
         }
@@ -156,10 +170,10 @@ public class Foo {
 
 
     public static void menu(){
-            String options[] = {"To Farm", "To Shop", "To Profile"};
+            String options[] = {""};
             JOptionPane myOptionPane = new JOptionPane("Wyd?",
                     JOptionPane.QUESTION_MESSAGE, JOptionPane.YES_NO_OPTION, null, options);
-            JDialog myDialog = myOptionPane.createDialog(null, "The Pig Pen");
+            JDialog myDialog = myOptionPane.createDialog(null, "Kontrolleur Hauptmenü");
             myDialog.setModal(true);
           myDialog.setVisible(true);
 
@@ -283,19 +297,29 @@ public class Foo {
         }
 
     }
-    private static boolean checkForUsernameExistance(String username){
+    private static boolean checkForUsernameExistance(String username) throws IOException, ClassNotFoundException {
         //search Lists for username
         /* FilenameFilter filter = new FilenameFilter() {
 
             public boolean accept(File f, String name)
             {
                 return name.startsWith("Datei1");
-            }
+            } //--FileName Filter
         };
 */
-        if (adminList.contains(Path.of(adminPath + fileSeperator + username).toFile()) ||
-                adminList.contains(Path.of(adminPath + fileSeperator + username.toLowerCase()).toFile()) ||
-                adminList.contains(Path.of(adminPath + fileSeperator + username.toUpperCase()))){
+        if (adminList.contains(Path.of(adminPath + fileSeperator + username).toFile())){
+            try{
+                Administrator ob = (Administrator) PersFile.readOuttaFile(Path.of(adminPath + fileSeperator + username).toFile());
+                if(ob.login()){
+                    currentAdmin = ob;
+                }else{
+                    System.out.println("Anmeldung fehlgeschlagen.");
+                }
+            }catch (Exception e){
+                System.err.println(e.getMessage());
+            }
+
+
             return true;
         }else if (sbList.contains(Path.of(sbPath + fileSeperator + username).toFile())){
             return true;
@@ -322,9 +346,13 @@ public class Foo {
         sfCount = sfList.size();
         sftCount = sftList.size();
     }
+    public static void deleteDirs(){ //Methode, damit ich die firstRegistration testen kann
+        if(adminDir.delete() && sbDir.delete() && konDir.delete() && sfDir.delete() && sftDir.delete() && userDir.delete()){
+            System.out.println("Alle Directories gelöscht");
+        }
+    }
 
-
-
+    //Wird noch gelöscht, brauch ich nur für die struktur
     public static int actionRequest() {
         String[] optionsToChoose = {"Choose...", "Aufnahme eines Giro-/Sparkontos", "Anzeigen der gespeicherten Daten", "Beenden des Programms", "Konto als Datei ausgeben", "Konto aus Datei einlesen"};
         String getAction = (String) JOptionPane.showInputDialog(

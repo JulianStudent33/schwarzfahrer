@@ -1,5 +1,4 @@
 public class hallotest {
     //du ziege
-    int x = 0;
-    String s = "Hund";
+    //Wir brauchen auf jeden Fall noch passwort und Username bedingungen
 }
