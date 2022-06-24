@@ -42,7 +42,7 @@ public class Administrator extends Mitarbeiter{
         this.benutzername = benutzername;
         this.passwort = passwort;
         this.userFile = Path.of
-                (Foo.adminPath + Foo.fileSeperator + benutzername + "_" + mitarbeiternummer + ".mb").toFile();
+                (Foo.adminPath + Foo.fileSeperator + benutzername +  ".mb").toFile();
         System.out.println(this.benutzername);
         createAdminFile(benutzername, mitarbeiternummer);
         System.out.println("Created Admin mit Benutzername " + benutzername + " und mitarbeiternummer " + mitarbeiternummer);

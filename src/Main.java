@@ -16,7 +16,7 @@ public class Main {
 
                 try {
                     System.out.println(adminPath);
-                    deleteDirs();
+
 
                     while(!startFenster()){
                         System.out.println("Anmeldung nicht erfolgreich. Wieder im Startfenster");
@@ -28,7 +28,7 @@ public class Main {
 
 
                     //currentAdmin.setPasswort("IGEL");
-                    deleteDirs();
+                    //deleteDirs();
                 }catch (Exception e){
                     System.err.println(e.getMessage());
                     System.out.println("Exception in Main");
