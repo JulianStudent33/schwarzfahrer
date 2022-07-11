@@ -3,6 +3,7 @@ package src;
 import src.users.Administrator;
 import src.users.Kontrolleur;
 import src.users.Sachbearbeiter;
+import src.nickcode.pass;
 
 import javax.swing.*;
 import java.awt.*;
@@ -53,13 +54,15 @@ public class Foo {
     public static Administrator currentAdmin;
 
 
-    public static Path userPath = Paths.get("Users");
-    public static Path adminPath = Paths.get("Users" + fileSeperator + "Admin");
-    public static Path sbPath = Paths.get("Users" + fileSeperator + "Sachbearbeiter");
-    public static Path konPath = Paths.get("Users" + fileSeperator + "Kontrolleur");
-    public static Path sfPath = Paths.get("Schwarzfahrer");
-    public static Path sftPath = Paths.get("Schwarzfahrten");
+        public static Path savesPath = Paths.get("Saves");
+        public static Path userPath = Paths.get("Saves" + fileSeperator + "Users");
+        public static Path adminPath = Paths.get("Saves" + fileSeperator + "Users" + fileSeperator + "Admin");
+        public static Path sbPath = Paths.get("Saves" + fileSeperator + "Users" + fileSeperator + "Sachbearbeiter");
+        public static Path konPath = Paths.get("Saves" + fileSeperator + "Users" + fileSeperator + "Kontrolleur");
+        public static Path sfPath = Paths.get("Saves" + fileSeperator + "Schwarzfahrer");
+        public static Path sftPath = Paths.get("Saves" + fileSeperator + "Schwarzfahrten");
 
+    public static File savesDir = savesPath.toFile();
     public static File userDir = userPath.toFile();
     public static File adminDir = adminPath.toFile();
     public static File sbDir = sbPath.toFile();
@@ -80,7 +83,7 @@ public class Foo {
         System.out.println("Starting Application");
         System.out.println(adminPath);
 
-        if(userDir.mkdir()){
+        if(savesDir.mkdir()){
             System.out.println("Erste Benutzung");
             firstUsage = true; //First Usage true gesetzt, weil keine Directories mit Benutzern vorhanden sind,
             createDirectories();
@@ -116,6 +119,10 @@ public class Foo {
         }else if (result.equals(optionsUse[1])){
             boolean succesfulLogin = loginWindow(registerLoginDialog);
             return succesfulLogin;
+        }else if(result == null){
+            okWindow();
+            boolean pressedLoginOrRegistration = false;
+            return pressedLoginOrRegistration;
         }else{
             okWindow();
             boolean pressedLoginOrRegistration = false;
@@ -129,7 +136,7 @@ public class Foo {
     }
     private static boolean registrationWindow(JDialog registerDialog, String message1) throws IOException, ClassNotFoundException {
         boolean passwortBestaetigt = false;
-        String aufforderung = "Wähle dein Passwort";
+
         String nameInput = JOptionPane.showInputDialog(message1);
         if (nameInput == null){
             System.out.println("Returning.");
@@ -140,16 +147,15 @@ public class Foo {
         }
 
         while(!passwortBestaetigt) {
-            String pwInput = JOptionPane.showInputDialog(aufforderung);
+            String pwInput = pass.passwordinput();
             if (pwInput == null){
-                System.out.println("Returning.");
+                System.out.println("Returning");
                 return false;
             }
-            if(passwortUeberprüfung(pwInput)) {
+
                 String pwConfirm = JOptionPane.showInputDialog("Bestätige dein Passwort");
                 if (pwConfirm.equals(pwInput)) {
                     JOptionPane.showMessageDialog(registerDialog, "Passwort Bestätigt");//Eventuell ein anderes Parent Component
-
                     currentAdmin = new Administrator(nameInput, pwInput);
                     passwortBestaetigt = true;
 
@@ -157,16 +163,16 @@ public class Foo {
                     System.out.println("Returning.");
                     return false;
                 } else {
-                    aufforderung = "Versuch es nochmal. Schreibs dir auf zur Not.";
+
                 }
-            }
+
 
         }
         return passwortBestaetigt;
     }
     private static boolean loginWindow(JDialog loginDialog) throws IOException, ClassNotFoundException {
 
-        String input = JOptionPane.showInputDialog(loginDialog, "Gebe deinen Benutzernamen ein.");
+        String input = JOptionPane.showInputDialog(loginDialog, "Gib deinen Benutzernamen ein.");
         if(input==null){
             okWindow();
             return false;
@@ -200,6 +206,11 @@ public class Foo {
 
     }
     private static void createDirectories(){
+        if (userDir.mkdir()){
+            System.out.println("Created userDir succesfully.");
+        }else{
+            System.out.println("Did not create userDir");
+        }
         if (adminDir.mkdir()){
             System.out.println("Created adminDir succesfully.");
         }else{

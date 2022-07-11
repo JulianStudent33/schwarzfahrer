@@ -11,7 +11,7 @@ public class pass {
         }
 
     public static String passwordinput(){
-        String input = JOptionPane.showInputDialog("Passwort eingeben");
+        String input = JOptionPane.showInputDialog("Wähle dein Passwort");
         if(input == null){
             System.out.println("Cancelled.");
             System.exit(1);
