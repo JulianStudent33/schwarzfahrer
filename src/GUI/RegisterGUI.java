@@ -1,5 +1,6 @@
-package src;
+package src.GUI;
 
+import src.Foo;
 import src.nickcode.pass;
 
 import javax.swing.*;
@@ -9,7 +10,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class RegisterWindow extends JFrame{
+public class RegisterGUI extends JFrame{
     int selection;
     private JComboBox comboBox1;
     private JTextField benutzernameTextField;
@@ -19,7 +20,7 @@ public class RegisterWindow extends JFrame{
     private JButton beendenButton;
 
 
-    public RegisterWindow(){
+    public RegisterGUI(){
 
         setContentPane(mainPanel);
         setTitle("Registration");
@@ -61,8 +62,9 @@ public class RegisterWindow extends JFrame{
                     }
                     while(!pass.passwordOk(passwortTextField.getText())){
                         passwortTextField.setText("Passwort erfüllte nicht die Vorgaben.");
+
                         try {
-                            wait();
+                            this.wait();
                         } catch (InterruptedException ex) {
                             throw new RuntimeException(ex);
                         }
@@ -86,7 +88,7 @@ public class RegisterWindow extends JFrame{
     }
 
     public static int getSelection(){
-        RegisterWindow window = new RegisterWindow();
+        RegisterGUI window = new RegisterGUI();
 
         return window.selection;
     }

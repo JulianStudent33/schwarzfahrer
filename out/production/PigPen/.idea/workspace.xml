@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="changes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Foo.java" afterDir="false" />
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Registration GUI">
+      <change beforePath="$PROJECT_DIR$/src/RegisterWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterWindow.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin_gui.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/admin_gui.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin_gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/admin_gui.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +161,7 @@
       <workItem from="1657181234999" duration="78000" />
       <workItem from="1657181344036" duration="3623000" />
       <workItem from="1657521444443" duration="37000" />
-      <workItem from="1657521507403" duration="1954000" />
+      <workItem from="1657521507403" duration="8598000" />
     </task>
     <task id="LOCAL-00001" summary="du ziegee">
       <created>1655906843233</created>
@@ -224,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657521563138</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Registration GUI">
+      <created>1657529824862</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1657529824862</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,7 +262,8 @@
     <MESSAGE value="Alles besser gemacht" />
     <MESSAGE value="Intelij hat mir git neu runtergeladen. Wann hustlen wir das durch? Ich brauch langsam mal n UI" />
     <MESSAGE value="changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes" />
+    <MESSAGE value="Registration GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Registration GUI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -350,17 +360,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>262</line>
+          <line>263</line>
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>260</line>
+          <line>261</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>266</line>
+          <line>267</line>
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -370,7 +380,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>156</line>
+          <line>157</line>
           <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -390,8 +400,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>158</line>
+          <line>159</line>
           <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GUI/RegisterWindow.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="69" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
