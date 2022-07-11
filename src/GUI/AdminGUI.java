@@ -1,4 +1,6 @@
 package src.GUI;
 
-public class AdminGUI {
+import javax.swing.*;
+
+public class AdminGUI extends JFrame {
 }

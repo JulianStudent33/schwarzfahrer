@@ -1,4 +1,6 @@
 package src.GUI;
 
-public class SachbearbeiterGUI {
+import javax.swing.*;
+
+public class SachbearbeiterGUI extends JFrame {
 }

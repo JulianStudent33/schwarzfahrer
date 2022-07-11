@@ -77,7 +77,8 @@ public class Foo {
     public Foo(){
 
     }
-
+    //Programm startet grundsätzlich immer hier
+    //StartFensterGUI IMPLEMENTIEREN
     public static boolean startFenster() throws IOException, ClassNotFoundException {
         //Check ob File existiert
         System.out.println("Starting Application");
@@ -95,8 +96,9 @@ public class Foo {
         System.out.println(adminDir.getAbsolutePath());
         System.out.println(adminDir.getCanonicalPath());
 
-        //Register oder Login
 
+        //Register oder Login
+        //Hier wird StartFesnterGUI erstellt, muss boolean zurückgeben, ob es erfolgreich war
 
         JOptionPane myOptionPane = new JOptionPane("Select",
                 JOptionPane.QUESTION_MESSAGE, JOptionPane.YES_NO_OPTION,
@@ -104,6 +106,8 @@ public class Foo {
         JDialog registerLoginDialog = myOptionPane.createDialog(null, "Black Rides");
 
         String message1;
+        //Bei der ersten Benutzung gibt es keine "Login"-Option
+        //Implementiert ihr im GUI
         if(firstUsage){
             inactivateOption(registerLoginDialog, optionsUse[1]);
             message1 = "Wähle einen Benutzernamen für deinen ersten Administrator.";

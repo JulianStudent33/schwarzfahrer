@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Registration GUI">
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="GUIs hinzugefügt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/admin_gui.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/AdminGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/AdminGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RegisterWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterGUI.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RegisterWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin_gui.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/admin_gui.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin_gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/admin_gui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Foo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Foo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/firstRegistrationGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/firstRegistrationGUI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/firstRegistrationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/firstRegistrationGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +178,7 @@
       <workItem from="1657181234999" duration="78000" />
       <workItem from="1657181344036" duration="3623000" />
       <workItem from="1657521444443" duration="37000" />
-      <workItem from="1657521507403" duration="9120000" />
+      <workItem from="1657521507403" duration="10315000" />
     </task>
     <task id="LOCAL-00001" summary="du ziegee">
       <created>1655906843233</created>
@@ -254,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657529824862</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="GUIs hinzugefügt">
+      <created>1657530723389</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1657530723389</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,7 +287,8 @@
     <MESSAGE value="Intelij hat mir git neu runtergeladen. Wann hustlen wir das durch? Ich brauch langsam mal n UI" />
     <MESSAGE value="changes" />
     <MESSAGE value="Registration GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Registration GUI" />
+    <MESSAGE value="GUIs hinzugefügt" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUIs hinzugefügt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -306,17 +310,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>85</line>
+          <line>86</line>
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>86</line>
+          <line>87</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>92</line>
+          <line>93</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -381,17 +385,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>263</line>
+          <line>267</line>
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>261</line>
+          <line>265</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>267</line>
+          <line>271</line>
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -401,12 +405,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>157</line>
+          <line>161</line>
           <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>100</line>
+          <line>102</line>
           <option name="timeStamp" value="65" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -421,7 +425,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>159</line>
+          <line>163</line>
           <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

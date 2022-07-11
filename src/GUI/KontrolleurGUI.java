@@ -1,4 +1,6 @@
 package src.GUI;
 
-public class KontrolleurGUI {
+import javax.swing.*;
+
+public class KontrolleurGUI extends JFrame {
 }
