@@ -96,15 +96,17 @@ public class Foo {
         System.out.println(adminDir.getCanonicalPath());
 
         //Register oder Login
-        String message1;
+
 
         JOptionPane myOptionPane = new JOptionPane("Select",
                 JOptionPane.QUESTION_MESSAGE, JOptionPane.YES_NO_OPTION,
                 null, optionsUse, optionsUse[0]);
         JDialog registerLoginDialog = myOptionPane.createDialog(null, "Black Rides");
+
+        String message1;
         if(firstUsage){
             inactivateOption(registerLoginDialog, optionsUse[1]);
-            message1 = "Wähle einen Benutzername für deinen ersten Administrator.";
+            message1 = "Wähle einen Benutzernamen für deinen ersten Administrator.";
         }else{
             message1 = "Wähle einen Benutzernamen";
         }
@@ -114,8 +116,14 @@ public class Foo {
         Object result = myOptionPane.getValue();
 
         if(result.equals(optionsUse[0])){
-            boolean succesfulRegistration = registrationWindow(registerLoginDialog, message1);
-            return succesfulRegistration;
+            if(firstUsage){
+                boolean succesfulRegistration = firstRegistrationWindow(registerLoginDialog, message1);
+                return succesfulRegistration;
+            }else{
+                boolean succesfulRegistration = registrationWindow(registerLoginDialog, message1);
+                return succesfulRegistration;
+            }
+
         }else if (result.equals(optionsUse[1])){
             boolean succesfulLogin = loginWindow(registerLoginDialog);
             return succesfulLogin;
@@ -134,7 +142,7 @@ public class Foo {
         // Note: result might be null if the option is cancelled
 
     }
-    private static boolean registrationWindow(JDialog registerDialog, String message1) throws IOException, ClassNotFoundException {
+    private static boolean firstRegistrationWindow(JDialog registerDialog, String message1) throws IOException, ClassNotFoundException {
         boolean passwortBestaetigt = false;
 
         String nameInput = JOptionPane.showInputDialog(message1);
@@ -169,6 +177,43 @@ public class Foo {
 
         }
         return passwortBestaetigt;
+    }
+    private static boolean registrationWindow(JDialog registerDialog, String message1) throws IOException, ClassNotFoundException{
+        boolean passwortBestaetigt = false;
+
+        String nameInput = JOptionPane.showInputDialog(message1);
+        if (nameInput == null){
+            System.out.println("Returning.");
+            return false;
+        }
+        while (userExistiertBereits(nameInput)){
+            nameInput = JOptionPane.showInputDialog("Username bereits vergeben.");
+        }
+
+        while(!passwortBestaetigt) {
+            String pwInput = pass.passwordinput();
+            if (pwInput == null){
+                System.out.println("Returning");
+                return false;
+            }
+
+            String pwConfirm = JOptionPane.showInputDialog("Bestätige dein Passwort");
+            if (pwConfirm.equals(pwInput)) {
+                JOptionPane.showMessageDialog(registerDialog, "Passwort Bestätigt");//Eventuell ein anderes Parent Component
+                currentAdmin = new Administrator(nameInput, pwInput);
+                passwortBestaetigt = true;
+
+            } else if (pwConfirm == null) {
+                System.out.println("Returning.");
+                return false;
+            } else {
+
+            }
+
+
+        }
+        return passwortBestaetigt;
+
     }
     private static boolean loginWindow(JDialog loginDialog) throws IOException, ClassNotFoundException {
 
@@ -328,7 +373,7 @@ public class Foo {
         }
 
     }
-    private static boolean userExistiertBereits(String eingabe){
+    public static boolean userExistiertBereits(String eingabe){
         if (adminList.contains(Path.of(adminPath + fileSeperator + eingabe + ".mb").toFile()) ||
                 sbList.contains(Path.of(sbPath + fileSeperator + eingabe + ".mb").toFile()) ||
                 konList.contains(Path.of(konPath + fileSeperator + eingabe + ".mb").toFile())){
