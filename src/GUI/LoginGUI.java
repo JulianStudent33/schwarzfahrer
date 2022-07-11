@@ -11,6 +11,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.Arrays;
 
 public class LoginGUI extends JFrame {
     private JPanel mainPanel;
@@ -79,7 +80,7 @@ public class LoginGUI extends JFrame {
                     try{
                         Administrator mb = (Administrator) PersFile.readOuttaFile(Path.of(Foo.adminPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile());
                         System.out.println("Datei gelesen");
-                        if (mb.getPasswort().equals(passwortPasswordField.getPassword())){
+                        if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())){
                             System.out.println("Passwort stimmt");
                             Foo.currentAdmin = mb;
                             System.exit(111);
@@ -95,7 +96,7 @@ public class LoginGUI extends JFrame {
                         Kontrolleur mb = (Kontrolleur) PersFile.readOuttaFile(Path.of(Foo.konPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile());
                         Foo.currentKontrolleur = mb;
                         System.out.println("Datei gelesen");
-                        if (mb.getPasswort().equals(passwortPasswordField.getPassword())){
+                        if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())){
                             System.out.println("Passwort stimmt");
                             Foo.currentKontrolleur = mb;
                             System.exit(111);
@@ -109,9 +110,7 @@ public class LoginGUI extends JFrame {
                         Sachbearbeiter mb = (Sachbearbeiter) PersFile.readOuttaFile(Path.of(Foo.sbPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile());
                         Foo.currentSachbearbeiter = mb;
                         System.out.println("Datei gelesen");
-                        System.out.println(mb.getPasswort());
-                        System.out.println(passwortPasswordField.getEchoChar());
-                        if (mb.getPasswort().contains(passwortPasswordField.getPassword().toString())){
+                        if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())){
                             System.out.println("Passwort stimmt");
                             Foo.currentSachbearbeiter = mb;
                             System.exit(111);
