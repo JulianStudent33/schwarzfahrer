@@ -289,8 +289,13 @@ public class Foo {
         }
     }
     private static void getDirectoryData(){
-        //Check for Existance and fill FileArrays (Dadurch werden automatisch die Count Variablen angepasst:
+        //Check for Existance and fill lists and FileArrays (Dadurch werden automatisch die Count Variablen angepasst:
         /*
+         * adminList
+         * sbList
+         * konList
+         * sfList
+         * sftList
          * admins[]
          * kontrolleure[]
          * sachbearbeiter[]
@@ -300,6 +305,7 @@ public class Foo {
         if (adminDir.exists()){
             System.out.print(adminPath.toString() + " existiert.");
             if (adminDir.listFiles().length != 0){
+                adminList.clear();
                 for (int i = 0; i < adminDir.listFiles().length; i++){
                     Collections.addAll(adminList, adminDir.listFiles()[i]);
                 }
@@ -311,6 +317,7 @@ public class Foo {
         if (sbDir.exists()) {
             System.out.print(sbPath.toString() + " existiert.");
             if (sbDir.listFiles().length != 0) {
+                sbList.clear();
                 for (int i = 0; i < sbDir.listFiles().length; i++){
                     Collections.addAll(sbList, sbDir.listFiles()[i]);
                 }
@@ -320,6 +327,7 @@ public class Foo {
             }
         }
         if (konDir.exists()) {
+            konList.clear();
             System.out.println(konPath.toString() + " existiert.");
             if (konDir.listFiles().length != 0){
                 for (int i = 0; i < konDir.listFiles().length; i++){
@@ -332,6 +340,7 @@ public class Foo {
             }
         }
         if (sfDir.exists()){
+            sfList.clear();
             System.out.println(sfPath.toString() + " existiert.");
             if (sfDir.listFiles().length != 0){
                 for (int i = 0; i < sfDir.listFiles().length; i++){
@@ -343,6 +352,7 @@ public class Foo {
             }
         }
         if (sftDir.exists()){
+            sftList.clear();
             System.out.println(sftPath.toString() + " existiert.");
             if (sftDir.listFiles().length != 0){
                 for (int i = 0; i < sftDir.listFiles().length; i++){
@@ -378,6 +388,7 @@ public class Foo {
 
     }
     public static boolean userExistiertBereits(String eingabe){
+        getDirectoryData();
         if (adminList.contains(Path.of(adminPath + fileSeperator + eingabe + ".mb").toFile()) ||
                 sbList.contains(Path.of(sbPath + fileSeperator + eingabe + ".mb").toFile()) ||
                 konList.contains(Path.of(konPath + fileSeperator + eingabe + ".mb").toFile())){

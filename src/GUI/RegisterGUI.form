@@ -44,7 +44,7 @@
         <properties>
           <font name="Source Code Pro" size="10"/>
           <text value="Passwort"/>
-          <toolTipText value="Wähle ein Paasswort"/>
+          <toolTipText value="Wähle ein Passwort"/>
         </properties>
       </component>
       <hspacer id="a6820">
