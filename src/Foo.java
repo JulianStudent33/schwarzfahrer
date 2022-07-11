@@ -1,5 +1,6 @@
 package src;
 
+import src.GUI.firstRegistrationGUI;
 import src.users.Administrator;
 import src.users.Kontrolleur;
 import src.users.Sachbearbeiter;
@@ -16,6 +17,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class Foo {
     public static FileSystem fs = FileSystems.getDefault();
@@ -121,8 +123,20 @@ public class Foo {
 
         if(result.equals(optionsUse[0])){
             if(firstUsage){
-                boolean succesfulRegistration = firstRegistrationWindow(registerLoginDialog, message1);
+
+                firstRegistrationGUI gui1 = new firstRegistrationGUI();
+                    while(!gui1.pwBestaetigt) {
+                        try {
+                            System.out.println("Waiting");
+                            TimeUnit.SECONDS.sleep(1);
+                        } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
+                        }
+
+                    }
+                boolean succesfulRegistration = gui1.pwBestaetigt;
                 return succesfulRegistration;
+
             }else{
                 boolean succesfulRegistration = registrationWindow(registerLoginDialog, message1);
                 return succesfulRegistration;
@@ -254,6 +268,10 @@ public class Foo {
 
 
     }
+
+
+
+
     private static void createDirectories(){
         if (userDir.mkdir()){
             System.out.println("Created userDir succesfully.");

@@ -4,18 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="GUIs hinzugefügt und extenden alle JFrame">
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="First Registration mega nice jetzt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Admin/Admin3.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Admin/a1.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Admin/admin1.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Admin/admin2.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Kontrolleur/k1.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Sachbearbeiter/s1.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hallotest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hallotest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/Saves/Users/Admin/a1.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/Saves/Users/Kontrolleur/k1.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/Saves/Users/Sachbearbeiter/s1.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/hallotest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/Foo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/Foo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterWindow$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterWindow$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterWindow$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterWindow$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterWindow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/admin_gui.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Foo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Foo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/RegisterGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterGUI.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/firstRegistrationGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/firstRegistrationGUI.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/firstRegistrationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/firstRegistrationGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +75,7 @@
       <recent name="src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.firstRegistrationGUI">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.Main" />
       <module name="PigPen" />
@@ -140,10 +143,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.firstRegistrationGUI" />
         <item itemvalue="Application.RegisterGUI" />
         <item itemvalue="Application.RegisterWindow" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.pass" />
       </list>
     </recent_temporary>
@@ -186,7 +189,7 @@
       <workItem from="1657181234999" duration="78000" />
       <workItem from="1657181344036" duration="3623000" />
       <workItem from="1657521444443" duration="37000" />
-      <workItem from="1657521507403" duration="15734000" />
+      <workItem from="1657521507403" duration="20878000" />
     </task>
     <task id="LOCAL-00001" summary="du ziegee">
       <created>1655906843233</created>
@@ -272,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657532039050</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="First Registration mega nice jetzt">
+      <created>1657537467160</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1657537467160</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +314,8 @@
     <MESSAGE value="Registration GUI" />
     <MESSAGE value="GUIs hinzugefügt" />
     <MESSAGE value="GUIs hinzugefügt und extenden alle JFrame" />
-    <option name="LAST_COMMIT_MESSAGE" value="GUIs hinzugefügt und extenden alle JFrame" />
+    <MESSAGE value="First Registration mega nice jetzt" />
+    <option name="LAST_COMMIT_MESSAGE" value="First Registration mega nice jetzt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -323,21 +334,6 @@
           <url>file://$PROJECT_DIR$/src/Main.java</url>
           <line>38</line>
           <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>86</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>87</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>93</line>
-          <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/users/Administrator.java</url>
@@ -401,17 +397,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>267</line>
+          <line>279</line>
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>265</line>
+          <line>277</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>271</line>
+          <line>283</line>
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -421,13 +417,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>161</line>
+          <line>169</line>
           <option name="timeStamp" value="64" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>102</line>
-          <option name="timeStamp" value="65" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/nickcode/pass.java</url>
@@ -441,7 +432,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>163</line>
+          <line>171</line>
           <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -450,28 +441,19 @@
           <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/firstRegistrationGUI.java</url>
-          <line>86</line>
-          <option name="timeStamp" value="70" />
+          <url>file://$PROJECT_DIR$/src/Foo.java</url>
+          <line>130</line>
+          <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/firstRegistrationGUI.java</url>
-          <line>89</line>
-          <option name="timeStamp" value="72" />
+          <url>file://$PROJECT_DIR$/src/Foo.java</url>
+          <line>111</line>
+          <option name="timeStamp" value="76" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="18" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/GUI/firstRegistrationGUI.java</url>
-          <line>88</line>
-          <properties method="actionPerformed">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

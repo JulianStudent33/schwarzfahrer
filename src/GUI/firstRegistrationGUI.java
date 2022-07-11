@@ -10,14 +10,14 @@ import java.awt.event.*;
 import java.io.IOException;
 
 public class firstRegistrationGUI extends JFrame {
-    private boolean pwBestaetigt = false;
+    public boolean pwBestaetigt = false;
     private JTextField benutzernameTextField;
     private JTextField passwortTextField;
     private JButton registrierenButton;
     private JButton beendenButton;
     private JPanel mainPanel;
 
-    public firstRegistrationGUI(){
+    public firstRegistrationGUI()  {
     setContentPane(mainPanel);
     setTitle("First Registration");
     Point center = GraphicsEnvironment.getLocalGraphicsEnvironment().getCenterPoint();
@@ -26,6 +26,7 @@ public class firstRegistrationGUI extends JFrame {
     this.setBounds(center.x - width / 2, center.y - height / 2, width, height);
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     setVisible(true);
+
 
         benutzernameTextField.addMouseListener(new MouseAdapter() {
             public void mouseReleased(MouseEvent e){
@@ -36,7 +37,7 @@ public class firstRegistrationGUI extends JFrame {
             @Override
             public void keyTyped(KeyEvent e) {
 
-                }
+            }
 
 
             @Override
@@ -99,13 +100,14 @@ public class firstRegistrationGUI extends JFrame {
                                 pwBestaetigt = true;
                                 try {
                                     Foo.currentAdmin = new Administrator(benutzernameTextField.getText(), passwortTextField.getText());
-
+                                    pwBestaetigt = true;
                                 } catch (IOException ex) {
-                                    dispose();
                                     throw new RuntimeException(ex);
                                 } finally {
                                     dispose();
                                 }
+                            }else{
+                                JOptionPane.showMessageDialog(new JDialog(), "Keine Übereinstimmung!");
                             }
                         }else{
                             JOptionPane.showMessageDialog(new JDialog(), "Passwort erfüllt nicht die formalen Bedingungen!");
@@ -114,15 +116,15 @@ public class firstRegistrationGUI extends JFrame {
                         benutzernameTextField.setText("Benutzername bereits vergeben");
                     }
                 } else {
-                        benutzernameTextField.setText("Ein Benutzername braucht Zeichen :)");
+                    benutzernameTextField.setText("Ein Benutzername braucht Zeichen :)");
                 }
             }
         });
 
-}
-
-    public static void main(String[] args) {
-        firstRegistrationGUI gui1 = new firstRegistrationGUI();
     }
-
 }
+
+
+
+
+
