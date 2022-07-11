@@ -26,7 +26,7 @@ public class pass {
     }
     public static boolean passwordOk(String password){
         if (password == null) return false;
-        if (password.length() < 6 || password.length() > 10) return false;
+        if (password.length() < 6 || password.length() > 15) return false;
         boolean containsUpperCase = false;
         boolean containsLowerCase = false;
         boolean containsDigit = false;

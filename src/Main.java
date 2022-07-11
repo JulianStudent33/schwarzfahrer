@@ -13,15 +13,21 @@ public class Main {
 
 
             public void run() {
-
+                deleteDirs();
                 try {
                     System.out.println(adminPath);
+                    Foo foo = new Foo();
+
+                    foo.startFenster();
 
 
-                    while(!startFenster()){
-                        System.out.println("Anmeldung nicht erfolgreich. Wieder im Startfenster");
-                    }
-                    System.out.println("Wenn ein  zurückkommt, also nach Erfolgreicher Registrierung oder Anmeldung," +
+                    } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                } catch (ClassNotFoundException ex) {
+                    throw new RuntimeException(ex);
+                }
+
+                System.out.println("Wenn ein  zurückkommt, also nach Erfolgreicher Registrierung oder Anmeldung," +
                             " dann geht's weiter mit Menü. Wenn Ein Falsch zurückkommt");
 
 
@@ -29,13 +35,7 @@ public class Main {
 
                     //currentAdmin.setPasswort("IGEL");
                     //deleteDirs();
-                }catch (Exception e){
-                    System.err.println(e.getMessage());
-                    System.out.println("Exception in Main");
-                }finally {
 
-                    System.exit(420);
-                }
 
 
 

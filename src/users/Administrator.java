@@ -35,7 +35,7 @@ public class Administrator extends Mitarbeiter{
         getMitarbeiternummer();
         this.benutzername = benutzername;
         this.passwort = passwort;
-        createAdminFile(benutzername, mitarbeiternummer);
+        createUserFile();
     }
     public Administrator(String benutzername, String passwort) throws IOException {
         this.mitarbeiternummer = "A" + Foo.adminCount+1;
@@ -44,17 +44,11 @@ public class Administrator extends Mitarbeiter{
         this.userFile = Path.of
                 (Foo.adminPath + Foo.fileSeperator + benutzername +  ".mb").toFile();
         System.out.println(this.benutzername);
-        createAdminFile(benutzername, mitarbeiternummer);
+        createUserFile();
         System.out.println("Created Admin mit Benutzername " + benutzername + " und mitarbeiternummer " + mitarbeiternummer);
         System.out.println("Gespeichert: " + this.userFile);
     }
-        private void createAdminFile(String benutzername, String mitarbeiternummer) throws IOException {
 
-        //PersFile writeAdmin = new PersFile(this.userFile);
-        PersFile.writeInFile(this, this.userFile);
-        //writeAdmin.writeInFile(this);
-            System.out.println("Hallo test");
-        }
         private void benutzerSuchen(){
 
         }

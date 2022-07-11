@@ -39,6 +39,17 @@ public abstract class Mitarbeiter extends Person{
         }
 
     }
+
+    public void createUserFile() throws IOException {
+        PersFile.writeInFile(this, this.userFile);
+        System.out.println("Hallo test");
+    }
+
+
+
+
+
+
     public boolean login(){
         //Login Window
         boolean correctPW = false;

@@ -27,7 +27,6 @@ public class firstRegistrationGUI extends JFrame {
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     setVisible(true);
 
-
         benutzernameTextField.addMouseListener(new MouseAdapter() {
             public void mouseReleased(MouseEvent e){
                 benutzernameTextField.setText("");
@@ -38,8 +37,6 @@ public class firstRegistrationGUI extends JFrame {
             public void keyTyped(KeyEvent e) {
 
             }
-
-
             @Override
             public void keyPressed(KeyEvent e) {
 
@@ -85,11 +82,10 @@ public class firstRegistrationGUI extends JFrame {
                 System.exit(200);
             }
         });
+
         registrierenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("TEST" + benutzernameTextField.getText().toString());
-
 
                 if (!benutzernameTextField.getText().isBlank()) {
                     if (!Foo.userExistiertBereits(benutzernameTextField.getText())) {
@@ -101,6 +97,7 @@ public class firstRegistrationGUI extends JFrame {
                                 try {
                                     Foo.currentAdmin = new Administrator(benutzernameTextField.getText(), passwortTextField.getText());
                                     pwBestaetigt = true;
+                                    Foo.angemeldet = true;
                                 } catch (IOException ex) {
                                     throw new RuntimeException(ex);
                                 } finally {
@@ -121,7 +118,21 @@ public class firstRegistrationGUI extends JFrame {
             }
         });
 
+
+
     }
+
+    public static boolean firstRegister(){
+
+        firstRegistrationGUI gui = new firstRegistrationGUI();
+
+        Foo.okWindow();
+        return gui.pwBestaetigt;
+    }
+
+
+
+
 }
 
 

@@ -1,5 +1,7 @@
 package src;
 
+import src.GUI.LoginGUI;
+import src.GUI.RegisterGUI;
 import src.GUI.firstRegistrationGUI;
 import src.users.Administrator;
 import src.users.Kontrolleur;
@@ -49,7 +51,7 @@ public class Foo {
     public static int userCount;
     public static int sfCount;
     public static int sftCount;
-
+    public static boolean angemeldet = false;
 
     public static Sachbearbeiter currentSachbearbeiter;
     public static Kontrolleur currentKontrolleur;
@@ -81,7 +83,7 @@ public class Foo {
     }
     //Programm startet grundsätzlich immer hier
     //StartFensterGUI IMPLEMENTIEREN
-    public static boolean startFenster() throws IOException, ClassNotFoundException {
+    public boolean startFenster() throws IOException, ClassNotFoundException {
         //Check ob File existiert
         System.out.println("Starting Application");
         System.out.println(adminPath);
@@ -124,26 +126,23 @@ public class Foo {
         if(result.equals(optionsUse[0])){
             if(firstUsage){
 
-                firstRegistrationGUI gui1 = new firstRegistrationGUI();
-                    while(!gui1.pwBestaetigt) {
-                        try {
-                            System.out.println("Waiting");
-                            TimeUnit.SECONDS.sleep(1);
-                        } catch (InterruptedException e) {
-                            throw new RuntimeException(e);
-                        }
+                firstRegistrationGUI.firstRegister();
 
-                    }
-                boolean succesfulRegistration = gui1.pwBestaetigt;
+
+
+
+                boolean succesfulRegistration = false;
                 return succesfulRegistration;
 
             }else{
-                boolean succesfulRegistration = registrationWindow(registerLoginDialog, message1);
+                RegisterGUI.register();
+                boolean succesfulRegistration = false;
                 return succesfulRegistration;
             }
 
         }else if (result.equals(optionsUse[1])){
-            boolean succesfulLogin = loginWindow(registerLoginDialog);
+            LoginGUI.login();
+            boolean succesfulLogin = true;
             return succesfulLogin;
         }else if(result == null){
             okWindow();
@@ -160,6 +159,18 @@ public class Foo {
         // Note: result might be null if the option is cancelled
 
     }
+
+    public synchronized boolean waitTillChange(){
+        return true;
+
+    }
+
+
+
+
+
+
+
     private static boolean firstRegistrationWindow(JDialog registerDialog, String message1) throws IOException, ClassNotFoundException {
         boolean passwortBestaetigt = false;
 
