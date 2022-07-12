@@ -41,7 +41,20 @@ public class LoginGUI extends JFrame {
                 benutzernameTextField.setText("");
             }
         });
-
+        /*KeyboardFocusManager manager = KeyboardFocusManager.getCurrentKeyboardFocusManager();
+        manager.addKeyEventDispatcher(e -> {
+                    switch (e.getID()){
+                        case KeyEvent.VK_ENTER :
+                            anmeldenButton.doClick();
+                            break;
+                        case KeyEvent.VK_ESCAPE:
+                            abbrechenButton.doClick();
+                            break;
+                        default: break;
+                        }
+                        return false;
+                    });
+*/
         benutzernameTextField.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {

@@ -13,13 +13,10 @@ public class Main {
 
 
             public void run() {
-                deleteDirs();
+                //deleteDirs();
                 try {
-                    System.out.println(adminPath);
+
                     Foo foo = new Foo();
-
-                    foo.startFenster();
-
 
                     } catch (IOException ex) {
                     throw new RuntimeException(ex);

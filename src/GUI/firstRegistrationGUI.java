@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class firstRegistrationGUI extends JFrame {
     public boolean pwBestaetigt = false;
@@ -16,6 +17,7 @@ public class firstRegistrationGUI extends JFrame {
     private JButton registrierenButton;
     private JButton beendenButton;
     private JPanel mainPanel;
+    private JLabel text1;
 
     public firstRegistrationGUI()  {
     setContentPane(mainPanel);

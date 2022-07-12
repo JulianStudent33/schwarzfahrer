@@ -76,47 +76,51 @@ public class Foo {
 
     static boolean firstUsage;
     private static String[] optionsUse = {"Register", "Login"};
+
+
+
     //Konstruktoren
 
-    public Foo(){
-
-    }
-    //Programm startet grundsätzlich immer hier
-    //StartFensterGUI IMPLEMENTIEREN
-    public boolean startFenster() throws IOException, ClassNotFoundException {
-        //Check ob File existiert
+    public Foo() throws IOException, ClassNotFoundException {
+        //Programm startet grundsätzlich immer hier
         System.out.println("Starting Application");
-        System.out.println(adminPath);
-
+        getDirectoryData();
+        if(adminList.isEmpty()){
+            System.out.println("Erste Benutzung");
+            firstUsage = true; //First Usage true gesetzt, weil keine Directories mit Benutzern vorhanden sind,
+            createDirectories();
+        }else{
+         refreshStats();
+        }
+        /*
+        *
         if(savesDir.mkdir()){
             System.out.println("Erste Benutzung");
             firstUsage = true; //First Usage true gesetzt, weil keine Directories mit Benutzern vorhanden sind,
             createDirectories();
-
         }else{
             //Check ob die unterVerzeichnisse existieren und falls ja ob sie leer sind.
             getDirectoryData();
         }
-        System.out.println(adminDir.getAbsolutePath());
-        System.out.println(adminDir.getCanonicalPath());
+        *
+        * */
+        //Login Fenster -> als GUI implementieren
+        startFenster();
+    }
 
 
+    //StartFensterGUI IMPLEMENTIEREN
+    public void startFenster() throws IOException, ClassNotFoundException {
         //Register oder Login
-        //Hier wird StartFesnterGUI erstellt, muss boolean zurückgeben, ob es erfolgreich war
 
         JOptionPane myOptionPane = new JOptionPane("Select",
                 JOptionPane.QUESTION_MESSAGE, JOptionPane.YES_NO_OPTION,
                 null, optionsUse, optionsUse[0]);
         JDialog registerLoginDialog = myOptionPane.createDialog(null, "Black Rides");
-
-        String message1;
         //Bei der ersten Benutzung gibt es keine "Login"-Option
         //Implementiert ihr im GUI
-        if(firstUsage){
+        if(firstUsage) {
             inactivateOption(registerLoginDialog, optionsUse[1]);
-            message1 = "Wähle einen Benutzernamen für deinen ersten Administrator.";
-        }else{
-            message1 = "Wähle einen Benutzernamen";
         }
         registerLoginDialog.setModal(true);
         registerLoginDialog.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -125,165 +129,30 @@ public class Foo {
 
         if(result.equals(optionsUse[0])){
             if(firstUsage){
-
                 firstRegistrationGUI.firstRegister();
-
-
-
-
-                boolean succesfulRegistration = false;
-                return succesfulRegistration;
-
             }else{
                 RegisterGUI.register();
-                boolean succesfulRegistration = false;
-                return succesfulRegistration;
             }
 
         }else if (result.equals(optionsUse[1])){
             LoginGUI.login();
-            boolean succesfulLogin = true;
-            return succesfulLogin;
+
         }else if(result == null){
             okWindow();
-            boolean pressedLoginOrRegistration = false;
-            return pressedLoginOrRegistration;
+            System.exit(120);
         }else{
             okWindow();
-            boolean pressedLoginOrRegistration = false;
-            return pressedLoginOrRegistration;
+            System.exit(121);
         }
-
-
-
-        // Note: result might be null if the option is cancelled
-
     }
-
-    public synchronized boolean waitTillChange(){
-        return true;
-
-    }
-
-
-
-
-
-
-
-    private static boolean firstRegistrationWindow(JDialog registerDialog, String message1) throws IOException, ClassNotFoundException {
-        boolean passwortBestaetigt = false;
-
-        String nameInput = JOptionPane.showInputDialog(message1);
-        if (nameInput == null){
-            System.out.println("Returning.");
-            return false;
-        }
-        while (userExistiertBereits(nameInput)){
-            nameInput = JOptionPane.showInputDialog("Username bereits vergeben.");
-        }
-
-        while(!passwortBestaetigt) {
-            String pwInput = pass.passwordinput();
-            if (pwInput == null){
-                System.out.println("Returning");
-                return false;
-            }
-
-                String pwConfirm = JOptionPane.showInputDialog("Bestätige dein Passwort");
-                if (pwConfirm.equals(pwInput)) {
-                    JOptionPane.showMessageDialog(registerDialog, "Passwort Bestätigt");//Eventuell ein anderes Parent Component
-                    currentAdmin = new Administrator(nameInput, pwInput);
-                    passwortBestaetigt = true;
-
-                } else if (pwConfirm == null) {
-                    System.out.println("Returning.");
-                    return false;
-                } else {
-
-                }
-
-
-        }
-        return passwortBestaetigt;
-    }
-    private static boolean registrationWindow(JDialog registerDialog, String message1) throws IOException, ClassNotFoundException{
-        boolean passwortBestaetigt = false;
-
-        String nameInput = JOptionPane.showInputDialog(message1);
-        if (nameInput == null){
-            System.out.println("Returning.");
-            return false;
-        }
-        while (userExistiertBereits(nameInput)){
-            nameInput = JOptionPane.showInputDialog("Username bereits vergeben.");
-        }
-
-        while(!passwortBestaetigt) {
-            String pwInput = pass.passwordinput();
-            if (pwInput == null){
-                System.out.println("Returning");
-                return false;
-            }
-
-            String pwConfirm = JOptionPane.showInputDialog("Bestätige dein Passwort");
-            if (pwConfirm.equals(pwInput)) {
-                JOptionPane.showMessageDialog(registerDialog, "Passwort Bestätigt");//Eventuell ein anderes Parent Component
-                currentAdmin = new Administrator(nameInput, pwInput);
-                passwortBestaetigt = true;
-
-            } else if (pwConfirm == null) {
-                System.out.println("Returning.");
-                return false;
-            } else {
-
-            }
-
-
-        }
-        return passwortBestaetigt;
-
-    }
-    private static boolean loginWindow(JDialog loginDialog) throws IOException, ClassNotFoundException {
-
-        String input = JOptionPane.showInputDialog(loginDialog, "Gib deinen Benutzernamen ein.");
-        if(input==null){
-            okWindow();
-            return false;
-        }
-        if (!checkForUsernameExistanceAndLogin(input)){
-            boolean userFound = false;
-            while(!userFound){
-                String newInput = JOptionPane.showInputDialog(loginDialog, "Benutzer nicht gefunden. Nochmal probieren?");
-                if (newInput==null){
-                    System.out.println("Returning.");
-                    return false;
-                }
-                userFound = checkForUsernameExistanceAndLogin(newInput);
-            }
-        }
-        return true; //wenn der compiler hier landet, dann hat die Username suche und die Passwortabfrage geklappt.
-    }
-
-
-
-
-
-    public static void menu(){
-        String options[] = {""};
-        JOptionPane myOptionPane = new JOptionPane("Wyd?",
-                JOptionPane.QUESTION_MESSAGE, JOptionPane.YES_NO_OPTION, null, options);
-        JDialog myDialog = myOptionPane.createDialog(null, "Kontrolleur Hauptmenü");
-        myDialog.setModal(true);
-        myDialog.setVisible(true);
-
-
-    }
-
-
 
 
     private static void createDirectories(){
+        if(savesDir.mkdir()){
+            System.out.println("Created SavesDir succesfully");
+        }else{
+            System.out.println("Did not create SavesDir");
+        }
         if (userDir.mkdir()){
             System.out.println("Created userDir succesfully.");
         }else{
@@ -295,7 +164,6 @@ public class Foo {
             System.out.println("Did not create adminDir");
         }
         if (sbDir.mkdir()){
-            System.out.println(sbDir.toPath());
             System.out.println("Created sachbearbeiterDir succesfully.");
         }else{
             System.out.println("Did not create sachbearbeiterDir");
@@ -303,7 +171,6 @@ public class Foo {
         if (konDir.mkdir()){
             System.out.println("Created kontrolleurDir succesfully.");
         }else{
-            System.out.println(konDir.toPath());
             System.out.println("Did not create kontrolleurDir");
         }
         if (sfDir.mkdir()){
@@ -316,6 +183,15 @@ public class Foo {
         }else{
             System.out.println("Did not create schwarzfahrtenDir");
         }
+    }
+    public static void refreshStats(){
+
+        adminCount = adminList.size();
+        konCount = konList.size();
+        sbCount = sbList.size();
+        userCount = adminCount+konCount+sbCount;
+        sfCount = sfList.size();
+        sftCount = sftList.size();
     }
     private static void getDirectoryData(){
         //Check for Existance and fill lists and FileArrays (Dadurch werden automatisch die Count Variablen angepasst:
@@ -331,8 +207,9 @@ public class Foo {
          * schwarzfahrer[]
          * schwarzfahrten[]
          * */
+
         if (adminDir.exists()){
-            System.out.print(adminPath.toString() + " existiert.");
+            System.out.println(adminPath.toString() + " existiert.");
             if (adminDir.listFiles().length != 0){
                 adminList.clear();
                 for (int i = 0; i < adminDir.listFiles().length; i++){
@@ -340,11 +217,11 @@ public class Foo {
                 }
                 admins = adminDir.listFiles();
             } else{
-                System.out.print(" Is Empty.");
+                System.out.println("AdminDir Is Empty.");
             }
         }
         if (sbDir.exists()) {
-            System.out.print(sbPath.toString() + " existiert.");
+            System.out.println(sbPath.toString() + " existiert.");
             if (sbDir.listFiles().length != 0) {
                 sbList.clear();
                 for (int i = 0; i < sbDir.listFiles().length; i++){
@@ -352,7 +229,7 @@ public class Foo {
                 }
                 sachbearbeiter = sbDir.listFiles();
             } else {
-                System.out.print(" Is Empty.");
+                System.out.println("SBDir Is Empty.");
             }
         }
         if (konDir.exists()) {
@@ -365,7 +242,7 @@ public class Foo {
                 kontrolleure = konDir.listFiles();
 
             }else{
-                System.out.print(" Is Empty.");
+                System.out.println("KonDir Is Empty.");
             }
         }
         if (sfDir.exists()){
@@ -377,7 +254,7 @@ public class Foo {
                 }
                 schwarzfahrer = sfDir.listFiles();
             } else {
-                System.out.print(" Is Empty.");
+                System.out.println("SFDir Is Empty.");
             }
         }
         if (sftDir.exists()){
@@ -390,7 +267,7 @@ public class Foo {
                 schwarzfahrten = sftDir.listFiles();
 
             }else {
-                System.out.print(" Is Empty.");
+                System.out.println("SFTDir Is Empty.");
             }
         }
         refreshStats(); //aktualisiert count Variablen adminCount/sbCount/konCount/sfCount/sftCount/userCount
@@ -401,6 +278,7 @@ public class Foo {
         System.out.println("Filled sftList with " + sftCount + " Files.");
         System.out.println("User in Total: " + userCount);
     }
+
     private static void inactivateOption(Container container, String text) {
         Component[] comps = container.getComponents();
         for (Component comp : comps) {
@@ -426,63 +304,8 @@ public class Foo {
             return false;
         }
     }
-    private static boolean checkForUsernameExistanceAndLogin(String eingabe) throws IOException, ClassNotFoundException {
-        //search Lists for username
-        /* FilenameFilter filter = new FilenameFilter() {
-
-            public boolean accept(File f, String name)
-            {
-                return name.startsWith("Datei1");
-            } //--FileName Filter
-        };
-*/
-        if (adminList.contains(Path.of(adminPath + fileSeperator + eingabe + ".mb").toFile())){
-            try{
-                Administrator ob = (Administrator) PersFile.readOuttaFile(Path.of(adminPath + fileSeperator + eingabe).toFile());
-                if(ob.login()){
-                    currentAdmin = ob;
-                    return true;
-                }else{
-                    System.out.println("Anmeldung fehlgeschlagen.");
-                    return false;
-                }
-            }catch (Exception e){
-                System.err.println(e.getMessage());
-            }
 
 
-
-        }else if (sbList.contains(Path.of(sbPath + fileSeperator + eingabe + ".mb").toFile())){
-            return true;
-        } else if (konList.contains(Path.of(konPath + fileSeperator + eingabe + ".mb").toFile())) {
-            return true;
-        }else {
-            return false;
-        }
-        return false;
-    }
-    private static String loginInto(){
-        String pw;
-        return "pw";
-    }
-    private static boolean checkForPasswortCorectness(String passwort){
-        return true;
-    }
-    private static boolean passwortUeberprüfung(String password){
-
-        return true;
-    }
-
-    public static void refreshStats(){
-
-
-        adminCount = adminList.size();
-        konCount = konList.size();
-        sbCount = sbList.size();
-        userCount = adminCount+konCount+sbCount;
-        sfCount = sfList.size();
-        sftCount = sftList.size();
-    }
     public static void okWindow(){
         String[] option = {"OK"};
         JPanel panel = new JPanel();
@@ -500,40 +323,6 @@ public class Foo {
             userDir.delete();
             System.out.println("Directories gelöscht");
         }
-
     }
-
-
-    //Wird noch gelöscht, brauch ich nur für die struktur
-    public static int actionRequest() {
-        String[] optionsToChoose = {"Choose...", "Aufnahme eines Giro-/Sparkontos", "Anzeigen der gespeicherten Daten", "Beenden des Programms", "Konto als Datei ausgeben", "Konto aus Datei einlesen"};
-        String getAction = (String) JOptionPane.showInputDialog(
-                null,
-                "What do you want to do?",
-                "Action Menue",
-                JOptionPane.QUESTION_MESSAGE,
-                null,
-                optionsToChoose,
-                optionsToChoose[0]);
-
-        switch (getAction) {
-            case "Aufnahme eines Giro-/Sparkontos":
-                return 1;
-            case "Anzeigen der gespeicherten Daten":
-                return 2;
-            case "Beenden des Programms":
-                return 3;
-            case "Konto als Datei ausgeben":
-                return 4;
-            case "Konto aus Datei einlesen":
-                return 5;
-            default:
-                System.out.println("ERROR");
-                break;
-        }
-        return 0;
-    }
-
-
 }
 
