@@ -1,6 +1,7 @@
 package src.GUI;
 
 import src.Foo;
+import src.GUI.elements.PlaceholderTextField;
 import src.nickcode.pass;
 import src.users.Administrator;
 
@@ -12,8 +13,8 @@ import java.util.concurrent.TimeUnit;
 
 public class firstRegistrationGUI extends JFrame {
     public boolean pwBestaetigt = false;
-    private JTextField benutzernameTextField;
-    private JTextField passwortTextField;
+    private PlaceholderTextField benutzernameTextField;
+    private JPasswordField passwortTextField;
     private JButton registrierenButton;
     private JButton beendenButton;
     private JPanel mainPanel;
@@ -27,6 +28,12 @@ public class firstRegistrationGUI extends JFrame {
     int height = 200;
     this.setBounds(center.x - width / 2, center.y - height / 2, width, height);
     setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        try {
+            UIManager.setLookAndFeel(UIManager.createLookAndFeel("Windows"));
+        } catch (UnsupportedLookAndFeelException e) {
+            throw new RuntimeException(e);
+        }
     setVisible(true);
 
         benutzernameTextField.addMouseListener(new MouseAdapter() {

@@ -23,6 +23,12 @@ public class StartFensterGUI extends JFrame {
         int height = 100;
         this.setBounds(center.x - width / 2, center.y - height / 2, width, height);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        try {
+            UIManager.setLookAndFeel(UIManager.createLookAndFeel("Windows"));
+        } catch (UnsupportedLookAndFeelException e) {
+            throw new RuntimeException(e);
+        }
         setVisible(true);
         System.out.println("2 " + Foo.firstUsage);
 

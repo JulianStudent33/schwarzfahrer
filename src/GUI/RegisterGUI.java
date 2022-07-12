@@ -1,6 +1,7 @@
 package src.GUI;
 
 import src.Foo;
+import src.GUI.elements.PlaceholderTextField;
 import src.nickcode.pass;
 import src.users.Kontrolleur;
 import src.users.Sachbearbeiter;
@@ -14,12 +15,11 @@ public class RegisterGUI extends JFrame{
     int selection;
     boolean pwBestaetigt = false;
     private JComboBox comboBox1;
-    private JTextField benutzernameTextField;
-    private JTextField passwortTextField;
+    private JPasswordField passwortTextField;
     private JPanel mainPanel;
     private JButton registrierenButton;
     private JButton beendenButton;
-    private JLabel passwortMussAusSowohlLabel;
+    private PlaceholderTextField benutzernameTextField;
 
 
     public RegisterGUI(){
@@ -31,8 +31,14 @@ public class RegisterGUI extends JFrame{
         int height = 200;
         this.setBounds(center.x - width / 2, center.y - height / 2, width, height);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setVisible(true);
 
+        try {
+            UIManager.setLookAndFeel(UIManager.createLookAndFeel("Windows"));
+        } catch (UnsupportedLookAndFeelException e) {
+            throw new RuntimeException(e);
+        }
+        setVisible(true);
+        benutzernameTextField.setPlaceholder("Benutzername");
         benutzernameTextField.addMouseListener(new MouseAdapter() {
             public void mouseReleased(MouseEvent e){
                 benutzernameTextField.setText("");

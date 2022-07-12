@@ -1,6 +1,7 @@
 package src.GUI;
 
 import src.Foo;
+import src.GUI.elements.PlaceholderTextField;
 import src.PersFile;
 import src.users.Administrator;
 import src.users.Kontrolleur;
@@ -16,7 +17,7 @@ import java.util.Arrays;
 public class LoginGUI extends JFrame {
     private JPanel mainPanel;
     private JPasswordField passwortPasswordField;
-    private JTextField benutzernameTextField;
+    private PlaceholderTextField benutzernameTextField;
     private JButton abbrechenButton;
     private JButton anmeldenButton;
     private JCheckBox angemeldetBleibenCheckBox;
@@ -34,6 +35,12 @@ public class LoginGUI extends JFrame {
         int height = 400;
         this.setBounds(center.x - width / 2, center.y - height / 2, width, height);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        try {
+            UIManager.setLookAndFeel(UIManager.createLookAndFeel("Windows"));
+        } catch (UnsupportedLookAndFeelException e) {
+            throw new RuntimeException(e);
+        }
         setVisible(true);
 
         benutzernameTextField.addMouseListener(new MouseAdapter() {

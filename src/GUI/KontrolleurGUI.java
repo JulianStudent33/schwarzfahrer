@@ -2,13 +2,15 @@ package src.GUI;
 
 import javax.swing.*;
 import org.openide.awt.DropDownButtonFactory;
+import src.Foo;
+import src.users.Kontrolleur;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class KontrolleurGUI extends JFrame implements ActionListener {
-
+    Kontrolleur currentUser;
     private JToolBar konToolBar;
     private JPanel mainPanel;
     private JToggleButton schwarzfahrerSuchenToggleButton;
@@ -19,6 +21,7 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
     private JToggleButton statistikenToggleButton;
 
     public KontrolleurGUI()  {
+        currentUser = Foo.currentKontrolleur;
         setContentPane(mainPanel);
         setTitle("Kontrolleur Menü");
         Point center = GraphicsEnvironment.getLocalGraphicsEnvironment().getCenterPoint();
@@ -34,7 +37,10 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
         JButton dropDownButton = createDropDownButton();
         konToolBar.add(dropDownButton);
         konToolBar.add(new JSeparator());
-
+        /*
+        String text = "Angemeldet als " + currentUser.getBenutzername();
+        konToolBar.add(new JLabel(text));
+*/
 
 
         setVisible(true);
