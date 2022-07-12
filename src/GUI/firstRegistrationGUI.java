@@ -100,10 +100,13 @@ public class firstRegistrationGUI extends JFrame {
                                     Foo.currentAdmin = new Administrator(benutzernameTextField.getText(), passwortTextField.getText());
                                     pwBestaetigt = true;
                                     Foo.angemeldet = true;
-                                } catch (IOException ex) {
-                                    throw new RuntimeException(ex);
-                                } finally {
                                     dispose();
+                                    AdminGUI.openAdminGUI();
+                                } catch (IOException ex) {
+                                    dispose();
+                                    StartFensterGUI.openStartFenster();
+                                    ex.printStackTrace();
+                                    throw new RuntimeException(ex);
                                 }
                             }else{
                                 JOptionPane.showMessageDialog(new JDialog(), "Keine Übereinstimmung!");
@@ -124,12 +127,10 @@ public class firstRegistrationGUI extends JFrame {
 
     }
 
-    public static boolean firstRegister(){
+    public static void firstRegister(){
 
         firstRegistrationGUI gui = new firstRegistrationGUI();
 
-        Foo.okWindow();
-        return gui.pwBestaetigt;
     }
 
 

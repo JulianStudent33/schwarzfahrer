@@ -96,12 +96,16 @@ public class LoginGUI extends JFrame {
                         if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())){
                             System.out.println("Passwort stimmt");
                             Foo.currentAdmin = mb;
-                            System.exit(111);
+                            dispose();
+                            AdminGUI.openAdminGUI();
+                            System.out.println("Starting Admin User-Interface.");
                         }
 
 
                     }catch (IOException | ClassNotFoundException io){
-
+                        dispose();
+                        io.printStackTrace();
+                        StartFensterGUI.openStartFenster();
                     }
                 }
                 if(Foo.konList.contains(Path.of(Foo.konPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())){
@@ -112,10 +116,14 @@ public class LoginGUI extends JFrame {
                         if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())){
                             System.out.println("Passwort stimmt");
                             Foo.currentKontrolleur = mb;
-                            System.exit(111);
+                            dispose();
+                            KontrolleurGUI.openKonGUI();
+                            System.out.println("Starting Kontrolleur User-Interface.");
                         }
                     }catch (IOException | ClassNotFoundException io){
-
+                        dispose();
+                        io.printStackTrace();
+                        StartFensterGUI.openStartFenster();
                     }
                 }
                 if(Foo.sbList.contains(Path.of(Foo.sbPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())){
@@ -126,10 +134,14 @@ public class LoginGUI extends JFrame {
                         if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())){
                             System.out.println("Passwort stimmt");
                             Foo.currentSachbearbeiter = mb;
-                            System.exit(111);
+                            dispose();
+                            SachbearbeiterGUI.openSBGUI();
+                            System.out.println("Starting Sachbearbeiter User-Interface.");
                         }
                     }catch (IOException | ClassNotFoundException io){
-
+                        dispose();
+                        io.printStackTrace();
+                        StartFensterGUI.openStartFenster();
                     }
                 }
 
@@ -138,7 +150,7 @@ public class LoginGUI extends JFrame {
 
     }
 
-    public static void login(){
+    public static void openLogin(){
         LoginGUI gui = new LoginGUI();
     }
 

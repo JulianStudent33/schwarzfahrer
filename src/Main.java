@@ -24,28 +24,7 @@ public class Main {
                     throw new RuntimeException(ex);
                 }
 
-                System.out.println("Wenn ein  zurückkommt, also nach Erfolgreicher Registrierung oder Anmeldung," +
-                            " dann geht's weiter mit Menü. Wenn Ein Falsch zurückkommt");
-
-
-
-
-                    //currentAdmin.setPasswort("IGEL");
-                    //deleteDirs();
-
-
-
-
-
-
-
-
-
-
-
-
-
-            }
+               }
         });
         }
 

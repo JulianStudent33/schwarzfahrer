@@ -85,7 +85,8 @@ public class RegisterGUI extends JFrame{
         beendenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.exit(200);
+                dispose();
+                StartFensterGUI.openStartFenster();
             }
         });
 
@@ -107,14 +108,21 @@ public class RegisterGUI extends JFrame{
                                 try {
                                     switch (selection){
                                         case 1: Foo.currentKontrolleur = new Kontrolleur(benutzernameTextField.getText(), passwortTextField.getText());
+                                        Foo.angemeldet = true;
+                                        dispose();
+                                        KontrolleurGUI.openKonGUI();
                                         break;
                                         case 2: Foo.currentSachbearbeiter = new Sachbearbeiter(benutzernameTextField.getText(), passwortTextField.getText());
+                                        Foo.angemeldet = true;
+                                        dispose();
+                                        SachbearbeiterGUI.openSBGUI();
                                         break;
                                     }
                                 } catch (IOException ex) {
-                                    throw new RuntimeException(ex);
-                                } finally {
                                     dispose();
+                                    StartFensterGUI.openStartFenster();
+                                    ex.printStackTrace();
+                                    throw new RuntimeException(ex);
                                 }
                             }else{
                                 JOptionPane.showMessageDialog(new JDialog(), "Keine Übereinstimmung!");

@@ -2,6 +2,7 @@ package src;
 
 import src.GUI.LoginGUI;
 import src.GUI.RegisterGUI;
+import src.GUI.StartFensterGUI;
 import src.GUI.firstRegistrationGUI;
 import src.users.Administrator;
 import src.users.Kontrolleur;
@@ -74,7 +75,7 @@ public class Foo {
     public static File sfDir = sfPath.toFile();
     public static File sftDir = sftPath.toFile();
 
-    static boolean firstUsage;
+    public static boolean firstUsage;
     private static String[] optionsUse = {"Register", "Login"};
 
 
@@ -105,7 +106,8 @@ public class Foo {
         *
         * */
         //Login Fenster -> als GUI implementieren
-        startFenster();
+        System.out.println("1 " + firstUsage);
+        StartFensterGUI.openStartFenster();
     }
 
 
@@ -135,7 +137,7 @@ public class Foo {
             }
 
         }else if (result.equals(optionsUse[1])){
-            LoginGUI.login();
+            LoginGUI.openLogin();
 
         }else if(result == null){
             okWindow();
