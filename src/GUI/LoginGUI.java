@@ -13,6 +13,7 @@ import java.awt.event.*;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Arrays;
+import java.util.concurrent.TimeUnit;
 
 public class LoginGUI extends JFrame {
     private JPanel mainPanel;
@@ -42,7 +43,12 @@ public class LoginGUI extends JFrame {
             throw new RuntimeException(e);
         }
         setVisible(true);
+        benutzernameTextField.setPlaceholder("Benutzername");
+        if (passwortVergessenButton instanceof AbstractButton) {
+            AbstractButton btn = (AbstractButton) passwortVergessenButton;
+            btn.setEnabled(false);
 
+        }
         benutzernameTextField.addMouseListener(new MouseAdapter() {
             public void mouseReleased(MouseEvent e){
                 benutzernameTextField.setText("");
@@ -77,17 +83,38 @@ public class LoginGUI extends JFrame {
                 System.out.println(benutzernameTextField.getText()+e.getKeyChar());
 
                 if (Foo.userExistiertBereits(benutzernameTextField.getText())){
-                    benutzernameTextField.setBackground(Color.green);
+                    benutzernameTextField.setBackground(Foo.green);
+                    if (passwortVergessenButton instanceof AbstractButton) {
+                        AbstractButton btn = (AbstractButton) passwortVergessenButton;
+                        btn.setEnabled(true);
+
+                    }
                 }else{
                     benutzernameTextField.setBackground(Color.lightGray);
+                    if (passwortVergessenButton instanceof AbstractButton) {
+                        AbstractButton btn = (AbstractButton) passwortVergessenButton;
+                        btn.setEnabled(false);
+
+                    }
                 }
+
+
+
+
+
             }
         });
+        passwortVergessenButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
+            }
+        });
         abbrechenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.exit(200);
+                dispose();
+                StartFensterGUI.openStartFenster();
             }
         });
 
@@ -103,9 +130,19 @@ public class LoginGUI extends JFrame {
                         if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())){
                             System.out.println("Passwort stimmt");
                             Foo.currentAdmin = mb;
+                            if (angemeldetBleibenCheckBox.isSelected()){
+                                Foo.angemeldetBleiben = true;
+                            }else{
+                                Foo.angemeldetBleiben = false;
+                            }
                             dispose();
                             AdminGUI.openAdminGUI();
                             System.out.println("Starting Admin User-Interface.");
+                        }else{
+                            System.out.println("Passwort falsch");
+                            JOptionPane.showMessageDialog(new JDialog(), "Das eingegebene Passwort ist nicht korrekt");
+                            passwortPasswordField.requestFocus();
+                            passwortPasswordField.setText("");
                         }
 
 

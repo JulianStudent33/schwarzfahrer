@@ -23,6 +23,9 @@ public abstract class Mitarbeiter extends Person{
     String passwort;
 
     final String[] benutzerTypen = {"Kontrolleur", "Sachbearbeiter", "Administrator"};
+    boolean isAdmin;
+    boolean isKontrolleur;
+    boolean isSachbearbeiter;
     String benutzerTyp;
     File userFile;
 
@@ -122,5 +125,19 @@ public abstract class Mitarbeiter extends Person{
 
     public void setBenutzerTyp(String benutzerTyp) {
         this.benutzerTyp = benutzerTyp;
+    }
+
+    public void abmelden(){
+        if(this.isAdmin){
+            Foo.currentAdmin = null;
+            System.out.println("Admin ausgeloggt.");
+        }else if(this.isKontrolleur){
+            Foo.currentKontrolleur = null;
+            System.out.println("Kontrolleur ausgeloggt.");
+        } else if (this.isSachbearbeiter) {
+            Foo.currentSachbearbeiter = null;
+            System.out.println("Sachbearbeiter ausgeloggt");
+        }
+        Foo.angemeldet = false;
     }
 }

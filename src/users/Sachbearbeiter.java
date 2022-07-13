@@ -21,7 +21,8 @@ public class Sachbearbeiter extends Mitarbeiter{
     //Konstruktoren
 
     public Sachbearbeiter(String benutzername, String passwort) throws IOException {
-        this.mitarbeiternummer = "S" + Foo.sbCount+1;
+        this.isSachbearbeiter = true;
+        this.mitarbeiternummer = "S" + Foo.sbCount++;
         this.benutzername = benutzername;
         this.passwort = passwort;
         this.userFile = Path.of

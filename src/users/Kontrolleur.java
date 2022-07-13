@@ -21,7 +21,8 @@ public class Kontrolleur extends Mitarbeiter{
     //Konstruktoren
 
     public Kontrolleur(String benutzername, String passwort) throws IOException {
-        this.mitarbeiternummer = "K" + Foo.konCount+1;
+        this.isKontrolleur = true;
+        this.mitarbeiternummer = "K" + Foo.konCount++;
         this.benutzername = benutzername;
         this.passwort = passwort;
         this.userFile = Path.of

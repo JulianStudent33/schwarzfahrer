@@ -45,6 +45,8 @@ public class Foo {
     public static List<File> sftList = new ArrayList<File>();
 
     //Count Variablen (Noch Als Liste<int> zu implementieren)
+    public static Color red = new Color(255, 107, 107);
+    public static Color green = new Color(143, 255, 107);
 
     public static int adminCount;
     public static int konCount;
@@ -53,6 +55,7 @@ public class Foo {
     public static int sfCount;
     public static int sftCount;
     public static boolean angemeldet = false;
+    public static boolean angemeldetBleiben;
 
     public static Sachbearbeiter currentSachbearbeiter;
     public static Kontrolleur currentKontrolleur;

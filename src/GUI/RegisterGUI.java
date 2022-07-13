@@ -18,7 +18,7 @@ public class RegisterGUI extends JFrame{
     private JPasswordField passwortTextField;
     private JPanel mainPanel;
     private JButton registrierenButton;
-    private JButton beendenButton;
+    private JButton abbrechenButton;
     private PlaceholderTextField benutzernameTextField;
 
 
@@ -59,9 +59,10 @@ public class RegisterGUI extends JFrame{
                 System.out.println(benutzernameTextField.getText()+e.getKeyChar());
 
                 if (Foo.userExistiertBereits(benutzernameTextField.getText())){
-                    benutzernameTextField.setBackground(Color.red);
+                    float[] values = new float[3];
+                    benutzernameTextField.setBackground(Foo.red);
                 }else{
-                    benutzernameTextField.setBackground(Color.green);
+                    benutzernameTextField.setBackground(Foo.green);
                 }
             }
         });
@@ -82,13 +83,13 @@ public class RegisterGUI extends JFrame{
             @Override
             public void keyReleased(KeyEvent e) {
                 if(pass.passwordOk(passwortTextField.getText())){
-                    passwortTextField.setBackground(Color.green);
+                    passwortTextField.setBackground(Foo.green);
                 }else{
-                    passwortTextField.setBackground(Color.red);
+                    passwortTextField.setBackground(Foo.red);
                 }
             }
         });
-        beendenButton.addActionListener(new ActionListener() {
+        abbrechenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
@@ -111,6 +112,7 @@ public class RegisterGUI extends JFrame{
                             if (pwConfirm.equals(passwortTextField.getText())) {
                                 JOptionPane.showMessageDialog(new JDialog(), "Passwort bestätigt");
                                 pwBestaetigt = true;
+                                System.out.println("Passwort get passwort: " + passwortTextField.getPassword());
                                 try {
                                     switch (selection){
                                         case 1: Foo.currentKontrolleur = new Kontrolleur(benutzernameTextField.getText(), passwortTextField.getText());
@@ -137,10 +139,12 @@ public class RegisterGUI extends JFrame{
                             JOptionPane.showMessageDialog(new JDialog(), "Passwort erfüllt nicht die formalen Bedingungen!");
                         }
                     } else {
-                        benutzernameTextField.setText("Benutzername bereits vergeben");
+                        benutzernameTextField.setText("");
+                        benutzernameTextField.setPlaceholder("Benutzername bereits vergeben");
                     }
                 } else {
-                    benutzernameTextField.setText("Ein Benutzername braucht Zeichen :)");
+                    benutzernameTextField.setBackground(Foo.red);
+                    benutzernameTextField.setPlaceholder("Ein Benutzername braucht Zeichen :)");
                 }
             }
         });

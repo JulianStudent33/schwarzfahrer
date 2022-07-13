@@ -38,7 +38,8 @@ public class Administrator extends Mitarbeiter{
         createUserFile();
     }
     public Administrator(String benutzername, String passwort) throws IOException {
-        this.mitarbeiternummer = "A" + Foo.adminCount+1;
+        this.isAdmin = true;
+        this.mitarbeiternummer = "A" + Foo.adminCount++;
         this.benutzername = benutzername;
         this.passwort = passwort;
         this.userFile = Path.of

@@ -45,6 +45,19 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
 
         setVisible(true);
 
+        //Button Funktionen Zuweisungen:
+
+        abmeldenToggleButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                currentUser.abmelden();
+                StartFensterGUI.openStartFenster();
+            }
+        });
+
+
+
     }
     private JButton createDropDownButton(){
         JPopupMenu popupMenu = createDropDownMenu();

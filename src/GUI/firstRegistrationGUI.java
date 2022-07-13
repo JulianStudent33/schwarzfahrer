@@ -9,14 +9,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 public class firstRegistrationGUI extends JFrame {
     public boolean pwBestaetigt = false;
     private PlaceholderTextField benutzernameTextField;
     private JPasswordField passwortTextField;
     private JButton registrierenButton;
-    private JButton beendenButton;
+    private JButton abbrechenButton;
     private JPanel mainPanel;
     private JLabel text1;
 
@@ -35,7 +34,7 @@ public class firstRegistrationGUI extends JFrame {
             throw new RuntimeException(e);
         }
     setVisible(true);
-
+        benutzernameTextField.setPlaceholder("Benutzername");
         benutzernameTextField.addMouseListener(new MouseAdapter() {
             public void mouseReleased(MouseEvent e){
                 benutzernameTextField.setText("");
@@ -85,10 +84,11 @@ public class firstRegistrationGUI extends JFrame {
                 }
             }
         });
-        beendenButton.addActionListener(new ActionListener() {
+        abbrechenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.exit(200);
+                dispose();
+                StartFensterGUI.openStartFenster();
             }
         });
 
@@ -119,13 +119,16 @@ public class firstRegistrationGUI extends JFrame {
                                 JOptionPane.showMessageDialog(new JDialog(), "Keine Übereinstimmung!");
                             }
                         }else{
+
                             JOptionPane.showMessageDialog(new JDialog(), "Passwort erfüllt nicht die formalen Bedingungen!");
                         }
                     } else {
-                        benutzernameTextField.setText("Benutzername bereits vergeben");
+                        benutzernameTextField.setBackground(Color.red);
+                        benutzernameTextField.setPlaceholder("Benutzername bereits vergeben");
                     }
                 } else {
-                    benutzernameTextField.setText("Ein Benutzername braucht Zeichen :)");
+                    benutzernameTextField.setBackground(Color.red);
+                    benutzernameTextField.setPlaceholder("Ein Benutzername braucht Zeichen :)");
                 }
             }
         });
