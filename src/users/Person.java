@@ -8,6 +8,8 @@ public abstract class Person implements Serializable {
     String vorname;
     String namenszusatz;
     String geschlecht;
+
+    String geburtsdatum;
     String telefonnummer;
     String email;
 
@@ -41,6 +43,14 @@ public abstract class Person implements Serializable {
 
     public void setGeschlecht(String geschlecht) {
         this.geschlecht = geschlecht;
+    }
+
+    public String getGeburtsdatum() {
+        return geburtsdatum;
+    }
+
+    public void setGeburtsdatum(String geburtsdatum) {
+        this.geburtsdatum = geburtsdatum;
     }
 
     public String getTelefonnummer() {

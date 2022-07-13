@@ -32,6 +32,27 @@ public class Sachbearbeiter extends Mitarbeiter{
         System.out.println("Created Sachbearbeiter mit Benutzername " + benutzername + " und mitarbeiternummer " + mitarbeiternummer);
         System.out.println("Gespeichert: " + this.userFile);
     }
+    public Sachbearbeiter(String benutzername, String passwort, String vorname, String nachname, String namenszusatz, String geschlecht, String telefonnummer, String email) throws IOException {
+        this.isSachbearbeiter = true;
+        this.mitarbeiternummer = "S" + Foo.sbCount++;
+        this.benutzername = benutzername;
+        this.passwort = passwort;
+        this.vorname = vorname;
+        this.name = nachname;
+        if(namenszusatz==null){
+            this.namenszusatz = "";
+        }else{
+            this.namenszusatz = namenszusatz;
+        }
+        this.geschlecht = geschlecht;
+        this.telefonnummer = telefonnummer;
+        this.email = email;
+        this.userFile = Path.of
+                (Foo.sbPath + Foo.fileSeperator + benutzername +  ".mb").toFile();
+        display();
+        createUserFile();
+        System.out.println("Sachbearbeiter erstellt.");
+    }
 
 
 }
