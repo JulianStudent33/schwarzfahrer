@@ -1,9 +1,7 @@
 package src;
 
-import src.GUI.LoginGUI;
-import src.GUI.RegisterGUI;
-import src.GUI.StartFensterGUI;
-import src.GUI.firstRegistrationGUI;
+import src.GUI.*;
+import src.GUI.Kontrolleur.KontrolleurGUI;
 import src.users.Administrator;
 import src.users.Kontrolleur;
 import src.users.Sachbearbeiter;
@@ -69,6 +67,7 @@ public class Foo {
         public static Path konPath = Paths.get("Saves" + fileSeperator + "Users" + fileSeperator + "Kontrolleur");
         public static Path sfPath = Paths.get("Saves" + fileSeperator + "Schwarzfahrer");
         public static Path sftPath = Paths.get("Saves" + fileSeperator + "Schwarzfahrten");
+        public static Path loginPath = Paths.get("Saves" + fileSeperator + "loggedIN.save");
 
     public static File savesDir = savesPath.toFile();
     public static File userDir = userPath.toFile();
@@ -77,7 +76,7 @@ public class Foo {
     public static File konDir = konPath.toFile();
     public static File sfDir = sfPath.toFile();
     public static File sftDir = sftPath.toFile();
-
+    public static File loggedINFile = loginPath.toFile();
     public static boolean firstUsage;
     private static String[] optionsUse = {"Register", "Login"};
 
@@ -96,21 +95,19 @@ public class Foo {
         }else{
          refreshStats();
         }
-        /*
-        *
-        if(savesDir.mkdir()){
-            System.out.println("Erste Benutzung");
-            firstUsage = true; //First Usage true gesetzt, weil keine Directories mit Benutzern vorhanden sind,
-            createDirectories();
-        }else{
-            //Check ob die unterVerzeichnisse existieren und falls ja ob sie leer sind.
-            getDirectoryData();
-        }
-        *
-        * */
+        angemeldetBleiben = getAngemeldetBleiben();
+        setAngemeldet(angemeldetBleiben);
         //Login Fenster -> als GUI implementieren
-        System.out.println("1 " + firstUsage);
-        StartFensterGUI.openStartFenster();
+        if(!angemeldet){
+            StartFensterGUI.openStartFenster();
+        } else if (currentAdmin!=null) {
+            AdminGUI.openAdminGUI();
+        } else if (currentKontrolleur!=null) {
+            KontrolleurGUI.openKonGUI();
+        } else if (currentSachbearbeiter!=null) {
+            SachbearbeiterGUI.openSBGUI();
+        }
+
     }
 
 
@@ -188,6 +185,7 @@ public class Foo {
         }else{
             System.out.println("Did not create schwarzfahrtenDir");
         }
+
     }
     public static void refreshStats(){
 
@@ -310,6 +308,60 @@ public class Foo {
         }
     }
 
+    public static boolean isAngemeldet() {
+        return angemeldet;
+    }
+
+    public static void setAngemeldet(boolean angemeldet) {
+        Foo.angemeldet = angemeldet;
+    }
+
+    public static void saveAngemeldetBleiben(boolean angemeldetBleiben) throws IOException {
+        if (angemeldetBleiben){
+            angemeldetBleiben = true;
+            System.out.println("Angemeldet bleiben auf true.");
+            savedUser userToSave;
+            if (currentKontrolleur!=null){
+                userToSave = new savedUser(currentKontrolleur, true);
+                userToSave.saveStatus(loggedINFile);
+            } else if (currentAdmin!=null) {
+                userToSave = new savedUser(currentAdmin, true);
+                userToSave.saveStatus(loggedINFile);
+            } else if (currentSachbearbeiter!=null) {
+                userToSave = new savedUser(currentSachbearbeiter, true);
+                userToSave.saveStatus(loggedINFile);
+            }else{
+                System.out.println("Fehler");
+            }
+
+        }else{
+            angemeldetBleiben = false;
+            savedUser userToSave = new savedUser(false);
+            userToSave.saveStatus(loggedINFile);
+            System.out.println("Angemeldet bleiben auf false.");
+        }
+
+    }
+    public boolean getAngemeldetBleiben() throws IOException, ClassNotFoundException {
+        if (!loggedINFile.exists()){
+            return false;
+        }
+        savedUser userToGet;
+        userToGet = (savedUser) PersFile.readOuttaFile(loggedINFile);
+        if(userToGet.isAdmin()){
+            currentAdmin = userToGet.currentAdmin;
+            return userToGet.angemeldetBleiben;
+        } else if (userToGet.isKontrolleur()) {
+            currentKontrolleur = userToGet.currentKon;
+            return userToGet.angemeldetBleiben;
+        } else if (userToGet.isSachbearbeiter()) {
+            currentSachbearbeiter = userToGet.currentSb;
+            return userToGet.angemeldetBleiben;
+        }else{
+            return userToGet.angemeldetBleiben;
+        }
+
+    }
 
     public static void okWindow(){
         String[] option = {"OK"};

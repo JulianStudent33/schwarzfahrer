@@ -42,7 +42,7 @@ public class erfassen extends JFrame{
         int width = 1000;
         int height = 400;
         this.setBounds(center.x - width / 2, center.y - height / 2, width, height);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         try {
             UIManager.setLookAndFeel(UIManager.createLookAndFeel("Windows"));
