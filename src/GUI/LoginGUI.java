@@ -44,6 +44,11 @@ public class LoginGUI extends JFrame {
         setVisible(true);
         benutzernameTextField.setPlaceholder("Benutzername");
         passwortPasswordField.setPlaceholder("Passwort");
+        if (passwortVergessenButton instanceof AbstractButton) {
+            AbstractButton btn = passwortVergessenButton;
+            btn.setEnabled(false);
+
+        }
         benutzernameTextField.addMouseListener(new MouseAdapter() {
             public void mouseReleased(MouseEvent e){
                 benutzernameTextField.setText("");
@@ -67,14 +72,14 @@ public class LoginGUI extends JFrame {
                 if (Foo.userExistiertBereits(benutzernameTextField.getText())){
                     benutzernameTextField.setBackground(Foo.green);
                     if (passwortVergessenButton instanceof AbstractButton) {
-                        AbstractButton btn = (AbstractButton) passwortVergessenButton;
+                        AbstractButton btn = passwortVergessenButton;
                         btn.setEnabled(true);
 
                     }
                 }else{
                     benutzernameTextField.setBackground(Color.lightGray);
                     if (passwortVergessenButton instanceof AbstractButton) {
-                        AbstractButton btn = (AbstractButton) passwortVergessenButton;
+                        AbstractButton btn = passwortVergessenButton;
                         btn.setEnabled(false);
 
                     }

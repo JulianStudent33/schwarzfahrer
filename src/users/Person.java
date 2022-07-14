@@ -1,12 +1,16 @@
 package src.users;
 
+import javax.swing.text.DateFormatter;
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.util.Date;
 
 public abstract class Person implements Serializable {
     //Attribute
     String name;
     String vorname;
-    String namenszusatz;
     String geschlecht;
 
     String geburtsdatum;
@@ -29,13 +33,6 @@ public abstract class Person implements Serializable {
         this.vorname = vorname;
     }
 
-    public String getNamenszusatz() {
-        return namenszusatz;
-    }
-
-    public void setNamenszusatz(String namenszusatz) {
-        this.namenszusatz = namenszusatz;
-    }
 
     public String getGeschlecht() {
         return geschlecht;
@@ -45,12 +42,16 @@ public abstract class Person implements Serializable {
         this.geschlecht = geschlecht;
     }
 
-    public String getGeburtsdatum() {
+    public String setGeburtsdatum(int Tag, int Monat, int Jahr) {
+        LocalDate date = LocalDate.of(Jahr, Monat, Tag);
+        String geburtsdatum = date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"));
+        System.out.println(geburtsdatum);
         return geburtsdatum;
     }
 
-    public void setGeburtsdatum(String geburtsdatum) {
-        this.geburtsdatum = geburtsdatum;
+    public String getGeburtsdatum() {
+
+        return this.geburtsdatum;
     }
 
     public String getTelefonnummer() {

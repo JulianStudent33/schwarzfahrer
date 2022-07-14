@@ -160,7 +160,7 @@ public class Foo {
         sfCount = sfList.size();
         sftCount = sftList.size();
     }
-    private static void getDirectoryData(){
+    public static void getDirectoryData(){
         //Check for Existance and fill lists and FileArrays (Dadurch werden automatisch die Count Variablen angepasst:
         /*
          * adminList
