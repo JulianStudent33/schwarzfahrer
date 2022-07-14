@@ -44,30 +44,12 @@ public class LoginGUI extends JFrame {
         setVisible(true);
         benutzernameTextField.setPlaceholder("Benutzername");
         passwortPasswordField.setPlaceholder("Passwort");
-        if (passwortVergessenButton instanceof AbstractButton) {
-            AbstractButton btn = (AbstractButton) passwortVergessenButton;
-            btn.setEnabled(false);
-
-        }
         benutzernameTextField.addMouseListener(new MouseAdapter() {
             public void mouseReleased(MouseEvent e){
                 benutzernameTextField.setText("");
             }
         });
-        /*KeyboardFocusManager manager = KeyboardFocusManager.getCurrentKeyboardFocusManager();
-        manager.addKeyEventDispatcher(e -> {
-                    switch (e.getID()){
-                        case KeyEvent.VK_ENTER :
-                            anmeldenButton.doClick();
-                            break;
-                        case KeyEvent.VK_ESCAPE:
-                            abbrechenButton.doClick();
-                            break;
-                        default: break;
-                        }
-                        return false;
-                    });
-*/
+
         benutzernameTextField.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
@@ -114,7 +96,7 @@ public class LoginGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                StartFensterGUI.openStartFenster();
+                start.startFenster();
             }
         });
 
