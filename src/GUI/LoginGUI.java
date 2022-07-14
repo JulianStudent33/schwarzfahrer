@@ -114,7 +114,7 @@ public class LoginGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                start.startFenster();
+                StartFensterGUI.openStartFenster();
             }
         });
 
@@ -131,9 +131,9 @@ public class LoginGUI extends JFrame {
                             System.out.println("Passwort stimmt");
                             Foo.currentAdmin = mb;
                             if (angemeldetBleibenCheckBox.isSelected()){
-                                Foo.angemeldetBleiben = true;
+                                Foo.saveAngemeldetBleiben(true);
                             }else{
-                                Foo.angemeldetBleiben = false;
+                                Foo.saveAngemeldetBleiben(false);
                             }
                             dispose();
                             AdminGUI.openAdminGUI();
@@ -149,7 +149,7 @@ public class LoginGUI extends JFrame {
                     }catch (IOException | ClassNotFoundException io){
                         dispose();
                         io.printStackTrace();
-                        start.startFenster();
+                        StartFensterGUI.openStartFenster();
                     }
                 }
                 if(Foo.konList.contains(Path.of(Foo.konPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())){
@@ -160,6 +160,11 @@ public class LoginGUI extends JFrame {
                         if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())){
                             System.out.println("Passwort stimmt");
                             Foo.currentKontrolleur = mb;
+                            if (angemeldetBleibenCheckBox.isSelected()){
+                                Foo.saveAngemeldetBleiben(true);
+                            }else{
+                                Foo.saveAngemeldetBleiben(false);
+                            }
                             dispose();
                             KontrolleurGUI.openKonGUI();
                             System.out.println("Starting Kontrolleur User-Interface.");
@@ -167,7 +172,7 @@ public class LoginGUI extends JFrame {
                     }catch (IOException | ClassNotFoundException io){
                         dispose();
                         io.printStackTrace();
-                        start.startFenster();
+                        StartFensterGUI.openStartFenster();
                     }
                 }
                 if(Foo.sbList.contains(Path.of(Foo.sbPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())){
@@ -178,6 +183,11 @@ public class LoginGUI extends JFrame {
                         if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())){
                             System.out.println("Passwort stimmt");
                             Foo.currentSachbearbeiter = mb;
+                            if (angemeldetBleibenCheckBox.isSelected()){
+                                Foo.saveAngemeldetBleiben(true);
+                            }else{
+                                Foo.saveAngemeldetBleiben(false);
+                            }
                             dispose();
                             SachbearbeiterGUI.openSBGUI();
                             System.out.println("Starting Sachbearbeiter User-Interface.");
@@ -185,7 +195,7 @@ public class LoginGUI extends JFrame {
                     }catch (IOException | ClassNotFoundException io){
                         dispose();
                         io.printStackTrace();
-                        start.startFenster();
+                        StartFensterGUI.openStartFenster();
                     }
                 }
 

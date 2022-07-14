@@ -155,6 +155,12 @@ public abstract class Mitarbeiter extends Person{
             Foo.currentSachbearbeiter = null;
             System.out.println("Sachbearbeiter ausgeloggt");
         }
-        Foo.angemeldet = false;
+        Foo.setAngemeldet(false);
+        try {
+            Foo.saveAngemeldetBleiben(false);
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
     }
 }
