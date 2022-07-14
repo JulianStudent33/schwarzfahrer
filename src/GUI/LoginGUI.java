@@ -161,9 +161,9 @@ public class LoginGUI extends JFrame {
                             System.out.println("Passwort stimmt");
                             Foo.currentKontrolleur = mb;
                             if (angemeldetBleibenCheckBox.isSelected()){
-                                //Foo.saveAngemeldetBleiben(true);
+                                Foo.saveAngemeldetBleiben(true);
                             }else{
-                                //Foo.saveAngemeldetBleiben(false);
+                                Foo.saveAngemeldetBleiben(false);
                             }
                             dispose();
                             KontrolleurGUI.openKonGUI();
