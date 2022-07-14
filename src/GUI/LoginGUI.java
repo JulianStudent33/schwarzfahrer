@@ -2,6 +2,7 @@ package src.GUI;
 
 import src.Foo;
 import src.GUI.Kontrolleur.KontrolleurGUI;
+import src.GUI.elements.PlaceholderPasswordField;
 import src.GUI.elements.PlaceholderTextField;
 import src.PersFile;
 import src.users.Administrator;
@@ -17,16 +18,14 @@ import java.util.Arrays;
 
 public class LoginGUI extends JFrame {
     private JPanel mainPanel;
-    private JPasswordField passwortPasswordField;
+    private PlaceholderPasswordField passwortPasswordField;
     private PlaceholderTextField benutzernameTextField;
     private JButton abbrechenButton;
     private JButton anmeldenButton;
     private JCheckBox angemeldetBleibenCheckBox;
     private JButton passwortVergessenButton;
 
-    public static void main(String[] args) {
-        LoginGUI gui = new LoginGUI();
-    }
+
 
     public LoginGUI(){
         setContentPane(mainPanel);
@@ -44,6 +43,7 @@ public class LoginGUI extends JFrame {
         }
         setVisible(true);
         benutzernameTextField.setPlaceholder("Benutzername");
+        passwortPasswordField.setPlaceholder("Passwort");
         if (passwortVergessenButton instanceof AbstractButton) {
             AbstractButton btn = (AbstractButton) passwortVergessenButton;
             btn.setEnabled(false);
@@ -131,9 +131,9 @@ public class LoginGUI extends JFrame {
                             System.out.println("Passwort stimmt");
                             Foo.currentAdmin = mb;
                             if (angemeldetBleibenCheckBox.isSelected()){
-                                Foo.saveAngemeldetBleiben(true);
+                                //Foo.saveAngemeldetBleiben(true);
                             }else{
-                                Foo.saveAngemeldetBleiben(false);
+                                //Foo.saveAngemeldetBleiben(false);
                             }
                             dispose();
                             AdminGUI.openAdminGUI();
@@ -161,9 +161,9 @@ public class LoginGUI extends JFrame {
                             System.out.println("Passwort stimmt");
                             Foo.currentKontrolleur = mb;
                             if (angemeldetBleibenCheckBox.isSelected()){
-                                Foo.saveAngemeldetBleiben(true);
+                                //Foo.saveAngemeldetBleiben(true);
                             }else{
-                                Foo.saveAngemeldetBleiben(false);
+                                //Foo.saveAngemeldetBleiben(false);
                             }
                             dispose();
                             KontrolleurGUI.openKonGUI();
@@ -184,9 +184,9 @@ public class LoginGUI extends JFrame {
                             System.out.println("Passwort stimmt");
                             Foo.currentSachbearbeiter = mb;
                             if (angemeldetBleibenCheckBox.isSelected()){
-                                Foo.saveAngemeldetBleiben(true);
+                                // Foo.saveAngemeldetBleiben(true);
                             }else{
-                                Foo.saveAngemeldetBleiben(false);
+                                // Foo.saveAngemeldetBleiben(false);
                             }
                             dispose();
                             SachbearbeiterGUI.openSBGUI();

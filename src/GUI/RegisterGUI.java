@@ -2,12 +2,15 @@ package src.GUI;
 
 import src.Foo;
 import src.GUI.Kontrolleur.KontrolleurGUI;
+import src.GUI.elements.MyDocumentFilter;
+import src.GUI.elements.PlaceholderPasswordField;
 import src.GUI.elements.PlaceholderTextField;
 import src.nickcode.pass;
 import src.users.Kontrolleur;
 import src.users.Sachbearbeiter;
 
 import javax.swing.*;
+import javax.swing.text.AbstractDocument;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
@@ -17,7 +20,7 @@ public class RegisterGUI extends JFrame{
     boolean pwBestaetigt = false;
     private JComboBox benutzerBox;
     private JComboBox geschlechtBox;
-    private JPasswordField passwortTextField;
+    private PlaceholderPasswordField passwortTextField;
     private JPanel mainPanel;
     private JButton registrierenButton;
     private JButton abbrechenButton;
@@ -46,17 +49,20 @@ public class RegisterGUI extends JFrame{
             throw new RuntimeException(e);
         }
         setVisible(true);
-        vornameTextField.setPlaceholder("Vorname");
-        nachnameTextField.setPlaceholder("Nachname");
-        benutzernameTextField.setPlaceholder("Benutzername");
+        vornameTextField.setPlaceholder("Vorname*");
+        nachnameTextField.setPlaceholder("Nachname*");
+        benutzernameTextField.setPlaceholder("Benutzername*");
+        passwortTextField.setPlaceholder("Passwort*");
         zusatznameTextField.setPlaceholder("Namenszusatz");
         telefonnummerTextField.setPlaceholder("Telefonnummer");
-        emailTextField.setPlaceholder("E-Mail Adresse");
+        emailTextField.setPlaceholder("E-Mail Adresse*");
         benutzernameTextField.addMouseListener(new MouseAdapter() {
             public void mouseReleased(MouseEvent e){
                 benutzernameTextField.setText("");
             }
         });
+
+        ((AbstractDocument)telefonnummerTextField.getDocument()).setDocumentFilter(new MyDocumentFilter());
         benutzernameTextField.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
@@ -106,7 +112,7 @@ public class RegisterGUI extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                StartFensterGUI.openStartFenster();
+                start.startFenster();
             }
         });
 
