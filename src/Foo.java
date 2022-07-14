@@ -90,7 +90,7 @@ public class Foo {
         getDirectoryData();
         if(adminList.isEmpty()){
             System.out.println("Erste Benutzung");
-            firstUsage = true; //First Usage true gesetzt, weil keine Directories mit Benutzern vorhanden sind,
+            firstUsage = true; //First Usage true gesetzt, weil keine Admins vorhanden sind,
             createDirectories();
         }else{
          refreshStats();
@@ -99,7 +99,7 @@ public class Foo {
         setAngemeldet(angemeldetBleiben);
         //Login Fenster -> als GUI implementieren
         if(!angemeldet){
-            StartFensterGUI.openStartFenster();
+            start.startFenster();
         } else if (currentAdmin!=null) {
             AdminGUI.openAdminGUI();
         } else if (currentKontrolleur!=null) {

@@ -1,6 +1,7 @@
 package src.GUI;
 
 import src.Foo;
+import src.GUI.elements.PlaceholderPasswordField;
 import src.GUI.elements.PlaceholderTextField;
 import src.nickcode.pass;
 import src.users.Administrator;
@@ -13,7 +14,7 @@ import java.io.IOException;
 public class firstRegistrationGUI extends JFrame {
     public boolean pwBestaetigt = false;
     private PlaceholderTextField benutzernameTextField;
-    private JPasswordField passwortTextField;
+    private PlaceholderPasswordField passwortTextField;
     private JButton registrierenButton;
     private JButton abbrechenButton;
     private JPanel mainPanel;
@@ -35,6 +36,7 @@ public class firstRegistrationGUI extends JFrame {
         }
     setVisible(true);
         benutzernameTextField.setPlaceholder("Benutzername");
+        passwortTextField.setPlaceholder("Passwort");
         benutzernameTextField.addMouseListener(new MouseAdapter() {
             public void mouseReleased(MouseEvent e){
                 benutzernameTextField.setText("");
@@ -88,7 +90,7 @@ public class firstRegistrationGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                StartFensterGUI.openStartFenster();
+                start.startFenster();
             }
         });
 

@@ -136,6 +136,8 @@ public class start extends JFrame implements ActionListener {
 
         // Add Befehle
 
+
+
         // Add für einzelnen Elemente innerhalb der Panels
         Text.add(label, BorderLayout.SOUTH);
         minitxt.add(label1, BorderLayout.CENTER);
@@ -151,7 +153,18 @@ public class start extends JFrame implements ActionListener {
         Background.add(regb, BorderLayout.SOUTH);
         this.add(Bot, BorderLayout.SOUTH);
 
+        //Button Anmelden Deaktivieren, wenn App zum ersten mal startet
 
+        if (Foo.firstUsage){
+            if (anm instanceof AbstractButton) {
+                AbstractButton btn = (AbstractButton) anm;
+                btn.setText("");
+                btn.setBackground(dark);
+                btn.setEnabled(false);
+
+
+            }
+        }
 
 
 
