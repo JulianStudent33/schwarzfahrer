@@ -2,8 +2,8 @@ package src;
 
 import src.GUI.LoginGUI;
 import src.GUI.RegisterGUI;
-import src.GUI.StartFensterGUI;
 import src.GUI.firstRegistrationGUI;
+import src.GUI.start;
 import src.users.Administrator;
 import src.users.Kontrolleur;
 import src.users.Sachbearbeiter;
@@ -110,7 +110,7 @@ public class Foo {
         * */
         //Login Fenster -> als GUI implementieren
         System.out.println("1 " + firstUsage);
-        StartFensterGUI.openStartFenster();
+        start.startFenster();
     }
 
 

@@ -88,7 +88,7 @@ public class firstRegistrationGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                StartFensterGUI.openStartFenster();
+                start.startFenster();
             }
         });
 
@@ -111,7 +111,7 @@ public class firstRegistrationGUI extends JFrame {
                                     AdminGUI.openAdminGUI();
                                 } catch (IOException ex) {
                                     dispose();
-                                    StartFensterGUI.openStartFenster();
+                                    start.startFenster();
                                     ex.printStackTrace();
                                     throw new RuntimeException(ex);
                                 }

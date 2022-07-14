@@ -4,23 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Erfassen GUI grobe Form für Schwarzfahrt erfassen.&#10;Registrierung GUI hat jetzt alle Inputfelder für Sachbearbeiter und Kontrolleur. Wird auch gleich so gespeichert.">
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/erfassen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/erfassen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/users/Administrator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/users/Administrator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/users/Kontrolleur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/users/Kontrolleur.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/users/Mitarbeiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/users/Mitarbeiter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/users/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/users/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/users/Sachbearbeiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/users/Sachbearbeiter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Kontrolleur/erfassen.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Kontrolleur/erfassen.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Kontrolleur/erfassen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Kontrolleur/erfassen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Foo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Foo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Kontrolleur/KontrolleurGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Kontrolleur/KontrolleurGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/LoginGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/StartFensterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/StartFensterGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/firstRegistrationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/firstRegistrationGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,24 +42,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "232",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/CBleck/Desktop/UNI Skripte/OOP/SchwarzfahrerProjekt/src/GUI",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;232&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/CBleck/Desktop/UNI Skripte/OOP/SchwarzfahrerProjekt/src/GUI&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\CBleck\Desktop\UNI Skripte\OOP\SchwarzfahrerProjekt\src\GUI" />

@@ -2,7 +2,7 @@ package src.GUI.Kontrolleur;
 
 import javax.swing.*;
 import src.Foo;
-import src.GUI.StartFensterGUI;
+import src.GUI.start;
 import src.users.Kontrolleur;
 
 import java.awt.*;
@@ -87,7 +87,7 @@ public class KontrolleurGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 currentUser.abmelden();
-                StartFensterGUI.openStartFenster();
+                start.startFenster();
             }
         });
     }

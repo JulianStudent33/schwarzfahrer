@@ -114,7 +114,7 @@ public class LoginGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                StartFensterGUI.openStartFenster();
+                start.startFenster();
             }
         });
 
@@ -149,7 +149,7 @@ public class LoginGUI extends JFrame {
                     }catch (IOException | ClassNotFoundException io){
                         dispose();
                         io.printStackTrace();
-                        StartFensterGUI.openStartFenster();
+                        start.startFenster();
                     }
                 }
                 if(Foo.konList.contains(Path.of(Foo.konPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())){
@@ -167,7 +167,7 @@ public class LoginGUI extends JFrame {
                     }catch (IOException | ClassNotFoundException io){
                         dispose();
                         io.printStackTrace();
-                        StartFensterGUI.openStartFenster();
+                        start.startFenster();
                     }
                 }
                 if(Foo.sbList.contains(Path.of(Foo.sbPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())){
@@ -185,7 +185,7 @@ public class LoginGUI extends JFrame {
                     }catch (IOException | ClassNotFoundException io){
                         dispose();
                         io.printStackTrace();
-                        StartFensterGUI.openStartFenster();
+                        start.startFenster();
                     }
                 }
 
