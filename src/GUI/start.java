@@ -10,8 +10,11 @@ import java.awt.event.ActionListener;
 
 public class start extends JFrame implements ActionListener {
 
+    //
     private JButton reg = new JButton();
     private JButton anm = new JButton();
+
+
     // Farbpalette
     private Color dark = new Color(44,44,44);
     private Color white = new Color(255,255,255);
@@ -65,7 +68,7 @@ public class start extends JFrame implements ActionListener {
         trenn.setBorder(border);
         trenn.setAlignmentY(BOTTOM_ALIGNMENT);
 
-        // Willkommen auf der Text
+        // "Willkommen auf der" Text
         JLabel label = new JLabel();
         label.setText("<html><body><center><p>Wilkommen auf der<br>Startoberfläche</p></center></body></html>");
         label.setForeground(white);
@@ -127,7 +130,6 @@ public class start extends JFrame implements ActionListener {
         this.setTitle("Schwarzfahrer Projekt");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
-        //this.setLayout(new BorderLayout());
         this.setLocationRelativeTo(null);
         this.setVisible(true);
         this.getContentPane().setBackground(dark);
@@ -148,6 +150,9 @@ public class start extends JFrame implements ActionListener {
         Background.add(minitxt, BorderLayout.CENTER);
         Background.add(regb, BorderLayout.SOUTH);
         this.add(Bot, BorderLayout.SOUTH);
+
+
+
 
 
 

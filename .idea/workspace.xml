@@ -4,17 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Erfassen GUI grobe Form für Schwarzfahrt erfassen.&#10;Registrierung GUI hat jetzt alle Inputfelder für Sachbearbeiter und Kontrolleur. Wird auch gleich so gespeichert.">
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GameGui.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Foo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Kontrolleur/erfassen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Kontrolleur/erfassen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/LoginGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameGui.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hallotest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/users/Mitarbeiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/Mitarbeiter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/Foo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/Foo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/erfassen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/erfassen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/StartFensterGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/StartFensterGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/StartFensterGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/StartFensterGUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/StartFensterGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/StartFensterGUI$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/StartFensterGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/StartFensterGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/start.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/start.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/users/Mitarbeiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/users/Mitarbeiter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/start.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -460,17 +464,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>167</line>
+          <line>164</line>
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>165</line>
+          <line>162</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>170</line>
+          <line>167</line>
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -490,17 +494,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>123</line>
+          <line>120</line>
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/LoginGUI.java</url>
-          <line>169</line>
+          <line>174</line>
           <option name="timeStamp" value="82" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/LoginGUI.java</url>
-          <line>167</line>
+          <line>172</line>
           <option name="timeStamp" value="83" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
