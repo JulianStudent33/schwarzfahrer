@@ -1,6 +1,7 @@
 package src.GUI;
 
 import src.Foo;
+import src.GUI.Kontrolleur.KontrolleurGUI;
 import src.GUI.elements.PlaceholderTextField;
 import src.nickcode.pass;
 import src.users.Kontrolleur;
@@ -14,12 +15,19 @@ import java.io.IOException;
 public class RegisterGUI extends JFrame{
     int selection;
     boolean pwBestaetigt = false;
-    private JComboBox comboBox1;
+    private JComboBox benutzerBox;
+    private JComboBox geschlechtBox;
     private JPasswordField passwortTextField;
     private JPanel mainPanel;
     private JButton registrierenButton;
     private JButton abbrechenButton;
     private PlaceholderTextField benutzernameTextField;
+    private PlaceholderTextField vornameTextField;
+    private PlaceholderTextField nachnameTextField;
+    private PlaceholderTextField zusatznameTextField;
+    private PlaceholderTextField telefonnummerTextField;
+    private PlaceholderTextField emailTextField;
+
 
 
     public RegisterGUI(){
@@ -28,7 +36,7 @@ public class RegisterGUI extends JFrame{
         setTitle("Registration");
         Point center = GraphicsEnvironment.getLocalGraphicsEnvironment().getCenterPoint();
         int width = 700;
-        int height = 200;
+        int height = 350;
         this.setBounds(center.x - width / 2, center.y - height / 2, width, height);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -38,7 +46,12 @@ public class RegisterGUI extends JFrame{
             throw new RuntimeException(e);
         }
         setVisible(true);
+        vornameTextField.setPlaceholder("Vorname");
+        nachnameTextField.setPlaceholder("Nachname");
         benutzernameTextField.setPlaceholder("Benutzername");
+        zusatznameTextField.setPlaceholder("Namenszusatz");
+        telefonnummerTextField.setPlaceholder("Telefonnummer");
+        emailTextField.setPlaceholder("E-Mail Adresse");
         benutzernameTextField.addMouseListener(new MouseAdapter() {
             public void mouseReleased(MouseEvent e){
                 benutzernameTextField.setText("");
@@ -100,7 +113,7 @@ public class RegisterGUI extends JFrame{
         registrierenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (comboBox1.getSelectedItem() == comboBox1.getItemAt(0)){
+                if (benutzerBox.getSelectedItem() == benutzerBox.getItemAt(0)){
                     selection = 1; //
                 }else{
                     selection = 2;
@@ -112,10 +125,17 @@ public class RegisterGUI extends JFrame{
                             if (pwConfirm.equals(passwortTextField.getText())) {
                                 JOptionPane.showMessageDialog(new JDialog(), "Passwort bestätigt");
                                 pwBestaetigt = true;
-                                System.out.println("Passwort get passwort: " + passwortTextField.getPassword());
+                                String s;
+                                if(zusatznameTextField.getText().isBlank()){
+                                    s = null;
+                                }else{
+                                    s = zusatznameTextField.getText();
+                                }
                                 try {
                                     switch (selection){
-                                        case 1: Foo.currentKontrolleur = new Kontrolleur(benutzernameTextField.getText(), passwortTextField.getText());
+                                        case 1: Foo.currentKontrolleur = new Kontrolleur(benutzernameTextField.getText(), passwortTextField.getText(),
+                                                vornameTextField.getText(), nachnameTextField.getText(), s, geschlechtBox.getSelectedItem().toString(),
+                                                telefonnummerTextField.getText(), emailTextField.getText());
                                         Foo.angemeldet = true;
                                         dispose();
                                         KontrolleurGUI.openKonGUI();

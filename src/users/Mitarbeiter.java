@@ -15,6 +15,7 @@ public abstract class Mitarbeiter extends Person{
     String vorname;
     String namenszusatz;
     String geschlecht;
+    String geburtsdatum;
     String telefonnummer;
     String email;
     * */
@@ -52,37 +53,21 @@ public abstract class Mitarbeiter extends Person{
 
 
 
-
-    public boolean login(){
-        //Login Window
-        boolean correctPW = false;
-        try{
-        String input = JOptionPane.showInputDialog("Gib dein Passwort ein.");
-        if(input==null){
-            Foo.okWindow();
-            return false;
+    public void display(){
+        System.out.println(getVorname() + " " + getNamenszusatz() + " " + getName());
+        System.out.println("Benutzername: " + getBenutzername() + " (" + getMitarbeiternummer() + ")");
+        System.out.println("Geschlecht: " + getGeschlecht());
+        System.out.println("Geboren am " + getGeburtsdatum());
+        System.out.println("Telefonnummer: " + getTelefonnummer());
+        System.out.println("E-Mail: " + getEmail());
+        System.out.println("Dateipfad: " + getUserFile().toPath());
+        if (isAdmin){
+            System.out.println("Ist Administrator");
+        } else if (isKontrolleur) {
+            System.out.println("Ist Kontrolleur");
+        } else if (isSachbearbeiter) {
+            System.out.println("Ist Sachbearbeiter");
         }
-        if(!input.equals(this.passwort)){
-            while (correctPW == false){
-                String newInput = JOptionPane.showInputDialog("Falsches Passwort. Nochmal probieren?");
-                if(newInput==null){
-                    Foo.okWindow();
-                    return false;
-                }
-                if(newInput.equals(this.passwort)){
-                    correctPW = true;
-                }
-            }
-            return correctPW;
-        }else {
-            correctPW = true;
-            System.out.println("Passwort korrekt.");
-            return correctPW;
-        }}catch (Exception e){
-            System.err.println(e.getMessage());
-            return false;
-        }
-
     }
 
     public String getMitarbeiternummer(){
@@ -125,6 +110,38 @@ public abstract class Mitarbeiter extends Person{
 
     public void setBenutzerTyp(String benutzerTyp) {
         this.benutzerTyp = benutzerTyp;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
+    }
+
+    public boolean isKontrolleur() {
+        return isKontrolleur;
+    }
+
+    public void setKontrolleur(boolean kontrolleur) {
+        isKontrolleur = kontrolleur;
+    }
+
+    public boolean isSachbearbeiter() {
+        return isSachbearbeiter;
+    }
+
+    public void setSachbearbeiter(boolean sachbearbeiter) {
+        isSachbearbeiter = sachbearbeiter;
+    }
+
+    public File getUserFile() {
+        return userFile;
+    }
+
+    public void setUserFile(File userFile) {
+        this.userFile = userFile;
     }
 
     public void abmelden(){

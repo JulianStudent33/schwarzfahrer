@@ -23,19 +23,26 @@ public class Administrator extends Mitarbeiter{
 
 
     //Konstruktoren
-    public Administrator(String name, String vorname, String namenszusatz, String geschlecht,
-                         String telefonnummer, String email, String benutzername, String passwort) throws IOException {
-        this.name = name;
+    public Administrator(String benutzername, String passwort, String vorname, String nachname, String namenszusatz, String geschlecht, String telefonnummer, String email) throws IOException {
+        this.isAdmin = true;
+        this.mitarbeiternummer = "A" + Foo.adminCount++;
+        this.benutzername = benutzername;
+        this.passwort = passwort;
         this.vorname = vorname;
-        this.namenszusatz = namenszusatz;
+        this.name = nachname;
+        if(namenszusatz==null){
+            this.namenszusatz = "";
+        }else{
+            this.namenszusatz = namenszusatz;
+        }
         this.geschlecht = geschlecht;
         this.telefonnummer = telefonnummer;
         this.email = email;
-        this.mitarbeiternummer = "A" + Foo.adminCount+1;
-        getMitarbeiternummer();
-        this.benutzername = benutzername;
-        this.passwort = passwort;
+        this.userFile = Path.of
+                (Foo.adminPath + Foo.fileSeperator + benutzername +  ".mb").toFile();
+        display();
         createUserFile();
+        System.out.println("Administrator erstellt.");
     }
     public Administrator(String benutzername, String passwort) throws IOException {
         this.isAdmin = true;
