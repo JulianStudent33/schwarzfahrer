@@ -15,8 +15,6 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.GregorianCalendar;
-import java.util.concurrent.TimeUnit;
 
 public class RegisterGUI extends JFrame{
     int rollenSelection;
@@ -41,6 +39,8 @@ public class RegisterGUI extends JFrame{
     private JSpinner yearSpinner;
     SizeFilter nameFilter; //20
     NumberFilter numberFilter;
+    LetterFilter letterFilter;
+    JTextFieldLimit nameFieldLimit;
 
 
 
@@ -62,24 +62,25 @@ public class RegisterGUI extends JFrame{
 
         nameFilter = new SizeFilter(20);
         numberFilter = new NumberFilter();
-        ChainableFilter chainNameFilter= new ChainableFilter();
-        chainNameFilter.addFilter(nameFilter);
-        chainNameFilter.addFilter(numberFilter);
+        letterFilter = new LetterFilter();
+        nameFieldLimit = new JTextFieldLimit(20);
+
+        vornameTextField.setDocument(new JTextFieldLimit(20));
+        nachnameTextField.setDocument(new JTextFieldLimit(20));
+        benutzernameTextField.setDocument(new JTextFieldLimit(20));
+        telefonnummerTextField.setDocument(new JTextFieldLimit(15));
+        ((AbstractDocument)vornameTextField.getDocument()).setDocumentFilter(letterFilter);
+        ((AbstractDocument)nachnameTextField.getDocument()).setDocumentFilter(letterFilter);
         ((AbstractDocument)telefonnummerTextField.getDocument()).setDocumentFilter(numberFilter);
 
-        ((AbstractDocument)vornameTextField.getDocument()).setDocumentFilter(nameFilter);
-        ((AbstractDocument)nachnameTextField.getDocument()).setDocumentFilter(nameFilter);
-        ((AbstractDocument)benutzernameTextField.getDocument()).setDocumentFilter(nameFilter);
 
-
-        vornameTextField.setPlaceholder("Vorname*");
-        nachnameTextField.setPlaceholder("Nachname*");
-        nachnameTextField.setPreferredSize(new Dimension(30, 10));
-        benutzernameTextField.setPlaceholder("Benutzername*");
-        passwortTextField.setPlaceholder("Passwort*");
+        vornameTextField.setPlaceholder("*Vorname*");
+        nachnameTextField.setPlaceholder("*Nachname*");
+        benutzernameTextField.setPlaceholder("*Benutzername*");
+        passwortTextField.setPlaceholder("*Passwort*");
         telefonnummerTextField.setPlaceholder("Telefonnummer");
 
-        emailTextField.setPlaceholder("E-Mail Adresse*");
+        emailTextField.setPlaceholder("*E-Mail Adresse*");
         daySpinner.setValue(1);
         monthSpinner.setValue(1);
         yearSpinner.setValue(2000);
@@ -187,17 +188,7 @@ public class RegisterGUI extends JFrame{
                 }
             }
         });
-        geschlechtBox.addFocusListener(new FocusListener() {
-            @Override
-            public void focusGained(FocusEvent e) {
 
-            }
-
-            @Override
-            public void focusLost(FocusEvent e) {
-
-            }
-        });
         benutzernameTextField.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
@@ -254,65 +245,39 @@ public class RegisterGUI extends JFrame{
         registrierenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (benutzerBox.getSelectedItem() == benutzerBox.getItemAt(0)){
+                if (benutzerBox.getSelectedItem() == benutzerBox.getItemAt(0)) {
                     rollenSelection = 1; //
-                }else{
+                } else {
                     rollenSelection = 2;
                 }
 
-                if(pflichtfelderAusgefüllt){
-
-                }
-                if (!benutzernameTextField.getText().isBlank()) {
-
-                    if (!Foo.userExistiertBereits(benutzernameTextField.getText())) {
-
-                        if (pass.passwordOk(passwortTextField.getText())) {
-                            String pwConfirm = JOptionPane.showInputDialog("Bestätige dein Passwort");
-
-                            if (pwConfirm.equals(passwortTextField.getText())) {
-                                JOptionPane.showMessageDialog(new JDialog(), "Passwort bestätigt");
-                                pwBestaetigt = true;
-
-                                try {
-                                    switch (rollenSelection){
-                                        case 1: Foo.currentKontrolleur = new Kontrolleur(benutzernameTextField.getText(), passwortTextField.getText(),
-                                                vornameTextField.getText(), nachnameTextField.getText(), geschlechtBox.getSelectedItem().toString(),
-                                                telefonnummerTextField.getText(), emailTextField.getText());
-                                        Foo.angemeldet = true;
-                                        dispose();
-                                        KontrolleurGUI.openKonGUI();
-                                        break;
-                                        case 2: Foo.currentSachbearbeiter = new Sachbearbeiter(benutzernameTextField.getText(), passwortTextField.getText());
-                                        Foo.angemeldet = true;
-                                        dispose();
-                                        SachbearbeiterGUI.openSBGUI();
-                                        break;
-                                    }
-                                } catch (IOException ex) {
-                                    dispose();
-                                    start.startFenster();
-                                    ex.printStackTrace();
-                                    throw new RuntimeException(ex);
-                                }
-                            }else{
-                                JOptionPane.showMessageDialog(new JDialog(), "Keine Übereinstimmung!");
-                            }
-                        }else{
-                            JOptionPane.showMessageDialog(new JDialog(), "Passwort erfüllt nicht die formalen Bedingungen!");
+                if (pflichtAusgefüllt()) {
+                    try {
+                        switch (rollenSelection) {
+                            case 1:
+                                Foo.currentKontrolleur = new Kontrolleur(benutzernameTextField.getText(), passwortTextField.getText(),
+                                        vornameTextField.getText(), nachnameTextField.getText(), geschlechtBox.getSelectedItem().toString(),
+                                        telefonnummerTextField.getText(), emailTextField.getText());
+                                Foo.angemeldet = true;
+                                dispose();
+                                KontrolleurGUI.openKonGUI();
+                                break;
+                            case 2:
+                                Foo.currentSachbearbeiter = new Sachbearbeiter(benutzernameTextField.getText(), passwortTextField.getText());
+                                Foo.angemeldet = true;
+                                dispose();
+                                SachbearbeiterGUI.openSBGUI();
+                                break;
                         }
-                    } else {
-                        benutzernameTextField.setText("");
-                        benutzernameTextField.setPlaceholder("Benutzername bereits vergeben");
+                    } catch (IOException ex) {
+                        dispose();
+                        start.startFenster();
+                        ex.printStackTrace();
+                        throw new RuntimeException(ex);
                     }
-                } else {
-                    benutzernameTextField.setBackground(Foo.red);
-                    benutzernameTextField.setPlaceholder("Ein Benutzername braucht Zeichen :)");
                 }
             }
         });
-
-
         setVisible(true);
     }
     private boolean pflichtAusgefüllt(){
@@ -323,7 +288,6 @@ public class RegisterGUI extends JFrame{
                 if (!emailTextField.getText().isBlank()) {
 
                     if(emailTextField.getText().contains("@")) {
-
 
                         if (!benutzernameTextField.getText().isBlank()) {
 
