@@ -40,6 +40,7 @@ public class RegisterGUI extends JFrame{
     private JSpinner monthSpinner;
     private JSpinner yearSpinner;
     SizeFilter nameFilter; //20
+    NumberFilter numberFilter;
 
 
 
@@ -58,7 +59,19 @@ public class RegisterGUI extends JFrame{
         } catch (UnsupportedLookAndFeelException e) {
             throw new RuntimeException(e);
         }
-        setVisible(true);
+
+        nameFilter = new SizeFilter(20);
+        numberFilter = new NumberFilter();
+        ChainableFilter chainNameFilter= new ChainableFilter();
+        chainNameFilter.addFilter(nameFilter);
+        chainNameFilter.addFilter(numberFilter);
+        ((AbstractDocument)telefonnummerTextField.getDocument()).setDocumentFilter(numberFilter);
+
+        ((AbstractDocument)vornameTextField.getDocument()).setDocumentFilter(nameFilter);
+        ((AbstractDocument)nachnameTextField.getDocument()).setDocumentFilter(nameFilter);
+        ((AbstractDocument)benutzernameTextField.getDocument()).setDocumentFilter(nameFilter);
+
+
         vornameTextField.setPlaceholder("Vorname*");
         nachnameTextField.setPlaceholder("Nachname*");
         nachnameTextField.setPreferredSize(new Dimension(30, 10));
@@ -67,7 +80,6 @@ public class RegisterGUI extends JFrame{
         telefonnummerTextField.setPlaceholder("Telefonnummer");
 
         emailTextField.setPlaceholder("E-Mail Adresse*");
-
         daySpinner.setValue(1);
         monthSpinner.setValue(1);
         yearSpinner.setValue(2000);
@@ -156,8 +168,8 @@ public class RegisterGUI extends JFrame{
 
 
         */
-        NumberFilter numberFilter = new NumberFilter();
-        ((AbstractDocument)telefonnummerTextField.getDocument()).setDocumentFilter(numberFilter);
+
+
 
         benutzerBox.addActionListener(new ActionListener() {
             @Override
@@ -301,7 +313,7 @@ public class RegisterGUI extends JFrame{
         });
 
 
-
+        setVisible(true);
     }
     private boolean pflichtAusgefüllt(){
         if (!vornameTextField.getText().isBlank()) {
