@@ -39,6 +39,8 @@ public class RegisterGUI extends JFrame{
     private JSpinner daySpinner;
     private JSpinner monthSpinner;
     private JSpinner yearSpinner;
+    SizeFilter nameFilter; //20
+
 
 
     public RegisterGUI(){
