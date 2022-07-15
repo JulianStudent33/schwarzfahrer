@@ -113,7 +113,7 @@ public class firstRegistrationGUI extends JFrame {
                                     AdminGUI.openAdminGUI();
                                 } catch (IOException ex) {
                                     dispose();
-                                    StartFensterGUI.openStartFenster();
+                                    start.startFenster();
                                     ex.printStackTrace();
                                     throw new RuntimeException(ex);
                                 }

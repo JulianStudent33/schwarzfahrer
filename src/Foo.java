@@ -111,7 +111,7 @@ public class Foo {
     }
 
 
-    //StartFensterGUI IMPLEMENTIEREN
+
 
     private static void createDirectories(){
         if(savesDir.mkdir()){

@@ -33,7 +33,7 @@ public class Kontrolleur extends Mitarbeiter{
         System.out.println("Gespeichert: " + this.userFile);
     }
 
-    public Kontrolleur(String benutzername, String passwort, String vorname, String nachname, String namenszusatz, String geschlecht, String telefonnummer, String email) throws IOException {
+    public Kontrolleur(String benutzername, String passwort, String vorname, String nachname, String geschlecht, String telefonnummer, String email) throws IOException {
         this.isKontrolleur = true;
         this.mitarbeiternummer = "K" + Foo.konCount++;
         this.benutzername = benutzername;

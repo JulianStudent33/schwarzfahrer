@@ -13,7 +13,6 @@ public abstract class Mitarbeiter extends Person{
     /* Attribute:
     String name;
     String vorname;
-    String namenszusatz;
     String geschlecht;
     String geburtsdatum;
     String telefonnummer;

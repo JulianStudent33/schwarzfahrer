@@ -181,13 +181,16 @@ public class start extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==reg) {
             if (Foo.firstUsage){
+                System.out.println("Öffne First-Register-GUI");
                 dispose();
                 firstRegistrationGUI.firstRegister();
             }else{
+                System.out.println("Öffne Register-Window");
                 dispose();
                 RegisterGUI.register();
             }
         } else if (e.getSource()==anm) {
+            System.out.println("Öffne Login-Window");
             dispose();
             LoginGUI.openLogin();
         }

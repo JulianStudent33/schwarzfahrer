@@ -6,32 +6,36 @@
   <component name="ChangeListManager">
     <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="neu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/Foo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/Foo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/KontrolleurGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/KontrolleurGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/KontrolleurGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/KontrolleurGUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/KontrolleurGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/KontrolleurGUI$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/KontrolleurGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/KontrolleurGUI$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/KontrolleurGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/KontrolleurGUI$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/KontrolleurGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/KontrolleurGUI$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/KontrolleurGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/KontrolleurGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$8.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$6.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/start.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/start.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/users/Mitarbeiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/users/Mitarbeiter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/users/Administrator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/users/Administrator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/users/Kontrolleur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/users/Kontrolleur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/users/Sachbearbeiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/users/Sachbearbeiter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Foo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Foo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Kontrolleur/KontrolleurGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Kontrolleur/KontrolleurGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/LoginGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/RegisterGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterGUI.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/firstRegistrationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/firstRegistrationGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/start.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/users/Administrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/Administrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/users/Kontrolleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/Kontrolleur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/users/Mitarbeiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/Mitarbeiter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/users/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/users/Sachbearbeiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/Sachbearbeiter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +56,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -71,7 +76,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;43&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;238&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;232&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/CBleck/Desktop/UNI Skripte/OOP/SchwarzfahrerProjekt/src/GUI&quot;,
@@ -138,12 +143,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="erfassen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.GUI.Kontrolleur.erfassen" />
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.Test" />
       <module name="PigPen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="src.GUI.Kontrolleur.*" />
+          <option name="PATTERN" value="src.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -167,10 +172,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Test" />
         <item itemvalue="Application.src.GUI.Kontrolleur.KontrolleurGUI" />
         <item itemvalue="Application.MenuButton" />
         <item itemvalue="Application.GameGui" />
-        <item itemvalue="Application.erfassen" />
       </list>
     </recent_temporary>
   </component>
@@ -219,7 +224,9 @@
       <workItem from="1657641492772" duration="1570000" />
       <workItem from="1657696410698" duration="22600000" />
       <workItem from="1657731578260" duration="3880000" />
-      <workItem from="1657803381580" duration="4440000" />
+      <workItem from="1657803381580" duration="5339000" />
+      <workItem from="1657870884233" duration="3971000" />
+      <workItem from="1657874911454" duration="3694000" />
     </task>
     <task id="LOCAL-00001" summary="du ziegee">
       <created>1655906843233</created>
@@ -424,7 +431,35 @@
       <option name="project" value="LOCAL" />
       <updated>1657805507904</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="neu">
+      <created>1657808072166</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1657808072166</updated>
+    </task>
+    <task id="LOCAL-00031" summary="neu">
+      <created>1657808097596</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1657808097596</updated>
+    </task>
+    <task id="LOCAL-00032" summary="neu">
+      <created>1657808107522</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1657808107522</updated>
+    </task>
+    <task id="LOCAL-00033" summary="neu">
+      <created>1657871533914</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1657871533914</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -527,6 +562,15 @@
           <properties class="java.lang.IllegalMonitorStateException" package="java.lang" />
           <option name="timeStamp" value="80" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Test.java</url>
+          <line>12</line>
+          <properties class="src.Test" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
