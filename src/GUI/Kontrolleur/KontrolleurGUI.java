@@ -2,7 +2,6 @@ package src.GUI.Kontrolleur;
 
 import javax.swing.*;
 import src.Foo;
-import src.GUI.StartFensterGUI;
 import src.GUI.start;
 import src.users.Kontrolleur;
 
