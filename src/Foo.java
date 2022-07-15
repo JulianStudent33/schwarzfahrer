@@ -97,7 +97,7 @@ public class Foo {
         }
         angemeldetBleiben = getAngemeldetBleiben();
         setAngemeldet(angemeldetBleiben);
-        //Login Fenster -> als GUI implementieren
+
         if(!angemeldet){
             start.startFenster();
         } else if (currentAdmin!=null) {
@@ -112,42 +112,6 @@ public class Foo {
 
 
     //StartFensterGUI IMPLEMENTIEREN
-    public void startFenster() throws IOException, ClassNotFoundException {
-        //Register oder Login
-
-        JOptionPane myOptionPane = new JOptionPane("Select",
-                JOptionPane.QUESTION_MESSAGE, JOptionPane.YES_NO_OPTION,
-                null, optionsUse, optionsUse[0]);
-        JDialog registerLoginDialog = myOptionPane.createDialog(null, "Black Rides");
-        //Bei der ersten Benutzung gibt es keine "Login"-Option
-        //Implementiert ihr im GUI
-        if(firstUsage) {
-            inactivateOption(registerLoginDialog, optionsUse[1]);
-        }
-        registerLoginDialog.setModal(true);
-        registerLoginDialog.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        registerLoginDialog.setVisible(true);
-        Object result = myOptionPane.getValue();
-
-        if(result.equals(optionsUse[0])){
-            if(firstUsage){
-                firstRegistrationGUI.firstRegister();
-            }else{
-                RegisterGUI.register();
-            }
-
-        }else if (result.equals(optionsUse[1])){
-            LoginGUI.openLogin();
-
-        }else if(result == null){
-            okWindow();
-            System.exit(120);
-        }else{
-            okWindow();
-            System.exit(121);
-        }
-    }
-
 
     private static void createDirectories(){
         if(savesDir.mkdir()){
@@ -196,7 +160,7 @@ public class Foo {
         sfCount = sfList.size();
         sftCount = sftList.size();
     }
-    private static void getDirectoryData(){
+    public static void getDirectoryData(){
         //Check for Existance and fill lists and FileArrays (Dadurch werden automatisch die Count Variablen angepasst:
         /*
          * adminList
@@ -282,21 +246,6 @@ public class Foo {
         System.out.println("User in Total: " + userCount);
     }
 
-    private static void inactivateOption(Container container, String text) {
-        Component[] comps = container.getComponents();
-        for (Component comp : comps) {
-            if (comp instanceof AbstractButton) {
-                AbstractButton btn = (AbstractButton) comp;
-                if (btn.getActionCommand().equals(text)) {
-                    btn.setEnabled(false);
-                    return;
-                }
-            } else if (comp instanceof Container) {
-                inactivateOption((Container) comp, text);
-            }
-        }
-
-    }
     public static boolean userExistiertBereits(String eingabe){
         getDirectoryData();
         if (adminList.contains(Path.of(adminPath + fileSeperator + eingabe + ".mb").toFile()) ||

@@ -45,7 +45,7 @@ public class LoginGUI extends JFrame {
         benutzernameTextField.setPlaceholder("Benutzername");
         passwortPasswordField.setPlaceholder("Passwort");
         if (passwortVergessenButton instanceof AbstractButton) {
-            AbstractButton btn = (AbstractButton) passwortVergessenButton;
+            AbstractButton btn = passwortVergessenButton;
             btn.setEnabled(false);
 
         }
@@ -54,20 +54,7 @@ public class LoginGUI extends JFrame {
                 benutzernameTextField.setText("");
             }
         });
-        /*KeyboardFocusManager manager = KeyboardFocusManager.getCurrentKeyboardFocusManager();
-        manager.addKeyEventDispatcher(e -> {
-                    switch (e.getID()){
-                        case KeyEvent.VK_ENTER :
-                            anmeldenButton.doClick();
-                            break;
-                        case KeyEvent.VK_ESCAPE:
-                            abbrechenButton.doClick();
-                            break;
-                        default: break;
-                        }
-                        return false;
-                    });
-*/
+
         benutzernameTextField.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
@@ -85,14 +72,14 @@ public class LoginGUI extends JFrame {
                 if (Foo.userExistiertBereits(benutzernameTextField.getText())){
                     benutzernameTextField.setBackground(Foo.green);
                     if (passwortVergessenButton instanceof AbstractButton) {
-                        AbstractButton btn = (AbstractButton) passwortVergessenButton;
+                        AbstractButton btn = passwortVergessenButton;
                         btn.setEnabled(true);
 
                     }
                 }else{
                     benutzernameTextField.setBackground(Color.lightGray);
                     if (passwortVergessenButton instanceof AbstractButton) {
-                        AbstractButton btn = (AbstractButton) passwortVergessenButton;
+                        AbstractButton btn = passwortVergessenButton;
                         btn.setEnabled(false);
 
                     }
@@ -114,7 +101,7 @@ public class LoginGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                StartFensterGUI.openStartFenster();
+                start.startFenster();
             }
         });
 
@@ -161,9 +148,9 @@ public class LoginGUI extends JFrame {
                             System.out.println("Passwort stimmt");
                             Foo.currentKontrolleur = mb;
                             if (angemeldetBleibenCheckBox.isSelected()){
-                                //Foo.saveAngemeldetBleiben(true);
+                                Foo.saveAngemeldetBleiben(true);
                             }else{
-                                //Foo.saveAngemeldetBleiben(false);
+                                Foo.saveAngemeldetBleiben(false);
                             }
                             dispose();
                             KontrolleurGUI.openKonGUI();

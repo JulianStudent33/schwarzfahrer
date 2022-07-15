@@ -136,7 +136,8 @@ public class start extends JFrame implements ActionListener {
 
         // Add Befehle
 
-
+        // Daten aktualisieren
+        Foo.getDirectoryData();
 
         // Add für einzelnen Elemente innerhalb der Panels
         Text.add(label, BorderLayout.SOUTH);

@@ -53,7 +53,6 @@ public class RegisterGUI extends JFrame{
         nachnameTextField.setPlaceholder("Nachname*");
         benutzernameTextField.setPlaceholder("Benutzername*");
         passwortTextField.setPlaceholder("Passwort*");
-        zusatznameTextField.setPlaceholder("Namenszusatz");
         telefonnummerTextField.setPlaceholder("Telefonnummer");
         emailTextField.setPlaceholder("E-Mail Adresse*");
         benutzernameTextField.addMouseListener(new MouseAdapter() {
@@ -63,6 +62,26 @@ public class RegisterGUI extends JFrame{
         });
 
         ((AbstractDocument)telefonnummerTextField.getDocument()).setDocumentFilter(new MyDocumentFilter());
+
+        geschlechtBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (geschlechtBox.getItemAt(0).equals("Gender")){
+                    geschlechtBox.removeItemAt(0);
+                }
+            }
+        });
+        geschlechtBox.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+
+            }
+        });
         benutzernameTextField.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {

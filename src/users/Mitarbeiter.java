@@ -54,7 +54,7 @@ public abstract class Mitarbeiter extends Person{
 
 
     public void display(){
-        System.out.println(getVorname() + " " + getNamenszusatz() + " " + getName());
+        System.out.println(getVorname() + " " + getName());
         System.out.println("Benutzername: " + getBenutzername() + " (" + getMitarbeiternummer() + ")");
         System.out.println("Geschlecht: " + getGeschlecht());
         System.out.println("Geboren am " + getGeburtsdatum());

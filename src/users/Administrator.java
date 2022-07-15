@@ -30,11 +30,6 @@ public class Administrator extends Mitarbeiter{
         this.passwort = passwort;
         this.vorname = vorname;
         this.name = nachname;
-        if(namenszusatz==null){
-            this.namenszusatz = "";
-        }else{
-            this.namenszusatz = namenszusatz;
-        }
         this.geschlecht = geschlecht;
         this.telefonnummer = telefonnummer;
         this.email = email;
