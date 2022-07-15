@@ -27,7 +27,6 @@ public class RegisterGUI extends JFrame{
     private PlaceholderTextField benutzernameTextField;
     private PlaceholderTextField vornameTextField;
     private PlaceholderTextField nachnameTextField;
-    private PlaceholderTextField zusatznameTextField;
     private PlaceholderTextField telefonnummerTextField;
     private PlaceholderTextField emailTextField;
 
@@ -62,7 +61,14 @@ public class RegisterGUI extends JFrame{
         });
 
         ((AbstractDocument)telefonnummerTextField.getDocument()).setDocumentFilter(new MyDocumentFilter());
-
+        benutzerBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (benutzerBox.getItemAt(0).equals("Rolle")){
+                    benutzerBox.removeItemAt(0);
+                }
+            }
+        });
         geschlechtBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -150,16 +156,11 @@ public class RegisterGUI extends JFrame{
                             if (pwConfirm.equals(passwortTextField.getText())) {
                                 JOptionPane.showMessageDialog(new JDialog(), "Passwort bestätigt");
                                 pwBestaetigt = true;
-                                String s;
-                                if(zusatznameTextField.getText().isBlank()){
-                                    s = null;
-                                }else{
-                                    s = zusatznameTextField.getText();
-                                }
+
                                 try {
                                     switch (selection){
                                         case 1: Foo.currentKontrolleur = new Kontrolleur(benutzernameTextField.getText(), passwortTextField.getText(),
-                                                vornameTextField.getText(), nachnameTextField.getText(), s, geschlechtBox.getSelectedItem().toString(),
+                                                vornameTextField.getText(), nachnameTextField.getText(), geschlechtBox.getSelectedItem().toString(),
                                                 telefonnummerTextField.getText(), emailTextField.getText());
                                         Foo.angemeldet = true;
                                         dispose();
