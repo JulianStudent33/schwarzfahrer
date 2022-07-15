@@ -62,7 +62,7 @@ public class NumberFilter extends DocumentFilter {
     public boolean isNumeric(String str) {
         try {
             int x = Integer.parseInt(str);
-            System.out.println(x);
+
             return true;
         } catch (NumberFormatException nFE) {
             System.out.println("Not an Integer");

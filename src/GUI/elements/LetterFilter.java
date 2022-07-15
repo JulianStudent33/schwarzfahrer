@@ -13,9 +13,6 @@ public class LetterFilter extends DocumentFilter {
     public LetterFilter() {
     }
 
-    public LetterFilter(int decimals, boolean negatives) {
-
-    }
 
     protected boolean accept(FilterBypass fb, int offset, String str) throws BadLocationException {
         boolean accept = true;
@@ -51,10 +48,9 @@ public class LetterFilter extends DocumentFilter {
     public boolean isNotNumeric(String str) {
         try {
             int x = Integer.parseInt(str);
-            System.out.println(x);
+            System.out.println("Ist ein Integer!");
             return false;
         } catch (NumberFormatException nFE) {
-            System.out.println("Not an Integer");
             return true;
         }
     }

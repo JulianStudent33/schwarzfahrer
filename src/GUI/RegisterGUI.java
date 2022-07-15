@@ -257,7 +257,8 @@ public class RegisterGUI extends JFrame{
                             case 1:
                                 Foo.currentKontrolleur = new Kontrolleur(benutzernameTextField.getText(), passwortTextField.getText(),
                                         vornameTextField.getText(), nachnameTextField.getText(), geschlechtBox.getSelectedItem().toString(),
-                                        telefonnummerTextField.getText(), emailTextField.getText());
+                                        telefonnummerTextField.getText(), emailTextField.getText(), Integer.parseInt(tagField.getText()),
+                                        Integer.parseInt(monatField.getText()), Integer.parseInt(jahrField.getText()));
                                 Foo.angemeldet = true;
                                 dispose();
                                 KontrolleurGUI.openKonGUI();
@@ -280,67 +281,86 @@ public class RegisterGUI extends JFrame{
         });
         setVisible(true);
     }
-    private boolean pflichtAusgefüllt(){
-        if (!vornameTextField.getText().isBlank()) {
+    private boolean pflichtAusgefüllt() {
+        if (benutzerBox.getItemCount() == 2) {
+            benutzerBox.setBackground(Color.white);
 
-            if (!nachnameTextField.getText().isBlank()) {
+            if (geschlechtBox.getItemCount() == 3) {
+                geschlechtBox.setBackground(Color.white);
 
-                if (!emailTextField.getText().isBlank()) {
+                if (!vornameTextField.getText().isBlank()) {
+                    vornameTextField.setBackground(Color.white);
 
-                    if(emailTextField.getText().contains("@")) {
+                    if (!nachnameTextField.getText().isBlank()) {
+                        nachnameTextField.setBackground(Color.white);
 
-                        if (!benutzernameTextField.getText().isBlank()) {
+                        if (!emailTextField.getText().isBlank()) {
 
-                            if (!Foo.userExistiertBereits(benutzernameTextField.getText())) {
+                            if (emailTextField.getText().contains("@")) {
+                                emailTextField.setBackground(Color.white);
 
-                                if (pass.passwordOk(passwortTextField.getText())) {
-                                    String pwConfirm = JOptionPane.showInputDialog("Bestätige dein Passwort");
+                                if (!benutzernameTextField.getText().isBlank()) {
 
-                                    if (pwConfirm.equals(passwortTextField.getText())) {
-                                        JOptionPane.showMessageDialog(new JDialog(), "Passwort bestätigt");
-                                        pwBestaetigt = true;
-                                        return true;
+                                    if (!Foo.userExistiertBereits(benutzernameTextField.getText())) {
+                                        benutzernameTextField.setBackground(Color.white);
+
+                                        if (pass.passwordOk(passwortTextField.getText())) {
+                                            String pwConfirm = JOptionPane.showInputDialog("Bestätige dein Passwort");
+
+                                            if (pwConfirm.equals(passwortTextField.getText())) {
+                                                passwortTextField.setBackground(Color.white);
+                                                JOptionPane.showMessageDialog(new JDialog(), "Passwort bestätigt");
+                                                pwBestaetigt = true;
+                                                return true;
+                                            } else {
+                                                JOptionPane.showMessageDialog(new JDialog(), "Keine Übereinstimmung!");
+                                                return false;
+                                            }
+                                        } else {
+                                            JOptionPane.showMessageDialog(new JDialog(), "Passwort erfüllt nicht die formalen Bedingungen!");
+                                            passwortTextField.setBackground(Foo.red);
+                                            return false;
+                                        }
                                     } else {
-                                        JOptionPane.showMessageDialog(new JDialog(), "Keine Übereinstimmung!");
+                                        benutzernameTextField.setText("");
+                                        benutzernameTextField.setPlaceholder("Benutzername bereits vergeben");
                                         return false;
                                     }
                                 } else {
-                                    JOptionPane.showMessageDialog(new JDialog(), "Passwort erfüllt nicht die formalen Bedingungen!");
+                                    benutzernameTextField.setBackground(Foo.red);
+                                    benutzernameTextField.setPlaceholder("Ein Benutzername braucht Zeichen :)");
                                     return false;
                                 }
                             } else {
-                                benutzernameTextField.setText("");
-                                benutzernameTextField.setPlaceholder("Benutzername bereits vergeben");
+                                emailTextField.setBackground(Foo.red);
+                                emailTextField.setToolTipText("Bitte gültige E-Mail eingeben");
+                                emailTextField.setText("Bitte gültige E-Mail eingeben");
                                 return false;
                             }
                         } else {
-                            benutzernameTextField.setBackground(Foo.red);
-                            benutzernameTextField.setPlaceholder("Ein Benutzername braucht Zeichen :)");
+                            emailTextField.setBackground(Foo.red);
+                            emailTextField.setPlaceholder("E-Mail ist Pflicht");
                             return false;
                         }
-                    }else{
-                        emailTextField.setBackground(Foo.red);
-                        emailTextField.setToolTipText("Bitte gültige E-Mail eingeben");
-                        emailTextField.setText("Bitte gültige E-Mail eingeben");
+                    } else {
+                        nachnameTextField.setBackground(Foo.red);
+                        nachnameTextField.setPlaceholder("Nachname ist Pflicht");
                         return false;
                     }
-                }else{
-                    emailTextField.setBackground(Foo.red);
-                    emailTextField.setPlaceholder("E-Mail ist Pflicht");
+                } else {
+                    vornameTextField.setBackground(Foo.red);
+                    vornameTextField.setPlaceholder("Vorname ist Pflicht");
                     return false;
                 }
-            }else{
-                nachnameTextField.setBackground(Foo.red);
-                nachnameTextField.setPlaceholder("Nachname ist Pflicht");
+            } else {
+                benutzerBox.setBackground(Foo.red);
                 return false;
             }
-        }else{
-            vornameTextField.setBackground(Foo.red);
-            vornameTextField.setPlaceholder("Vorname ist Pflicht");
+        } else {
+            geschlechtBox.setBackground(Foo.red);
             return false;
         }
     }
-
     public static void register(){
 
         RegisterGUI gui = new RegisterGUI();
