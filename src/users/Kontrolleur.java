@@ -1,7 +1,9 @@
 package src.users;
 
 import src.Foo;
+import src.PersFile;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 
@@ -54,8 +56,14 @@ public class Kontrolleur extends Mitarbeiter{
     public void schwarzfahrtErfassen(){
 
     }
-    public void schwarzfahrerSuchen(){
-
+    public Schwarzfahrer schwarzfahrerSuchen(String ausweisnummer) throws IOException, ClassNotFoundException {
+        File gesuchtenSF = Path.of(Foo.sfPath + Foo.fileSeperator + ausweisnummer + ".sf").toFile();
+        if (Foo.sfList.contains(gesuchtenSF)){
+            Schwarzfahrer gefundenerSF = (Schwarzfahrer) PersFile.laden(gesuchtenSF);
+            return gefundenerSF;
+        }else{
+            return null;
+        }
     }
 
 }

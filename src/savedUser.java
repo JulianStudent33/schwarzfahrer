@@ -34,7 +34,7 @@ public class savedUser extends Mitarbeiter {
         this.angemeldetBleiben = angemeldetBleiben;
     }
     public void saveStatus(File file) throws IOException {
-        PersFile.writeInFile(this, file);
+        PersFile.speichern(this, file);
 
     }
 

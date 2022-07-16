@@ -44,7 +44,7 @@ public abstract class Mitarbeiter extends Person{
     }
 
     public void createUserFile() throws IOException {
-        PersFile.writeInFile(this, this.userFile);
+        PersFile.speichern(this, this.userFile);
         System.out.println("Hallo test");
     }
 
@@ -77,7 +77,7 @@ public abstract class Mitarbeiter extends Person{
 
     public void setMitarbeiternummer(String mitarbeiternummer) throws IOException {
         this.mitarbeiternummer = mitarbeiternummer;
-        PersFile.writeInFile(this, this.userFile);
+        PersFile.speichern(this, this.userFile);
     }
 
     public String getBenutzername() {
@@ -86,7 +86,7 @@ public abstract class Mitarbeiter extends Person{
 
     public void setBenutzername(String benutzername) throws IOException {
         this.benutzername = benutzername;
-        PersFile.writeInFile(this, this.userFile);
+        PersFile.speichern(this, this.userFile);
     }
 
     public String getPasswort() {
@@ -95,7 +95,7 @@ public abstract class Mitarbeiter extends Person{
 
     public void setPasswort(String passwort) throws IOException {
         this.passwort = passwort;
-        PersFile.writeInFile(this, this.userFile);
+        PersFile.speichern(this, this.userFile);
 
     }
 

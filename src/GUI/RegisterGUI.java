@@ -15,6 +15,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Locale;
 
 public class RegisterGUI extends JFrame{
     int rollenSelection;
@@ -252,13 +253,14 @@ public class RegisterGUI extends JFrame{
                 }
 
                 if (pflichtAusgefüllt()) {
+
                     try {
                         switch (rollenSelection) {
                             case 1:
                                 Foo.currentKontrolleur = new Kontrolleur(benutzernameTextField.getText(), passwortTextField.getText(),
                                         vornameTextField.getText(), nachnameTextField.getText(), geschlechtBox.getSelectedItem().toString(),
-                                        telefonnummerTextField.getText(), emailTextField.getText(), Integer.parseInt(tagField.getText()),
-                                        Integer.parseInt(monatField.getText()), Integer.parseInt(jahrField.getText()));
+                                        telefonnummerTextField.getText(), emailTextField.getText().toLowerCase(Locale.ROOT), Integer.parseInt(daySpinner.getValue().toString()),
+                                        Integer.parseInt(monthSpinner.getValue().toString()), Integer.parseInt(yearSpinner.getValue().toString()));
                                 Foo.angemeldet = true;
                                 dispose();
                                 KontrolleurGUI.openKonGUI();
@@ -333,8 +335,8 @@ public class RegisterGUI extends JFrame{
                                 }
                             } else {
                                 emailTextField.setBackground(Foo.red);
-                                emailTextField.setToolTipText("Bitte gültige E-Mail eingeben");
-                                emailTextField.setText("Bitte gültige E-Mail eingeben");
+                                emailTextField.setText("");
+                                emailTextField.setPlaceholder("Bitte eine gültige E-Mail eingeben");
                                 return false;
                             }
                         } else {

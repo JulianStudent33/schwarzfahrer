@@ -112,7 +112,7 @@ public class LoginGUI extends JFrame {
 
                 if (Foo.adminList.contains(Path.of(Foo.adminPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())){
                     try{
-                        Administrator mb = (Administrator) PersFile.readOuttaFile(Path.of(Foo.adminPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile());
+                        Administrator mb = (Administrator) PersFile.laden(Path.of(Foo.adminPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile());
                         System.out.println("Datei gelesen");
                         if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())){
                             System.out.println("Passwort stimmt");
@@ -141,7 +141,7 @@ public class LoginGUI extends JFrame {
                 }
                 if(Foo.konList.contains(Path.of(Foo.konPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())){
                     try{
-                        Kontrolleur mb = (Kontrolleur) PersFile.readOuttaFile(Path.of(Foo.konPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile());
+                        Kontrolleur mb = (Kontrolleur) PersFile.laden(Path.of(Foo.konPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile());
                         Foo.currentKontrolleur = mb;
                         System.out.println("Datei gelesen");
                         if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())){
@@ -164,7 +164,7 @@ public class LoginGUI extends JFrame {
                 }
                 if(Foo.sbList.contains(Path.of(Foo.sbPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())){
                     try{
-                        Sachbearbeiter mb = (Sachbearbeiter) PersFile.readOuttaFile(Path.of(Foo.sbPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile());
+                        Sachbearbeiter mb = (Sachbearbeiter) PersFile.laden(Path.of(Foo.sbPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile());
                         Foo.currentSachbearbeiter = mb;
                         System.out.println("Datei gelesen");
                         if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())){
