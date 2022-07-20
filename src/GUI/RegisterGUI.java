@@ -3,6 +3,7 @@ package src.GUI;
 import src.Foo;
 import src.GUI.Kontrolleur.KontrolleurGUI;
 import src.GUI.elements.*;
+import src.Test;
 import src.nickcode.pass;
 import src.users.Kontrolleur;
 import src.users.Sachbearbeiter;
@@ -32,9 +33,6 @@ public class RegisterGUI extends JFrame{
     private PlaceholderTextField nachnameTextField;
     private PlaceholderTextField telefonnummerTextField;
     private PlaceholderTextField emailTextField;
-    private PlaceholderTextField tagField;
-    private PlaceholderTextField monatField;
-    private PlaceholderTextField jahrField;
     private JSpinner daySpinner;
     private JSpinner monthSpinner;
     private JSpinner yearSpinner;
@@ -61,35 +59,30 @@ public class RegisterGUI extends JFrame{
             throw new RuntimeException(e);
         }
 
-        nameFilter = new SizeFilter(20);
-        numberFilter = new NumberFilter();
-        letterFilter = new LetterFilter();
-        nameFieldLimit = new JTextFieldLimit(20);
-
-        vornameTextField.setDocument(new JTextFieldLimit(20));
-        nachnameTextField.setDocument(new JTextFieldLimit(20));
-        benutzernameTextField.setDocument(new JTextFieldLimit(20));
-        telefonnummerTextField.setDocument(new JTextFieldLimit(15));
-        ((AbstractDocument)vornameTextField.getDocument()).setDocumentFilter(letterFilter);
-        ((AbstractDocument)nachnameTextField.getDocument()).setDocumentFilter(letterFilter);
-        ((AbstractDocument)telefonnummerTextField.getDocument()).setDocumentFilter(numberFilter);
-
-
-        vornameTextField.setPlaceholder("*Vorname*");
+        //Placeholder
+        //vornameTextField.setPlaceholder("*Vorname*");
         nachnameTextField.setPlaceholder("*Nachname*");
         benutzernameTextField.setPlaceholder("*Benutzername*");
         passwortTextField.setPlaceholder("*Passwort*");
         telefonnummerTextField.setPlaceholder("Telefonnummer");
-
         emailTextField.setPlaceholder("*E-Mail Adresse*");
+
+        //Felder die gefiltert werden
+
+        FieldFilter filter = new FieldFilter();
+
+        JTextField testField = new JTextField();
+
+        testField = filter.createFilteredField(10); //Parameter die länge der Zahl
+                                                                //sollte nur Zahlen annehmen
+
+        benutzernameTextField.setDocument(new JTextFieldLimit(20));
+
+        //Initialisieren von Datum-spinnern
         daySpinner.setValue(1);
         monthSpinner.setValue(1);
         yearSpinner.setValue(2000);
-        benutzernameTextField.addMouseListener(new MouseAdapter() {
-            public void mouseReleased(MouseEvent e){
-                benutzernameTextField.setText("");
-            }
-        });
+
         daySpinner.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
@@ -147,31 +140,6 @@ public class RegisterGUI extends JFrame{
                 }
             }
         });
-        /*
-        SizeFilter sizeFilter2 = new SizeFilter(2);
-        SizeFilter sizeFilter4 = new SizeFilter(4);
-        SizeFilter sizeFilter15 = new SizeFilter(15);
-
-
-        ChainableFilter chainFilterDay = new ChainableFilter();
-        chainFilterDay.addFilter(numberFilter);
-        ((AbstractDocument) tagField.getDocument()).setDocumentFilter(chainFilterDay);
-
-        ChainableFilter chainFilterMonth = new ChainableFilter();
-        chainFilterMonth.addFilter(numberFilter);
-        chainFilterMonth.addFilter(sizeFilter2);
-        ((AbstractDocument) monatField.getDocument()).setDocumentFilter(chainFilterMonth);
-
-        ChainableFilter chainFilterYear = new ChainableFilter();
-        chainFilterYear.addFilter(numberFilter);
-        chainFilterYear.addFilter(sizeFilter4);
-        ((AbstractDocument) jahrField.getDocument()).setDocumentFilter(chainFilterYear);
-
-
-
-        */
-
-
 
         benutzerBox.addActionListener(new ActionListener() {
             @Override
