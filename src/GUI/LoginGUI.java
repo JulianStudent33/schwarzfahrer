@@ -36,11 +36,7 @@ public class LoginGUI extends JFrame {
         this.setBounds(center.x - width / 2, center.y - height / 2, width, height);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        try {
-            UIManager.setLookAndFeel(UIManager.createLookAndFeel("Windows"));
-        } catch (UnsupportedLookAndFeelException e) {
-            throw new RuntimeException(e);
-        }
+
         setVisible(true);
         benutzernameTextField.setPlaceholder("Benutzername");
         passwortPasswordField.setPlaceholder("Passwort");
@@ -173,7 +169,7 @@ public class LoginGUI extends JFrame {
                             if (angemeldetBleibenCheckBox.isSelected()){
                                 // Foo.saveAngemeldetBleiben(true);
                             }else{
-                                // Foo.saveAngemeldetBleiben(false);
+                                // Erneuter Aufruf des L&F sodass bei Rückgang auf vorheriges Fenster, das L&F bestehen bleibt            // Foo.saveAngemeldetBleiben(false);
                             }
                             dispose();
                             SachbearbeiterGUI.openSBGUI();

@@ -1,4 +1,5 @@
 package src.GUI;
+import com.formdev.flatlaf.FlatDarkLaf;
 import src.Foo;
 
 import javax.swing.*;
@@ -16,10 +17,10 @@ public class start extends JFrame implements ActionListener {
 
 
     // Farbpalette
-    private Color dark = new Color(44,44,44);
-    private Color white = new Color(255,255,255);
-    private Color hellb = new Color(133, 179, 255);
-    private Color dunkelb = new Color(74,142,255);
+    public static Color dark = new Color(44,44,44);
+    public static Color white = new Color(255,255,255);
+    public static Color hellb = new Color(133, 179, 255);
+    public static Color dunkelb = new Color(74,142,255);
 
     //Konstruktor
     start() {
@@ -103,7 +104,7 @@ public class start extends JFrame implements ActionListener {
         reg.setFocusable(false);
         reg.setBorderPainted(false);
         reg.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        reg.setBounds(140,-10,200,100);
+        reg.setBounds(140,0,200,100);
 
 
         // JButton "anmelden"
