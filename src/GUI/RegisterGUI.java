@@ -3,6 +3,7 @@ package src.GUI;
 import src.Foo;
 import src.GUI.Kontrolleur.KontrolleurGUI;
 import src.GUI.elements.*;
+import src.Test;
 import src.nickcode.pass;
 import src.users.Kontrolleur;
 import src.users.Sachbearbeiter;
@@ -15,8 +16,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.GregorianCalendar;
-import java.util.concurrent.TimeUnit;
+import java.util.Locale;
 
 public class RegisterGUI extends JFrame{
     int rollenSelection;
@@ -33,12 +33,14 @@ public class RegisterGUI extends JFrame{
     private PlaceholderTextField nachnameTextField;
     private PlaceholderTextField telefonnummerTextField;
     private PlaceholderTextField emailTextField;
-    private PlaceholderTextField tagField;
-    private PlaceholderTextField monatField;
-    private PlaceholderTextField jahrField;
     private JSpinner daySpinner;
     private JSpinner monthSpinner;
     private JSpinner yearSpinner;
+    SizeFilter nameFilter; //20
+    NumberFilter numberFilter;
+    LetterFilter letterFilter;
+    JTextFieldLimit nameFieldLimit;
+
 
 
     public RegisterGUI(){
@@ -56,24 +58,31 @@ public class RegisterGUI extends JFrame{
         } catch (UnsupportedLookAndFeelException e) {
             throw new RuntimeException(e);
         }
-        setVisible(true);
-        vornameTextField.setPlaceholder("Vorname*");
-        nachnameTextField.setPlaceholder("Nachname*");
-        nachnameTextField.setPreferredSize(new Dimension(30, 10));
-        benutzernameTextField.setPlaceholder("Benutzername*");
-        passwortTextField.setPlaceholder("Passwort*");
+
+        //Placeholder
+        //vornameTextField.setPlaceholder("*Vorname*");
+        nachnameTextField.setPlaceholder("*Nachname*");
+        benutzernameTextField.setPlaceholder("*Benutzername*");
+        passwortTextField.setPlaceholder("*Passwort*");
         telefonnummerTextField.setPlaceholder("Telefonnummer");
+        emailTextField.setPlaceholder("*E-Mail Adresse*");
 
-        emailTextField.setPlaceholder("E-Mail Adresse*");
+        //Felder die gefiltert werden
 
+        FieldFilter filter = new FieldFilter();
+
+        JTextField testField = new JTextField();
+
+        testField = filter.createFilteredField(10); //Parameter die länge der Zahl
+                                                                //sollte nur Zahlen annehmen
+
+        benutzernameTextField.setDocument(new JTextFieldLimit(20));
+
+        //Initialisieren von Datum-spinnern
         daySpinner.setValue(1);
         monthSpinner.setValue(1);
         yearSpinner.setValue(2000);
-        benutzernameTextField.addMouseListener(new MouseAdapter() {
-            public void mouseReleased(MouseEvent e){
-                benutzernameTextField.setText("");
-            }
-        });
+
         daySpinner.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
@@ -131,31 +140,6 @@ public class RegisterGUI extends JFrame{
                 }
             }
         });
-        /*
-        SizeFilter sizeFilter2 = new SizeFilter(2);
-        SizeFilter sizeFilter4 = new SizeFilter(4);
-        SizeFilter sizeFilter15 = new SizeFilter(15);
-
-
-        ChainableFilter chainFilterDay = new ChainableFilter();
-        chainFilterDay.addFilter(numberFilter);
-        ((AbstractDocument) tagField.getDocument()).setDocumentFilter(chainFilterDay);
-
-        ChainableFilter chainFilterMonth = new ChainableFilter();
-        chainFilterMonth.addFilter(numberFilter);
-        chainFilterMonth.addFilter(sizeFilter2);
-        ((AbstractDocument) monatField.getDocument()).setDocumentFilter(chainFilterMonth);
-
-        ChainableFilter chainFilterYear = new ChainableFilter();
-        chainFilterYear.addFilter(numberFilter);
-        chainFilterYear.addFilter(sizeFilter4);
-        ((AbstractDocument) jahrField.getDocument()).setDocumentFilter(chainFilterYear);
-
-
-
-        */
-        NumberFilter numberFilter = new NumberFilter();
-        ((AbstractDocument)telefonnummerTextField.getDocument()).setDocumentFilter(numberFilter);
 
         benutzerBox.addActionListener(new ActionListener() {
             @Override
@@ -173,17 +157,7 @@ public class RegisterGUI extends JFrame{
                 }
             }
         });
-        geschlechtBox.addFocusListener(new FocusListener() {
-            @Override
-            public void focusGained(FocusEvent e) {
 
-            }
-
-            @Override
-            public void focusLost(FocusEvent e) {
-
-            }
-        });
         benutzernameTextField.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
@@ -240,129 +214,123 @@ public class RegisterGUI extends JFrame{
         registrierenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (benutzerBox.getSelectedItem() == benutzerBox.getItemAt(0)){
+                if (benutzerBox.getSelectedItem() == benutzerBox.getItemAt(0)) {
                     rollenSelection = 1; //
-                }else{
+                } else {
                     rollenSelection = 2;
                 }
 
-                if(pflichtfelderAusgefüllt){
+                if (pflichtAusgefüllt()) {
 
-                }
-                if (!benutzernameTextField.getText().isBlank()) {
-
-                    if (!Foo.userExistiertBereits(benutzernameTextField.getText())) {
-
-                        if (pass.passwordOk(passwortTextField.getText())) {
-                            String pwConfirm = JOptionPane.showInputDialog("Bestätige dein Passwort");
-
-                            if (pwConfirm.equals(passwortTextField.getText())) {
-                                JOptionPane.showMessageDialog(new JDialog(), "Passwort bestätigt");
-                                pwBestaetigt = true;
-
-                                try {
-                                    switch (rollenSelection){
-                                        case 1: Foo.currentKontrolleur = new Kontrolleur(benutzernameTextField.getText(), passwortTextField.getText(),
-                                                vornameTextField.getText(), nachnameTextField.getText(), geschlechtBox.getSelectedItem().toString(),
-                                                telefonnummerTextField.getText(), emailTextField.getText());
-                                        Foo.angemeldet = true;
-                                        dispose();
-                                        KontrolleurGUI.openKonGUI();
-                                        break;
-                                        case 2: Foo.currentSachbearbeiter = new Sachbearbeiter(benutzernameTextField.getText(), passwortTextField.getText());
-                                        Foo.angemeldet = true;
-                                        dispose();
-                                        SachbearbeiterGUI.openSBGUI();
-                                        break;
-                                    }
-                                } catch (IOException ex) {
-                                    dispose();
-                                    start.startFenster();
-                                    ex.printStackTrace();
-                                    throw new RuntimeException(ex);
-                                }
-                            }else{
-                                JOptionPane.showMessageDialog(new JDialog(), "Keine Übereinstimmung!");
-                            }
-                        }else{
-                            JOptionPane.showMessageDialog(new JDialog(), "Passwort erfüllt nicht die formalen Bedingungen!");
+                    try {
+                        switch (rollenSelection) {
+                            case 1:
+                                Foo.currentKontrolleur = new Kontrolleur(benutzernameTextField.getText(), passwortTextField.getText(),
+                                        vornameTextField.getText(), nachnameTextField.getText(), geschlechtBox.getSelectedItem().toString(),
+                                        telefonnummerTextField.getText(), emailTextField.getText().toLowerCase(Locale.ROOT), Integer.parseInt(daySpinner.getValue().toString()),
+                                        Integer.parseInt(monthSpinner.getValue().toString()), Integer.parseInt(yearSpinner.getValue().toString()));
+                                Foo.angemeldet = true;
+                                dispose();
+                                KontrolleurGUI.openKonGUI();
+                                break;
+                            case 2:
+                                Foo.currentSachbearbeiter = new Sachbearbeiter(benutzernameTextField.getText(), passwortTextField.getText());
+                                Foo.angemeldet = true;
+                                dispose();
+                                SachbearbeiterGUI.openSBGUI();
+                                break;
                         }
-                    } else {
-                        benutzernameTextField.setText("");
-                        benutzernameTextField.setPlaceholder("Benutzername bereits vergeben");
+                    } catch (IOException ex) {
+                        dispose();
+                        start.startFenster();
+                        ex.printStackTrace();
+                        throw new RuntimeException(ex);
                     }
-                } else {
-                    benutzernameTextField.setBackground(Foo.red);
-                    benutzernameTextField.setPlaceholder("Ein Benutzername braucht Zeichen :)");
                 }
             }
         });
-
-
-
+        setVisible(true);
     }
-    private boolean pflichtAusgefüllt(){
-        if (!vornameTextField.getText().isBlank()) {
+    private boolean pflichtAusgefüllt() {
+        if (benutzerBox.getItemCount() == 2) {
+            benutzerBox.setBackground(Color.white);
 
-            if (!nachnameTextField.getText().isBlank()) {
+            if (geschlechtBox.getItemCount() == 3) {
+                geschlechtBox.setBackground(Color.white);
 
-                if (!emailTextField.getText().isBlank()) {
+                if (!vornameTextField.getText().isBlank()) {
+                    vornameTextField.setBackground(Color.white);
 
-                    if(emailTextField.getText().contains("@")) {
+                    if (!nachnameTextField.getText().isBlank()) {
+                        nachnameTextField.setBackground(Color.white);
 
+                        if (!emailTextField.getText().isBlank()) {
 
-                        if (!benutzernameTextField.getText().isBlank()) {
+                            if (emailTextField.getText().contains("@")) {
+                                emailTextField.setBackground(Color.white);
 
-                            if (!Foo.userExistiertBereits(benutzernameTextField.getText())) {
+                                if (!benutzernameTextField.getText().isBlank()) {
 
-                                if (pass.passwordOk(passwortTextField.getText())) {
-                                    String pwConfirm = JOptionPane.showInputDialog("Bestätige dein Passwort");
+                                    if (!Foo.userExistiertBereits(benutzernameTextField.getText())) {
+                                        benutzernameTextField.setBackground(Color.white);
 
-                                    if (pwConfirm.equals(passwortTextField.getText())) {
-                                        JOptionPane.showMessageDialog(new JDialog(), "Passwort bestätigt");
-                                        pwBestaetigt = true;
-                                        return true;
+                                        if (pass.passwordOk(passwortTextField.getText())) {
+                                            String pwConfirm = JOptionPane.showInputDialog("Bestätige dein Passwort");
+
+                                            if (pwConfirm.equals(passwortTextField.getText())) {
+                                                passwortTextField.setBackground(Color.white);
+                                                JOptionPane.showMessageDialog(new JDialog(), "Passwort bestätigt");
+                                                pwBestaetigt = true;
+                                                return true;
+                                            } else {
+                                                JOptionPane.showMessageDialog(new JDialog(), "Keine Übereinstimmung!");
+                                                return false;
+                                            }
+                                        } else {
+                                            JOptionPane.showMessageDialog(new JDialog(), "Passwort erfüllt nicht die formalen Bedingungen!");
+                                            passwortTextField.setBackground(Foo.red);
+                                            return false;
+                                        }
                                     } else {
-                                        JOptionPane.showMessageDialog(new JDialog(), "Keine Übereinstimmung!");
+                                        benutzernameTextField.setText("");
+                                        benutzernameTextField.setPlaceholder("Benutzername bereits vergeben");
                                         return false;
                                     }
                                 } else {
-                                    JOptionPane.showMessageDialog(new JDialog(), "Passwort erfüllt nicht die formalen Bedingungen!");
+                                    benutzernameTextField.setBackground(Foo.red);
+                                    benutzernameTextField.setPlaceholder("Ein Benutzername braucht Zeichen :)");
                                     return false;
                                 }
                             } else {
-                                benutzernameTextField.setText("");
-                                benutzernameTextField.setPlaceholder("Benutzername bereits vergeben");
+                                emailTextField.setBackground(Foo.red);
+                                emailTextField.setText("");
+                                emailTextField.setPlaceholder("Bitte eine gültige E-Mail eingeben");
                                 return false;
                             }
                         } else {
-                            benutzernameTextField.setBackground(Foo.red);
-                            benutzernameTextField.setPlaceholder("Ein Benutzername braucht Zeichen :)");
+                            emailTextField.setBackground(Foo.red);
+                            emailTextField.setPlaceholder("E-Mail ist Pflicht");
                             return false;
                         }
-                    }else{
-                        emailTextField.setBackground(Foo.red);
-                        emailTextField.setToolTipText("Bitte gültige E-Mail eingeben");
-                        emailTextField.setText("Bitte gültige E-Mail eingeben");
+                    } else {
+                        nachnameTextField.setBackground(Foo.red);
+                        nachnameTextField.setPlaceholder("Nachname ist Pflicht");
                         return false;
                     }
-                }else{
-                    emailTextField.setBackground(Foo.red);
-                    emailTextField.setPlaceholder("E-Mail ist Pflicht");
+                } else {
+                    vornameTextField.setBackground(Foo.red);
+                    vornameTextField.setPlaceholder("Vorname ist Pflicht");
                     return false;
                 }
-            }else{
-                nachnameTextField.setBackground(Foo.red);
-                nachnameTextField.setPlaceholder("Nachname ist Pflicht");
+            } else {
+                benutzerBox.setBackground(Foo.red);
                 return false;
             }
-        }else{
-            vornameTextField.setBackground(Foo.red);
-            vornameTextField.setPlaceholder("Vorname ist Pflicht");
+        } else {
+            geschlechtBox.setBackground(Foo.red);
             return false;
         }
     }
-
     public static void register(){
 
         RegisterGUI gui = new RegisterGUI();

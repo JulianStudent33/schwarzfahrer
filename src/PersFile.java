@@ -32,19 +32,19 @@ public class PersFile {
         System.out.println("Test2");
         System.out.println("File beschrieben mit Object.");
     }
-    public static void writeInFile(Object objectToWrite, File fileToWrite) throws IOException {
+    public static void speichern(Object objectToWrite, File fileToWrite) throws IOException {
         fs = new FileOutputStream(fileToWrite);
         out = new ObjectOutputStream(fs);
         out.writeObject(objectToWrite);
         System.out.println("File geschrieben");
     }
-    public Object readOuttaFile() throws IOException, ClassNotFoundException {
+    public Object laden() throws IOException, ClassNotFoundException {
         fi = new FileInputStream(selectedFile);
         in = new ObjectInputStream(fi);
         Object profile = (Object) in.readObject();
         return profile;
     }
-    public static Object readOuttaFile(File file) throws IOException, ClassNotFoundException {
+    public static Object laden(File file) throws IOException, ClassNotFoundException {
         fi = new FileInputStream(file);
         in = new ObjectInputStream(fi);
         Object profile = (Object) in.readObject();

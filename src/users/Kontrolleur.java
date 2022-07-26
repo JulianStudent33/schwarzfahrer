@@ -1,7 +1,9 @@
 package src.users;
 
 import src.Foo;
+import src.PersFile;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 
@@ -33,7 +35,7 @@ public class Kontrolleur extends Mitarbeiter{
         System.out.println("Gespeichert: " + this.userFile);
     }
 
-    public Kontrolleur(String benutzername, String passwort, String vorname, String nachname, String geschlecht, String telefonnummer, String email) throws IOException {
+    public Kontrolleur(String benutzername, String passwort, String vorname, String nachname, String geschlecht, String telefonnummer, String email, int day, int month, int year) throws IOException {
         this.isKontrolleur = true;
         this.mitarbeiternummer = "K" + Foo.konCount++;
         this.benutzername = benutzername;
@@ -43,6 +45,7 @@ public class Kontrolleur extends Mitarbeiter{
         this.geschlecht = geschlecht;
         this.telefonnummer = telefonnummer;
         this.email = email;
+        this.setGeburtsdatum(day, month, year);
         this.userFile = Path.of
                 (Foo.konPath + Foo.fileSeperator + benutzername +  ".mb").toFile();
         display();
@@ -53,8 +56,14 @@ public class Kontrolleur extends Mitarbeiter{
     public void schwarzfahrtErfassen(){
 
     }
-    public void schwarzfahrerSuchen(){
-
+    public Schwarzfahrer schwarzfahrerSuchen(String ausweisnummer) throws IOException, ClassNotFoundException {
+        File gesuchtenSF = Path.of(Foo.sfPath + Foo.fileSeperator + ausweisnummer + ".sf").toFile();
+        if (Foo.sfList.contains(gesuchtenSF)){
+            Schwarzfahrer gefundenerSF = (Schwarzfahrer) PersFile.laden(gesuchtenSF);
+            return gefundenerSF;
+        }else{
+            return null;
+        }
     }
 
 }

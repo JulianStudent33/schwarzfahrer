@@ -160,6 +160,7 @@ public class start extends JFrame implements ActionListener {
             if (anm instanceof AbstractButton) {
                 AbstractButton btn = (AbstractButton) anm;
                 btn.setText("");
+                label1.setText("<html><body><center><p>Registrieren sie einen<br>Administrator</p></center></body></html>");
                 btn.setBackground(dark);
                 btn.setEnabled(false);
 

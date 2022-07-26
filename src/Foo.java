@@ -5,7 +5,6 @@ import src.GUI.Kontrolleur.KontrolleurGUI;
 import src.users.Administrator;
 import src.users.Kontrolleur;
 import src.users.Sachbearbeiter;
-import src.nickcode.pass;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,7 +17,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class Foo {
     public static FileSystem fs = FileSystems.getDefault();
@@ -296,7 +294,7 @@ public class Foo {
             return false;
         }
         savedUser userToGet;
-        userToGet = (savedUser) PersFile.readOuttaFile(loggedINFile);
+        userToGet = (savedUser) PersFile.laden(loggedINFile);
         if(userToGet.isAdmin()){
             currentAdmin = userToGet.currentAdmin;
             return userToGet.angemeldetBleiben;

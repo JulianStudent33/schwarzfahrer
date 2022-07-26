@@ -4,18 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Test">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_07_2022_11_29__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_07_2022_11_29__Changes_.xml" afterDir="false" />
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="j">
+      <change afterPath="$PROJECT_DIR$/src/GUI/elements/FieldFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_07_2022_16_10_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_07_2022_16_10__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_07_2022_11_37_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_07_2022_11_37__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_07_2022_09_26__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_07_2022_09_26__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/.idea/shelf/Uncommitted_changes_before_Update_at_12_07_2022_16_10_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/.idea/shelf/Uncommitted_changes_before_Update_at_12_07_2022_16_10__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/elements/PlaceholderTextField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/elements/PlaceholderTextField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/start.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/start.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/elements/PlaceholderTextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/elements/PlaceholderTextField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$12.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/elements/ChainableFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/elements/ChainableFilter.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,10 +50,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
-  </component>
-  <component name="GitToolBoxStore">
-    <option name="projectConfigVersion" value="5" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -87,38 +97,38 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
+    <configuration name="FieldFilter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.GUI.elements.FieldFilter" />
+      <module name="PigPen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.GUI.elements.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FilterDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.GUI.elements.FilterDemo" />
+      <module name="PigPen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.GUI.elements.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.Main" />
       <module name="PigPen" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="src.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MenuButton" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.GUI.elements.MenuButton" />
-      <module name="PigPen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="src.GUI.elements.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlaceholderTextField" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.GUI.elements.PlaceholderTextField" />
-      <module name="PigPen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="src.GUI.elements.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -155,10 +165,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.PlaceholderTextField" />
+        <item itemvalue="Application.FieldFilter" />
+        <item itemvalue="Application.FilterDemo" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.src.GUI.Kontrolleur.KontrolleurGUI" />
-        <item itemvalue="Application.MenuButton" />
       </list>
     </recent_temporary>
   </component>
@@ -209,8 +219,12 @@
       <workItem from="1657731578260" duration="3880000" />
       <workItem from="1657803381580" duration="5339000" />
       <workItem from="1657870884233" duration="3971000" />
-      <workItem from="1657874911454" duration="3694000" />
-      <workItem from="1658826801718" duration="32000" />
+      <workItem from="1657874911454" duration="8152000" />
+      <workItem from="1657885716702" duration="36000" />
+      <workItem from="1657886105846" duration="3196000" />
+      <workItem from="1657958711775" duration="2971000" />
+      <workItem from="1658256201664" duration="2936000" />
+      <workItem from="1658312610844" duration="1240000" />
     </task>
     <task id="LOCAL-00001" summary="du ziegee">
       <created>1655906843233</created>
@@ -443,7 +457,56 @@
       <option name="project" value="LOCAL" />
       <updated>1657871533914</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Number Filter auf Telefonfeld.">
+      <created>1657878690270</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1657878690270</updated>
+    </task>
+    <task id="LOCAL-00035" summary="j">
+      <created>1657883769500</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1657883769500</updated>
+    </task>
+    <task id="LOCAL-00036" summary="j">
+      <created>1657885743871</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1657885743871</updated>
+    </task>
+    <task id="LOCAL-00037" summary="j">
+      <created>1657887999414</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1657887999414</updated>
+    </task>
+    <task id="LOCAL-00038" summary="j">
+      <created>1657889292103</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1657889292103</updated>
+    </task>
+    <task id="LOCAL-00039" summary="j">
+      <created>1657961844561</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1657961844561</updated>
+    </task>
+    <task id="LOCAL-00040" summary="j">
+      <created>1657961857905</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1657961857905</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -483,8 +546,9 @@
     <MESSAGE value="Neue Methode abmelden() in allen Mitarbeitern&#10;Neue Farben in Foo: red and green für die login und register guis&#10;Abmelden button in Kontrolleur gui implementiert" />
     <MESSAGE value="Erfassen GUI grobe Form für Schwarzfahrt erfassen.&#10;Registrierung GUI hat jetzt alle Inputfelder für Sachbearbeiter und Kontrolleur. Wird auch gleich so gespeichert." />
     <MESSAGE value="neu" />
-    <MESSAGE value="Test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test" />
+    <MESSAGE value="Number Filter auf Telefonfeld." />
+    <MESSAGE value="j" />
+    <option name="LAST_COMMIT_MESSAGE" value="j" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -549,8 +613,8 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/Test.java</url>
-          <line>12</line>
-          <properties class="src.Test">
+          <line>33</line>
+          <properties class="src.Test" method="main">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
