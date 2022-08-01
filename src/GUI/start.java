@@ -163,6 +163,7 @@ public class start extends JFrame implements ActionListener {
                 btn.setText("");
                 label1.setText("<html><body><center><p>Registrieren sie einen<br>Administrator</p></center></body></html>");
                 btn.setBackground(dark);
+                btn.setContentAreaFilled(false);
                 btn.setEnabled(false);
 
 
