@@ -14,7 +14,7 @@ public class Kontrolleur extends Mitarbeiter{
     String namenszusatz;
     String geschlecht;
     String telefonnummer;
-    String email;
+    String E-Mail;
     int mitarbeiternummer;
     String benutzername;
     String passwort;
@@ -45,7 +45,7 @@ public class Kontrolleur extends Mitarbeiter{
         this.geschlecht = geschlecht;
         this.telefonnummer = telefonnummer;
         this.email = email;
-        this.setGeburtsdatum(day, month, year);
+        this.geburtsdatum = setGeburtsdatum(day, month, year);
         this.userFile = Path.of
                 (Foo.konPath + Foo.fileSeperator + benutzername +  ".mb").toFile();
         display();

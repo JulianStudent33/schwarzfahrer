@@ -44,7 +44,8 @@ public abstract class Person implements Serializable {
 
     public String setGeburtsdatum(int Tag, int Monat, int Jahr) {
         LocalDate date = LocalDate.of(Jahr, Monat, Tag);
-        String geburtsdatum = date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"));
+        String geburtsdatum = Tag + "." + Monat + "." + Jahr;
+        // geburtsdatum = date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"));
         System.out.println(geburtsdatum);
         return geburtsdatum;
     }
