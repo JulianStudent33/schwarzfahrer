@@ -26,26 +26,19 @@ public abstract class Mitarbeiter extends Person{
     boolean isAdmin;
     boolean isKontrolleur;
     boolean isSachbearbeiter;
-    String benutzerTyp;
     File userFile;
 
     //Methoden
     public void setBenutzername(String oldBenutzername, String newBenutzername){
         this.benutzername = newBenutzername;
     }
-    public void setPasswort(String oldBenutzername, String oldPasswort, String newPasswort){
-        if(this.benutzername == oldBenutzername && this.passwort == oldPasswort){
-            this.passwort = newPasswort;
-            System.out.println("New Password set.");
-        }else{
-            System.out.println("Falsche Credentials.");
-        }
+    public void setPasswort(String oldPW, String newPW){
 
     }
 
     public void createUserFile() throws IOException {
         PersFile.speichern(this, this.userFile);
-        System.out.println("Hallo test");
+        System.out.println("File geschrieben");
     }
 
 
@@ -103,13 +96,7 @@ public abstract class Mitarbeiter extends Person{
         return benutzerTypen;
     }
 
-    public String getBenutzerTyp() {
-        return benutzerTyp;
-    }
 
-    public void setBenutzerTyp(String benutzerTyp) {
-        this.benutzerTyp = benutzerTyp;
-    }
 
     public boolean isAdmin() {
         return isAdmin;

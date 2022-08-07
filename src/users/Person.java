@@ -14,6 +14,9 @@ public abstract class Person implements Serializable {
     String geschlecht;
 
     String geburtsdatum;
+    int geburtsTag;
+    int geburtsMonat;
+    int geburtsJahr;
     String telefonnummer;
     String email;
 
@@ -43,8 +46,12 @@ public abstract class Person implements Serializable {
     }
 
     public String setGeburtsdatum(int Tag, int Monat, int Jahr) {
-        LocalDate date = LocalDate.of(Jahr, Monat, Tag);
-        String geburtsdatum = date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"));
+        this.geburtsTag = Tag;
+        this.geburtsMonat = Monat;
+        this.geburtsJahr = Jahr;
+        //lLocalDate date = LocalDate.of(Jahr, Monat, Tag);
+        String geburtsdatum = Tag + "." + Monat + "." + Jahr;
+        // geburtsdatum = date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"));
         System.out.println(geburtsdatum);
         return geburtsdatum;
     }
@@ -56,6 +63,31 @@ public abstract class Person implements Serializable {
 
     public String getTelefonnummer() {
         return telefonnummer;
+    }
+
+
+    public int getGeburtsTag() {
+        return geburtsTag;
+    }
+
+    public void setGeburtsTag(int geburtsTag) {
+        this.geburtsTag = geburtsTag;
+    }
+
+    public int getGeburtsMonat() {
+        return geburtsMonat;
+    }
+
+    public void setGeburtsMonat(int geburtsMonat) {
+        this.geburtsMonat = geburtsMonat;
+    }
+
+    public int getGeburtsJahr() {
+        return geburtsJahr;
+    }
+
+    public void setGeburtsJahr(int geburtsJahr) {
+        this.geburtsJahr = geburtsJahr;
     }
 
     public void setTelefonnummer(String telefonnummer) {

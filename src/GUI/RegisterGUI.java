@@ -2,8 +2,8 @@ package src.GUI;
 
 import src.Foo;
 import src.GUI.Kontrolleur.KontrolleurGUI;
+import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
 import src.GUI.elements.*;
-import src.Test;
 import src.nickcode.pass;
 import src.users.Kontrolleur;
 import src.users.Sachbearbeiter;
@@ -11,7 +11,6 @@ import src.users.Sachbearbeiter;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import javax.swing.text.AbstractDocument;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;

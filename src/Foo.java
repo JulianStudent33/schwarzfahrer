@@ -1,10 +1,13 @@
 package src;
 
 import src.GUI.*;
+import src.GUI.Admin.AdminGUI;
 import src.GUI.Kontrolleur.KontrolleurGUI;
+import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
 import src.users.Administrator;
 import src.users.Kontrolleur;
 import src.users.Sachbearbeiter;
+import src.users.Schwarzfahrer;
 
 import javax.swing.*;
 import java.awt.*;
@@ -56,6 +59,7 @@ public class Foo {
     public static Sachbearbeiter currentSachbearbeiter;
     public static Kontrolleur currentKontrolleur;
     public static Administrator currentAdmin;
+
 
 
         public static Path savesPath = Paths.get("Saves");
@@ -254,6 +258,14 @@ public class Foo {
             return false;
         }
     }
+    public static boolean sfIstBekannt(String ausweisnummer){
+        getDirectoryData();
+        if (sfList.contains(Path.of(sfPath + fileSeperator + ausweisnummer + ".sf").toFile())){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     public static boolean isAngemeldet() {
         return angemeldet;
@@ -310,12 +322,13 @@ public class Foo {
 
     }
 
-    public static void okWindow(){
+    public static void okWindow(String message){
         String[] option = {"OK"};
         JPanel panel = new JPanel();
-        JLabel lbl = new JLabel("Vorgang abgebrochen");
+        JLabel lbl = new JLabel(message);
         panel.add(lbl);
-        int selectedOption = JOptionPane.showOptionDialog(null, panel, "", JOptionPane.NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, option , option[0]);
+        int selectedOption = JOptionPane.showOptionDialog(null, panel,
+                "", JOptionPane.NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, option , option[0]);
     }
     public static void deleteDirs(){ //Methode, damit ich die firstRegistration testen kann
         if(adminDir.list() == null || adminDir.list().length == 0){

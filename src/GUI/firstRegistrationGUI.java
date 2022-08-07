@@ -1,6 +1,7 @@
 package src.GUI;
 
 import src.Foo;
+import src.GUI.Admin.AdminGUI;
 import src.GUI.elements.PlaceholderPasswordField;
 import src.GUI.elements.PlaceholderTextField;
 import src.nickcode.pass;

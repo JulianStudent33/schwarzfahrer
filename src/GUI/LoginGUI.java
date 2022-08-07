@@ -1,7 +1,9 @@
 package src.GUI;
 
 import src.Foo;
+import src.GUI.Admin.AdminGUI;
 import src.GUI.Kontrolleur.KontrolleurGUI;
+import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
 import src.GUI.elements.PlaceholderPasswordField;
 import src.GUI.elements.PlaceholderTextField;
 import src.PersFile;
