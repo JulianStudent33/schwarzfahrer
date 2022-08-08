@@ -29,7 +29,7 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
 
     public KontrolleurGUI() {
 
-        //currentUser.setKontrolleur(true); ????
+        currentUser = Foo.currentKontrolleur;
         // Panelmanagement
         JPanel gridpanel = new JPanel();
         gridpanel.setBackground(dark);

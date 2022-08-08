@@ -2,6 +2,7 @@ package src.GUI.Kontrolleur;
 
 import src.Adresse;
 import src.Foo;
+import src.GUI.Kon.KontrolleurGUI;
 import src.users.Kontrolleur;
 import src.users.Schwarzfahrer;
 
@@ -44,7 +45,7 @@ public class Schwarzfahrt_erfassen extends JFrame{
     private JLabel datumUhrzeitLabel;
 
     public Schwarzfahrt_erfassen(){
-        this.currentUser = KontrolleurGUI_alt.currentUser;
+        this.currentUser = KontrolleurGUI.currentUser;
         setContentPane(mainPanel);
         setTitle("Kontrolleur Menü");
         Point center = GraphicsEnvironment.getLocalGraphicsEnvironment().getCenterPoint();
