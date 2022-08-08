@@ -17,6 +17,7 @@ import java.awt.event.*;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Locale;
+import static src.Foo.*;
 
 public class RegisterGUI extends JFrame{
     int rollenSelection;
@@ -204,7 +205,7 @@ public class RegisterGUI extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                start.startFenster();
+                StartfensterGUI.startFenster();
             }
         });
 
@@ -239,7 +240,7 @@ public class RegisterGUI extends JFrame{
                         }
                     } catch (IOException ex) {
                         dispose();
-                        start.startFenster();
+                        StartfensterGUI.startFenster();
                         ex.printStackTrace();
                         throw new RuntimeException(ex);
                     }

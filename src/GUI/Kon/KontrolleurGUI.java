@@ -5,27 +5,22 @@ import src.Foo;
 import src.GUI.EinstellungenGUI;
 import src.GUI.ProfilGUI;
 import src.GUI.StatistikenGUI;
-import src.GUI.start;
+import src.GUI.StartfensterGUI;
 import src.users.Kontrolleur;
-import src.GUI.Kontrolleur.Schwarzfahrt_erfassen;
-
+import static src.Foo.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class KontrolleurGUI extends JFrame implements ActionListener {
     public static Kontrolleur currentUser;
-    private JButton Schwarzfahrterfassen = new JButton();
-    private JButton Schwarzfahrersuchen = new JButton();
+    private JButton SchwarzfahrtErfassen = new JButton();
+    private JButton SchwarzfahrerSuchen = new JButton();
     private JButton Statistiken  = new JButton();
     private JButton Profil = new JButton();
     private JButton Einstellungen = new JButton();
     private JButton Abmelden = new JButton();
 
-    public static Color dark = new Color(44,44,44);
-    public static Color white = new Color(255,255,255);
-    public static Color hellb = new Color(133, 179, 255);
-    public static Color dunkelb = new Color(74,142,255);
 
     public KontrolleurGUI() {
 
@@ -47,37 +42,37 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
 
         // "Willkommen auf der" Text
         JLabel label = new JLabel();
-        label.setText("<html><body><center><p><u>Willkommen, Kontrolleur<u></p></center></body></html>");
+        label.setText("<html><body><center><p><u>Hallo Kontrolleur<u></p></center></body></html>");
         label.setForeground(white);
         label.setHorizontalTextPosition(JLabel.CENTER);
         label.setVerticalTextPosition(JLabel.CENTER);
-        label.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 28));
+        label.setFont(fontLarge);
         label.setHorizontalAlignment(JLabel.CENTER);
         label.setVerticalAlignment(JLabel.CENTER);
         label.setBounds(200,50, 500,50);
 
         //JButton "Schwarzfahrt erfassen"
-        //Styling
-        Schwarzfahrterfassen.addActionListener(this);
-        Schwarzfahrterfassen.setText("<html><body><center><p>Schwarzfahrt<br>erfassen</p></center></body></html>");
-        Schwarzfahrterfassen.setBackground(hellb);
-        Schwarzfahrterfassen.setForeground(white);
-        Schwarzfahrterfassen.setHorizontalTextPosition(JLabel.CENTER);
-        Schwarzfahrterfassen.setVerticalTextPosition(JLabel.CENTER);
-        Schwarzfahrterfassen.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
-        Schwarzfahrterfassen.setHorizontalAlignment(JLabel.CENTER);
-        Schwarzfahrterfassen.setVerticalAlignment(JLabel.CENTER);
-        Schwarzfahrterfassen.setFocusable(false);
-        Schwarzfahrterfassen.setBorderPainted(false);
-        Schwarzfahrterfassen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        Schwarzfahrterfassen.setBounds(140,100,100,100);
+            //Styling
+                SchwarzfahrtErfassen.addActionListener(this);
+                SchwarzfahrtErfassen.setText("<html><body><center><p>Schwarzfahrt<br>erfassen</p></center></body></html>");
+                SchwarzfahrtErfassen.setBackground(hellb);
+                SchwarzfahrtErfassen.setForeground(white);
+                SchwarzfahrtErfassen.setHorizontalTextPosition(JLabel.CENTER);
+                SchwarzfahrtErfassen.setVerticalTextPosition(JLabel.CENTER);
+                SchwarzfahrtErfassen.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
+                SchwarzfahrtErfassen.setHorizontalAlignment(JLabel.CENTER);
+                SchwarzfahrtErfassen.setVerticalAlignment(JLabel.CENTER);
+                SchwarzfahrtErfassen.setFocusable(false);
+                SchwarzfahrtErfassen.setBorderPainted(false);
+                SchwarzfahrtErfassen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                SchwarzfahrtErfassen.setBounds(140,100,100,100);
 
         //ActionListener:
-        Schwarzfahrterfassen.addActionListener(new ActionListener() {
+        SchwarzfahrtErfassen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                Schwarzfahrt_erfassen.open();
+                SchwarzfahrtErfassenGUI.open();
 
             }
         });
@@ -85,22 +80,22 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
 
         // JButton "Schwarzfahrer suchen"
         // Styling
-        Schwarzfahrersuchen.addActionListener(this);
-        Schwarzfahrersuchen.setText("<html><body><center><p>Schwarzfahrer<br>suchen</p></center></body></html>");
-        Schwarzfahrersuchen.setBackground(dunkelb);
-        Schwarzfahrersuchen.setForeground(white);
-        Schwarzfahrersuchen.setHorizontalTextPosition(JLabel.CENTER);
-        Schwarzfahrersuchen.setVerticalTextPosition(JLabel.CENTER);
-        Schwarzfahrersuchen.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
-        Schwarzfahrersuchen.setHorizontalAlignment(JLabel.CENTER);
-        Schwarzfahrersuchen.setVerticalAlignment(JLabel.CENTER);
-        Schwarzfahrersuchen.setFocusable(false);
-        Schwarzfahrersuchen.setBorderPainted(false);
-        Schwarzfahrersuchen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        Schwarzfahrersuchen.setBounds(140,100,100,100);
+        SchwarzfahrerSuchen.addActionListener(this);
+        SchwarzfahrerSuchen.setText("<html><body><center><p>Schwarzfahrer<br>suchen</p></center></body></html>");
+        SchwarzfahrerSuchen.setBackground(dunkelb);
+        SchwarzfahrerSuchen.setForeground(white);
+        SchwarzfahrerSuchen.setHorizontalTextPosition(JLabel.CENTER);
+        SchwarzfahrerSuchen.setVerticalTextPosition(JLabel.CENTER);
+        SchwarzfahrerSuchen.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
+        SchwarzfahrerSuchen.setHorizontalAlignment(JLabel.CENTER);
+        SchwarzfahrerSuchen.setVerticalAlignment(JLabel.CENTER);
+        SchwarzfahrerSuchen.setFocusable(false);
+        SchwarzfahrerSuchen.setBorderPainted(false);
+        SchwarzfahrerSuchen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        SchwarzfahrerSuchen.setBounds(140,100,100,100);
 
         // ActionListener
-        Schwarzfahrersuchen.addActionListener(new ActionListener() {
+        SchwarzfahrerSuchen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
@@ -212,7 +207,7 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
 
                         dispose();
                         currentUser.abmelden();
-                        start.startFenster();
+                        StartfensterGUI.startFenster();
 
                     }
                 });
@@ -235,8 +230,8 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
         Text.add(label, BorderLayout.SOUTH);
 
         //Text.add(Trennlinie,BorderLayout.SOUTH);
-        gridpanel.add(Schwarzfahrterfassen);
-        gridpanel.add(Schwarzfahrersuchen);
+        gridpanel.add(SchwarzfahrtErfassen);
+        gridpanel.add(SchwarzfahrerSuchen);
         gridpanel.add(Statistiken);
         gridpanel.add(Profil);
         gridpanel.add(Einstellungen);

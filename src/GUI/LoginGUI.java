@@ -11,7 +11,7 @@ import src.PersFile;
 import src.users.Administrator;
 import src.users.Kontrolleur;
 import src.users.Sachbearbeiter;
-
+import static src.Foo.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -251,7 +251,7 @@ public class LoginGUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                start.startFenster();
+                StartfensterGUI.startFenster();
             }
         });
 
@@ -286,7 +286,7 @@ public class LoginGUI extends JFrame implements ActionListener {
                     }catch (IOException | ClassNotFoundException io){
                         dispose();
                         io.printStackTrace();
-                        start.startFenster();
+                        StartfensterGUI.startFenster();
                     }
                 }
                 if(Foo.konList.contains(Path.of(Foo.konPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())){
@@ -309,7 +309,7 @@ public class LoginGUI extends JFrame implements ActionListener {
                     }catch (IOException | ClassNotFoundException io){
                         dispose();
                         io.printStackTrace();
-                        start.startFenster();
+                        StartfensterGUI.startFenster();
                     }
                 }
                 if(Foo.sbList.contains(Path.of(Foo.sbPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())){
@@ -332,7 +332,7 @@ public class LoginGUI extends JFrame implements ActionListener {
                     }catch (IOException | ClassNotFoundException io){
                         dispose();
                         io.printStackTrace();
-                        start.startFenster();
+                        StartfensterGUI.startFenster();
                     }
                 }
 
