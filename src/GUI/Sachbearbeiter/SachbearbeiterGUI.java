@@ -1,6 +1,12 @@
 package src.GUI.Sachbearbeiter;
 
 import src.Foo;
+import src.GUI.EinstellungenGUI;
+import src.GUI.ProfilGUI;
+import src.GUI.StartfensterGUI;
+import src.GUI.StatistikenGUI;
+import src.users.Administrator;
+import src.users.Sachbearbeiter;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,6 +17,7 @@ import static src.Foo.*;
 
 public class SachbearbeiterGUI extends JFrame implements ActionListener {
 
+    public static Sachbearbeiter currentUser;
     private JButton Kachel1 = new JButton();
     private JButton Kachel2 = new JButton();
     private JButton Statistiken  = new JButton();
@@ -22,7 +29,7 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
 
     public SachbearbeiterGUI(){
 
-
+        currentUser = currentSachbearbeiter;
         // Panelmanagement
         JPanel gridpanel = new JPanel();
         gridpanel.setBackground(dark);
@@ -31,6 +38,7 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
         gridpanel.setBounds(50,25,300,30);
         gridpanel.setLayout(new GridLayout(2,3,20,20));
         gridpanel.setBorder(BorderFactory.createEmptyBorder(0,70,70,70));
+
         //Willkommentextpanel
         JPanel Text = new JPanel();
         Text.setBackground(dark);
@@ -66,7 +74,14 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
 
         //ActionListener
 
+        Kachel1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
+                Kachel1GUI.openKachel1GUI();
+
+            }
+        });
 
         // JButton "Schwarzfahrer suchen"
         //Styling
@@ -86,6 +101,14 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
 
         //ActionListener
 
+        Kachel2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                Kachel2GUI.openKachel2GUI();
+
+            }
+        });
 
 
         //JButton "Statistiken"
@@ -106,6 +129,14 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
 
         //ActionListener
 
+        Statistiken.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                StatistikenGUI.openStatistikenGUI();
+
+            }
+        });
 
         //JButton "ProfilGUI"
         //Styling
@@ -125,6 +156,14 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
 
         //ActionListener
 
+        Profil.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                ProfilGUI.openProfilGUI();
+
+            }
+        });
 
         //JButton "Einstellungen"
         //Styling
@@ -144,6 +183,14 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
 
         //ActionListener
 
+        Einstellungen.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                EinstellungenGUI.openEinstellungenGUI();
+
+            }
+        });
 
 
         //JButton "Abmelden"
@@ -163,6 +210,18 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
         Abmelden.setBounds(140,100,100,100);
 
         //ActionListener
+
+        Abmelden.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                dispose();
+                currentUser.abmelden();
+                StartfensterGUI.startFenster();
+
+
+            }
+        });
 
         // Gesamt Window
         this.setSize(900,550);

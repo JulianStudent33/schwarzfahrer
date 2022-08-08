@@ -14,6 +14,7 @@ import java.awt.event.ActionListener;
 import static src.Foo.*;
 
 public class AdminGUI extends JFrame implements ActionListener {
+
     public static Administrator currentUser;
     private JButton AdminAnlegen = new JButton();
     private JButton MitarbeiterVerwalten = new JButton();
