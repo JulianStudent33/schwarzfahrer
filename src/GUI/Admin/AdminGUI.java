@@ -49,7 +49,7 @@ public class AdminGUI extends JFrame implements ActionListener {
         label.setForeground(white);
         label.setHorizontalTextPosition(JLabel.CENTER);
         label.setVerticalTextPosition(JLabel.CENTER);
-        label.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 28));
+        label.setFont(fontLarge);
         label.setHorizontalAlignment(JLabel.CENTER);
         label.setVerticalAlignment(JLabel.CENTER);
         label.setBounds(200,50, 500,50);
@@ -62,7 +62,7 @@ public class AdminGUI extends JFrame implements ActionListener {
         AdminAnlegen.setForeground(white);
         AdminAnlegen.setHorizontalTextPosition(JLabel.CENTER);
         AdminAnlegen.setVerticalTextPosition(JLabel.CENTER);
-        AdminAnlegen.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
+        AdminAnlegen.setFont(fontMedium);
         AdminAnlegen.setHorizontalAlignment(JLabel.CENTER);
         AdminAnlegen.setVerticalAlignment(JLabel.CENTER);
         AdminAnlegen.setFocusable(false);
@@ -88,7 +88,7 @@ public class AdminGUI extends JFrame implements ActionListener {
         MitarbeiterVerwalten.setForeground(white);
         MitarbeiterVerwalten.setHorizontalTextPosition(JLabel.CENTER);
         MitarbeiterVerwalten.setVerticalTextPosition(JLabel.CENTER);
-        MitarbeiterVerwalten.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
+        MitarbeiterVerwalten.setFont(fontMedium);
         MitarbeiterVerwalten.setHorizontalAlignment(JLabel.CENTER);
         MitarbeiterVerwalten.setVerticalAlignment(JLabel.CENTER);
         MitarbeiterVerwalten.setFocusable(false);
@@ -116,7 +116,7 @@ public class AdminGUI extends JFrame implements ActionListener {
         Statistiken.setForeground(white);
         Statistiken.setHorizontalTextPosition(JLabel.CENTER);
         Statistiken.setVerticalTextPosition(JLabel.CENTER);
-        Statistiken.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
+        Statistiken.setFont(fontMedium);
         Statistiken.setHorizontalAlignment(JLabel.CENTER);
         Statistiken.setVerticalAlignment(JLabel.CENTER);
         Statistiken.setFocusable(false);
@@ -142,7 +142,7 @@ public class AdminGUI extends JFrame implements ActionListener {
         Profil.setForeground(white);
         Profil.setHorizontalTextPosition(JLabel.CENTER);
         Profil.setVerticalTextPosition(JLabel.CENTER);
-        Profil.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
+        Profil.setFont(fontMedium);
         Profil.setHorizontalAlignment(JLabel.CENTER);
         Profil.setVerticalAlignment(JLabel.CENTER);
         Profil.setFocusable(false);
@@ -169,7 +169,7 @@ public class AdminGUI extends JFrame implements ActionListener {
         Einstellungen.setForeground(white);
         Einstellungen.setHorizontalTextPosition(JLabel.CENTER);
         Einstellungen.setVerticalTextPosition(JLabel.CENTER);
-        Einstellungen.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
+        Einstellungen.setFont(fontMedium);
         Einstellungen.setHorizontalAlignment(JLabel.CENTER);
         Einstellungen.setVerticalAlignment(JLabel.CENTER);
         Einstellungen.setFocusable(false);
@@ -195,7 +195,7 @@ public class AdminGUI extends JFrame implements ActionListener {
                 Abmelden.setForeground(white);
                 Abmelden.setHorizontalTextPosition(JLabel.CENTER);
                 Abmelden.setVerticalTextPosition(JLabel.CENTER);
-                Abmelden.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
+                Abmelden.setFont(fontMedium);
                 Abmelden.setHorizontalAlignment(JLabel.CENTER);
                 Abmelden.setVerticalAlignment(JLabel.CENTER);
                 Abmelden.setFocusable(false);

@@ -8,6 +8,7 @@ import javax.swing.text.JTextComponent;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import static src.Foo.*;
 
 public class StartfensterGUI extends JFrame implements ActionListener {
 
@@ -16,11 +17,10 @@ public class StartfensterGUI extends JFrame implements ActionListener {
     private JButton anm = new JButton();
 
 
-    // Farbpalette
-    public static Color dark = new Color(44,44,44);
-    public static Color white = new Color(255,255,255);
-    public static Color hellb = new Color(133, 179, 255);
-    public static Color dunkelb = new Color(74,142,255);
+
+
+
+
 
     //Konstruktor
     StartfensterGUI() {
@@ -71,11 +71,11 @@ public class StartfensterGUI extends JFrame implements ActionListener {
 
         // "Willkommen auf der" Text
         JLabel label = new JLabel();
-        label.setText("<html><body><center><p>Wilkommen auf der<br>Startoberfläche</p></center></body></html>");
+        label.setText("<html><body><center><p>Willkommen auf der<br>Startoberfläche</p></center></body></html>");
         label.setForeground(white);
         label.setHorizontalTextPosition(JLabel.CENTER);
         label.setVerticalTextPosition(JLabel.CENTER);
-        label.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 38));
+        label.setFont(fontLargeLarge);
         label.setHorizontalAlignment(JLabel.CENTER);
         label.setVerticalAlignment(JLabel.CENTER);
         label.setBounds(-8,70, 500,100);
@@ -86,7 +86,7 @@ public class StartfensterGUI extends JFrame implements ActionListener {
         label1.setForeground(white);
         label1.setHorizontalTextPosition(JLabel.CENTER);
         label1.setVerticalTextPosition(JLabel.CENTER);
-        label1.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 15));
+        label1.setFont(fontSmall);
         label1.setHorizontalAlignment(JLabel.CENTER);
         label1.setVerticalAlignment(JLabel.CENTER);
         label1.setBounds(-9,-10, 500,100);
@@ -98,7 +98,7 @@ public class StartfensterGUI extends JFrame implements ActionListener {
         reg.setForeground(white);
         reg.setHorizontalTextPosition(JLabel.CENTER);
         reg.setVerticalTextPosition(JLabel.CENTER);
-        reg.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
+        reg.setFont(fontMedium);
         reg.setHorizontalAlignment(JLabel.CENTER);
         reg.setVerticalAlignment(JLabel.CENTER);
         reg.setFocusable(false);
@@ -114,7 +114,7 @@ public class StartfensterGUI extends JFrame implements ActionListener {
         anm.setForeground(white);
         anm.setHorizontalTextPosition(JLabel.CENTER);
         anm.setVerticalTextPosition(JLabel.CENTER);
-        anm.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
+        anm.setFont(fontMedium);
         anm.setHorizontalAlignment(JLabel.CENTER);
         anm.setVerticalAlignment(JLabel.CENTER);
         anm.setFocusable(false);

@@ -46,7 +46,7 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
         label.setForeground(white);
         label.setHorizontalTextPosition(JLabel.CENTER);
         label.setVerticalTextPosition(JLabel.CENTER);
-        label.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 28));
+        label.setFont(fontLarge);
         label.setHorizontalAlignment(JLabel.CENTER);
         label.setVerticalAlignment(JLabel.CENTER);
         label.setBounds(200,50, 500,50);

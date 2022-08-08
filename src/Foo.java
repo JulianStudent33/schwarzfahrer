@@ -82,10 +82,18 @@ public class Foo {
     public static boolean firstUsage;
     private static String[] optionsUse = {"Register", "Login"};
 
+    // Farbpalette
     public static Color dark = new Color(44,44,44);
     public static Color white = new Color(255,255,255);
     public static Color hellb = new Color(133, 179, 255);
     public static Color dunkelb = new Color(74,142,255);
+
+    //Schriftart
+    public static Font fontLargeLarge = new Font("IBM Plex Mono Medium", Font.BOLD, 38);
+    public static Font fontLarge = new Font("IBM Plex Mono Medium", Font.BOLD, 28);
+    public static Font fontMedium = new Font("IBM Plex Mono Medium", Font.BOLD, 20);
+    public static Font fontSmall = new Font("IBM Plex Mono Medium", Font.BOLD, 15);
+    public static Font fontSmallSmall = new Font("IBM Plex Mono Medium", Font.BOLD, 10);
 
     //Konstruktoren
 
