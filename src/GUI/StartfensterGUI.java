@@ -9,7 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class start extends JFrame implements ActionListener {
+public class StartfensterGUI extends JFrame implements ActionListener {
 
     //
     private JButton reg = new JButton();
@@ -23,7 +23,7 @@ public class start extends JFrame implements ActionListener {
     public static Color dunkelb = new Color(74,142,255);
 
     //Konstruktor
-    start() {
+    StartfensterGUI() {
 
         // Start des Fensters
         frame();
@@ -201,7 +201,7 @@ public class start extends JFrame implements ActionListener {
 
 
     public static void startFenster(){
-        start gui = new start();
+        StartfensterGUI gui = new StartfensterGUI();
     }
 
 

@@ -1,8 +1,7 @@
-package src.GUI.Kontrolleur;
+package src.GUI.Kon;
 
 import src.Adresse;
 import src.Foo;
-import src.GUI.Kon.KontrolleurGUI;
 import src.users.Kontrolleur;
 import src.users.Schwarzfahrer;
 
@@ -12,7 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-public class Schwarzfahrt_erfassen extends JFrame{
+public class SchwarzfahrtErfassenGUI extends JFrame{
 
     private static Kontrolleur currentUser;
     private static Schwarzfahrer currentSf;
@@ -44,7 +43,7 @@ public class Schwarzfahrt_erfassen extends JFrame{
     private JLabel linieLabel;
     private JLabel datumUhrzeitLabel;
 
-    public Schwarzfahrt_erfassen(){
+    public SchwarzfahrtErfassenGUI(){
         this.currentUser = KontrolleurGUI.currentUser;
         setContentPane(mainPanel);
         setTitle("Kontrolleur Menü");
@@ -185,7 +184,7 @@ public class Schwarzfahrt_erfassen extends JFrame{
         return false;
     }
     public static void open() {
-        Schwarzfahrt_erfassen gui = new Schwarzfahrt_erfassen();
+        SchwarzfahrtErfassenGUI gui = new SchwarzfahrtErfassenGUI();
     }
 
     public static void main(String[] args) {

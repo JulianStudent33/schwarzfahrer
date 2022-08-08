@@ -1,4 +1,4 @@
-package src.GUI.Sachbearbeiter;
+package src.GUI.Kon;
 import static src.Foo.*;
 public class Kachel2 {
 }

@@ -82,7 +82,10 @@ public class Foo {
     public static boolean firstUsage;
     private static String[] optionsUse = {"Register", "Login"};
 
-
+    public static Color dark = new Color(44,44,44);
+    public static Color white = new Color(255,255,255);
+    public static Color hellb = new Color(133, 179, 255);
+    public static Color dunkelb = new Color(74,142,255);
 
     //Konstruktoren
 
@@ -101,7 +104,7 @@ public class Foo {
         setAngemeldet(angemeldetBleiben);
 
         if(!angemeldet){
-            start.startFenster();
+            StartfensterGUI.startFenster();
         } else if (currentAdmin!=null) {
             AdminGUI.openAdminGUI();
         } else if (currentKontrolleur!=null) {

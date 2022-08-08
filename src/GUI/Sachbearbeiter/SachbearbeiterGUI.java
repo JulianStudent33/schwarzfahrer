@@ -3,24 +3,21 @@ package src.GUI.Sachbearbeiter;
 import src.Foo;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import static src.Foo.*;
+
 public class SachbearbeiterGUI extends JFrame implements ActionListener {
 
-    private JButton Schwarzfahrterfassen = new JButton();
-    private JButton Schwarzfahrersuchen = new JButton();
+    private JButton Kachel1 = new JButton();
+    private JButton Kachel2 = new JButton();
     private JButton Statistiken  = new JButton();
     private JButton Profil = new JButton();
     private JButton Einstellungen = new JButton();
     private JButton Abmelden = new JButton();
 
-    public static Color dark = new Color(44,44,44);
-    public static Color white = new Color(255,255,255);
-    public static Color hellb = new Color(133, 179, 255);
-    public static Color dunkelb = new Color(74,142,255);
 
 
     public SachbearbeiterGUI(){
@@ -42,7 +39,7 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
 
         // "Willkommen auf der" Text
         JLabel label = new JLabel();
-        label.setText("<html><body><center><p><u>Willkommen, Sachbearbeiter<u></p></center></body></html>");
+        label.setText("<html><body><center><p><u>Hallo Sachbearbeiter<u></p></center></body></html>");
         label.setForeground(white);
         label.setHorizontalTextPosition(JLabel.CENTER);
         label.setVerticalTextPosition(JLabel.CENTER);
@@ -52,38 +49,47 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
         label.setBounds(200,50, 500,50);
 
        //JButton "Schwarzfahrt erfassen"
-        Schwarzfahrterfassen.addActionListener(this);
-        Schwarzfahrterfassen.setText("<html><body><center><p>Schwarzfahrt<br>erfassen</p></center></body></html>");
-        Schwarzfahrterfassen.setBackground(hellb);
-        Schwarzfahrterfassen.setForeground(white);
-        Schwarzfahrterfassen.setHorizontalTextPosition(JLabel.CENTER);
-        Schwarzfahrterfassen.setVerticalTextPosition(JLabel.CENTER);
-        Schwarzfahrterfassen.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
-        Schwarzfahrterfassen.setHorizontalAlignment(JLabel.CENTER);
-        Schwarzfahrterfassen.setVerticalAlignment(JLabel.CENTER);
-        Schwarzfahrterfassen.setFocusable(false);
-        Schwarzfahrterfassen.setBorderPainted(false);
-        Schwarzfahrterfassen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        Schwarzfahrterfassen.setBounds(140,100,100,100);
+        //Styling
+        Kachel1.addActionListener(this);
+        Kachel1.setText("<html><body><center><p>Kachel 1</p></center></body></html>");
+        Kachel1.setBackground(hellb);
+        Kachel1.setForeground(white);
+        Kachel1.setHorizontalTextPosition(JLabel.CENTER);
+        Kachel1.setVerticalTextPosition(JLabel.CENTER);
+        Kachel1.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
+        Kachel1.setHorizontalAlignment(JLabel.CENTER);
+        Kachel1.setVerticalAlignment(JLabel.CENTER);
+        Kachel1.setFocusable(false);
+        Kachel1.setBorderPainted(false);
+        Kachel1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        Kachel1.setBounds(140,100,100,100);
+
+        //ActionListener
+
 
 
         // JButton "Schwarzfahrer suchen"
-        Schwarzfahrersuchen.addActionListener(this);
-        Schwarzfahrersuchen.setText("<html><body><center><p>Schwarzfahrer<br>suchen</p></center></body></html>");
-        Schwarzfahrersuchen.setBackground(dunkelb);
-        Schwarzfahrersuchen.setForeground(white);
-        Schwarzfahrersuchen.setHorizontalTextPosition(JLabel.CENTER);
-        Schwarzfahrersuchen.setVerticalTextPosition(JLabel.CENTER);
-        Schwarzfahrersuchen.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
-        Schwarzfahrersuchen.setHorizontalAlignment(JLabel.CENTER);
-        Schwarzfahrersuchen.setVerticalAlignment(JLabel.CENTER);
-        Schwarzfahrersuchen.setFocusable(false);
-        Schwarzfahrersuchen.setBorderPainted(false);
-        Schwarzfahrersuchen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        Schwarzfahrersuchen.setBounds(140,100,100,100);
+        //Styling
+        Kachel2.addActionListener(this);
+        Kachel2.setText("<html><body><center><p>Kachel 2</p></center></body></html>");
+        Kachel2.setBackground(dunkelb);
+        Kachel2.setForeground(white);
+        Kachel2.setHorizontalTextPosition(JLabel.CENTER);
+        Kachel2.setVerticalTextPosition(JLabel.CENTER);
+        Kachel2.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
+        Kachel2.setHorizontalAlignment(JLabel.CENTER);
+        Kachel2.setVerticalAlignment(JLabel.CENTER);
+        Kachel2.setFocusable(false);
+        Kachel2.setBorderPainted(false);
+        Kachel2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        Kachel2.setBounds(140,100,100,100);
+
+        //ActionListener
+
 
 
         //JButton "Statistiken"
+        //Styling
         Statistiken.addActionListener(this);
         Statistiken.setText("Statistiken");
         Statistiken.setBackground(hellb);
@@ -98,7 +104,11 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
         Statistiken.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         Statistiken.setBounds(140,100,100,100);
 
+        //ActionListener
+
+
         //JButton "ProfilGUI"
+        //Styling
         Profil.addActionListener(this);
         Profil.setText("ProfilGUI");
         Profil.setBackground(dunkelb);
@@ -113,7 +123,11 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
         Profil.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         Profil.setBounds(140,100,100,100);
 
+        //ActionListener
+
+
         //JButton "Einstellungen"
+        //Styling
         Einstellungen.addActionListener(this);
         Einstellungen.setText("Einstellungen");
         Einstellungen.setBackground(hellb);
@@ -128,7 +142,12 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
         Einstellungen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         Einstellungen.setBounds(140,100,100,100);
 
+        //ActionListener
+
+
+
         //JButton "Abmelden"
+        //Styling
         Abmelden.addActionListener(this);
         Abmelden.setText("Abmelden");
         Abmelden.setBackground(dunkelb);
@@ -143,7 +162,7 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
         Abmelden.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         Abmelden.setBounds(140,100,100,100);
 
-
+        //ActionListener
 
         // Gesamt Window
         this.setSize(900,550);
@@ -163,8 +182,8 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
         Text.add(label, BorderLayout.SOUTH);
 
         //Text.add(Trennlinie,BorderLayout.SOUTH);
-        gridpanel.add(Schwarzfahrterfassen);
-        gridpanel.add(Schwarzfahrersuchen);
+        gridpanel.add(Kachel1);
+        gridpanel.add(Kachel2);
         gridpanel.add(Statistiken);
         gridpanel.add(Profil);
         gridpanel.add(Einstellungen);

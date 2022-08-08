@@ -2,7 +2,8 @@ package src.GUI.Kontrolleur;
 
 import javax.swing.*;
 import src.Foo;
-import src.GUI.start;
+import src.GUI.Kon.SchwarzfahrtErfassenGUI;
+import src.GUI.StartfensterGUI;
 import src.users.Kontrolleur;
 
 import java.awt.*;
@@ -44,7 +45,7 @@ public class KontrolleurGUI_alt extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                    Schwarzfahrt_erfassen.open();
+                    SchwarzfahrtErfassenGUI.open();
 
             }
         });
@@ -82,7 +83,7 @@ public class KontrolleurGUI_alt extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 currentUser.abmelden();
-                start.startFenster();
+                StartfensterGUI.startFenster();
             }
         });
     }
