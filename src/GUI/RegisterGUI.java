@@ -98,9 +98,10 @@ public class RegisterGUI extends JFrame{
             @Override
             public void focusLost(FocusEvent e) {
 
+                System.out.println("Focus lost");
                 if (Integer.parseInt(monthSpinner.getValue().toString()) == 4 || Integer.parseInt(monthSpinner.getValue().toString()) == 6 || Integer.parseInt(monthSpinner.getValue().toString()) == 9 || Integer.parseInt(monthSpinner.getValue().toString()) == 11){
                     if (Integer.parseInt(daySpinner.getValue().toString()) > 30){
-                        monthSpinner.setValue(30);
+                        daySpinner.setValue(30);
                     }
                 }
                 if (Integer.parseInt(monthSpinner.getValue().toString()) == 2){

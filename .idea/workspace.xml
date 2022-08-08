@@ -4,18 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Error fixed, Geburtsdatum wird wieder gesetted">
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Neu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/Saves/Users/Admin/Admin1.mb" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/Saves/Users/Admin/Admin1.mb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/Foo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/Foo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/AdminGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/erfassen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/erfassen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/erfassen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/erfassen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/erfassen$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/erfassen$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/erfassen$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/erfassen$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$10.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$11.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$2.class" afterDir="false" />
@@ -27,29 +23,11 @@
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$8.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$9.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/SachbearbeiterGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/users/Kontrolleur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/users/Kontrolleur.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/users/Mitarbeiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/users/Mitarbeiter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/users/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/users/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/users/Schwarzfahrer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/users/Schwarzfahrer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Adresse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Adresse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Foo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/AdminGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Admin/AdminGUI.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/AdminGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Admin/AdminGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Kontrolleur/erfassen.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Kontrolleur/erfassen.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Kontrolleur/erfassen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Kontrolleur/erfassen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/LoginGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/SachbearbeiterGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Sachbearbeiter/SachbearbeiterGUI.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/SachbearbeiterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Sachbearbeiter/SachbearbeiterGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/firstRegistrationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/firstRegistrationGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/users/Kontrolleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/Kontrolleur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/users/Mitarbeiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/Mitarbeiter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/users/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/users/Schwarzfahrer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/Schwarzfahrer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,8 +37,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
+        <option value="UML Class" />
       </list>
     </option>
   </component>
@@ -88,14 +67,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultPlantUmlFileTemplate": "UML Class",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "false",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "238",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "false",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "232",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/CBleck/Desktop/UNI Skripte/OOP/SchwarzfahrerProjekt/src/GUI",
+    "last_opened_file_path": "C:/Users/CBleck/Desktop/UNI Skripte/OOP/SchwarzfahrerProjekt",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -250,7 +230,8 @@
       <workItem from="1657958711775" duration="2971000" />
       <workItem from="1658256201664" duration="2936000" />
       <workItem from="1658312610844" duration="1240000" />
-      <workItem from="1659883325166" duration="8915000" />
+      <workItem from="1659883325166" duration="9216000" />
+      <workItem from="1659942065114" duration="5490000" />
     </task>
     <task id="LOCAL-00001" summary="du ziegee">
       <created>1655906843233</created>
@@ -539,7 +520,28 @@
       <option name="project" value="LOCAL" />
       <updated>1659882408856</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Error fixed, Geburtsdatum wird wieder gesetted">
+      <created>1659910884738</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1659910884738</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Error fixed, Geburtsdatum wird wieder gesetted">
+      <created>1659910899258</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1659910899258</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Neu">
+      <created>1659911080267</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1659911080267</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,17 +583,14 @@
     <MESSAGE value="neu" />
     <MESSAGE value="Number Filter auf Telefonfeld." />
     <MESSAGE value="j" />
+    <MESSAGE value="Schwarzfahrer implementiert. Autocomplete implementiert durch suchen via ausweisnummer." />
     <MESSAGE value="Error fixed, Geburtsdatum wird wieder gesetted" />
-    <option name="LAST_COMMIT_MESSAGE" value="Error fixed, Geburtsdatum wird wieder gesetted" />
+    <MESSAGE value="Neu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Neu" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PersFile.java</url>
           <line>53</line>

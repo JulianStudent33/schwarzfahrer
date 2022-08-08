@@ -4,18 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Error fixed, Geburtsdatum wird wieder gesetted">
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Neu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Foo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/AdminGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Admin/AdminGUI.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/AdminGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Admin/AdminGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Kontrolleur/erfassen.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Kontrolleur/erfassen.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Kontrolleur/erfassen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Kontrolleur/erfassen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/LoginGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/SachbearbeiterGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Sachbearbeiter/SachbearbeiterGUI.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/SachbearbeiterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Sachbearbeiter/SachbearbeiterGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/firstRegistrationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/firstRegistrationGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/erfassen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/erfassen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/erfassen$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/erfassen$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/erfassen$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/erfassen$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$4.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +25,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -55,7 +55,9 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;false&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;238&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;false&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;232&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/CBleck/Desktop/UNI Skripte/OOP/SchwarzfahrerProjekt/src/GUI&quot;,
@@ -213,7 +215,8 @@
       <workItem from="1657958711775" duration="2971000" />
       <workItem from="1658256201664" duration="2936000" />
       <workItem from="1658312610844" duration="1240000" />
-      <workItem from="1659883325166" duration="813000" />
+      <workItem from="1659883325166" duration="9216000" />
+      <workItem from="1659942065114" duration="599000" />
     </task>
     <task id="LOCAL-00001" summary="du ziegee">
       <created>1655906843233</created>
@@ -502,7 +505,28 @@
       <option name="project" value="LOCAL" />
       <updated>1659882408856</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Error fixed, Geburtsdatum wird wieder gesetted">
+      <created>1659910884738</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1659910884738</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Error fixed, Geburtsdatum wird wieder gesetted">
+      <created>1659910899258</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1659910899258</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Neu">
+      <created>1659911080267</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1659911080267</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,8 +568,10 @@
     <MESSAGE value="neu" />
     <MESSAGE value="Number Filter auf Telefonfeld." />
     <MESSAGE value="j" />
+    <MESSAGE value="Schwarzfahrer implementiert. Autocomplete implementiert durch suchen via ausweisnummer." />
     <MESSAGE value="Error fixed, Geburtsdatum wird wieder gesetted" />
-    <option name="LAST_COMMIT_MESSAGE" value="Error fixed, Geburtsdatum wird wieder gesetted" />
+    <MESSAGE value="Neu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Neu" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -574,6 +600,11 @@
           <url>file://$PROJECT_DIR$/src/savedUser.java</url>
           <line>21</line>
           <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/users/Kontrolleur.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="88" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
