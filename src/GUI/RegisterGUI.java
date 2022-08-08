@@ -1,7 +1,8 @@
 package src.GUI;
 
 import src.Foo;
-import src.GUI.Kontrolleur.KontrolleurGUI;
+import src.GUI.Kon.KontrolleurGUI;
+import src.GUI.Kontrolleur.KontrolleurGUI_alt;
 import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
 import src.GUI.elements.*;
 import src.nickcode.pass;

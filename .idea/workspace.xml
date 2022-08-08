@@ -4,8 +4,67 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="rsdcfvghbjmk">
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Neu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/Saves/Schwarzfahrer/1.sf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/Saves/Schwarzfahrer/4142.sf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/Saves/Schwarzfahrer/666.sf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/Saves/Users/Kontrolleur/Konni1.mb" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/Saves/Users/Kontrolleur/Konni1.mb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/Saves/loggedIN.save" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/Saves/loggedIN.save" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/Foo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/Foo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Admin/AdminGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Admin/AdminGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/KontrolleurGUI$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/KontrolleurGUI$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/KontrolleurGUI$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/KontrolleurGUI$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/KontrolleurGUI$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/KontrolleurGUI$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/KontrolleurGUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/erfassen$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/erfassen$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/erfassen$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kontrolleur/erfassen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Sachbearbeiter/SachbearbeiterGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Sachbearbeiter/SachbearbeiterGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/StartFensterGUI$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/StartFensterGUI$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/StartFensterGUI$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/StartFensterGUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Foo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Foo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Admin/AdminGUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Admin/AdminGUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/EinstellungenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/EinstellungenGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Kontrolleur/KontrolleurGUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Kontrolleur/KontrolleurGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Kontrolleur/KontrolleurGUI_alt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Kontrolleur/erfassen.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Kontrolleur/Schwarzfahrt_erfassen.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Kontrolleur/erfassen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Kontrolleur/Schwarzfahrt_erfassen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/LoginGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/ProfilGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ProfilGUI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/ProfilGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ProfilGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Sachbearbeiter/SachbearbeiterGUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Sachbearbeiter/SachbearbeiterGUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/StartFensterGUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/StartFensterGUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/StatistikenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/StatistikenGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/users/Schwarzfahrer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/Schwarzfahrer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +75,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="UML Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -53,7 +112,7 @@
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "false",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "232",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Nick/Desktop/schwarzfahrermhm",
+    "last_opened_file_path": "C:/Users/CBleck/Desktop/UNI Skripte/OOP/SchwarzfahrerProjekt",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -106,6 +165,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="KontrolleurGUI_alt" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.GUI.Kontrolleur.KontrolleurGUI_alt" />
+      <module name="PigPen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.GUI.Kontrolleur.KontrolleurGUI_alt" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.Main" />
       <module name="PigPen" />
@@ -132,39 +204,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="src.GUI.Kontrolleur.KontrolleurGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.GUI.Kontrolleur.KontrolleurGUI" />
-      <module name="PigPen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="src.GUI.Kontrolleur.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="PigPen" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="PigPen" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.FieldFilter" />
         <item itemvalue="Application.FilterDemo" />
         <item itemvalue="Application.Test" />
-        <item itemvalue="Application.src.GUI.Kontrolleur.KontrolleurGUI" />
+        <item itemvalue="Application.KontrolleurGUI_alt" />
       </list>
     </recent_temporary>
   </component>
@@ -222,7 +268,7 @@
       <workItem from="1658256201664" duration="2936000" />
       <workItem from="1658312610844" duration="1240000" />
       <workItem from="1659883325166" duration="9216000" />
-      <workItem from="1659942065114" duration="5490000" />
+      <workItem from="1659942065114" duration="8742000" />
     </task>
     <task id="LOCAL-00001" summary="du ziegee">
       <created>1655906843233</created>
@@ -532,12 +578,12 @@
       <option name="project" value="LOCAL" />
       <updated>1659911080267</updated>
     </task>
-    <task id="LOCAL-00045" summary="rsdcfvghbjmk">
-      <created>1659966032669</created>
+    <task id="LOCAL-00045" summary="Neu">
+      <created>1659950492221</created>
       <option name="number" value="00045" />
       <option name="presentableId" value="LOCAL-00045" />
       <option name="project" value="LOCAL" />
-      <updated>1659966032670</updated>
+      <updated>1659950492221</updated>
     </task>
     <option name="localTasksCounter" value="46" />
     <servers />
@@ -584,8 +630,7 @@
     <MESSAGE value="Schwarzfahrer implementiert. Autocomplete implementiert durch suchen via ausweisnummer." />
     <MESSAGE value="Error fixed, Geburtsdatum wird wieder gesetted" />
     <MESSAGE value="Neu" />
-    <MESSAGE value="rsdcfvghbjmk" />
-    <option name="LAST_COMMIT_MESSAGE" value="rsdcfvghbjmk" />
+    <option name="LAST_COMMIT_MESSAGE" value="Neu" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
