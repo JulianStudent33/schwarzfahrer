@@ -8,9 +8,8 @@ import src.users.Kontrolleur;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
-public class KontrolleurGUI extends JFrame {
+public class KontrolleurGUI_alt extends JFrame {
     public static Kontrolleur currentUser;
     private JToolBar konToolBar;
     private JPanel mainPanel;
@@ -21,7 +20,7 @@ public class KontrolleurGUI extends JFrame {
     private JToggleButton schwarzfahrtErfassenToggleButton;
     private JToggleButton statistikenToggleButton;
 
-    public KontrolleurGUI()  {
+    public KontrolleurGUI_alt()  {
         currentUser = Foo.currentKontrolleur;
         setContentPane(mainPanel);
         setTitle("Kontrolleur Menü");
@@ -45,7 +44,7 @@ public class KontrolleurGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                    erfassen.open();
+                    Schwarzfahrt_erfassen.open();
 
             }
         });
@@ -89,7 +88,7 @@ public class KontrolleurGUI extends JFrame {
     }
 
     public static void openKonGUI() {
-        KontrolleurGUI gui = new KontrolleurGUI();
+        KontrolleurGUI_alt gui = new KontrolleurGUI_alt();
     }
 
     public static void main(String[] args) {

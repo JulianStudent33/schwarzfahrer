@@ -2,12 +2,12 @@ package src;
 
 import src.GUI.*;
 import src.GUI.Admin.AdminGUI;
-import src.GUI.Kontrolleur.KontrolleurGUI;
+import src.GUI.Kon.KontrolleurGUI;
+import src.GUI.Kontrolleur.KontrolleurGUI_alt;
 import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
 import src.users.Administrator;
 import src.users.Kontrolleur;
 import src.users.Sachbearbeiter;
-import src.users.Schwarzfahrer;
 
 import javax.swing.*;
 import java.awt.*;

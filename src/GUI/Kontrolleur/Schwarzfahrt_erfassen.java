@@ -11,7 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-public class erfassen extends JFrame{
+public class Schwarzfahrt_erfassen extends JFrame{
 
     private static Kontrolleur currentUser;
     private static Schwarzfahrer currentSf;
@@ -43,8 +43,8 @@ public class erfassen extends JFrame{
     private JLabel linieLabel;
     private JLabel datumUhrzeitLabel;
 
-    public erfassen(){
-        this.currentUser = KontrolleurGUI.currentUser;
+    public Schwarzfahrt_erfassen(){
+        this.currentUser = KontrolleurGUI_alt.currentUser;
         setContentPane(mainPanel);
         setTitle("Kontrolleur Menü");
         Point center = GraphicsEnvironment.getLocalGraphicsEnvironment().getCenterPoint();
@@ -184,7 +184,7 @@ public class erfassen extends JFrame{
         return false;
     }
     public static void open() {
-        erfassen gui = new erfassen();
+        Schwarzfahrt_erfassen gui = new Schwarzfahrt_erfassen();
     }
 
     public static void main(String[] args) {
