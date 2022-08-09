@@ -1,9 +1,9 @@
 package src.GUI.Kon;
 
+import com.formdev.flatlaf.FlatDarkLaf;
 import src.Adresse;
 import src.Foo;
 import src.GUI.elements.DatePick;
-import src.GUI.elements.Date_Picker;
 import src.users.Kontrolleur;
 import src.users.Schwarzfahrer;
 
@@ -54,8 +54,9 @@ public class SchwarzfahrtErfassenGUI extends JFrame{
         this.setBounds(center.x - width / 2, center.y - height / 2, width, height);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
+
         try {
-            UIManager.setLookAndFeel(UIManager.createLookAndFeel("Windows"));
+            UIManager.setLookAndFeel(new FlatDarkLaf());
         } catch (UnsupportedLookAndFeelException e) {
             throw new RuntimeException(e);
         }

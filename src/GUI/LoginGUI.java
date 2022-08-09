@@ -3,7 +3,6 @@ package src.GUI;
 import src.Foo;
 import src.GUI.Admin.AdminGUI;
 import src.GUI.Kon.KontrolleurGUI;
-import src.GUI.Kontrolleur.KontrolleurGUI_alt;
 import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
 import src.GUI.elements.PlaceholderPasswordField;
 import src.GUI.elements.PlaceholderTextField;
