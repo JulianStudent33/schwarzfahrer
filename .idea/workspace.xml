@@ -4,22 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="LoginGUI Version Ron 1.0">
-      <change afterPath="$PROJECT_DIR$/Saves/Users/Kontrolleur/Ron.mb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/PigPen/Saves/Users/Kontrolleur/Ron.mb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Sachbearbeiter/Kachel1GUI.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Sachbearbeiter/Kachel2GUI.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Sachbearbeiter/SachbearbeiterGUI$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Sachbearbeiter/SachbearbeiterGUI$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Sachbearbeiter/SachbearbeiterGUI$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Sachbearbeiter/SachbearbeiterGUI$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Sachbearbeiter/SachbearbeiterGUI$5.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Sachbearbeiter/SachbearbeiterGUI$6.class" afterDir="false" />
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="LoginGUI Version Ron 1.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/LoginGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -229,14 +218,7 @@
       <workItem from="1658312610844" duration="1240000" />
       <workItem from="1659883325166" duration="9216000" />
       <workItem from="1659942065114" duration="12541000" />
-      <workItem from="1660023757005" duration="3551000" />
-    </task>
-    <task id="LOCAL-00002" summary="int x = 0">
-      <created>1655907284452</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1655907284452</updated>
+      <workItem from="1660023757005" duration="5069000" />
     </task>
     <task id="LOCAL-00003" summary="int x = 0">
       <created>1655907563374</created>
@@ -574,7 +556,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659973816011</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="LoginGUI Version Ron 1.1">
+      <created>1660047688415</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1660047688415</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,7 +584,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Neue Version, Registrierung und Login implementiert, alles buggy" />
     <MESSAGE value="Neue Version, Registrierung und Login implementiert, alles buggy&#10;&#10;Login und Registrierung jetzt besser, man kann mit abbrechen zurück ins vorherige Fenster" />
     <MESSAGE value="Alles besser gemacht" />
     <MESSAGE value="Intelij hat mir git neu runtergeladen. Wann hustlen wir das durch? Ich brauch langsam mal n UI" />
@@ -620,7 +608,8 @@
     <MESSAGE value="error fix" />
     <MESSAGE value="Important Changes" />
     <MESSAGE value="LoginGUI Version Ron 1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="LoginGUI Version Ron 1.0" />
+    <MESSAGE value="LoginGUI Version Ron 1.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="LoginGUI Version Ron 1.1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
