@@ -21,10 +21,6 @@ import java.util.Arrays;
 
 public class LoginGUI extends JFrame implements ActionListener {
 
-    public static Color dark = new Color(44, 44, 44);
-    public static Color white = new Color(255, 255, 255);
-    public static Color hellb = new Color(133, 179, 255);
-    public static Color dunkelb = new Color(74, 142, 255);
     private JPanel mainPanel;
     private PlaceholderPasswordField passwortPasswordField;
     private PlaceholderTextField benutzernameTextField;
@@ -48,13 +44,6 @@ public class LoginGUI extends JFrame implements ActionListener {
         Text.setBackground(dark);
         Text.setPreferredSize(new Dimension(200, 100));
         Text.setLayout(null);
-
-        /*
-        JPanel Benutzer = new JPanel();
-        Benutzer.setBackground(dark);
-        Benutzer.setPreferredSize(new Dimension(100, 50));
-        Benutzer.setLayout(null);
-         */
 
         JPanel Passwort = new JPanel();
         Passwort.setBackground(dark);
