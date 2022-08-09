@@ -28,7 +28,7 @@ public class LoginGUI extends JFrame {
     private JCheckBox angemeldetBleibenCheckBox;
     private JButton passwortVergessenButton;
 
-//test
+//test mhm
 
     public LoginGUI(){
         setContentPane(mainPanel);
