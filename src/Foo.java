@@ -84,6 +84,7 @@ public class Foo {
 
     // Farbpalette
     public static Color dark = new Color(44,44,44);
+    public static Color notSoDark = new Color(77, 77, 77);
     public static Color white = new Color(255,255,255);
     public static Color hellb = new Color(133, 179, 255);
     public static Color dunkelb = new Color(74,142,255);
