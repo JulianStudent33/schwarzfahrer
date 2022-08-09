@@ -4,18 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="test">
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="LoginGUI Version Ron 1.0">
+      <change afterPath="$PROJECT_DIR$/Saves/Users/Kontrolleur/Ron.mb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/PigPen/Saves/Users/Kontrolleur/Ron.mb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Sachbearbeiter/Kachel1GUI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Sachbearbeiter/Kachel2GUI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Sachbearbeiter/SachbearbeiterGUI$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Sachbearbeiter/SachbearbeiterGUI$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Sachbearbeiter/SachbearbeiterGUI$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Sachbearbeiter/SachbearbeiterGUI$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Sachbearbeiter/SachbearbeiterGUI$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Sachbearbeiter/SachbearbeiterGUI$6.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/loggedIN.save" beforeDir="false" afterPath="$PROJECT_DIR$/Saves/loggedIN.save" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/Saves/loggedIN.save" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/Saves/loggedIN.save" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/LoginGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,31 +38,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitToolBoxStore">
-    <option name="recentBranches">
-      <RecentBranches>
-        <option name="branchesForRepo">
-          <list>
-            <RecentBranchesForRepo>
-              <option name="branches">
-                <list>
-                  <RecentBranch>
-                    <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1659966339" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1659966338" />
-                  </RecentBranch>
-                </list>
-              </option>
-              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
-            </RecentBranchesForRepo>
-          </list>
-        </option>
-      </RecentBranches>
-    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -105,6 +80,7 @@
       <recent name="C:\Users\CBleck\Desktop\UNI Skripte\OOP\SchwarzfahrerProjekt\src\GUI" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\CBleck\Desktop\UNI Skripte\OOP\SchwarzfahrerProjekt\src\GUI\Kon" />
       <recent name="C:\Users\CBleck\Desktop\UNI Skripte\OOP\SchwarzfahrerProjekt\src\GUI\Admin" />
       <recent name="C:\Users\CBleck\Desktop\UNI Skripte\OOP\SchwarzfahrerProjekt\src\GUI\Sachbearbeiter" />
       <recent name="C:\Users\CBleck\Desktop\UNI Skripte\OOP\SchwarzfahrerProjekt\src\GUI\Kontrolleur" />
@@ -244,14 +220,7 @@
       <workItem from="1658256201664" duration="2936000" />
       <workItem from="1658312610844" duration="1240000" />
       <workItem from="1659883325166" duration="9216000" />
-      <workItem from="1659942065114" duration="8742000" />
-    </task>
-    <task id="LOCAL-00001" summary="du ziegee">
-      <created>1655906843233</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1655906843233</updated>
+      <workItem from="1659942065114" duration="12541000" />
     </task>
     <task id="LOCAL-00002" summary="int x = 0">
       <created>1655907284452</created>
@@ -561,14 +530,42 @@
       <option name="project" value="LOCAL" />
       <updated>1659950492221</updated>
     </task>
-    <task id="LOCAL-00046" summary="test">
-      <created>1659966441453</created>
+    <task id="LOCAL-00046" summary="KonGUI, AdminGUI, SBGUi">
+      <created>1659966201206</created>
       <option name="number" value="00046" />
       <option name="presentableId" value="LOCAL-00046" />
       <option name="project" value="LOCAL" />
-      <updated>1659966441453</updated>
+      <updated>1659966201206</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="error fix">
+      <created>1659966447945</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1659966447945</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Important Changes">
+      <created>1659968682492</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1659968682492</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Important Changes">
+      <created>1659969278709</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1659969278709</updated>
+    </task>
+    <task id="LOCAL-00050" summary="LoginGUI Version Ron 1.0">
+      <created>1659973816010</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1659973816011</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -589,9 +586,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="du ziegee" />
-    <MESSAGE value="int x = 0" />
-    <MESSAGE value="Neue Version, Registrierung und Login implementiert" />
     <MESSAGE value="Neue Version, Registrierung und Login implementiert, alles buggy" />
     <MESSAGE value="Neue Version, Registrierung und Login implementiert, alles buggy&#10;&#10;Login und Registrierung jetzt besser, man kann mit abbrechen zurück ins vorherige Fenster" />
     <MESSAGE value="Alles besser gemacht" />
@@ -613,8 +607,11 @@
     <MESSAGE value="Schwarzfahrer implementiert. Autocomplete implementiert durch suchen via ausweisnummer." />
     <MESSAGE value="Error fixed, Geburtsdatum wird wieder gesetted" />
     <MESSAGE value="Neu" />
-    <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="KonGUI, AdminGUI, SBGUi" />
+    <MESSAGE value="error fix" />
+    <MESSAGE value="Important Changes" />
+    <MESSAGE value="LoginGUI Version Ron 1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="LoginGUI Version Ron 1.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -88,7 +88,7 @@ public class LoginGUI extends JFrame implements ActionListener {
         PlaceholderTextField benutzernameTextField = new PlaceholderTextField();
         benutzernameTextField.setBackground(white);
         benutzernameTextField.setForeground(dark);
-        benutzernameTextField.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 15));
+        benutzernameTextField.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
         benutzernameTextField.setBounds(150, 40, 200,30);
         benutzernameTextField.setPlaceholder("Benutzername");
 
@@ -96,7 +96,7 @@ public class LoginGUI extends JFrame implements ActionListener {
         PlaceholderPasswordField passwortPasswordField = new PlaceholderPasswordField();
         passwortPasswordField.setBackground(white);
         passwortPasswordField.setForeground(dark);
-        passwortPasswordField.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 15));
+        passwortPasswordField.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
         passwortPasswordField.setBounds(150,85, 200,30);
         passwortPasswordField.setPlaceholder("Passwort");
 
@@ -104,7 +104,7 @@ public class LoginGUI extends JFrame implements ActionListener {
         JButton passwortVergessenButton = new JButton();
         passwortVergessenButton.addActionListener(this);
         passwortVergessenButton.setText("<html><body>Passwort vergessen?</body></html>");
-        passwortVergessenButton.setBackground(dark);
+        passwortVergessenButton.setBackground(Color.darkGray);
         passwortVergessenButton.setForeground(white);
         passwortVergessenButton.setHorizontalTextPosition(JLabel.CENTER);
         passwortVergessenButton.setVerticalTextPosition(JLabel.CENTER);
@@ -200,9 +200,7 @@ public class LoginGUI extends JFrame implements ActionListener {
 
         }
         benutzernameTextField.addMouseListener(new MouseAdapter() {
-            public void mouseReleased(MouseEvent e){
-                benutzernameTextField.setText("");
-            }
+
         });
 
         benutzernameTextField.addKeyListener(new KeyListener() {
