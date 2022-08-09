@@ -70,14 +70,14 @@ public class LoginGUI extends JFrame implements ActionListener {
         label.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 30));
         label.setHorizontalAlignment(JLabel.CENTER);
         label.setVerticalAlignment(JLabel.CENTER);
-        label.setBounds(250, 20, 100, 35);
+        label.setBounds(250, 50, 100, 35);
 
         // Textfield Benutzer
         PlaceholderTextField benutzernameTextField = new PlaceholderTextField();
         benutzernameTextField.setBackground(white);
         benutzernameTextField.setForeground(dark);
         benutzernameTextField.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
-        benutzernameTextField.setBounds(150, 40, 200,30);
+        benutzernameTextField.setBounds(200, 25, 200,30);
         benutzernameTextField.setPlaceholder("Benutzername");
 
         // Textfield Passwort
@@ -85,7 +85,7 @@ public class LoginGUI extends JFrame implements ActionListener {
         passwortPasswordField.setBackground(white);
         passwortPasswordField.setForeground(dark);
         passwortPasswordField.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
-        passwortPasswordField.setBounds(150,85, 200,30);
+        passwortPasswordField.setBounds(200,75, 200,30);
         passwortPasswordField.setPlaceholder("Passwort");
 
         // Passwort vergessen
@@ -102,15 +102,15 @@ public class LoginGUI extends JFrame implements ActionListener {
         passwortVergessenButton.setFocusable(false);
         passwortVergessenButton.setBorderPainted(false);
         passwortVergessenButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        passwortVergessenButton.setBounds(380,85,150,30);
+        passwortVergessenButton.setBounds(225,120,150,20);
 
         // Angemeldet bleiben CheckBox
         JCheckBox angemeldetBleibenCheckBox = new JCheckBox();
-        angemeldetBleibenCheckBox.setText("angemeldet bleiben?");
+        angemeldetBleibenCheckBox.setText("Angemeldet bleiben?");
         angemeldetBleibenCheckBox.addActionListener(this);
         angemeldetBleibenCheckBox.isEnabled();
-        angemeldetBleibenCheckBox.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 10));
-        angemeldetBleibenCheckBox.setBounds(245, 130, 150,50);
+        angemeldetBleibenCheckBox.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 8));
+        angemeldetBleibenCheckBox.setBounds(244, 150, 112,20);
 
 
         //JButton "Login"
@@ -127,13 +127,13 @@ public class LoginGUI extends JFrame implements ActionListener {
         anmeldenButton.setFocusable(false);
         anmeldenButton.setBorderPainted(false);
         anmeldenButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        anmeldenButton.setBounds(200, 0, 100, 30);
+        anmeldenButton.setBounds(190, 10, 100, 30);
 
         // Button Abbrechen
         JButton abbrechenButton = new JButton();
         abbrechenButton.addActionListener(this);
         abbrechenButton.setText("Abbrechen");
-        abbrechenButton.setBackground(dunkelb);
+        abbrechenButton.setBackground(notSoDark);
         abbrechenButton.setForeground(white);
         abbrechenButton.setHorizontalTextPosition(JLabel.CENTER);
         abbrechenButton.setVerticalTextPosition(JLabel.CENTER);
@@ -143,7 +143,7 @@ public class LoginGUI extends JFrame implements ActionListener {
         abbrechenButton.setFocusable(false);
         abbrechenButton.setBorderPainted(false);
         abbrechenButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        abbrechenButton.setBounds(320, 0, 100, 30);
+        abbrechenButton.setBounds(310, 10, 100, 30);
 
         // Daten aktualisieren
         Foo.getDirectoryData();
