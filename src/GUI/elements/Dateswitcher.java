@@ -1,4 +1,4 @@
-package src.nickcode;
+package src.GUI.elements;
 
 import java.lang.reflect.Array;
 
