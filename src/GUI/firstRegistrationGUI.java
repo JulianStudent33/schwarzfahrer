@@ -6,7 +6,7 @@ import src.GUI.elements.PlaceholderPasswordField;
 import src.GUI.elements.PlaceholderTextField;
 import src.nickcode.pass;
 import src.users.Administrator;
-
+import static src.Foo.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -86,7 +86,7 @@ public class firstRegistrationGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                start.startFenster();
+                StartfensterGUI.startFenster();
             }
         });
 
@@ -109,7 +109,7 @@ public class firstRegistrationGUI extends JFrame {
                                     AdminGUI.openAdminGUI();
                                 } catch (IOException ex) {
                                     dispose();
-                                    start.startFenster();
+                                    StartfensterGUI.startFenster();
                                     ex.printStackTrace();
                                     throw new RuntimeException(ex);
                                 }

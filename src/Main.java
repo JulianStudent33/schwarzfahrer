@@ -1,6 +1,6 @@
 package src;
 import com.formdev.flatlaf.FlatDarkLaf;
-import src.GUI.start;
+import src.GUI.StartfensterGUI;
 import src.users.*;
 
 import javax.swing.*;
@@ -13,12 +13,12 @@ public class Main {
         //Start
         try {
             UIManager.setLookAndFeel(new FlatDarkLaf());
-            UIManager.put("ComboBox.buttonArrowColor", start.dark);
-            UIManager.put("ComboBox.buttonBackground", start.white);
+            UIManager.put("ComboBox.buttonArrowColor", dark);
+            UIManager.put("ComboBox.buttonBackground", white);
             UIManager.put("Component.arrowType", "triangle");
-            UIManager.put("ComboBox.popupBackground", start.white);
-            UIManager.put("ComboBox.selectionForeground", start.white);
-            UIManager.put("ComboBox.selectionBackground", start.dunkelb);
+            UIManager.put("ComboBox.popupBackground", white);
+            UIManager.put("ComboBox.selectionForeground", white);
+            UIManager.put("ComboBox.selectionBackground", dunkelb);
         } catch (UnsupportedLookAndFeelException e) {
             throw new RuntimeException(e);
         }

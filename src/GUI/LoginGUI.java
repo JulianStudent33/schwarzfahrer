@@ -11,7 +11,7 @@ import src.PersFile;
 import src.users.Administrator;
 import src.users.Kontrolleur;
 import src.users.Sachbearbeiter;
-
+import static src.Foo.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -19,7 +19,8 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Arrays;
 
-public class LoginGUI extends JFrame {
+public class LoginGUI extends JFrame implements ActionListener {
+
     private JPanel mainPanel;
     private PlaceholderPasswordField passwortPasswordField;
     private PlaceholderTextField benutzernameTextField;
@@ -28,19 +29,158 @@ public class LoginGUI extends JFrame {
     private JCheckBox angemeldetBleibenCheckBox;
     private JButton passwortVergessenButton;
 
-//test mhm
+
 
     public LoginGUI(){
-        setContentPane(mainPanel);
-        setTitle("LoginWindow");
+
+        // Panelmanagement
+
+        JPanel Bot = new JPanel();
+        Bot.setBackground(dark);
+        Bot.setPreferredSize(new Dimension(100, 100));
+        Bot.setLayout(null);
+
+        JPanel Text = new JPanel();
+        Text.setBackground(dark);
+        Text.setPreferredSize(new Dimension(200, 100));
+        Text.setLayout(null);
+
+        JPanel Passwort = new JPanel();
+        Passwort.setBackground(dark);
+        Passwort.setPreferredSize(new Dimension(600, 100));
+        Passwort.setLayout(null);
+
+        // Button
+        JPanel AnmeldButton = new JPanel();
+        AnmeldButton.setBackground(dark);
+        AnmeldButton.setPreferredSize(new Dimension(100, 50));
+        AnmeldButton.setLayout(null);
+
+        //AngemeldetBleiben
+        JPanel AngemeldetBleiben = new JPanel();
+        AngemeldetBleiben.setBackground(dark);
+        AngemeldetBleiben.setPreferredSize((new Dimension(100, 50)));
+        AngemeldetBleiben.setLayout(null);
+
+        // "Login" Text
+        JLabel label = new JLabel();
+        label.setText("<html><body><center><p>Login</p></center></body></html>");
+        label.setForeground(white);
+        label.setHorizontalTextPosition(JLabel.CENTER);
+        label.setVerticalTextPosition(JLabel.CENTER);
+        label.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 30));
+        label.setHorizontalAlignment(JLabel.CENTER);
+        label.setVerticalAlignment(JLabel.CENTER);
+        label.setBounds(250, 20, 100, 35);
+
+        // Textfield Benutzer
+        PlaceholderTextField benutzernameTextField = new PlaceholderTextField();
+        benutzernameTextField.setBackground(white);
+        benutzernameTextField.setForeground(dark);
+        benutzernameTextField.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
+        benutzernameTextField.setBounds(150, 40, 200,30);
+        benutzernameTextField.setPlaceholder("Benutzername");
+
+        // Textfield Passwort
+        PlaceholderPasswordField passwortPasswordField = new PlaceholderPasswordField();
+        passwortPasswordField.setBackground(white);
+        passwortPasswordField.setForeground(dark);
+        passwortPasswordField.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
+        passwortPasswordField.setBounds(150,85, 200,30);
+        passwortPasswordField.setPlaceholder("Passwort");
+
+        // Passwort vergessen
+        JButton passwortVergessenButton = new JButton();
+        passwortVergessenButton.addActionListener(this);
+        passwortVergessenButton.setText("<html><body>Passwort vergessen?</body></html>");
+        passwortVergessenButton.setBackground(Color.darkGray);
+        passwortVergessenButton.setForeground(white);
+        passwortVergessenButton.setHorizontalTextPosition(JLabel.CENTER);
+        passwortVergessenButton.setVerticalTextPosition(JLabel.CENTER);
+        passwortVergessenButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 10));
+        passwortVergessenButton.setVerticalAlignment(JLabel.CENTER);
+        passwortVergessenButton.setHorizontalAlignment(JLabel.CENTER);
+        passwortVergessenButton.setFocusable(false);
+        passwortVergessenButton.setBorderPainted(false);
+        passwortVergessenButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        passwortVergessenButton.setBounds(380,85,150,30);
+
+        // Angemeldet bleiben CheckBox
+        JCheckBox angemeldetBleibenCheckBox = new JCheckBox();
+        angemeldetBleibenCheckBox.setText("angemeldet bleiben?");
+        angemeldetBleibenCheckBox.addActionListener(this);
+        angemeldetBleibenCheckBox.isEnabled();
+        angemeldetBleibenCheckBox.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 10));
+        angemeldetBleibenCheckBox.setBounds(245, 130, 150,50);
+
+
+        //JButton "Login"
+        JButton anmeldenButton = new JButton();
+        anmeldenButton.addActionListener(this);
+        anmeldenButton.setText("Login");
+        anmeldenButton.setBackground(dunkelb);
+        anmeldenButton.setForeground(white);
+        anmeldenButton.setHorizontalTextPosition(JLabel.CENTER);
+        anmeldenButton.setVerticalTextPosition(JLabel.CENTER);
+        anmeldenButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 10));
+        anmeldenButton.setHorizontalAlignment(JLabel.CENTER);
+        anmeldenButton.setVerticalAlignment(JLabel.CENTER);
+        anmeldenButton.setFocusable(false);
+        anmeldenButton.setBorderPainted(false);
+        anmeldenButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        anmeldenButton.setBounds(200, 0, 100, 30);
+
+        // Button Abbrechen
+        JButton abbrechenButton = new JButton();
+        abbrechenButton.addActionListener(this);
+        abbrechenButton.setText("Abbrechen");
+        abbrechenButton.setBackground(dunkelb);
+        abbrechenButton.setForeground(white);
+        abbrechenButton.setHorizontalTextPosition(JLabel.CENTER);
+        abbrechenButton.setVerticalTextPosition(JLabel.CENTER);
+        abbrechenButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 10));
+        abbrechenButton.setHorizontalAlignment(JLabel.CENTER);
+        abbrechenButton.setVerticalAlignment(JLabel.CENTER);
+        abbrechenButton.setFocusable(false);
+        abbrechenButton.setBorderPainted(false);
+        abbrechenButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        abbrechenButton.setBounds(320, 0, 100, 30);
+
+        // Daten aktualisieren
+        Foo.getDirectoryData();
+
+        // Add für einzelnen Elemente innerhalb der Panels
+        Text.add(label, BorderLayout.NORTH);
+        Passwort.add(benutzernameTextField, BorderLayout.CENTER);
+        Passwort.add(passwortPasswordField, BorderLayout.CENTER);
+        Passwort.add(passwortVergessenButton, BorderLayout.CENTER);
+        Passwort.add(angemeldetBleibenCheckBox, BorderLayout.SOUTH);
+
+        Bot.add(abbrechenButton, BorderLayout.SOUTH);
+        Bot.add(anmeldenButton, BorderLayout.SOUTH);
+
+
+        // Add für gesamte Panels
+        this.add(Text, BorderLayout.NORTH);
+        //this.add(Benutzer, BorderLayout.CENTER);
+        this.add(Passwort, BorderLayout.CENTER);
+        this.add(AngemeldetBleiben, BorderLayout.SOUTH);
+        this.add(Bot, BorderLayout.SOUTH);
+
+        // Gesamt Window
+
+        setTitle("Login");
         Point center = GraphicsEnvironment.getLocalGraphicsEnvironment().getCenterPoint();
-        int width = 700;
+        int width = 600;
         int height = 400;
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
+        this.getContentPane().setBackground(dark);
         this.setBounds(center.x - width / 2, center.y - height / 2, width, height);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-
         setVisible(true);
+
         benutzernameTextField.setPlaceholder("Benutzername");
         passwortPasswordField.setPlaceholder("Passwort");
         if (passwortVergessenButton instanceof AbstractButton) {
@@ -49,9 +189,7 @@ public class LoginGUI extends JFrame {
 
         }
         benutzernameTextField.addMouseListener(new MouseAdapter() {
-            public void mouseReleased(MouseEvent e){
-                benutzernameTextField.setText("");
-            }
+
         });
 
         benutzernameTextField.addKeyListener(new KeyListener() {
@@ -100,7 +238,7 @@ public class LoginGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                start.startFenster();
+                StartfensterGUI.startFenster();
             }
         });
 
@@ -117,9 +255,9 @@ public class LoginGUI extends JFrame {
                             System.out.println("Passwort stimmt");
                             Foo.currentAdmin = mb;
                             if (angemeldetBleibenCheckBox.isSelected()){
-                                //Foo.saveAngemeldetBleiben(true);
+                                Foo.saveAngemeldetBleiben(true);
                             }else{
-                                //Foo.saveAngemeldetBleiben(false);
+                                Foo.saveAngemeldetBleiben(false);
                             }
                             dispose();
                             AdminGUI.openAdminGUI();
@@ -135,7 +273,7 @@ public class LoginGUI extends JFrame {
                     }catch (IOException | ClassNotFoundException io){
                         dispose();
                         io.printStackTrace();
-                        start.startFenster();
+                        StartfensterGUI.startFenster();
                     }
                 }
                 if(Foo.konList.contains(Path.of(Foo.konPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())){
@@ -158,7 +296,7 @@ public class LoginGUI extends JFrame {
                     }catch (IOException | ClassNotFoundException io){
                         dispose();
                         io.printStackTrace();
-                        start.startFenster();
+                        StartfensterGUI.startFenster();
                     }
                 }
                 if(Foo.sbList.contains(Path.of(Foo.sbPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())){
@@ -181,7 +319,7 @@ public class LoginGUI extends JFrame {
                     }catch (IOException | ClassNotFoundException io){
                         dispose();
                         io.printStackTrace();
-                        start.startFenster();
+                        StartfensterGUI.startFenster();
                     }
                 }
 
@@ -194,4 +332,8 @@ public class LoginGUI extends JFrame {
         LoginGUI gui = new LoginGUI();
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+    }
 }

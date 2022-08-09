@@ -1,8 +1,8 @@
-package src.GUI.Kontrolleur;
+package src.GUI.Kon;
 
 import src.Adresse;
 import src.Foo;
-import src.GUI.Kon.KontrolleurGUI;
+import src.GUI.elements.DatePick;
 import src.users.Kontrolleur;
 import src.users.Schwarzfahrer;
 
@@ -12,7 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-public class Schwarzfahrt_erfassen extends JFrame{
+public class SchwarzfahrtErfassenGUI extends JFrame{
 
     private static Kontrolleur currentUser;
     private static Schwarzfahrer currentSf;
@@ -37,14 +37,13 @@ public class Schwarzfahrt_erfassen extends JFrame{
     private JToggleButton speichernToggleButton;
     private JLabel nameLabel;
     private JToggleButton abbrechenToggleButton;
-    private JSpinner daySpinner;
-    private JSpinner monthSpinner;
-    private JSpinner yearSpinner;
     private JTextField zeitTextField;
     private JLabel linieLabel;
     private JLabel datumUhrzeitLabel;
+    private JToggleButton datumButton;
+    private JTextField datumTextField;
 
-    public Schwarzfahrt_erfassen(){
+    public SchwarzfahrtErfassenGUI(){
         this.currentUser = KontrolleurGUI.currentUser;
         setContentPane(mainPanel);
         setTitle("Kontrolleur Menü");
@@ -66,6 +65,26 @@ public class Schwarzfahrt_erfassen extends JFrame{
 
 
         //Eventlistener
+
+        datumButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                datumTextField.setEnabled(true);
+                DatePick calender = new DatePick((JFrame) datumButton.getRootPane().getParent());
+                String txt = calender.Set_Picked_Date();
+                if (txt==""){
+                    datumTextField.setEnabled(false);
+                }else{
+                    datumTextField.setText(calender.Set_Picked_Date());
+                }
+
+
+            }
+        });
+
+
+
 
         landComboBox.addActionListener(new ActionListener() {
             @Override
@@ -113,8 +132,8 @@ public class Schwarzfahrt_erfassen extends JFrame{
                 if (pflichtAusgefuellt()){
                     Adresse neueAdresse = new Adresse(landComboBox.getSelectedItem().toString(), plzTextField.getText(), ortTextField.getText(), strasseTextField.getText(), hausnummerTextField.getText(), zusatzTextField.getText(), landComboBox.getSelectedIndex());
                     try {
-                        new Schwarzfahrer(ausweisnummerTextField.getText(), geburtsortTextField.getText(), neueAdresse, vornameTextField.getText(), nachnameTextField.getText(), geschlechtBox.getSelectedItem().toString(), telefonTextField.getText(), emailTextField.getText(), Integer.parseInt(daySpinner.getValue().toString()),
-                                Integer.parseInt(monthSpinner.getValue().toString()), Integer.parseInt(yearSpinner.getValue().toString()));
+                        new Schwarzfahrer(ausweisnummerTextField.getText(), geburtsortTextField.getText(), neueAdresse, vornameTextField.getText(), nachnameTextField.getText(), geschlechtBox.getSelectedItem().toString(), telefonTextField.getText(), emailTextField.getText(),
+                                0, 0,0);
                     } catch (IOException ex) {
                         ex.printStackTrace();
                         throw new RuntimeException(ex);
@@ -146,9 +165,11 @@ public class Schwarzfahrt_erfassen extends JFrame{
 
         vornameTextField.setText(currentSf.getVorname());
         nachnameTextField.setText(currentSf.getName());
+        /*
         daySpinner.setValue(currentSf.getGeburtsTag());
         monthSpinner.setValue(currentSf.getGeburtsMonat());
         yearSpinner.setValue(currentSf.getGeburtsJahr());
+       */
         geburtsortTextField.setText(currentSf.getGeburtsort());
         emailTextField.setText(currentSf.getEmail());
         telefonTextField.setText(currentSf.getTelefonnummer());
@@ -185,7 +206,7 @@ public class Schwarzfahrt_erfassen extends JFrame{
         return false;
     }
     public static void open() {
-        Schwarzfahrt_erfassen gui = new Schwarzfahrt_erfassen();
+        SchwarzfahrtErfassenGUI gui = new SchwarzfahrtErfassenGUI();
     }
 
     public static void main(String[] args) {
