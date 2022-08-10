@@ -3,6 +3,7 @@ package src.GUI.Kon;
 import com.formdev.flatlaf.FlatDarkLaf;
 import src.Adresse;
 import src.Foo;
+import src.GUI.OkayWindow;
 import src.GUI.elements.DatePick;
 import src.users.Kontrolleur;
 import src.users.Schwarzfahrer;
@@ -140,9 +141,11 @@ public class SchwarzfahrtErfassenGUI extends JFrame{
                         ex.printStackTrace();
                         throw new RuntimeException(ex);
                     }
-
+                    dispose();
+                }else{
+                    OkayWindow.openOkayWindow("Es wurden nicht alle Pflichtfelder ausgefüllt");
                 }
-                dispose();
+
             }
         });
 
