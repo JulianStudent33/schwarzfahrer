@@ -1,5 +1,7 @@
 package src.GUI.elements;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 import javax.swing.text.Document;
@@ -64,6 +66,52 @@ public class PlaceholderTextField extends JTextField {
 
     public void setPlaceholder(final String s) {
         placeholder = s;
+    }
+
+    public void addFlashEffect(){
+        final Color baseColor = getBackground();
+
+        System.out.println(baseColor.getRed() + " " + baseColor.getGreen() + " " + baseColor.getBlue());
+        final int[] i = {baseColor.getRed(), baseColor.getGreen(), baseColor.getBlue()};
+        final int[] ii = i;
+        final int[] j = {15};
+        Timer timer = new Timer(2, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                try{
+                    ii[0] += j[0];
+                    ii[1] += j[0];
+                    ii[2] += j[0];
+
+                    if(ii[0] > 255 || ii[1] > 255 || ii[2] > 255) {
+
+                        ii[0] -= 15;
+                        ii[1] -= 15;
+                        ii[2] -= 15;
+                        j[0] = -15;
+                    }else if(ii[0] < i[0] || ii[1] < i[1] || ii[2] < i[2]){
+                        ii[0] += 15;
+                        ii[1] += 15;
+                        ii[2] += 15;
+                        System.out.println("Kleiner als");
+                        return;
+                    }
+
+
+                    setBackground(new Color(ii[0], ii[1], ii[2]));
+                    System.out.println(ii[0] + " " + ii[1] + " " + ii[2]);
+                }catch (IllegalArgumentException ex){
+
+                    setBackground(baseColor);
+
+                    return;
+                }
+
+
+            }
+        });
+        timer.start();
     }
 
 }

@@ -5,6 +5,7 @@ import src.Adresse;
 import src.Foo;
 import src.GUI.OkayWindow;
 import src.GUI.elements.DatePick;
+import src.GUI.elements.PlaceholderTextField;
 import src.users.Kontrolleur;
 import src.users.Schwarzfahrer;
 
@@ -21,25 +22,25 @@ public class SchwarzfahrtErfassenGUI extends JFrame{
     private JPanel mainPanel;
     private JPanel leftPanel;
     private JPanel rightPanel;
-    private JTextField linieTextField;
-    private JTextField ausweisnummerTextField;
+    private PlaceholderTextField zeitTextField;
+    private PlaceholderTextField linieTextField;
+    private PlaceholderTextField ausweisnummerTextField;
     private JToggleButton suchenToggleButton;
     private JComboBox geschlechtBox;
-    private JTextField vornameTextField;
-    private JTextField nachnameTextField;
-    private JTextField geburtsortTextField;
-    private JTextField emailTextField;
-    private JTextField telefonTextField;
-    private JTextField strasseTextField;
-    private JTextField hausnummerTextField;
-    private JTextField plzTextField;
-    private JTextField ortTextField;
-    private JTextField zusatzTextField;
+    private PlaceholderTextField vornameTextField;
+    private PlaceholderTextField nachnameTextField;
+    private PlaceholderTextField geburtsortTextField;
+    private PlaceholderTextField emailTextField;
+    private PlaceholderTextField telefonTextField;
+    private PlaceholderTextField strasseTextField;
+    private PlaceholderTextField hausnummerTextField;
+    private PlaceholderTextField plzTextField;
+    private PlaceholderTextField ortTextField;
+    private PlaceholderTextField zusatzTextField;
     private JComboBox landComboBox;
     private JToggleButton speichernToggleButton;
     private JLabel nameLabel;
     private JToggleButton abbrechenToggleButton;
-    private JTextField zeitTextField;
     private JLabel linieLabel;
     private JLabel datumUhrzeitLabel;
     private JToggleButton datumButton;
@@ -188,7 +189,7 @@ public class SchwarzfahrtErfassenGUI extends JFrame{
 
     private boolean pflichtAusgefuellt(){
         if (!zeitTextField.getText().isBlank()){
-            if (!linieLabel.getText().isBlank()){
+            if (!linieTextField.getText().isBlank()){
                 if (!ausweisnummerTextField.getText().isBlank()){
                     if (!vornameTextField.getText().isBlank()){
                         if (!nachnameTextField.getText().isBlank()){
@@ -208,6 +209,46 @@ public class SchwarzfahrtErfassenGUI extends JFrame{
                 }
             }
         }
+
+
+        if(zeitTextField.getText().isBlank()){
+            zeitTextField.addFlashEffect();
+        }
+        if (linieTextField.getText().isBlank()){
+
+        }
+        if (ausweisnummerTextField.getText().isBlank()){
+
+        }
+        if (vornameTextField.getText().isBlank()){
+
+        }
+        if (nachnameTextField.getText().isBlank()){
+
+        }
+        if (telefonTextField.getText().isBlank()){
+
+        }
+        if (strasseTextField.getText().isBlank()){
+
+        }
+        if (hausnummerTextField.getText().isBlank()){
+
+        }
+        if (plzTextField.getText().isBlank()){
+
+        }
+        if (ortTextField.getText().isBlank()){
+
+        }
+
+
+
+
+
+
+
+
         return false;
     }
     public static void open() {
