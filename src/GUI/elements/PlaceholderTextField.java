@@ -112,6 +112,7 @@ public class PlaceholderTextField extends JTextField {
             }
         });
         timer.start();
+
     }
 
 }

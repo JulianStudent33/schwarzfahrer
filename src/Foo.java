@@ -17,13 +17,14 @@ import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 import java.util.List;
 
 public class Foo {
     public static FileSystem fs = FileSystems.getDefault();
     public static final String fileSeperator = fs.getSeparator();
+
+    public static String currentDate;
     //File Struktur:
     /*Users/Admin/ ... .user PersFiles
      * Users/Kontrolleur/ ... .user PersFiles
@@ -102,12 +103,11 @@ public class Foo {
         //Programm startet grundsätzlich immer hier
         System.out.println("Starting Application");
         getDirectoryData();
-        if(adminList.isEmpty()){
+        if (firstUsage = true){
             System.out.println("Erste Benutzung");
-            firstUsage = true; //First Usage true gesetzt, weil keine Admins vorhanden sind,
             createDirectories();
         }else{
-         refreshStats();
+            refreshStats();
         }
         angemeldetBleiben = getAngemeldetBleiben();
         setAngemeldet(angemeldetBleiben);
@@ -121,6 +121,12 @@ public class Foo {
         } else if (currentSachbearbeiter!=null) {
             SachbearbeiterGUI.openSBGUI();
         }
+
+        currentDate = getCurrentDate();
+
+
+        System.out.println(currentDate);
+
 
     }
 
@@ -189,9 +195,11 @@ public class Foo {
          * schwarzfahrten[]
          * */
 
+
         if (adminDir.exists()){
             System.out.println(adminPath.toString() + " existiert.");
             if (adminDir.listFiles().length != 0){
+                firstUsage = false;
                 adminList.clear();
                 for (int i = 0; i < adminDir.listFiles().length; i++){
                     Collections.addAll(adminList, adminDir.listFiles()[i]);
@@ -199,6 +207,7 @@ public class Foo {
                 admins = adminDir.listFiles();
             } else{
                 System.out.println("AdminDir Is Empty.");
+                firstUsage = true;
             }
         }
         if (sbDir.exists()) {
@@ -333,6 +342,20 @@ public class Foo {
         }
 
     }
+
+    public static String getCurrentDate(){
+        final int DATE_YEAR = java.util.Calendar.getInstance().get(Calendar.YEAR);
+        final int DATE_MONTH = java.util.Calendar.getInstance().get(java.util.Calendar.MONTH);
+        final int DATE_DAY = java.util.Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+
+        java.text.SimpleDateFormat Simple_Date_Format = new java.text.SimpleDateFormat(
+                "dd-MM-yyyy");
+        java.util.Calendar Calendar = java.util.Calendar.getInstance();
+        Calendar.set(DATE_YEAR, DATE_MONTH, DATE_DAY);
+        return Simple_Date_Format.format(Calendar.getTime());
+    }
+
+
 
     public static void okWindow(String message){
         String[] option = {"OK"};

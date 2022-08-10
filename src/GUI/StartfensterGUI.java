@@ -165,8 +165,10 @@ public class StartfensterGUI extends JFrame implements ActionListener {
                 btn.setBackground(dark);
                 btn.setContentAreaFilled(false);
                 btn.setEnabled(false);
+                System.out.println("Anmelden: enabled");
 
-
+            }else{
+                System.out.println("Anmelden: enabled");
             }
         }
 
@@ -201,6 +203,7 @@ public class StartfensterGUI extends JFrame implements ActionListener {
 
 
     public static void startFenster(){
+        Foo.getDirectoryData();
         StartfensterGUI gui = new StartfensterGUI();
     }
 

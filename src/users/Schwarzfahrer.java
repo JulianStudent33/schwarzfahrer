@@ -2,6 +2,7 @@ package src.users;
 
 import src.Adresse;
 import src.Foo;
+import src.GUI.elements.Dateswitcher;
 import src.PersFile;
 import src.Schwarzfahrt;
 
@@ -13,12 +14,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static src.GUI.elements.Dateswitcher.datetonumber;
+
 public class Schwarzfahrer extends Person{
     /* Attribute
     String name;
     String vorname;
     String geschlecht;
-    String geburtsdatum
+    String geburtsdatum;
     String telefonnummer;
     String email;
      */
@@ -35,7 +38,7 @@ public class Schwarzfahrer extends Person{
                          String telefonnummer, String email, int day, int month, int year) throws IOException {
         this.ausweisnummer = ausweisnummer;
         this.geburtsort = geburtsort;
-        this.geburtsdatum = setGeburtsdatum(day, month, year);
+        this.geburtsdatum = Dateswitcher.numbertodate(day, month, year);
         this.adresse = adresse;
         this.vorname = vorname;
         this.name = nachname;
@@ -65,6 +68,17 @@ public class Schwarzfahrer extends Person{
         System.out.println("Wohnhaft in " + this.adresse.getStrasse() + " " + this.adresse.getHausnummer() + " " + this.adresse.getZusatz() +  ", " + this.adresse.getPLZ() + " " + this.adresse.getOrt() + " (" + this.adresse.getLand() + ")");
         System.out.println("Erfasste Schwarzfahrten: " + getSftList().size());
         }
+
+    public void getSFStats(){
+        int[] arraySFNachMonaten = new int[12];
+
+        for(int i = 0; i<sftList.size(); i++){
+
+            String zeitpunkt = sftList.get(i).zeitpunkt;
+            int[] array = datetonumber(zeitpunkt);
+
+        }
+    }
 
 
     public String getAusweisnummer() {
