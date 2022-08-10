@@ -6,11 +6,10 @@ import static src.Foo.*;
 public class OkayWindow {
 
     JFrame frame = new JFrame();
-    JPanel Bild = new JPanel();
     JPanel Background = new JPanel();
     JLabel label = new JLabel();
     JButton OkBtn = new JButton();
-    ImageIcon hilfe_bild = new ImageIcon("src/icons/hilfe_bild.png");
+    ImageIcon hilfe_bild = new ImageIcon("src/icons/bild_hilfe.png");
     JLabel BildLabel = new JLabel();
 
     public OkayWindow(String message){
@@ -18,26 +17,24 @@ public class OkayWindow {
 
         // Panelmanagement
         Background.setBackground(dark);
-        Background.setBounds(1,1,200,150);
+        Background.setBounds(50,1,200,200);
         Background.setLayout(null);
-
-        Bild.setBackground(dark);
-        Bild.setBounds(1,1,50,50);
-        Bild.setLayout(null);
 
         // Elemente
         label.setText(message);
         label.setForeground(white);
-        label.setFont(fontMedium);
-        label.setBounds(100,15,80,20);
+        label.setHorizontalTextPosition(JLabel.CENTER);
+        label.setVerticalTextPosition(JLabel.CENTER);
+        label.setFont(fontSmall);
+        label.setBounds(10,15,200,40);
 
         OkBtn.setBackground(hellb);
         OkBtn.setForeground(white);
         OkBtn.setText("Ok");
-        OkBtn.setBounds(100,55,80,40);
+        OkBtn.setBounds(85,55,80,40);
 
         BildLabel.setIcon(hilfe_bild);
-        BildLabel.setBounds(1,1,50,50);
+        BildLabel.setBounds(15,50,50,50);
 
         // Einfügen der Elemente in die Panels
         Background.add(label);
@@ -51,14 +48,12 @@ public class OkayWindow {
         // Frame Properties
         frame.setBackground(dark);
         frame.setSize(250,200);
+        frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
     }
 
-    public static void openOkayWindow(String message){
-        OkayWindow gui = new OkayWindow(message);
-    }
     public static void main(String[] args) {
-        new OkayWindow("test");
+        new OkayWindow("<html><body><p>Ihre Passwörter <br>stimmen nicht überein!</p></body></html>");
     }
 }
