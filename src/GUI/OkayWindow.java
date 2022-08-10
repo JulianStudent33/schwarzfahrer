@@ -1,6 +1,5 @@
 package src.GUI;
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import static src.Foo.*;
 
@@ -13,7 +12,7 @@ public class OkayWindow {
     ImageIcon hilfe_bild = new ImageIcon("src/icons/bild_hilfe.png");
     JLabel BildLabel = new JLabel();
 
-    public OkayWindow(String message, String farbe){
+    public OkayWindow(String message){
 
 
         // Panelmanagement
@@ -55,6 +54,6 @@ public class OkayWindow {
     }
 
     public static void main(String[] args) {
-        new OkayWindow("<html><body><p>Ihre Passwörter <br>stimmen nicht überein!</p></body></html>", "red");
+        new OkayWindow("<html><body><p>Ihre Passwörter <br>stimmen nicht überein!</p></body></html>");
     }
 }

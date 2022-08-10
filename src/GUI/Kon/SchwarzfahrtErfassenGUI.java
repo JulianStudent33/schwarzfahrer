@@ -143,7 +143,7 @@ public class SchwarzfahrtErfassenGUI extends JFrame{
                     }
                     dispose();
                 }else{
-                    OkayWindow.openOkayWindow("Es wurden nicht alle Pflichtfelder ausgefüllt");
+                    //OkayWindow.openOkayWindow("Es wurden nicht alle Pflichtfelder ausgefüllt");
                 }
 
             }
