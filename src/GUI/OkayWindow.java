@@ -51,7 +51,7 @@ public class OkayWindow {
         // Frame Properties
         frame.setBackground(dark);
         frame.setSize(250,200);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
     }
 
