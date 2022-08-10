@@ -10,7 +10,7 @@ public class OkayWindow {
     JPanel Background = new JPanel();
     JLabel label = new JLabel();
     JButton OkBtn = new JButton();
-    ImageIcon hilfe_bild = new ImageIcon("src.icons.hilfe_bild.png");
+    ImageIcon hilfe_bild = new ImageIcon("src/icons/hilfe_bild.png");
     JLabel BildLabel = new JLabel();
 
     public OkayWindow(String message){
@@ -55,6 +55,9 @@ public class OkayWindow {
         frame.setVisible(true);
     }
 
+    public static void openOkayWindow(String message){
+        OkayWindow gui = new OkayWindow(message);
+    }
     public static void main(String[] args) {
         new OkayWindow("test");
     }
