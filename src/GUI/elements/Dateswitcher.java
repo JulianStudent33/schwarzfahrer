@@ -5,8 +5,10 @@ import java.lang.reflect.Array;
 public class Dateswitcher {
 
     public static void main(String[] args) {
-        datetonumber("26-06-2003");
-        numbertodate(26,06,2003);
+        int[] array = datetonumber("26-06-2003");
+        String datestr = numbertodate(array[0], array[1], array[2]);
+        array =  datetonumber(datestr);
+
     }
 
     public static String numbertodate(int day, int month,int year){ //3 eingaben ints
@@ -23,6 +25,8 @@ public class Dateswitcher {
 
         return ges;
     }
+
+
     public static int[] datetonumber(String date){
 
         String[] parts = date.split("-");

@@ -7,8 +7,8 @@
     <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="okWindow Version Ron 1.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/OkayWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/OkayWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/hilfe_bild.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/LoginGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +86,7 @@
       <recent name="src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.OkayWindow">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="FieldFilter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.GUI.elements.FieldFilter" />
       <module name="PigPen" />
@@ -154,8 +154,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.OkayWindow" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.OkayWindow" />
         <item itemvalue="Application.FieldFilter" />
         <item itemvalue="Application.FilterDemo" />
         <item itemvalue="Application.Test" />
@@ -218,8 +218,14 @@
       <workItem from="1659883325166" duration="9216000" />
       <workItem from="1659942065114" duration="12541000" />
       <workItem from="1660023757005" duration="5069000" />
-      <workItem from="1660059117171" duration="1593000" />
-      <workItem from="1660113098178" duration="4450000" />
+      <workItem from="1660059117171" duration="1553000" />
+    </task>
+    <task id="LOCAL-00005" summary="Neue Version, Registrierung und Login implementiert, alles buggy">
+      <created>1655972577993</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1655972577993</updated>
     </task>
     <task id="LOCAL-00006" summary="Neue Version, Registrierung und Login implementiert, alles buggy&#10;&#10;Login und Registrierung jetzt besser, man kann mit abbrechen zurück ins vorherige Fenster">
       <created>1655995682113</created>
@@ -557,14 +563,7 @@
       <option name="project" value="LOCAL" />
       <updated>1660056027269</updated>
     </task>
-    <task id="LOCAL-00054" summary="okWindow Version Ron 1.0">
-      <created>1660062201254</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1660062201255</updated>
-    </task>
-    <option name="localTasksCounter" value="55" />
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
