@@ -4,9 +4,8 @@ import java.time.LocalDate;
 
 public class Schwarzfahrt {
 
-    public LocalDate zeitpunkt;
+    public String zeitpunkt;
     String linie;
-
     Status status;
 
 }

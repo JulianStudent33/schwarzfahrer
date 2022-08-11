@@ -2,7 +2,6 @@ package src.GUI;
 
 import src.Foo;
 import src.GUI.Kon.KontrolleurGUI;
-import src.GUI.Kontrolleur.KontrolleurGUI_alt;
 import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
 import src.GUI.elements.*;
 import src.nickcode.pass;
@@ -17,7 +16,6 @@ import java.awt.event.*;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Locale;
-import static src.Foo.*;
 
 public class RegisterGUI extends JFrame{
     int rollenSelection;
@@ -34,9 +32,10 @@ public class RegisterGUI extends JFrame{
     private PlaceholderTextField nachnameTextField;
     private PlaceholderTextField telefonnummerTextField;
     private PlaceholderTextField emailTextField;
-    private JSpinner daySpinner;
-    private JSpinner monthSpinner;
-    private JSpinner yearSpinner;
+    private JToggleButton datumButton;
+    private PlaceholderTextField datumTextField;
+
+
     SizeFilter nameFilter; //20
     NumberFilter numberFilter;
     LetterFilter letterFilter;
@@ -63,7 +62,8 @@ public class RegisterGUI extends JFrame{
         passwortTextField.setPlaceholder("*Passwort*");
         telefonnummerTextField.setPlaceholder("Telefonnummer");
         emailTextField.setPlaceholder("*E-Mail Adresse*");
-
+        datumTextField.setPlaceholder("tt-MM-jjjj");
+        datumTextField.setEnabled(false);
         //Felder die gefiltert werden
 
         FieldFilter filter = new FieldFilter();
@@ -75,69 +75,7 @@ public class RegisterGUI extends JFrame{
 
         benutzernameTextField.setDocument(new JTextFieldLimit(20));
 
-        //Initialisieren von Datum-spinnern
-        daySpinner.setValue(1);
-        monthSpinner.setValue(1);
-        yearSpinner.setValue(2000);
 
-        daySpinner.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-                if (Integer.parseInt(daySpinner.getValue().toString()) > 31){
-                    daySpinner.setValue(31);
-                }
-                if (Integer.parseInt(daySpinner.getValue().toString()) < 1){
-                    daySpinner.setValue(1);
-                }
-            }
-        });
-        monthSpinner.addFocusListener(new FocusListener() {
-            @Override
-            public void focusGained(FocusEvent e) {
-
-            }
-
-            @Override
-            public void focusLost(FocusEvent e) {
-
-                System.out.println("Focus lost");
-                if (Integer.parseInt(monthSpinner.getValue().toString()) == 4 || Integer.parseInt(monthSpinner.getValue().toString()) == 6 || Integer.parseInt(monthSpinner.getValue().toString()) == 9 || Integer.parseInt(monthSpinner.getValue().toString()) == 11){
-                    if (Integer.parseInt(daySpinner.getValue().toString()) > 30){
-                        daySpinner.setValue(30);
-                    }
-                }
-                if (Integer.parseInt(monthSpinner.getValue().toString()) == 2){
-                    if (Integer.parseInt(daySpinner.getValue().toString()) > 28){
-                        daySpinner.setValue(28);
-                    }
-                }
-            }
-        });
-        monthSpinner.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-
-                if (Integer.parseInt(monthSpinner.getValue().toString()) > 12){
-                    monthSpinner.setValue(12);
-                }
-                if (Integer.parseInt(monthSpinner.getValue().toString()) < 1){
-                    monthSpinner.setValue(1);
-                }
-
-            }
-        });
-        yearSpinner.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-
-                if (Integer.parseInt(yearSpinner.getValue().toString()) > LocalDate.now().getYear()){
-                    yearSpinner.setValue(LocalDate.now().getYear());
-                }
-                if (Integer.parseInt(yearSpinner.getValue().toString()) <= 1900){
-                    yearSpinner.setValue(1900);
-                }
-            }
-        });
 
         benutzerBox.addActionListener(new ActionListener() {
             @Override
@@ -155,6 +93,27 @@ public class RegisterGUI extends JFrame{
                 }
             }
         });
+
+        datumButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+
+                DatePick calender = new DatePick((JFrame) datumButton.getRootPane().getParent());
+                String txt = calender.Set_Picked_Date();
+                if (txt==""){
+
+                }else{
+                    datumTextField.setText(calender.Set_Picked_Date());
+                }
+
+
+            }
+        });
+
+
+
+
 
         benutzernameTextField.addKeyListener(new KeyListener() {
             @Override
@@ -223,10 +182,12 @@ public class RegisterGUI extends JFrame{
                     try {
                         switch (rollenSelection) {
                             case 1:
+
+                                int[] date = Dateswitcher.datetonumber(datumTextField.getText());
+
                                 Foo.currentKontrolleur = new Kontrolleur(benutzernameTextField.getText(), passwortTextField.getText(),
                                         vornameTextField.getText(), nachnameTextField.getText(), geschlechtBox.getSelectedItem().toString(),
-                                        telefonnummerTextField.getText(), emailTextField.getText().toLowerCase(Locale.ROOT), Integer.parseInt(daySpinner.getValue().toString()),
-                                        Integer.parseInt(monthSpinner.getValue().toString()), Integer.parseInt(yearSpinner.getValue().toString()));
+                                        telefonnummerTextField.getText(), emailTextField.getText().toLowerCase(Locale.ROOT), date);
                                 Foo.angemeldet = true;
                                 dispose();
                                 KontrolleurGUI.openKonGUI();
@@ -251,32 +212,26 @@ public class RegisterGUI extends JFrame{
     }
     private boolean pflichtAusgefüllt() {
         if (benutzerBox.getItemCount() == 2) {
-            benutzerBox.setBackground(Color.white);
 
             if (geschlechtBox.getItemCount() == 3) {
-                geschlechtBox.setBackground(Color.white);
 
                 if (!vornameTextField.getText().isBlank()) {
-                    vornameTextField.setBackground(Color.white);
 
                     if (!nachnameTextField.getText().isBlank()) {
-                        nachnameTextField.setBackground(Color.white);
 
                         if (!emailTextField.getText().isBlank()) {
 
                             if (emailTextField.getText().contains("@")) {
-                                emailTextField.setBackground(Color.white);
 
                                 if (!benutzernameTextField.getText().isBlank()) {
 
                                     if (!Foo.userExistiertBereits(benutzernameTextField.getText())) {
-                                        benutzernameTextField.setBackground(Color.white);
 
                                         if (pass.passwordOk(passwortTextField.getText())) {
                                             String pwConfirm = JOptionPane.showInputDialog("Bestätige dein Passwort");
 
                                             if (pwConfirm.equals(passwortTextField.getText())) {
-                                                passwortTextField.setBackground(Color.white);
+
                                                 JOptionPane.showMessageDialog(new JDialog(), "Passwort bestätigt");
                                                 pwBestaetigt = true;
                                                 return true;
@@ -286,7 +241,7 @@ public class RegisterGUI extends JFrame{
                                             }
                                         } else {
                                             JOptionPane.showMessageDialog(new JDialog(), "Passwort erfüllt nicht die formalen Bedingungen!");
-                                            passwortTextField.setBackground(Foo.red);
+
                                             return false;
                                         }
                                     } else {
@@ -295,37 +250,37 @@ public class RegisterGUI extends JFrame{
                                         return false;
                                     }
                                 } else {
-                                    benutzernameTextField.setBackground(Foo.red);
+
                                     benutzernameTextField.setPlaceholder("Ein Benutzername braucht Zeichen :)");
                                     return false;
                                 }
                             } else {
-                                emailTextField.setBackground(Foo.red);
+
                                 emailTextField.setText("");
                                 emailTextField.setPlaceholder("Bitte eine gültige E-Mail eingeben");
                                 return false;
                             }
                         } else {
-                            emailTextField.setBackground(Foo.red);
+
                             emailTextField.setPlaceholder("E-Mail ist Pflicht");
                             return false;
                         }
                     } else {
-                        nachnameTextField.setBackground(Foo.red);
+
                         nachnameTextField.setPlaceholder("Nachname ist Pflicht");
                         return false;
                     }
                 } else {
-                    vornameTextField.setBackground(Foo.red);
+
                     vornameTextField.setPlaceholder("Vorname ist Pflicht");
                     return false;
                 }
             } else {
-                benutzerBox.setBackground(Foo.red);
+
                 return false;
             }
         } else {
-            geschlechtBox.setBackground(Foo.red);
+
             return false;
         }
     }

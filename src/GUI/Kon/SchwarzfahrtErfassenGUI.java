@@ -3,8 +3,9 @@ package src.GUI.Kon;
 import com.formdev.flatlaf.FlatDarkLaf;
 import src.Adresse;
 import src.Foo;
-import src.GUI.OkayWindow;
 import src.GUI.elements.DatePick;
+import src.GUI.elements.Dateswitcher;
+import src.GUI.elements.PlaceholderTextField;
 import src.users.Kontrolleur;
 import src.users.Schwarzfahrer;
 
@@ -21,29 +22,32 @@ public class SchwarzfahrtErfassenGUI extends JFrame{
     private JPanel mainPanel;
     private JPanel leftPanel;
     private JPanel rightPanel;
-    private JTextField linieTextField;
-    private JTextField ausweisnummerTextField;
+    private PlaceholderTextField linieTextField;
+    private PlaceholderTextField ausweisnummerTextField;
     private JToggleButton suchenToggleButton;
     private JComboBox geschlechtBox;
-    private JTextField vornameTextField;
-    private JTextField nachnameTextField;
-    private JTextField geburtsortTextField;
-    private JTextField emailTextField;
-    private JTextField telefonTextField;
-    private JTextField strasseTextField;
-    private JTextField hausnummerTextField;
-    private JTextField plzTextField;
-    private JTextField ortTextField;
-    private JTextField zusatzTextField;
+    private PlaceholderTextField vornameTextField;
+    private PlaceholderTextField nachnameTextField;
+    private PlaceholderTextField geburtsortTextField;
+    private PlaceholderTextField emailTextField;
+    private PlaceholderTextField telefonTextField;
+    private PlaceholderTextField strasseTextField;
+    private PlaceholderTextField hausnummerTextField;
+    private PlaceholderTextField plzTextField;
+    private PlaceholderTextField ortTextField;
+    private PlaceholderTextField zusatzTextField;
     private JComboBox landComboBox;
     private JToggleButton speichernToggleButton;
     private JLabel nameLabel;
     private JToggleButton abbrechenToggleButton;
-    private JTextField zeitTextField;
     private JLabel linieLabel;
     private JLabel datumUhrzeitLabel;
-    private JToggleButton datumButton;
-    private JTextField datumTextField;
+    private JToggleButton datumButton2;
+    private PlaceholderTextField datumTextField2;
+    private JToggleButton datumButton1;
+    private PlaceholderTextField datumTextField1;
+    private JComboBox stundenBox;
+    private JComboBox minutenBox;
 
     public SchwarzfahrtErfassenGUI(){
         this.currentUser = KontrolleurGUI.currentUser;
@@ -62,24 +66,56 @@ public class SchwarzfahrtErfassenGUI extends JFrame{
             throw new RuntimeException(e);
         }
 
+
+        datumTextField1.setEnabled(false);
+        datumTextField1.setText(Foo.currentDate);
+        System.out.println(" Time: " + Foo.currentTime + "substr: " + Foo.currentTime.charAt(0));
+        stundenBox.setSelectedIndex(Integer.valueOf(Foo.currentTime.substring(0, 1)));
+        minutenBox.setSelectedIndex(Integer.valueOf(Foo.currentTime.substring(3, 4)));
+        datumTextField2.setEnabled(false);
+        linieTextField.setPlaceholder("z.B. S41");
+
+
+
+
         nameLabel.setText("Angemeldet als " + currentUser.getVorname() + " " + currentUser.getName() + " (" + currentUser.getMitarbeiternummer() + ").");
+
 
         setVisible(true);
 
 
         //Eventlistener
 
-        datumButton.addActionListener(new ActionListener() {
+
+        datumButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                datumTextField.setEnabled(true);
-                DatePick calender = new DatePick((JFrame) datumButton.getRootPane().getParent());
+
+                DatePick calender = new DatePick((JFrame) datumButton1.getRootPane().getParent());
                 String txt = calender.Set_Picked_Date();
                 if (txt==""){
-                    datumTextField.setEnabled(false);
+                    datumTextField1.setEnabled(false);
                 }else{
-                    datumTextField.setText(calender.Set_Picked_Date());
+                    datumTextField1.setText(calender.Set_Picked_Date());
+                }
+
+
+            }
+        });
+
+
+        datumButton2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+
+                DatePick calender = new DatePick((JFrame) datumButton2.getRootPane().getParent());
+                String txt = calender.Set_Picked_Date();
+                if (txt==""){
+                    datumTextField2.setEnabled(false);
+                }else{
+                    datumTextField2.setText(calender.Set_Picked_Date());
                 }
 
 
@@ -135,8 +171,11 @@ public class SchwarzfahrtErfassenGUI extends JFrame{
                 if (pflichtAusgefuellt()){
                     Adresse neueAdresse = new Adresse(landComboBox.getSelectedItem().toString(), plzTextField.getText(), ortTextField.getText(), strasseTextField.getText(), hausnummerTextField.getText(), zusatzTextField.getText(), landComboBox.getSelectedIndex());
                     try {
-                        new Schwarzfahrer(ausweisnummerTextField.getText(), geburtsortTextField.getText(), neueAdresse, vornameTextField.getText(), nachnameTextField.getText(), geschlechtBox.getSelectedItem().toString(), telefonTextField.getText(), emailTextField.getText(),
-                                0, 0,0);
+
+                        int date[] = Dateswitcher.datetonumber(datumTextField2.getText());
+
+
+                        new Schwarzfahrer(ausweisnummerTextField.getText(), geburtsortTextField.getText(), neueAdresse, vornameTextField.getText(), nachnameTextField.getText(), geschlechtBox.getSelectedItem().toString(), telefonTextField.getText(), emailTextField.getText(), date[0], date[1], date[2]);
                     } catch (IOException ex) {
                         ex.printStackTrace();
                         throw new RuntimeException(ex);
@@ -187,8 +226,8 @@ public class SchwarzfahrtErfassenGUI extends JFrame{
     }
 
     private boolean pflichtAusgefuellt(){
-        if (!zeitTextField.getText().isBlank()){
-            if (!linieLabel.getText().isBlank()){
+        if (!datumTextField1.getText().isBlank()){
+            if (!linieTextField.getText().isBlank()){
                 if (!ausweisnummerTextField.getText().isBlank()){
                     if (!vornameTextField.getText().isBlank()){
                         if (!nachnameTextField.getText().isBlank()){
@@ -208,6 +247,47 @@ public class SchwarzfahrtErfassenGUI extends JFrame{
                 }
             }
         }
+
+
+        if(datumTextField1.getText().isBlank()){
+
+        }
+        if (linieTextField.getText().isBlank()){
+            linieTextField.addRedFlashEffect();
+        }
+        if (ausweisnummerTextField.getText().isBlank()){
+            ausweisnummerTextField.addRedFlashEffect();
+
+        }
+        if (vornameTextField.getText().isBlank()){
+            vornameTextField.addRedFlashEffect();
+        }
+        if (nachnameTextField.getText().isBlank()){
+            nachnameTextField.addRedFlashEffect();
+        }
+        if (telefonTextField.getText().isBlank()){
+            telefonTextField.addRedFlashEffect();
+        }
+        if (strasseTextField.getText().isBlank()){
+            strasseTextField.addRedFlashEffect();
+        }
+        if (hausnummerTextField.getText().isBlank()){
+            hausnummerTextField.addRedFlashEffect();
+        }
+        if (plzTextField.getText().isBlank()){
+            plzTextField.addRedFlashEffect();
+        }
+        if (ortTextField.getText().isBlank()){
+            ortTextField.addRedFlashEffect();
+        }
+
+
+
+
+
+
+
+
         return false;
     }
     public static void open() {
