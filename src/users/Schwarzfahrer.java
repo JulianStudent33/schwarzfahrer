@@ -50,7 +50,7 @@ public class Schwarzfahrer extends Person{
         System.out.println("gespeichert" + this.sfFile);
         display();
         createSfFile();
-        System.out.println("Schwarzfahrer ProfilGUI erstellt.");
+        System.out.println("Schwarzfahrer Profil erstellt.");
     }
 
     public void createSfFile() throws IOException {

@@ -99,14 +99,23 @@ public class RegisterGUI extends JFrame{
             public void actionPerformed(ActionEvent e) {
 
 
-                DatePick calender = new DatePick((JFrame) datumButton.getRootPane().getParent());
-                String txt = calender.Set_Picked_Date();
-                if (txt==""){
-
+                if (!datumTextField.getText().isBlank()){
+                    DatePick calender = new DatePick((JFrame) datumButton.getRootPane().getParent(), datumTextField.getText());
+                    String txt = calender.Set_Picked_Date();
+                    if (txt==""){
+                        datumTextField.setEnabled(false);
+                    }else{
+                        datumTextField.setText(calender.Set_Picked_Date());
+                    }
                 }else{
-                    datumTextField.setText(calender.Set_Picked_Date());
+                    DatePick calender = new DatePick((JFrame) datumButton.getRootPane().getParent(), null);
+                    String txt = calender.Set_Picked_Date();
+                    if (txt==""){
+                        datumTextField.setEnabled(false);
+                    }else{
+                        datumTextField.setText(calender.Set_Picked_Date());
+                    }
                 }
-
 
             }
         });

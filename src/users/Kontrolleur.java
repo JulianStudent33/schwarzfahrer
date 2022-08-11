@@ -60,11 +60,15 @@ public class Kontrolleur extends Mitarbeiter{
 
     }
     public Schwarzfahrer schwarzfahrerSuchen(String ausweisnummer) throws IOException, ClassNotFoundException {
+        Foo.getDirectoryData();
         File gesuchtenSF = Path.of(Foo.sfPath + Foo.fileSeperator + ausweisnummer + ".sf").toFile();
+        System.out.println(gesuchtenSF.toPath());
+
         if (Foo.sfList.contains(gesuchtenSF)){
             Schwarzfahrer gefundenerSF = (Schwarzfahrer) PersFile.laden(gesuchtenSF);
             return gefundenerSF;
         }else{
+            System.out.println("Nicht gefunden");
             return null;
         }
     }

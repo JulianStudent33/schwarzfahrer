@@ -78,7 +78,7 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                Kachel1GUI.openKachel1GUI();
+               // Kachel1GUI.openKachel1GUI();
 
             }
         });

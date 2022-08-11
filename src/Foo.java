@@ -359,25 +359,19 @@ public class Foo {
         final int DATE_YEAR = java.util.Calendar.getInstance().get(Calendar.YEAR);
         final int DATE_MONTH = java.util.Calendar.getInstance().get(java.util.Calendar.MONTH);
         final int DATE_DAY = java.util.Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
-        final int TIME_HOUR;
+        final int TIME_HOUR = java.util.Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
         final int TIME_MINUTE = java.util.Calendar.getInstance().get(Calendar.MINUTE);
         final int PM = java.util.Calendar.getInstance().get(Calendar.AM_PM);
 
-        switch (PM){
-            case 0:
-                System.out.println("PM = " + PM);
-                    TIME_HOUR = java.util.Calendar.getInstance().get(Calendar.HOUR) + 12;
-                    break;
-            default: TIME_HOUR = java.util.Calendar.getInstance().get(Calendar.HOUR);
-                    break;
-        }
         System.out.println(TIME_HOUR);
         java.text.SimpleDateFormat Simple_Time_Format = new java.text.SimpleDateFormat("dd-MM-yyyy hh:mm");
         java.util.Calendar calender = java.util.Calendar.getInstance();
         calender.set(DATE_YEAR, DATE_MONTH, DATE_DAY, TIME_HOUR, TIME_MINUTE);
         String date = Simple_Time_Format.format(calender.getTime());
-        String time = date.substring(12);
+        String time = date.substring(11);
         System.out.println("time: " + time);
+        System.out.println(time.substring(0, 2));
+        System.out.println(time.substring(3, 5));
         return time;
     }
 
