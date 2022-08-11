@@ -26,15 +26,17 @@ public class OkayWindow {
         label.setHorizontalTextPosition(JLabel.CENTER);
         label.setVerticalTextPosition(JLabel.CENTER);
         label.setFont(fontSmall);
+        label.setHorizontalAlignment(JLabel.CENTER);
+        label.setVerticalAlignment(JLabel.CENTER);
         label.setBounds(10,15,200,40);
 
         OkBtn.setBackground(hellb);
         OkBtn.setForeground(white);
         OkBtn.setText("Ok");
-        OkBtn.setBounds(85,55,80,40);
+        OkBtn.setBounds(85,65,80,40);
 
         BildLabel.setIcon(hilfe_bild);
-        BildLabel.setBounds(15,50,50,50);
+        BildLabel.setBounds(15,65,50,50);
 
         // Einfügen der Elemente in die Panels
         Background.add(label);
@@ -51,9 +53,15 @@ public class OkayWindow {
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
+
+        return;
     }
 
+    /*public static void openOkayWindow(String message) {
+
+        new OkayWindow(message);
+    }*/
     public static void main(String[] args) {
-        new OkayWindow("<html><body><p>Ihre Passwörter <br>stimmen nicht überein!</p></body></html>");
+        new OkayWindow("<html><body><p>Passwörter stimmen <br>nicht überein!</p></body></html>");
     }
 }
