@@ -25,6 +25,7 @@ public class Foo {
     public static final String fileSeperator = fs.getSeparator();
 
     public static String currentDate;
+    public static String currentTime;
     //File Struktur:
     /*Users/Admin/ ... .user PersFiles
      * Users/Kontrolleur/ ... .user PersFiles
@@ -123,7 +124,7 @@ public class Foo {
         }
 
         currentDate = getCurrentDate();
-
+        currentTime = getCurrentTime();
 
         System.out.println(currentDate);
 
@@ -353,6 +354,31 @@ public class Foo {
         java.util.Calendar Calendar = java.util.Calendar.getInstance();
         Calendar.set(DATE_YEAR, DATE_MONTH, DATE_DAY);
         return Simple_Date_Format.format(Calendar.getTime());
+    }
+    public static String getCurrentTime(){
+        final int DATE_YEAR = java.util.Calendar.getInstance().get(Calendar.YEAR);
+        final int DATE_MONTH = java.util.Calendar.getInstance().get(java.util.Calendar.MONTH);
+        final int DATE_DAY = java.util.Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+        final int TIME_HOUR;
+        final int TIME_MINUTE = java.util.Calendar.getInstance().get(Calendar.MINUTE);
+        final int PM = java.util.Calendar.getInstance().get(Calendar.AM_PM);
+
+        switch (PM){
+            case 0:
+                System.out.println("PM = " + PM);
+                    TIME_HOUR = java.util.Calendar.getInstance().get(Calendar.HOUR) + 12;
+                    break;
+            default: TIME_HOUR = java.util.Calendar.getInstance().get(Calendar.HOUR);
+                    break;
+        }
+        System.out.println(TIME_HOUR);
+        java.text.SimpleDateFormat Simple_Time_Format = new java.text.SimpleDateFormat("dd-MM-yyyy hh:mm");
+        java.util.Calendar calender = java.util.Calendar.getInstance();
+        calender.set(DATE_YEAR, DATE_MONTH, DATE_DAY, TIME_HOUR, TIME_MINUTE);
+        String date = Simple_Time_Format.format(calender.getTime());
+        String time = date.substring(12);
+        System.out.println("time: " + time);
+        return time;
     }
 
 

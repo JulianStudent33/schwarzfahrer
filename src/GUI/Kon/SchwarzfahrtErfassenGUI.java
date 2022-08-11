@@ -46,6 +46,8 @@ public class SchwarzfahrtErfassenGUI extends JFrame{
     private PlaceholderTextField datumTextField2;
     private JToggleButton datumButton1;
     private PlaceholderTextField datumTextField1;
+    private JComboBox stundenBox;
+    private JComboBox minutenBox;
 
     public SchwarzfahrtErfassenGUI(){
         this.currentUser = KontrolleurGUI.currentUser;
@@ -67,7 +69,9 @@ public class SchwarzfahrtErfassenGUI extends JFrame{
 
         datumTextField1.setEnabled(false);
         datumTextField1.setText(Foo.currentDate);
-
+        System.out.println(" Time: " + Foo.currentTime + "substr: " + Foo.currentTime.charAt(0));
+        stundenBox.setSelectedIndex(Integer.valueOf(Foo.currentTime.substring(0, 1)));
+        minutenBox.setSelectedIndex(Integer.valueOf(Foo.currentTime.substring(3, 4)));
         datumTextField2.setEnabled(false);
         linieTextField.setPlaceholder("z.B. S41");
 
@@ -246,34 +250,35 @@ public class SchwarzfahrtErfassenGUI extends JFrame{
 
 
         if(datumTextField1.getText().isBlank()){
-            datumTextField1.addFlashEffect();
-        }
-        if (linieTextField.getText().isBlank()){
 
         }
+        if (linieTextField.getText().isBlank()){
+            linieTextField.addRedFlashEffect();
+        }
         if (ausweisnummerTextField.getText().isBlank()){
+            ausweisnummerTextField.addRedFlashEffect();
 
         }
         if (vornameTextField.getText().isBlank()){
-
+            vornameTextField.addRedFlashEffect();
         }
         if (nachnameTextField.getText().isBlank()){
-
+            nachnameTextField.addRedFlashEffect();
         }
         if (telefonTextField.getText().isBlank()){
-
+            telefonTextField.addRedFlashEffect();
         }
         if (strasseTextField.getText().isBlank()){
-
+            strasseTextField.addRedFlashEffect();
         }
         if (hausnummerTextField.getText().isBlank()){
-
+            hausnummerTextField.addRedFlashEffect();
         }
         if (plzTextField.getText().isBlank()){
-
+            plzTextField.addRedFlashEffect();
         }
         if (ortTextField.getText().isBlank()){
-
+            ortTextField.addRedFlashEffect();
         }
 
 
