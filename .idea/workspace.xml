@@ -4,43 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Flash Effekt fertig">
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Bug behoben, dass der schwarzfahrt erfassen autocomplete nur nach neustarten getriggered wurde&#10;Date_Pick geht jetzt gleich auf die Seite vom Kalender, wo man stehen geblieben war &#10;Sachbearbeiter Kachel1 etwas angefangen&#10;Glaube das mit der Uhrzeit vorauswählen funktioniert jetzt ordentlich&#10;Überall wo datum ausgewählt wird ist ein +">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/Saves/Users/Kontrolleur/Konni1.mb" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/Saves/Users/Kontrolleur/Konni1.mb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/Saves/loggedIN.save" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/Saves/loggedIN.save" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/Foo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/Foo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$6.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/OkayWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/OkayWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$8.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/elements/PlaceholderTextField$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/elements/PlaceholderPasswordField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/elements/PlaceholderPasswordField.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/elements/PlaceholderTextField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/elements/PlaceholderTextField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/users/Kontrolleur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/users/Kontrolleur.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/users/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/users/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/users/Schwarzfahrer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/users/Schwarzfahrer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Foo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Kon/SchwarzfahrtErfassenGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Kon/SchwarzfahrtErfassenGUI.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Kon/SchwarzfahrtErfassenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Kon/SchwarzfahrtErfassenGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/OkayWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/OkayWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/LoginGUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/LoginGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/RegisterGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterGUI.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Sachbearbeiter/Kachel1GUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Sachbearbeiter/SachbearbeiterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Sachbearbeiter/SachbearbeiterGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/elements/DatePick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/elements/DatePick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/users/Kontrolleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/Kontrolleur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/users/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/users/Schwarzfahrer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/Schwarzfahrer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/elements/PlaceholderPasswordField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/elements/PlaceholderPasswordField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/elements/PlaceholderTextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/elements/PlaceholderTextField.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,21 +238,7 @@
       <workItem from="1660132461830" duration="5742000" />
       <workItem from="1660140451149" duration="5358000" />
       <workItem from="1660147707052" duration="89000" />
-      <workItem from="1660148862685" duration="13336000" />
-    </task>
-    <task id="LOCAL-00011" summary="GUIs hinzugefügt">
-      <created>1657530723389</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1657530723389</updated>
-    </task>
-    <task id="LOCAL-00012" summary="GUIs hinzugefügt und extenden alle JFrame">
-      <created>1657532039050</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1657532039050</updated>
+      <workItem from="1660148862685" duration="17206000" />
     </task>
     <task id="LOCAL-00013" summary="First Registration mega nice jetzt">
       <created>1657537467160</created>
@@ -600,7 +569,21 @@
       <option name="project" value="LOCAL" />
       <updated>1660206722630</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Bug behoben, dass der schwarzfahrt erfassen autocomplete nur nach neustarten getriggered wurde&#10;Date_Pick geht jetzt gleich auf die Seite vom Kalender, wo man stehen geblieben war &#10;Sachbearbeiter Kachel1 etwas angefangen&#10;Glaube das mit der Uhrzeit vorauswählen funktioniert jetzt ordentlich&#10;Überall wo datum ausgewählt wird ist ein +">
+      <created>1660215180479</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1660215180479</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Bug behoben, dass der schwarzfahrt erfassen autocomplete nur nach neustarten getriggered wurde&#10;Date_Pick geht jetzt gleich auf die Seite vom Kalender, wo man stehen geblieben war &#10;Sachbearbeiter Kachel1 etwas angefangen&#10;Glaube das mit der Uhrzeit vorauswählen funktioniert jetzt ordentlich&#10;Überall wo datum ausgewählt wird ist ein +">
+      <created>1660215188221</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1660215188221</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -621,7 +604,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="GUIs hinzugefügt" />
     <MESSAGE value="GUIs hinzugefügt und extenden alle JFrame" />
     <MESSAGE value="First Registration mega nice jetzt" />
     <MESSAGE value="das hier liest eh keiner aber in dem Commit stecken 5 Stunden arbeit drin" />
@@ -646,7 +628,8 @@
     <MESSAGE value="neue flash funktion in PlaceholderTextField" />
     <MESSAGE value="Datum Picker hinzugefügt in Registrierung, Bug behoben mit erster Anmeldung, aktuelles Datum wird bei schwarzfahrt erfassen jetzt vorausgewählt" />
     <MESSAGE value="Flash Effekt fertig" />
-    <option name="LAST_COMMIT_MESSAGE" value="Flash Effekt fertig" />
+    <MESSAGE value="Bug behoben, dass der schwarzfahrt erfassen autocomplete nur nach neustarten getriggered wurde&#10;Date_Pick geht jetzt gleich auf die Seite vom Kalender, wo man stehen geblieben war &#10;Sachbearbeiter Kachel1 etwas angefangen&#10;Glaube das mit der Uhrzeit vorauswählen funktioniert jetzt ordentlich&#10;Überall wo datum ausgewählt wird ist ein +" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug behoben, dass der schwarzfahrt erfassen autocomplete nur nach neustarten getriggered wurde&#10;Date_Pick geht jetzt gleich auf die Seite vom Kalender, wo man stehen geblieben war &#10;Sachbearbeiter Kachel1 etwas angefangen&#10;Glaube das mit der Uhrzeit vorauswählen funktioniert jetzt ordentlich&#10;Überall wo datum ausgewählt wird ist ein +" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
