@@ -247,15 +247,12 @@ public class AdminGUI extends JFrame implements ActionListener {
     }
 
     public static void openAdminGUI(){
+        Foo.getDirectoryData();
         AdminGUI gui = new AdminGUI();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
-    }
+    }}
 
-    public static void main(String[] args) {
-        openAdminGUI();
-    }
-}

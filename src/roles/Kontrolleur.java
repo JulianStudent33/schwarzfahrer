@@ -39,8 +39,9 @@ public class Kontrolleur extends Mitarbeiter{
     }
 
     public Kontrolleur(String benutzername, String passwort, String vorname, String nachname, String geschlecht, String telefonnummer, String email, int[] date) throws IOException {
+        Foo.konCount+=1;
         this.isKontrolleur = true;
-        this.mitarbeiternummer = "K" + Foo.konCount++;
+        this.mitarbeiternummer = "K" + Foo.konCount;
         this.benutzername = benutzername;
         this.passwort = passwort;
         this.vorname = vorname;

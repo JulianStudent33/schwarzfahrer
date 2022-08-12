@@ -374,6 +374,7 @@ public class SchwarzfahrtErfassenGUI extends JFrame{
         return false;
     }
     public static void open() {
+        Foo.getDirectoryData();
         SchwarzfahrtErfassenGUI gui = new SchwarzfahrtErfassenGUI();
     }
 

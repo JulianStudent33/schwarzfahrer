@@ -246,6 +246,7 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
 
 
     public static void openKonGUI(){
+        Foo.getDirectoryData();
         KontrolleurGUI gui = new KontrolleurGUI();
     }
     public static void main(String[] args) {

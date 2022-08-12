@@ -284,7 +284,6 @@ public class Foo {
     }
 
     public static boolean userExistiertBereits(String eingabe){
-        getDirectoryData();
         if (AdminFileListe.contains(Path.of(adminPath + fileSeperator + eingabe + ".mb").toFile()) ||
                 SachbearbeiterFileListe.contains(Path.of(sbPath + fileSeperator + eingabe + ".mb").toFile()) ||
                 KontrolleurFileListe.contains(Path.of(konPath + fileSeperator + eingabe + ".mb").toFile())){

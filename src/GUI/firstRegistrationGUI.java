@@ -135,8 +135,8 @@ public class firstRegistrationGUI extends JFrame {
 
     }
 
-    public static void firstRegister(){
-
+    public static void openFirstRegister(){
+        Foo.getDirectoryData();
         firstRegistrationGUI gui = new firstRegistrationGUI();
 
     }

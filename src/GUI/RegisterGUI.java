@@ -299,7 +299,7 @@ public class RegisterGUI extends JFrame{
 
 
     public static void register(){
-
+        Foo.getDirectoryData();
         RegisterGUI gui = new RegisterGUI();
 
     }

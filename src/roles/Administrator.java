@@ -21,8 +21,9 @@ public class Administrator extends Mitarbeiter{
 
     //Konstruktoren
     public Administrator(String benutzername, String passwort, String vorname, String nachname, String geschlecht, String telefonnummer, String email) throws IOException {
+        Foo.adminCount +=1;
         this.isAdmin = true;
-        this.mitarbeiternummer = "A" + Foo.adminCount++;
+        this.mitarbeiternummer = "A" + Foo.adminCount;
         this.benutzername = benutzername;
         this.passwort = passwort;
         this.vorname = vorname;

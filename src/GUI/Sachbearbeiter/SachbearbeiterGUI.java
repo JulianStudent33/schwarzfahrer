@@ -259,6 +259,7 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
     }
 
     public static void openSBGUI(){
+        Foo.getDirectoryData();
         SachbearbeiterGUI gui = new SachbearbeiterGUI();
     }
     public static void main(String[] args) {
