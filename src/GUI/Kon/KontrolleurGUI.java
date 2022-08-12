@@ -6,7 +6,7 @@ import src.GUI.EinstellungenGUI;
 import src.GUI.ProfilGUI;
 import src.GUI.StatistikenGUI;
 import src.GUI.StartfensterGUI;
-import src.users.Kontrolleur;
+import src.roles.Kontrolleur;
 import static src.Foo.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

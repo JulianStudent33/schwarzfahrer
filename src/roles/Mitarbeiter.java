@@ -1,9 +1,8 @@
-package src.users;
+package src.roles;
 
 import src.Foo;
 import src.PersFile;
 
-import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 

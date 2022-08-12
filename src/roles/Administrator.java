@@ -1,11 +1,8 @@
-package src.users;
+package src.roles;
 
 import src.Foo;
-import src.PersFile;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.Serializable;
 import java.nio.file.Path;
 
 public class Administrator extends Mitarbeiter{

@@ -1,4 +1,4 @@
-package src.users;
+package src.roles;
 
 import src.Foo;
 

@@ -8,9 +8,9 @@ import src.GUI.elements.PlaceholderPasswordField;
 import src.GUI.elements.PlaceholderTextField;
 import src.PersFile;
 import src.nickcode.pass;
-import src.users.Administrator;
-import src.users.Kontrolleur;
-import src.users.Sachbearbeiter;
+import src.roles.Administrator;
+import src.roles.Kontrolleur;
+import src.roles.Sachbearbeiter;
 import static src.Foo.*;
 import javax.swing.*;
 import java.awt.*;
@@ -241,7 +241,7 @@ public class LoginGUI extends JFrame implements ActionListener {
                 if (!benutzernameTextField.getText().isBlank()){
                     if (!passwortPasswordField.getText().isBlank()) {
 
-                        if (Foo.adminList.contains(Path.of(Foo.adminPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())) {
+                        if (Foo.AdminFileListe.contains(Path.of(Foo.adminPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())) {
                             try {
                                 Administrator mb = (Administrator) PersFile.laden(Path.of(Foo.adminPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile());
                                 System.out.println("Datei gelesen");
@@ -270,7 +270,7 @@ public class LoginGUI extends JFrame implements ActionListener {
                                 StartfensterGUI.startFenster();
                             }
                         }
-                        if (Foo.konList.contains(Path.of(Foo.konPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())) {
+                        if (Foo.KontrolleurFileListe.contains(Path.of(Foo.konPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())) {
                             try {
                                 Kontrolleur mb = (Kontrolleur) PersFile.laden(Path.of(Foo.konPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile());
                                 Foo.currentKontrolleur = mb;
@@ -293,7 +293,7 @@ public class LoginGUI extends JFrame implements ActionListener {
                                 StartfensterGUI.startFenster();
                             }
                         }
-                        if (Foo.sbList.contains(Path.of(Foo.sbPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())) {
+                        if (Foo.SachbearbeiterFileListe.contains(Path.of(Foo.sbPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())) {
                             try {
                                 Sachbearbeiter mb = (Sachbearbeiter) PersFile.laden(Path.of(Foo.sbPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile());
                                 Foo.currentSachbearbeiter = mb;

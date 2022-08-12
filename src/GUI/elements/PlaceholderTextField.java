@@ -7,7 +7,7 @@ import javax.swing.*;
 import javax.swing.text.Document;
 
 @SuppressWarnings("serial")
-public class PlaceholderTextField extends JTextField {
+public class PlaceholderTextField extends JTextField implements Flash{
 
     public static void main(final String[] args) {
         final PlaceholderTextField tf = new PlaceholderTextField("");

@@ -5,8 +5,7 @@ import src.GUI.EinstellungenGUI;
 import src.GUI.ProfilGUI;
 import src.GUI.StartfensterGUI;
 import src.GUI.StatistikenGUI;
-import src.users.Administrator;
-import src.users.Sachbearbeiter;
+import src.roles.Sachbearbeiter;
 
 import javax.swing.*;
 import java.awt.*;

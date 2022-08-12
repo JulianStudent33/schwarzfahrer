@@ -4,7 +4,7 @@ import src.GUI.EinstellungenGUI;
 import src.GUI.ProfilGUI;
 import src.GUI.StartfensterGUI;
 import src.GUI.StatistikenGUI;
-import src.users.Administrator;
+import src.roles.Administrator;
 
 import javax.swing.*;
 import java.awt.*;

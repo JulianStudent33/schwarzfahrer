@@ -5,16 +5,13 @@ import src.GUI.Kon.KontrolleurGUI;
 import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
 import src.GUI.elements.*;
 import src.nickcode.pass;
-import src.users.Kontrolleur;
-import src.users.Sachbearbeiter;
+import src.roles.Kontrolleur;
+import src.roles.Sachbearbeiter;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.Locale;
 
 public class RegisterGUI extends JFrame{

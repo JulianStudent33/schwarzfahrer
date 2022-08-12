@@ -4,7 +4,7 @@ import javax.swing.*;
 import src.Foo;
 import src.GUI.Kon.SchwarzfahrtErfassenGUI;
 import src.GUI.StartfensterGUI;
-import src.users.Kontrolleur;
+import src.roles.Kontrolleur;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;

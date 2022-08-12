@@ -3,11 +3,11 @@ package src;
 import src.GUI.*;
 import src.GUI.Admin.AdminGUI;
 import src.GUI.Kon.KontrolleurGUI;
-import src.GUI.Kontrolleur.KontrolleurGUI_alt;
 import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
-import src.users.Administrator;
-import src.users.Kontrolleur;
-import src.users.Sachbearbeiter;
+import src.roles.Administrator;
+import src.roles.Kontrolleur;
+import src.roles.Sachbearbeiter;
+import src.roles.Schwarzfahrer;
 
 import javax.swing.*;
 import java.awt.*;
@@ -35,15 +35,15 @@ public class Foo {
      * */
     //Array File Variablen für Profile (Noch als Liste (Array alternative für einfache Suche) zu implementieren)
     public static File[] admins;
-    public static List<File> adminList = new ArrayList<File>();
+    public static List<File> AdminFileListe = new ArrayList<File>();
     public static File[] sachbearbeiter;
-    public static List<File> sbList = new ArrayList<File>();
+    public static List<File> SachbearbeiterFileListe = new ArrayList<File>();
     public static File[] kontrolleure;
-    public static List<File> konList = new ArrayList<File>();
+    public static List<File> KontrolleurFileListe = new ArrayList<File>();
     public static File[] schwarzfahrer;
-    public static List<File> sfList = new ArrayList<File>();
-    public static File[] schwarzfahrten;
-    public static List<File> sftList = new ArrayList<File>();
+    public static List<File> SchwarzfahrerFileListe = new ArrayList<File>();
+    public static List<Schwarzfahrer> SchwarzfahrerListe = new ArrayList<Schwarzfahrer>();
+    public static List<Schwarzfahrt> SchwarzfahrtenListe = new ArrayList<Schwarzfahrt>();
 
     //Count Variablen (Noch Als Liste<int> zu implementieren)
     public static Color red = new Color(255, 107, 107);
@@ -70,7 +70,6 @@ public class Foo {
         public static Path sbPath = Paths.get("Saves" + fileSeperator + "Users" + fileSeperator + "Sachbearbeiter");
         public static Path konPath = Paths.get("Saves" + fileSeperator + "Users" + fileSeperator + "Kontrolleur");
         public static Path sfPath = Paths.get("Saves" + fileSeperator + "Schwarzfahrer");
-        public static Path sftPath = Paths.get("Saves" + fileSeperator + "Schwarzfahrten");
         public static Path loginPath = Paths.get("Saves" + fileSeperator + "loggedIN.save");
 
     public static File savesDir = savesPath.toFile();
@@ -79,7 +78,6 @@ public class Foo {
     public static File sbDir = sbPath.toFile();
     public static File konDir = konPath.toFile();
     public static File sfDir = sfPath.toFile();
-    public static File sftDir = sftPath.toFile();
     public static File loggedINFile = loginPath.toFile();
     public static boolean firstUsage;
     private static String[] optionsUse = {"Register", "Login"};
@@ -165,21 +163,18 @@ public class Foo {
         }else{
             System.out.println("Did not create schwarzfahrerDir");
         }
-        if (sftDir.mkdir()){
-            System.out.println("Created schwarzfahrtenDir succesfully.");
-        }else{
-            System.out.println("Did not create schwarzfahrtenDir");
-        }
+
 
     }
     public static void refreshStats(){
 
-        adminCount = adminList.size();
-        konCount = konList.size();
-        sbCount = sbList.size();
+
+        adminCount = AdminFileListe.size();
+        konCount = KontrolleurFileListe.size();
+        sbCount = SachbearbeiterFileListe.size();
         userCount = adminCount+konCount+sbCount;
-        sfCount = sfList.size();
-        sftCount = sftList.size();
+        sfCount = SchwarzfahrerFileListe.size();
+        sftCount = SchwarzfahrtenListe.size();
     }
     public static void getDirectoryData(){
         //Check for Existance and fill lists and FileArrays (Dadurch werden automatisch die Count Variablen angepasst:
@@ -201,9 +196,9 @@ public class Foo {
             System.out.println(adminPath.toString() + " existiert.");
             if (adminDir.listFiles().length != 0){
                 firstUsage = false;
-                adminList.clear();
+                AdminFileListe.clear();
                 for (int i = 0; i < adminDir.listFiles().length; i++){
-                    Collections.addAll(adminList, adminDir.listFiles()[i]);
+                    Collections.addAll(AdminFileListe, adminDir.listFiles()[i]);
                 }
                 admins = adminDir.listFiles();
             } else{
@@ -214,9 +209,9 @@ public class Foo {
         if (sbDir.exists()) {
             System.out.println(sbPath.toString() + " existiert.");
             if (sbDir.listFiles().length != 0) {
-                sbList.clear();
+                SachbearbeiterFileListe.clear();
                 for (int i = 0; i < sbDir.listFiles().length; i++){
-                    Collections.addAll(sbList, sbDir.listFiles()[i]);
+                    Collections.addAll(SachbearbeiterFileListe, sbDir.listFiles()[i]);
                 }
                 sachbearbeiter = sbDir.listFiles();
             } else {
@@ -224,11 +219,11 @@ public class Foo {
             }
         }
         if (konDir.exists()) {
-            konList.clear();
+            KontrolleurFileListe.clear();
             System.out.println(konPath.toString() + " existiert.");
             if (konDir.listFiles().length != 0){
                 for (int i = 0; i < konDir.listFiles().length; i++){
-                    Collections.addAll(konList, konDir.listFiles()[i]);
+                    Collections.addAll(KontrolleurFileListe, konDir.listFiles()[i]);
                 }
                 kontrolleure = konDir.listFiles();
 
@@ -237,30 +232,18 @@ public class Foo {
             }
         }
         if (sfDir.exists()){
-            sfList.clear();
+            SchwarzfahrerFileListe.clear();
             System.out.println(sfPath.toString() + " existiert.");
             if (sfDir.listFiles().length != 0){
                 for (int i = 0; i < sfDir.listFiles().length; i++){
-                    Collections.addAll(sfList, sfDir.listFiles()[i]);
+                    Collections.addAll(SchwarzfahrerFileListe, sfDir.listFiles()[i]);
                 }
                 schwarzfahrer = sfDir.listFiles();
             } else {
                 System.out.println("SFDir Is Empty.");
             }
         }
-        if (sftDir.exists()){
-            sftList.clear();
-            System.out.println(sftPath.toString() + " existiert.");
-            if (sftDir.listFiles().length != 0){
-                for (int i = 0; i < sftDir.listFiles().length; i++){
-                    Collections.addAll(sftList, sftDir.listFiles()[i]);
-                }
-                schwarzfahrten = sftDir.listFiles();
-
-            }else {
-                System.out.println("SFTDir Is Empty.");
-            }
-        }
+        fillSftList();
         refreshStats(); //aktualisiert count Variablen adminCount/sbCount/konCount/sfCount/sftCount/userCount
         System.out.println("Filled adminList with " + adminCount + " Files.");
         System.out.println("Filled sbList with " + sbCount + " Files.");
@@ -270,11 +253,41 @@ public class Foo {
         System.out.println("User in Total: " + userCount);
     }
 
+    public static void fillSfList(){
+        SchwarzfahrerListe.clear();
+        int x = SchwarzfahrerFileListe.size();
+        for (int i = 0; i < x; i++){
+            try {
+                SchwarzfahrerListe.add((Schwarzfahrer) PersFile.laden(SchwarzfahrerFileListe.get(i)));
+            } catch (IOException e) {
+                e.printStackTrace();
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+                throw new RuntimeException(e);
+            }
+        }
+    }
+    public static void fillSftList(){
+        SchwarzfahrtenListe.clear();
+        fillSfList();
+        int x = SchwarzfahrerListe.size();
+        Schwarzfahrer s;
+
+        for (int i = 0; i < x; i++){
+            s  = SchwarzfahrerListe.get(i);
+            for (int j = 0; j < s.sftList.size(); j++){
+                SchwarzfahrtenListe.add(s.sftList.get(j));
+                System.out.println("Alle Schwarzfahrten von " + s.getVorname() + " der SchwarzfahrtenListe hinzugefügt.");
+            }
+        }
+    }
+
     public static boolean userExistiertBereits(String eingabe){
         getDirectoryData();
-        if (adminList.contains(Path.of(adminPath + fileSeperator + eingabe + ".mb").toFile()) ||
-                sbList.contains(Path.of(sbPath + fileSeperator + eingabe + ".mb").toFile()) ||
-                konList.contains(Path.of(konPath + fileSeperator + eingabe + ".mb").toFile())){
+        if (AdminFileListe.contains(Path.of(adminPath + fileSeperator + eingabe + ".mb").toFile()) ||
+                SachbearbeiterFileListe.contains(Path.of(sbPath + fileSeperator + eingabe + ".mb").toFile()) ||
+                KontrolleurFileListe.contains(Path.of(konPath + fileSeperator + eingabe + ".mb").toFile())){
             return true;
         }else {
             return false;
@@ -282,7 +295,7 @@ public class Foo {
     }
     public static boolean sfIstBekannt(String ausweisnummer){
         getDirectoryData();
-        if (sfList.contains(Path.of(sfPath + fileSeperator + ausweisnummer + ".sf").toFile())){
+        if (SchwarzfahrerFileListe.contains(Path.of(sfPath + fileSeperator + ausweisnummer + ".sf").toFile())){
             return true;
         }else{
             return false;
@@ -356,23 +369,7 @@ public class Foo {
         return Simple_Date_Format.format(Calendar.getTime());
     }
     public static String getCurrentTime(){
-        final int DATE_YEAR = java.util.Calendar.getInstance().get(Calendar.YEAR);
-        final int DATE_MONTH = java.util.Calendar.getInstance().get(java.util.Calendar.MONTH);
-        final int DATE_DAY = java.util.Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
-        final int TIME_HOUR = java.util.Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
-        final int TIME_MINUTE = java.util.Calendar.getInstance().get(Calendar.MINUTE);
-        final int PM = java.util.Calendar.getInstance().get(Calendar.AM_PM);
-
-        System.out.println(TIME_HOUR);
-        java.text.SimpleDateFormat Simple_Time_Format = new java.text.SimpleDateFormat("dd-MM-yyyy hh:mm");
-        java.util.Calendar calender = java.util.Calendar.getInstance();
-        calender.set(DATE_YEAR, DATE_MONTH, DATE_DAY, TIME_HOUR, TIME_MINUTE);
-        String date = Simple_Time_Format.format(calender.getTime());
-        String time = date.substring(11);
-        System.out.println("time: " + time);
-        System.out.println(time.substring(0, 2));
-        System.out.println(time.substring(3, 5));
-        return time;
+        return String.valueOf(Calendar.getInstance().get(Calendar.HOUR_OF_DAY)).concat(":").concat(String.valueOf(java.util.Calendar.getInstance().get(Calendar.MINUTE)));
     }
 
 
@@ -391,7 +388,6 @@ public class Foo {
             sbDir.delete();
             konDir.delete();
             sfDir.delete();
-            sftDir.delete();
             userDir.delete();
             System.out.println("Directories gelöscht");
         }

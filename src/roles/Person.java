@@ -1,11 +1,6 @@
-package src.users;
+package src.roles;
 
-import javax.swing.text.DateFormatter;
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
-import java.util.Date;
 
 public abstract class Person implements Serializable {
     //Attribute

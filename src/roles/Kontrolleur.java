@@ -1,4 +1,4 @@
-package src.users;
+package src.roles;
 
 import src.Foo;
 import src.GUI.elements.Dateswitcher;
@@ -64,7 +64,7 @@ public class Kontrolleur extends Mitarbeiter{
         File gesuchtenSF = Path.of(Foo.sfPath + Foo.fileSeperator + ausweisnummer + ".sf").toFile();
         System.out.println(gesuchtenSF.toPath());
 
-        if (Foo.sfList.contains(gesuchtenSF)){
+        if (Foo.SchwarzfahrerFileListe.contains(gesuchtenSF)){
             Schwarzfahrer gefundenerSF = (Schwarzfahrer) PersFile.laden(gesuchtenSF);
             return gefundenerSF;
         }else{
