@@ -52,7 +52,7 @@ public class Schwarzfahrt implements Serializable {
         System.out.println("Schwarzfahrer: " + sf.getVorname() + " " + sf.getName());
         System.out.println("Schwarzfahrt zum Zeitpunkt: " + zeitpunkt);
         System.out.println("Auf der Linie: " + linie);
-        System.out.println("Status: " + status);
+        System.out.println("Status: " + status.status);
     }
 
 }
