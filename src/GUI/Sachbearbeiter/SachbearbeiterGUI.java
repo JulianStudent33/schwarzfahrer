@@ -5,8 +5,7 @@ import src.GUI.EinstellungenGUI;
 import src.GUI.ProfilGUI;
 import src.GUI.StartfensterGUI;
 import src.GUI.StatistikenGUI;
-import src.users.Administrator;
-import src.users.Sachbearbeiter;
+import src.roles.Sachbearbeiter;
 
 import javax.swing.*;
 import java.awt.*;
@@ -78,7 +77,7 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                Kachel1GUI.openKachel1GUI();
+               // Kachel1GUI.openKachel1GUI();
 
             }
         });
@@ -260,6 +259,7 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
     }
 
     public static void openSBGUI(){
+        Foo.getDirectoryData();
         SachbearbeiterGUI gui = new SachbearbeiterGUI();
     }
     public static void main(String[] args) {

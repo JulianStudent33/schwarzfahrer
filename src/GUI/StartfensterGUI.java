@@ -1,10 +1,8 @@
 package src.GUI;
-import com.formdev.flatlaf.FlatDarkLaf;
 import src.Foo;
 
 import javax.swing.*;
 import javax.swing.border.Border;
-import javax.swing.text.JTextComponent;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -188,7 +186,7 @@ public class StartfensterGUI extends JFrame implements ActionListener {
             if (Foo.firstUsage){
                 System.out.println("Öffne First-Register-GUI");
                 dispose();
-                firstRegistrationGUI.firstRegister();
+                firstRegistrationGUI.openFirstRegister();
             }else{
                 System.out.println("Öffne Register-Window");
                 dispose();

@@ -4,7 +4,7 @@ import src.GUI.EinstellungenGUI;
 import src.GUI.ProfilGUI;
 import src.GUI.StartfensterGUI;
 import src.GUI.StatistikenGUI;
-import src.users.Administrator;
+import src.roles.Administrator;
 
 import javax.swing.*;
 import java.awt.*;
@@ -247,15 +247,12 @@ public class AdminGUI extends JFrame implements ActionListener {
     }
 
     public static void openAdminGUI(){
+        Foo.getDirectoryData();
         AdminGUI gui = new AdminGUI();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
-    }
+    }}
 
-    public static void main(String[] args) {
-        openAdminGUI();
-    }
-}

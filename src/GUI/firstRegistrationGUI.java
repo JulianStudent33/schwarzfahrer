@@ -5,8 +5,8 @@ import src.GUI.Admin.AdminGUI;
 import src.GUI.elements.PlaceholderPasswordField;
 import src.GUI.elements.PlaceholderTextField;
 import src.nickcode.pass;
-import src.users.Administrator;
-import static src.Foo.*;
+import src.roles.Administrator;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -135,8 +135,8 @@ public class firstRegistrationGUI extends JFrame {
 
     }
 
-    public static void firstRegister(){
-
+    public static void openFirstRegister(){
+        Foo.getDirectoryData();
         firstRegistrationGUI gui = new firstRegistrationGUI();
 
     }
