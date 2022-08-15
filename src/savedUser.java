@@ -1,9 +1,9 @@
 package src;
 
-import src.users.Administrator;
-import src.users.Kontrolleur;
-import src.users.Mitarbeiter;
-import src.users.Sachbearbeiter;
+import src.roles.Administrator;
+import src.roles.Kontrolleur;
+import src.roles.Mitarbeiter;
+import src.roles.Sachbearbeiter;
 
 import java.io.File;
 import java.io.IOException;

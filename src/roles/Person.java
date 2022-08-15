@@ -1,11 +1,6 @@
-package src.users;
+package src.roles;
 
-import javax.swing.text.DateFormatter;
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
-import java.util.Date;
 
 public abstract class Person implements Serializable {
     //Attribute
@@ -45,16 +40,6 @@ public abstract class Person implements Serializable {
         this.geschlecht = geschlecht;
     }
 
-    public String setGeburtsdatum(int Tag, int Monat, int Jahr) {
-        this.geburtsTag = Tag;
-        this.geburtsMonat = Monat;
-        this.geburtsJahr = Jahr;
-        //lLocalDate date = LocalDate.of(Jahr, Monat, Tag);
-        String geburtsdatum = Tag + "." + Monat + "." + Jahr;
-        // geburtsdatum = date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"));
-        System.out.println(geburtsdatum);
-        return geburtsdatum;
-    }
 
     public String getGeburtsdatum() {
 

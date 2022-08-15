@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/Saves/Users/Kontrolleur/Konni1.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/Saves/loggedIN.save" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/Saves/loggedIN.save" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/OkayWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/OkayWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/elements/PlaceholderTextField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/elements/PlaceholderTextField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Foo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/OkayWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/OkayWindow.java" afterDir="false" />
-    </list>
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="weiß nichtmehr was ich gemacht hab, achja Schwarzfahrten und Flash interface" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +16,7 @@
         <option value="Enum" />
         <option value="UML Class" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -97,7 +82,7 @@
       <recent name="src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.OkayWindow">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Dateswitcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.GUI.elements.Dateswitcher" />
       <module name="PigPen" />
@@ -124,12 +109,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FilterDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.GUI.elements.FilterDemo" />
+    <configuration name="Kachel1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.GUI.Sachbearbeiter.Kachel1" />
       <module name="PigPen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="src.GUI.elements.*" />
+          <option name="PATTERN" value="src.GUI.Sachbearbeiter.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -165,11 +150,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.OkayWindow" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Kachel1" />
+        <item itemvalue="Application.OkayWindow" />
         <item itemvalue="Application.Dateswitcher" />
         <item itemvalue="Application.FieldFilter" />
-        <item itemvalue="Application.FilterDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -230,58 +215,13 @@
       <workItem from="1659942065114" duration="12541000" />
       <workItem from="1660023757005" duration="5069000" />
       <workItem from="1660059117171" duration="1553000" />
-      <workItem from="1660200759056" duration="3923000" />
-      <workItem from="1660288432510" duration="3711000" />
-      <workItem from="1660551111303" duration="1589000" />
-    </task>
-    <task id="LOCAL-00009" summary="changes">
-      <created>1657521563138</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1657521563138</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Registration GUI">
-      <created>1657529824862</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1657529824862</updated>
-    </task>
-    <task id="LOCAL-00011" summary="GUIs hinzugefügt">
-      <created>1657530723389</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1657530723389</updated>
-    </task>
-    <task id="LOCAL-00012" summary="GUIs hinzugefügt und extenden alle JFrame">
-      <created>1657532039050</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1657532039050</updated>
-    </task>
-    <task id="LOCAL-00013" summary="First Registration mega nice jetzt">
-      <created>1657537467160</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1657537467160</updated>
-    </task>
-    <task id="LOCAL-00014" summary="First Registration mega nice jetzt">
-      <created>1657546507647</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1657546507647</updated>
-    </task>
-    <task id="LOCAL-00015" summary="First Registration mega nice jetzt">
-      <created>1657546520557</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1657546520557</updated>
+      <workItem from="1660120670153" duration="672000" />
+      <workItem from="1660132461830" duration="5742000" />
+      <workItem from="1660140451149" duration="5358000" />
+      <workItem from="1660147707052" duration="89000" />
+      <workItem from="1660148862685" duration="28352000" />
+      <workItem from="1660237530296" duration="712000" />
+      <workItem from="1660289329166" duration="509000" />
     </task>
     <task id="LOCAL-00016" summary="das hier liest eh keiner aber in dem Commit stecken 5 Stunden arbeit drin">
       <created>1657565202072</created>
@@ -556,28 +496,77 @@
       <option name="project" value="LOCAL" />
       <updated>1660118090240</updated>
     </task>
-    <task id="LOCAL-00055" summary="okWindow Version Ron 1.1">
-      <created>1660120929246</created>
+    <task id="LOCAL-00055" summary="changes">
+      <created>1660118326987</created>
       <option name="number" value="00055" />
       <option name="presentableId" value="LOCAL-00055" />
       <option name="project" value="LOCAL" />
-      <updated>1660120929247</updated>
+      <updated>1660118326987</updated>
     </task>
-    <task id="LOCAL-00056" summary="LoginGUI Version Ron 1.3.1">
-      <created>1660121157331</created>
+    <task id="LOCAL-00056" summary="neue flash funktion in PlaceholderTextField">
+      <created>1660136533906</created>
       <option name="number" value="00056" />
       <option name="presentableId" value="LOCAL-00056" />
       <option name="project" value="LOCAL" />
-      <updated>1660121157331</updated>
+      <updated>1660136533907</updated>
     </task>
-    <task id="LOCAL-00057" summary="Update">
-      <created>1660207097752</created>
+    <task id="LOCAL-00057" summary="neue flash funktion in PlaceholderTextField">
+      <created>1660136577704</created>
       <option name="number" value="00057" />
       <option name="presentableId" value="LOCAL-00057" />
       <option name="project" value="LOCAL" />
-      <updated>1660207097752</updated>
+      <updated>1660136577704</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Datum Picker hinzugefügt in Registrierung, Bug behoben mit erster Anmeldung, aktuelles Datum wird bei schwarzfahrt erfassen jetzt vorausgewählt">
+      <created>1660147781191</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1660147781191</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Flash Effekt fertig">
+      <created>1660206722630</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1660206722630</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Bug behoben, dass der schwarzfahrt erfassen autocomplete nur nach neustarten getriggered wurde&#10;Date_Pick geht jetzt gleich auf die Seite vom Kalender, wo man stehen geblieben war &#10;Sachbearbeiter Kachel1 etwas angefangen&#10;Glaube das mit der Uhrzeit vorauswählen funktioniert jetzt ordentlich&#10;Überall wo datum ausgewählt wird ist ein +">
+      <created>1660215180479</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1660215180479</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Bug behoben, dass der schwarzfahrt erfassen autocomplete nur nach neustarten getriggered wurde&#10;Date_Pick geht jetzt gleich auf die Seite vom Kalender, wo man stehen geblieben war &#10;Sachbearbeiter Kachel1 etwas angefangen&#10;Glaube das mit der Uhrzeit vorauswählen funktioniert jetzt ordentlich&#10;Überall wo datum ausgewählt wird ist ein +">
+      <created>1660215188221</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1660215188221</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Dieses Rote Flash ding jetzt auch für weiße Textfelder">
+      <created>1660222724481</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1660222724481</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Dieses Rote Flash ding jetzt auch für weiße Textfelder">
+      <created>1660222738272</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1660222738272</updated>
+    </task>
+    <task id="LOCAL-00064" summary="weiß nichtmehr was ich gemacht hab, achja Schwarzfahrten und Flash interface">
+      <created>1660289481657</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1660289481657</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,9 +587,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="GUIs hinzugefügt" />
-    <MESSAGE value="GUIs hinzugefügt und extenden alle JFrame" />
-    <MESSAGE value="First Registration mega nice jetzt" />
     <MESSAGE value="das hier liest eh keiner aber in dem Commit stecken 5 Stunden arbeit drin" />
     <MESSAGE value="Bitchfart8!" />
     <MESSAGE value="Aufgeräumt, 6 Methoden gelöscht" />
@@ -618,12 +604,15 @@
     <MESSAGE value="Important Changes" />
     <MESSAGE value="LoginGUI Version Ron 1.0" />
     <MESSAGE value="LoginGUI Version Ron 1.1" />
-    <MESSAGE value="changes" />
     <MESSAGE value="okWindow Version Ron 1.0" />
-    <MESSAGE value="okWindow Version Ron 1.1" />
-    <MESSAGE value="LoginGUI Version Ron 1.3.1" />
-    <MESSAGE value="Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update" />
+    <MESSAGE value="changes" />
+    <MESSAGE value="neue flash funktion in PlaceholderTextField" />
+    <MESSAGE value="Datum Picker hinzugefügt in Registrierung, Bug behoben mit erster Anmeldung, aktuelles Datum wird bei schwarzfahrt erfassen jetzt vorausgewählt" />
+    <MESSAGE value="Flash Effekt fertig" />
+    <MESSAGE value="Bug behoben, dass der schwarzfahrt erfassen autocomplete nur nach neustarten getriggered wurde&#10;Date_Pick geht jetzt gleich auf die Seite vom Kalender, wo man stehen geblieben war &#10;Sachbearbeiter Kachel1 etwas angefangen&#10;Glaube das mit der Uhrzeit vorauswählen funktioniert jetzt ordentlich&#10;Überall wo datum ausgewählt wird ist ein +" />
+    <MESSAGE value="Dieses Rote Flash ding jetzt auch für weiße Textfelder" />
+    <MESSAGE value="weiß nichtmehr was ich gemacht hab, achja Schwarzfahrten und Flash interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="weiß nichtmehr was ich gemacht hab, achja Schwarzfahrten und Flash interface" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -649,9 +638,34 @@
           <option name="timeStamp" value="85" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/users/Kontrolleur.java</url>
-          <line>67</line>
+          <url>file://$PROJECT_DIR$/src/roles/Kontrolleur.java</url>
+          <line>71</line>
           <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Foo.java</url>
+          <line>258</line>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Foo.java</url>
+          <line>276</line>
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Foo.java</url>
+          <line>194</line>
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GUI/Kon/SchwarzfahrtErfassenGUI.java</url>
+          <line>199</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GUI/Kon/SchwarzfahrtErfassenGUI.java</url>
+          <line>205</line>
+          <option name="timeStamp" value="98" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
@@ -665,15 +679,10 @@
           <properties class="java.time.temporal.UnsupportedTemporalTypeException" package="java.time.temporal" />
           <option name="timeStamp" value="87" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Test.java</url>
-          <line>34</line>
-          <properties class="src.Test">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="89" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

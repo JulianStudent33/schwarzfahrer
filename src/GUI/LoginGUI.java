@@ -7,9 +7,10 @@ import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
 import src.GUI.elements.PlaceholderPasswordField;
 import src.GUI.elements.PlaceholderTextField;
 import src.PersFile;
-import src.users.Administrator;
-import src.users.Kontrolleur;
-import src.users.Sachbearbeiter;
+import src.nickcode.pass;
+import src.roles.Administrator;
+import src.roles.Kontrolleur;
+import src.roles.Sachbearbeiter;
 import static src.Foo.*;
 import javax.swing.*;
 import java.awt.*;
@@ -19,14 +20,6 @@ import java.nio.file.Path;
 import java.util.Arrays;
 
 public class LoginGUI extends JFrame implements ActionListener {
-
-    private JPanel mainPanel;
-    private PlaceholderPasswordField passwortPasswordField;
-    private PlaceholderTextField benutzernameTextField;
-    private JButton abbrechenButton;
-    private JButton anmeldenButton;
-    private JCheckBox angemeldetBleibenCheckBox;
-    private JButton passwortVergessenButton;
 
 
 
@@ -50,10 +43,10 @@ public class LoginGUI extends JFrame implements ActionListener {
         Passwort.setLayout(null);
 
         // Button
-        JPanel AnmeldButton = new JPanel();
-        AnmeldButton.setBackground(dark);
-        AnmeldButton.setPreferredSize(new Dimension(100, 50));
-        AnmeldButton.setLayout(null);
+        JPanel loginButton = new JPanel();
+        loginButton.setBackground(dark);
+        loginButton.setPreferredSize(new Dimension(100, 50));
+        loginButton.setLayout(null);
 
         //AngemeldetBleiben
         JPanel AngemeldetBleiben = new JPanel();
@@ -245,81 +238,100 @@ public class LoginGUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                if (!benutzernameTextField.getText().isBlank()){
+                    if (!passwortPasswordField.getText().isBlank()) {
 
-                if (Foo.adminList.contains(Path.of(Foo.adminPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())){
-                    try{
-                        Administrator mb = (Administrator) PersFile.laden(Path.of(Foo.adminPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile());
-                        System.out.println("Datei gelesen");
-                        if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())){
-                            System.out.println("Passwort stimmt");
-                            Foo.currentAdmin = mb;
-                            if (angemeldetBleibenCheckBox.isSelected()){
-                                Foo.saveAngemeldetBleiben(true);
-                            }else{
-                                Foo.saveAngemeldetBleiben(false);
+                        if (Foo.AdminFileListe.contains(Path.of(Foo.adminPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())) {
+                            try {
+                                Administrator mb = (Administrator) PersFile.laden(Path.of(Foo.adminPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile());
+                                System.out.println("Datei gelesen");
+                                if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())) {
+                                    System.out.println("Passwort stimmt");
+                                    Foo.currentAdmin = mb;
+                                    if (angemeldetBleibenCheckBox.isSelected()) {
+                                        Foo.saveAngemeldetBleiben(true);
+                                    } else {
+                                        Foo.saveAngemeldetBleiben(false);
+                                    }
+                                    dispose();
+                                    AdminGUI.openAdminGUI();
+                                    System.out.println("Starting Admin User-Interface.");
+                                } else {
+                                    System.out.println("Passwort falsch");
+                                    JOptionPane.showMessageDialog(new JDialog(), "Das eingegebene Passwort ist nicht korrekt");
+                                    passwortPasswordField.requestFocus();
+                                    passwortPasswordField.setText("");
+                                }
+
+
+                            } catch (IOException | ClassNotFoundException io) {
+                                dispose();
+                                io.printStackTrace();
+                                StartfensterGUI.startFenster();
                             }
-                            dispose();
-                            AdminGUI.openAdminGUI();
-                            System.out.println("Starting Admin User-Interface.");
-                        }else{
-                            System.out.println("Passwort falsch");
-                            JOptionPane.showMessageDialog(new JDialog(), "Das eingegebene Passwort ist nicht korrekt");
-                            passwortPasswordField.requestFocus();
-                            passwortPasswordField.setText("");
+                        }
+                        if (Foo.KontrolleurFileListe.contains(Path.of(Foo.konPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())) {
+                            try {
+                                Kontrolleur mb = (Kontrolleur) PersFile.laden(Path.of(Foo.konPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile());
+                                Foo.currentKontrolleur = mb;
+                                System.out.println("Datei gelesen");
+                                if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())) {
+                                    System.out.println("Passwort stimmt");
+                                    Foo.currentKontrolleur = mb;
+                                    if (angemeldetBleibenCheckBox.isSelected()) {
+                                        Foo.saveAngemeldetBleiben(true);
+                                    } else {
+                                        Foo.saveAngemeldetBleiben(false);
+                                    }
+                                    dispose();
+                                    KontrolleurGUI.openKonGUI();
+                                    System.out.println("Starting Kontrolleur User-Interface.");
+                                }
+                            } catch (IOException | ClassNotFoundException io) {
+                                dispose();
+                                io.printStackTrace();
+                                StartfensterGUI.startFenster();
+                            }
+                        }
+                        if (Foo.SachbearbeiterFileListe.contains(Path.of(Foo.sbPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())) {
+                            try {
+                                Sachbearbeiter mb = (Sachbearbeiter) PersFile.laden(Path.of(Foo.sbPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile());
+                                Foo.currentSachbearbeiter = mb;
+                                System.out.println("Datei gelesen");
+                                if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())) {
+                                    System.out.println("Passwort stimmt");
+                                    Foo.currentSachbearbeiter = mb;
+                                    if (angemeldetBleibenCheckBox.isSelected()) {
+                                        // Foo.saveAngemeldetBleiben(true);
+                                    } else {
+                                        // Erneuter Aufruf des L&F sodass bei Rückgang auf vorheriges Fenster, das L&F bestehen bleibt            // Foo.saveAngemeldetBleiben(false);
+                                    }
+                                    dispose();
+                                    SachbearbeiterGUI.openSBGUI();
+                                    System.out.println("Starting Sachbearbeiter User-Interface.");
+                                }
+                            } catch (IOException | ClassNotFoundException io) {
+                                dispose();
+                                io.printStackTrace();
+                                StartfensterGUI.startFenster();
+                            }
                         }
 
 
-                    }catch (IOException | ClassNotFoundException io){
-                        dispose();
-                        io.printStackTrace();
-                        StartfensterGUI.startFenster();
                     }
                 }
-                if(Foo.konList.contains(Path.of(Foo.konPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())){
-                    try{
-                        Kontrolleur mb = (Kontrolleur) PersFile.laden(Path.of(Foo.konPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile());
-                        Foo.currentKontrolleur = mb;
-                        System.out.println("Datei gelesen");
-                        if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())){
-                            System.out.println("Passwort stimmt");
-                            Foo.currentKontrolleur = mb;
-                            if (angemeldetBleibenCheckBox.isSelected()){
-                                Foo.saveAngemeldetBleiben(true);
-                            }else{
-                                Foo.saveAngemeldetBleiben(false);
-                            }
-                            dispose();
-                            KontrolleurGUI.openKonGUI();
-                            System.out.println("Starting Kontrolleur User-Interface.");
-                        }
-                    }catch (IOException | ClassNotFoundException io){
-                        dispose();
-                        io.printStackTrace();
-                        StartfensterGUI.startFenster();
-                    }
+
+                if (benutzernameTextField.getText().isBlank()){
+                    benutzernameTextField.addRedFlashEffectWhiteField();
                 }
-                if(Foo.sbList.contains(Path.of(Foo.sbPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())){
-                    try{
-                        Sachbearbeiter mb = (Sachbearbeiter) PersFile.laden(Path.of(Foo.sbPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile());
-                        Foo.currentSachbearbeiter = mb;
-                        System.out.println("Datei gelesen");
-                        if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())){
-                            System.out.println("Passwort stimmt");
-                            Foo.currentSachbearbeiter = mb;
-                            if (angemeldetBleibenCheckBox.isSelected()){
-                                // Foo.saveAngemeldetBleiben(true);
-                            }else{
-                                // Erneuter Aufruf des L&F sodass bei Rückgang auf vorheriges Fenster, das L&F bestehen bleibt            // Foo.saveAngemeldetBleiben(false);
-                            }
-                            dispose();
-                            SachbearbeiterGUI.openSBGUI();
-                            System.out.println("Starting Sachbearbeiter User-Interface.");
-                        }
-                    }catch (IOException | ClassNotFoundException io){
-                        dispose();
-                        io.printStackTrace();
-                        StartfensterGUI.startFenster();
-                    }
+                if (!userExistiertBereits(benutzernameTextField.getText())){
+                    benutzernameTextField.addRedFlashEffectWhiteField();
+                }
+                if (passwortPasswordField.getText().isBlank()){
+                    passwortPasswordField.addRedFlashEffectWhiteField();
+                }
+                if (pass.passwordOk(passwortPasswordField.getText())){
+                    passwortPasswordField.addRedFlashEffectWhiteField();
                 }
 
             }
@@ -328,6 +340,7 @@ public class LoginGUI extends JFrame implements ActionListener {
     }
 
     public static void openLogin(){
+        Foo.getDirectoryData();
         LoginGUI gui = new LoginGUI();
     }
 

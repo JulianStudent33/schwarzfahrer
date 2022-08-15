@@ -1,4 +1,4 @@
-package src.users;
+package src.roles;
 
 import src.Adresse;
 import src.Foo;
@@ -9,9 +9,7 @@ import src.Schwarzfahrt;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import static src.GUI.elements.Dateswitcher.datetonumber;
@@ -30,10 +28,18 @@ public class Schwarzfahrer extends Person{
     Adresse adresse;
     File sfFile;
 
-    public static List<Schwarzfahrt> sftList = new ArrayList<Schwarzfahrt>();
+    public List<Schwarzfahrt> sftList = new ArrayList<Schwarzfahrt>();
 
+    public static void updateExistingSF(String ausweisnummer, String geburtsort,
+                                        Adresse adresse, String vorname, String nachname, String geschlecht,
+                                        String telefonnummer, String email, int day, int month, int year, List<Schwarzfahrt> sftListe) throws IOException {
+                Schwarzfahrer sf = new Schwarzfahrer(ausweisnummer, geburtsort,
+                adresse, vorname, nachname, geschlecht,
+                telefonnummer, email, day, month, year);
 
-    public Schwarzfahrer(String ausweisnummer, String geburtsort,
+                sf.sftList = sftListe;
+    }
+        public Schwarzfahrer(String ausweisnummer, String geburtsort,
                          Adresse adresse, String vorname, String nachname, String geschlecht,
                          String telefonnummer, String email, int day, int month, int year) throws IOException {
         this.ausweisnummer = ausweisnummer;
@@ -45,18 +51,27 @@ public class Schwarzfahrer extends Person{
         this.geschlecht = geschlecht;
         this.telefonnummer = telefonnummer;
         this.email = email;
-
         this.sfFile = Path.of(Foo.sfPath + Foo.fileSeperator + ausweisnummer + ".sf").toFile();
+
         System.out.println("gespeichert" + this.sfFile);
         display();
         createSfFile();
-        System.out.println("Schwarzfahrer ProfilGUI erstellt.");
+        System.out.println("Schwarzfahrer Profil erstellt.");
     }
 
     public void createSfFile() throws IOException {
         PersFile.speichern(this, this.sfFile);
         System.out.println("File geschrieben.");
     }
+
+    public void appendSFT(String date, int hour, int minute, String linie, boolean isBezahlt){
+        System.out.println("Elemente in sftList: " + sftList.size());
+        Schwarzfahrt sft = new Schwarzfahrt(this, date, hour, minute, linie, isBezahlt);
+        sftList.add(sft);
+        System.out.println("Elemente in sftList: " + sftList.size());
+
+    }
+
     public void display(){
         System.out.println(getVorname() + " " + getName());
         System.out.println("Ausweisnummer: " + getAusweisnummer());
@@ -119,11 +134,11 @@ public class Schwarzfahrer extends Person{
         this.sfFile = sfFile;
     }
 
-    public static List<Schwarzfahrt> getSftList() {
+    public List<Schwarzfahrt> getSftList() {
         return sftList;
     }
 
-    public static void setSftList(List<Schwarzfahrt> sftList) {
-        Schwarzfahrer.sftList = sftList;
+    public void setSftList(List<Schwarzfahrt> sftList) {
+        this.sftList = sftList;
     }
 }

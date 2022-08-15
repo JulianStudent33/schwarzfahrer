@@ -6,7 +6,7 @@ import src.GUI.EinstellungenGUI;
 import src.GUI.ProfilGUI;
 import src.GUI.StatistikenGUI;
 import src.GUI.StartfensterGUI;
-import src.users.Kontrolleur;
+import src.roles.Kontrolleur;
 import static src.Foo.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -246,6 +246,7 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
 
 
     public static void openKonGUI(){
+        Foo.getDirectoryData();
         KontrolleurGUI gui = new KontrolleurGUI();
     }
     public static void main(String[] args) {

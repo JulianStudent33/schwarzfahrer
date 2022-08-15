@@ -5,24 +5,21 @@ import src.GUI.Kon.KontrolleurGUI;
 import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
 import src.GUI.elements.*;
 import src.nickcode.pass;
-import src.users.Kontrolleur;
-import src.users.Sachbearbeiter;
+import src.roles.Kontrolleur;
+import src.roles.Sachbearbeiter;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.Locale;
 
 public class RegisterGUI extends JFrame{
     int rollenSelection;
     boolean pwBestaetigt = false;
     boolean pflichtfelderAusgefüllt;
-    private JComboBox benutzerBox;
-    private JComboBox geschlechtBox;
+    private customComboBox benutzerBox;
+    private customComboBox geschlechtBox;
     private PlaceholderPasswordField passwortTextField;
     private JPanel mainPanel;
     private JButton registrierenButton;
@@ -99,14 +96,23 @@ public class RegisterGUI extends JFrame{
             public void actionPerformed(ActionEvent e) {
 
 
-                DatePick calender = new DatePick((JFrame) datumButton.getRootPane().getParent());
-                String txt = calender.Set_Picked_Date();
-                if (txt==""){
-
+                if (!datumTextField.getText().isBlank()){
+                    DatePick calender = new DatePick((JFrame) datumButton.getRootPane().getParent(), datumTextField.getText());
+                    String txt = calender.Set_Picked_Date();
+                    if (txt==""){
+                        datumTextField.setEnabled(false);
+                    }else{
+                        datumTextField.setText(calender.Set_Picked_Date());
+                    }
                 }else{
-                    datumTextField.setText(calender.Set_Picked_Date());
+                    DatePick calender = new DatePick((JFrame) datumButton.getRootPane().getParent(), null);
+                    String txt = calender.Set_Picked_Date();
+                    if (txt==""){
+                        datumTextField.setEnabled(false);
+                    }else{
+                        datumTextField.setText(calender.Set_Picked_Date());
+                    }
                 }
-
 
             }
         });
@@ -212,80 +218,88 @@ public class RegisterGUI extends JFrame{
     }
     private boolean pflichtAusgefüllt() {
         if (benutzerBox.getItemCount() == 2) {
-
             if (geschlechtBox.getItemCount() == 3) {
-
                 if (!vornameTextField.getText().isBlank()) {
-
                     if (!nachnameTextField.getText().isBlank()) {
-
+                        if (!datumTextField.getText().isBlank()){
                         if (!emailTextField.getText().isBlank()) {
-
                             if (emailTextField.getText().contains("@")) {
-
                                 if (!benutzernameTextField.getText().isBlank()) {
-
                                     if (!Foo.userExistiertBereits(benutzernameTextField.getText())) {
-
                                         if (pass.passwordOk(passwortTextField.getText())) {
                                             String pwConfirm = JOptionPane.showInputDialog("Bestätige dein Passwort");
-
                                             if (pwConfirm.equals(passwortTextField.getText())) {
-
                                                 JOptionPane.showMessageDialog(new JDialog(), "Passwort bestätigt");
                                                 pwBestaetigt = true;
                                                 return true;
                                             } else {
                                                 JOptionPane.showMessageDialog(new JDialog(), "Keine Übereinstimmung!");
-                                                return false;
                                             }
                                         } else {
                                             JOptionPane.showMessageDialog(new JDialog(), "Passwort erfüllt nicht die formalen Bedingungen!");
-
-                                            return false;
                                         }
-                                    } else {
-                                        benutzernameTextField.setText("");
-                                        benutzernameTextField.setPlaceholder("Benutzername bereits vergeben");
-                                        return false;
                                     }
-                                } else {
-
-                                    benutzernameTextField.setPlaceholder("Ein Benutzername braucht Zeichen :)");
-                                    return false;
                                 }
-                            } else {
-
-                                emailTextField.setText("");
-                                emailTextField.setPlaceholder("Bitte eine gültige E-Mail eingeben");
-                                return false;
                             }
-                        } else {
-
-                            emailTextField.setPlaceholder("E-Mail ist Pflicht");
-                            return false;
                         }
-                    } else {
-
-                        nachnameTextField.setPlaceholder("Nachname ist Pflicht");
-                        return false;
+                        }
                     }
-                } else {
-
-                    vornameTextField.setPlaceholder("Vorname ist Pflicht");
-                    return false;
                 }
-            } else {
-
-                return false;
             }
-        } else {
-
-            return false;
         }
-    }
-    public static void register(){
+        if (benutzerBox.getItemCount() == 3) {
+            benutzerBox.addRedFlashEffect();
+        }
+        if (geschlechtBox.getItemCount() == 4) {
+            geschlechtBox.addRedFlashEffect();
+        }
+        if (vornameTextField.getText().isBlank()) {
+            vornameTextField.addRedFlashEffect();
+        }
+        if (nachnameTextField.getText().isBlank()) {
+            nachnameTextField.addRedFlashEffect();
+        }
+        if (datumTextField.getText().isBlank()){
+            datumTextField.addRedFlashEffect();
+        }
+        if (emailTextField.getText().isBlank()) {
+            emailTextField.addRedFlashEffect();
+        }
+        if (!emailTextField.getText().contains("@")) {
+            emailTextField.setText("");
+            emailTextField.addRedFlashEffect();
+            emailTextField.setPlaceholder("Bitte eine gültige E-Mail eingeben");
+        }
+        if (Foo.userExistiertBereits(benutzernameTextField.getText())) {
+            benutzernameTextField.setText("");
+            benutzernameTextField.addRedFlashEffect();
+            benutzernameTextField.setPlaceholder("Benutzername bereits vergeben");
+        }
+        if (benutzernameTextField.getText().isBlank()) {
+            benutzernameTextField.addRedFlashEffect();
+        }
+        if (!pass.passwordOk(passwortTextField.getText())) {
+            passwortTextField.addRedFlashEffect();
+        }
 
+
+
+        return false;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    public static void register(){
+        Foo.getDirectoryData();
         RegisterGUI gui = new RegisterGUI();
 
     }

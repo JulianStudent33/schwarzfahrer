@@ -1,7 +1,5 @@
 package src;
 import com.formdev.flatlaf.FlatDarkLaf;
-import src.GUI.StartfensterGUI;
-import src.users.*;
 
 import javax.swing.*;
 import java.io.IOException;

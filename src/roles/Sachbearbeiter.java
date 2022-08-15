@@ -1,4 +1,4 @@
-package src.users;
+package src.roles;
 
 import src.Foo;
 
@@ -21,8 +21,9 @@ public class Sachbearbeiter extends Mitarbeiter{
     //Konstruktoren
 
     public Sachbearbeiter(String benutzername, String passwort) throws IOException {
+        Foo.sbCount +=1;
         this.isSachbearbeiter = true;
-        this.mitarbeiternummer = "S" + Foo.sbCount++;
+        this.mitarbeiternummer = "S" + Foo.sbCount;
         this.benutzername = benutzername;
         this.passwort = passwort;
         this.userFile = Path.of

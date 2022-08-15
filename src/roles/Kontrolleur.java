@@ -1,4 +1,4 @@
-package src.users;
+package src.roles;
 
 import src.Foo;
 import src.GUI.elements.Dateswitcher;
@@ -39,8 +39,9 @@ public class Kontrolleur extends Mitarbeiter{
     }
 
     public Kontrolleur(String benutzername, String passwort, String vorname, String nachname, String geschlecht, String telefonnummer, String email, int[] date) throws IOException {
+        Foo.konCount+=1;
         this.isKontrolleur = true;
-        this.mitarbeiternummer = "K" + Foo.konCount++;
+        this.mitarbeiternummer = "K" + Foo.konCount;
         this.benutzername = benutzername;
         this.passwort = passwort;
         this.vorname = vorname;
@@ -60,11 +61,15 @@ public class Kontrolleur extends Mitarbeiter{
 
     }
     public Schwarzfahrer schwarzfahrerSuchen(String ausweisnummer) throws IOException, ClassNotFoundException {
+        Foo.getDirectoryData();
         File gesuchtenSF = Path.of(Foo.sfPath + Foo.fileSeperator + ausweisnummer + ".sf").toFile();
-        if (Foo.sfList.contains(gesuchtenSF)){
+        System.out.println(gesuchtenSF.toPath());
+
+        if (Foo.SchwarzfahrerFileListe.contains(gesuchtenSF)){
             Schwarzfahrer gefundenerSF = (Schwarzfahrer) PersFile.laden(gesuchtenSF);
             return gefundenerSF;
         }else{
+            System.out.println("Nicht gefunden");
             return null;
         }
     }

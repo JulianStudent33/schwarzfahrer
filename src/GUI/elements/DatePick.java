@@ -6,24 +6,36 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Calendar;
 
 import static src.Foo.*;
 
 public class DatePick {
-    int DATE_MONTH = java.util.Calendar.getInstance().get(java.util.Calendar.MONTH);
-    int DATE_YEAR = java.util.Calendar.getInstance().get(java.util.Calendar.YEAR);
+    int DATE_MONTH = java.util.Calendar.getInstance().get(Calendar.MONTH);
+    final int DATE_MONTH_ACTUAL = java.util.Calendar.getInstance().get(Calendar.MONTH);
+    int DATE_YEAR = java.util.Calendar.getInstance().get(Calendar.YEAR);
+    final int DATE_YEAR_ACTUAL = java.util.Calendar.getInstance().get(Calendar.YEAR);
     ;
     JLabel J_Label = new JLabel("", JLabel.CENTER);
     String DATE_DAY = "";
     JDialog J_Dialog;
     JButton[] J_Button = new JButton[49];
 
-    public DatePick(JFrame J_Frame_Parent) {
+    public DatePick(JFrame J_Frame_Parent, String alteEingabe) {
         try {
             UIManager.setLookAndFeel(new FlatDarkLaf());
         } catch (UnsupportedLookAndFeelException e) {
             throw new RuntimeException(e);
         }
+        if(alteEingabe!=null){
+            int[] d = Dateswitcher.datetonumber(alteEingabe);
+
+            DATE_MONTH = d[1]-1; //-1 weil ist bei Monaten so
+            DATE_YEAR = d [2];
+        }
+
+
+
         J_Dialog = new JDialog();
         J_Dialog.setModal(true);
         J_Dialog.setBackground(notSoDark);
@@ -75,15 +87,19 @@ public class DatePick {
         Next_Button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                DATE_YEAR++;
-                Display_Date();
+                if(DATE_YEAR != DATE_YEAR_ACTUAL){
+                    DATE_YEAR++;
+                    Display_Date();
+                }
             }
         });
         JButton Next_Button2 = new JButton(" > ");
         Next_Button2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
-                DATE_MONTH++;
-                Display_Date();
+                if(DATE_MONTH != DATE_MONTH_ACTUAL){
+                    DATE_MONTH++;
+                    Display_Date();
+                }
             }
         });
         J_Panel2.add(Next_Button2);
