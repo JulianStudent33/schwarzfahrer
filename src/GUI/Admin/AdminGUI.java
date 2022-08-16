@@ -155,7 +155,7 @@ public class AdminGUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                ProfilGUI.openProfilGUI();
+                ProfilGUI.openProfilGUI(getRootPane().getParent());
 
             }
         });
@@ -182,7 +182,7 @@ public class AdminGUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                EinstellungenGUI.openEinstellungenGUI();
+               EinstellungenGUI.openEinstellungenGUI(getRootPane().getParent());
 
             }
         });

@@ -1,7 +1,9 @@
 package src.GUI.Sachbearbeiter;
 
 import src.Foo;
+import src.GUI.Admin.AdminGUI;
 import src.GUI.EinstellungenGUI;
+import src.GUI.Kon.KontrolleurGUI;
 import src.GUI.ProfilGUI;
 import src.GUI.StartfensterGUI;
 import src.GUI.StatistikenGUI;
@@ -23,6 +25,7 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
     private JButton Profil = new JButton();
     private JButton Einstellungen = new JButton();
     private JButton Abmelden = new JButton();
+
 
 
 
@@ -159,7 +162,7 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                ProfilGUI.openProfilGUI();
+                ProfilGUI.openProfilGUI(getRootPane().getParent());
 
             }
         });
@@ -186,7 +189,7 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                EinstellungenGUI.openEinstellungenGUI();
+                EinstellungenGUI.openEinstellungenGUI(getRootPane().getParent());
 
             }
         });

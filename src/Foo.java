@@ -10,7 +10,6 @@ import src.roles.Sachbearbeiter;
 import src.roles.Schwarzfahrer;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -58,6 +57,7 @@ public class Foo {
     public static int sftCount;
     public static boolean angemeldet = false;
     public static boolean angemeldetBleiben;
+    public static String autoLogoutTime = "Aus";
 
     public static Sachbearbeiter currentSachbearbeiter;
     public static Kontrolleur currentKontrolleur;
@@ -110,6 +110,7 @@ public class Foo {
     public static Font fontMediumMedium = new Font ("IBM Plex Mono Medium", Font.BOLD, 25);
     public static Font fontMedium = new Font("IBM Plex Mono Medium", Font.BOLD, 20);
     public static Font fontSmall = new Font("IBM Plex Mono Medium", Font.BOLD, 15);
+    public static Font fontSmallPlain = new Font("IBM Plex Mono Medium", Font.PLAIN, 15);
     public static Font fontSmallSmall = new Font("IBM Plex Mono Medium", Font.BOLD, 10);
 
     //Konstruktoren
@@ -331,13 +332,13 @@ public class Foo {
             System.out.println("Angemeldet bleiben auf true.");
             savedUser userToSave;
             if (currentKontrolleur!=null){
-                userToSave = new savedUser(currentKontrolleur, true);
+                userToSave = new savedUser(currentKontrolleur, true, autoLogoutTime);
                 userToSave.saveStatus(loggedINFile);
             } else if (currentAdmin!=null) {
-                userToSave = new savedUser(currentAdmin, true);
+                userToSave = new savedUser(currentAdmin, true, autoLogoutTime);
                 userToSave.saveStatus(loggedINFile);
             } else if (currentSachbearbeiter!=null) {
-                userToSave = new savedUser(currentSachbearbeiter, true);
+                userToSave = new savedUser(currentSachbearbeiter, true, autoLogoutTime);
                 userToSave.saveStatus(loggedINFile);
             }else{
                 System.out.println("Fehler");
@@ -393,11 +394,9 @@ public class Foo {
         String[] option = {"OK"};
         JPanel panel = new JPanel();
         JLabel lbl = new JLabel(message);
-         lbl.setBorder(new EmptyBorder(0, 20, 0, 79));
         panel.add(lbl);
         int selectedOption = JOptionPane.showOptionDialog(null, panel,
-                "Bestätigung", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, new ImageIcon("src/icons/bild_hilfe.png"), option , option[0]);
-
+                "", JOptionPane.NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, option , option[0]);
     }
     public static void deleteDirs(){ //Methode, damit ich die firstRegistration testen kann
         if(adminDir.list() == null || adminDir.list().length == 0){
