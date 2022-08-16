@@ -29,17 +29,14 @@ public class Main {
 
             public void run() {
                 //deleteDirs();
-
-
-
-                //RegisterWindow.openRegisterGUI();
+                RegisterWindow.openRegisterGUI();
 
 
 
                 try {
 
                     Foo foo = new Foo();
-                    Foo.okWindow("Keine Treffer");
+
                     } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 } catch (ClassNotFoundException ex) {
