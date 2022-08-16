@@ -1,5 +1,6 @@
 package src;
 import com.formdev.flatlaf.FlatDarkLaf;
+import src.GUI.RegisterWindow;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -21,15 +22,24 @@ public class Main {
             throw new RuntimeException(e);
         }
 
+
+
         SwingUtilities.invokeLater(new Runnable() {
 
 
             public void run() {
                 //deleteDirs();
+
+
+
+                //RegisterWindow.openRegisterGUI();
+
+
+
                 try {
 
                     Foo foo = new Foo();
-
+                    Foo.okWindow("Keine Treffer");
                     } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 } catch (ClassNotFoundException ex) {

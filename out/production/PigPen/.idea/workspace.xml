@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="test">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_08_2022_09_15__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_08_2022_09_15__Changes_.xml" afterDir="false" />
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="customButton für flash effect">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_08_22__14_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_08_22__14_02__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/.idea/shelf/Uncommitted_changes_before_Update_at_10_08_2022_09_15__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/.idea/shelf/Uncommitted_changes_before_Update_at_10_08_2022_09_15__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/roles/Sachbearbeiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/roles/Sachbearbeiter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Kon/SchwarzfahrtErfassenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Kon/SchwarzfahrtErfassenGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +19,8 @@
       <list>
         <option value="Enum" />
         <option value="UML Class" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -56,10 +54,10 @@
     &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Class&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;false&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;238&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;232&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;211&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/CBleck/Desktop/UNI Skripte/OOP/SchwarzfahrerProjekt&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -88,9 +86,22 @@
       <recent name="src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Unnamed">
+  <component name="RunManager" selected="Application.OkayWindow">
     <configuration name="Dateswitcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.GUI.elements.Dateswitcher" />
+      <module name="PigPen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.GUI.elements.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FieldFilter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.GUI.elements.FieldFilter" />
       <module name="PigPen" />
       <extension name="coverage">
         <pattern>
@@ -141,19 +152,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Unnamed" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <module name="PigPen" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Unnamed" />
+        <item itemvalue="Application.OkayWindow" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Kachel1" />
-        <item itemvalue="Application.OkayWindow" />
         <item itemvalue="Application.Dateswitcher" />
+        <item itemvalue="Application.FieldFilter" />
       </list>
     </recent_temporary>
   </component>
@@ -221,29 +226,15 @@
       <workItem from="1660148862685" duration="28352000" />
       <workItem from="1660237530296" duration="712000" />
       <workItem from="1660289329166" duration="4032000" />
-      <workItem from="1660572413563" duration="600000" />
-      <workItem from="1660637286568" duration="345000" />
-    </task>
-    <task id="LOCAL-00017" summary="Bitchfart8!">
-      <created>1657572346901</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1657572346901</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Aufgeräumt, 6 Methoden gelöscht">
-      <created>1657620978374</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1657620978374</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Aufgeräumt, 6 Methoden gelöscht">
-      <created>1657620990771</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1657620990771</updated>
+      <workItem from="1660500563051" duration="1652000" />
+      <workItem from="1660502315496" duration="256000" />
+      <workItem from="1660549839766" duration="658000" />
+      <workItem from="1660552450767" duration="5000" />
+      <workItem from="1660552792941" duration="3312000" />
+      <workItem from="1660559546716" duration="2399000" />
+      <workItem from="1660565713008" duration="3365000" />
+      <workItem from="1660572706785" duration="2787000" />
+      <workItem from="1660638938877" duration="1724000" />
     </task>
     <task id="LOCAL-00020" summary="Neu Neu Neu">
       <created>1657633684340</created>
@@ -567,7 +558,28 @@
       <option name="project" value="LOCAL" />
       <updated>1660292665415</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="hjiknhiuzuh">
+      <created>1660500618329</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1660500618329</updated>
+    </task>
+    <task id="LOCAL-00067" summary="customButton für flash effect">
+      <created>1660549887647</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1660549887647</updated>
+    </task>
+    <task id="LOCAL-00068" summary="customButton für flash effect">
+      <created>1660638990909</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1660638990909</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -588,8 +600,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Bitchfart8!" />
-    <MESSAGE value="Aufgeräumt, 6 Methoden gelöscht" />
     <MESSAGE value="Neu Neu Neu" />
     <MESSAGE value="Neue Methode abmelden() in allen Mitarbeitern&#10;Neue Farben in Foo: red and green für die login und register guis&#10;Abmelden button in Kontrolleur gui implementiert" />
     <MESSAGE value="Erfassen GUI grobe Form für Schwarzfahrt erfassen.&#10;Registrierung GUI hat jetzt alle Inputfelder für Sachbearbeiter und Kontrolleur. Wird auch gleich so gespeichert." />
@@ -613,7 +623,9 @@
     <MESSAGE value="Dieses Rote Flash ding jetzt auch für weiße Textfelder" />
     <MESSAGE value="weiß nichtmehr was ich gemacht hab, achja Schwarzfahrten und Flash interface" />
     <MESSAGE value="Foo.getDirectoryData allen open...GUI Methoden hinzugefügt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Foo.getDirectoryData allen open...GUI Methoden hinzugefügt" />
+    <MESSAGE value="hjiknhiuzuh" />
+    <MESSAGE value="customButton für flash effect" />
+    <option name="LAST_COMMIT_MESSAGE" value="customButton für flash effect" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -645,22 +657,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>258</line>
+          <line>260</line>
           <option name="timeStamp" value="92" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>276</line>
+          <line>278</line>
           <option name="timeStamp" value="93" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/Kon/SchwarzfahrtErfassenGUI.java</url>
-          <line>199</line>
+          <line>193</line>
           <option name="timeStamp" value="96" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/Kon/SchwarzfahrtErfassenGUI.java</url>
-          <line>205</line>
+          <line>199</line>
           <option name="timeStamp" value="98" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">

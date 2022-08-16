@@ -16,8 +16,6 @@ import java.util.Locale;
 
 public class RegisterGUI extends JFrame{
     int rollenSelection;
-    boolean pwBestaetigt = false;
-    boolean pflichtfelderAusgefüllt;
     private customComboBox benutzerBox;
     private customComboBox geschlechtBox;
     private PlaceholderPasswordField passwortTextField;
@@ -230,7 +228,6 @@ public class RegisterGUI extends JFrame{
                                             String pwConfirm = JOptionPane.showInputDialog("Bestätige dein Passwort");
                                             if (pwConfirm.equals(passwortTextField.getText())) {
                                                 JOptionPane.showMessageDialog(new JDialog(), "Passwort bestätigt");
-                                                pwBestaetigt = true;
                                                 return true;
                                             } else {
                                                 JOptionPane.showMessageDialog(new JDialog(), "Keine Übereinstimmung!");
