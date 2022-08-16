@@ -21,6 +21,8 @@ public class EinstellungenGUI implements ActionListener {
 
     public EinstellungenGUI() {
 
+        Foo.getDirectoryData();
+
         // Panelmanagement
         Background.setBackground(dark);
         Background.setBounds(1,1,300,500);
@@ -69,7 +71,7 @@ public class EinstellungenGUI implements ActionListener {
     }
 
     public static void openEinstellungenGUI(){
-        Foo.getDirectoryData();
+
         new EinstellungenGUI();
     }
 

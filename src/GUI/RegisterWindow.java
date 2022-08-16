@@ -374,4 +374,5 @@ public class RegisterWindow extends JFrame implements ActionListener {
             System.out.println("Nutzer anlegen wenn alles richtig und Hauptmenü der jeweiligen Rolle öffnen");
         }
     }
+
 }
