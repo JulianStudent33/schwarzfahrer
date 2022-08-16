@@ -2,7 +2,6 @@ package src.GUI.Kon;
 
 import javax.swing.*;
 import src.Foo;
-import src.GUI.EinstellungenGUI;
 import src.GUI.ProfilGUI;
 import src.GUI.StatistikenGUI;
 import src.GUI.StartfensterGUI;
@@ -177,7 +176,7 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
                     @Override
                     public void actionPerformed(ActionEvent e) {
 
-                        EinstellungenGUI.openEinstellungenGUI();
+                         //EinstellungenGUI.openEinstellungenGUI();
 
                     }
                 });
