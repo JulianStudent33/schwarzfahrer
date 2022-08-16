@@ -1,6 +1,5 @@
 package src.GUI.Admin;
 import src.Foo;
-import src.GUI.EinstellungenGUI;
 import src.GUI.ProfilGUI;
 import src.GUI.StartfensterGUI;
 import src.GUI.StatistikenGUI;
@@ -182,7 +181,7 @@ public class AdminGUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                EinstellungenGUI.openEinstellungenGUI();
+               // EinstellungenGUI.openEinstellungenGUI();
 
             }
         });
