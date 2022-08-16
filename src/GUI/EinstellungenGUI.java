@@ -3,10 +3,10 @@ import src.Foo;
 import src.GUI.Admin.AdminGUI;
 import src.GUI.Kon.KontrolleurGUI;
 import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
+import src.GUI.elements.InactivityListener;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -38,6 +38,18 @@ public class EinstellungenGUI extends JFrame implements ActionListener {
     public EinstellungenGUI(Container parent) {
 
         Foo.getDirectoryData();
+
+        Action logout = new AbstractAction()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+               dispose();
+            }
+        };
+        InactivityListener listener = new InactivityListener(this, logout, 1);
+        listener.start();
+
+
 
         // Panelmanagement
         Background.setBackground(dark);
