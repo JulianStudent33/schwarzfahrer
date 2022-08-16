@@ -151,7 +151,7 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
                     @Override
                     public void actionPerformed(ActionEvent e) {
 
-                        ProfilGUI.openProfilGUI();
+                        ProfilGUI.openProfilGUI(getRootPane().getParent());
 
                     }
                 });
