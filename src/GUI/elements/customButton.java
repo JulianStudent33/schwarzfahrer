@@ -1,9 +1,10 @@
 package src.GUI.elements;
 
+
 import javax.swing.*;
 import java.awt.*;
 
-public class customComboBox extends JComboBox {
+public class customButton extends JToggleButton {
 
     public Timer timer;
 
@@ -238,7 +239,5 @@ public class customComboBox extends JComboBox {
 
     }
 
-    public void addStringArray(String[] s){
-        addItem(s);
-    }
+
 }
