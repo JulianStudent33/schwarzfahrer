@@ -566,4 +566,7 @@ public class RegisterWindow extends JFrame {
 
     }
 
+    public static void main(String[] args) {
+        openRegisterGUI();
+    }
 }

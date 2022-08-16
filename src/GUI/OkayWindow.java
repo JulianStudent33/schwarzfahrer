@@ -53,15 +53,18 @@ public class OkayWindow implements ActionListener {
         frame.add(Background, BorderLayout.CENTER);
 
         // Frame Properties
+        Point center = GraphicsEnvironment.getLocalGraphicsEnvironment().getCenterPoint();
         frame.setBackground(dark);
-        frame.setSize(250,200);
+        int width = 200;
+        int height = 250;
+        frame.setBounds(center.x - width / 2, center.y - height / 2, width, height);
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
     }
 
     public static void main(String[] args) {
-        new OkayWindow("<html><body><p>Ihre Passwörter <b>stimmen nicht überein</p></body></html>");
+        new OkayWindow("<html><body><center><p>Ihre Passwörter <b>stimmen nicht überein</p></center></body></html>");
     }
 
     @Override
