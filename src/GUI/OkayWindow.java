@@ -1,14 +1,16 @@
 package src.GUI;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import static src.Foo.*;
 
-public class OkayWindow {
+public class OkayWindow implements ActionListener {
 
     JFrame frame = new JFrame();
     JPanel Background = new JPanel();
     JLabel label = new JLabel();
-    JLabel label2 = new JLabel();
     JButton OkBtn = new JButton();
     ImageIcon hilfe_bild = new ImageIcon("src/icons/bild_hilfe.png");
     JLabel BildLabel = new JLabel();
@@ -32,6 +34,7 @@ public class OkayWindow {
         label.setFont(fontSmall);
         label.setBounds(20,15,200,40);
 
+        OkBtn.addActionListener(this);
         OkBtn.setBackground(hellb);
         OkBtn.setForeground(white);
         OkBtn.setText("Ok");
@@ -59,5 +62,10 @@ public class OkayWindow {
 
     public static void main(String[] args) {
         new OkayWindow("<html><body><p>Ihre Passwörter <b>stimmen nicht überein</p></body></html>");
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
     }
 }
