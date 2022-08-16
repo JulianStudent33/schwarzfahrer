@@ -57,6 +57,7 @@ public class Foo {
     public static int sftCount;
     public static boolean angemeldet = false;
     public static boolean angemeldetBleiben;
+    public static String autoLogoutTime = "Aus";
 
     public static Sachbearbeiter currentSachbearbeiter;
     public static Kontrolleur currentKontrolleur;
@@ -96,6 +97,7 @@ public class Foo {
     public static Font fontMediumMedium = new Font ("IBM Plex Mono Medium", Font.BOLD, 25);
     public static Font fontMedium = new Font("IBM Plex Mono Medium", Font.BOLD, 20);
     public static Font fontSmall = new Font("IBM Plex Mono Medium", Font.BOLD, 15);
+    public static Font fontSmallPlain = new Font("IBM Plex Mono Medium", Font.PLAIN, 15);
     public static Font fontSmallSmall = new Font("IBM Plex Mono Medium", Font.BOLD, 10);
 
     //Konstruktoren
@@ -317,13 +319,13 @@ public class Foo {
             System.out.println("Angemeldet bleiben auf true.");
             savedUser userToSave;
             if (currentKontrolleur!=null){
-                userToSave = new savedUser(currentKontrolleur, true);
+                userToSave = new savedUser(currentKontrolleur, true, autoLogoutTime);
                 userToSave.saveStatus(loggedINFile);
             } else if (currentAdmin!=null) {
-                userToSave = new savedUser(currentAdmin, true);
+                userToSave = new savedUser(currentAdmin, true, autoLogoutTime);
                 userToSave.saveStatus(loggedINFile);
             } else if (currentSachbearbeiter!=null) {
-                userToSave = new savedUser(currentSachbearbeiter, true);
+                userToSave = new savedUser(currentSachbearbeiter, true, autoLogoutTime);
                 userToSave.saveStatus(loggedINFile);
             }else{
                 System.out.println("Fehler");
