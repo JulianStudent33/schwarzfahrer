@@ -31,7 +31,7 @@ public class StartfensterGUI extends JFrame implements ActionListener {
 
         // Panelmanagement
         JPanel Background = new JPanel();
-        Background.setBackground(Color.red);
+        Background.setBackground(dark);
         Background.setLayout(new BorderLayout());
 
         JPanel Bot = new JPanel();

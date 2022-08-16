@@ -57,6 +57,7 @@ public class Foo {
     public static int sftCount;
     public static boolean angemeldet = false;
     public static boolean angemeldetBleiben;
+    public static String autoLogoutTime = "Aus";
 
     public static Sachbearbeiter currentSachbearbeiter;
     public static Kontrolleur currentKontrolleur;
@@ -82,13 +83,27 @@ public class Foo {
     public static boolean firstUsage;
     private static String[] optionsUse = {"Register", "Login"};
 
-    // Farbpalette
-    public static Color dark = new Color(44,44,44);
-    public static Color notSoDark = new Color(77, 77, 77);
+    public static Color dark;
+    public static Color white;
+    public static Color notSoDark;
+    public static Color darky = new Color(60,60,60);
+
     public static Color Grey = new Color(100, 100, 100);
-    public static Color white = new Color(255,255,255);
     public static Color hellb = new Color(133, 179, 255);
-    public static Color dunkelb = new Color(74,142,255);
+    public static Color dunkelb = new Color(74, 142, 255);
+    public static void colormode(boolean colors) {
+        if (colors) {
+            white = new Color(44, 44, 44);
+            notSoDark = new Color(200, 200, 200);
+            dark = new Color(255, 255, 255);
+        } else {
+            dark = new Color(44, 44, 44);
+            notSoDark = new Color(77, 77, 77);
+            white = new Color(255, 255, 255);
+        }
+    }
+
+
 
     //Schriftart
     public static Font fontLargeLarge = new Font("IBM Plex Mono Medium", Font.BOLD, 38);
@@ -96,6 +111,7 @@ public class Foo {
     public static Font fontMediumMedium = new Font ("IBM Plex Mono Medium", Font.BOLD, 25);
     public static Font fontMedium = new Font("IBM Plex Mono Medium", Font.BOLD, 20);
     public static Font fontSmall = new Font("IBM Plex Mono Medium", Font.BOLD, 15);
+    public static Font fontSmallPlain = new Font("IBM Plex Mono Medium", Font.PLAIN, 15);
     public static Font fontSmallSmall = new Font("IBM Plex Mono Medium", Font.BOLD, 10);
 
     //Konstruktoren
@@ -317,13 +333,13 @@ public class Foo {
             System.out.println("Angemeldet bleiben auf true.");
             savedUser userToSave;
             if (currentKontrolleur!=null){
-                userToSave = new savedUser(currentKontrolleur, true);
+                userToSave = new savedUser(currentKontrolleur, true, autoLogoutTime);
                 userToSave.saveStatus(loggedINFile);
             } else if (currentAdmin!=null) {
-                userToSave = new savedUser(currentAdmin, true);
+                userToSave = new savedUser(currentAdmin, true, autoLogoutTime);
                 userToSave.saveStatus(loggedINFile);
             } else if (currentSachbearbeiter!=null) {
-                userToSave = new savedUser(currentSachbearbeiter, true);
+                userToSave = new savedUser(currentSachbearbeiter, true, autoLogoutTime);
                 userToSave.saveStatus(loggedINFile);
             }else{
                 System.out.println("Fehler");
