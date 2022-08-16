@@ -5,32 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="customButton für flash effect">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_08_22__14_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_08_22__14_02__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Kon/SchwarzfahrtErfassenGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/GUI/RegisterGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PigPen/src/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/RegisterWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/elements/PlaceholderTextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/elements/PlaceholderTextField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/elements/customComboBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/elements/customComboBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Kon/SchwarzfahrtErfassenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Kon/SchwarzfahrtErfassenGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +86,7 @@
       <recent name="src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.OkayWindow">
     <configuration name="Dateswitcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.GUI.elements.Dateswitcher" />
       <module name="PigPen" />
@@ -177,8 +154,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.OkayWindow" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Kachel1" />
         <item itemvalue="Application.Dateswitcher" />
         <item itemvalue="Application.FieldFilter" />
@@ -256,13 +233,8 @@
       <workItem from="1660552792941" duration="3312000" />
       <workItem from="1660559546716" duration="2399000" />
       <workItem from="1660565713008" duration="3365000" />
-    </task>
-    <task id="LOCAL-00019" summary="Aufgeräumt, 6 Methoden gelöscht">
-      <created>1657620990771</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1657620990771</updated>
+      <workItem from="1660572706785" duration="2787000" />
+      <workItem from="1660638938877" duration="1724000" />
     </task>
     <task id="LOCAL-00020" summary="Neu Neu Neu">
       <created>1657633684340</created>
@@ -600,7 +572,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660549887647</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="customButton für flash effect">
+      <created>1660638990909</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1660638990909</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -678,12 +657,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>258</line>
+          <line>260</line>
           <option name="timeStamp" value="92" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>276</line>
+          <line>278</line>
           <option name="timeStamp" value="93" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

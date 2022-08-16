@@ -1,4 +1,6 @@
 package src.GUI;
+import src.Foo;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -61,7 +63,8 @@ public class OkayWindow implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new OkayWindow("<html><body><p>Ihre Passwörter <b>stimmen nicht überein</p></body></html>");
+        //new OkayWindow("<html><body><p>Ihre Passwörter <b>stimmen nicht überein</p></body></html>");
+        Foo.okWindow("Blubliblub");
     }
 
     @Override
