@@ -237,4 +237,8 @@ public class customComboBox extends JComboBox {
         }
 
     }
+
+    public void addStringArray(String[] s){
+        addItem(s);
+    }
 }

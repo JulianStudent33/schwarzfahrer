@@ -1,60 +1,74 @@
 package src.GUI;
 
-import com.formdev.flatlaf.FlatDarkLaf;
+import src.Foo;
+import src.GUI.elements.PlaceholderPasswordField;
 import src.GUI.elements.PlaceholderTextField;
-
+import src.nickcode.pass;
+import src.GUI.elements.*;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import java.util.Vector;
 
 import static src.Foo.*;
 
-public class RegisterWindow extends JFrame implements ActionListener {
+public class RegisterWindow extends JFrame {
 
     // Top Textfelder
     PlaceholderTextField bname = new PlaceholderTextField();
     PlaceholderTextField name = new PlaceholderTextField();
     PlaceholderTextField vname = new PlaceholderTextField();
 
+    String[] rollen = {"Rolle*","Kontrolleur", "Sachbearbeiter"};
+
+    customComboBox rollenBox = new customComboBox();
+
+    String[] geschlechter = {"Geschlecht*","Männlich","Weiblich","Divers"};
+
+    customComboBox genderBox = new customComboBox();
+
+    customButton dateButton = new customButton();
     PlaceholderTextField mail = new PlaceholderTextField();
     PlaceholderTextField nummer = new PlaceholderTextField();
-    PlaceholderTextField pw = new PlaceholderTextField();
-    PlaceholderTextField pwb = new PlaceholderTextField();
+    PlaceholderPasswordField pw = new PlaceholderPasswordField();
+    PlaceholderPasswordField pwb = new PlaceholderPasswordField();
+
 
     // Mid Texfelder
-    PlaceholderTextField rolle = new PlaceholderTextField();
-    PlaceholderTextField gender = new PlaceholderTextField();
+   // PlaceholderTextField rolle = new PlaceholderTextField();
+   // PlaceholderTextField gender = new PlaceholderTextField();
 
     // Registrieren Button deklaration
-    private JButton reg = new JButton();
+    JButton reg = new JButton();
 
     //Konstruktor
     RegisterWindow() {
 
         // Erneuter Aufruf des L&F sodass bei Rückgang auf vorheriges Fenster, das L&F bestehen bleibt
-        try {
-            UIManager.setLookAndFeel(new FlatDarkLaf());
-            UIManager.put("ComboBox.buttonArrowColor", dark);
-            UIManager.put("ComboBox.buttonBackground", white);
-            UIManager.put("Component.arrowType", "triangle");
-            UIManager.put("ComboBox.popupBackground", white);
-            UIManager.put("ComboBox.selectionForeground",white);
-            UIManager.put("ComboBox.selectionBackground",dunkelb);
-        } catch (UnsupportedLookAndFeelException e) {
-            throw new RuntimeException(e);
-        };
+
 
         // Start des Fensters mit der void Methode frame()
         frame();
     }
 
     private void frame() {
+
+
+        rollenBox.addItem(rollen[0]);
+        rollenBox.addItem(rollen[1]);
+        rollenBox.addItem(rollen[2]);
+
+
+        genderBox.addItem(geschlechter[0]);
+        genderBox.addItem(geschlechter[1]);
+        genderBox.addItem(geschlechter[2]);
+        genderBox.addItem(geschlechter[3]);
 
         // Panelmanagement
 
@@ -125,7 +139,7 @@ public class RegisterWindow extends JFrame implements ActionListener {
         bname.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         bname.setSelectedTextColor(dark);
         bname.setSelectionColor(Color.gray);
-        bname.setPlaceholder("Benutzername");
+        bname.setPlaceholder("Benutzername*");
         //bname.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Benutzername");
 
         // name anpassungen
@@ -137,7 +151,7 @@ public class RegisterWindow extends JFrame implements ActionListener {
         name.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         name.setSelectedTextColor(dark);
         name.setSelectionColor(Color.gray);
-        name.setPlaceholder("Name");
+        name.setPlaceholder("Name*");
 
         // vname anpassungen
         vname.setBorder(null);
@@ -147,36 +161,43 @@ public class RegisterWindow extends JFrame implements ActionListener {
         vname.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         vname.setSelectedTextColor(dark);
         vname.setSelectionColor(Color.gray);
-        vname.setPlaceholder("Vorname");
+        vname.setPlaceholder("Vorname*");
 
         // Mid Panel Management
         // Rolle Auswahlmenü
         // Auswahlmöglichkeiten
-        String[] choices = {"Rolle","Kontrolleur", "Sachbearbeiter"};
 
-        final JComboBox<String> rollen = new JComboBox<>(choices);
-        rollen.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
-        rollen.setBackground(white);
-        rollen.setForeground(Color.gray);
-        rollen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        rollen.setFocusable(false);
-        rollen.setBorder(null);
+        rollenBox.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
+        rollenBox.setBackground(white);
+        rollenBox.setForeground(Color.gray);
+        rollenBox.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        rollenBox.setFocusable(false);
+        rollenBox.setBorder(null);
 
         // Gender Auswahlmenü
-        String[] geschlecht = {"Geschlecht","Männlich","Weiblich","Divers"};
 
-        final JComboBox<String> gender = new JComboBox<>(geschlecht);
         //gender.setPrototypeDisplayValue("XXXXXXXXXXXX");
-        gender.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
-        gender.setBackground(white);
-        gender.setForeground(Color.gray);
-        gender.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        gender.setFocusable(false);
-        gender.setBorder(null);
+        genderBox.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
+        genderBox.setBackground(white);
+        genderBox.setForeground(Color.gray);
+        genderBox.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        genderBox.setFocusable(false);
+        genderBox.setBorder(null);
+
+        // Geburtsdatum Button
+        dateButton.setText("Bitte Geburtsdatum auswählen*");
+        dateButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
+        dateButton.setBackground(white);
+        dateButton.setForeground(Color.gray);
+        dateButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        dateButton.setFocusable(true);
+        dateButton.setBorder(null);
+        dateButton.setHorizontalTextPosition(SwingConstants.LEFT);
+
 
         // Geburtsdatum Eingabefeld
         // Tag
-        String[] days = {"T","1", "2","3","4","5","6","7","8","9","10","11","12","13","14","15","16",
+        String[] days = {"D","1", "2","3","4","5","6","7","8","9","10","11","12","13","14","15","16",
                 "17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"};
 
         final JComboBox<String> tage = new JComboBox<>(days);
@@ -226,7 +247,7 @@ public class RegisterWindow extends JFrame implements ActionListener {
         mail.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         mail.setSelectedTextColor(dark);
         mail.setSelectionColor(Color.gray);
-        mail.setPlaceholder("E-Mail");
+        mail.setPlaceholder("E-Mail*");
         // Telefonnumer Textfeld
         nummer.setBorder(null);
         nummer.setForeground(dark);
@@ -244,7 +265,7 @@ public class RegisterWindow extends JFrame implements ActionListener {
         pw.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         pw.setSelectedTextColor(dark);
         pw.setSelectionColor(Color.gray);
-        pw.setPlaceholder("Passwort");
+        pw.setPlaceholder("Passwort*");
         // PW Bestätigen Textfeld
         pwb.setBorder(null);
         pwb.setForeground(dark);
@@ -253,14 +274,14 @@ public class RegisterWindow extends JFrame implements ActionListener {
         pwb.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         pwb.setSelectedTextColor(dark);
         pwb.setSelectionColor(Color.gray);
-        pwb.setPlaceholder("Passwort bestätigen");
+        pwb.setPlaceholder("Passwort bestätigen*");
 
         // Bot Text Panel Management
 
         // Bot Registrieren Button Management
 
         // JButton "Registrieren"
-        reg.addActionListener(this);
+
         reg.setText("Registrieren");
         reg.setBackground(hellb);
         reg.setForeground(white);
@@ -285,18 +306,27 @@ public class RegisterWindow extends JFrame implements ActionListener {
 
         // Add Befehle
 
+
+
+
+
+
+
         // Add für einzelne Elemente innerhalb der Panel
         Text.add(label);
         Top.add(bname);
         Top.add(name);
         Top.add(vname);
-        Top.add(gender);
-        Top.add(rollen);
+        Top.add(genderBox);
+        Top.add(rollenBox);
 
+        Mid.add(dateButton);
+
+                /*
         Mid.add(tage);
         Mid.add(monat);
         Mid.add(jahr);
-
+*/
         dMid.add(mail);
         dMid.add(nummer);
         dMid.add(pw);
@@ -312,24 +342,97 @@ public class RegisterWindow extends JFrame implements ActionListener {
         this.add(Bot);
         this.add(fix);
 
-
-        // Placeholder der JComboboxen löschen
-        rollen.addActionListener(new ActionListener() {
+        //ActionListener für Buttons
+        reg.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (rollen.getItemAt(0).equals("Rolle")){
-                    rollen.removeItemAt(0);
-                    rollen.setForeground(dark);
+                if (e.getSource()==reg) {
+                    System.out.println("Nutzer anlegen wenn alles richtig und Hauptmenü der jeweiligen Rolle öffnen");
+                    pflichtAusgefüllt();
                 }
             }
         });
-        gender.addActionListener(new ActionListener() {
+
+        dateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (gender.getItemAt(0).equals("Geschlecht")){
-                    gender.removeItemAt(0);
-                    gender.setPrototypeDisplayValue(null);
-                    gender.setForeground(dark);
+
+
+                    DatePick calender = new DatePick((JFrame) dateButton.getRootPane().getParent(), null);
+                    String txt = calender.Set_Picked_Date();
+                    if (txt==""){
+
+                    }else{
+                        dateButton.setText(calender.Set_Picked_Date());
+                    }
+                }
+
+
+
+
+        });
+        //ActionListener für Benutzername
+
+        bname.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+            }
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                System.out.println(bname.getText()+e.getKeyChar());
+
+                if (Foo.userExistiertBereits(bname.getText())){
+                    float[] values = new float[3];
+                    bname.setBackground(Foo.red);
+                }else{
+                    bname.setBackground(Foo.green);
+                }
+            }
+        });
+        pw.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+            }
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+            }
+            @Override
+            public void keyReleased(KeyEvent e) {
+                if(pass.passwordOk(pw.getText())){
+                    pw.setBackground(Foo.green);
+                }else{
+                    pw.setBackground(Foo.red);
+                }
+            }
+        });
+
+        // Placeholder der JComboboxen löschen
+        rollenBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                if (rollenBox.getItemAt(0).equals("Rolle*")){
+                    rollenBox.removeItemAt(0);
+                    rollenBox.setForeground(dark);
+                }
+            }
+        });
+
+        genderBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (genderBox.getItemAt(0).equals("Geschlecht*")){
+                    genderBox.removeItemAt(0);
+                    genderBox.setPrototypeDisplayValue(null);
+                    genderBox.setForeground(dark);
                     //gender.setPreferredSize(new Dimension(100, gender.getHeight()));
                 }
             }
@@ -367,11 +470,99 @@ public class RegisterWindow extends JFrame implements ActionListener {
 
 
 
+
     // ActionListener deklariert -> Was bei Klick auf den Button "Registrieren" passiert
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource()==reg) {
-            System.out.println("Nutzer anlegen wenn alles richtig und Hauptmenü der jeweiligen Rolle öffnen");
+
+
+
+    //Allgemeine Methoden
+
+
+    private boolean pflichtAusgefüllt() {
+        if (rollenBox.getItemCount() == 2) {
+            if (genderBox.getItemCount() == 3) {
+                if (!vname.getText().isBlank()) {
+                    if (!name.getText().isBlank()) {
+                        if (!dateButton.getText().isBlank()){
+                            if (!mail.getText().isBlank()) {
+                                if (mail.getText().contains("@")) {
+                                    if (!bname.getText().isBlank()) {
+                                        if (!Foo.userExistiertBereits(bname.getText())) {
+                                            if (pass.passwordOk(pw.getText())) {
+                                                String pwConfirm = JOptionPane.showInputDialog("Bestätige dein Passwort");
+                                                if (pwConfirm.equals(pw.getText())) {
+                                                    JOptionPane.showMessageDialog(new JDialog(), "Passwort bestätigt");
+
+                                                    return true;
+                                                } else {
+                                                    JOptionPane.showMessageDialog(new JDialog(), "Keine Übereinstimmung!");
+                                                }
+                                            } else {
+                                                JOptionPane.showMessageDialog(new JDialog(), "Passwort erfüllt nicht die formalen Bedingungen!");
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
+        if (rollenBox.getItemCount() == 3) {
+            rollenBox.addRedFlashEffectWhiteField();
+        }
+        if (genderBox.getItemCount() == 4) {
+            genderBox.addRedFlashEffectWhiteField();
+        }
+        if (vname.getText().isBlank()) {
+            vname.addRedFlashEffectWhiteField();
+        }
+        if (name.getText().isBlank()) {
+            name.addRedFlashEffectWhiteField();
+        }
+        if (dateButton.getText().isBlank()){
+            dateButton.addRedFlashEffectWhiteField();
+        }
+        if (mail.getText().isBlank()) {
+            mail.addRedFlashEffectWhiteField();
+        }
+        if (!mail.getText().contains("@")) {
+            mail.setText("");
+            mail.addRedFlashEffectWhiteField();
+            mail.setPlaceholder("Bitte eine gültige E-Mail eingeben");
+        }
+        if (Foo.userExistiertBereits(bname.getText())) {
+            bname.setText("");
+            bname.addRedFlashEffectWhiteField();
+            bname.setPlaceholder("Benutzername bereits vergeben");
+        }
+        if (bname.getText().isBlank()) {
+            bname.addRedFlashEffectWhiteField();
+        }
+        if (!pass.passwordOk(pw.getText())) {
+            pw.addRedFlashEffectWhiteField();
+        }
+        if (!pass.passwordOk(pw.getText())) {
+            pwb.addRedFlashEffectWhiteField();
+        }
+        if (!pw.getText().equals(pwb.getText())) {
+
+            pwb.addRedFlashEffectWhiteField();
+        }
+
+
+
+        return false;
+    }
+
+
+
+
+    public static void openRegisterGUI(){
+
+        Foo.getDirectoryData();
+        RegisterWindow gui = new RegisterWindow();
+
     }
 }
