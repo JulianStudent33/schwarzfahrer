@@ -1,0 +1,149 @@
+Index: src/GUI/EinstellungenGUI.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package src.GUI;\r\nimport src.Foo;\r\n\r\nimport javax.swing.*;\r\n\r\nimport java.awt.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\n\r\nimport static src.Foo.*;\r\n\r\nimport static src.Foo.*;\r\npublic class EinstellungenGUI implements ActionListener {\r\n\r\n    JFrame Frame = new JFrame();\r\n    JPanel Background = new JPanel();\r\n    JLabel Ueberschrift = new JLabel();\r\n    JButton AnButton = new JButton();\r\n    JButton LogButton = new JButton();\r\n    JButton AbbrechenButton = new JButton();\r\n\r\n    public EinstellungenGUI() {\r\n\r\n        // Panelmanagement\r\n        Background.setBackground(dark);\r\n        Background.setBounds(1,1,300,500);\r\n        Background.setLayout(null);\r\n\r\n        // Elementemanagement\r\n\r\n        Ueberschrift.setForeground(white);\r\n        Ueberschrift.setFont(fontMediumMedium);\r\n        Ueberschrift.setText(\"Einstellungen\");\r\n        Ueberschrift.setBounds(63,45,173,40);\r\n\r\n        AnButton.addActionListener(this);\r\n        AnButton.setBackground(dunkelb);\r\n        AnButton.setForeground(white);\r\n        AnButton.setFont(fontSmall);\r\n        AnButton.setText(\"<html><body>Angemeldet <br> Bleiben</body></html>\");\r\n        AnButton.setBounds(75,110,150,80);\r\n\r\n        LogButton.addActionListener(this);\r\n        LogButton.setBackground(hellb);\r\n        LogButton.setForeground(white);\r\n        LogButton.setFont(fontSmall);\r\n        LogButton.setText(\"<html><body>Auto-Logout</body></html>\");\r\n        LogButton.setBounds(75,210,150,80);\r\n\r\n        AbbrechenButton.addActionListener(this);\r\n        AbbrechenButton.setBackground(dunkelb);\r\n        AbbrechenButton.setForeground(white);\r\n        AbbrechenButton.setFont(fontSmall);\r\n        AbbrechenButton.setText(\"<html><body>Abbrechen</body></html>\");\r\n        AbbrechenButton.setBounds(75,310,150,80);\r\n\r\n        Background.add(Ueberschrift);\r\n        Background.add(AnButton);\r\n        Background.add(LogButton);\r\n        Background.add(AbbrechenButton);\r\n\r\n        Frame.add(Background);\r\n        Frame.setResizable(false);\r\n        Frame.setSize(300,500);\r\n        Frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);\r\n        Frame.setVisible(true);\r\n\r\n\r\n    }\r\n\r\n    public static void openEinstellungenGUI(){\r\n        Foo.getDirectoryData();\r\n        new EinstellungenGUI();\r\n    }\r\n\r\n    @Override\r\n    public void actionPerformed(ActionEvent e) {\r\n\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        new EinstellungenGUI();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/GUI/EinstellungenGUI.java b/src/GUI/EinstellungenGUI.java
+--- a/src/GUI/EinstellungenGUI.java	(revision c164a7001a8c3cc638873ce7ed3963ae619a5f6d)
++++ b/src/GUI/EinstellungenGUI.java	(date 1660652797914)
+@@ -1,7 +1,9 @@
+ package src.GUI;
++
+ import src.Foo;
+ 
+ import javax.swing.*;
++import javax.swing.border.EmptyBorder;
+ 
+ import java.awt.*;
+ import java.awt.event.ActionEvent;
+@@ -9,7 +11,6 @@
+ 
+ import static src.Foo.*;
+ 
+-import static src.Foo.*;
+ public class EinstellungenGUI implements ActionListener {
+ 
+     JFrame Frame = new JFrame();
+@@ -18,8 +19,14 @@
+     JButton AnButton = new JButton();
+     JButton LogButton = new JButton();
+     JButton AbbrechenButton = new JButton();
++    JLabel ButtonTextAn = new JLabel();
++    JLabel ButtonTextAus = new JLabel();
++    JLabel ButtonUeberschriftAnmelden = new JLabel();
++    JLabel ButtonAutoLoginUeberschrift = new JLabel();
++    JLabel ButtonAutoLoginText = new JLabel();
++    public EinstellungenGUI(String AutoLogin) {
+ 
+-    public EinstellungenGUI() {
++        Foo.getDirectoryData();
+ 
+         // Panelmanagement
+         Background.setBackground(dark);
+@@ -33,18 +40,46 @@
+         Ueberschrift.setText("Einstellungen");
+         Ueberschrift.setBounds(63,45,173,40);
+ 
++        ButtonTextAn.setForeground(white);
++        ButtonTextAn.setFont(fontSmall);
++        ButtonTextAn.setText("An");
++        ButtonTextAn.setBorder(new EmptyBorder(35, 10, 0, 0));
++
++        ButtonTextAus.setForeground(Grey);
++        ButtonTextAus.setFont(new Font("IBM Plex Mono Medium", Font.PLAIN, 15));
++        ButtonTextAus.setText("Aus");
++        ButtonTextAus.setBorder(new EmptyBorder(35, 97, 0,10));
++
++        ButtonUeberschriftAnmelden.setForeground(dark);
++        ButtonUeberschriftAnmelden.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 18));
++        ButtonUeberschriftAnmelden.setText("<html><body><center><p>Angemeldet <br>bleiben</p></center></body></html>");
++        ButtonUeberschriftAnmelden.setBorder(new EmptyBorder(10,8,40,8));
++
+         AnButton.addActionListener(this);
+         AnButton.setBackground(dunkelb);
+         AnButton.setForeground(white);
+         AnButton.setFont(fontSmall);
+-        AnButton.setText("<html><body>Angemeldet <br> Bleiben</body></html>");
++        AnButton.add(ButtonUeberschriftAnmelden);
++        AnButton.add(ButtonTextAn);
++        AnButton.add(ButtonTextAus);
+         AnButton.setBounds(75,110,150,80);
+ 
++        ButtonAutoLoginUeberschrift.setForeground(dark);
++        ButtonAutoLoginUeberschrift.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 18));
++        ButtonAutoLoginUeberschrift.setText("Auto-Login");
++        ButtonAutoLoginUeberschrift.setBorder(new EmptyBorder(10,14,40,14));
++
++        ButtonAutoLoginText.setForeground(white);
++        ButtonAutoLoginText.setFont(fontSmall);
++        ButtonAutoLoginText.setText(AutoLogin + " min");
++        ButtonAutoLoginText.setBorder(new EmptyBorder(28,35,0,35));
++
+         LogButton.addActionListener(this);
+         LogButton.setBackground(hellb);
+-        LogButton.setForeground(white);
++        LogButton.setForeground(dark);
+         LogButton.setFont(fontSmall);
+-        LogButton.setText("<html><body>Auto-Logout</body></html>");
++        LogButton.add(ButtonAutoLoginUeberschrift);
++        LogButton.add(ButtonAutoLoginText);
+         LogButton.setBounds(75,210,150,80);
+ 
+         AbbrechenButton.addActionListener(this);
+@@ -59,9 +94,13 @@
+         Background.add(LogButton);
+         Background.add(AbbrechenButton);
+ 
++        Point center = GraphicsEnvironment.getLocalGraphicsEnvironment().getCenterPoint();
+         Frame.add(Background);
+         Frame.setResizable(false);
+-        Frame.setSize(300,500);
++        int width = 300;
++        int height = 500;
++        Frame.setBounds(center.x - width / 2, center.y - height / 2, width, height);
++        Frame.setTitle("Einstellungen");
+         Frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+         Frame.setVisible(true);
+ 
+@@ -69,8 +108,8 @@
+     }
+ 
+     public static void openEinstellungenGUI(){
+-        Foo.getDirectoryData();
+-        new EinstellungenGUI();
++
++        new EinstellungenGUI("10");
+     }
+ 
+     @Override
+@@ -79,6 +118,6 @@
+     }
+ 
+     public static void main(String[] args) {
+-        new EinstellungenGUI();
++        new EinstellungenGUI("10");
+     }
+-}
++}
+\ No newline at end of file
+Index: src/GUI/OkayWindow.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package src.GUI;\r\nimport src.Foo;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\n\r\nimport static src.Foo.*;\r\n\r\npublic class OkayWindow implements ActionListener {\r\n\r\n    JFrame frame = new JFrame();\r\n    JPanel Background = new JPanel();\r\n    JLabel label = new JLabel();\r\n    JButton OkBtn = new JButton();\r\n    ImageIcon hilfe_bild = new ImageIcon(\"src/icons/bild_hilfe.png\");\r\n    JLabel BildLabel = new JLabel();\r\n\r\n    public OkayWindow(String message){\r\n\r\n\r\n        // Panelmanagement\r\n        Background.setBackground(dark);\r\n        Background.setBounds(50,1,200,200);\r\n        Background.setLayout(new BorderLayout(50, 50));\r\n\r\n        // Elemente\r\n\r\n        label.setText(message);\r\n        label.setForeground(white);\r\n        label.setHorizontalTextPosition(JLabel.CENTER);\r\n        label.setVerticalTextPosition(JLabel.CENTER);\r\n        label.setHorizontalAlignment(JLabel.CENTER);\r\n        label.setVerticalAlignment(JLabel.CENTER);\r\n        label.setFont(fontSmall);\r\n        label.setBounds(20,15,200,40);\r\n\r\n        OkBtn.addActionListener(this);\r\n        OkBtn.setBackground(hellb);\r\n        OkBtn.setForeground(white);\r\n        OkBtn.setText(\"Ok\");\r\n        OkBtn.setBounds(85,70,80,40);\r\n\r\n        BildLabel.setIcon(hilfe_bild);\r\n        BildLabel.setBounds(20,50,50,50);\r\n\r\n        // Einfügen der Elemente in die Panels\r\n        Background.add(label);\r\n        Background.add(OkBtn);\r\n        Background.add(BildLabel);\r\n\r\n\r\n        // Adden der Panels in den Frame\r\n        frame.add(Background, BorderLayout.CENTER);\r\n\r\n        // Frame Properties\r\n        frame.setBackground(dark);\r\n        frame.setSize(250,200);\r\n        frame.setResizable(false);\r\n        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);\r\n        frame.setVisible(true);\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        //new OkayWindow(\"<html><body><p>Ihre Passwörter <b>stimmen nicht überein</p></body></html>\");\r\n        Foo.okWindow(\"Blubliblub\");\r\n    }\r\n\r\n    @Override\r\n    public void actionPerformed(ActionEvent e) {\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/GUI/OkayWindow.java b/src/GUI/OkayWindow.java
+--- a/src/GUI/OkayWindow.java	(revision c164a7001a8c3cc638873ce7ed3963ae619a5f6d)
++++ b/src/GUI/OkayWindow.java	(date 1660647017955)
+@@ -63,7 +63,7 @@
+     }
+ 
+     public static void main(String[] args) {
+-        //new OkayWindow("<html><body><p>Ihre Passwörter <b>stimmen nicht überein</p></body></html>");
++        new OkayWindow("<html><body><p>Ihre Passwörter <b>stimmen nicht überein</p></body></html>");
+         Foo.okWindow("Blubliblub");
+     }
+ 

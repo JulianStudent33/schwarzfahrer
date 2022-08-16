@@ -164,7 +164,7 @@ public class RegisterWindow extends JFrame {
         // Mid Panel Management
         // Rolle Auswahlmenü
         // Auswahlmöglichkeiten
-        Color[] colorrollen = {Grey, Grey, Grey};
+        Color[] colorrollen = {notSoDark,notSoDark,notSoDark};
         ComboBoxRenderer renderer = new ComboBoxRenderer(rollenBox);
         renderer.setColors(colorrollen);
         renderer.setStrings(rollen);

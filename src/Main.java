@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
 
         // True = LightMode - False = DarkMode
-        boolean test = false;
+        boolean test = true;
         colormode(test);
         //Start
         try {
