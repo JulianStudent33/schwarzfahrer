@@ -6,6 +6,8 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.text.Document;
 
+import static src.Foo.notSoDark;
+
 @SuppressWarnings("serial")
 public class PlaceholderTextField extends JTextField implements Flash{
 
@@ -52,7 +54,7 @@ public class PlaceholderTextField extends JTextField implements Flash{
         g.setRenderingHint(
                 RenderingHints.KEY_ANTIALIASING,
                 RenderingHints.VALUE_ANTIALIAS_ON);
-        g.setColor(new Color(104,104,104));
+        g.setColor(notSoDark);
         g.drawString(placeholder, getInsets().left, pG.getFontMetrics()
                 .getMaxAscent() + getInsets().top);
     }

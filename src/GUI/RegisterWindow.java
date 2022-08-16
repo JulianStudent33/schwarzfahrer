@@ -3,6 +3,7 @@ package src.GUI;
 import src.Foo;
 import src.GUI.elements.PlaceholderPasswordField;
 import src.GUI.elements.PlaceholderTextField;
+import src.Main;
 import src.nickcode.pass;
 import src.GUI.elements.*;
 
@@ -17,6 +18,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import static src.Foo.*;
+import static src.Main.test;
 
 public class RegisterWindow extends JFrame {
 
@@ -136,7 +138,7 @@ public class RegisterWindow extends JFrame {
         bname.setCaretColor(dark);
         bname.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         bname.setSelectedTextColor(dark);
-        bname.setSelectionColor(Grey);
+        bname.setSelectionColor(notSoDark);
         bname.setPlaceholder("Benutzername*");
         //bname.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Benutzername");
 
@@ -148,7 +150,7 @@ public class RegisterWindow extends JFrame {
         name.setCaretColor(dark);
         name.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         name.setSelectedTextColor(dark);
-        name.setSelectionColor(Grey);
+        name.setSelectionColor(notSoDark);
         name.setPlaceholder("Name*");
 
         // vname anpassungen
@@ -158,21 +160,23 @@ public class RegisterWindow extends JFrame {
         vname.setCaretColor(dark);
         vname.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         vname.setSelectedTextColor(dark);
-        vname.setSelectionColor(Grey);
+        vname.setSelectionColor(notSoDark);
         vname.setPlaceholder("Vorname*");
 
         // Mid Panel Management
         // Rolle Auswahlmenü
         // Auswahlmöglichkeiten
-        Color[] colorrollen = {notSoDark,notSoDark,notSoDark};
-        ComboBoxRenderer renderer = new ComboBoxRenderer(rollenBox);
-        renderer.setColors(colorrollen);
-        renderer.setStrings(rollen);
-        rollenBox.setRenderer(renderer);
+        if(test) {
+            Color[] colorrollen = {Grey,Grey,Grey};
+            ComboBoxRenderer renderer = new ComboBoxRenderer(rollenBox);
+            renderer.setColors(colorrollen);
+            renderer.setStrings(rollen);
+            rollenBox.setRenderer(renderer);
+        }
 
         rollenBox.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
         rollenBox.setBackground(white);
-        rollenBox.setForeground(Grey);
+        rollenBox.setForeground(notSoDark);
         rollenBox.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         rollenBox.setFocusable(false);
         rollenBox.setBorder(null);
@@ -182,7 +186,7 @@ public class RegisterWindow extends JFrame {
         //gender.setPrototypeDisplayValue("XXXXXXXXXXXX");
         genderBox.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
         genderBox.setBackground(white);
-        genderBox.setForeground(Grey);
+        genderBox.setForeground(notSoDark);
         genderBox.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         genderBox.setFocusable(false);
         genderBox.setBorder(null);
@@ -191,7 +195,7 @@ public class RegisterWindow extends JFrame {
         dateButton.setText("Bitte Geburtsdatum auswählen*");
         dateButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
         dateButton.setBackground(white);
-        dateButton.setForeground(Grey);
+        dateButton.setForeground(notSoDark);
         dateButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         dateButton.setFocusable(true);
         dateButton.setBorder(null);
@@ -249,7 +253,7 @@ public class RegisterWindow extends JFrame {
         mail.setCaretColor(dark);
         mail.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         mail.setSelectedTextColor(dark);
-        mail.setSelectionColor(Grey);
+        mail.setSelectionColor(notSoDark);
         mail.setPlaceholder("E-Mail*");
         // Telefonnumer Textfeld
         nummer.setBorder(null);
@@ -258,7 +262,7 @@ public class RegisterWindow extends JFrame {
         nummer.setCaretColor(dark);
         nummer.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         nummer.setSelectedTextColor(dark);
-        nummer.setSelectionColor(Grey);
+        nummer.setSelectionColor(notSoDark);
         nummer.setPlaceholder("Telefonnummer");
         // PW Textfeld
         pw.setBorder(null);
@@ -267,7 +271,7 @@ public class RegisterWindow extends JFrame {
         pw.setCaretColor(dark);
         pw.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         pw.setSelectedTextColor(dark);
-        pw.setSelectionColor(Grey);
+        pw.setSelectionColor(notSoDark);
         pw.setPlaceholder("Passwort*");
         // PW Bestätigen Textfeld
         pwb.setBorder(null);
@@ -276,7 +280,7 @@ public class RegisterWindow extends JFrame {
         pwb.setCaretColor(dark);
         pwb.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         pwb.setSelectedTextColor(dark);
-        pwb.setSelectionColor(Grey);
+        pwb.setSelectionColor(notSoDark);
         pwb.setPlaceholder("Passwort bestätigen*");
 
         // Bot Text Panel Management

@@ -86,6 +86,7 @@ public class Foo {
     public static Color dark;
     public static Color white;
     public static Color notSoDark;
+    public static Color darky = new Color(60,60,60);
 
     public static Color Grey = new Color(100, 100, 100);
     public static Color hellb = new Color(133, 179, 255);

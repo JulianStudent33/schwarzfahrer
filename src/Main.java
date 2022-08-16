@@ -9,10 +9,12 @@ import java.io.IOException;
 import static src.Foo.*;
 
 public class Main {
+
+    public static boolean test;
     public static void main(String[] args) {
 
         // True = LightMode - False = DarkMode
-        boolean test = true;
+        test = false;
         colormode(test);
         //Start
         try {
