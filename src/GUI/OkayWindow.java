@@ -1,19 +1,21 @@
 package src.GUI;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import static src.Foo.*;
 
-public class OkayWindow {
+public class OkayWindow implements ActionListener {
 
     JFrame frame = new JFrame();
     JPanel Background = new JPanel();
     JLabel label = new JLabel();
-    JLabel label2 = new JLabel();
     JButton OkBtn = new JButton();
     ImageIcon hilfe_bild = new ImageIcon("src/icons/bild_hilfe.png");
     JLabel BildLabel = new JLabel();
 
-    public OkayWindow(String message, String message2){
+    public OkayWindow(String message){
 
 
         // Panelmanagement
@@ -30,34 +32,19 @@ public class OkayWindow {
         label.setHorizontalAlignment(JLabel.CENTER);
         label.setVerticalAlignment(JLabel.CENTER);
         label.setFont(fontSmall);
-        label.setBounds(10,15,200,40);
+        label.setBounds(20,15,200,40);
 
-        label2.setText(message2);
-        label2.setForeground(white);
-        label2.setHorizontalTextPosition(JLabel.CENTER);
-        label2.setVerticalTextPosition(JLabel.CENTER);
-        label2.setHorizontalAlignment(JLabel.CENTER);
-        label2.setVerticalAlignment(JLabel.CENTER);
-        label2.setFont(fontSmall);
-        label2.setBounds(10,15,200,40);
-
-        JPanel J_Panel1 = new JPanel(new GridLayout(2, 1));
-        J_Panel1.setPreferredSize(new Dimension(200, 200));
-        J_Panel1.setBackground(white);
-        J_Panel1.add(label);
-        J_Panel1.add(label2);
-
-
+        OkBtn.addActionListener(this);
         OkBtn.setBackground(hellb);
         OkBtn.setForeground(white);
         OkBtn.setText("Ok");
-        OkBtn.setBounds(85,55,80,40);
+        OkBtn.setBounds(85,70,80,40);
 
         BildLabel.setIcon(hilfe_bild);
-        BildLabel.setBounds(15,50,50,50);
+        BildLabel.setBounds(20,50,50,50);
 
         // Einfügen der Elemente in die Panels
-        Background.add(J_Panel1, BorderLayout.CENTER);
+        Background.add(label);
         Background.add(OkBtn);
         Background.add(BildLabel);
 
@@ -74,6 +61,11 @@ public class OkayWindow {
     }
 
     public static void main(String[] args) {
-        new OkayWindow("<html><body><p>Ihre Passwörter</p></body></html>", "<html><body><p>stimmen nicht überein!</p></body></html>");
+        new OkayWindow("<html><body><p>Ihre Passwörter <b>stimmen nicht überein</p></body></html>");
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
     }
 }
