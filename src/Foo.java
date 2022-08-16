@@ -378,22 +378,12 @@ public class Foo {
 
     public static void okWindow(String message){
         String[] option = {"OK"};
+        JPanel panel = new JPanel();
         JLabel lbl = new JLabel(message);
          lbl.setBorder(new EmptyBorder(0, 20, 0, 79));
-
-        JDialog J_Dialog = new JDialog();
-        J_Dialog.setModal(true);
-        J_Dialog.setBackground(notSoDark);
-        J_Dialog.setPreferredSize(new Dimension(400, 200));
-        JPanel J_Panel = new JPanel(new GridLayout(3, 3));
-        J_Panel.add(new JLabel());
-        J_Panel.add(lbl);
-        J_Panel.add(new JLabel());
-        J_Panel.add(new JLabel());
-        J_Dialog.setLayout(new GridLayout());
-
-
-
+        panel.add(lbl);
+        int selectedOption = JOptionPane.showOptionDialog(null, panel,
+                "Bestätigung", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, new ImageIcon("src/icons/bild_hilfe.png"), option , option[0]);
 
     }
     public static void deleteDirs(){ //Methode, damit ich die firstRegistration testen kann
