@@ -20,7 +20,7 @@ public class ProfilGUI extends JFrame implements ActionListener {
     public static AdminGUI parentA = null;
 
     JFrame Frame = new JFrame();
-    JPanel Ueberschrift = new JPanel();
+    JPanel label = new JPanel();
     JLabel Text = new JLabel();
     JPanel Textfelder = new JPanel();
     JPanel Buttons = new JPanel();
@@ -38,25 +38,24 @@ public class ProfilGUI extends JFrame implements ActionListener {
     public ProfilGUI(Container parent){
         //Panelmanagement
 
-        Ueberschrift.setBackground(dark);
-        Ueberschrift.setPreferredSize(new Dimension(400,100));
-        Ueberschrift.setLayout(null);
+        label.setBackground(dark);
+        label.setPreferredSize(new Dimension(400,100));
+        label.setLayout(null);
 
         Textfelder.setBackground(dark);
         Textfelder.setPreferredSize(new Dimension(400,800));
         Textfelder.setLayout(null);
 
         Buttons.setBackground(dark);
-        Buttons.setPreferredSize(new Dimension(400,100));
+        Buttons.setPreferredSize(new Dimension(400,50));
         Buttons.setLayout(null);
 
         // Elemente
 
         Text.setForeground(white);
-        Text.setBackground(dark);
         Text.setFont(fontMedium);
-        Text.setText("<html><body><center><p>Profil von <br>... </p></center></body></html>");
-        Text.setBorder(new EmptyBorder(0,0,0,0));
+        Text.setText("<html><body><p>Profil von <br>... </p></body></html>");
+        Text.setBounds(100,0,100,100);
 
         Benutzername.setForeground(white);
         Benutzername.setBackground(dark);
@@ -103,7 +102,7 @@ public class ProfilGUI extends JFrame implements ActionListener {
         Telefonnummer.setForeground(white);
         Telefonnummer.setBackground(dark);
         Telefonnummer.setFont(fontSmall);
-        Telefonnummer.setBorder(new EmptyBorder(0,0,0,0));
+        Telefonnummer.setBounds(100,200,200,50);
         Telefonnummer.setText("Die Variable 8");
 
 
@@ -111,18 +110,18 @@ public class ProfilGUI extends JFrame implements ActionListener {
         AbbrechenButton.setBackground(hellb);
         AbbrechenButton.setForeground(white);
         AbbrechenButton.setText("Abbrechen");
-        AbbrechenButton.setBounds(0,0,100,50);
+        AbbrechenButton.setBounds(225,700,100,60);
 
         AngabenAendern.addActionListener(this);
         AngabenAendern.setBackground(dunkelb);
         AngabenAendern.setForeground(white);
-        AngabenAendern.setText("Angaben ändern?");
-        AngabenAendern.setBounds(0,0,100,50);
+        AngabenAendern.setText("<html><body><p><center>Angaben <br>ändern?</center></p></body></html>");
+        AngabenAendern.setBounds(75,700,100,60);
 
 
         // Elemente zu Panels adden
 
-        Ueberschrift.add(Text, BorderLayout.CENTER);
+        label.add(Text);
 
         Textfelder.add(Benutzername);
         Textfelder.add(Name);
@@ -139,18 +138,18 @@ public class ProfilGUI extends JFrame implements ActionListener {
 
         // Panels zu Frame adden
 
-        this.add(Ueberschrift);
-        this.add(Textfelder);
-        this.add(Buttons);
+        Frame.add(label);
+        Frame.add(Textfelder);
+        Frame.add(Buttons);
 
 
-        this.setSize(400, 1000);
-        this.setTitle("Profil");
-        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        this.setResizable(false);
-        this.setVisible(true);
+        Frame.setSize(400, 800);
+        Frame.setTitle("Profil");
+        Frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        Frame.setResizable(false);
+        Frame.setVisible(true);
 
-        this.setLocationRelativeTo(parent);
+        Frame.setLocationRelativeTo(parent);
 
 
 
