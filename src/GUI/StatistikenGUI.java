@@ -220,7 +220,7 @@ int AnzahlSchwarzfahrerZahl = 0;
 
         // Gesamt Window
         this.setSize(900,550);
-        this.setTitle("Sachbearbeiter");
+        this.setTitle("Statistiken");
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
