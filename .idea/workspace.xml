@@ -5,47 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="changes">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_08_2022_10_42_[Changes]1/loggedIN.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_08_2022_10_42_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_08_2022_10_42__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Kontrolleur/Konni1.mb" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Kontrolleur/Konni1.mb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Kontrolleur/Sachi2.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Sachbearbeiter/Sachi1.mb" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Sachbearbeiter/Sachi1.mb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Foo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Foo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/AdminGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/AdminGUI$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/KontrolleurGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/KontrolleurGUI$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Sachbearbeiter/SachbearbeiterGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Sachbearbeiter/SachbearbeiterGUI$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StartfensterGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StartfensterGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/firstRegistrationGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/firstRegistrationGUI$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/firstRegistrationGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/firstRegistrationGUI$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Foo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Admin/AdminGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Admin/AdminGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Kon/KontrolleurGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Kon/KontrolleurGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/LoginGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/ProfilGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ProfilGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/RegisterWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Sachbearbeiter/SachbearbeiterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Sachbearbeiter/SachbearbeiterGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/StartfensterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/StartfensterGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/firstRegistrationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/firstRegistrationGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,14 +238,9 @@
       <workItem from="1660572706785" duration="2787000" />
       <workItem from="1660638938877" duration="7993000" />
       <workItem from="1660657927237" duration="860000" />
-      <workItem from="1660722223472" duration="12037000" />
-    </task>
-    <task id="LOCAL-00034" summary="Number Filter auf Telefonfeld.">
-      <created>1657878690270</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1657878690270</updated>
+      <workItem from="1660722223472" duration="12068000" />
+      <workItem from="1660739586517" duration="593000" />
+      <workItem from="1660743418422" duration="483000" />
     </task>
     <task id="LOCAL-00035" summary="j">
       <created>1657883769500</created>
@@ -619,7 +578,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660732619106</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="changes">
+      <created>1660737318191</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1660737318191</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
