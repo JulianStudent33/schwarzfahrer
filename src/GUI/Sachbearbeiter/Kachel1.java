@@ -25,7 +25,7 @@ public class Kachel1 extends JFrame {
 
         this.setSize(500,650);
         this.setTitle("Sachbearbeiter");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setVisible(true);

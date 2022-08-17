@@ -145,7 +145,7 @@ public class EinstellungenGUI extends JFrame implements ActionListener {
 
         this.setSize(300, 500);
         this.setTitle("Einstellungen");
-        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.setResizable(false);
         this.setVisible(true);
         this.add(Background);
