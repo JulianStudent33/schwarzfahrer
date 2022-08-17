@@ -12,6 +12,9 @@ import src.roles.Kontrolleur;
 import src.roles.Sachbearbeiter;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -138,9 +141,13 @@ public class RegisterWindow extends JFrame {
 
         // Top Panel Textfelder
         // bname anpassungen
-        bname.setBorder(null);
+        Border border = bname.getBorder();
+        Border margin = new EmptyBorder(0,5,0,0);
+
+
+        bname.setBorder(new CompoundBorder(border, margin));
         bname.setForeground(dark);
-        bname.setBackground(white);
+        bname.setBackground(whitebg);
         bname.setCaretColor(dark);
         bname.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         bname.setSelectedTextColor(dark);
@@ -149,10 +156,10 @@ public class RegisterWindow extends JFrame {
         //bname.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Benutzername");
 
         // name anpassungen
-        name.setBorder(null);
+        name.setBorder(new CompoundBorder(border, margin));
         String focus = name.getText();
         name.setForeground(dark);
-        name.setBackground(white);
+        name.setBackground(whitebg);
         name.setCaretColor(dark);
         name.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         name.setSelectedTextColor(dark);
@@ -162,7 +169,7 @@ public class RegisterWindow extends JFrame {
         // vname anpassungen
         vname.setBorder(null);
         vname.setForeground(dark);
-        vname.setBackground(white);
+        vname.setBackground(whitebg);
         vname.setCaretColor(dark);
         vname.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         vname.setSelectedTextColor(dark);
@@ -181,7 +188,7 @@ public class RegisterWindow extends JFrame {
         }
 
         rollenBox.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
-        rollenBox.setBackground(white);
+        rollenBox.setBackground(whitebg);
         rollenBox.setForeground(notSoDark);
         rollenBox.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         rollenBox.setFocusable(false);
@@ -191,7 +198,7 @@ public class RegisterWindow extends JFrame {
 
         //gender.setPrototypeDisplayValue("XXXXXXXXXXXX");
         genderBox.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
-        genderBox.setBackground(white);
+        genderBox.setBackground(whitebg);
         genderBox.setForeground(notSoDark);
         genderBox.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         genderBox.setFocusable(false);
@@ -200,7 +207,7 @@ public class RegisterWindow extends JFrame {
         // Geburtsdatum Button
         dateButton.setText("Bitte Geburtsdatum auswählen*");
         dateButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
-        dateButton.setBackground(white);
+        dateButton.setBackground(whitebg);
         dateButton.setForeground(notSoDark);
         dateButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         dateButton.setFocusable(true);
@@ -215,7 +222,7 @@ public class RegisterWindow extends JFrame {
 
         final JComboBox<String> tage = new JComboBox<>(days);
         tage.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
-        tage.setBackground(white);
+        tage.setBackground(whitebg);
         tage.setForeground(dark);
         tage.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         tage.setFocusable(false);
@@ -226,7 +233,7 @@ public class RegisterWindow extends JFrame {
 
         final JComboBox<String> monat = new JComboBox<>(month);
         monat.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
-        monat.setBackground(white);
+        monat.setBackground(whitebg);
         monat.setForeground(dark);
         monat.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         monat.setFocusable(false);
@@ -245,7 +252,7 @@ public class RegisterWindow extends JFrame {
         // Jahrescombobox
         final JComboBox<String> jahr = new JComboBox<>(yearr);
         jahr.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
-        jahr.setBackground(white);
+        jahr.setBackground(whitebg);
         jahr.setForeground(dark);
         jahr.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         jahr.setFocusable(false);
@@ -255,7 +262,7 @@ public class RegisterWindow extends JFrame {
         // E-Mail Textfeld
         mail.setBorder(null);
         mail.setForeground(dark);
-        mail.setBackground(white);
+        mail.setBackground(whitebg);
         mail.setCaretColor(dark);
         mail.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         mail.setSelectedTextColor(dark);
@@ -264,7 +271,7 @@ public class RegisterWindow extends JFrame {
         // Telefonnumer Textfeld
         nummer.setBorder(null);
         nummer.setForeground(dark);
-        nummer.setBackground(white);
+        nummer.setBackground(whitebg);
         nummer.setCaretColor(dark);
         nummer.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         nummer.setSelectedTextColor(dark);
@@ -273,7 +280,7 @@ public class RegisterWindow extends JFrame {
         // PW Textfeld
         pw.setBorder(null);
         pw.setForeground(dark);
-        pw.setBackground(white);
+        pw.setBackground(whitebg);
         pw.setCaretColor(dark);
         pw.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         pw.setSelectedTextColor(dark);
@@ -282,7 +289,7 @@ public class RegisterWindow extends JFrame {
         // PW Bestätigen Textfeld
         pwb.setBorder(null);
         pwb.setForeground(dark);
-        pwb.setBackground(white);
+        pwb.setBackground(whitebg);
         pwb.setCaretColor(dark);
         pwb.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         pwb.setSelectedTextColor(dark);
@@ -297,7 +304,7 @@ public class RegisterWindow extends JFrame {
 
         reg.setText("Registrieren");
         reg.setBackground(hellb);
-        reg.setForeground(white);
+        reg.setForeground(whitebg);
         reg.setHorizontalTextPosition(JLabel.CENTER);
         reg.setVerticalTextPosition(JLabel.CENTER);
         reg.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
