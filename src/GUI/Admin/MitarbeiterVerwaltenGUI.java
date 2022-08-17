@@ -1,4 +1,5 @@
 package src.GUI.Admin;
+import org.w3c.dom.Text;
 import src.Foo;
 
 import static src.Foo.*;
@@ -7,60 +8,55 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import java.util.Vector;
 
 public class MitarbeiterVerwaltenGUI extends JFrame implements ActionListener {
 
-    String[] ArrayList = {"RRRRRRRRRRR","Jürgen","Der Jude","Türke","Achim","RRRRRRRRRRR","Jürgen","Der Jude","Türke","Achim","RRRRRRRRRRR","Jürgen","Der Jude","Türke","Achim","RRRRRRRRRRR","Jürgen","Der Jude","Türke","Achim","RRRRRRRRRRR","Jürgen","Der Jude","Türke","Achim","RON"};
-    Vector<JPanel> listElements = new Vector<JPanel>();
-    JList mitarbeiterlist;
+    String[] mitarbeiter = {"Jürgen","Hans","Peter Ulllrich","Hönnoblatt","Michael Wipprecht mhm","Evgenimehr","Jürgen","Hans","Peter Ulllrich","Hönnoblatt","Michael Wipprecht mhm","Evgenimehr","Jürgen","Hans","Peter Ulllrich","Hönnoblatt","Michael Wipprecht mhm","Evgenimehr","Jürgen","Hans","Peter Ulllrich","Hönnoblatt","Michael Wipprecht mhm","Evgenimehr","Jürgen","Hans","Peter Ulllrich","Hönnoblatt","Michael Wipprecht mhm","Evgenimehr","Jürgen","Hans","Peter Ulllrich","Hönnoblatt","Michael Wipprecht mhm","Evgenimehr"};
+    final DefaultListModel<String> model = new DefaultListModel<>();
+    final JList<String> list = new JList<>(model);
+    JScrollPane scrollpane = new JScrollPane(list);
+    JButton loeschen = new JButton();
 
-    JScrollPane scrollpan;
-    JPanel listepan = new JPanel();
+    JButton abbrechen = new JButton();
 
-    private JButton loeschen = new JButton();
 
      public MitarbeiterVerwaltenGUI(){
 
-         JPanel panel1 = new JPanel();
-         panel1.setLayout(new GridLayout(1, 4));
+        for (int i = 0; i< mitarbeiter.length;i++){
+            model.addElement(String.valueOf(mitarbeiter[i]));
+        }
 
-         JButton btn1 = new JButton();
-         btn1.setBackground(dark);
-         JButton btn2 = new JButton();
-         btn2.setBackground(white);
-         JButton btn3 = new JButton();
-         btn3.setBackground(white);
-         JButton btn4 = new JButton();
-btn4.setBackground(white);
+         list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+         list.setBackground(notSoDark);
+         list.setForeground(white);
 
-         panel1.add(btn1);
-         panel1.add(btn2);
-         panel1.add(btn3);
-         panel1.add(btn4);
-         panel1.setBackground(notSoDark);
-         panel1.setPreferredSize(new Dimension(100,150));
-         listElements.addElement(panel1);
+         JPanel Textpan = new JPanel();
+         Textpan.setLayout(new BorderLayout());
+         Textpan.setBackground(dark);
+         Textpan.setPreferredSize(new Dimension(100,150));
 
-
-
-         mitarbeiterlist = new JList(listElements);
-
-
-
-
-
-
-         listepan.setBackground(dark);
-         listepan.setPreferredSize(new Dimension(100,150));
-         listepan.setLayout(null);
-
+         JPanel listpan = new JPanel();
+         listpan.setLayout(new BorderLayout());
+         listpan.setBackground(dark);
+         listpan.setPreferredSize(new Dimension(100,150));
 
          JPanel Buttonpan = new JPanel();
          Buttonpan.setLayout(new BorderLayout());
          Buttonpan.setBackground(dark);
          Buttonpan.setPreferredSize(new Dimension(100,150));
          Buttonpan.setLayout(null);
+
+         JLabel label = new JLabel();
+         label.setText("<html><body><center><p>Mitarbeiter verwalten</p></center></body></html>");
+         label.setForeground(white);
+         label.setHorizontalTextPosition(JLabel.CENTER);
+         label.setVerticalTextPosition(JLabel.CENTER);
+         label.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 28));
+         label.setHorizontalAlignment(JLabel.CENTER);
+         label.setVerticalAlignment(JLabel.CENTER);
+         label.setBounds(200,50, 500,50);
 
          //Button löschen
          loeschen.addActionListener(this);
@@ -69,41 +65,72 @@ btn4.setBackground(white);
          loeschen.setForeground(white);
          loeschen.setHorizontalTextPosition(JLabel.CENTER);
          loeschen.setVerticalTextPosition(JLabel.CENTER);
-         loeschen.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
+         loeschen.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
          loeschen.setHorizontalAlignment(JLabel.CENTER);
          loeschen.setVerticalAlignment(JLabel.CENTER);
          loeschen.setFocusable(false);
          loeschen.setBorderPainted(false);
          loeschen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-         loeschen.setBounds(170,10,150,50);
+         loeschen.setBounds(70,10,100,30);
 
-         scrollpan = new JScrollPane();
-         scrollpan.setBounds(95,100,300,400);
-         scrollpan.setBackground(notSoDark);
-         scrollpan.setForeground(white);
+         abbrechen.addActionListener(this);
+         abbrechen.setText("Abbrechen");
+         abbrechen.setBackground(dunkelb);
+         abbrechen.setForeground(white);
+         abbrechen.setHorizontalTextPosition(JLabel.CENTER);
+         abbrechen.setVerticalTextPosition(JLabel.CENTER);
+         abbrechen.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
+         abbrechen.setHorizontalAlignment(JLabel.CENTER);
+         abbrechen.setVerticalAlignment(JLabel.CENTER);
+         abbrechen.setFocusable(false);
+         abbrechen.setBorderPainted(false);
+         abbrechen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+         abbrechen.setBounds(315,10,100,30);
 
-         scrollpan.add(mitarbeiterlist);
+
+         listpan.setBorder(BorderFactory.createEmptyBorder(0, 70, 20, 70));
+         scrollpane.setBounds(0,200,300,400);
+         scrollpane.setBackground(notSoDark);
+
+         //scrollpane.setForeground(white);
 
          //Add to panel
-
+         Textpan.add(label);
+         listpan.add(new JScrollPane(list));
          Buttonpan.add(loeschen);
-         listepan.add(scrollpan);
+         Buttonpan.add(abbrechen);
+
 //         listepan.add(scrollpeen);
 
          //add panels to window
-
+         this.add(Textpan,BorderLayout.NORTH);
          this.add(Buttonpan, BorderLayout.SOUTH);
-         this.add(listepan);
+         this.add(listpan,BorderLayout.CENTER);
 
          this.setSize(500,700);
-         this.setTitle("Sachbearbeiter");
+         this.setTitle("Mitarbeiter verwalten");
          this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
          this.setResizable(false);
          this.setLocationRelativeTo(null);
          this.setVisible(true);
-         this.getContentPane().setBackground(dark);
+         this.setBackground(dark);
 
+         loeschen.addActionListener(new ActionListener() {
+             public void actionPerformed(ActionEvent event) {
+                 ListSelectionModel selmodel = list.getSelectionModel();
+                 int index = selmodel.getMinSelectionIndex();
+                 if (index >= 0)
+                     model.remove(index);
+             }
 
+         });
+         
+         abbrechen.addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                dispose();
+             }
+         });
 
     }
 

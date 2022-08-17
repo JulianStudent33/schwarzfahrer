@@ -3,6 +3,7 @@ package src.GUI;
 import src.Foo;
 import src.GUI.elements.PlaceholderPasswordField;
 import src.GUI.elements.PlaceholderTextField;
+import src.Main;
 import src.nickcode.pass;
 import src.GUI.elements.*;
 
@@ -17,6 +18,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import static src.Foo.*;
+import static src.Main.test;
 
 public class RegisterWindow extends JFrame {
 
@@ -25,11 +27,11 @@ public class RegisterWindow extends JFrame {
     PlaceholderTextField name = new PlaceholderTextField();
     PlaceholderTextField vname = new PlaceholderTextField();
 
-    String[] rollen = {"Rolle*","Kontrolleur", "Sachbearbeiter"};
+    String[] rollen = {"Rolle*", "Kontrolleur", "Sachbearbeiter"};
 
     customComboBox rollenBox = new customComboBox();
 
-    String[] geschlechter = {"Geschlecht*","Männlich","Weiblich","Divers"};
+    String[] geschlechter = {"Geschlecht*", "Männlich", "Weiblich", "Divers"};
 
     customComboBox genderBox = new customComboBox();
 
@@ -41,14 +43,14 @@ public class RegisterWindow extends JFrame {
 
 
     // Mid Texfelder
-   // PlaceholderTextField rolle = new PlaceholderTextField();
-   // PlaceholderTextField gender = new PlaceholderTextField();
+    // PlaceholderTextField rolle = new PlaceholderTextField();
+    // PlaceholderTextField gender = new PlaceholderTextField();
 
     // Registrieren Button deklaration
     JButton reg = new JButton();
 
     //Konstruktor
-    RegisterWindow() {
+    public RegisterWindow() {
 
         // Erneuter Aufruf des L&F sodass bei Rückgang auf vorheriges Fenster, das L&F bestehen bleibt
 
@@ -75,37 +77,35 @@ public class RegisterWindow extends JFrame {
         // Panel für Text "Registrieren"
         JPanel Text = new JPanel();
         Text.setBackground(dark);
-        Text.setSize(new Dimension(600,100));
-        Text.setLocation(0,0);
+        Text.setSize(new Dimension(600, 100));
+        Text.setLocation(0, 0);
         Text.setLayout(null);
 
         // Panel für Oberen drei Textfelder
         JPanel Top = new JPanel();
         Top.setBackground(dark);
-        Top.setSize(400,250);
-        Top.setLocation(93,100);
-        Top.setLayout(new GridLayout(5,1,0,20));
+        Top.setSize(400, 250);
+        Top.setLocation(93, 100);
+        Top.setLayout(new GridLayout(5, 1, 0, 20));
 
         // Panel für die Mittleren Felder (Rolle, Gender, Geburtsdatum)
         JPanel Mid = new JPanel();
         Mid.setBackground(dark);
-        Mid.setSize(401,35);
-        Mid.setLocation(92,370);
-        Mid.setLayout(new GridLayout(1,3,10,0));
+        Mid.setSize(401, 35);
+        Mid.setLocation(92, 370);
+        Mid.setLayout(new GridLayout(1, 3, 10, 0));
 
         JPanel dMid = new JPanel();
         dMid.setBackground(dark);
-        dMid.setSize(401,205);
-        dMid.setLocation(92,425);
-        dMid.setLayout(new GridLayout(4,1,0,20));
-
-
+        dMid.setSize(401, 205);
+        dMid.setLocation(92, 425);
+        dMid.setLayout(new GridLayout(4, 1, 0, 20));
 
         // Panel für die Unterden Felder
         JPanel Bot = new JPanel();
         Bot.setBackground(dark);
-        Bot.setSize(300,50);
-        Bot.setLocation(145,655);
+        Bot.setSize(300, 50);
+        Bot.setLocation(145, 655);
         Bot.setLayout(new GridLayout());
 
         // Panel für den Fehlertext unterhalb der Textfelder
@@ -115,8 +115,8 @@ public class RegisterWindow extends JFrame {
         // Panel zum fixen
         JPanel fix = new JPanel();
         fix.setBackground(dark);
-        fix.setSize(400,140);
-        fix.setLocation(100,240);
+        fix.setSize(400, 140);
+        fix.setLocation(100, 240);
         fix.setLayout(new GridLayout());
 
         // JLabel für Titel
@@ -128,7 +128,7 @@ public class RegisterWindow extends JFrame {
         label.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 35));
         label.setHorizontalAlignment(JLabel.CENTER);
         label.setVerticalAlignment(JLabel.CENTER);
-        label.setBounds(-8,0,600,100);
+        label.setBounds(-8, 0, 600, 100);
 
         // Top Panel Textfelder
         // bname anpassungen
@@ -138,7 +138,7 @@ public class RegisterWindow extends JFrame {
         bname.setCaretColor(dark);
         bname.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         bname.setSelectedTextColor(dark);
-        bname.setSelectionColor(Color.gray);
+        bname.setSelectionColor(notSoDark);
         bname.setPlaceholder("Benutzername*");
         //bname.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Benutzername");
 
@@ -150,7 +150,7 @@ public class RegisterWindow extends JFrame {
         name.setCaretColor(dark);
         name.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         name.setSelectedTextColor(dark);
-        name.setSelectionColor(Color.gray);
+        name.setSelectionColor(notSoDark);
         name.setPlaceholder("Name*");
 
         // vname anpassungen
@@ -160,16 +160,23 @@ public class RegisterWindow extends JFrame {
         vname.setCaretColor(dark);
         vname.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         vname.setSelectedTextColor(dark);
-        vname.setSelectionColor(Color.gray);
+        vname.setSelectionColor(notSoDark);
         vname.setPlaceholder("Vorname*");
 
         // Mid Panel Management
         // Rolle Auswahlmenü
         // Auswahlmöglichkeiten
+        if(test) {
+            Color[] colorrollen = {Grey,Grey,Grey};
+            ComboBoxRenderer renderer = new ComboBoxRenderer(rollenBox);
+            renderer.setColors(colorrollen);
+            renderer.setStrings(rollen);
+            rollenBox.setRenderer(renderer);
+        }
 
         rollenBox.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
         rollenBox.setBackground(white);
-        rollenBox.setForeground(Color.gray);
+        rollenBox.setForeground(notSoDark);
         rollenBox.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         rollenBox.setFocusable(false);
         rollenBox.setBorder(null);
@@ -179,7 +186,7 @@ public class RegisterWindow extends JFrame {
         //gender.setPrototypeDisplayValue("XXXXXXXXXXXX");
         genderBox.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
         genderBox.setBackground(white);
-        genderBox.setForeground(Color.gray);
+        genderBox.setForeground(notSoDark);
         genderBox.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         genderBox.setFocusable(false);
         genderBox.setBorder(null);
@@ -188,7 +195,7 @@ public class RegisterWindow extends JFrame {
         dateButton.setText("Bitte Geburtsdatum auswählen*");
         dateButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
         dateButton.setBackground(white);
-        dateButton.setForeground(Color.gray);
+        dateButton.setForeground(notSoDark);
         dateButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         dateButton.setFocusable(true);
         dateButton.setBorder(null);
@@ -246,7 +253,7 @@ public class RegisterWindow extends JFrame {
         mail.setCaretColor(dark);
         mail.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         mail.setSelectedTextColor(dark);
-        mail.setSelectionColor(Color.gray);
+        mail.setSelectionColor(notSoDark);
         mail.setPlaceholder("E-Mail*");
         // Telefonnumer Textfeld
         nummer.setBorder(null);
@@ -255,7 +262,7 @@ public class RegisterWindow extends JFrame {
         nummer.setCaretColor(dark);
         nummer.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         nummer.setSelectedTextColor(dark);
-        nummer.setSelectionColor(Color.gray);
+        nummer.setSelectionColor(notSoDark);
         nummer.setPlaceholder("Telefonnummer");
         // PW Textfeld
         pw.setBorder(null);
@@ -264,7 +271,7 @@ public class RegisterWindow extends JFrame {
         pw.setCaretColor(dark);
         pw.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         pw.setSelectedTextColor(dark);
-        pw.setSelectionColor(Color.gray);
+        pw.setSelectionColor(notSoDark);
         pw.setPlaceholder("Passwort*");
         // PW Bestätigen Textfeld
         pwb.setBorder(null);
@@ -273,7 +280,7 @@ public class RegisterWindow extends JFrame {
         pwb.setCaretColor(dark);
         pwb.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         pwb.setSelectedTextColor(dark);
-        pwb.setSelectionColor(Color.gray);
+        pwb.setSelectionColor(notSoDark);
         pwb.setPlaceholder("Passwort bestätigen*");
 
         // Bot Text Panel Management
