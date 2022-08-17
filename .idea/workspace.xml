@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="818f0363-330a-446d-a383-01f24f174d8c" name="Changes" comment="StatistikenGUI update">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_08_2022_09_15_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_08_2022_09_15__Changes_.xml" beforeDir="false" />
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Inactivity Listener und logout implementiert">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_2022_15_47__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_2022_15_47__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_22__16_09__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_22__16_09__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/loggedIN.save" beforeDir="false" afterPath="$PROJECT_DIR$/Saves/loggedIN.save" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/Adresse.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/Datum.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/Exceptions/CloseException.class" beforeDir="false" />
@@ -20,6 +24,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/EinstellungenGUI$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/EinstellungenGUI$2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/EinstellungenGUI$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/EinstellungenGUI$4.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/EinstellungenGUI.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/LoginGUI$2.class" beforeDir="false" />
@@ -36,6 +41,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Sachbearbeiter/WarehouseItem.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Sachbearbeiter/WarehousePane.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/Sachbearbeiter/scrollPane.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/elements/InactivityListener.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/GUI/firstRegistrationGUI$3.class" beforeDir="false" />
@@ -49,6 +55,27 @@
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/roles/Sachbearbeiter.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PigPen/src/roles/Schwarzfahrer.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_07_2022_11_29_[Changes]/shelved.patch" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_07_2022_11_29_[Changes]/shelved.patch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_07_2022_11_29__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_07_2022_11_29__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_07_08_2022_15_47_[Changes]/shelved.patch" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_07_08_2022_15_47_[Changes]/shelved.patch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_07_08_2022_15_47__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_07_08_2022_15_47__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_10_08_2022_10_38__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_10_08_2022_10_38__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_10_08_2022_10_42__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_10_08_2022_10_42__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_10_08_2022_10_42__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_10_08_2022_10_42__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_11_08_2022_10_39__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_11_08_2022_10_39__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_13_07_2022_11_33__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_13_07_2022_11_33__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_13_07_2022_11_34__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_13_07_2022_11_34__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_14_07_2022_08_46__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_14_07_2022_08_46__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_14_07_2022_09_26__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_14_07_2022_09_26__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_14_07_2022_15_20__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_14_07_2022_15_20__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_15_08_2022_10_16__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_15_08_2022_10_16__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_15_08_22__14_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_15_08_22__14_02__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_15_08_22__14_02__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_15_08_22__14_02__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_2022_14_27_[Changes]/shelved.patch" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_2022_14_27_[Changes]/shelved.patch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_2022_14_27__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_2022_14_27__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_22__10_37__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_22__10_37__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_22_06_2022_16_03_[Changes]/shelved.patch" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_22_06_2022_16_03_[Changes]/shelved.patch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_22_06_2022_16_03__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_22_06_2022_16_03__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Adresse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Adresse.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Datum.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Datum.class" afterDir="false" />
@@ -170,51 +197,45 @@
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/roles/Sachbearbeiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/roles/Sachbearbeiter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/roles/Schwarzfahrer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/roles/Schwarzfahrer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/savedUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/savedUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/StatistikenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/StatistikenGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Admin/MitarbeiterVerwaltenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Admin/MitarbeiterVerwaltenGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/ProfilGUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/ProfilGUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/StatistikenGUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/StatistikenGUI.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="UML Class" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Neuer_Branch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
-    <option name="recentBranches">
-      <RecentBranches>
-        <option name="branchesForRepo">
-          <list>
-            <RecentBranchesForRepo>
-              <option name="branches">
-                <list>
-                  <RecentBranch>
-                    <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1660667922" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1660667921" />
-                  </RecentBranch>
-                </list>
-              </option>
-              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
-            </RecentBranchesForRepo>
-          </list>
-        </option>
-      </RecentBranches>
-    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2DRhfDjlAi8dmtecjOED11XdF9i" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="29J1CEjujM4BAFlkhQyHvzouQdG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
@@ -224,20 +245,84 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Class&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;238&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;211&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/julian.menzel/IdeaProjects/schwarzfahrer/lib/flatlaf-2.4.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/CBleck/Desktop/UNI Skripte/OOP/SchwarzfahrerProjekt&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.StatistikenGUI">
-    <configuration name="ProfilGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.GUI.ProfilGUI" />
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\CBleck\Desktop\UNI Skripte\OOP\SchwarzfahrerProjekt\src\GUI" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\CBleck\Desktop\UNI Skripte\OOP\SchwarzfahrerProjekt\src\GUI\Kon" />
+      <recent name="C:\Users\CBleck\Desktop\UNI Skripte\OOP\SchwarzfahrerProjekt\src\GUI\Admin" />
+      <recent name="C:\Users\CBleck\Desktop\UNI Skripte\OOP\SchwarzfahrerProjekt\src\GUI\Sachbearbeiter" />
+      <recent name="C:\Users\CBleck\Desktop\UNI Skripte\OOP\SchwarzfahrerProjekt\src\GUI\Kontrolleur" />
+      <recent name="C:\Users\CBleck\Desktop\UNI Skripte\OOP\SchwarzfahrerProjekt\src\GUI" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="EinstellungenGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.GUI.EinstellungenGUI" />
+      <module name="PigPen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.GUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Kachel1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.GUI.Sachbearbeiter.Kachel1" />
+      <module name="PigPen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.GUI.Sachbearbeiter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.Main" />
       <module name="schwarzfahrer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OkayWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.GUI.OkayWindow" />
+      <module name="PigPen" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="src.GUI.*" />
@@ -250,66 +335,447 @@
     </configuration>
     <configuration name="RegisterWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.GUI.RegisterWindow" />
-      <module name="schwarzfahrer" />
+      <module name="PigPen" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="src.GUI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StatistikenGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.GUI.StatistikenGUI" />
-      <module name="schwarzfahrer" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="src.GUI.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.Main" />
-      <module name="schwarzfahrer" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.StatistikenGUI" />
-        <item itemvalue="Application.ProfilGUI" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.EinstellungenGUI" />
         <item itemvalue="Application.RegisterWindow" />
+        <item itemvalue="Application.OkayWindow" />
+        <item itemvalue="Application.Kachel1" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="818f0363-330a-446d-a383-01f24f174d8c" name="Changes" comment="" />
-      <created>1660667906342</created>
+      <changelist id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="" />
+      <created>1652816249415</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1660667906342</updated>
-      <workItem from="1660667909167" duration="118000" />
-      <workItem from="1660668046231" duration="201000" />
-      <workItem from="1660668265205" duration="735000" />
-      <workItem from="1660723915651" duration="1372000" />
+      <updated>1652816249415</updated>
+      <workItem from="1652816250427" duration="35000" />
+      <workItem from="1652816290096" duration="3700000" />
+      <workItem from="1652874625500" duration="3731000" />
+      <workItem from="1652885452314" duration="10345000" />
+      <workItem from="1652959087958" duration="10359000" />
+      <workItem from="1653169341358" duration="1132000" />
+      <workItem from="1653838855442" duration="3406000" />
+      <workItem from="1654012003489" duration="1306000" />
+      <workItem from="1654034086109" duration="2063000" />
+      <workItem from="1655125975838" duration="297000" />
+      <workItem from="1655126402365" duration="759000" />
+      <workItem from="1655196711769" duration="20000" />
+      <workItem from="1655289272319" duration="912000" />
+      <workItem from="1655371792546" duration="1184000" />
+      <workItem from="1655413475807" duration="16473000" />
+      <workItem from="1655479661852" duration="5686000" />
+      <workItem from="1655882181208" duration="1006000" />
+      <workItem from="1655894310049" duration="5070000" />
+      <workItem from="1655906091828" duration="13000" />
+      <workItem from="1655907207253" duration="3443000" />
+      <workItem from="1655911950056" duration="1599000" />
+      <workItem from="1655962346797" duration="9354000" />
+      <workItem from="1655994394906" duration="1310000" />
+      <workItem from="1655995726497" duration="58000" />
+      <workItem from="1655995901795" duration="70000" />
+      <workItem from="1656072636078" duration="5908000" />
+      <workItem from="1656085681996" duration="160000" />
+      <workItem from="1657181234999" duration="78000" />
+      <workItem from="1657181344036" duration="3623000" />
+      <workItem from="1657521444443" duration="37000" />
+      <workItem from="1657521507403" duration="30673000" />
+      <workItem from="1657557408759" duration="2906000" />
+      <workItem from="1657572313942" duration="43000" />
+      <workItem from="1657614413573" duration="15008000" />
+      <workItem from="1657641492772" duration="1570000" />
+      <workItem from="1657696410698" duration="22600000" />
+      <workItem from="1657731578260" duration="3880000" />
+      <workItem from="1657803381580" duration="5339000" />
+      <workItem from="1657870884233" duration="3971000" />
+      <workItem from="1657874911454" duration="8152000" />
+      <workItem from="1657885716702" duration="36000" />
+      <workItem from="1657886105846" duration="3196000" />
+      <workItem from="1657958711775" duration="2971000" />
+      <workItem from="1658256201664" duration="2936000" />
+      <workItem from="1658312610844" duration="1240000" />
+      <workItem from="1659883325166" duration="9216000" />
+      <workItem from="1659942065114" duration="12541000" />
+      <workItem from="1660023757005" duration="5069000" />
+      <workItem from="1660059117171" duration="1553000" />
+      <workItem from="1660120670153" duration="672000" />
+      <workItem from="1660132461830" duration="5742000" />
+      <workItem from="1660140451149" duration="5358000" />
+      <workItem from="1660147707052" duration="89000" />
+      <workItem from="1660148862685" duration="28352000" />
+      <workItem from="1660237530296" duration="712000" />
+      <workItem from="1660289329166" duration="4032000" />
+      <workItem from="1660500563051" duration="1652000" />
+      <workItem from="1660502315496" duration="256000" />
+      <workItem from="1660549839766" duration="658000" />
+      <workItem from="1660552450767" duration="5000" />
+      <workItem from="1660552792941" duration="3312000" />
+      <workItem from="1660559546716" duration="2399000" />
+      <workItem from="1660565713008" duration="3365000" />
+      <workItem from="1660572706785" duration="2787000" />
+      <workItem from="1660638938877" duration="7993000" />
+      <workItem from="1660657927237" duration="860000" />
+      <workItem from="1660722223472" duration="2381000" />
     </task>
-    <task id="LOCAL-00001" summary="StatistikenGUI update">
-      <created>1660719441423</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
+    <task id="LOCAL-00030" summary="neu">
+      <created>1657808072166</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
       <option name="project" value="LOCAL" />
-      <updated>1660719441424</updated>
+      <updated>1657808072166</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00031" summary="neu">
+      <created>1657808097596</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1657808097596</updated>
+    </task>
+    <task id="LOCAL-00032" summary="neu">
+      <created>1657808107522</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1657808107522</updated>
+    </task>
+    <task id="LOCAL-00033" summary="neu">
+      <created>1657871533914</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1657871533914</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Number Filter auf Telefonfeld.">
+      <created>1657878690270</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1657878690270</updated>
+    </task>
+    <task id="LOCAL-00035" summary="j">
+      <created>1657883769500</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1657883769500</updated>
+    </task>
+    <task id="LOCAL-00036" summary="j">
+      <created>1657885743871</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1657885743871</updated>
+    </task>
+    <task id="LOCAL-00037" summary="j">
+      <created>1657887999414</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1657887999414</updated>
+    </task>
+    <task id="LOCAL-00038" summary="j">
+      <created>1657889292103</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1657889292103</updated>
+    </task>
+    <task id="LOCAL-00039" summary="j">
+      <created>1657961844561</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1657961844561</updated>
+    </task>
+    <task id="LOCAL-00040" summary="j">
+      <created>1657961857905</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1657961857905</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Error fixed, Geburtsdatum wird wieder gesetted">
+      <created>1659882408856</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1659882408856</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Error fixed, Geburtsdatum wird wieder gesetted">
+      <created>1659910884738</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1659910884738</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Error fixed, Geburtsdatum wird wieder gesetted">
+      <created>1659910899258</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1659910899258</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Neu">
+      <created>1659911080267</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1659911080267</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Neu">
+      <created>1659950492221</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1659950492221</updated>
+    </task>
+    <task id="LOCAL-00046" summary="KonGUI, AdminGUI, SBGUi">
+      <created>1659966201206</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1659966201206</updated>
+    </task>
+    <task id="LOCAL-00047" summary="error fix">
+      <created>1659966447945</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1659966447945</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Important Changes">
+      <created>1659968682492</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1659968682492</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Important Changes">
+      <created>1659969278709</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1659969278709</updated>
+    </task>
+    <task id="LOCAL-00050" summary="LoginGUI Version Ron 1.0">
+      <created>1659973816010</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1659973816011</updated>
+    </task>
+    <task id="LOCAL-00051" summary="LoginGUI Version Ron 1.1">
+      <created>1660047688415</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1660047688415</updated>
+    </task>
+    <task id="LOCAL-00052" summary="okWindow Version Ron 1.0">
+      <created>1660054894439</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1660054894439</updated>
+    </task>
+    <task id="LOCAL-00053" summary="okWindow Version Ron 1.0">
+      <created>1660056027269</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1660056027269</updated>
+    </task>
+    <task id="LOCAL-00054" summary="changes">
+      <created>1660118090240</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1660118090240</updated>
+    </task>
+    <task id="LOCAL-00055" summary="changes">
+      <created>1660118326987</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1660118326987</updated>
+    </task>
+    <task id="LOCAL-00056" summary="neue flash funktion in PlaceholderTextField">
+      <created>1660136533906</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1660136533907</updated>
+    </task>
+    <task id="LOCAL-00057" summary="neue flash funktion in PlaceholderTextField">
+      <created>1660136577704</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1660136577704</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Datum Picker hinzugefügt in Registrierung, Bug behoben mit erster Anmeldung, aktuelles Datum wird bei schwarzfahrt erfassen jetzt vorausgewählt">
+      <created>1660147781191</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1660147781191</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Flash Effekt fertig">
+      <created>1660206722630</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1660206722630</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Bug behoben, dass der schwarzfahrt erfassen autocomplete nur nach neustarten getriggered wurde&#10;Date_Pick geht jetzt gleich auf die Seite vom Kalender, wo man stehen geblieben war &#10;Sachbearbeiter Kachel1 etwas angefangen&#10;Glaube das mit der Uhrzeit vorauswählen funktioniert jetzt ordentlich&#10;Überall wo datum ausgewählt wird ist ein +">
+      <created>1660215180479</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1660215180479</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Bug behoben, dass der schwarzfahrt erfassen autocomplete nur nach neustarten getriggered wurde&#10;Date_Pick geht jetzt gleich auf die Seite vom Kalender, wo man stehen geblieben war &#10;Sachbearbeiter Kachel1 etwas angefangen&#10;Glaube das mit der Uhrzeit vorauswählen funktioniert jetzt ordentlich&#10;Überall wo datum ausgewählt wird ist ein +">
+      <created>1660215188221</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1660215188221</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Dieses Rote Flash ding jetzt auch für weiße Textfelder">
+      <created>1660222724481</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1660222724481</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Dieses Rote Flash ding jetzt auch für weiße Textfelder">
+      <created>1660222738272</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1660222738272</updated>
+    </task>
+    <task id="LOCAL-00064" summary="weiß nichtmehr was ich gemacht hab, achja Schwarzfahrten und Flash interface">
+      <created>1660289481657</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1660289481657</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Foo.getDirectoryData allen open...GUI Methoden hinzugefügt">
+      <created>1660292665415</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1660292665415</updated>
+    </task>
+    <task id="LOCAL-00066" summary="hjiknhiuzuh">
+      <created>1660500618329</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1660500618329</updated>
+    </task>
+    <task id="LOCAL-00067" summary="customButton für flash effect">
+      <created>1660549887647</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1660549887647</updated>
+    </task>
+    <task id="LOCAL-00068" summary="customButton für flash effect">
+      <created>1660638990909</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1660638990909</updated>
+    </task>
+    <task id="LOCAL-00069" summary="customButton für flash effect">
+      <created>1660644580413</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1660644580413</updated>
+    </task>
+    <task id="LOCAL-00070" summary="sgds">
+      <created>1660647042209</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1660647042209</updated>
+    </task>
+    <task id="LOCAL-00071" summary="sgds">
+      <created>1660647326525</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1660647326526</updated>
+    </task>
+    <task id="LOCAL-00072" summary="EinstellungenGUI fast fertig">
+      <created>1660657767570</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1660657767570</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Inactivity Listener und logout implementiert">
+      <created>1660658770706</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1660658770707</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Inactivity Listener und logout implementiert">
+      <created>1660658776598</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1660658776598</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Inactivity Listener und logout implementiert">
+      <created>1660722250904</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1660722250905</updated>
+    </task>
+    <task id="LOCAL-00076" summary="Inactivity Listener und logout implementiert">
+      <created>1660722275543</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1660722275543</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Inactivity Listener und logout implementiert">
+      <created>1660722285303</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1660722285303</updated>
+    </task>
+    <task id="LOCAL-00078" summary="Inactivity Listener und logout implementiert">
+      <created>1660722306460</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1660722306460</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,8 +793,97 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="StatistikenGUI update" />
-    <option name="LAST_COMMIT_MESSAGE" value="StatistikenGUI update" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
+    <MESSAGE value="neu" />
+    <MESSAGE value="Number Filter auf Telefonfeld." />
+    <MESSAGE value="j" />
+    <MESSAGE value="Schwarzfahrer implementiert. Autocomplete implementiert durch suchen via ausweisnummer." />
+    <MESSAGE value="Error fixed, Geburtsdatum wird wieder gesetted" />
+    <MESSAGE value="Neu" />
+    <MESSAGE value="KonGUI, AdminGUI, SBGUi" />
+    <MESSAGE value="error fix" />
+    <MESSAGE value="Important Changes" />
+    <MESSAGE value="LoginGUI Version Ron 1.0" />
+    <MESSAGE value="LoginGUI Version Ron 1.1" />
+    <MESSAGE value="okWindow Version Ron 1.0" />
+    <MESSAGE value="changes" />
+    <MESSAGE value="neue flash funktion in PlaceholderTextField" />
+    <MESSAGE value="Datum Picker hinzugefügt in Registrierung, Bug behoben mit erster Anmeldung, aktuelles Datum wird bei schwarzfahrt erfassen jetzt vorausgewählt" />
+    <MESSAGE value="Flash Effekt fertig" />
+    <MESSAGE value="Bug behoben, dass der schwarzfahrt erfassen autocomplete nur nach neustarten getriggered wurde&#10;Date_Pick geht jetzt gleich auf die Seite vom Kalender, wo man stehen geblieben war &#10;Sachbearbeiter Kachel1 etwas angefangen&#10;Glaube das mit der Uhrzeit vorauswählen funktioniert jetzt ordentlich&#10;Überall wo datum ausgewählt wird ist ein +" />
+    <MESSAGE value="Dieses Rote Flash ding jetzt auch für weiße Textfelder" />
+    <MESSAGE value="weiß nichtmehr was ich gemacht hab, achja Schwarzfahrten und Flash interface" />
+    <MESSAGE value="Foo.getDirectoryData allen open...GUI Methoden hinzugefügt" />
+    <MESSAGE value="hjiknhiuzuh" />
+    <MESSAGE value="customButton für flash effect" />
+    <MESSAGE value="sgds" />
+    <MESSAGE value="EinstellungenGUI fast fertig" />
+    <MESSAGE value="Inactivity Listener und logout implementiert" />
+    <option name="LAST_COMMIT_MESSAGE" value="Inactivity Listener und logout implementiert" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/PersFile.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/nickcode/pass.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/nickcode/pass.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/roles/Kontrolleur.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Foo.java</url>
+          <line>276</line>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Foo.java</url>
+          <line>294</line>
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GUI/Kon/SchwarzfahrtErfassenGUI.java</url>
+          <line>193</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GUI/Kon/SchwarzfahrtErfassenGUI.java</url>
+          <line>199</line>
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="18" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalMonitorStateException" package="java.lang" />
+          <option name="timeStamp" value="80" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.time.temporal.UnsupportedTemporalTypeException" package="java.time.temporal" />
+          <option name="timeStamp" value="87" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="89" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PigPen$Main.ic" NAME="Main Coverage Results" MODIFIED="1654034627101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

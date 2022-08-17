@@ -1,5 +1,4 @@
 package src.GUI;
-import src.Foo;
 import src.GUI.Admin.AdminGUI;
 import src.GUI.Kon.KontrolleurGUI;
 import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
