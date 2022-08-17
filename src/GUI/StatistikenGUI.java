@@ -9,7 +9,9 @@ import java.awt.event.ActionListener;
 import static src.Foo.*;
 public class StatistikenGUI extends JFrame implements ActionListener{
 
-    JPanel AnzahlSchwarzfahrer = new JPanel();
+    JPanel AnzahlSchwarzfahrerPan = new JPanel();
+    JPanel AnzahlSchwarzfahrerNorthPan = new JPanel();
+    JPanel AnzahlSchwarzfahrerCenterPan = new JPanel();
     JLabel AnzahlSchwarzfahrerUeberschrift = new JLabel();
     JLabel AnzahlschwarzfahrerWert = new JLabel();
     JPanel AnzahlMitarbeiter = new JPanel();
@@ -63,21 +65,32 @@ public class StatistikenGUI extends JFrame implements ActionListener{
 
         //JButton "Schwarzfahrt erfassen"
         //Styling
+
         AnzahlSchwarzfahrerUeberschrift.setForeground(white);
+        AnzahlSchwarzfahrerUeberschrift.setBackground(hellb);
         AnzahlSchwarzfahrerUeberschrift.setFont(fontSmall);
         AnzahlSchwarzfahrerUeberschrift.setText("<html><body><center><p>Anzahl Schwarzfahrer</p></center></body></html>");
         AnzahlSchwarzfahrerUeberschrift.setBorder(new EmptyBorder(20,50,70,50));
 
         AnzahlschwarzfahrerWert.setForeground(dark);
+        AnzahlschwarzfahrerWert.setBackground(hellb);
         AnzahlschwarzfahrerWert.setFont(fontSmall);
         AnzahlschwarzfahrerWert.setText("0");
-        AnzahlschwarzfahrerWert.setBorder(new EmptyBorder(0,95,0,95));
+        AnzahlschwarzfahrerWert.setBorder(new EmptyBorder(0,0,0,0));
 
-        AnzahlSchwarzfahrer.setBackground(hellb);
-        AnzahlSchwarzfahrer.add(AnzahlSchwarzfahrerUeberschrift, BorderLayout.NORTH);
-        AnzahlSchwarzfahrer.add(AnzahlschwarzfahrerWert, BorderLayout.CENTER);
-        AnzahlSchwarzfahrer.setFocusable(false);
-        AnzahlSchwarzfahrer.setBounds(140,100,100,100);
+        AnzahlSchwarzfahrerPan.setBackground(hellb);
+        AnzahlSchwarzfahrerPan.add(AnzahlSchwarzfahrerNorthPan, BorderLayout.NORTH);
+        AnzahlSchwarzfahrerPan.add(AnzahlSchwarzfahrerCenterPan, BorderLayout.CENTER);
+        AnzahlSchwarzfahrerPan.setFocusable(false);
+        AnzahlSchwarzfahrerPan.setBounds(140,100,100,100);
+
+        AnzahlSchwarzfahrerNorthPan.add(AnzahlSchwarzfahrerUeberschrift);
+        AnzahlSchwarzfahrerNorthPan.setBackground(hellb);
+        AnzahlSchwarzfahrerNorthPan.setBounds(0,0,100,50);
+        AnzahlSchwarzfahrerCenterPan.add(AnzahlschwarzfahrerWert);
+        AnzahlSchwarzfahrerCenterPan.setBackground(hellb);
+        AnzahlSchwarzfahrerCenterPan.setBounds(0,50,100,50);
+
 
         // JButton "Schwarzfahrer suchen"
         //Styling
@@ -225,7 +238,7 @@ public class StatistikenGUI extends JFrame implements ActionListener{
         Text.add(label, BorderLayout.SOUTH);
 
         //Text.add(Trennlinie,BorderLayout.SOUTH);
-        gridpanel.add(AnzahlSchwarzfahrer);
+        gridpanel.add(AnzahlSchwarzfahrerPan);
         gridpanel.add(AnzahlMitarbeiter);
         gridpanel.add(HaeufigsteSchwarzfahrt);
         gridpanel.add(ErfassteSchwarzfahrten);
