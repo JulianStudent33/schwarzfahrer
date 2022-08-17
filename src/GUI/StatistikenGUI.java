@@ -87,13 +87,14 @@ public class StatistikenGUI extends JFrame implements ActionListener {
         AnzahlSchwarzfahrerUeberschrift.setBorder(new EmptyBorder(0,0,0,0));
 
         AnzahlschwarzfahrerWert.setForeground(dark);
+        AnzahlschwarzfahrerWert.setBackground(dark);
         AnzahlschwarzfahrerWert.setFont(fontSmall);
         AnzahlschwarzfahrerWert.setText("0");
         AnzahlschwarzfahrerWert.setBorder(new EmptyBorder(0,0,0,0));
 
         AnzahlSchwarzfahrer.setBackground(hellb);
         AnzahlSchwarzfahrer.add(AnzahlSchwarzfahrerUeberschrift);
-        AnzahlSchwarzfahrer.add(AnzahlschwarzfahrerWert);
+        AnzahlSchwarzfahrer.add(AnzahlschwarzfahrerWert,BorderLayout.CENTER);
         AnzahlSchwarzfahrer.setFocusable(false);
         AnzahlSchwarzfahrer.setBorderPainted(false);
         AnzahlSchwarzfahrer.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
