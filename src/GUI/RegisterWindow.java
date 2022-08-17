@@ -157,7 +157,7 @@ public class RegisterWindow extends JFrame {
         name.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         name.setSelectedTextColor(dark);
         name.setSelectionColor(notSoDark);
-        name.setPlaceholder("Name*");
+        name.setPlaceholder("Nachname*");
 
         // vname anpassungen
         vname.setBorder(null);
