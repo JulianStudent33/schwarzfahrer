@@ -32,7 +32,6 @@ public class StatistikenGUI extends JFrame implements ActionListener{
     JButton Abbrechen = new JButton();
 
 
-int AnzahlSchwarzfahrerZahl = 0;
 
     public StatistikenGUI(){
 
@@ -72,7 +71,7 @@ int AnzahlSchwarzfahrerZahl = 0;
         AnzahlschwarzfahrerWert.setForeground(dark);
         AnzahlschwarzfahrerWert.setFont(fontSmall);
         AnzahlschwarzfahrerWert.setText("0");
-        AnzahlschwarzfahrerWert.setBorder(new EmptyBorder(0,0,0,0));
+        AnzahlschwarzfahrerWert.setBorder(new EmptyBorder(60,80,0,80));
 
         AnzahlSchwarzfahrer.setBackground(hellb);
         AnzahlSchwarzfahrer.add(AnzahlSchwarzfahrerUeberschrift);
