@@ -4,6 +4,7 @@ import com.formdev.flatlaf.FlatLightLaf;
 import src.GUI.RegisterWindow;
 
 import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
 
 import static src.Foo.*;
@@ -14,20 +15,24 @@ public class Main {
     public static void main(String[] args) {
 
         // True = LightMode - False = DarkMode
-        colorchange = true;
+        colorchange = false;
         colormode(colorchange);
         //Start
         try {
 
-            if(colorchange){
+            if (colorchange) {
                 UIManager.setLookAndFeel(new FlatLightLaf());
             } else {
                 UIManager.setLookAndFeel(new FlatDarkLaf());
             }
 
-
-            UIManager.put("ComboBox.buttonArrowColor", dark);
-            UIManager.put("ComboBox.buttonBackground", white);
+            UIManager.put("ComboBox.disabledForeground", white);
+            UIManager.put("ComboBox.disabledBackground", dark);
+            UIManager.put("ComboBox.buttonDisabledArrowColor", dark);
+            UIManager.put("ComboBox.buttonArrowColor", notSoDark);
+            UIManager.put("ComboBox.buttonBackground", whitebg);
+            UIManager.put("ComboBox.buttonHoverArrowColor", notSoDark);
+            UIManager.put("ComboBox.buttonPressedArrowColor", white);
             UIManager.put("Component.arrowType", "triangle");
             UIManager.put("ComboBox.popupBackground", white);
             UIManager.put("ComboBox.selectionForeground", dark);
