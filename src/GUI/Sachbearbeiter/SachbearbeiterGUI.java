@@ -219,7 +219,7 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
 
                 dispose();
                 currentUser.abmelden();
-                StartfensterGUI.startFenster();
+                StartfensterGUI.startFenster(getRootPane().getParent());
 
 
             }

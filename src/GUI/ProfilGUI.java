@@ -14,11 +14,10 @@ import java.awt.event.ActionListener;
 import static src.Foo.*;
 public class ProfilGUI extends JFrame implements ActionListener {
 
-    public static SachbearbeiterGUI parentS = null;
-    public static KontrolleurGUI parentK = null;
-    public static AdminGUI parentA = null;
+    public SachbearbeiterGUI parentS = null;
+    public KontrolleurGUI parentK = null;
+    public AdminGUI parentA = null;
 
-    JFrame Frame = new JFrame();
     JPanel label = new JPanel();
     JLabel Text = new JLabel();
     JPanel Textfelder = new JPanel();
@@ -152,18 +151,17 @@ public class ProfilGUI extends JFrame implements ActionListener {
 
         // Panels zu Frame adden
 
-        Frame.add(label,BorderLayout.NORTH);
-        Frame.add(Textfelder,BorderLayout.CENTER);
-        Frame.add(Buttons,BorderLayout.SOUTH);
+        add(label,BorderLayout.NORTH);
+        add(Textfelder,BorderLayout.CENTER);
+        add(Buttons,BorderLayout.SOUTH);
 
 
-        Frame.setSize(400, 800);
-        Frame.setTitle("Profil");
-        Frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        Frame.setResizable(false);
-        Frame.setVisible(true);
+        setSize(400, 800);
+        setTitle("Profil");
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        setResizable(false);
+        setVisible(true);
 
-        Frame.setLocationRelativeTo(parent);
 
 
 

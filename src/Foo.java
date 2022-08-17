@@ -130,7 +130,7 @@ public class Foo {
         setAngemeldet(angemeldetBleiben);
 
         if(!angemeldet){
-            StartfensterGUI.startFenster();
+            StartfensterGUI.startFenster(null);
         } else if (currentAdmin!=null) {
             AdminGUI.openAdminGUI();
         } else if (currentKontrolleur!=null) {

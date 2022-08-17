@@ -5,7 +5,6 @@ import src.GUI.Kon.KontrolleurGUI;
 import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
 import src.GUI.elements.PlaceholderPasswordField;
 import src.GUI.elements.PlaceholderTextField;
-import src.Main;
 import src.nickcode.pass;
 import src.GUI.elements.*;
 import src.roles.Kontrolleur;
@@ -56,16 +55,16 @@ public class RegisterWindow extends JFrame {
     JButton reg = new JButton();
 
     //Konstruktor
-    public RegisterWindow() {
+    public RegisterWindow(Container parent) {
 
         // Erneuter Aufruf des L&F sodass bei Rückgang auf vorheriges Fenster, das L&F bestehen bleibt
 
 
         // Start des Fensters mit der void Methode frame()
-        frame();
+        frame(parent);
     }
 
-    private void frame() {
+    private void frame(Container parent) {
 
 
         rollenBox.addItem(rollen[0]);
@@ -313,7 +312,7 @@ public class RegisterWindow extends JFrame {
         this.setTitle("Schwarzfahrer Projekt");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
-        this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(parent);
         this.setVisible(true);
         this.getContentPane().setBackground(dark);
 
@@ -399,7 +398,7 @@ public class RegisterWindow extends JFrame {
                             }
                         } catch (IOException ex) {
                             dispose();
-                            StartfensterGUI.startFenster();
+                            StartfensterGUI.startFenster(getRootPane().getParent());
                             ex.printStackTrace();
                             throw new RuntimeException(ex);
                         }
@@ -608,14 +607,14 @@ public class RegisterWindow extends JFrame {
 
 
 
-    public static void openRegisterGUI(){
+    public static void openRegisterGUI(Container parent){
 
         Foo.getDirectoryData();
-        RegisterWindow gui = new RegisterWindow();
+        RegisterWindow gui = new RegisterWindow(parent);
 
     }
 
     public static void main(String[] args) {
-        openRegisterGUI();
+        openRegisterGUI(null);
     }
 }

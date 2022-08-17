@@ -216,7 +216,7 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
 
                         dispose();
                         currentUser.abmelden();
-                        StartfensterGUI.startFenster();
+                        StartfensterGUI.startFenster(getRootPane().getParent());
 
                     }
                 });
