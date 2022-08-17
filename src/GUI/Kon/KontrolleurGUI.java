@@ -14,15 +14,18 @@ import java.awt.event.ActionListener;
 
 public class KontrolleurGUI extends JFrame implements ActionListener {
     public static Kontrolleur currentUser;
-    private JButton SchwarzfahrtErfassen = new JButton();
-    private JButton SchwarzfahrerSuchen = new JButton();
-    private JButton Statistiken  = new JButton();
-    private JButton Profil = new JButton();
-    private JButton Einstellungen = new JButton();
-    private JButton Abmelden = new JButton();
+    public static JButton SchwarzfahrtErfassen = new JButton();
+    public static JButton SchwarzfahrerSuchen = new JButton();
+    public static JButton Statistiken  = new JButton();
+    public static JButton Profil = new JButton();
+    public static JButton Einstellungen = new JButton();
+    public static JButton Abmelden = new JButton();
 
 
     public KontrolleurGUI() {
+
+        enableButtons();
+
 
         currentUser = Foo.currentKontrolleur;
         // Panelmanagement
@@ -73,7 +76,7 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
             public void actionPerformed(ActionEvent e) {
 
                 SchwarzfahrtErfassenGUI.open();
-
+                SchwarzfahrtErfassen.setEnabled(false);
             }
         });
 
@@ -153,6 +156,12 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
 
                         ProfilGUI.openProfilGUI(getRootPane().getParent());
 
+                        if(!SchwarzfahrtErfassenGUI.isOpen){
+                            SchwarzfahrtErfassen.setEnabled(true);
+                        }
+
+
+
                     }
                 });
 
@@ -207,7 +216,7 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
 
                         dispose();
                         currentUser.abmelden();
-                        StartfensterGUI.startFenster();
+                        StartfensterGUI.startFenster(getRootPane().getParent());
 
                     }
                 });
@@ -243,7 +252,14 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
 
     }
 
-
+    public  void enableButtons(){
+        SchwarzfahrtErfassen.setEnabled(true);
+        SchwarzfahrerSuchen.setEnabled(true);
+        Statistiken.setEnabled(true);
+        Profil.setEnabled(true);
+        Einstellungen.setEnabled(true);
+        Abmelden.setEnabled(true);
+    }
 
     public static void openKonGUI(){
         Foo.getDirectoryData();

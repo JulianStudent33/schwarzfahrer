@@ -168,7 +168,7 @@ public class RegisterGUI extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                StartfensterGUI.startFenster();
+                StartfensterGUI.startFenster(getRootPane().getParent());
             }
         });
 
@@ -205,7 +205,7 @@ public class RegisterGUI extends JFrame{
                         }
                     } catch (IOException ex) {
                         dispose();
-                        StartfensterGUI.startFenster();
+                        StartfensterGUI.startFenster(getRootPane().getParent());
                         ex.printStackTrace();
                         throw new RuntimeException(ex);
                     }

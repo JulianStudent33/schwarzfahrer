@@ -19,12 +19,12 @@ import static src.Foo.*;
 public class SachbearbeiterGUI extends JFrame implements ActionListener {
 
     public static Sachbearbeiter currentUser;
-    private JButton Kachel1 = new JButton();
-    private JButton Kachel2 = new JButton();
-    private JButton Statistiken  = new JButton();
-    private JButton Profil = new JButton();
-    private JButton Einstellungen = new JButton();
-    private JButton Abmelden = new JButton();
+    public static JButton Kachel1 = new JButton();
+    public static JButton Kachel2 = new JButton();
+    public static JButton Statistiken  = new JButton();
+    public static JButton Profil = new JButton();
+    public static JButton Einstellungen = new JButton();
+    public static JButton Abmelden = new JButton();
 
 
 
@@ -219,7 +219,7 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
 
                 dispose();
                 currentUser.abmelden();
-                StartfensterGUI.startFenster();
+                StartfensterGUI.startFenster(getRootPane().getParent());
 
 
             }
@@ -256,6 +256,14 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
 
     }
 
+    public  void enableButtons(){
+        Kachel1.setEnabled(true);
+        Kachel2.setEnabled(true);
+        Statistiken.setEnabled(true);
+        Profil.setEnabled(true);
+        Einstellungen.setEnabled(true);
+        Abmelden.setEnabled(true);
+    }
     @Override
     public void actionPerformed(ActionEvent e) {
 

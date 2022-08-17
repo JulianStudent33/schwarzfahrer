@@ -2,6 +2,7 @@ package src.GUI.Admin;
 import org.w3c.dom.Text;
 import src.Foo;
 import src.PersFile;
+import src.roles.Administrator;
 import src.roles.Kontrolleur;
 import src.roles.Sachbearbeiter;
 
@@ -17,8 +18,7 @@ import java.util.Vector;
 
 public class MitarbeiterVerwaltenGUI extends JFrame implements ActionListener {
 
-    String[] mitarbeiter = {"Jürgen","Hans","Peter Ulllrich","Hönnoblatt","Michael Wipprecht mhm","Evgenimehr","Jürgen","Hans","Peter Ulllrich","Hönnoblatt","Michael Wipprecht mhm","Evgenimehr","Jürgen","Hans","Peter Ulllrich","Hönnoblatt","Michael Wipprecht mhm","Evgenimehr","Jürgen","Hans","Peter Ulllrich","Hönnoblatt","Michael Wipprecht mhm","Evgenimehr","Jürgen","Hans","Peter Ulllrich","Hönnoblatt","Michael Wipprecht mhm","Evgenimehr","Jürgen","Hans","Peter Ulllrich","Hönnoblatt","Michael Wipprecht mhm","Evgenimehr"};
-    String[] mitarbeitera;
+    String[] mitarbeiter;
     final DefaultListModel<String> model = new DefaultListModel<>();
     final JList<String> list = new JList<>(model);
     JScrollPane scrollpane = new JScrollPane(list);
@@ -29,6 +29,7 @@ public class MitarbeiterVerwaltenGUI extends JFrame implements ActionListener {
 
      public MitarbeiterVerwaltenGUI(){
 
+        getMitarbeiter();
         for (int i = 0; i< mitarbeiter.length;i++){
             model.addElement(String.valueOf(mitarbeiter[i]));
         }
@@ -114,7 +115,7 @@ public class MitarbeiterVerwaltenGUI extends JFrame implements ActionListener {
 
          this.setSize(500,700);
          this.setTitle("Mitarbeiter verwalten");
-         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
          this.setResizable(false);
          this.setLocationRelativeTo(null);
          this.setVisible(true);
@@ -124,8 +125,13 @@ public class MitarbeiterVerwaltenGUI extends JFrame implements ActionListener {
              public void actionPerformed(ActionEvent event) {
                  ListSelectionModel selmodel = list.getSelectionModel();
                  int index = selmodel.getMinSelectionIndex();
-                 if (index >= 0)
+                 if (index >= 0){
                      model.remove(index);
+                 }
+                 if (index == 0){
+                     System.out.println("Index = 0");
+                 }
+
              }
 
          });
@@ -134,6 +140,7 @@ public class MitarbeiterVerwaltenGUI extends JFrame implements ActionListener {
              @Override
              public void actionPerformed(ActionEvent e) {
                 dispose();
+                AdminGUI.MitarbeiterVerwalten.setEnabled(true);
              }
          });
 
@@ -155,15 +162,46 @@ public class MitarbeiterVerwaltenGUI extends JFrame implements ActionListener {
 
     }
 
-    public String[] getMitarbeitera() {
+    public void getMitarbeiter() {
         Foo.getDirectoryData();
-        int anzahlMitarbeiter = KontrolleurFileListe.size() + AdminFileListe.size() + SachbearbeiterFileListe.size();
+        int anzahlMitarbeiter = userCount;
         String[] stringArray = new String[anzahlMitarbeiter];
 
-        for (int i = 0; i < KontrolleurFileListe.size(); i++){
+        if (konCount>=1){
+            for (int i = 0; i < konCount; i++){
+                try {
+                    Kontrolleur k = (Kontrolleur) PersFile.laden(KontrolleurFileListe.get(i));
+                    System.out.println(k.getVorname());
+                    stringArray[i]  = k.getName() + ", " + k.getVorname() + " (" + k.getMitarbeiternummer() + ")";
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                } catch (ClassNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
+
+            }
+        }
+
+        if (SachbearbeiterFileListe.size()>=1){
+            for (int i = konCount; i < sbCount + konCount; i++){
+                try {
+                    Sachbearbeiter s = (Sachbearbeiter) PersFile.laden(SachbearbeiterFileListe.get(i-konCount));
+                    System.out.println(s.getVorname());
+                    stringArray[i] = s.getName() + ", " + s.getVorname() + " (" + s.getMitarbeiternummer() + ")";
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                } catch (ClassNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
+
+            }
+        }
+
+        for (int i = konCount + sbCount; i < userCount; i++){
             try {
-                Kontrolleur k = (Kontrolleur) PersFile.laden(KontrolleurFileListe.get(i));
-                stringArray[i]  = k.getName() + ", " + k.getVorname() + " (" + k.getMitarbeiternummer() + ")";
+                Administrator a = (Administrator) PersFile.laden(AdminFileListe.get(i-konCount-sbCount));
+                System.out.println(a.getVorname());
+                stringArray[i] = a.getName() + ", " + a.getVorname() + " (" + a.getMitarbeiternummer() + ")";
             } catch (IOException e) {
                 throw new RuntimeException(e);
             } catch (ClassNotFoundException e) {
@@ -171,31 +209,11 @@ public class MitarbeiterVerwaltenGUI extends JFrame implements ActionListener {
             }
 
         }
-        for (int i = KontrolleurFileListe.size(); i < SachbearbeiterFileListe.size()+ KontrolleurFileListe.size(); i++){
-            try {
-               Sachbearbeiter s = (Sachbearbeiter) PersFile.laden(SachbearbeiterFileListe.get(i));
-                stringArray[i] = s.getName() + ", " + s.getVorname() + " (" + s.getMitarbeiternummer() + ")";
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
-            }
 
-        }
-        for (int i = KontrolleurFileListe.size() + SachbearbeiterFileListe.size(); i < anzahlMitarbeiter; i++){
-            try {
-                Sachbearbeiter s = (Sachbearbeiter) PersFile.laden(SachbearbeiterFileListe.get(i));
-                stringArray[i] = s.getName() + ", " + s.getVorname() + " (" + s.getMitarbeiternummer() + ")";
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
-            }
+        this.mitarbeiter = stringArray;
 
-        }
-
-        return stringArray;
-
+    }
+    public void deleteMitarbeiter(){
 
     }
 }

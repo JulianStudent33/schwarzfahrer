@@ -1,24 +1,32 @@
 package src.GUI;
 
 import src.Foo;
+import src.GUI.Kon.KontrolleurGUI;
+import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
 import src.GUI.elements.PlaceholderPasswordField;
 import src.GUI.elements.PlaceholderTextField;
-import src.Main;
 import src.nickcode.pass;
 import src.GUI.elements.*;
+import src.roles.Kontrolleur;
+import src.roles.Sachbearbeiter;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 import static src.Foo.*;
-import static src.Main.test;
+import static src.Main.colorchange;
 
 public class RegisterWindow extends JFrame {
 
@@ -50,16 +58,16 @@ public class RegisterWindow extends JFrame {
     JButton reg = new JButton();
 
     //Konstruktor
-    public RegisterWindow() {
+    public RegisterWindow(Container parent) {
 
         // Erneuter Aufruf des L&F sodass bei Rückgang auf vorheriges Fenster, das L&F bestehen bleibt
 
 
         // Start des Fensters mit der void Methode frame()
-        frame();
+        frame(parent);
     }
 
-    private void frame() {
+    private void frame(Container parent) {
 
 
         rollenBox.addItem(rollen[0]);
@@ -132,9 +140,13 @@ public class RegisterWindow extends JFrame {
 
         // Top Panel Textfelder
         // bname anpassungen
-        bname.setBorder(null);
+        Border border = bname.getBorder();
+        Border margin = new EmptyBorder(0,5,0,0);
+
+
+        bname.setBorder(new CompoundBorder(border, margin));
         bname.setForeground(dark);
-        bname.setBackground(white);
+        bname.setBackground(whitebg);
         bname.setCaretColor(dark);
         bname.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         bname.setSelectedTextColor(dark);
@@ -143,10 +155,10 @@ public class RegisterWindow extends JFrame {
         //bname.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Benutzername");
 
         // name anpassungen
-        name.setBorder(null);
+        name.setBorder(new CompoundBorder(border, margin));
         String focus = name.getText();
         name.setForeground(dark);
-        name.setBackground(white);
+        name.setBackground(whitebg);
         name.setCaretColor(dark);
         name.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         name.setSelectedTextColor(dark);
@@ -156,7 +168,7 @@ public class RegisterWindow extends JFrame {
         // vname anpassungen
         vname.setBorder(null);
         vname.setForeground(dark);
-        vname.setBackground(white);
+        vname.setBackground(whitebg);
         vname.setCaretColor(dark);
         vname.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         vname.setSelectedTextColor(dark);
@@ -166,7 +178,7 @@ public class RegisterWindow extends JFrame {
         // Mid Panel Management
         // Rolle Auswahlmenü
         // Auswahlmöglichkeiten
-        if(test) {
+        if(colorchange) {
             Color[] colorrollen = {Grey,Grey,Grey};
             ComboBoxRenderer renderer = new ComboBoxRenderer(rollenBox);
             renderer.setColors(colorrollen);
@@ -175,7 +187,7 @@ public class RegisterWindow extends JFrame {
         }
 
         rollenBox.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
-        rollenBox.setBackground(white);
+        rollenBox.setBackground(whitebg);
         rollenBox.setForeground(notSoDark);
         rollenBox.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         rollenBox.setFocusable(false);
@@ -185,7 +197,7 @@ public class RegisterWindow extends JFrame {
 
         //gender.setPrototypeDisplayValue("XXXXXXXXXXXX");
         genderBox.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
-        genderBox.setBackground(white);
+        genderBox.setBackground(whitebg);
         genderBox.setForeground(notSoDark);
         genderBox.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         genderBox.setFocusable(false);
@@ -194,7 +206,7 @@ public class RegisterWindow extends JFrame {
         // Geburtsdatum Button
         dateButton.setText("Bitte Geburtsdatum auswählen*");
         dateButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
-        dateButton.setBackground(white);
+        dateButton.setBackground(whitebg);
         dateButton.setForeground(notSoDark);
         dateButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         dateButton.setFocusable(true);
@@ -209,7 +221,7 @@ public class RegisterWindow extends JFrame {
 
         final JComboBox<String> tage = new JComboBox<>(days);
         tage.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
-        tage.setBackground(white);
+        tage.setBackground(whitebg);
         tage.setForeground(dark);
         tage.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         tage.setFocusable(false);
@@ -220,7 +232,7 @@ public class RegisterWindow extends JFrame {
 
         final JComboBox<String> monat = new JComboBox<>(month);
         monat.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
-        monat.setBackground(white);
+        monat.setBackground(whitebg);
         monat.setForeground(dark);
         monat.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         monat.setFocusable(false);
@@ -239,7 +251,7 @@ public class RegisterWindow extends JFrame {
         // Jahrescombobox
         final JComboBox<String> jahr = new JComboBox<>(yearr);
         jahr.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
-        jahr.setBackground(white);
+        jahr.setBackground(whitebg);
         jahr.setForeground(dark);
         jahr.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         jahr.setFocusable(false);
@@ -249,7 +261,7 @@ public class RegisterWindow extends JFrame {
         // E-Mail Textfeld
         mail.setBorder(null);
         mail.setForeground(dark);
-        mail.setBackground(white);
+        mail.setBackground(whitebg);
         mail.setCaretColor(dark);
         mail.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         mail.setSelectedTextColor(dark);
@@ -258,7 +270,7 @@ public class RegisterWindow extends JFrame {
         // Telefonnumer Textfeld
         nummer.setBorder(null);
         nummer.setForeground(dark);
-        nummer.setBackground(white);
+        nummer.setBackground(whitebg);
         nummer.setCaretColor(dark);
         nummer.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         nummer.setSelectedTextColor(dark);
@@ -267,7 +279,7 @@ public class RegisterWindow extends JFrame {
         // PW Textfeld
         pw.setBorder(null);
         pw.setForeground(dark);
-        pw.setBackground(white);
+        pw.setBackground(whitebg);
         pw.setCaretColor(dark);
         pw.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         pw.setSelectedTextColor(dark);
@@ -276,7 +288,7 @@ public class RegisterWindow extends JFrame {
         // PW Bestätigen Textfeld
         pwb.setBorder(null);
         pwb.setForeground(dark);
-        pwb.setBackground(white);
+        pwb.setBackground(whitebg);
         pwb.setCaretColor(dark);
         pwb.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         pwb.setSelectedTextColor(dark);
@@ -291,7 +303,7 @@ public class RegisterWindow extends JFrame {
 
         reg.setText("Registrieren");
         reg.setBackground(hellb);
-        reg.setForeground(white);
+        reg.setForeground(whitebg);
         reg.setHorizontalTextPosition(JLabel.CENTER);
         reg.setVerticalTextPosition(JLabel.CENTER);
         reg.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
@@ -307,7 +319,7 @@ public class RegisterWindow extends JFrame {
         this.setTitle("Schwarzfahrer Projekt");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
-        this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(parent);
         this.setVisible(true);
         this.getContentPane().setBackground(dark);
 
@@ -355,7 +367,49 @@ public class RegisterWindow extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource()==reg) {
                     System.out.println("Nutzer anlegen wenn alles richtig und Hauptmenü der jeweiligen Rolle öffnen");
-                    pflichtAusgefüllt();
+                    if (pflichtAusgefüllt()){
+                        int rollenSelection;
+                        int[] date = Dateswitcher.datetonumber(dateButton.getText());
+                        if (rollenBox.getSelectedItem() == rollenBox.getItemAt(0)) {
+                            rollenSelection = 1; //
+                        } else {
+                            rollenSelection = 2;
+                        }
+
+
+
+
+                        try {
+
+                            switch (rollenSelection) {
+
+                                case 1:
+
+
+
+                                    Foo.currentKontrolleur = new Kontrolleur(bname.getText(), pw.getText(),
+                                            vname.getText(), name.getText(), genderBox.getSelectedItem().toString(),
+                                            nummer.getText(), mail.getText().toLowerCase(Locale.ROOT), date);
+                                    Foo.angemeldet = true;
+                                    dispose();
+                                    KontrolleurGUI.openKonGUI();
+                                    break;
+                                case 2:
+                                    Foo.currentSachbearbeiter = new Sachbearbeiter(bname.getText(), pw.getText(),
+                                            vname.getText(), name.getText(), genderBox.getSelectedItem().toString(),
+                                            nummer.getText(), mail.getText().toLowerCase(Locale.ROOT), date);
+                                    Foo.angemeldet = true;
+                                    dispose();
+                                    SachbearbeiterGUI.openSBGUI();
+                                    break;
+                            }
+                        } catch (IOException ex) {
+                            dispose();
+                            StartfensterGUI.startFenster(getRootPane().getParent());
+                            ex.printStackTrace();
+                            throw new RuntimeException(ex);
+                        }
+                    }
                 }
             }
         });
@@ -496,14 +550,8 @@ public class RegisterWindow extends JFrame {
                                     if (!bname.getText().isBlank()) {
                                         if (!Foo.userExistiertBereits(bname.getText())) {
                                             if (pass.passwordOk(pw.getText())) {
-                                                String pwConfirm = JOptionPane.showInputDialog("Bestätige dein Passwort");
-                                                if (pwConfirm.equals(pw.getText())) {
-                                                    JOptionPane.showMessageDialog(new JDialog(), "Passwort bestätigt");
 
-                                                    return true;
-                                                } else {
-                                                    JOptionPane.showMessageDialog(new JDialog(), "Keine Übereinstimmung!");
-                                                }
+                                                return true;
                                             } else {
                                                 JOptionPane.showMessageDialog(new JDialog(), "Passwort erfüllt nicht die formalen Bedingungen!");
                                             }
@@ -517,45 +565,94 @@ public class RegisterWindow extends JFrame {
             }
         }
         if (rollenBox.getItemCount() == 3) {
-            rollenBox.addRedFlashEffectWhiteField();
+            if(colorchange){
+                rollenBox.addRedFlashEffect();
+            } else {
+                rollenBox.addRedFlashEffectWhiteField();
+            }
+            
         }
         if (genderBox.getItemCount() == 4) {
-            genderBox.addRedFlashEffectWhiteField();
+            if(colorchange){
+                genderBox.addRedFlashEffect();
+            } else {
+                genderBox.addRedFlashEffectWhiteField();
+            }
         }
         if (vname.getText().isBlank()) {
-            vname.addRedFlashEffectWhiteField();
+            if(colorchange){
+                vname.addRedFlashEffect();
+            } else {
+                vname.addRedFlashEffectWhiteField();
+            }
         }
         if (name.getText().isBlank()) {
-            name.addRedFlashEffectWhiteField();
+            if(colorchange){
+                name.addRedFlashEffect();
+            } else {
+                name.addRedFlashEffectWhiteField();
+            }
         }
         if (dateButton.getText().isBlank()){
-            dateButton.addRedFlashEffectWhiteField();
+            if(colorchange){
+                dateButton.addRedFlashEffect();
+            } else {
+                dateButton.addRedFlashEffectWhiteField();
+            }
         }
         if (mail.getText().isBlank()) {
-            mail.addRedFlashEffectWhiteField();
+            if(colorchange){
+                mail.addRedFlashEffect();
+            } else {
+                mail.addRedFlashEffectWhiteField();
+            }
         }
         if (!mail.getText().contains("@")) {
             mail.setText("");
-            mail.addRedFlashEffectWhiteField();
+            if(colorchange){
+                mail.addRedFlashEffect();
+            } else {
+                mail.addRedFlashEffectWhiteField();
+            }
             mail.setPlaceholder("Bitte eine gültige E-Mail eingeben");
         }
         if (Foo.userExistiertBereits(bname.getText())) {
             bname.setText("");
-            bname.addRedFlashEffectWhiteField();
+            if(colorchange){
+                bname.addRedFlashEffect();
+            } else {
+                bname.addRedFlashEffectWhiteField();
+            }
             bname.setPlaceholder("Benutzername bereits vergeben");
         }
         if (bname.getText().isBlank()) {
-            bname.addRedFlashEffectWhiteField();
+            if(colorchange){
+                bname.addRedFlashEffect();
+            } else {
+                bname.addRedFlashEffectWhiteField();
+            }
         }
         if (!pass.passwordOk(pw.getText())) {
-            pw.addRedFlashEffectWhiteField();
+            if(colorchange){
+                pw.addRedFlashEffect();
+            } else {
+                pw.addRedFlashEffectWhiteField();
+            }
         }
         if (!pass.passwordOk(pw.getText())) {
-            pwb.addRedFlashEffectWhiteField();
+            if(colorchange){
+                pwb.addRedFlashEffect();
+            } else {
+                pwb.addRedFlashEffectWhiteField();
+            }
         }
         if (!pw.getText().equals(pwb.getText())) {
 
-            pwb.addRedFlashEffectWhiteField();
+            if(colorchange){
+                pwb.addRedFlashEffect();
+            } else {
+                pwb.addRedFlashEffectWhiteField();
+            }
         }
 
 
@@ -566,14 +663,14 @@ public class RegisterWindow extends JFrame {
 
 
 
-    public static void openRegisterGUI(){
+    public static void openRegisterGUI(Container parent){
 
         Foo.getDirectoryData();
-        RegisterWindow gui = new RegisterWindow();
+        RegisterWindow gui = new RegisterWindow(parent);
 
     }
 
     public static void main(String[] args) {
-        openRegisterGUI();
+        openRegisterGUI(null);
     }
 }

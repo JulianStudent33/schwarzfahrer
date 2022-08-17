@@ -38,8 +38,9 @@ public class Administrator extends Mitarbeiter{
         System.out.println("Administrator erstellt.");
     }
     public Administrator(String benutzername, String passwort) throws IOException {
+        Foo.adminCount +=1;
         this.isAdmin = true;
-        this.mitarbeiternummer = "A" + Foo.adminCount++;
+        this.mitarbeiternummer = "A" + Foo.adminCount;
         this.benutzername = benutzername;
         this.passwort = passwort;
         this.userFile = Path.of
@@ -47,7 +48,6 @@ public class Administrator extends Mitarbeiter{
         System.out.println(this.benutzername);
         createUserFile();
         System.out.println("Created Admin mit Benutzername " + benutzername + " und mitarbeiternummer " + mitarbeiternummer);
-        System.out.println("Gespeichert: " + this.userFile);
     }
 
         private void benutzerSuchen(){
