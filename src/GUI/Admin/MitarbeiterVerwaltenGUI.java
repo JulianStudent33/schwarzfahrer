@@ -164,13 +164,14 @@ public class MitarbeiterVerwaltenGUI extends JFrame implements ActionListener {
 
     public void getMitarbeiter() {
         Foo.getDirectoryData();
-        int anzahlMitarbeiter = KontrolleurFileListe.size() + AdminFileListe.size() + SachbearbeiterFileListe.size();
+        int anzahlMitarbeiter = userCount;
         String[] stringArray = new String[anzahlMitarbeiter];
 
-        if (KontrolleurFileListe.size()>=1){
-            for (int i = 0; i < KontrolleurFileListe.size(); i++){
+        if (konCount>=1){
+            for (int i = 0; i < konCount; i++){
                 try {
                     Kontrolleur k = (Kontrolleur) PersFile.laden(KontrolleurFileListe.get(i));
+                    System.out.println(k.getVorname());
                     stringArray[i]  = k.getName() + ", " + k.getVorname() + " (" + k.getMitarbeiternummer() + ")";
                 } catch (IOException e) {
                     throw new RuntimeException(e);
@@ -182,9 +183,10 @@ public class MitarbeiterVerwaltenGUI extends JFrame implements ActionListener {
         }
 
         if (SachbearbeiterFileListe.size()>=1){
-            for (int i = KontrolleurFileListe.size(); i < SachbearbeiterFileListe.size()+ KontrolleurFileListe.size(); i++){
+            for (int i = konCount; i < sbCount + konCount; i++){
                 try {
-                    Sachbearbeiter s = (Sachbearbeiter) PersFile.laden(SachbearbeiterFileListe.get(i));
+                    Sachbearbeiter s = (Sachbearbeiter) PersFile.laden(SachbearbeiterFileListe.get(i-konCount));
+                    System.out.println(s.getVorname());
                     stringArray[i] = s.getName() + ", " + s.getVorname() + " (" + s.getMitarbeiternummer() + ")";
                 } catch (IOException e) {
                     throw new RuntimeException(e);
@@ -195,9 +197,10 @@ public class MitarbeiterVerwaltenGUI extends JFrame implements ActionListener {
             }
         }
 
-        for (int i = KontrolleurFileListe.size() + SachbearbeiterFileListe.size(); i < anzahlMitarbeiter; i++){
+        for (int i = konCount + sbCount; i < userCount; i++){
             try {
-                Administrator a = (Administrator) PersFile.laden(AdminFileListe.get(i));
+                Administrator a = (Administrator) PersFile.laden(AdminFileListe.get(i-konCount-sbCount));
+                System.out.println(a.getVorname());
                 stringArray[i] = a.getName() + ", " + a.getVorname() + " (" + a.getMitarbeiternummer() + ")";
             } catch (IOException e) {
                 throw new RuntimeException(e);

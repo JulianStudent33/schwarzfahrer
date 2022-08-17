@@ -44,7 +44,7 @@ public class Main {
 
             public void run() {
                 //deleteDirs();
-                RegisterWindow.openRegisterGUI();
+
 
 
 

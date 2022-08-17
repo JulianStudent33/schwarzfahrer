@@ -1,6 +1,7 @@
 package src.GUI;
 
 import src.Foo;
+import src.GUI.Admin.AdminGUI;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -271,6 +272,7 @@ public class StatistikenGUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
+
             }
         });
 

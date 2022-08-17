@@ -190,7 +190,7 @@ public class StartfensterGUI extends JFrame implements ActionListener {
             }else{
                 System.out.println("Öffne Register-Window");
                 dispose();
-                RegisterGUI.register();
+                RegisterWindow.openRegisterGUI();
             }
         } else if (e.getSource()==anm) {
             System.out.println("Öffne Login-Window");

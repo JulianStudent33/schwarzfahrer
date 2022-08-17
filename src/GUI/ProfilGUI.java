@@ -113,11 +113,18 @@ public class ProfilGUI extends JFrame implements ActionListener {
         Telefonnummer.setText("Die Variable 8");
 
 
-        AbbrechenButton.addActionListener(this);
         AbbrechenButton.setBackground(hellb);
         AbbrechenButton.setForeground(white);
         AbbrechenButton.setText("Abbrechen");
         AbbrechenButton.setBounds(225,20,100,60);
+
+        AbbrechenButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+            }
+        });
+
 
         AngabenAendern.addActionListener(this);
         AngabenAendern.setBackground(dunkelb);
