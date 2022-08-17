@@ -1,11 +1,15 @@
 package src.GUI;
 
 import src.Foo;
+import src.GUI.Kon.KontrolleurGUI;
+import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
 import src.GUI.elements.PlaceholderPasswordField;
 import src.GUI.elements.PlaceholderTextField;
 import src.Main;
 import src.nickcode.pass;
 import src.GUI.elements.*;
+import src.roles.Kontrolleur;
+import src.roles.Sachbearbeiter;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,9 +17,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 import static src.Foo.*;
 import static src.Main.test;
@@ -355,7 +361,49 @@ public class RegisterWindow extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource()==reg) {
                     System.out.println("Nutzer anlegen wenn alles richtig und Hauptmenü der jeweiligen Rolle öffnen");
-                    pflichtAusgefüllt();
+                    if (pflichtAusgefüllt()){
+                        int rollenSelection;
+                        int[] date = Dateswitcher.datetonumber(dateButton.getText());
+                        if (rollenBox.getSelectedItem() == rollenBox.getItemAt(0)) {
+                            rollenSelection = 1; //
+                        } else {
+                            rollenSelection = 2;
+                        }
+
+
+
+
+                        try {
+
+                            switch (rollenSelection) {
+
+                                case 1:
+
+
+
+                                    Foo.currentKontrolleur = new Kontrolleur(bname.getText(), pw.getText(),
+                                            vname.getText(), name.getText(), genderBox.getSelectedItem().toString(),
+                                            nummer.getText(), mail.getText().toLowerCase(Locale.ROOT), date);
+                                    Foo.angemeldet = true;
+                                    dispose();
+                                    KontrolleurGUI.openKonGUI();
+                                    break;
+                                case 2:
+                                    Foo.currentSachbearbeiter = new Sachbearbeiter(bname.getText(), pw.getText(),
+                                            vname.getText(), name.getText(), genderBox.getSelectedItem().toString(),
+                                            nummer.getText(), mail.getText().toLowerCase(Locale.ROOT), date);
+                                    Foo.angemeldet = true;
+                                    dispose();
+                                    SachbearbeiterGUI.openSBGUI();
+                                    break;
+                            }
+                        } catch (IOException ex) {
+                            dispose();
+                            StartfensterGUI.startFenster();
+                            ex.printStackTrace();
+                            throw new RuntimeException(ex);
+                        }
+                    }
                 }
             }
         });
@@ -496,14 +544,8 @@ public class RegisterWindow extends JFrame {
                                     if (!bname.getText().isBlank()) {
                                         if (!Foo.userExistiertBereits(bname.getText())) {
                                             if (pass.passwordOk(pw.getText())) {
-                                                String pwConfirm = JOptionPane.showInputDialog("Bestätige dein Passwort");
-                                                if (pwConfirm.equals(pw.getText())) {
-                                                    JOptionPane.showMessageDialog(new JDialog(), "Passwort bestätigt");
 
-                                                    return true;
-                                                } else {
-                                                    JOptionPane.showMessageDialog(new JDialog(), "Keine Übereinstimmung!");
-                                                }
+                                                return true;
                                             } else {
                                                 JOptionPane.showMessageDialog(new JDialog(), "Passwort erfüllt nicht die formalen Bedingungen!");
                                             }

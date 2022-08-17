@@ -1,7 +1,9 @@
 package src.GUI.Admin;
 import src.Foo;
 import src.GUI.EinstellungenGUI;
+import src.GUI.Kon.Kachel2;
 import src.GUI.ProfilGUI;
+import src.GUI.Sachbearbeiter.Kachel1;
 import src.GUI.StartfensterGUI;
 import src.GUI.StatistikenGUI;
 import src.roles.Administrator;
@@ -16,16 +18,18 @@ import static src.Foo.*;
 public class AdminGUI extends JFrame implements ActionListener {
 
     public static Administrator currentUser;
-    private JButton AdminAnlegen = new JButton();
-    private JButton MitarbeiterVerwalten = new JButton();
-    private JButton Statistiken = new JButton();
-    private JButton Profil = new JButton();
-    private JButton Einstellungen = new JButton();
-    private JButton Abmelden = new JButton();
+    public static JButton AdminAnlegen = new JButton();
+    public static JButton MitarbeiterVerwalten = new JButton();
+    public static JButton Statistiken = new JButton();
+    public static JButton Profil = new JButton();
+    public static JButton Einstellungen = new JButton();
+    public static JButton Abmelden = new JButton();
 
 
 
     public AdminGUI(){
+
+        enableButtons();
 
         currentUser = Foo.currentAdmin;
         // Panelmanagement
@@ -76,7 +80,7 @@ public class AdminGUI extends JFrame implements ActionListener {
             public void actionPerformed(ActionEvent e) {
 
                 AdminAnlegenGUI.openAdminAnlegenGUI();
-
+                AdminAnlegen.setEnabled(false);
             }
         });
 
@@ -102,7 +106,7 @@ public class AdminGUI extends JFrame implements ActionListener {
             public void actionPerformed(ActionEvent e) {
 
                 MitarbeiterVerwaltenGUI.openMitarbeiterVerwaltenGUI();
-
+                MitarbeiterVerwalten.setEnabled(false);
             }
         });
 
@@ -130,7 +134,7 @@ public class AdminGUI extends JFrame implements ActionListener {
             public void actionPerformed(ActionEvent e) {
 
                 StatistikenGUI.openStatistikenGUI();
-
+                Statistiken.setEnabled(false);
             }
         });
 
@@ -156,7 +160,7 @@ public class AdminGUI extends JFrame implements ActionListener {
             public void actionPerformed(ActionEvent e) {
 
                 ProfilGUI.openProfilGUI(getRootPane().getParent());
-
+                Profil.setEnabled(false);
             }
         });
 
@@ -183,7 +187,7 @@ public class AdminGUI extends JFrame implements ActionListener {
             public void actionPerformed(ActionEvent e) {
 
                EinstellungenGUI.openEinstellungenGUI(getRootPane().getParent());
-
+                Einstellungen.setEnabled(false);
             }
         });
 
@@ -244,6 +248,16 @@ public class AdminGUI extends JFrame implements ActionListener {
         // Add für gesamte Panels
         this.add(gridpanel, BorderLayout.CENTER);
         this.add(Text, BorderLayout.NORTH);
+    }
+
+    //Methoden
+    public  void enableButtons(){
+        AdminAnlegen.setEnabled(true);
+        MitarbeiterVerwalten.setEnabled(true);
+        Statistiken.setEnabled(true);
+        Profil.setEnabled(true);
+        Einstellungen.setEnabled(true);
+        Abmelden.setEnabled(true);
     }
 
     public static void openAdminGUI(){

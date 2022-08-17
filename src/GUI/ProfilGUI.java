@@ -152,7 +152,7 @@ public class ProfilGUI extends JFrame implements ActionListener {
 
         Frame.setSize(400, 800);
         Frame.setTitle("Profil");
-        Frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        Frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         Frame.setResizable(false);
         Frame.setVisible(true);
 

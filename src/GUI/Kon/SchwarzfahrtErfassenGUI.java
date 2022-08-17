@@ -16,6 +16,7 @@ import java.util.Calendar;
 
 public class SchwarzfahrtErfassenGUI extends JFrame{
 
+    public static boolean isOpen = false;
     private static Kontrolleur currentUser;
     private static Schwarzfahrer currentSf;
     private JPanel mainPanel;
@@ -56,7 +57,8 @@ public class SchwarzfahrtErfassenGUI extends JFrame{
         int width = 1000;
         int height = 400;
         this.setBounds(center.x - width / 2, center.y - height / 2, width, height);
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+
         setResizable(false);
 
         try {
@@ -208,6 +210,7 @@ public class SchwarzfahrtErfassenGUI extends JFrame{
                         dispose();
                         throw new RuntimeException(ex);
                     }
+                    KontrolleurGUI.SchwarzfahrtErfassen.setEnabled(true);
                     dispose();
                 }else{
                    // OkayWindow.openOkayWindow("Es wurden nicht alle Pflichtfelder ausgefüllt");
@@ -249,6 +252,7 @@ public class SchwarzfahrtErfassenGUI extends JFrame{
             public void actionPerformed(ActionEvent e) {
 
                 currentSf = null;
+                KontrolleurGUI.SchwarzfahrtErfassen.setEnabled(true);
                 dispose();
             }
         });
@@ -369,6 +373,7 @@ public class SchwarzfahrtErfassenGUI extends JFrame{
     }
     public static void open() {
         Foo.getDirectoryData();
+        isOpen = true;
         SchwarzfahrtErfassenGUI gui = new SchwarzfahrtErfassenGUI();
     }
 

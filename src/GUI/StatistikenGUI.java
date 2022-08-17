@@ -239,7 +239,7 @@ public class StatistikenGUI extends JFrame implements ActionListener {
         // Gesamt Window
         this.setSize(900,550);
         this.setTitle("Statistiken");
-        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setVisible(true);

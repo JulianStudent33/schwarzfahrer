@@ -1,6 +1,7 @@
 package src.roles;
 
 import src.Foo;
+import src.GUI.elements.Dateswitcher;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -33,9 +34,10 @@ public class Sachbearbeiter extends Mitarbeiter{
         System.out.println("Created Sachbearbeiter mit Benutzername " + benutzername + " und mitarbeiternummer " + mitarbeiternummer);
         System.out.println("Gespeichert: " + this.userFile);
     }
-    public Sachbearbeiter(String benutzername, String passwort, String vorname, String nachname, String geschlecht, String telefonnummer, String email) throws IOException {
+    public Sachbearbeiter(String benutzername, String passwort, String vorname, String nachname, String geschlecht, String telefonnummer, String email, int[] date) throws IOException {
+        Foo.sbCount+=1;
         this.isSachbearbeiter = true;
-        this.mitarbeiternummer = "S" + Foo.sbCount++;
+        this.mitarbeiternummer = "S" + Foo.sbCount;
         this.benutzername = benutzername;
         this.passwort = passwort;
         this.vorname = vorname;
@@ -43,6 +45,7 @@ public class Sachbearbeiter extends Mitarbeiter{
         this.geschlecht = geschlecht;
         this.telefonnummer = telefonnummer;
         this.email = email;
+        this.geburtsdatum = Dateswitcher.numbertodate(date[0], date[1], date[2]);
         this.userFile = Path.of
                 (Foo.sbPath + Foo.fileSeperator + benutzername +  ".mb").toFile();
         display();
