@@ -85,19 +85,22 @@ public class Foo {
 
     public static Color dark;
     public static Color white;
+    public static Color whitebg;
     public static Color notSoDark;
     public static Color darky = new Color(60,60,60);
 
-    public static Color Grey = new Color(100, 100, 100);
+    public static Color Grey = new Color(150, 150, 150);
     public static Color hellb = new Color(133, 179, 255);
     public static Color dunkelb = new Color(74, 142, 255);
     public static void colormode(boolean colors) {
         if (colors) {
             white = new Color(44, 44, 44);
+            whitebg = new Color(240,240,240);
             notSoDark = new Color(200, 200, 200);
             dark = new Color(255, 255, 255);
         } else {
             dark = new Color(44, 44, 44);
+            whitebg = dark;
             notSoDark = new Color(77, 77, 77);
             white = new Color(255, 255, 255);
         }

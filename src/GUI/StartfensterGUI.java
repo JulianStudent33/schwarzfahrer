@@ -59,7 +59,7 @@ public class StartfensterGUI extends JFrame implements ActionListener {
         regb.setLayout(null);
 
         // Trennlinie
-        Border border = BorderFactory.createLineBorder(Color.white, 20);
+        Border border = BorderFactory.createLineBorder(white, 20);
         JSeparator trenn = new JSeparator();
         trenn.setForeground(white);
         trenn.setPreferredSize(new Dimension(350,10));
