@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.Locale;
 
 import static src.Foo.*;
-import static src.Main.test;
+import static src.Main.colorchange;
 
 public class RegisterWindow extends JFrame {
 
@@ -172,7 +172,7 @@ public class RegisterWindow extends JFrame {
         // Mid Panel Management
         // Rolle Auswahlmenü
         // Auswahlmöglichkeiten
-        if(test) {
+        if(colorchange) {
             Color[] colorrollen = {Grey,Grey,Grey};
             ComboBoxRenderer renderer = new ComboBoxRenderer(rollenBox);
             renderer.setColors(colorrollen);
@@ -559,45 +559,94 @@ public class RegisterWindow extends JFrame {
             }
         }
         if (rollenBox.getItemCount() == 3) {
-            rollenBox.addRedFlashEffectWhiteField();
+            if(colorchange){
+                rollenBox.addRedFlashEffect();
+            } else {
+                rollenBox.addRedFlashEffectWhiteField();
+            }
+            
         }
         if (genderBox.getItemCount() == 4) {
-            genderBox.addRedFlashEffectWhiteField();
+            if(colorchange){
+                genderBox.addRedFlashEffect();
+            } else {
+                genderBox.addRedFlashEffectWhiteField();
+            }
         }
         if (vname.getText().isBlank()) {
-            vname.addRedFlashEffectWhiteField();
+            if(colorchange){
+                vname.addRedFlashEffect();
+            } else {
+                vname.addRedFlashEffectWhiteField();
+            }
         }
         if (name.getText().isBlank()) {
-            name.addRedFlashEffectWhiteField();
+            if(colorchange){
+                name.addRedFlashEffect();
+            } else {
+                name.addRedFlashEffectWhiteField();
+            }
         }
         if (dateButton.getText().isBlank()){
-            dateButton.addRedFlashEffectWhiteField();
+            if(colorchange){
+                dateButton.addRedFlashEffect();
+            } else {
+                dateButton.addRedFlashEffectWhiteField();
+            }
         }
         if (mail.getText().isBlank()) {
-            mail.addRedFlashEffectWhiteField();
+            if(colorchange){
+                mail.addRedFlashEffect();
+            } else {
+                mail.addRedFlashEffectWhiteField();
+            }
         }
         if (!mail.getText().contains("@")) {
             mail.setText("");
-            mail.addRedFlashEffectWhiteField();
+            if(colorchange){
+                mail.addRedFlashEffect();
+            } else {
+                mail.addRedFlashEffectWhiteField();
+            }
             mail.setPlaceholder("Bitte eine gültige E-Mail eingeben");
         }
         if (Foo.userExistiertBereits(bname.getText())) {
             bname.setText("");
-            bname.addRedFlashEffectWhiteField();
+            if(colorchange){
+                bname.addRedFlashEffect();
+            } else {
+                bname.addRedFlashEffectWhiteField();
+            }
             bname.setPlaceholder("Benutzername bereits vergeben");
         }
         if (bname.getText().isBlank()) {
-            bname.addRedFlashEffectWhiteField();
+            if(colorchange){
+                bname.addRedFlashEffect();
+            } else {
+                bname.addRedFlashEffectWhiteField();
+            }
         }
         if (!pass.passwordOk(pw.getText())) {
-            pw.addRedFlashEffectWhiteField();
+            if(colorchange){
+                pw.addRedFlashEffect();
+            } else {
+                pw.addRedFlashEffectWhiteField();
+            }
         }
         if (!pass.passwordOk(pw.getText())) {
-            pwb.addRedFlashEffectWhiteField();
+            if(colorchange){
+                pwb.addRedFlashEffect();
+            } else {
+                pwb.addRedFlashEffectWhiteField();
+            }
         }
         if (!pw.getText().equals(pwb.getText())) {
 
-            pwb.addRedFlashEffectWhiteField();
+            if(colorchange){
+                pwb.addRedFlashEffect();
+            } else {
+                pwb.addRedFlashEffectWhiteField();
+            }
         }
 
 
