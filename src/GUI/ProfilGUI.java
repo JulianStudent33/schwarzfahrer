@@ -24,8 +24,8 @@ public class ProfilGUI extends JFrame implements ActionListener {
     JPanel Textfelder = new JPanel();
     JPanel Buttons = new JPanel();
     PlaceholderTextField Benutzername = new PlaceholderTextField();
-    PlaceholderTextField Name = new PlaceholderTextField();
     PlaceholderTextField Vorname = new PlaceholderTextField();
+    PlaceholderTextField Nachname = new PlaceholderTextField();
     PlaceholderTextField Gender = new PlaceholderTextField();
     PlaceholderTextField Rolle = new PlaceholderTextField();
     PlaceholderTextField Geburtstag = new PlaceholderTextField();
@@ -62,11 +62,11 @@ public class ProfilGUI extends JFrame implements ActionListener {
         Benutzername.setBorder(new EmptyBorder(0,0,0,0));
         Benutzername.setText("Die Variable");
 
-        Name.setForeground(white);
-        Name.setBackground(dark);
-        Name.setFont(fontSmall);
-        Name.setBorder(new EmptyBorder(0,0,0,0));
-        Name.setText("Die Variable 2");
+        Nachname.setForeground(white);
+        Nachname.setBackground(dark);
+        Nachname.setFont(fontSmall);
+        Nachname.setBorder(new EmptyBorder(0,0,0,0));
+        Nachname.setText("Die Variable 2");
 
         Vorname.setForeground(white);
         Vorname.setBackground(dark);
@@ -123,8 +123,8 @@ public class ProfilGUI extends JFrame implements ActionListener {
         label.add(Text);
 
         Textfelder.add(Benutzername);
-        Textfelder.add(Name);
         Textfelder.add(Vorname);
+        Textfelder.add(Nachname);
         Textfelder.add(Gender);
         Textfelder.add(Rolle);
         Textfelder.add(Geburtstag);
