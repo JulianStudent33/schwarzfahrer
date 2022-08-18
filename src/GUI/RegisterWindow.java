@@ -56,6 +56,8 @@ public class RegisterWindow extends GUI_Mama {
     // Registrieren Button deklaration
     JButton reg = new JButton();
 
+    JButton abr = new JButton();
+
     //Konstruktor
     public RegisterWindow(GUI_Mama parent) {
 
@@ -115,16 +117,16 @@ public class RegisterWindow extends GUI_Mama {
 
         JPanel dMid = new JPanel();
         dMid.setBackground(dark);
-        dMid.setSize(401, 205);
+        dMid.setSize(401, 200);
         dMid.setLocation(92, 425);
         dMid.setLayout(new GridLayout(4, 1, 0, 20));
 
         // Panel für die Unterden Felder
         JPanel Bot = new JPanel();
         Bot.setBackground(dark);
-        Bot.setSize(300, 50);
-        Bot.setLocation(145, 655);
-        Bot.setLayout(new GridLayout());
+        Bot.setSize(400, 50);
+        Bot.setLocation(93, 700);
+        Bot.setLayout(new GridLayout(1,2,20,0));
 
         // Panel für den Fehlertext unterhalb der Textfelder
 
@@ -151,6 +153,16 @@ public class RegisterWindow extends GUI_Mama {
         label.setHorizontalAlignment(JLabel.CENTER);
         label.setVerticalAlignment(JLabel.CENTER);
         label.setBounds(-8, 0, 600, 100);
+
+        JLabel bed = new JLabel();
+        bed.setText("<html><body><center><p>Passwort benötigt: 6-15 Zeichen, mind. 1 Großbuchstabe,<br>mind. 1 Kleinbuchstabe und mind. 1 Zahl</p></center></body></html>");
+        bed.setForeground(Grey);
+        bed.setHorizontalTextPosition(JLabel.CENTER);
+        bed.setVerticalTextPosition(JLabel.CENTER);
+        bed.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
+        bed.setHorizontalAlignment(JLabel.CENTER);
+        bed.setVerticalAlignment(JLabel.CENTER);
+        bed.setBounds(100,560,400,200);
 
         // Top Panel Textfelder
         // bname anpassungen
@@ -331,7 +343,7 @@ public class RegisterWindow extends GUI_Mama {
         reg.setForeground(whitebg);
         reg.setHorizontalTextPosition(JLabel.CENTER);
         reg.setVerticalTextPosition(JLabel.CENTER);
-        reg.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
+        reg.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
         reg.setHorizontalAlignment(JLabel.CENTER);
         reg.setVerticalAlignment(JLabel.CENTER);
         reg.setFocusable(true);
@@ -339,8 +351,21 @@ public class RegisterWindow extends GUI_Mama {
         reg.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         reg.setBounds(140,-10,190,50);
 
+        abr.setText("Abbrechen");
+        abr.setBackground(notSoDark);
+        abr.setForeground(whitebg);
+        abr.setHorizontalTextPosition(JLabel.CENTER);
+        abr.setVerticalTextPosition(JLabel.CENTER);
+        abr.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
+        abr.setHorizontalAlignment(JLabel.CENTER);
+        abr.setVerticalAlignment(JLabel.CENTER);
+        abr.setFocusable(true);
+        abr.setBorderPainted(false);
+        abr.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        abr.setBounds(140,-10,190,50);
+
         // Hauptfenster
-        this.setSize(600,800);
+        this.setSize(600,820);
         this.setTitle("Schwarzfahrer Projekt");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
@@ -366,23 +391,21 @@ public class RegisterWindow extends GUI_Mama {
 
         Mid.add(mail);
 
-                /*
-        Mid.add(tage);
-        Mid.add(monat);
-        Mid.add(jahr);
-*/
         dMid.add(nummer);
         dMid.add(bname);
         dMid.add(pw);
         dMid.add(pwb);
+        dMid.add(bed);
 
         Bot.add(reg);
+        Bot.add(abr);
 
         // Add für vollständige Panel
         this.add(Text);
         this.add(Top);
         this.add(Mid);
         this.add(dMid);
+        this.add(bed);
         this.add(Bot);
         this.add(fix);
 
