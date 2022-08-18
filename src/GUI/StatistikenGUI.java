@@ -54,12 +54,6 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
 
 
 
-
-
-
-
-
-
         // Panelmanagement
         JPanel gridpanel = new JPanel();
         gridpanel.setBackground(dark);
@@ -284,6 +278,7 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
                 SachbearbeiterGUI.Statistiken.setEnabled(true);
                 KontrolleurGUI.Statistiken.setEnabled(true);
                 AdminGUI.Statistiken.setEnabled(true);
+                dispose();
             }
 
         });
