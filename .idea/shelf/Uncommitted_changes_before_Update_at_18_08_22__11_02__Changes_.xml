@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_Update_at_18_08_22,_11_02_[Changes]" date="1660813393027" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_08_22,_11_02_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 18.08.22, 11:02 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="Saves/loggedIN.save" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_08_22,_11_02_[Changes]/loggedIN.save" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="out/production/schwarzfahrer/Saves/loggedIN.save" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_08_22,_11_02_[Changes]/loggedIN1.save" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="out/production/schwarzfahrer/src/GUI/RegisterWindow$10.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_08_22,_11_02_[Changes]/RegisterWindow$10.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="out/production/schwarzfahrer/src/GUI/Coloradd.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_08_22,_11_02_[Changes]/Coloradd.class" />
+  </binary>
+</changelist>

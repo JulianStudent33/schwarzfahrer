@@ -1,0 +1,131 @@
+Index: src/GUI/Admin/AdminAnlegenGUI.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package src.GUI.Admin;\n\nimport src.Foo;\nimport src.GUI.firstRegistrationGUI;\n\nimport javax.swing.*;\n\npublic class AdminAnlegenGUI extends JFrame {\n\n    public static void openAdminAnlegenGUI(){\n        Foo.getDirectoryData();\n        AdminAnlegenGUI gui = new AdminAnlegenGUI();\n        //Abbild von firstRegistrationGUI?\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/GUI/Admin/AdminAnlegenGUI.java b/src/GUI/Admin/AdminAnlegenGUI.java
+--- a/src/GUI/Admin/AdminAnlegenGUI.java	(revision 82c8e28fd31b8551c7f5310cecedfaa1162f84a9)
++++ b/src/GUI/Admin/AdminAnlegenGUI.java	(date 1660812846966)
+@@ -1,15 +1,119 @@
+ package src.GUI.Admin;
+ 
+ import src.Foo;
++import src.GUI.elements.PlaceholderPasswordField;
++import src.GUI.elements.PlaceholderTextField;
+ import src.GUI.firstRegistrationGUI;
+ 
+ import javax.swing.*;
++import javax.swing.border.EmptyBorder;
++import java.awt.*;
++import java.awt.event.ActionEvent;
++import java.awt.event.ActionListener;
++
++import static src.Foo.*;
++
++public class AdminAnlegenGUI extends JFrame implements ActionListener {
++
++    JFrame Frame = new JFrame();
++    JPanel LabelPan = new JPanel();
++    JLabel Text = new JLabel();
++    JPanel TextfelderPan = new JPanel();
++    PlaceholderTextField BenutzernameFeld = new PlaceholderTextField();
++    PlaceholderPasswordField PasswortFeld = new PlaceholderPasswordField();
++    PlaceholderPasswordField PasswortBestaetigenFeld = new PlaceholderPasswordField();
++    JPanel ButtonsPan = new JPanel();
++    JButton AbbrechenButton = new JButton();
++    JButton AdminAnlegenButton = new JButton();
++
++    public AdminAnlegenGUI(){
++
++    LabelPan.setBackground(dark);
++    LabelPan.setPreferredSize(new Dimension(400,100));
++    LabelPan.setLayout(null);
++
++    TextfelderPan.setBackground(dark);
++    TextfelderPan.setPreferredSize(new Dimension(400,400));
++    TextfelderPan.setLayout(null);
++
++    ButtonsPan.setBackground(dark);
++    ButtonsPan.setPreferredSize(new Dimension(400, 200));
++    ButtonsPan.setLayout(null);
++
++    Text.setForeground(white);
++    Text.setFont(fontMedium);
++    Text.setHorizontalTextPosition(JLabel.CENTER);
++    Text.setVerticalTextPosition(JLabel.CENTER);
++    Text.setText("Admin anlegen");
++    Text.setVerticalAlignment(JLabel.CENTER);
++    Text.setHorizontalAlignment(JLabel.CENTER);
++    Text.setBounds(0,20,400,50);
++
++    BenutzernameFeld.setBackground(notSoDark);
++    BenutzernameFeld.setForeground(white);
++    BenutzernameFeld.setPlaceholder("Benutzername");
++    BenutzernameFeld.setFont(fontSmall);
++    BenutzernameFeld.setBounds(50,50,300,50);
++
++    PasswortFeld.setBackground(notSoDark);
++    PasswortFeld.setForeground(white);
++    PasswortFeld.setFont(fontSmall);
++    PasswortFeld.setPlaceholder("Passwort");
++    PasswortFeld.setBounds(50,120,300,50);
++
++    PasswortBestaetigenFeld.setBackground(notSoDark);
++    PasswortBestaetigenFeld.setForeground(white);
++    PasswortBestaetigenFeld.setFont(fontSmall);
++    PasswortBestaetigenFeld.setPlaceholder("Passwort bestätigen");
++    PasswortBestaetigenFeld.setBounds(50,190,300,50);
++
++    AbbrechenButton.setBackground(hellb);
++    AbbrechenButton.setForeground(white);
++    AbbrechenButton.setText("Abbrechen");
++    AbbrechenButton.setBounds(150,160,100,40);
++
++        AbbrechenButton.addActionListener(new ActionListener() {
++            @Override
++            public void actionPerformed(ActionEvent e) {
++                dispose();
++            }
++        });
++
++    AdminAnlegenButton.setBackground(dunkelb);
++    AdminAnlegenButton.setForeground(white);
++    AdminAnlegenButton.setText("Admin anlegen");
++    AdminAnlegenButton.setBounds(0,40,100,40);
++
++
++    LabelPan.add(Text);
+ 
+-public class AdminAnlegenGUI extends JFrame {
++    TextfelderPan.add(BenutzernameFeld);
++    TextfelderPan.add(PasswortFeld);
++    TextfelderPan.add(PasswortBestaetigenFeld);
+ 
++    ButtonsPan.add(AdminAnlegenButton);
++    ButtonsPan.add(AbbrechenButton);
++
++        add(LabelPan, BorderLayout.NORTH);
++        add(TextfelderPan, BorderLayout.CENTER);
++        add(ButtonsPan, BorderLayout.SOUTH);
++
++        setSize(400, 600);
++        setTitle("Admin anlegen");
++        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
++        setResizable(false);
++        setVisible(true);
++
++
++    }
+     public static void openAdminAnlegenGUI(){
+         Foo.getDirectoryData();
+         AdminAnlegenGUI gui = new AdminAnlegenGUI();
+         //Abbild von firstRegistrationGUI?
+     }
++
++    @Override
++    public void actionPerformed(ActionEvent e) {
++
++    }
+ }

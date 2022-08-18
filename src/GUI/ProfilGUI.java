@@ -33,11 +33,14 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
     JButton SpeichernButton = new JButton();
     JButton AbbrechenButton = new JButton();
     JButton AngabenAendern = new JButton();
+    JButton PasswortVergessenButton = new JButton();
     JLabel AngabenAendernLabel = new JLabel();
+    JLabel PasswortVergessenLabel = new JLabel();
+    String rollenString;
 
     public ProfilGUI(GUI_Mama parent){
 
-
+        setupGUI(parent, "ProfilGUI");
 
 
         //Panelmanagement
@@ -46,9 +49,10 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         label.setPreferredSize(new Dimension(400,100));
         label.setLayout(null);
 
-        Textfelder.setLayout(new BorderLayout());
+        Textfelder.setLayout(null);
         Textfelder.setBackground(dark);
-        Textfelder.setPreferredSize(new Dimension(400,500));
+        Textfelder.setPreferredSize(new Dimension(400,600));
+
 
         Buttons.setBackground(dark);
         Buttons.setPreferredSize(new Dimension(400,150));
@@ -65,63 +69,63 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         Benutzername.setBackground(dark);
         Benutzername.setFont(fontMedium);
         Benutzername.setEnabled(false);
-        Benutzername.setBounds(75,20,250,40);
-        Benutzername.setText("Benutzer");
+        Benutzername.setBounds(75,440,250,40);
+        Benutzername.setPlaceholder(currentUser.getBenutzername());
 
         Name.setForeground(white);
         Name.setBackground(dark);
         Name.setFont(fontMedium);
         Name.setEnabled(false);
         Name.setBounds(75,80,250,40);
-        Name.setText("Nachname");
+        Name.setPlaceholder("Nachname");
 
         Vorname.setForeground(white);
         Vorname.setBackground(dark);
         Vorname.setFont(fontMedium);
         Vorname.setEnabled(false);
-        Vorname.setBounds(75,140,250,40);
+        Vorname.setBounds(75,20,250,40);
         Vorname.setText("Vorname");
 
         Gender.setForeground(white);
         Gender.setBackground(dark);
         Gender.setFont(fontMedium);
         Gender.setEnabled(false);
-        Gender.setBounds(75,200,250,40);
+        Gender.setBounds(75,140,250,40);
         Gender.setText("Gender");
 
         Rolle.setForeground(white);
         Rolle.setBackground(dark);
         Rolle.setFont(fontMedium);
         Rolle.setEnabled(false);
-        Rolle.setBounds(75,260,250,40);
+        Rolle.setBounds(75,200,250,40);
         Rolle.setText("Rolle");
 
         Geburtstag.setForeground(white);
         Geburtstag.setBackground(dark);
         Geburtstag.setFont(fontMedium);
         Geburtstag.setEnabled(false);
-        Geburtstag.setBounds(75,320,250,40);
+        Geburtstag.setBounds(75,260,250,40);
         Geburtstag.setText("Geburtstag");
 
         EMail.setForeground(white);
         EMail.setBackground(dark);
         EMail.setFont(fontMedium);
         EMail.setEnabled(false);
-        EMail.setBounds(75,380,250,40);
+        EMail.setBounds(75,320,250,40);
         EMail.setText("E-Mail");
 
         Telefonnummer.setForeground(white);
         Telefonnummer.setBackground(dark);
         Telefonnummer.setFont(fontMedium);
         Telefonnummer.setEnabled(false);
-        Telefonnummer.setBounds(75,440,250,40);
+        Telefonnummer.setBounds(75,380,250,40);
         Telefonnummer.setText("Telefonnummer");
 
 
         AbbrechenButton.setBackground(hellb);
         AbbrechenButton.setForeground(white);
         AbbrechenButton.setText("Abbrechen");
-        AbbrechenButton.setBounds(225,20,100,40);
+        AbbrechenButton.setBounds(150,80,100,40);
 
         AngabenAendernLabel.setForeground(white);
         AngabenAendernLabel.setText("<html><body><p><center>Angaben <br>ändern?</center></p></body></html>");
@@ -133,6 +137,15 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         AngabenAendern.setBackground(dunkelb);
         AngabenAendern.add(AngabenAendernLabel);
         AngabenAendern.setBounds(75,20,100,40);
+
+        PasswortVergessenLabel.setForeground(white);
+        PasswortVergessenLabel.setText("<html><body><p><center>Passwort<br>vergessen?</center></p></body></html>");
+        PasswortVergessenLabel.setBorder(new EmptyBorder(0,0,18,13));
+
+        PasswortVergessenButton.addActionListener(this);
+        PasswortVergessenButton.setBackground(dunkelb);
+        PasswortVergessenButton.add(PasswortVergessenLabel);
+        PasswortVergessenButton.setBounds(225, 20, 100, 40);
 
 
         // Elemente zu Panels adden
@@ -150,6 +163,7 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
 
         Buttons.add(AbbrechenButton);
         Buttons.add(AngabenAendern);
+        Buttons.add(PasswortVergessenButton);
 
 
         // Panels zu Frame adden
@@ -165,7 +179,7 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         setLocationRelativeTo(parent);
         setResizable(false);
         setVisible(true);
-
+        setLocationRelativeTo(parent);
 
         SpeichernButton.addActionListener(new ActionListener() {
             @Override
@@ -180,6 +194,7 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         AbbrechenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 parentGUI.StartAutoLogout();
                 System.out.println("Starte AutoLogout für " + parentGUI.name);
                 SachbearbeiterGUI.Profil.setEnabled(true);
