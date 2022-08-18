@@ -32,6 +32,7 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
     PlaceholderTextField Telefonnummer = new PlaceholderTextField();
     JButton AbbrechenButton = new JButton();
     JButton AngabenAendern = new JButton();
+    JLabel AngabenAendernLabel = new JLabel();
 
     public ProfilGUI(Container parent){
         //Panelmanagement
@@ -42,7 +43,7 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
 
         Textfelder.setLayout(new BorderLayout());
         Textfelder.setBackground(dark);
-        Textfelder.setPreferredSize(new Dimension(300,400));
+        Textfelder.setPreferredSize(new Dimension(400,500));
 
         Buttons.setBackground(dark);
         Buttons.setPreferredSize(new Dimension(400,150));
@@ -51,71 +52,75 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         // Elemente
 
         Text.setForeground(white);
-        Text.setFont(fontMedium);
-        Text.setText("<html><body><p>Profil von <br>... </p></body></html>");
-        Text.setBounds(100,0,200,100);
+        Text.setFont(fontMediumMedium);
+        Text.setText("<html><body><center><p>Profil von <br>... </p></center></body></html>");
+        Text.setBounds(140,0,400,100);
 
         Benutzername.setForeground(white);
         Benutzername.setBackground(dark);
-        Benutzername.setFont(fontSmall);
-        Benutzername.setBorder(new EmptyBorder(0,0,0,0));
-        Benutzername.setBounds(20,20,200,20);
-        Benutzername.setText("Die Variable");
+        Benutzername.setFont(fontMedium);
+        Benutzername.setEnabled(false);
+        Benutzername.setBounds(75,20,250,40);
+        Benutzername.setText("Benutzer");
 
         Name.setForeground(white);
         Name.setBackground(dark);
-        Name.setFont(fontSmall);
-        Name.setBorder(new EmptyBorder(0,0,0,0));
-        Name.setBounds(20,40,200,20);
-        Name.setText("Die Variable 2");
+        Name.setFont(fontMedium);
+        Name.setEnabled(false);
+        Name.setBounds(75,80,250,40);
+        Name.setText("Nachname");
 
         Vorname.setForeground(white);
         Vorname.setBackground(dark);
-        Vorname.setFont(fontSmall);
-        Vorname.setBorder(new EmptyBorder(0,0,0,0));
-        Vorname.setBounds(20,60,200,20);
-        Vorname.setText("Die Variable 3");
+        Vorname.setFont(fontMedium);
+        Vorname.setEnabled(false);
+        Vorname.setBounds(75,140,250,40);
+        Vorname.setText("Vorname");
 
         Gender.setForeground(white);
         Gender.setBackground(dark);
-        Gender.setFont(fontSmall);
-        Gender.setBorder(new EmptyBorder(0,0,0,0));
-        Gender.setBounds(20,80,200,20);
-        Gender.setText("Die Variable 4");
+        Gender.setFont(fontMedium);
+        Gender.setEnabled(false);
+        Gender.setBounds(75,200,250,40);
+        Gender.setText("Gender");
 
         Rolle.setForeground(white);
         Rolle.setBackground(dark);
-        Rolle.setFont(fontSmall);
-        Rolle.setBorder(new EmptyBorder(0,0,0,0));
-        Rolle.setBounds(20,100,200,20);
-        Rolle.setText("Die Variable 5");
+        Rolle.setFont(fontMedium);
+        Rolle.setEnabled(false);
+        Rolle.setBounds(75,260,250,40);
+        Rolle.setText("Rolle");
 
         Geburtstag.setForeground(white);
         Geburtstag.setBackground(dark);
-        Geburtstag.setFont(fontSmall);
-        Geburtstag.setBorder(new EmptyBorder(0,0,0,0));
-        Geburtstag.setBounds(20,120,200,20);
-        Geburtstag.setText("Die Variable 6");
+        Geburtstag.setFont(fontMedium);
+        Geburtstag.setEnabled(false);
+        Geburtstag.setBounds(75,320,250,40);
+        Geburtstag.setText("Geburtstag");
 
         EMail.setForeground(white);
         EMail.setBackground(dark);
-        EMail.setFont(fontSmall);
-        EMail.setBorder(new EmptyBorder(0,0,0,0));
-        EMail.setBounds(20,140,200,20);
-        EMail.setText("Die Variable 7");
+        EMail.setFont(fontMedium);
+        EMail.setEnabled(false);
+        EMail.setBounds(75,380,250,40);
+        EMail.setText("E-Mail");
 
         Telefonnummer.setForeground(white);
         Telefonnummer.setBackground(dark);
-        Telefonnummer.setFont(fontSmall);
-        Telefonnummer.setBorder(new EmptyBorder(0,0,0,0));
-        Telefonnummer.setBounds(20,160,200,20);
-        Telefonnummer.setText("Die Variable 8");
+        Telefonnummer.setFont(fontMedium);
+        Telefonnummer.setEnabled(false);
+        Telefonnummer.setBounds(75,440,250,40);
+        Telefonnummer.setText("Telefonnummer");
 
 
         AbbrechenButton.setBackground(hellb);
         AbbrechenButton.setForeground(white);
         AbbrechenButton.setText("Abbrechen");
-        AbbrechenButton.setBounds(225,20,100,60);
+        AbbrechenButton.setBounds(225,20,100,40);
+
+        AngabenAendernLabel.setForeground(white);
+        AngabenAendernLabel.setText("<html><body><p><center>Angaben <br>ändern?</center></p></body></html>");
+        AngabenAendernLabel.setBorder(new EmptyBorder(0,10,18,10));
 
         AbbrechenButton.addActionListener(new ActionListener() {
             @Override
@@ -127,9 +132,8 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
 
         AngabenAendern.addActionListener(this);
         AngabenAendern.setBackground(dunkelb);
-        AngabenAendern.setForeground(white);
-        AngabenAendern.setText("<html><body><p><center>Angaben <br>ändern?</center></p></body></html>");
-        AngabenAendern.setBounds(75,20,100,60);
+        AngabenAendern.add(AngabenAendernLabel);
+        AngabenAendern.setBounds(75,20,100,40);
 
 
         // Elemente zu Panels adden
@@ -164,10 +168,20 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
 
 
 
-
+        AbbrechenButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                SachbearbeiterGUI.Profil.setEnabled(true);
+                AdminGUI.Profil.setEnabled(true);
+                KontrolleurGUI.Profil.setEnabled(true);
+            }
+        });
 
 
     }
+
+
 
 
     public static void openProfilGUI(Container parent){
