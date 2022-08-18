@@ -238,21 +238,7 @@
       <workItem from="1660806560123" duration="2415000" />
       <workItem from="1660809048015" duration="6000" />
       <workItem from="1660809072155" duration="92000" />
-      <workItem from="1660809228337" duration="2639000" />
-    </task>
-    <task id="LOCAL-00037" summary="j">
-      <created>1657887999414</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1657887999414</updated>
-    </task>
-    <task id="LOCAL-00038" summary="j">
-      <created>1657889292103</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1657889292103</updated>
+      <workItem from="1660809228337" duration="3478000" />
     </task>
     <task id="LOCAL-00039" summary="j">
       <created>1657961844561</created>
@@ -583,7 +569,21 @@
       <option name="project" value="LOCAL" />
       <updated>1660811950875</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="auto logout und location relative to parent">
+      <created>1660811981616</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1660811981616</updated>
+    </task>
+    <task id="LOCAL-00087" summary="auto logout und location relative to parent">
+      <created>1660812003175</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1660812003175</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
