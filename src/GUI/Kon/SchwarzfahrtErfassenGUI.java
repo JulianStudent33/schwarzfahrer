@@ -49,7 +49,7 @@ public class SchwarzfahrtErfassenGUI extends JFrame{
     private JCheckBox bereitsBezahltCheckBox;
     private JToggleButton löschenToggleButton;
 
-    public SchwarzfahrtErfassenGUI(){
+    public SchwarzfahrtErfassenGUI(Frame parent){
         this.currentUser = KontrolleurGUI.currentUser;
         setContentPane(mainPanel);
         setTitle("Kontrolleur Menü");
@@ -57,6 +57,7 @@ public class SchwarzfahrtErfassenGUI extends JFrame{
         int width = 1000;
         int height = 400;
         this.setBounds(center.x - width / 2, center.y - height / 2, width, height);
+        setLocationRelativeTo(parent);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 
         setResizable(false);
@@ -371,14 +372,11 @@ public class SchwarzfahrtErfassenGUI extends JFrame{
 
         return false;
     }
-    public static void open() {
+    public static void open(Frame parent) {
         Foo.getDirectoryData();
         isOpen = true;
-        SchwarzfahrtErfassenGUI gui = new SchwarzfahrtErfassenGUI();
+        SchwarzfahrtErfassenGUI gui = new SchwarzfahrtErfassenGUI(parent);
     }
 
-    public static void main(String[] args) {
-        open();
 
-    }
 }

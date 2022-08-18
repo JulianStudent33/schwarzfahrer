@@ -28,7 +28,7 @@ import java.util.Locale;
 import static src.Foo.*;
 import static src.Main.colorchange;
 
-public class RegisterWindow extends JFrame {
+public class RegisterWindow extends GUI_Mama {
 
     // Top Textfelder
     PlaceholderTextField bname = new PlaceholderTextField();
@@ -36,6 +36,7 @@ public class RegisterWindow extends JFrame {
     PlaceholderTextField vname = new PlaceholderTextField();
 
     String[] rollen = {"Rolle*", "Kontrolleur", "Sachbearbeiter"};
+    String datumButtonText = "Bitte Geburtsdatum auswählen*";
 
     customComboBox rollenBox = new customComboBox();
 
@@ -204,7 +205,7 @@ public class RegisterWindow extends JFrame {
         genderBox.setBorder(null);
 
         // Geburtsdatum Button
-        dateButton.setText("Bitte Geburtsdatum auswählen*");
+        dateButton.setText(datumButtonText);
         dateButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
         dateButton.setBackground(whitebg);
         dateButton.setForeground(notSoDark);
@@ -391,22 +392,23 @@ public class RegisterWindow extends JFrame {
                                             vname.getText(), name.getText(), genderBox.getSelectedItem().toString(),
                                             nummer.getText(), mail.getText().toLowerCase(Locale.ROOT), date);
                                     Foo.angemeldet = true;
+                                    KontrolleurGUI.openKonGUI(getFrame());
                                     dispose();
-                                    KontrolleurGUI.openKonGUI();
                                     break;
                                 case 2:
                                     Foo.currentSachbearbeiter = new Sachbearbeiter(bname.getText(), pw.getText(),
                                             vname.getText(), name.getText(), genderBox.getSelectedItem().toString(),
                                             nummer.getText(), mail.getText().toLowerCase(Locale.ROOT), date);
                                     Foo.angemeldet = true;
+                                    SachbearbeiterGUI.openSBGUI(getFrame());
                                     dispose();
-                                    SachbearbeiterGUI.openSBGUI();
                                     break;
                             }
                         } catch (IOException ex) {
-                            dispose();
-                            StartfensterGUI.startFenster(getRootPane().getParent());
+
+                            StartfensterGUI.startFenster(getFrame());
                             ex.printStackTrace();
+                            dispose();
                             throw new RuntimeException(ex);
                         }
                     }
@@ -418,9 +420,16 @@ public class RegisterWindow extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                String txt;
+                DatePick calender;
+                    if (!dateButton.getText().equals(datumButtonText)){
+                        calender = new DatePick((JFrame) dateButton.getRootPane().getParent(), dateButton.getText());
+                        txt = calender.Set_Picked_Date();
+                    }else{
+                        calender = new DatePick((JFrame) dateButton.getRootPane().getParent(), null);
+                        txt = calender.Set_Picked_Date();
+                    }
 
-                    DatePick calender = new DatePick((JFrame) dateButton.getRootPane().getParent(), null);
-                    String txt = calender.Set_Picked_Date();
                     if (txt==""){
 
                     }else{

@@ -3,7 +3,6 @@ import src.Foo;
 import src.GUI.Admin.AdminGUI;
 import src.GUI.Kon.KontrolleurGUI;
 import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
-import src.GUI.elements.InactivityListener;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -14,41 +13,33 @@ import java.io.IOException;
 
 import static src.Foo.*;
 
-public class EinstellungenGUI extends JFrame implements ActionListener {
-
+public class EinstellungenGUI extends GUI_Mama implements ActionListener {
 
     String[] optionenLogout = {"Aus", "10", "15", "30"};
     int optionAusgewaehlt;
+    boolean angemeldetBleiben;
+    boolean konAngemeldet;
+    boolean sbAngemeldet;
+    boolean adminAngemeldet;
 
-    public static SachbearbeiterGUI parentS = null;
-    public static KontrolleurGUI parentK = null;
-    public static AdminGUI parentA = null;
 
     JFrame Frame = new JFrame();
     JPanel Background = new JPanel();
     JLabel Ueberschrift = new JLabel();
     JButton AnButton = new JButton();
     JButton LogoutButton = new JButton();
-    JButton AbbrechenButton = new JButton();
+    JButton SpeichernButton = new JButton();
     JLabel ButtonTextAn = new JLabel();
     JLabel ButtonTextAus = new JLabel();
     JLabel ButtonUeberschriftAnmelden = new JLabel();
     JLabel ButtonAutoLogoutUeberschrift = new JLabel();
     JLabel ButtonAutoLogoutText = new JLabel();
-    public EinstellungenGUI(Container parent) {
-
+    public EinstellungenGUI(GUI_Mama parent) {
+        name = "EinstellungenGUI";
         Foo.getDirectoryData();
-
-        Action logout = new AbstractAction()
-        {
-            public void actionPerformed(ActionEvent e)
-            {
-               dispose();
-            }
-        };
-        InactivityListener listener = new InactivityListener(this, logout, 1);
-        listener.start();
-
+        getCurrentUser();
+        this.angemeldetBleiben = Foo.angemeldetBleiben;
+        parentGUI = parent;
 
 
         // Panelmanagement
@@ -109,15 +100,16 @@ public class EinstellungenGUI extends JFrame implements ActionListener {
             ButtonAutoLogoutText.setText(optionenLogout[0]);
             optionAusgewaehlt = 0;
         } else if (autoLogoutTime.equals(optionenLogout[1])) {
-            ButtonAutoLogoutText.setText(optionenLogout[1] + " min");
+            ButtonAutoLogoutText.setText(optionenLogout[1]);
             optionAusgewaehlt = 1;
         } else if (autoLogoutTime.equals(optionenLogout[2])) {
-            ButtonAutoLogoutText.setText(optionenLogout[2] + " min");
+            ButtonAutoLogoutText.setText(optionenLogout[2]);
             optionAusgewaehlt = 2;
         } else if (autoLogoutTime.equals(optionenLogout[3])) {
-            ButtonAutoLogoutText.setText(optionenLogout[3] + " min");
+            ButtonAutoLogoutText.setText(optionenLogout[3]);
             optionAusgewaehlt = 3;
         }
+
         ButtonAutoLogoutText.setForeground(white);
         ButtonAutoLogoutText.setFont(fontSmall);
         ButtonAutoLogoutText.setBorder(new EmptyBorder(28, 35, 0, 35));
@@ -130,17 +122,17 @@ public class EinstellungenGUI extends JFrame implements ActionListener {
         LogoutButton.add(ButtonAutoLogoutText);
         LogoutButton.setBounds(75, 210, 150, 80);
 
-        AbbrechenButton.addActionListener(this);
-        AbbrechenButton.setBackground(dunkelb);
-        AbbrechenButton.setForeground(white);
-        AbbrechenButton.setFont(fontSmall);
-        AbbrechenButton.setText("<html><body>Abbrechen</body></html>");
-        AbbrechenButton.setBounds(75, 310, 150, 80);
+        SpeichernButton.addActionListener(this);
+        SpeichernButton.setBackground(dunkelb);
+        SpeichernButton.setForeground(white);
+        SpeichernButton.setFont(fontSmall);
+        SpeichernButton.setText("<html><body>Speichern</body></html>");
+        SpeichernButton.setBounds(75, 310, 150, 80);
 
         Background.add(Ueberschrift);
         Background.add(AnButton);
         Background.add(LogoutButton);
-        Background.add(AbbrechenButton);
+        Background.add(SpeichernButton);
 
 
         this.setSize(300, 500);
@@ -157,17 +149,14 @@ public class EinstellungenGUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                if (Foo.angemeldetBleiben) {
+                if (angemeldetBleiben) {
 
                     ButtonTextAn.setForeground(Color.lightGray);
                     ButtonTextAn.setFont(fontSmallPlain);
                     ButtonTextAus.setForeground(white);
                     ButtonTextAus.setFont(fontSmall);
-                    try {
-                        Foo.saveAngemeldetBleiben(false);
-                    } catch (IOException ex) {
-                        throw new RuntimeException(ex);
-                    }
+
+                    angemeldetBleiben = false;
                     System.out.println("Angemeldet bleiben jetzt false");
                 } else {
 
@@ -175,12 +164,8 @@ public class EinstellungenGUI extends JFrame implements ActionListener {
                     ButtonTextAn.setFont(fontSmall);
                     ButtonTextAus.setForeground(Color.lightGray);
                     ButtonTextAus.setFont(fontSmallPlain);
-                    try {
-                        Foo.saveAngemeldetBleiben(true);
-                    } catch (IOException ex) {
-                        throw new RuntimeException(ex);
-                    }
 
+                    angemeldetBleiben = true;
                     System.out.println("Angemeldet bleiben jetzt true");
                 }
 
@@ -191,30 +176,83 @@ public class EinstellungenGUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                if (optionAusgewaehlt!=3){
+                    optionAusgewaehlt++;
+                } else{
+                    optionAusgewaehlt = 0;
+                }
+                ButtonAutoLogoutText.setText(optionenLogout[optionAusgewaehlt]);
 
             }
         });
 
-        AbbrechenButton.addActionListener(new ActionListener() {
+        SpeichernButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                if (adminAngemeldet){
+                    try {
+                        currentAdmin.setAutoLogout(ButtonAutoLogoutText.getText());
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                        throw new RuntimeException(ex);
+                    }
+                }
+                if (konAngemeldet){
+                    try {
+                        currentKontrolleur.setAutoLogout(ButtonAutoLogoutText.getText());
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                        throw new RuntimeException(ex);
+                    }
+                }
+                if (sbAngemeldet){
+                    try {
+                        currentSachbearbeiter.setAutoLogout(ButtonAutoLogoutText.getText());
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                }
+                try {
+                    Foo.saveAngemeldetBleiben(angemeldetBleiben);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+                parentGUI.StartAutoLogout();
+                System.out.println("Starte AutoLogout für " + parentGUI.name);
+                SachbearbeiterGUI.Einstellungen.setEnabled(true);
+                KontrolleurGUI.Einstellungen.setEnabled(true);
+                AdminGUI.Einstellungen.setEnabled(true);
                 dispose();
-
             }
         });
 
     }
-        public static void openEinstellungenGUI (Container parent){
+
+
+    public void getCurrentUser(){
+        if (currentKontrolleur!=null){
+            konAngemeldet = true;
+        } else if (currentAdmin!=null) {
+            adminAngemeldet = true;
+        } else if (currentSachbearbeiter!=null) {
+            sbAngemeldet = true;
+        }
+    }
+
+
+
+        public static void openEinstellungenGUI (GUI_Mama parent){
+
             if (parent.getClass().equals(KontrolleurGUI.class)){
                 System.out.println("ParentFrame ist KontrolleurGUI");
-                    EinstellungenGUI gui1 = new EinstellungenGUI(parent);
+                    EinstellungenGUI gui = new EinstellungenGUI(parent);
             }else if(parent.getClass().equals(SachbearbeiterGUI.class)){
                 System.out.println("ParentFrame ist SachbearbeiterGUI");
-                EinstellungenGUI gui1 = new EinstellungenGUI(parent);
+                EinstellungenGUI gui = new EinstellungenGUI(parent);
             } else if (parent.getClass().equals(AdminGUI.class)) {
                 System.out.println("ParentFrame ist AdminGUI");
-                EinstellungenGUI gui1 = new EinstellungenGUI(parent);
+                EinstellungenGUI gui = new EinstellungenGUI(parent);
             } else{
                 System.out.println("Du hast verkackt mhm mhm");
             }

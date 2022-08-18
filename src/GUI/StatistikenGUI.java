@@ -12,20 +12,14 @@ import java.awt.event.ActionListener;
 import static src.Foo.*;
 import static src.Foo.dark;
 
-public class StatistikenGUI extends JFrame implements ActionListener {
+public class StatistikenGUI extends GUI_Mama implements ActionListener {
 
-    public static void openStatistikenGUI(){
-        Foo.getDirectoryData();
-        StatistikenGUI gui = new StatistikenGUI();
-    }
+
     public static void main(String[] args) {
-        new StatistikenGUI();
+        new StatistikenGUI(null);
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
 
-    }
 
     JButton AnzahlSchwarzfahrer = new JButton();
     JLabel AnzahlSchwarzfahrerUeberschrift = new JLabel();
@@ -52,7 +46,7 @@ public class StatistikenGUI extends JFrame implements ActionListener {
 
     int AnzahlSchwarzfahrerZahl = 0;
 
-    public StatistikenGUI(){
+    public StatistikenGUI(Frame parent){
 
         // Panelmanagement
         JPanel gridpanel = new JPanel();
@@ -241,7 +235,7 @@ public class StatistikenGUI extends JFrame implements ActionListener {
         this.setTitle("Statistiken");
         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.setResizable(false);
-        this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(parent);
         this.setVisible(true);
         this.getContentPane().setBackground(dark);
 
@@ -271,6 +265,8 @@ public class StatistikenGUI extends JFrame implements ActionListener {
         Abbrechen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+
                 dispose();
 
             }
@@ -279,6 +275,19 @@ public class StatistikenGUI extends JFrame implements ActionListener {
 
 
 
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
 
     }
+
+    public static void openStatistikenGUI(Frame parent){
+        Foo.getDirectoryData();
+        StatistikenGUI gui = new StatistikenGUI(parent);
+    }
+
+
+
+
 }

@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
 
         // True = LightMode - False = DarkMode
-        colorchange = true;
+        colorchange = false;
         colormode(colorchange);
         //Start
         try {
@@ -51,7 +51,6 @@ public class Main {
                 try {
 
                     Foo foo = new Foo();
-                    RegisterWindow tet = new RegisterWindow(null);
                     } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 } catch (ClassNotFoundException ex) {

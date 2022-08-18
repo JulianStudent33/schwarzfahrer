@@ -27,7 +27,7 @@ public class MitarbeiterVerwaltenGUI extends JFrame implements ActionListener {
     JButton abbrechen = new JButton();
 
 
-     public MitarbeiterVerwaltenGUI(){
+     public MitarbeiterVerwaltenGUI(Frame parent){
 
         getMitarbeiter();
         for (int i = 0; i< mitarbeiter.length;i++){
@@ -117,7 +117,7 @@ public class MitarbeiterVerwaltenGUI extends JFrame implements ActionListener {
          this.setTitle("Mitarbeiter verwalten");
          this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
          this.setResizable(false);
-         this.setLocationRelativeTo(null);
+         this.setLocationRelativeTo(parent);
          this.setVisible(true);
          this.setBackground(dark);
 
@@ -149,11 +149,11 @@ public class MitarbeiterVerwaltenGUI extends JFrame implements ActionListener {
 
 
     public static void main(String[] args) {
-        openMitarbeiterVerwaltenGUI();
+        openMitarbeiterVerwaltenGUI(null);
     }
-    public static void openMitarbeiterVerwaltenGUI(){
+    public static void openMitarbeiterVerwaltenGUI(Frame parent){
         Foo.getDirectoryData();
-        MitarbeiterVerwaltenGUI gui = new MitarbeiterVerwaltenGUI();
+        MitarbeiterVerwaltenGUI gui = new MitarbeiterVerwaltenGUI(parent);
 
     }
 
