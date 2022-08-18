@@ -200,6 +200,9 @@ public class EinstellungenGUI extends JFrame implements ActionListener {
             public void actionPerformed(ActionEvent e) {
 
                 dispose();
+                SachbearbeiterGUI.Einstellungen.setEnabled(true);
+                AdminGUI.Einstellungen.setEnabled(true);
+                KontrolleurGUI.Einstellungen.setEnabled(true);
 
             }
         });

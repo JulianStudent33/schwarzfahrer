@@ -173,6 +173,8 @@ public class ProfilGUI extends JFrame implements ActionListener {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 SachbearbeiterGUI.Profil.setEnabled(true);
+                AdminGUI.Profil.setEnabled(true);
+                KontrolleurGUI.Profil.setEnabled(true);
             }
         });
 

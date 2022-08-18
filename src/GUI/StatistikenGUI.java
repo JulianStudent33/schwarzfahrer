@@ -1,5 +1,9 @@
 package src.GUI;
 import src.Foo;
+import src.GUI.Admin.AdminGUI;
+import src.GUI.Kon.KontrolleurGUI;
+import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
@@ -218,7 +222,15 @@ public class StatistikenGUI extends JFrame implements ActionListener{
         Abbrechen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         Abbrechen.setBounds(140,100,100,100);
 
-
+        Abbrechen.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                SachbearbeiterGUI.Statistiken.setEnabled(true);
+                AdminGUI.Statistiken.setEnabled(true);
+                KontrolleurGUI.Statistiken.setEnabled(true);
+            }
+        });
 
         // Gesamt Window
         this.setSize(900,550);
