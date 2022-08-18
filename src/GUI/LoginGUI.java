@@ -10,9 +10,11 @@ import src.PersFile;
 import src.nickcode.pass;
 import src.roles.Administrator;
 import src.roles.Kontrolleur;
+import src.roles.Mitarbeiter;
 import src.roles.Sachbearbeiter;
 import static src.Foo.*;
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
@@ -23,7 +25,7 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
 
 
 
-    public LoginGUI(Frame parent){
+    public LoginGUI(GUI_Mama parent){
 
         // Panelmanagement
 
@@ -151,7 +153,6 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
         Bot.add(abbrechenButton, BorderLayout.SOUTH);
         Bot.add(anmeldenButton, BorderLayout.SOUTH);
 
-
         // Add für gesamte Panels
         add(Text, BorderLayout.NORTH);
         //this.add(Benutzer, BorderLayout.CENTER);
@@ -229,7 +230,7 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
         abbrechenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                StartfensterGUI.startFenster(getFrame());
+                StartfensterGUI.openStartFenster(getFrame());
                 dispose();
             }
         });
@@ -245,9 +246,10 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
                             try {
                                 Administrator mb = (Administrator) PersFile.laden(Path.of(Foo.adminPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile());
                                 System.out.println("Datei gelesen");
+
                                 if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())) {
                                     System.out.println("Passwort stimmt");
-                                    Foo.currentAdmin = mb;
+                                    Foo.currentUser = mb;
                                     if (angemeldetBleibenCheckBox.isSelected()) {
                                         Foo.saveAngemeldetBleiben(true);
                                     } else {
@@ -266,18 +268,17 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
 
                             } catch (IOException | ClassNotFoundException io) {
                                 io.printStackTrace();
-                                StartfensterGUI.startFenster(getFrame());
+                                StartfensterGUI.openStartFenster(getFrame());
                                 dispose();
                             }
                         }
                         if (Foo.KontrolleurFileListe.contains(Path.of(Foo.konPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())) {
                             try {
                                 Kontrolleur mb = (Kontrolleur) PersFile.laden(Path.of(Foo.konPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile());
-                                Foo.currentKontrolleur = mb;
                                 System.out.println("Datei gelesen");
                                 if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())) {
                                     System.out.println("Passwort stimmt");
-                                    Foo.currentKontrolleur = mb;
+                                    Foo.currentUser = mb;
                                     if (angemeldetBleibenCheckBox.isSelected()) {
                                         Foo.saveAngemeldetBleiben(true);
                                     } else {
@@ -291,18 +292,17 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
                             } catch (IOException | ClassNotFoundException io) {
 
                                 io.printStackTrace();
-                                StartfensterGUI.startFenster(getFrame());
+                                StartfensterGUI.openStartFenster(getFrame());
                                 dispose();
                             }
                         }
                         if (Foo.SachbearbeiterFileListe.contains(Path.of(Foo.sbPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())) {
                             try {
                                 Sachbearbeiter mb = (Sachbearbeiter) PersFile.laden(Path.of(Foo.sbPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile());
-                                Foo.currentSachbearbeiter = mb;
                                 System.out.println("Datei gelesen");
                                 if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())) {
                                     System.out.println("Passwort stimmt");
-                                    Foo.currentSachbearbeiter = mb;
+                                    Foo.currentUser = mb;
                                     if (angemeldetBleibenCheckBox.isSelected()) {
                                         // Foo.saveAngemeldetBleiben(true);
                                     } else {
@@ -316,7 +316,7 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
                             } catch (IOException | ClassNotFoundException io) {
 
                                 io.printStackTrace();
-                                StartfensterGUI.startFenster(getFrame());
+                                StartfensterGUI.openStartFenster(getFrame());
                                 dispose();
                             }
                         }
@@ -343,9 +343,10 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
 
     }
 
-    public static void openLogin(Frame parent){
+    public static void openLogin(GUI_Mama parent){
         Foo.getDirectoryData();
         LoginGUI gui = new LoginGUI(parent);
+
     }
 
     @Override

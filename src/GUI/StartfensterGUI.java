@@ -21,13 +21,13 @@ public class StartfensterGUI extends GUI_Mama implements ActionListener {
 
 
     //Konstruktor
-    StartfensterGUI(Frame parent) {
+    StartfensterGUI(GUI_Mama parent) {
 
         // Start des Fensters
         frame(parent);
     }
 
-    private void frame(Frame parent) {
+    private void frame(GUI_Mama parent) {
 
         // Panelmanagement
         JPanel Background = new JPanel();
@@ -205,7 +205,7 @@ public class StartfensterGUI extends GUI_Mama implements ActionListener {
 
 
 
-    public static void startFenster(Frame parent){
+    public static void openStartFenster(GUI_Mama parent){
         Foo.getDirectoryData();
         StartfensterGUI gui = new StartfensterGUI(parent);
     }

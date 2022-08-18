@@ -86,7 +86,7 @@ public class firstRegistrationGUI extends GUI_Mama {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                StartfensterGUI.startFenster(getFrame());
+                StartfensterGUI.openStartFenster(getFrame());
                 dispose();
             }
         });
@@ -103,13 +103,13 @@ public class firstRegistrationGUI extends GUI_Mama {
                                 JOptionPane.showMessageDialog(new JDialog(), "Passwort bestätigt");
                                 pwBestaetigt = true;
                                 try {
-                                    Foo.currentAdmin = new Administrator(benutzernameTextField.getText(), passwortTextField.getText());
+                                    Foo.currentUser = new Administrator(benutzernameTextField.getText(), passwortTextField.getText());
                                     pwBestaetigt = true;
                                     Foo.angemeldet = true;
                                     dispose();
                                     AdminGUI.openAdminGUI(null);
                                 } catch (IOException ex) {
-                                    StartfensterGUI.startFenster(getFrame());
+                                    StartfensterGUI.openStartFenster(getFrame());
                                     ex.printStackTrace();
                                     dispose();
                                     throw new RuntimeException(ex);

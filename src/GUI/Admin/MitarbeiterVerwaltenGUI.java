@@ -1,6 +1,7 @@
 package src.GUI.Admin;
 import org.w3c.dom.Text;
 import src.Foo;
+import src.GUI.GUI_Mama;
 import src.PersFile;
 import src.roles.Administrator;
 import src.roles.Kontrolleur;
@@ -16,7 +17,7 @@ import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.util.Vector;
 
-public class MitarbeiterVerwaltenGUI extends JFrame implements ActionListener {
+public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener {
 
     String[] mitarbeiter;
     final DefaultListModel<String> model = new DefaultListModel<>();
@@ -27,9 +28,13 @@ public class MitarbeiterVerwaltenGUI extends JFrame implements ActionListener {
     JButton abbrechen = new JButton();
 
 
-     public MitarbeiterVerwaltenGUI(Frame parent){
-
+     public MitarbeiterVerwaltenGUI(GUI_Mama parent){
+        //Setup
         getMitarbeiter();
+        setupGUI(parent, "MitarbeiterVerwaltenGUI");
+
+
+
         for (int i = 0; i< mitarbeiter.length;i++){
             model.addElement(String.valueOf(mitarbeiter[i]));
         }
@@ -139,8 +144,8 @@ public class MitarbeiterVerwaltenGUI extends JFrame implements ActionListener {
          abbrechen.addActionListener(new ActionListener() {
              @Override
              public void actionPerformed(ActionEvent e) {
-                dispose();
                 AdminGUI.MitarbeiterVerwalten.setEnabled(true);
+                 dispose();
              }
          });
 
@@ -151,7 +156,7 @@ public class MitarbeiterVerwaltenGUI extends JFrame implements ActionListener {
     public static void main(String[] args) {
         openMitarbeiterVerwaltenGUI(null);
     }
-    public static void openMitarbeiterVerwaltenGUI(Frame parent){
+    public static void openMitarbeiterVerwaltenGUI(GUI_Mama parent){
         Foo.getDirectoryData();
         MitarbeiterVerwaltenGUI gui = new MitarbeiterVerwaltenGUI(parent);
 

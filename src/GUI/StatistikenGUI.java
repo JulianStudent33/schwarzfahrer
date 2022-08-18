@@ -2,6 +2,8 @@ package src.GUI;
 
 import src.Foo;
 import src.GUI.Admin.AdminGUI;
+import src.GUI.Kon.KontrolleurGUI;
+import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -46,6 +48,11 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
 
 
     public StatistikenGUI(GUI_Mama parent){
+
+        //Setup
+        setupGUI(parent, "StatistikenGUI");
+
+
 
         // Panelmanagement
         JPanel gridpanel = new JPanel();
@@ -268,10 +275,14 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-
+                parentGUI.StartAutoLogout();
+                System.out.println("Starte AutoLogout für " + parentGUI.name);
+                SachbearbeiterGUI.Statistiken.setEnabled(true);
+                KontrolleurGUI.Statistiken.setEnabled(true);
+                AdminGUI.Statistiken.setEnabled(true);
                 dispose();
-
             }
+
         });
 
 

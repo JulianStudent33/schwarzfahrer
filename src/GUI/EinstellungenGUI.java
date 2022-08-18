@@ -15,13 +15,9 @@ import static src.Foo.*;
 
 public class EinstellungenGUI extends GUI_Mama implements ActionListener {
 
-    String[] optionenLogout = {"Aus", "10", "15", "30"};
+    String[] optionenLogout = {"Aus", "5", "15", "30"};
     int optionAusgewaehlt;
     boolean angemeldetBleiben;
-    boolean konAngemeldet;
-    boolean sbAngemeldet;
-    boolean adminAngemeldet;
-
 
     JFrame Frame = new JFrame();
     JPanel Background = new JPanel();
@@ -35,11 +31,14 @@ public class EinstellungenGUI extends GUI_Mama implements ActionListener {
     JLabel ButtonAutoLogoutUeberschrift = new JLabel();
     JLabel ButtonAutoLogoutText = new JLabel();
     public EinstellungenGUI(GUI_Mama parent) {
-        name = "EinstellungenGUI";
-        Foo.getDirectoryData();
-        getCurrentUser();
+
+        //Setup
+        setupGUI(parent, "EinstellungenGUI");
         this.angemeldetBleiben = Foo.angemeldetBleiben;
-        parentGUI = parent;
+
+
+
+
 
 
         // Panelmanagement
@@ -94,18 +93,18 @@ public class EinstellungenGUI extends GUI_Mama implements ActionListener {
         ButtonAutoLogoutUeberschrift.setText("Auto-Logout");
         ButtonAutoLogoutUeberschrift.setBorder(new EmptyBorder(10, 0, 40, 0));
 
-
+        System.out.println("AutoLogout: " + this.currentUser.getAutoLogout());
         //ButtonAutoLogoutText
-        if (autoLogoutTime.equals(optionenLogout[0])) {
+        if (this.currentUser.getAutoLogout().equals(optionenLogout[0])) {
             ButtonAutoLogoutText.setText(optionenLogout[0]);
             optionAusgewaehlt = 0;
-        } else if (autoLogoutTime.equals(optionenLogout[1])) {
+        } else if (this.currentUser.getAutoLogout().equals(optionenLogout[1])) {
             ButtonAutoLogoutText.setText(optionenLogout[1]);
             optionAusgewaehlt = 1;
-        } else if (autoLogoutTime.equals(optionenLogout[2])) {
+        } else if (this.currentUser.getAutoLogout().equals(optionenLogout[2])) {
             ButtonAutoLogoutText.setText(optionenLogout[2]);
             optionAusgewaehlt = 2;
-        } else if (autoLogoutTime.equals(optionenLogout[3])) {
+        } else if (this.currentUser.getAutoLogout().equals(optionenLogout[3])) {
             ButtonAutoLogoutText.setText(optionenLogout[3]);
             optionAusgewaehlt = 3;
         }
@@ -190,35 +189,20 @@ public class EinstellungenGUI extends GUI_Mama implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                if (adminAngemeldet){
+
                     try {
-                        currentAdmin.setAutoLogout(ButtonAutoLogoutText.getText());
+                        Foo.currentUser.setAutoLogout(ButtonAutoLogoutText.getText());
                     } catch (IOException ex) {
                         ex.printStackTrace();
                         throw new RuntimeException(ex);
                     }
-                }
-                if (konAngemeldet){
                     try {
-                        currentKontrolleur.setAutoLogout(ButtonAutoLogoutText.getText());
-                    } catch (IOException ex) {
-                        ex.printStackTrace();
-                        throw new RuntimeException(ex);
-                    }
-                }
-                if (sbAngemeldet){
-                    try {
-                        currentSachbearbeiter.setAutoLogout(ButtonAutoLogoutText.getText());
-                    } catch (IOException ex) {
-                        throw new RuntimeException(ex);
-                    }
-                }
-                try {
                     Foo.saveAngemeldetBleiben(angemeldetBleiben);
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
                 parentGUI.StartAutoLogout();
+                parentGUI.refreshCurrentUser();
                 System.out.println("Starte AutoLogout für " + parentGUI.name);
                 SachbearbeiterGUI.Einstellungen.setEnabled(true);
                 KontrolleurGUI.Einstellungen.setEnabled(true);
@@ -230,15 +214,7 @@ public class EinstellungenGUI extends GUI_Mama implements ActionListener {
     }
 
 
-    public void getCurrentUser(){
-        if (currentKontrolleur!=null){
-            konAngemeldet = true;
-        } else if (currentAdmin!=null) {
-            adminAngemeldet = true;
-        } else if (currentSachbearbeiter!=null) {
-            sbAngemeldet = true;
-        }
-    }
+
 
 
 
