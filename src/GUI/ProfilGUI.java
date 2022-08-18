@@ -159,10 +159,18 @@ public class ProfilGUI extends JFrame implements ActionListener {
         Frame.setLocationRelativeTo(parent);
 
 
-
+        AbbrechenButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                SachbearbeiterGUI.Profil.setEnabled(true);
+            }
+        });
 
 
     }
+
+
 
 
     public static void openProfilGUI(Container parent){
