@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="changes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/AdminAnlegenGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/AdminAnlegenGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Admin/AdminAnlegenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Admin/AdminAnlegenGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/LoginGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/ProfilGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ProfilGUI.java" afterDir="false" />
-    </list>
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="auto logout und location relative to parent" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -242,22 +234,11 @@
       <workItem from="1660657927237" duration="860000" />
       <workItem from="1660722223472" duration="12068000" />
       <workItem from="1660739586517" duration="593000" />
-      <workItem from="1660743418422" duration="483000" />
-      <workItem from="1660804260970" duration="4321000" />
-    </task>
-    <task id="LOCAL-00037" summary="j">
-      <created>1657887999414</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1657887999414</updated>
-    </task>
-    <task id="LOCAL-00038" summary="j">
-      <created>1657889292103</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1657889292103</updated>
+      <workItem from="1660743418422" duration="6720000" />
+      <workItem from="1660806560123" duration="2415000" />
+      <workItem from="1660809048015" duration="6000" />
+      <workItem from="1660809072155" duration="92000" />
+      <workItem from="1660809228337" duration="3478000" />
     </task>
     <task id="LOCAL-00039" summary="j">
       <created>1657961844561</created>
@@ -575,20 +556,34 @@
       <updated>1660737318191</updated>
     </task>
     <task id="LOCAL-00084" summary="changes">
-      <created>1660809378271</created>
+      <created>1660743919557</created>
       <option name="number" value="00084" />
       <option name="presentableId" value="LOCAL-00084" />
       <option name="project" value="LOCAL" />
-      <updated>1660809378272</updated>
+      <updated>1660743919558</updated>
     </task>
-    <task id="LOCAL-00085" summary="changes">
-      <created>1660809650269</created>
+    <task id="LOCAL-00085" summary="auto logout und location relative to parent">
+      <created>1660811950874</created>
       <option name="number" value="00085" />
       <option name="presentableId" value="LOCAL-00085" />
       <option name="project" value="LOCAL" />
-      <updated>1660809650269</updated>
+      <updated>1660811950875</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="auto logout und location relative to parent">
+      <created>1660811981616</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1660811981616</updated>
+    </task>
+    <task id="LOCAL-00087" summary="auto logout und location relative to parent">
+      <created>1660812003175</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1660812003175</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -609,7 +604,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="j" />
     <MESSAGE value="Schwarzfahrer implementiert. Autocomplete implementiert durch suchen via ausweisnummer." />
     <MESSAGE value="Error fixed, Geburtsdatum wird wieder gesetted" />
     <MESSAGE value="Neu" />
@@ -634,7 +628,8 @@
     <MESSAGE value="dfg" />
     <MESSAGE value="Button enable diswbale" />
     <MESSAGE value="changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes" />
+    <MESSAGE value="auto logout und location relative to parent" />
+    <option name="LAST_COMMIT_MESSAGE" value="auto logout und location relative to parent" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -658,6 +653,16 @@
           <url>file://$PROJECT_DIR$/src/roles/Kontrolleur.java</url>
           <line>72</line>
           <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GUI/Kon/SchwarzfahrtErfassenGUI.java</url>
+          <line>196</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GUI/Kon/SchwarzfahrtErfassenGUI.java</url>
+          <line>202</line>
+          <option name="timeStamp" value="98" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/Admin/MitarbeiterVerwaltenGUI.java</url>
@@ -685,6 +690,15 @@
           <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="89" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/GUI/GUI_Mama.java</url>
+          <line>40</line>
+          <properties class="src.GUI.GUI_Mama">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="104" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

@@ -21,7 +21,7 @@ public abstract class Mitarbeiter extends Person{
     String benutzername;
     String passwort;
 
-    final String[] benutzerTypen = {"Kontrolleur", "Sachbearbeiter", "Administrator"};
+    String autoLogout;
     boolean isAdmin;
     boolean isKontrolleur;
     boolean isSachbearbeiter;
@@ -53,19 +53,30 @@ public abstract class Mitarbeiter extends Person{
         System.out.println("E-Mail: " + getEmail());
         System.out.println("Dateipfad: " + getUserFile().toPath());
         if (isAdmin){
-            System.out.println("Ist Administrator");
+            System.out.println(getVorname() + "Ist Administrator");
         } else if (isKontrolleur) {
-            System.out.println("Ist Kontrolleur");
+            System.out.println(getVorname() + "Ist Kontrolleur");
         } else if (isSachbearbeiter) {
-            System.out.println("Ist Sachbearbeiter");
+            System.out.println(getVorname() + "Ist Sachbearbeiter");
         }
     }
 
+
+    //Getter und setter
     public String getMitarbeiternummer(){
         System.out.println(this.mitarbeiternummer);
         return this.mitarbeiternummer;
     }
-    //Getter und setter
+
+    public String getAutoLogout() {
+        return autoLogout;
+    }
+
+    public void setAutoLogout(String autoLogout) throws IOException {
+        this.autoLogout = autoLogout;
+        PersFile.speichern(this, this.userFile);
+        Foo.autoLogoutTime = autoLogout;
+    }
 
     public void setMitarbeiternummer(String mitarbeiternummer) throws IOException {
         this.mitarbeiternummer = mitarbeiternummer;
@@ -91,9 +102,7 @@ public abstract class Mitarbeiter extends Person{
 
     }
 
-    public String[] getBenutzerTypen() {
-        return benutzerTypen;
-    }
+
 
 
 

@@ -12,7 +12,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
 
-public class firstRegistrationGUI extends JFrame {
+public class firstRegistrationGUI extends GUI_Mama {
     public boolean pwBestaetigt = false;
     private PlaceholderTextField benutzernameTextField;
     private PlaceholderPasswordField passwortTextField;
@@ -85,8 +85,9 @@ public class firstRegistrationGUI extends JFrame {
         abbrechenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                StartfensterGUI.startFenster(getFrame());
                 dispose();
-                StartfensterGUI.startFenster(getRootPane().getParent());
             }
         });
 
@@ -106,11 +107,11 @@ public class firstRegistrationGUI extends JFrame {
                                     pwBestaetigt = true;
                                     Foo.angemeldet = true;
                                     dispose();
-                                    AdminGUI.openAdminGUI();
+                                    AdminGUI.openAdminGUI(null);
                                 } catch (IOException ex) {
-                                    dispose();
-                                    StartfensterGUI.startFenster(getRootPane().getParent());
+                                    StartfensterGUI.startFenster(getFrame());
                                     ex.printStackTrace();
+                                    dispose();
                                     throw new RuntimeException(ex);
                                 }
                             }else{

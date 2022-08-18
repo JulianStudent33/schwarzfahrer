@@ -2,17 +2,14 @@ package src.GUI.Kon;
 
 import javax.swing.*;
 import src.Foo;
-import src.GUI.EinstellungenGUI;
-import src.GUI.ProfilGUI;
-import src.GUI.StatistikenGUI;
-import src.GUI.StartfensterGUI;
+import src.GUI.*;
 import src.roles.Kontrolleur;
 import static src.Foo.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class KontrolleurGUI extends JFrame implements ActionListener {
+public class KontrolleurGUI extends GUI_Mama implements ActionListener {
     public static Kontrolleur currentUser;
     public static JButton SchwarzfahrtErfassen = new JButton();
     public static JButton SchwarzfahrerSuchen = new JButton();
@@ -22,7 +19,7 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
     public static JButton Abmelden = new JButton();
 
 
-    public KontrolleurGUI() {
+    public KontrolleurGUI(Frame parent) {
 
         enableButtons();
 
@@ -75,7 +72,7 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                SchwarzfahrtErfassenGUI.open();
+                SchwarzfahrtErfassenGUI.open(getFrame());
                 SchwarzfahrtErfassen.setEnabled(false);
             }
         });
@@ -128,7 +125,7 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
                     @Override
                     public void actionPerformed(ActionEvent e) {
 
-                        StatistikenGUI.openStatistikenGUI();
+                        StatistikenGUI.openStatistikenGUI(getFrame());
 
                     }
                 });
@@ -154,7 +151,7 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
                     @Override
                     public void actionPerformed(ActionEvent e) {
 
-                        ProfilGUI.openProfilGUI(getRootPane().getParent());
+                        ProfilGUI.openProfilGUI(getFrame());
 
                         if(!SchwarzfahrtErfassenGUI.isOpen){
                             SchwarzfahrtErfassen.setEnabled(true);
@@ -186,7 +183,7 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
                     @Override
                     public void actionPerformed(ActionEvent e) {
 
-                         EinstellungenGUI.openEinstellungenGUI(getRootPane().getParent());
+                         EinstellungenGUI.openEinstellungenGUI(getFrame());
 
                     }
                 });
@@ -214,9 +211,9 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
                     @Override
                     public void actionPerformed(ActionEvent e) {
 
-                        dispose();
                         currentUser.abmelden();
-                        StartfensterGUI.startFenster(getRootPane().getParent());
+                        StartfensterGUI.startFenster(getFrame());
+                        dispose();
 
                     }
                 });
@@ -226,7 +223,7 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
         this.setTitle("Kontrolleur");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
-        this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(parent);
         this.setVisible(true);
         this.getContentPane().setBackground(dark);
 
@@ -261,12 +258,9 @@ public class KontrolleurGUI extends JFrame implements ActionListener {
         Abmelden.setEnabled(true);
     }
 
-    public static void openKonGUI(){
+    public static void openKonGUI(Frame parent){
         Foo.getDirectoryData();
-        KontrolleurGUI gui = new KontrolleurGUI();
-    }
-    public static void main(String[] args) {
-        openKonGUI();
+        KontrolleurGUI gui = new KontrolleurGUI(parent);
     }
 
     @Override

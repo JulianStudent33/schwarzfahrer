@@ -1,5 +1,8 @@
 package src.GUI;
+
 import src.Foo;
+import src.GUI.Admin.AdminGUI;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
@@ -7,25 +10,32 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import static src.Foo.*;
-public class StatistikenGUI extends JFrame implements ActionListener{
+import static src.Foo.dark;
 
-    JPanel AnzahlSchwarzfahrerPan = new JPanel();
-    JPanel AnzahlSchwarzfahrerNorthPan = new JPanel();
-    JPanel AnzahlSchwarzfahrerCenterPan = new JPanel();
+public class StatistikenGUI extends GUI_Mama implements ActionListener {
+
+
+    public static void main(String[] args) {
+        new StatistikenGUI(null);
+    }
+
+
+
+    JButton AnzahlSchwarzfahrer = new JButton();
     JLabel AnzahlSchwarzfahrerUeberschrift = new JLabel();
     JLabel AnzahlschwarzfahrerWert = new JLabel();
-    JPanel AnzahlMitarbeiter = new JPanel();
+    JButton AnzahlMitarbeiter = new JButton();
     JLabel AnzahlKontrolleureUeberschrift = new JLabel();
     JLabel AnzahlKontrolleureWert = new JLabel();
     JLabel AnzahlSacharbeiterUeberschrift = new JLabel();
     JLabel AnzahlSacharbeiterWert = new JLabel();
-    JPanel HaeufigsteSchwarzfahrt  = new JPanel();
+    JButton HaeufigsteSchwarzfahrt  = new JButton();
     JLabel HaeufigsteSchwarzfahrtUeberschrift = new JLabel();
     JLabel HaeufigsteSchwarzfahrtWert = new JLabel();
-    JPanel ErfassteSchwarzfahrten = new JPanel();
+    JButton ErfassteSchwarzfahrten = new JButton();
     JLabel ErfassteSchwarzfahrtenUeberschrift = new JLabel();
     JLabel ErfassteSchwarzfahrtenWert = new JLabel();
-    JPanel SchwarzfahrtenStatus = new JPanel();
+    JButton SchwarzfahrtenStatus = new JButton();
     JLabel SchwarzfahrtenStatusUeberschrift = new JLabel();
     JLabel SchwarzfahrtenStatusText = new JLabel();
     JLabel SchwarzfahrtenStatusOffen = new JLabel();
@@ -34,8 +44,9 @@ public class StatistikenGUI extends JFrame implements ActionListener{
     JButton Abbrechen = new JButton();
 
 
+    int AnzahlSchwarzfahrerZahl = 0;
 
-    public StatistikenGUI(){
+    public StatistikenGUI(Frame parent){
 
         // Panelmanagement
         JPanel gridpanel = new JPanel();
@@ -65,44 +76,35 @@ public class StatistikenGUI extends JFrame implements ActionListener{
 
         //JButton "Schwarzfahrt erfassen"
         //Styling
-
         AnzahlSchwarzfahrerUeberschrift.setForeground(white);
-        AnzahlSchwarzfahrerUeberschrift.setBackground(hellb);
         AnzahlSchwarzfahrerUeberschrift.setFont(fontSmall);
         AnzahlSchwarzfahrerUeberschrift.setText("<html><body><center><p>Anzahl Schwarzfahrer</p></center></body></html>");
-        AnzahlSchwarzfahrerUeberschrift.setBorder(new EmptyBorder(20,50,70,50));
+        AnzahlSchwarzfahrerUeberschrift.setBorder(new EmptyBorder(0,0,0,0));
 
         AnzahlschwarzfahrerWert.setForeground(dark);
-        AnzahlschwarzfahrerWert.setBackground(hellb);
         AnzahlschwarzfahrerWert.setFont(fontSmall);
         AnzahlschwarzfahrerWert.setText("0");
         AnzahlschwarzfahrerWert.setBorder(new EmptyBorder(0,0,0,0));
 
-        AnzahlSchwarzfahrerPan.setBackground(hellb);
-        AnzahlSchwarzfahrerPan.add(AnzahlSchwarzfahrerNorthPan, BorderLayout.NORTH);
-        AnzahlSchwarzfahrerPan.add(AnzahlSchwarzfahrerCenterPan, BorderLayout.CENTER);
-        AnzahlSchwarzfahrerPan.setFocusable(false);
-        AnzahlSchwarzfahrerPan.setBounds(140,100,100,100);
-
-        AnzahlSchwarzfahrerNorthPan.add(AnzahlSchwarzfahrerUeberschrift);
-        AnzahlSchwarzfahrerNorthPan.setBackground(hellb);
-        AnzahlSchwarzfahrerNorthPan.setBounds(0,0,100,50);
-        AnzahlSchwarzfahrerCenterPan.add(AnzahlschwarzfahrerWert);
-        AnzahlSchwarzfahrerCenterPan.setBackground(hellb);
-        AnzahlSchwarzfahrerCenterPan.setBounds(0,50,100,50);
-
+        AnzahlSchwarzfahrer.setBackground(hellb);
+        AnzahlSchwarzfahrer.add(AnzahlSchwarzfahrerUeberschrift);
+        AnzahlSchwarzfahrer.add(AnzahlschwarzfahrerWert);
+        AnzahlSchwarzfahrer.setFocusable(false);
+        AnzahlSchwarzfahrer.setBorderPainted(false);
+        AnzahlSchwarzfahrer.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        AnzahlSchwarzfahrer.setBounds(140,100,100,100);
 
         // JButton "Schwarzfahrer suchen"
         //Styling
         AnzahlKontrolleureUeberschrift.setForeground(white);
         AnzahlKontrolleureUeberschrift.setFont(fontSmall);
         AnzahlKontrolleureUeberschrift.setText("<html><body><center><p>Anzahl Kontrolleure</p></center></body></html>");
-        AnzahlKontrolleureUeberschrift.setBorder(new EmptyBorder(20,10,0,0));
+        AnzahlKontrolleureUeberschrift.setBorder(new EmptyBorder(0,0,0,0));
 
         AnzahlKontrolleureWert.setForeground(dark);
         AnzahlKontrolleureWert.setFont(fontSmall);
         AnzahlKontrolleureWert.setText("0");
-        AnzahlKontrolleureWert.setBorder(new EmptyBorder(40,5,0,0));
+        AnzahlKontrolleureWert.setBorder(new EmptyBorder(0,0,0,0));
 
         AnzahlSacharbeiterUeberschrift.setForeground(white);
         AnzahlSacharbeiterUeberschrift.setFont(fontSmall);
@@ -121,6 +123,8 @@ public class StatistikenGUI extends JFrame implements ActionListener{
         AnzahlMitarbeiter.add(AnzahlSacharbeiterUeberschrift);
         AnzahlMitarbeiter.add(AnzahlSacharbeiterWert);
         AnzahlMitarbeiter.setFocusable(false);
+        AnzahlMitarbeiter.setBorderPainted(false);
+        AnzahlMitarbeiter.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         AnzahlMitarbeiter.setBounds(140,100,100,100);
 
 
@@ -140,6 +144,8 @@ public class StatistikenGUI extends JFrame implements ActionListener{
         HaeufigsteSchwarzfahrt.add(HaeufigsteSchwarzfahrtUeberschrift);
         HaeufigsteSchwarzfahrt.add(HaeufigsteSchwarzfahrtWert);
         HaeufigsteSchwarzfahrt.setFocusable(false);
+        HaeufigsteSchwarzfahrt.setBorderPainted(false);
+        HaeufigsteSchwarzfahrt.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         HaeufigsteSchwarzfahrt.setBounds(140,100,100,100);
 
 
@@ -160,6 +166,8 @@ public class StatistikenGUI extends JFrame implements ActionListener{
         ErfassteSchwarzfahrten.add(ErfassteSchwarzfahrtenUeberschrift);
         ErfassteSchwarzfahrten.add(ErfassteSchwarzfahrtenWert);
         ErfassteSchwarzfahrten.setFocusable(false);
+        ErfassteSchwarzfahrten.setBorderPainted(false);
+        ErfassteSchwarzfahrten.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         ErfassteSchwarzfahrten.setBounds(140,100,100,100);
 
 
@@ -198,6 +206,8 @@ public class StatistikenGUI extends JFrame implements ActionListener{
         SchwarzfahrtenStatus.add(SchwarzfahrtenStatusAusstehend);
         SchwarzfahrtenStatus.add(SchwarzfahrtenStatusBezahlt);
         SchwarzfahrtenStatus.setFocusable(false);
+        SchwarzfahrtenStatus.setBorderPainted(false);
+        SchwarzfahrtenStatus.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         SchwarzfahrtenStatus.setBounds(140,100,100,100);
 
 
@@ -223,11 +233,12 @@ public class StatistikenGUI extends JFrame implements ActionListener{
         // Gesamt Window
         this.setSize(900,550);
         this.setTitle("Statistiken");
-        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.setResizable(false);
-        this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(parent);
         this.setVisible(true);
         this.getContentPane().setBackground(dark);
+
 
         // Add Befehle
 
@@ -238,7 +249,7 @@ public class StatistikenGUI extends JFrame implements ActionListener{
         Text.add(label, BorderLayout.SOUTH);
 
         //Text.add(Trennlinie,BorderLayout.SOUTH);
-        gridpanel.add(AnzahlSchwarzfahrerPan);
+        gridpanel.add(AnzahlSchwarzfahrer);
         gridpanel.add(AnzahlMitarbeiter);
         gridpanel.add(HaeufigsteSchwarzfahrt);
         gridpanel.add(ErfassteSchwarzfahrten);
@@ -249,18 +260,34 @@ public class StatistikenGUI extends JFrame implements ActionListener{
         this.add(gridpanel, BorderLayout.CENTER);
         this.add(Text, BorderLayout.NORTH);
 
-    }
-    public static void openStatistikenGUI(){
-        Foo.getDirectoryData();
-        StatistikenGUI gui = new StatistikenGUI();
+
+        //ActionListener
+        Abbrechen.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+
+                dispose();
+
+            }
+        });
+
+
+
+
     }
 
-    public static void main(String[] args) {
-        new StatistikenGUI();
-    }
     @Override
     public void actionPerformed(ActionEvent e) {
 
     }
+
+    public static void openStatistikenGUI(Frame parent){
+        Foo.getDirectoryData();
+        StatistikenGUI gui = new StatistikenGUI(parent);
+    }
+
+
+
 
 }

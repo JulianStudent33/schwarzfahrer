@@ -14,7 +14,7 @@ import java.awt.event.*;
 import java.io.IOException;
 import java.util.Locale;
 
-public class RegisterGUI extends JFrame{
+public class RegisterGUI extends GUI_Mama{
     int rollenSelection;
     private customComboBox benutzerBox;
     private customComboBox geschlechtBox;
@@ -168,7 +168,7 @@ public class RegisterGUI extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                StartfensterGUI.startFenster(getRootPane().getParent());
+                StartfensterGUI.startFenster(getFrame());
             }
         });
 
@@ -194,18 +194,18 @@ public class RegisterGUI extends JFrame{
                                         telefonnummerTextField.getText(), emailTextField.getText().toLowerCase(Locale.ROOT), date);
                                 Foo.angemeldet = true;
                                 dispose();
-                                KontrolleurGUI.openKonGUI();
+                                KontrolleurGUI.openKonGUI(getFrame());
                                 break;
                             case 2:
                                 Foo.currentSachbearbeiter = new Sachbearbeiter(benutzernameTextField.getText(), passwortTextField.getText());
                                 Foo.angemeldet = true;
                                 dispose();
-                                SachbearbeiterGUI.openSBGUI();
+                                SachbearbeiterGUI.openSBGUI(getFrame());
                                 break;
                         }
                     } catch (IOException ex) {
                         dispose();
-                        StartfensterGUI.startFenster(getRootPane().getParent());
+                        StartfensterGUI.startFenster(getFrame());
                         ex.printStackTrace();
                         throw new RuntimeException(ex);
                     }

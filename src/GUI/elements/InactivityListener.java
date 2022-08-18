@@ -84,6 +84,10 @@ public class InactivityListener implements ActionListener, AWTEventListener
         setIntervalInMillis(minutes * 60000);
     }
 
+    public void setWindow(Window window) {
+        this.window = window;
+    }
+
     /*
      *  The interval before the Action is invoked specified in milliseconds
      */

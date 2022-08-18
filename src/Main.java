@@ -56,7 +56,6 @@ public class Main {
                 try {
 
                     Foo foo = new Foo();
-                    RegisterWindow tet = new RegisterWindow(null);
                     } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 } catch (ClassNotFoundException ex) {

@@ -12,7 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import static src.Foo.*;
-public class ProfilGUI extends JFrame implements ActionListener {
+public class ProfilGUI extends GUI_Mama implements ActionListener {
 
     public SachbearbeiterGUI parentS = null;
     public KontrolleurGUI parentK = null;
@@ -168,10 +168,20 @@ public class ProfilGUI extends JFrame implements ActionListener {
 
 
 
-
+        AbbrechenButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                SachbearbeiterGUI.Profil.setEnabled(true);
+                AdminGUI.Profil.setEnabled(true);
+                KontrolleurGUI.Profil.setEnabled(true);
+            }
+        });
 
 
     }
+
+
 
 
     public static void openProfilGUI(Container parent){

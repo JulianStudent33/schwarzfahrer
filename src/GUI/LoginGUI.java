@@ -19,11 +19,11 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Arrays;
 
-public class LoginGUI extends JFrame implements ActionListener {
+public class LoginGUI extends GUI_Mama implements ActionListener {
 
 
 
-    public LoginGUI(Container parent){
+    public LoginGUI(Frame parent){
 
         // Panelmanagement
 
@@ -166,9 +166,9 @@ public class LoginGUI extends JFrame implements ActionListener {
         int width = 600;
         int height = 400;
         setResizable(false);
-        setLocationRelativeTo(parent);
         getContentPane().setBackground(dark);
         setBounds(center.x - width / 2, center.y - height / 2, width, height);
+        setLocationRelativeTo(parent);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         setVisible(true);
@@ -229,8 +229,8 @@ public class LoginGUI extends JFrame implements ActionListener {
         abbrechenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                StartfensterGUI.startFenster(getFrame());
                 dispose();
-                StartfensterGUI.startFenster(getRootPane().getParent());
             }
         });
 
@@ -253,9 +253,9 @@ public class LoginGUI extends JFrame implements ActionListener {
                                     } else {
                                         Foo.saveAngemeldetBleiben(false);
                                     }
-                                    dispose();
-                                    AdminGUI.openAdminGUI();
+                                    AdminGUI.openAdminGUI(getFrame());
                                     System.out.println("Starting Admin User-Interface.");
+                                    dispose();
                                 } else {
                                     System.out.println("Passwort falsch");
                                     JOptionPane.showMessageDialog(new JDialog(), "Das eingegebene Passwort ist nicht korrekt");
@@ -265,9 +265,9 @@ public class LoginGUI extends JFrame implements ActionListener {
 
 
                             } catch (IOException | ClassNotFoundException io) {
-                                dispose();
                                 io.printStackTrace();
-                                StartfensterGUI.startFenster(null);
+                                StartfensterGUI.startFenster(getFrame());
+                                dispose();
                             }
                         }
                         if (Foo.KontrolleurFileListe.contains(Path.of(Foo.konPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())) {
@@ -283,14 +283,16 @@ public class LoginGUI extends JFrame implements ActionListener {
                                     } else {
                                         Foo.saveAngemeldetBleiben(false);
                                     }
-                                    dispose();
-                                    KontrolleurGUI.openKonGUI();
+
+                                    KontrolleurGUI.openKonGUI(getFrame());
                                     System.out.println("Starting Kontrolleur User-Interface.");
+                                    dispose();
                                 }
                             } catch (IOException | ClassNotFoundException io) {
-                                dispose();
+
                                 io.printStackTrace();
-                                StartfensterGUI.startFenster(null);
+                                StartfensterGUI.startFenster(getFrame());
+                                dispose();
                             }
                         }
                         if (Foo.SachbearbeiterFileListe.contains(Path.of(Foo.sbPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())) {
@@ -306,14 +308,16 @@ public class LoginGUI extends JFrame implements ActionListener {
                                     } else {
                                         // Erneuter Aufruf des L&F sodass bei Rückgang auf vorheriges Fenster, das L&F bestehen bleibt            // Foo.saveAngemeldetBleiben(false);
                                     }
-                                    dispose();
-                                    SachbearbeiterGUI.openSBGUI();
+
+                                    SachbearbeiterGUI.openSBGUI(getFrame());
                                     System.out.println("Starting Sachbearbeiter User-Interface.");
+                                    dispose();
                                 }
                             } catch (IOException | ClassNotFoundException io) {
-                                dispose();
+
                                 io.printStackTrace();
-                                StartfensterGUI.startFenster(null);
+                                StartfensterGUI.startFenster(getFrame());
+                                dispose();
                             }
                         }
 
@@ -339,7 +343,7 @@ public class LoginGUI extends JFrame implements ActionListener {
 
     }
 
-    public static void openLogin(Container parent){
+    public static void openLogin(Frame parent){
         Foo.getDirectoryData();
         LoginGUI gui = new LoginGUI(parent);
     }

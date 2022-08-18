@@ -4,6 +4,7 @@ import src.GUI.*;
 import src.GUI.Admin.AdminGUI;
 import src.GUI.Kon.KontrolleurGUI;
 import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
+import src.GUI.elements.InactivityListener;
 import src.roles.Administrator;
 import src.roles.Kontrolleur;
 import src.roles.Sachbearbeiter;
@@ -11,6 +12,7 @@ import src.roles.Schwarzfahrer;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileSystem;
@@ -132,20 +134,23 @@ public class Foo {
         angemeldetBleiben = getAngemeldetBleiben();
         setAngemeldet(angemeldetBleiben);
 
-        if(!angemeldet){
-            StartfensterGUI.startFenster(null);
-        } else if (currentAdmin!=null) {
-            AdminGUI.openAdminGUI();
-        } else if (currentKontrolleur!=null) {
-            KontrolleurGUI.openKonGUI();
-        } else if (currentSachbearbeiter!=null) {
-            SachbearbeiterGUI.openSBGUI();
-        }
-
         currentDate = getCurrentDate();
         currentTime = getCurrentTime();
 
         System.out.println(currentDate);
+
+
+        if(!angemeldet){
+            StartfensterGUI.startFenster(null);
+        } else if (currentAdmin!=null) {
+            AdminGUI.openAdminGUI(null);
+        } else if (currentKontrolleur!=null) {
+            KontrolleurGUI.openKonGUI(null);
+        } else if (currentSachbearbeiter!=null) {
+            SachbearbeiterGUI.openSBGUI(null);
+        }
+
+        getCurrentLogoutTime();
 
 
     }
@@ -330,6 +335,7 @@ public class Foo {
         Foo.angemeldet = angemeldet;
     }
 
+
     public static void saveAngemeldetBleiben(boolean angemeldetBleiben) throws IOException {
         if (angemeldetBleiben){
             angemeldetBleiben = true;
@@ -388,10 +394,22 @@ public class Foo {
         Calendar.set(DATE_YEAR, DATE_MONTH, DATE_DAY);
         return Simple_Date_Format.format(Calendar.getTime());
     }
+
     public static String getCurrentTime(){
         return String.valueOf(Calendar.getInstance().get(Calendar.HOUR_OF_DAY)).concat(":").concat(String.valueOf(java.util.Calendar.getInstance().get(Calendar.MINUTE)));
     }
-
+    public static String getCurrentLogoutTime(){
+        String s = autoLogoutTime;
+        if (currentKontrolleur!=null){
+            s = currentKontrolleur.getAutoLogout();
+        } else if (currentAdmin!=null) {
+            s = currentAdmin.getAutoLogout();
+        } else if (currentSachbearbeiter!=null) {
+            s = currentSachbearbeiter.getAutoLogout();
+        }
+        autoLogoutTime = s;
+        return s;
+    }
 
 
     public static void okWindow(String message){
@@ -412,5 +430,6 @@ public class Foo {
             System.out.println("Directories gelöscht");
         }
     }
+
 }
 
