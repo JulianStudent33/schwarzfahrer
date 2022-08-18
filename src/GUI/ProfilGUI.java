@@ -178,7 +178,7 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setResizable(false);
         setVisible(true);
-
+        setLocationRelativeTo(parent);
 
 
         AbbrechenButton.addActionListener(new ActionListener() {

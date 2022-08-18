@@ -42,7 +42,7 @@ public class KontrolleurGUI extends GUI_Mama implements ActionListener {
 
         // "Willkommen auf der" Text
         JLabel label = new JLabel();
-        label.setText("<html><body><center><p><u>Hallo Kontrolleur<u></p></center></body></html>");
+        label.setText("<html><body><center><p>Hallo Kontrolleur</p></center></body></html>");
         label.setForeground(white);
         label.setHorizontalTextPosition(JLabel.CENTER);
         label.setVerticalTextPosition(JLabel.CENTER);
