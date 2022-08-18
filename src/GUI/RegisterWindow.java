@@ -412,7 +412,7 @@ public class RegisterWindow extends GUI_Mama {
 
 
 
-                                    Foo.currentKontrolleur = new Kontrolleur(bname.getText(), pw.getText(),
+                                    Foo.currentUser = new Kontrolleur(bname.getText(), pw.getText(),
                                             vname.getText(), name.getText(), genderBox.getSelectedItem().toString(),
                                             nummer.getText(), mail.getText().toLowerCase(Locale.ROOT), date);
                                     Foo.angemeldet = true;
@@ -420,7 +420,7 @@ public class RegisterWindow extends GUI_Mama {
                                     dispose();
                                     break;
                                 case 2:
-                                    Foo.currentSachbearbeiter = new Sachbearbeiter(bname.getText(), pw.getText(),
+                                    Foo.currentUser = new Sachbearbeiter(bname.getText(), pw.getText(),
                                             vname.getText(), name.getText(), genderBox.getSelectedItem().toString(),
                                             nummer.getText(), mail.getText().toLowerCase(Locale.ROOT), date);
                                     Foo.angemeldet = true;
@@ -430,7 +430,7 @@ public class RegisterWindow extends GUI_Mama {
                             }
                         } catch (IOException ex) {
 
-                            StartfensterGUI.startFenster(getFrame());
+                            StartfensterGUI.openStartFenster(getFrame());
                             ex.printStackTrace();
                             dispose();
                             throw new RuntimeException(ex);

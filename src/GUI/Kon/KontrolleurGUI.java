@@ -10,7 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class KontrolleurGUI extends GUI_Mama implements ActionListener {
-    public static Kontrolleur currentUser;
+    //public static Kontrolleur currentUser;
     public static JButton SchwarzfahrtErfassen = new JButton();
     public static JButton SchwarzfahrerSuchen = new JButton();
     public static JButton Statistiken  = new JButton();
@@ -21,10 +21,13 @@ public class KontrolleurGUI extends GUI_Mama implements ActionListener {
 
     public KontrolleurGUI(GUI_Mama parent) {
 
+        setupGUI(parent, "KontrolleurGUI");
         enableButtons();
-        parentGUI = parent;
+        this.currentUser.display();
 
-        currentUser = Foo.currentKontrolleur;
+
+
+
         // Panelmanagement
         JPanel gridpanel = new JPanel();
         gridpanel.setBackground(dark);
@@ -207,7 +210,7 @@ public class KontrolleurGUI extends GUI_Mama implements ActionListener {
                     public void actionPerformed(ActionEvent e) {
 
                         currentUser.abmelden();
-                        StartfensterGUI.startFenster(getFrame());
+                        StartfensterGUI.openStartFenster(getFrame());
                         dispose();
 
                     }

@@ -1,9 +1,8 @@
 package src.GUI.Admin;
 import src.Foo;
 import src.GUI.*;
-import src.GUI.Kon.Kachel2;
-import src.GUI.Sachbearbeiter.Kachel1;
 import src.roles.Administrator;
+import src.roles.Mitarbeiter;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,7 +13,7 @@ import static src.Foo.*;
 
 public class AdminGUI extends GUI_Mama implements ActionListener {
 
-    public static Administrator currentUser;
+    //public static Administrator currentUser;
     public static JButton AdminAnlegen = new JButton();
     public static JButton MitarbeiterVerwalten = new JButton();
     public static JButton Statistiken = new JButton();
@@ -26,9 +25,14 @@ public class AdminGUI extends GUI_Mama implements ActionListener {
 
     public AdminGUI(GUI_Mama parent){
 
+        setupGUI(parent, "AdminGUI");
         enableButtons();
+        this.currentUser.display();
 
-        currentUser = Foo.currentAdmin;
+
+
+
+        //currentUser = Foo.currentAdmin;
         // Panelmanagement
         JPanel gridpanel = new JPanel();
         gridpanel.setBackground(dark);
@@ -210,7 +214,7 @@ public class AdminGUI extends GUI_Mama implements ActionListener {
             public void actionPerformed(ActionEvent e) {
 
                 currentUser.abmelden();
-                StartfensterGUI.startFenster(getFrame());
+                StartfensterGUI.openStartFenster(getFrame());
                 dispose();
 
             }
@@ -260,6 +264,7 @@ public class AdminGUI extends GUI_Mama implements ActionListener {
     public static void openAdminGUI(GUI_Mama parent){
         Foo.getDirectoryData();
         AdminGUI gui = new AdminGUI(parent);
+
     }
 
     @Override

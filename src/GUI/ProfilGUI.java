@@ -30,11 +30,16 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
     PlaceholderTextField Geburtstag = new PlaceholderTextField();
     PlaceholderTextField EMail = new PlaceholderTextField();
     PlaceholderTextField Telefonnummer = new PlaceholderTextField();
+    JButton SpeichernButton = new JButton();
     JButton AbbrechenButton = new JButton();
     JButton AngabenAendern = new JButton();
     JLabel AngabenAendernLabel = new JLabel();
 
     public ProfilGUI(GUI_Mama parent){
+
+
+
+
         //Panelmanagement
 
         label.setBackground(dark);
@@ -122,12 +127,6 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         AngabenAendernLabel.setText("<html><body><p><center>Angaben <br>ändern?</center></p></body></html>");
         AngabenAendernLabel.setBorder(new EmptyBorder(0,10,18,10));
 
-        AbbrechenButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                dispose();
-            }
-        });
 
 
         AngabenAendern.addActionListener(this);
@@ -163,18 +162,30 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         setSize(400, 800);
         setTitle("Profil");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        setLocationRelativeTo(parent);
         setResizable(false);
         setVisible(true);
 
+
+        SpeichernButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+
+
+            }
+        });
 
 
         AbbrechenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                dispose();
+                parentGUI.StartAutoLogout();
+                System.out.println("Starte AutoLogout für " + parentGUI.name);
                 SachbearbeiterGUI.Profil.setEnabled(true);
                 AdminGUI.Profil.setEnabled(true);
                 KontrolleurGUI.Profil.setEnabled(true);
+                dispose();
             }
         });
 
@@ -185,19 +196,8 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
 
 
     public static void openProfilGUI(GUI_Mama parent){
-        if (parent.getClass().equals(KontrolleurGUI.class)){
-            System.out.println("ParentFrame ist KontrolleurGUI");
-            ProfilGUI gui1 = new ProfilGUI(parent);
-        }else if(parent.getClass().equals(SachbearbeiterGUI.class)){
-            System.out.println("ParentFrame ist SachbearbeiterGUI");
-            ProfilGUI gui1 = new ProfilGUI(parent);
-        } else if (parent.getClass().equals(AdminGUI.class)) {
-            System.out.println("ParentFrame ist AdminGUI");
-            ProfilGUI gui1 = new ProfilGUI(parent);
-        } else{
-            System.out.println("Du hast verkackt mhm mhm");
-        }
 
+            ProfilGUI gui1 = new ProfilGUI(parent);
     }
 
     @Override

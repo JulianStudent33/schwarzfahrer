@@ -2,8 +2,6 @@ package src.GUI.Sachbearbeiter;
 
 import src.Foo;
 import src.GUI.*;
-import src.GUI.Admin.AdminGUI;
-import src.GUI.Kon.KontrolleurGUI;
 import src.roles.Sachbearbeiter;
 
 import javax.swing.*;
@@ -15,7 +13,7 @@ import static src.Foo.*;
 
 public class SachbearbeiterGUI extends GUI_Mama implements ActionListener {
 
-    public static Sachbearbeiter currentUser;
+    //public static Sachbearbeiter currentUser;
     public static JButton Kachel1 = new JButton();
     public static JButton Kachel2 = new JButton();
     public static JButton Statistiken  = new JButton();
@@ -27,9 +25,17 @@ public class SachbearbeiterGUI extends GUI_Mama implements ActionListener {
 
 
     public SachbearbeiterGUI(GUI_Mama parent){
-        this.name = "SachbearbeiterGUI";
-        currentUser = currentSachbearbeiter;
-        parentGUI = parent;
+
+        //Setup
+        setupGUI(parent, "SachbearbeiterGUI");
+        enableButtons();
+
+        //currentUser = currentSachbearbeiter;
+
+
+
+
+
         // Panelmanagement
         JPanel gridpanel = new JPanel();
         gridpanel.setBackground(dark);
@@ -217,7 +223,7 @@ public class SachbearbeiterGUI extends GUI_Mama implements ActionListener {
 
 
                 currentUser.abmelden();
-                StartfensterGUI.startFenster(getFrame());
+                StartfensterGUI.openStartFenster(getFrame());
                 dispose();
 
 
