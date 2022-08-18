@@ -2,7 +2,6 @@ package src.GUI.Sachbearbeiter;
 
 import src.Foo;
 import src.GUI.*;
-import src.roles.Sachbearbeiter;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,8 +13,8 @@ import static src.Foo.*;
 public class SachbearbeiterGUI extends GUI_Mama implements ActionListener {
 
     //public static Sachbearbeiter currentUser;
-    public static JButton Kachel1 = new JButton();
-    public static JButton Kachel2 = new JButton();
+    public static JButton Transaktionbearbeiten = new JButton();
+    public static JButton Schwarzfahrtensuchen = new JButton();
     public static JButton Statistiken  = new JButton();
     public static JButton Profil = new JButton();
     public static JButton Einstellungen = new JButton();
@@ -64,54 +63,56 @@ public class SachbearbeiterGUI extends GUI_Mama implements ActionListener {
 
        //JButton "Schwarzfahrt erfassen"
         //Styling
-        Kachel1.addActionListener(this);
-        Kachel1.setText("<html><body><center><p>Kachel 1</p></center></body></html>");
-        Kachel1.setBackground(hellb);
-        Kachel1.setForeground(white);
-        Kachel1.setHorizontalTextPosition(JLabel.CENTER);
-        Kachel1.setVerticalTextPosition(JLabel.CENTER);
-        Kachel1.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
-        Kachel1.setHorizontalAlignment(JLabel.CENTER);
-        Kachel1.setVerticalAlignment(JLabel.CENTER);
-        Kachel1.setFocusable(false);
-        Kachel1.setBorderPainted(false);
-        Kachel1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        Kachel1.setBounds(140,100,100,100);
+        Transaktionbearbeiten.addActionListener(this);
+        Transaktionbearbeiten.setText("<html><body><center><p>Transaktion<br>bearbeiten</p></center></body></html>");
+        Transaktionbearbeiten.setBackground(hellb);
+        Transaktionbearbeiten.setForeground(white);
+        Transaktionbearbeiten.setHorizontalTextPosition(JLabel.CENTER);
+        Transaktionbearbeiten.setVerticalTextPosition(JLabel.CENTER);
+        Transaktionbearbeiten.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
+        Transaktionbearbeiten.setHorizontalAlignment(JLabel.CENTER);
+        Transaktionbearbeiten.setVerticalAlignment(JLabel.CENTER);
+        Transaktionbearbeiten.setFocusable(false);
+        Transaktionbearbeiten.setBorderPainted(false);
+        Transaktionbearbeiten.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        Transaktionbearbeiten.setBounds(140,100,100,100);
 
         //ActionListener
 
-        Kachel1.addActionListener(new ActionListener() {
+        Transaktionbearbeiten.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-               // Kachel1GUI.openKachel1GUI();
+                TransaktionbearbeitenGUI.openTransaktionbearbeiten(getFrame());
+                Transaktionbearbeiten.setEnabled(false);
 
             }
         });
 
         // JButton "Schwarzfahrer suchen"
         //Styling
-        Kachel2.addActionListener(this);
-        Kachel2.setText("<html><body><center><p>Kachel 2</p></center></body></html>");
-        Kachel2.setBackground(dunkelb);
-        Kachel2.setForeground(white);
-        Kachel2.setHorizontalTextPosition(JLabel.CENTER);
-        Kachel2.setVerticalTextPosition(JLabel.CENTER);
-        Kachel2.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
-        Kachel2.setHorizontalAlignment(JLabel.CENTER);
-        Kachel2.setVerticalAlignment(JLabel.CENTER);
-        Kachel2.setFocusable(false);
-        Kachel2.setBorderPainted(false);
-        Kachel2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        Kachel2.setBounds(140,100,100,100);
+        Schwarzfahrtensuchen.addActionListener(this);
+        Schwarzfahrtensuchen.setText("<html><body><center><p>Schwarzfahrten<br>suchen</p></center></body></html>");
+        Schwarzfahrtensuchen.setBackground(dunkelb);
+        Schwarzfahrtensuchen.setForeground(white);
+        Schwarzfahrtensuchen.setHorizontalTextPosition(JLabel.CENTER);
+        Schwarzfahrtensuchen.setVerticalTextPosition(JLabel.CENTER);
+        Schwarzfahrtensuchen.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
+        Schwarzfahrtensuchen.setHorizontalAlignment(JLabel.CENTER);
+        Schwarzfahrtensuchen.setVerticalAlignment(JLabel.CENTER);
+        Schwarzfahrtensuchen.setFocusable(false);
+        Schwarzfahrtensuchen.setBorderPainted(false);
+        Schwarzfahrtensuchen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        Schwarzfahrtensuchen.setBounds(140,100,100,100);
 
         //ActionListener
 
-        Kachel2.addActionListener(new ActionListener() {
+        Schwarzfahrtensuchen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                Kachel2GUI.openKachel2GUI(getFrame());
+                SchwarzfahrtensuchenGUI.openSchwarzfahrtensuchenGUI(getFrame());
+                Schwarzfahrtensuchen.setEnabled(false);
 
             }
         });
@@ -248,8 +249,8 @@ public class SachbearbeiterGUI extends GUI_Mama implements ActionListener {
         Text.add(label, BorderLayout.SOUTH);
 
         //Text.add(Trennlinie,BorderLayout.SOUTH);
-        gridpanel.add(Kachel1);
-        gridpanel.add(Kachel2);
+        gridpanel.add(Transaktionbearbeiten);
+        gridpanel.add(Schwarzfahrtensuchen);
         gridpanel.add(Statistiken);
         gridpanel.add(Profil);
         gridpanel.add(Einstellungen);
@@ -262,8 +263,8 @@ public class SachbearbeiterGUI extends GUI_Mama implements ActionListener {
     }
 
     public  void enableButtons(){
-        Kachel1.setEnabled(true);
-        Kachel2.setEnabled(true);
+        Transaktionbearbeiten.setEnabled(true);
+        Schwarzfahrtensuchen.setEnabled(true);
         Statistiken.setEnabled(true);
         Profil.setEnabled(true);
         Einstellungen.setEnabled(true);
