@@ -93,6 +93,7 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
         AnzahlSchwarzfahrer.setBorderPainted(false);
         AnzahlSchwarzfahrer.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         AnzahlSchwarzfahrer.setBounds(140,100,100,100);
+        AnzahlSchwarzfahrer.setRolloverEnabled(false);
 
         // JButton "Schwarzfahrer suchen"
         //Styling
@@ -126,7 +127,7 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
         AnzahlMitarbeiter.setBorderPainted(false);
         AnzahlMitarbeiter.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         AnzahlMitarbeiter.setBounds(140,100,100,100);
-
+        AnzahlMitarbeiter.setRolloverEnabled(false);
 
         //JButton "Statistiken"
         //Styling
@@ -147,7 +148,7 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
         HaeufigsteSchwarzfahrt.setBorderPainted(false);
         HaeufigsteSchwarzfahrt.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         HaeufigsteSchwarzfahrt.setBounds(140,100,100,100);
-
+        HaeufigsteSchwarzfahrt.setRolloverEnabled(false);
 
         //JButton "ProfilGUI"
         //Styling
@@ -169,7 +170,7 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
         ErfassteSchwarzfahrten.setBorderPainted(false);
         ErfassteSchwarzfahrten.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         ErfassteSchwarzfahrten.setBounds(140,100,100,100);
-
+        ErfassteSchwarzfahrten.setRolloverEnabled(false);
 
         //JButton "Einstellungen"
         //Styling
@@ -209,6 +210,7 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
         SchwarzfahrtenStatus.setBorderPainted(false);
         SchwarzfahrtenStatus.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         SchwarzfahrtenStatus.setBounds(140,100,100,100);
+        SchwarzfahrtenStatus.setRolloverEnabled(false);
 
 
 

@@ -103,7 +103,7 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
         angemeldetBleibenCheckBox.addActionListener(this);
         angemeldetBleibenCheckBox.isEnabled();
         angemeldetBleibenCheckBox.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 8));
-        angemeldetBleibenCheckBox.setBounds(244, 145, 112,20);
+        angemeldetBleibenCheckBox.setBounds(244, 150, 112,20);
 
 
         //JButton "Login"
@@ -120,7 +120,7 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
         anmeldenButton.setFocusable(true);
         anmeldenButton.setBorderPainted(false);
         anmeldenButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        anmeldenButton.setBounds(190, 10, 100, 30);
+        anmeldenButton.setBounds(190, 15, 100, 30);
 
         // Button Abbrechen
         JButton abbrechenButton = new JButton();
@@ -136,7 +136,7 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
         abbrechenButton.setFocusable(false);
         abbrechenButton.setBorderPainted(false);
         abbrechenButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        abbrechenButton.setBounds(310, 10, 100, 30);
+        abbrechenButton.setBounds(310, 15, 100, 30);
 
         // Daten aktualisieren
         Foo.getDirectoryData();
