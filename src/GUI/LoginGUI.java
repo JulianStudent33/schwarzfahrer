@@ -23,7 +23,7 @@ public class LoginGUI extends JFrame implements ActionListener {
 
 
 
-    public LoginGUI(){
+    public LoginGUI(Container parent){
 
         // Panelmanagement
 
@@ -153,11 +153,11 @@ public class LoginGUI extends JFrame implements ActionListener {
 
 
         // Add für gesamte Panels
-        this.add(Text, BorderLayout.NORTH);
+        add(Text, BorderLayout.NORTH);
         //this.add(Benutzer, BorderLayout.CENTER);
-        this.add(Passwort, BorderLayout.CENTER);
-        this.add(AngemeldetBleiben, BorderLayout.SOUTH);
-        this.add(Bot, BorderLayout.SOUTH);
+        add(Passwort, BorderLayout.CENTER);
+        add(AngemeldetBleiben, BorderLayout.SOUTH);
+        add(Bot, BorderLayout.SOUTH);
 
         // Gesamt Window
 
@@ -165,10 +165,10 @@ public class LoginGUI extends JFrame implements ActionListener {
         Point center = GraphicsEnvironment.getLocalGraphicsEnvironment().getCenterPoint();
         int width = 600;
         int height = 400;
-        this.setResizable(false);
-        this.setLocationRelativeTo(null);
-        this.getContentPane().setBackground(dark);
-        this.setBounds(center.x - width / 2, center.y - height / 2, width, height);
+        setResizable(false);
+        setLocationRelativeTo(parent);
+        getContentPane().setBackground(dark);
+        setBounds(center.x - width / 2, center.y - height / 2, width, height);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         setVisible(true);
@@ -230,7 +230,7 @@ public class LoginGUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                StartfensterGUI.startFenster();
+                StartfensterGUI.startFenster(getRootPane().getParent());
             }
         });
 
@@ -267,7 +267,7 @@ public class LoginGUI extends JFrame implements ActionListener {
                             } catch (IOException | ClassNotFoundException io) {
                                 dispose();
                                 io.printStackTrace();
-                                StartfensterGUI.startFenster();
+                                StartfensterGUI.startFenster(null);
                             }
                         }
                         if (Foo.KontrolleurFileListe.contains(Path.of(Foo.konPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())) {
@@ -290,7 +290,7 @@ public class LoginGUI extends JFrame implements ActionListener {
                             } catch (IOException | ClassNotFoundException io) {
                                 dispose();
                                 io.printStackTrace();
-                                StartfensterGUI.startFenster();
+                                StartfensterGUI.startFenster(null);
                             }
                         }
                         if (Foo.SachbearbeiterFileListe.contains(Path.of(Foo.sbPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())) {
@@ -313,7 +313,7 @@ public class LoginGUI extends JFrame implements ActionListener {
                             } catch (IOException | ClassNotFoundException io) {
                                 dispose();
                                 io.printStackTrace();
-                                StartfensterGUI.startFenster();
+                                StartfensterGUI.startFenster(null);
                             }
                         }
 
@@ -339,9 +339,9 @@ public class LoginGUI extends JFrame implements ActionListener {
 
     }
 
-    public static void openLogin(){
+    public static void openLogin(Container parent){
         Foo.getDirectoryData();
-        LoginGUI gui = new LoginGUI();
+        LoginGUI gui = new LoginGUI(parent);
     }
 
     @Override

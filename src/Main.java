@@ -4,30 +4,35 @@ import com.formdev.flatlaf.FlatLightLaf;
 import src.GUI.RegisterWindow;
 
 import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
 
 import static src.Foo.*;
 
 public class Main {
 
-    public static boolean test;
+    public static boolean colorchange;
     public static void main(String[] args) {
 
         // True = LightMode - False = DarkMode
-        test = false;
-        colormode(test);
+        colorchange = false;
+        colormode(colorchange);
         //Start
         try {
 
-            if(test){
+            if (colorchange) {
                 UIManager.setLookAndFeel(new FlatLightLaf());
             } else {
                 UIManager.setLookAndFeel(new FlatDarkLaf());
             }
 
-
-            UIManager.put("ComboBox.buttonArrowColor", dark);
-            UIManager.put("ComboBox.buttonBackground", white);
+            UIManager.put("ComboBox.disabledForeground", white);
+            UIManager.put("ComboBox.disabledBackground", dark);
+            UIManager.put("ComboBox.buttonDisabledArrowColor", dark);
+            UIManager.put("ComboBox.buttonArrowColor", notSoDark);
+            UIManager.put("ComboBox.buttonBackground", whitebg);
+            UIManager.put("ComboBox.buttonHoverArrowColor", notSoDark);
+            UIManager.put("ComboBox.buttonPressedArrowColor", white);
             UIManager.put("Component.arrowType", "triangle");
             UIManager.put("ComboBox.popupBackground", white);
             UIManager.put("ComboBox.selectionForeground", dark);
@@ -44,14 +49,14 @@ public class Main {
 
             public void run() {
                 //deleteDirs();
-                RegisterWindow.openRegisterGUI();
+
 
 
 
                 try {
 
                     Foo foo = new Foo();
-
+                    RegisterWindow tet = new RegisterWindow(null);
                     } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 } catch (ClassNotFoundException ex) {

@@ -214,7 +214,7 @@ public class AdminGUI extends JFrame implements ActionListener {
 
                 dispose();
                 currentUser.abmelden();
-                StartfensterGUI.startFenster();
+                StartfensterGUI.startFenster(getRootPane().getParent());
 
             }
         });

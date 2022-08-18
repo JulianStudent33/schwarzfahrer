@@ -21,13 +21,13 @@ public class StartfensterGUI extends JFrame implements ActionListener {
 
 
     //Konstruktor
-    StartfensterGUI() {
+    StartfensterGUI(Container parent) {
 
         // Start des Fensters
-        frame();
+        frame(parent);
     }
 
-    private void frame() {
+    private void frame(Container parent) {
 
         // Panelmanagement
         JPanel Background = new JPanel();
@@ -59,7 +59,7 @@ public class StartfensterGUI extends JFrame implements ActionListener {
         regb.setLayout(null);
 
         // Trennlinie
-        Border border = BorderFactory.createLineBorder(Color.white, 20);
+        Border border = BorderFactory.createLineBorder(white, 20);
         JSeparator trenn = new JSeparator();
         trenn.setForeground(white);
         trenn.setPreferredSize(new Dimension(350,10));
@@ -129,7 +129,7 @@ public class StartfensterGUI extends JFrame implements ActionListener {
         this.setTitle("Schwarzfahrer Projekt");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
-        this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(parent);
         this.setVisible(true);
         this.getContentPane().setBackground(dark);
 
@@ -190,19 +190,19 @@ public class StartfensterGUI extends JFrame implements ActionListener {
             }else{
                 System.out.println("Öffne Register-Window");
                 dispose();
-                RegisterGUI.register();
+                RegisterWindow.openRegisterGUI(getRootPane().getParent());
             }
         } else if (e.getSource()==anm) {
             System.out.println("Öffne Login-Window");
+            LoginGUI.openLogin(getRootPane().getParent());
             dispose();
-            LoginGUI.openLogin();
         }
     }
 
 
-    public static void startFenster(){
+    public static void startFenster(Container parent){
         Foo.getDirectoryData();
-        StartfensterGUI gui = new StartfensterGUI();
+        StartfensterGUI gui = new StartfensterGUI(parent);
     }
 
 

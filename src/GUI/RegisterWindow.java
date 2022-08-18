@@ -5,26 +5,26 @@ import src.GUI.Kon.KontrolleurGUI;
 import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
 import src.GUI.elements.PlaceholderPasswordField;
 import src.GUI.elements.PlaceholderTextField;
-import src.Main;
 import src.nickcode.pass;
 import src.GUI.elements.*;
 import src.roles.Kontrolleur;
 import src.roles.Sachbearbeiter;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.*;
 import java.util.List;
-import java.util.Locale;
 
 import static src.Foo.*;
-import static src.Main.test;
+import static src.Main.colorchange;
 
 public class RegisterWindow extends JFrame {
 
@@ -56,21 +56,32 @@ public class RegisterWindow extends JFrame {
     JButton reg = new JButton();
 
     //Konstruktor
-    public RegisterWindow() {
+    public RegisterWindow(Container parent) {
 
         // Erneuter Aufruf des L&F sodass bei Rückgang auf vorheriges Fenster, das L&F bestehen bleibt
 
 
         // Start des Fensters mit der void Methode frame()
-        frame();
+        frame(parent);
     }
 
-    private void frame() {
+    private void frame(Container parent) {
+
+        if(Foo.firstUsage){
+            rollen[0]="Admin";
+            rollenBox.addItem(rollen[0]);
+            rollenBox.setEnabled(false);
+        } else {
+            rollen[0]="*Rolle";
+            rollenBox.addItem(rollen[0]);
+            rollenBox.addItem(rollen[1]);
+            rollenBox.addItem(rollen[2]);
+        }
 
 
-        rollenBox.addItem(rollen[0]);
-        rollenBox.addItem(rollen[1]);
-        rollenBox.addItem(rollen[2]);
+
+
+
 
 
         genderBox.addItem(geschlechter[0]);
@@ -127,7 +138,11 @@ public class RegisterWindow extends JFrame {
 
         // JLabel für Titel
         JLabel label = new JLabel();
-        label.setText("Registrieren");
+        if(firstUsage){
+            label.setText("Admin Registrieren");
+        } else {
+            label.setText("Registrieren");
+        }
         label.setForeground(white);
         label.setHorizontalTextPosition(JLabel.CENTER);
         label.setVerticalTextPosition(JLabel.CENTER);
@@ -138,9 +153,15 @@ public class RegisterWindow extends JFrame {
 
         // Top Panel Textfelder
         // bname anpassungen
-        bname.setBorder(null);
-        bname.setForeground(dark);
-        bname.setBackground(white);
+
+        // Border Variablen Erstellung
+        Border border = bname.getBorder();
+        Border margin = new EmptyBorder(0,5,0,0);
+
+
+        bname.setBorder(new CompoundBorder(border, margin));
+        bname.setForeground(white);
+        bname.setBackground(whitebg);
         bname.setCaretColor(dark);
         bname.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         bname.setSelectedTextColor(dark);
@@ -149,10 +170,10 @@ public class RegisterWindow extends JFrame {
         //bname.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Benutzername");
 
         // name anpassungen
-        name.setBorder(null);
+        name.setBorder(new CompoundBorder(border, margin));
         String focus = name.getText();
-        name.setForeground(dark);
-        name.setBackground(white);
+        name.setForeground(white);
+        name.setBackground(whitebg);
         name.setCaretColor(dark);
         name.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         name.setSelectedTextColor(dark);
@@ -160,9 +181,9 @@ public class RegisterWindow extends JFrame {
         name.setPlaceholder("Nachname*");
 
         // vname anpassungen
-        vname.setBorder(null);
-        vname.setForeground(dark);
-        vname.setBackground(white);
+        vname.setBorder(new CompoundBorder(border, margin));
+        vname.setForeground(white);
+        vname.setBackground(whitebg);
         vname.setCaretColor(dark);
         vname.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         vname.setSelectedTextColor(dark);
@@ -172,7 +193,7 @@ public class RegisterWindow extends JFrame {
         // Mid Panel Management
         // Rolle Auswahlmenü
         // Auswahlmöglichkeiten
-        if(test) {
+        if(colorchange) {
             Color[] colorrollen = {Grey,Grey,Grey};
             ComboBoxRenderer renderer = new ComboBoxRenderer(rollenBox);
             renderer.setColors(colorrollen);
@@ -180,31 +201,36 @@ public class RegisterWindow extends JFrame {
             rollenBox.setRenderer(renderer);
         }
 
+
         rollenBox.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
-        rollenBox.setBackground(white);
-        rollenBox.setForeground(notSoDark);
+        rollenBox.setBackground(whitebg);
+        rollenBox.setForeground(white);
         rollenBox.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         rollenBox.setFocusable(false);
-        rollenBox.setBorder(null);
+        rollenBox.setBorder(new CompoundBorder(border, margin));
 
         // Gender Auswahlmenü
 
         //gender.setPrototypeDisplayValue("XXXXXXXXXXXX");
         genderBox.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
-        genderBox.setBackground(white);
-        genderBox.setForeground(notSoDark);
+        genderBox.setBackground(whitebg);
+        if(genderBox.getItemAt(0)=="Geschlecht*") {
+            genderBox.setForeground(notSoDark);
+        } else {
+            genderBox.setForeground(white);
+        }
         genderBox.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         genderBox.setFocusable(false);
-        genderBox.setBorder(null);
+        genderBox.setBorder(new CompoundBorder(border, margin));
 
         // Geburtsdatum Button
         dateButton.setText("Bitte Geburtsdatum auswählen*");
         dateButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
-        dateButton.setBackground(white);
+        dateButton.setBackground(whitebg);
         dateButton.setForeground(notSoDark);
         dateButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         dateButton.setFocusable(true);
-        dateButton.setBorder(null);
+        dateButton.setBorder(new CompoundBorder(border, margin));
         dateButton.setHorizontalTextPosition(SwingConstants.LEFT);
 
 
@@ -215,22 +241,22 @@ public class RegisterWindow extends JFrame {
 
         final JComboBox<String> tage = new JComboBox<>(days);
         tage.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
-        tage.setBackground(white);
+        tage.setBackground(whitebg);
         tage.setForeground(dark);
         tage.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         tage.setFocusable(false);
-        tage.setBorder(null);
+        tage.setBorder(new CompoundBorder(border, margin));
 
         // Monat
         String[] month = {"M","1", "2","3","4","5","6","7","8","9","10","11","12"};
 
         final JComboBox<String> monat = new JComboBox<>(month);
         monat.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
-        monat.setBackground(white);
+        monat.setBackground(whitebg);
         monat.setForeground(dark);
         monat.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         monat.setFocusable(false);
-        monat.setBorder(null);
+        monat.setBorder(new CompoundBorder(border, margin));
 
         // Jahr
         // Jahresvariable erstellen
@@ -245,44 +271,44 @@ public class RegisterWindow extends JFrame {
         // Jahrescombobox
         final JComboBox<String> jahr = new JComboBox<>(yearr);
         jahr.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
-        jahr.setBackground(white);
+        jahr.setBackground(whitebg);
         jahr.setForeground(dark);
         jahr.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         jahr.setFocusable(false);
-        jahr.setBorder(null);
+        jahr.setBorder(new CompoundBorder(border, margin));
 
         // Bot Panel Management
         // E-Mail Textfeld
-        mail.setBorder(null);
-        mail.setForeground(dark);
-        mail.setBackground(white);
+        mail.setBorder(new CompoundBorder(border, margin));
+        mail.setForeground(white);
+        mail.setBackground(whitebg);
         mail.setCaretColor(dark);
         mail.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         mail.setSelectedTextColor(dark);
         mail.setSelectionColor(notSoDark);
         mail.setPlaceholder("E-Mail*");
         // Telefonnumer Textfeld
-        nummer.setBorder(null);
-        nummer.setForeground(dark);
-        nummer.setBackground(white);
+        nummer.setBorder(new CompoundBorder(border, margin));
+        nummer.setForeground(white);
+        nummer.setBackground(whitebg);
         nummer.setCaretColor(dark);
         nummer.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         nummer.setSelectedTextColor(dark);
         nummer.setSelectionColor(notSoDark);
         nummer.setPlaceholder("Telefonnummer");
         // PW Textfeld
-        pw.setBorder(null);
-        pw.setForeground(dark);
-        pw.setBackground(white);
+        pw.setBorder(new CompoundBorder(border, margin));
+        pw.setForeground(white);
+        pw.setBackground(whitebg);
         pw.setCaretColor(dark);
         pw.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         pw.setSelectedTextColor(dark);
         pw.setSelectionColor(notSoDark);
         pw.setPlaceholder("Passwort*");
         // PW Bestätigen Textfeld
-        pwb.setBorder(null);
-        pwb.setForeground(dark);
-        pwb.setBackground(white);
+        pwb.setBorder(new CompoundBorder(border, margin));
+        pwb.setForeground(white);
+        pwb.setBackground(whitebg);
         pwb.setCaretColor(dark);
         pwb.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         pwb.setSelectedTextColor(dark);
@@ -297,7 +323,7 @@ public class RegisterWindow extends JFrame {
 
         reg.setText("Registrieren");
         reg.setBackground(hellb);
-        reg.setForeground(white);
+        reg.setForeground(whitebg);
         reg.setHorizontalTextPosition(JLabel.CENTER);
         reg.setVerticalTextPosition(JLabel.CENTER);
         reg.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
@@ -313,7 +339,7 @@ public class RegisterWindow extends JFrame {
         this.setTitle("Schwarzfahrer Projekt");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
-        this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(parent);
         this.setVisible(true);
         this.getContentPane().setBackground(dark);
 
@@ -327,21 +353,21 @@ public class RegisterWindow extends JFrame {
 
         // Add für einzelne Elemente innerhalb der Panel
         Text.add(label);
-        Top.add(bname);
-        Top.add(name);
         Top.add(vname);
+        Top.add(name);
         Top.add(genderBox);
         Top.add(rollenBox);
+        Top.add(dateButton);
 
-        Mid.add(dateButton);
+        Mid.add(mail);
 
                 /*
         Mid.add(tage);
         Mid.add(monat);
         Mid.add(jahr);
 */
-        dMid.add(mail);
         dMid.add(nummer);
+        dMid.add(bname);
         dMid.add(pw);
         dMid.add(pwb);
 
@@ -399,7 +425,7 @@ public class RegisterWindow extends JFrame {
                             }
                         } catch (IOException ex) {
                             dispose();
-                            StartfensterGUI.startFenster();
+                            StartfensterGUI.startFenster(getRootPane().getParent());
                             ex.printStackTrace();
                             throw new RuntimeException(ex);
                         }
@@ -446,7 +472,11 @@ public class RegisterWindow extends JFrame {
                     float[] values = new float[3];
                     bname.setBackground(Foo.red);
                 }else{
-                    bname.setBackground(Foo.green);
+                    if(!bname.getText().isBlank()) {
+                        bname.setBackground(Foo.green);
+                    } else {
+                        bname.setBackground(dark);
+                    }
                 }
             }
         });
@@ -464,7 +494,34 @@ public class RegisterWindow extends JFrame {
                 if(pass.passwordOk(pw.getText())){
                     pw.setBackground(Foo.green);
                 }else{
-                    pw.setBackground(Foo.red);
+                    if(!pw.getText().isBlank()) {
+                        pw.setBackground(Foo.red);
+                    } else {
+                        pw.setBackground(dark);
+                    }
+                }
+            }
+        });
+
+        pwb.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+            }
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+            }
+            @Override
+            public void keyReleased(KeyEvent e) {
+                if(pwb.getText().equals(pw.getText())){
+                    pwb.setBackground(Foo.green);
+                }else{
+                    if(!pwb.getText().isBlank()) {
+                        pwb.setBackground(Foo.red);
+                    } else {
+                        pwb.setBackground(dark);
+                    }
                 }
             }
         });
@@ -476,7 +533,7 @@ public class RegisterWindow extends JFrame {
 
                 if (rollenBox.getItemAt(0).equals("Rolle*")){
                     rollenBox.removeItemAt(0);
-                    rollenBox.setForeground(dark);
+                    rollenBox.setForeground(white);
                 }
             }
         });
@@ -486,8 +543,8 @@ public class RegisterWindow extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (genderBox.getItemAt(0).equals("Geschlecht*")){
                     genderBox.removeItemAt(0);
+                    genderBox.setForeground(white);
                     genderBox.setPrototypeDisplayValue(null);
-                    genderBox.setForeground(dark);
                     //gender.setPreferredSize(new Dimension(100, gender.getHeight()));
                 }
             }
@@ -559,45 +616,94 @@ public class RegisterWindow extends JFrame {
             }
         }
         if (rollenBox.getItemCount() == 3) {
-            rollenBox.addRedFlashEffectWhiteField();
+            if(colorchange){
+                rollenBox.addRedFlashEffect();
+            } else {
+                rollenBox.addRedFlashEffectWhiteField();
+            }
+            
         }
         if (genderBox.getItemCount() == 4) {
-            genderBox.addRedFlashEffectWhiteField();
+            if(colorchange){
+                genderBox.addRedFlashEffect();
+            } else {
+                genderBox.addRedFlashEffectWhiteField();
+            }
         }
         if (vname.getText().isBlank()) {
-            vname.addRedFlashEffectWhiteField();
+            if(colorchange){
+                vname.addRedFlashEffect();
+            } else {
+                vname.addRedFlashEffectWhiteField();
+            }
         }
         if (name.getText().isBlank()) {
-            name.addRedFlashEffectWhiteField();
+            if(colorchange){
+                name.addRedFlashEffect();
+            } else {
+                name.addRedFlashEffectWhiteField();
+            }
         }
         if (dateButton.getText().isBlank()){
-            dateButton.addRedFlashEffectWhiteField();
+            if(colorchange){
+                dateButton.addRedFlashEffect();
+            } else {
+                dateButton.addRedFlashEffectWhiteField();
+            }
         }
         if (mail.getText().isBlank()) {
-            mail.addRedFlashEffectWhiteField();
+            if(colorchange){
+                mail.addRedFlashEffect();
+            } else {
+                mail.addRedFlashEffectWhiteField();
+            }
         }
         if (!mail.getText().contains("@")) {
             mail.setText("");
-            mail.addRedFlashEffectWhiteField();
+            if(colorchange){
+                mail.addRedFlashEffect();
+            } else {
+                mail.addRedFlashEffectWhiteField();
+            }
             mail.setPlaceholder("Bitte eine gültige E-Mail eingeben");
         }
         if (Foo.userExistiertBereits(bname.getText())) {
             bname.setText("");
-            bname.addRedFlashEffectWhiteField();
+            if(colorchange){
+                bname.addRedFlashEffect();
+            } else {
+                bname.addRedFlashEffectWhiteField();
+            }
             bname.setPlaceholder("Benutzername bereits vergeben");
         }
         if (bname.getText().isBlank()) {
-            bname.addRedFlashEffectWhiteField();
+            if(colorchange){
+                bname.addRedFlashEffect();
+            } else {
+                bname.addRedFlashEffectWhiteField();
+            }
         }
         if (!pass.passwordOk(pw.getText())) {
-            pw.addRedFlashEffectWhiteField();
+            if(colorchange){
+                pw.addRedFlashEffect();
+            } else {
+                pw.addRedFlashEffectWhiteField();
+            }
         }
         if (!pass.passwordOk(pw.getText())) {
-            pwb.addRedFlashEffectWhiteField();
+            if(colorchange){
+                pwb.addRedFlashEffect();
+            } else {
+                pwb.addRedFlashEffectWhiteField();
+            }
         }
         if (!pw.getText().equals(pwb.getText())) {
 
-            pwb.addRedFlashEffectWhiteField();
+            if(colorchange){
+                pwb.addRedFlashEffect();
+            } else {
+                pwb.addRedFlashEffectWhiteField();
+            }
         }
 
 
@@ -608,14 +714,14 @@ public class RegisterWindow extends JFrame {
 
 
 
-    public static void openRegisterGUI(){
+    public static void openRegisterGUI(Container parent){
 
         Foo.getDirectoryData();
-        RegisterWindow gui = new RegisterWindow();
+        RegisterWindow gui = new RegisterWindow(parent);
 
     }
 
     public static void main(String[] args) {
-        openRegisterGUI();
+        openRegisterGUI(null);
     }
 }
