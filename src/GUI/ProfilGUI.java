@@ -32,7 +32,9 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
     PlaceholderTextField Telefonnummer = new PlaceholderTextField();
     JButton AbbrechenButton = new JButton();
     JButton AngabenAendern = new JButton();
+    JButton PasswortVergessenButton = new JButton();
     JLabel AngabenAendernLabel = new JLabel();
+    JLabel PasswortVergessenLabel = new JLabel();
 
     public ProfilGUI(GUI_Mama parent){
         //Panelmanagement
@@ -61,13 +63,13 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         Benutzername.setBackground(dark);
         Benutzername.setFont(fontMedium);
         Benutzername.setEnabled(false);
-        Benutzername.setBounds(75,20,250,40);
+        Benutzername.setBounds(75,440,250,40);
         Benutzername.setPlaceholder("Benutzer");
 
         Name.setForeground(white);
         Name.setBackground(dark);
         Name.setFont(fontMedium);
-        Name.setEnabled(true);
+        Name.setEnabled(false);
         Name.setBounds(75,80,250,40);
         Name.setPlaceholder("Nachname");
 
@@ -75,49 +77,49 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         Vorname.setBackground(dark);
         Vorname.setFont(fontMedium);
         Vorname.setEnabled(false);
-        Vorname.setBounds(75,140,250,40);
+        Vorname.setBounds(75,20,250,40);
         Vorname.setText("Vorname");
 
         Gender.setForeground(white);
         Gender.setBackground(dark);
         Gender.setFont(fontMedium);
         Gender.setEnabled(false);
-        Gender.setBounds(75,200,250,40);
+        Gender.setBounds(75,140,250,40);
         Gender.setText("Gender");
 
         Rolle.setForeground(white);
         Rolle.setBackground(dark);
         Rolle.setFont(fontMedium);
         Rolle.setEnabled(false);
-        Rolle.setBounds(75,260,250,40);
+        Rolle.setBounds(75,200,250,40);
         Rolle.setText("Rolle");
 
         Geburtstag.setForeground(white);
         Geburtstag.setBackground(dark);
         Geburtstag.setFont(fontMedium);
         Geburtstag.setEnabled(false);
-        Geburtstag.setBounds(75,320,250,40);
+        Geburtstag.setBounds(75,260,250,40);
         Geburtstag.setText("Geburtstag");
 
         EMail.setForeground(white);
         EMail.setBackground(dark);
         EMail.setFont(fontMedium);
         EMail.setEnabled(false);
-        EMail.setBounds(75,380,250,40);
+        EMail.setBounds(75,320,250,40);
         EMail.setText("E-Mail");
 
         Telefonnummer.setForeground(white);
         Telefonnummer.setBackground(dark);
         Telefonnummer.setFont(fontMedium);
         Telefonnummer.setEnabled(false);
-        Telefonnummer.setBounds(75,440,250,40);
+        Telefonnummer.setBounds(75,380,250,40);
         Telefonnummer.setText("Telefonnummer");
 
 
         AbbrechenButton.setBackground(hellb);
         AbbrechenButton.setForeground(white);
         AbbrechenButton.setText("Abbrechen");
-        AbbrechenButton.setBounds(225,20,100,40);
+        AbbrechenButton.setBounds(150,80,100,40);
 
         AngabenAendernLabel.setForeground(white);
         AngabenAendernLabel.setText("<html><body><p><center>Angaben <br>ändern?</center></p></body></html>");
@@ -136,6 +138,15 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         AngabenAendern.add(AngabenAendernLabel);
         AngabenAendern.setBounds(75,20,100,40);
 
+        PasswortVergessenLabel.setForeground(white);
+        PasswortVergessenLabel.setText("<html><body><p><center>Passwort<br>vergessen?</center></p></body></html>");
+        PasswortVergessenLabel.setBorder(new EmptyBorder(0,0,18,13));
+
+        PasswortVergessenButton.addActionListener(this);
+        PasswortVergessenButton.setBackground(dunkelb);
+        PasswortVergessenButton.add(PasswortVergessenLabel);
+        PasswortVergessenButton.setBounds(225, 20, 100, 40);
+
 
         // Elemente zu Panels adden
 
@@ -152,6 +163,7 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
 
         Buttons.add(AbbrechenButton);
         Buttons.add(AngabenAendern);
+        Buttons.add(PasswortVergessenButton);
 
 
         // Panels zu Frame adden
