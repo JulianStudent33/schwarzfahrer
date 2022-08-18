@@ -43,7 +43,7 @@ public class ProfilGUI extends JFrame implements ActionListener {
 
         Textfelder.setLayout(new BorderLayout());
         Textfelder.setBackground(dark);
-        Textfelder.setPreferredSize(new Dimension(400,500));
+        Textfelder.setPreferredSize(new Dimension(400,600));
 
         Buttons.setBackground(dark);
         Buttons.setPreferredSize(new Dimension(400,150));
