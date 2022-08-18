@@ -117,7 +117,7 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
         anmeldenButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 10));
         anmeldenButton.setHorizontalAlignment(JLabel.CENTER);
         anmeldenButton.setVerticalAlignment(JLabel.CENTER);
-        anmeldenButton.setFocusable(false);
+        anmeldenButton.setFocusable(true);
         anmeldenButton.setBorderPainted(false);
         anmeldenButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         anmeldenButton.setBounds(190, 10, 100, 30);
