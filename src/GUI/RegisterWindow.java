@@ -57,7 +57,7 @@ public class RegisterWindow extends GUI_Mama {
     JButton reg = new JButton();
 
     //Konstruktor
-    public RegisterWindow(Container parent) {
+    public RegisterWindow(GUI_Mama parent) {
 
         // Erneuter Aufruf des L&F sodass bei Rückgang auf vorheriges Fenster, das L&F bestehen bleibt
 
@@ -66,14 +66,14 @@ public class RegisterWindow extends GUI_Mama {
         frame(parent);
     }
 
-    private void frame(Container parent) {
+    private void frame(GUI_Mama parent) {
 
         if(Foo.firstUsage){
             rollen[0]="Admin";
             rollenBox.addItem(rollen[0]);
             rollenBox.setEnabled(false);
         } else {
-            rollen[0]="*Rolle";
+            rollen[0]="Rolle*";
             rollenBox.addItem(rollen[0]);
             rollenBox.addItem(rollen[1]);
             rollenBox.addItem(rollen[2]);
@@ -205,9 +205,13 @@ public class RegisterWindow extends GUI_Mama {
 
         rollenBox.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
         rollenBox.setBackground(whitebg);
-        rollenBox.setForeground(white);
+        if(rollenBox.getItemAt(0)=="Rolle*") {
+            rollenBox.setForeground(notSoDark);
+        } else {
+            rollenBox.setForeground(white);
+        }
         rollenBox.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        rollenBox.setFocusable(false);
+        rollenBox.setFocusable(true);
         rollenBox.setBorder(new CompoundBorder(border, margin));
 
         // Gender Auswahlmenü
@@ -221,7 +225,7 @@ public class RegisterWindow extends GUI_Mama {
             genderBox.setForeground(white);
         }
         genderBox.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        genderBox.setFocusable(false);
+        genderBox.setFocusable(true);
         genderBox.setBorder(new CompoundBorder(border, margin));
 
         // Geburtsdatum Button
@@ -330,7 +334,7 @@ public class RegisterWindow extends GUI_Mama {
         reg.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         reg.setHorizontalAlignment(JLabel.CENTER);
         reg.setVerticalAlignment(JLabel.CENTER);
-        reg.setFocusable(false);
+        reg.setFocusable(true);
         reg.setBorderPainted(false);
         reg.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         reg.setBounds(140,-10,190,50);
@@ -408,7 +412,7 @@ public class RegisterWindow extends GUI_Mama {
 
 
 
-                                    Foo.currentKontrolleur = new Kontrolleur(bname.getText(), pw.getText(),
+                                    Foo.currentUser = new Kontrolleur(bname.getText(), pw.getText(),
                                             vname.getText(), name.getText(), genderBox.getSelectedItem().toString(),
                                             nummer.getText(), mail.getText().toLowerCase(Locale.ROOT), date);
                                     Foo.angemeldet = true;
@@ -416,7 +420,7 @@ public class RegisterWindow extends GUI_Mama {
                                     dispose();
                                     break;
                                 case 2:
-                                    Foo.currentSachbearbeiter = new Sachbearbeiter(bname.getText(), pw.getText(),
+                                    Foo.currentUser = new Sachbearbeiter(bname.getText(), pw.getText(),
                                             vname.getText(), name.getText(), genderBox.getSelectedItem().toString(),
                                             nummer.getText(), mail.getText().toLowerCase(Locale.ROOT), date);
                                     Foo.angemeldet = true;
@@ -426,7 +430,7 @@ public class RegisterWindow extends GUI_Mama {
                             }
                         } catch (IOException ex) {
 
-                            StartfensterGUI.startFenster(getFrame());
+                            StartfensterGUI.openStartFenster(getFrame());
                             ex.printStackTrace();
                             dispose();
                             throw new RuntimeException(ex);
@@ -509,6 +513,13 @@ public class RegisterWindow extends GUI_Mama {
                         pw.setBackground(dark);
                     }
                 }
+
+                if (pwb.getText().equals(pw.getText())){
+                    pwb.setBackground(green);
+                }else{
+                    pwb.setBackground(Foo.red);
+                }
+
             }
         });
 
@@ -543,6 +554,7 @@ public class RegisterWindow extends GUI_Mama {
                 if (rollenBox.getItemAt(0).equals("Rolle*")){
                     rollenBox.removeItemAt(0);
                     rollenBox.setForeground(white);
+                    genderBox.setPrototypeDisplayValue(null);
                 }
             }
         });
@@ -723,7 +735,7 @@ public class RegisterWindow extends GUI_Mama {
 
 
 
-    public static void openRegisterGUI(Container parent){
+    public static void openRegisterGUI(GUI_Mama parent){
 
         Foo.getDirectoryData();
         RegisterWindow gui = new RegisterWindow(parent);

@@ -10,7 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class KontrolleurGUI extends GUI_Mama implements ActionListener {
-    public static Kontrolleur currentUser;
+    //public static Kontrolleur currentUser;
     public static JButton SchwarzfahrtErfassen = new JButton();
     public static JButton SchwarzfahrerSuchen = new JButton();
     public static JButton Statistiken  = new JButton();
@@ -19,12 +19,15 @@ public class KontrolleurGUI extends GUI_Mama implements ActionListener {
     public static JButton Abmelden = new JButton();
 
 
-    public KontrolleurGUI(Frame parent) {
+    public KontrolleurGUI(GUI_Mama parent) {
 
+        setupGUI(parent, "KontrolleurGUI");
         enableButtons();
+        this.currentUser.display();
 
 
-        currentUser = Foo.currentKontrolleur;
+
+
         // Panelmanagement
         JPanel gridpanel = new JPanel();
         gridpanel.setBackground(dark);
@@ -42,7 +45,7 @@ public class KontrolleurGUI extends GUI_Mama implements ActionListener {
 
         // "Willkommen auf der" Text
         JLabel label = new JLabel();
-        label.setText("<html><body><center><p><u>Hallo Kontrolleur<u></p></center></body></html>");
+        label.setText("<html><body><center><p>Hallo Kontrolleur</p></center></body></html>");
         label.setForeground(white);
         label.setHorizontalTextPosition(JLabel.CENTER);
         label.setVerticalTextPosition(JLabel.CENTER);
@@ -153,11 +156,6 @@ public class KontrolleurGUI extends GUI_Mama implements ActionListener {
 
                         ProfilGUI.openProfilGUI(getFrame());
 
-                        if(!SchwarzfahrtErfassenGUI.isOpen){
-                            SchwarzfahrtErfassen.setEnabled(true);
-                        }
-
-
 
                     }
                 });
@@ -212,7 +210,7 @@ public class KontrolleurGUI extends GUI_Mama implements ActionListener {
                     public void actionPerformed(ActionEvent e) {
 
                         currentUser.abmelden();
-                        StartfensterGUI.startFenster(getFrame());
+                        StartfensterGUI.openStartFenster(getFrame());
                         dispose();
 
                     }
@@ -258,7 +256,7 @@ public class KontrolleurGUI extends GUI_Mama implements ActionListener {
         Abmelden.setEnabled(true);
     }
 
-    public static void openKonGUI(Frame parent){
+    public static void openKonGUI(GUI_Mama parent){
         Foo.getDirectoryData();
         KontrolleurGUI gui = new KontrolleurGUI(parent);
     }

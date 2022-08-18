@@ -46,9 +46,13 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
     JButton Abbrechen = new JButton();
 
 
-    int AnzahlSchwarzfahrerZahl = 0;
 
-    public StatistikenGUI(Frame parent){
+    public StatistikenGUI(GUI_Mama parent){
+
+        //Setup
+        setupGUI(parent, "StatistikenGUI");
+
+
 
         // Panelmanagement
         JPanel gridpanel = new JPanel();
@@ -81,19 +85,20 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
         AnzahlSchwarzfahrerUeberschrift.setForeground(white);
         AnzahlSchwarzfahrerUeberschrift.setFont(fontSmall);
         AnzahlSchwarzfahrerUeberschrift.setText("<html><body><center><p>Anzahl Schwarzfahrer</p></center></body></html>");
-        AnzahlSchwarzfahrerUeberschrift.setBorder(new EmptyBorder(0,0,0,0));
+        AnzahlSchwarzfahrerUeberschrift.setBorder(new EmptyBorder(0,40,80,40));
 
         AnzahlschwarzfahrerWert.setForeground(dark);
         AnzahlschwarzfahrerWert.setFont(fontSmall);
         AnzahlschwarzfahrerWert.setText("0");
-        AnzahlschwarzfahrerWert.setBorder(new EmptyBorder(0,0,0,0));
+        AnzahlschwarzfahrerWert.setBorder(new EmptyBorder(30,100,30,0));
 
         AnzahlSchwarzfahrer.setBackground(hellb);
         AnzahlSchwarzfahrer.add(AnzahlSchwarzfahrerUeberschrift);
         AnzahlSchwarzfahrer.add(AnzahlschwarzfahrerWert);
         AnzahlSchwarzfahrer.setFocusable(false);
+        AnzahlSchwarzfahrer.setFocusPainted(false);
         AnzahlSchwarzfahrer.setBorderPainted(false);
-        AnzahlSchwarzfahrer.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        AnzahlSchwarzfahrer.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         AnzahlSchwarzfahrer.setBounds(140,100,100,100);
 
         // JButton "Schwarzfahrer suchen"
@@ -101,22 +106,22 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
         AnzahlKontrolleureUeberschrift.setForeground(white);
         AnzahlKontrolleureUeberschrift.setFont(fontSmall);
         AnzahlKontrolleureUeberschrift.setText("<html><body><center><p>Anzahl Kontrolleure</p></center></body></html>");
-        AnzahlKontrolleureUeberschrift.setBorder(new EmptyBorder(0,0,0,0));
+        AnzahlKontrolleureUeberschrift.setBorder(new EmptyBorder(0,40,80,40));
 
         AnzahlKontrolleureWert.setForeground(dark);
         AnzahlKontrolleureWert.setFont(fontSmall);
         AnzahlKontrolleureWert.setText("0");
-        AnzahlKontrolleureWert.setBorder(new EmptyBorder(0,0,0,0));
+        AnzahlKontrolleureWert.setBorder(new EmptyBorder(30,100,40,0));
 
         AnzahlSacharbeiterUeberschrift.setForeground(white);
         AnzahlSacharbeiterUeberschrift.setFont(fontSmall);
         AnzahlSacharbeiterUeberschrift.setText("<html><body><center><p>Anzahl Sacharbeiter</p></center></body></html>");
-        AnzahlSacharbeiterUeberschrift.setBorder(new EmptyBorder(0,0,0,0));
+        AnzahlSacharbeiterUeberschrift.setBorder(new EmptyBorder(45,40,0,40));
 
-        AnzahlSacharbeiterWert.setForeground(white);
+        AnzahlSacharbeiterWert.setForeground(dark);
         AnzahlSacharbeiterWert.setFont(fontSmall);
         AnzahlSacharbeiterWert.setText("0");
-        AnzahlSacharbeiterWert.setBorder(new EmptyBorder(0,0,0,0));
+        AnzahlSacharbeiterWert.setBorder(new EmptyBorder(110,100,0,0));
 
         AnzahlMitarbeiter.setBackground(dunkelb);
         AnzahlMitarbeiter.setForeground(white);
@@ -126,7 +131,7 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
         AnzahlMitarbeiter.add(AnzahlSacharbeiterWert);
         AnzahlMitarbeiter.setFocusable(false);
         AnzahlMitarbeiter.setBorderPainted(false);
-        AnzahlMitarbeiter.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        AnzahlMitarbeiter.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         AnzahlMitarbeiter.setBounds(140,100,100,100);
 
 
@@ -135,19 +140,19 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
         HaeufigsteSchwarzfahrtUeberschrift.setForeground(white);
         HaeufigsteSchwarzfahrtUeberschrift.setFont(fontSmall);
         HaeufigsteSchwarzfahrtUeberschrift.setText("<html><body><center><p>Häufigste Schwarzfahrt</p></center></body></html>");
-        HaeufigsteSchwarzfahrtUeberschrift.setBorder(new EmptyBorder(0,0,0,0));
+        HaeufigsteSchwarzfahrtUeberschrift.setBorder(new EmptyBorder(0,40,80,40));
 
         HaeufigsteSchwarzfahrtWert.setForeground(dark);
         HaeufigsteSchwarzfahrtWert.setFont(fontSmall);
         HaeufigsteSchwarzfahrtWert.setText("0");
-        HaeufigsteSchwarzfahrtWert.setBorder(new EmptyBorder(0,0,0,0));
+        HaeufigsteSchwarzfahrtWert.setBorder(new EmptyBorder(0,100,0,0));
 
         HaeufigsteSchwarzfahrt.setBackground(hellb);
         HaeufigsteSchwarzfahrt.add(HaeufigsteSchwarzfahrtUeberschrift);
         HaeufigsteSchwarzfahrt.add(HaeufigsteSchwarzfahrtWert);
         HaeufigsteSchwarzfahrt.setFocusable(false);
         HaeufigsteSchwarzfahrt.setBorderPainted(false);
-        HaeufigsteSchwarzfahrt.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        HaeufigsteSchwarzfahrt.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         HaeufigsteSchwarzfahrt.setBounds(140,100,100,100);
 
 
@@ -156,12 +161,12 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
         ErfassteSchwarzfahrtenUeberschrift.setForeground(white);
         ErfassteSchwarzfahrtenUeberschrift.setFont(fontSmall);
         ErfassteSchwarzfahrtenUeberschrift.setText("<html><body><center><p>Erfasste Schwarzfahrten</p></center></body></html>");
-        ErfassteSchwarzfahrtenUeberschrift.setBorder(new EmptyBorder(0,0,0,0));
+        ErfassteSchwarzfahrtenUeberschrift.setBorder(new EmptyBorder(0,40,80,40));
 
         ErfassteSchwarzfahrtenWert.setForeground(dark);
         ErfassteSchwarzfahrtenWert.setFont(fontSmall);
         ErfassteSchwarzfahrtenWert.setText("0");
-        ErfassteSchwarzfahrtenWert.setBorder(new EmptyBorder(0,0,0,0));
+        ErfassteSchwarzfahrtenWert.setBorder(new EmptyBorder(0,100,0,0));
 
         ErfassteSchwarzfahrten.setBackground(dunkelb);
         ErfassteSchwarzfahrten.setForeground(white);
@@ -169,7 +174,7 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
         ErfassteSchwarzfahrten.add(ErfassteSchwarzfahrtenWert);
         ErfassteSchwarzfahrten.setFocusable(false);
         ErfassteSchwarzfahrten.setBorderPainted(false);
-        ErfassteSchwarzfahrten.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        ErfassteSchwarzfahrten.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         ErfassteSchwarzfahrten.setBounds(140,100,100,100);
 
 
@@ -178,7 +183,7 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
         SchwarzfahrtenStatusUeberschrift.setForeground(white);
         SchwarzfahrtenStatusUeberschrift.setFont(fontSmall);
         SchwarzfahrtenStatusUeberschrift.setText("<html><body><center><p>Schwarzfahrten-Status</p></center></body></html>");
-        SchwarzfahrtenStatusUeberschrift.setBorder(new EmptyBorder(0,0,0,0));
+        SchwarzfahrtenStatusUeberschrift.setBorder(new EmptyBorder(0,20,90,20));
 
         SchwarzfahrtenStatusText.setForeground(white);
         SchwarzfahrtenStatusText.setFont(fontSmall);
@@ -188,17 +193,17 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
         SchwarzfahrtenStatusOffen.setForeground(dark);
         SchwarzfahrtenStatusOffen.setFont(fontSmall);
         SchwarzfahrtenStatusOffen.setText("0");
-        SchwarzfahrtenStatusOffen.setBorder(new EmptyBorder(0,0,0,0));
+        SchwarzfahrtenStatusOffen.setBorder(new EmptyBorder(0,100,40,0));
 
         SchwarzfahrtenStatusAusstehend.setForeground(dark);
         SchwarzfahrtenStatusAusstehend.setFont(fontSmall);
         SchwarzfahrtenStatusAusstehend.setText("0");
-        SchwarzfahrtenStatusAusstehend.setBorder(new EmptyBorder(0,0,0,0));
+        SchwarzfahrtenStatusAusstehend.setBorder(new EmptyBorder(0,100,0,0));
 
         SchwarzfahrtenStatusBezahlt.setForeground(dark);
         SchwarzfahrtenStatusBezahlt.setFont(fontSmall);
         SchwarzfahrtenStatusBezahlt.setText("0");
-        SchwarzfahrtenStatusBezahlt.setBorder(new EmptyBorder(0,0,0,0));
+        SchwarzfahrtenStatusBezahlt.setBorder(new EmptyBorder(40,100,0,0));
 
         SchwarzfahrtenStatus.setBackground(hellb);
         SchwarzfahrtenStatus.setForeground(white);
@@ -209,7 +214,7 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
         SchwarzfahrtenStatus.add(SchwarzfahrtenStatusBezahlt);
         SchwarzfahrtenStatus.setFocusable(false);
         SchwarzfahrtenStatus.setBorderPainted(false);
-        SchwarzfahrtenStatus.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        SchwarzfahrtenStatus.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         SchwarzfahrtenStatus.setBounds(140,100,100,100);
 
 
@@ -227,7 +232,7 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
         Abbrechen.setVerticalAlignment(JLabel.CENTER);
         Abbrechen.setFocusable(false);
         Abbrechen.setBorderPainted(false);
-        Abbrechen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        Abbrechen.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         Abbrechen.setBounds(140,100,100,100);
 
 
@@ -268,12 +273,14 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                parentGUI.StartAutoLogout();
+                System.out.println("Starte AutoLogout für " + parentGUI.name);
                 SachbearbeiterGUI.Statistiken.setEnabled(true);
                 KontrolleurGUI.Statistiken.setEnabled(true);
                 AdminGUI.Statistiken.setEnabled(true);
                 dispose();
-
             }
+
         });
 
 
@@ -286,7 +293,7 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
 
     }
 
-    public static void openStatistikenGUI(Frame parent){
+    public static void openStatistikenGUI(GUI_Mama parent){
         Foo.getDirectoryData();
         StatistikenGUI gui = new StatistikenGUI(parent);
     }

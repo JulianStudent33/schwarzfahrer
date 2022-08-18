@@ -3,8 +3,10 @@ package src.GUI.Kon;
 import com.formdev.flatlaf.FlatDarkLaf;
 import src.Adresse;
 import src.Foo;
+import src.GUI.GUI_Mama;
 import src.GUI.elements.*;
 import src.roles.Kontrolleur;
+import src.roles.Mitarbeiter;
 import src.roles.Schwarzfahrer;
 
 import javax.swing.*;
@@ -14,7 +16,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Calendar;
 
-public class SchwarzfahrtErfassenGUI extends JFrame{
+public class SchwarzfahrtErfassenGUI extends GUI_Mama {
 
     public static boolean isOpen = false;
     private static Kontrolleur currentUser;
@@ -49,8 +51,10 @@ public class SchwarzfahrtErfassenGUI extends JFrame{
     private JCheckBox bereitsBezahltCheckBox;
     private JToggleButton löschenToggleButton;
 
-    public SchwarzfahrtErfassenGUI(Frame parent){
-        this.currentUser = KontrolleurGUI.currentUser;
+    public SchwarzfahrtErfassenGUI(GUI_Mama parent){
+        parentGUI = parent;
+
+        this.currentUser = (Kontrolleur) parentGUI.currentUser;
         setContentPane(mainPanel);
         setTitle("Kontrolleur Menü");
         Point center = GraphicsEnvironment.getLocalGraphicsEnvironment().getCenterPoint();
@@ -372,7 +376,7 @@ public class SchwarzfahrtErfassenGUI extends JFrame{
 
         return false;
     }
-    public static void open(Frame parent) {
+    public static void open(GUI_Mama parent) {
         Foo.getDirectoryData();
         isOpen = true;
         SchwarzfahrtErfassenGUI gui = new SchwarzfahrtErfassenGUI(parent);

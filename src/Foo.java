@@ -4,15 +4,10 @@ import src.GUI.*;
 import src.GUI.Admin.AdminGUI;
 import src.GUI.Kon.KontrolleurGUI;
 import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
-import src.GUI.elements.InactivityListener;
-import src.roles.Administrator;
-import src.roles.Kontrolleur;
-import src.roles.Sachbearbeiter;
-import src.roles.Schwarzfahrer;
+import src.roles.*;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileSystem;
@@ -65,7 +60,7 @@ public class Foo {
     public static Kontrolleur currentKontrolleur;
     public static Administrator currentAdmin;
 
-
+    public static Mitarbeiter currentUser;
 
         public static Path savesPath = Paths.get("Saves");
         public static Path userPath = Paths.get("Saves" + fileSeperator + "Users");
@@ -83,7 +78,6 @@ public class Foo {
     public static File sfDir = sfPath.toFile();
     public static File loggedINFile = loginPath.toFile();
     public static boolean firstUsage;
-    private static String[] optionsUse = {"Register", "Login"};
 
     public static Color dark;
     public static Color white;
@@ -125,7 +119,7 @@ public class Foo {
         //Programm startet grundsätzlich immer hier
         System.out.println("Starting Application");
         getDirectoryData();
-        if (firstUsage = true){
+        if (firstUsage){
             System.out.println("Erste Benutzung");
             createDirectories();
         }else{
@@ -141,16 +135,19 @@ public class Foo {
 
 
         if(!angemeldet){
-            StartfensterGUI.startFenster(null);
-        } else if (currentAdmin!=null) {
-            AdminGUI.openAdminGUI(null);
-        } else if (currentKontrolleur!=null) {
-            KontrolleurGUI.openKonGUI(null);
-        } else if (currentSachbearbeiter!=null) {
-            SachbearbeiterGUI.openSBGUI(null);
+            StartfensterGUI.openStartFenster(null);
+        } else if (Foo.currentUser!=null) {
+            if (currentUser.isAdmin()){
+                AdminGUI.openAdminGUI(null);
+            } else if (Foo.currentUser.isKontrolleur()) {
+                KontrolleurGUI.openKonGUI(null);
+            } else if (Foo.currentUser.isSachbearbeiter()) {
+                SachbearbeiterGUI.openSBGUI(null);
+            }
+            getCurrentLogoutTime();
         }
 
-        getCurrentLogoutTime();
+
 
 
     }
@@ -231,6 +228,8 @@ public class Foo {
                 System.out.println("AdminDir Is Empty.");
                 firstUsage = true;
             }
+        }else{
+            firstUsage = true;
         }
         if (sbDir.exists()) {
             System.out.println(sbPath.toString() + " existiert.");
@@ -338,27 +337,45 @@ public class Foo {
 
     public static void saveAngemeldetBleiben(boolean angemeldetBleiben) throws IOException {
         if (angemeldetBleiben){
-            angemeldetBleiben = true;
+            Foo.angemeldetBleiben = true;
             System.out.println("Angemeldet bleiben auf true.");
             savedUser userToSave;
-            if (currentKontrolleur!=null){
-                userToSave = new savedUser(currentKontrolleur, true, autoLogoutTime);
+            getCurrentLogoutTime();
+            if (currentUser.isKontrolleur()){
+                userToSave = new savedUser(currentUser, true, autoLogoutTime);
                 userToSave.saveStatus(loggedINFile);
-            } else if (currentAdmin!=null) {
-                userToSave = new savedUser(currentAdmin, true, autoLogoutTime);
+            } else if (currentUser.isAdmin()) {
+                userToSave = new savedUser(currentUser, true, autoLogoutTime);
                 userToSave.saveStatus(loggedINFile);
-            } else if (currentSachbearbeiter!=null) {
-                userToSave = new savedUser(currentSachbearbeiter, true, autoLogoutTime);
+            } else if (currentUser.isSachbearbeiter()) {
+                userToSave = new savedUser(currentUser, true, autoLogoutTime);
                 userToSave.saveStatus(loggedINFile);
             }else{
                 System.out.println("Fehler");
             }
 
         }else{
-            angemeldetBleiben = false;
-            savedUser userToSave = new savedUser(false);
-            userToSave.saveStatus(loggedINFile);
             System.out.println("Angemeldet bleiben auf false.");
+            savedUser userToSave;
+            Foo.angemeldetBleiben = false;
+
+            if (currentUser.isKontrolleur()){
+                userToSave = new savedUser(currentUser, false, autoLogoutTime);
+                userToSave.saveStatus(loggedINFile);
+            } else if (currentUser.isAdmin()) {
+                userToSave = new savedUser(currentUser, false, autoLogoutTime);
+                userToSave.saveStatus(loggedINFile);
+            } else if (currentUser.isSachbearbeiter()) {
+                userToSave = new savedUser(currentUser, false, autoLogoutTime);
+                userToSave.saveStatus(loggedINFile);
+            }else{
+                System.out.println("Fehler");
+            }
+            System.out.println("Angemeldet bleiben auf false.");
+            angemeldetBleiben = false;
+             userToSave = new savedUser(false);
+            userToSave.saveStatus(loggedINFile);
+
         }
 
     }
@@ -368,18 +385,10 @@ public class Foo {
         }
         savedUser userToGet;
         userToGet = (savedUser) PersFile.laden(loggedINFile);
-        if(userToGet.isAdmin()){
-            currentAdmin = userToGet.currentAdmin;
+
+        Foo.currentUser = (Mitarbeiter) userToGet;
             return userToGet.angemeldetBleiben;
-        } else if (userToGet.isKontrolleur()) {
-            currentKontrolleur = userToGet.currentKon;
-            return userToGet.angemeldetBleiben;
-        } else if (userToGet.isSachbearbeiter()) {
-            currentSachbearbeiter = userToGet.currentSb;
-            return userToGet.angemeldetBleiben;
-        }else{
-            return userToGet.angemeldetBleiben;
-        }
+
 
     }
 
@@ -400,13 +409,8 @@ public class Foo {
     }
     public static String getCurrentLogoutTime(){
         String s = autoLogoutTime;
-        if (currentKontrolleur!=null){
-            s = currentKontrolleur.getAutoLogout();
-        } else if (currentAdmin!=null) {
-            s = currentAdmin.getAutoLogout();
-        } else if (currentSachbearbeiter!=null) {
-            s = currentSachbearbeiter.getAutoLogout();
-        }
+
+        s = currentUser.getAutoLogout();
         autoLogoutTime = s;
         return s;
     }

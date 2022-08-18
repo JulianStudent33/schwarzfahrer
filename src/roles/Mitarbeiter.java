@@ -21,7 +21,7 @@ public abstract class Mitarbeiter extends Person{
     String benutzername;
     String passwort;
 
-    String autoLogout;
+    String autoLogout = "Aus"; //Initialer Wert der in den Einstellungen überschrieben werden kann
     boolean isAdmin;
     boolean isKontrolleur;
     boolean isSachbearbeiter;
