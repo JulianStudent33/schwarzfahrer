@@ -41,9 +41,10 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         label.setPreferredSize(new Dimension(400,100));
         label.setLayout(null);
 
-        Textfelder.setLayout(new BorderLayout());
+        Textfelder.setLayout(null);
         Textfelder.setBackground(dark);
         Textfelder.setPreferredSize(new Dimension(400,600));
+
 
         Buttons.setBackground(dark);
         Buttons.setPreferredSize(new Dimension(400,150));
@@ -61,14 +62,14 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         Benutzername.setFont(fontMedium);
         Benutzername.setEnabled(false);
         Benutzername.setBounds(75,20,250,40);
-        Benutzername.setText("Benutzer");
+        Benutzername.setPlaceholder("Benutzer");
 
         Name.setForeground(white);
         Name.setBackground(dark);
         Name.setFont(fontMedium);
-        Name.setEnabled(false);
+        Name.setEnabled(true);
         Name.setBounds(75,80,250,40);
-        Name.setText("Nachname");
+        Name.setPlaceholder("Nachname");
 
         Vorname.setForeground(white);
         Vorname.setBackground(dark);
