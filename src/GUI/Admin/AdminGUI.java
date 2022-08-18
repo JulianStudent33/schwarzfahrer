@@ -24,7 +24,7 @@ public class AdminGUI extends GUI_Mama implements ActionListener {
 
 
 
-    public AdminGUI(Frame parent){
+    public AdminGUI(GUI_Mama parent){
 
         enableButtons();
 
@@ -156,7 +156,7 @@ public class AdminGUI extends GUI_Mama implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                ProfilGUI.openProfilGUI(getParent());
+                ProfilGUI.openProfilGUI(getFrame());
                 Profil.setEnabled(false);
             }
         });
@@ -257,7 +257,7 @@ public class AdminGUI extends GUI_Mama implements ActionListener {
         Abmelden.setEnabled(true);
     }
 
-    public static void openAdminGUI(Frame parent){
+    public static void openAdminGUI(GUI_Mama parent){
         Foo.getDirectoryData();
         AdminGUI gui = new AdminGUI(parent);
     }

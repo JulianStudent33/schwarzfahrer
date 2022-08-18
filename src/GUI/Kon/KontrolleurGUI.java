@@ -19,10 +19,10 @@ public class KontrolleurGUI extends GUI_Mama implements ActionListener {
     public static JButton Abmelden = new JButton();
 
 
-    public KontrolleurGUI(Frame parent) {
+    public KontrolleurGUI(GUI_Mama parent) {
 
         enableButtons();
-
+        parentGUI = parent;
 
         currentUser = Foo.currentKontrolleur;
         // Panelmanagement
@@ -153,11 +153,6 @@ public class KontrolleurGUI extends GUI_Mama implements ActionListener {
 
                         ProfilGUI.openProfilGUI(getFrame());
 
-                        if(!SchwarzfahrtErfassenGUI.isOpen){
-                            SchwarzfahrtErfassen.setEnabled(true);
-                        }
-
-
 
                     }
                 });
@@ -258,7 +253,7 @@ public class KontrolleurGUI extends GUI_Mama implements ActionListener {
         Abmelden.setEnabled(true);
     }
 
-    public static void openKonGUI(Frame parent){
+    public static void openKonGUI(GUI_Mama parent){
         Foo.getDirectoryData();
         KontrolleurGUI gui = new KontrolleurGUI(parent);
     }

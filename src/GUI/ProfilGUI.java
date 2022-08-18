@@ -34,7 +34,7 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
     JButton AngabenAendern = new JButton();
     JLabel AngabenAendernLabel = new JLabel();
 
-    public ProfilGUI(Container parent){
+    public ProfilGUI(GUI_Mama parent){
         //Panelmanagement
 
         label.setBackground(dark);
@@ -184,7 +184,7 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
 
 
 
-    public static void openProfilGUI(Container parent){
+    public static void openProfilGUI(GUI_Mama parent){
         if (parent.getClass().equals(KontrolleurGUI.class)){
             System.out.println("ParentFrame ist KontrolleurGUI");
             ProfilGUI gui1 = new ProfilGUI(parent);

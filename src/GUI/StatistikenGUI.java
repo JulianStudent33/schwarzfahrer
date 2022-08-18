@@ -46,7 +46,7 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
 
     int AnzahlSchwarzfahrerZahl = 0;
 
-    public StatistikenGUI(Frame parent){
+    public StatistikenGUI(GUI_Mama parent){
 
         // Panelmanagement
         JPanel gridpanel = new JPanel();
@@ -282,7 +282,7 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
 
     }
 
-    public static void openStatistikenGUI(Frame parent){
+    public static void openStatistikenGUI(GUI_Mama parent){
         Foo.getDirectoryData();
         StatistikenGUI gui = new StatistikenGUI(parent);
     }
