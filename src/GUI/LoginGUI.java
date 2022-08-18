@@ -14,6 +14,7 @@ import src.roles.Mitarbeiter;
 import src.roles.Sachbearbeiter;
 import static src.Foo.*;
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
@@ -151,7 +152,6 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
 
         Bot.add(abbrechenButton, BorderLayout.SOUTH);
         Bot.add(anmeldenButton, BorderLayout.SOUTH);
-
 
         // Add für gesamte Panels
         add(Text, BorderLayout.NORTH);
