@@ -103,7 +103,7 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
         angemeldetBleibenCheckBox.addActionListener(this);
         angemeldetBleibenCheckBox.isEnabled();
         angemeldetBleibenCheckBox.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 8));
-        angemeldetBleibenCheckBox.setBounds(244, 150, 112,20);
+        angemeldetBleibenCheckBox.setBounds(244, 145, 112,20);
 
 
         //JButton "Login"

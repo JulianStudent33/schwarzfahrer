@@ -2,6 +2,8 @@ package src.GUI;
 
 import src.Foo;
 import src.GUI.Admin.AdminGUI;
+import src.GUI.Kon.KontrolleurGUI;
+import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -266,7 +268,9 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-
+                SachbearbeiterGUI.Statistiken.setEnabled(true);
+                KontrolleurGUI.Statistiken.setEnabled(true);
+                AdminGUI.Statistiken.setEnabled(true);
                 dispose();
 
             }
