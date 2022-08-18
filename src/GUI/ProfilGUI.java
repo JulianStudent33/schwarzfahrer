@@ -12,7 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import static src.Foo.*;
-public class ProfilGUI extends JFrame implements ActionListener {
+public class ProfilGUI extends GUI_Mama implements ActionListener {
 
     public SachbearbeiterGUI parentS = null;
     public KontrolleurGUI parentK = null;

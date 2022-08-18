@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import static src.Foo.*;
 
-public class StartfensterGUI extends JFrame implements ActionListener {
+public class StartfensterGUI extends GUI_Mama implements ActionListener {
 
     //
     private JButton reg = new JButton();
@@ -21,13 +21,13 @@ public class StartfensterGUI extends JFrame implements ActionListener {
 
 
     //Konstruktor
-    StartfensterGUI(Container parent) {
+    StartfensterGUI(Frame parent) {
 
         // Start des Fensters
         frame(parent);
     }
 
-    private void frame(Container parent) {
+    private void frame(Frame parent) {
 
         // Panelmanagement
         JPanel Background = new JPanel();
@@ -125,11 +125,15 @@ public class StartfensterGUI extends JFrame implements ActionListener {
 
 
         // Gesamt Window
-        this.setSize(500,650);
+        int width = 500;
+        int height = 650;
+        this.setSize(width,height);
         this.setTitle("Schwarzfahrer Projekt");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
-        this.setLocationRelativeTo(parent);
+        Point center = GraphicsEnvironment.getLocalGraphicsEnvironment().getCenterPoint();
+        setBounds(center.x - width / 2, center.y - height / 2, width, height);
+        setLocationRelativeTo(parent);
         this.setVisible(true);
         this.getContentPane().setBackground(dark);
 
@@ -185,22 +189,23 @@ public class StartfensterGUI extends JFrame implements ActionListener {
         if (e.getSource()==reg) {
             if (Foo.firstUsage){
                 System.out.println("Öffne First-Register-GUI");
-                dispose();
                 firstRegistrationGUI.openFirstRegister();
+                dispose();
             }else{
                 System.out.println("Öffne Register-Window");
+                RegisterWindow.openRegisterGUI(getFrame());
                 dispose();
-                RegisterWindow.openRegisterGUI(getRootPane().getParent());
             }
         } else if (e.getSource()==anm) {
             System.out.println("Öffne Login-Window");
-            LoginGUI.openLogin(getRootPane().getParent());
+            LoginGUI.openLogin(getFrame());
             dispose();
         }
     }
 
 
-    public static void startFenster(Container parent){
+
+    public static void startFenster(Frame parent){
         Foo.getDirectoryData();
         StartfensterGUI gui = new StartfensterGUI(parent);
     }

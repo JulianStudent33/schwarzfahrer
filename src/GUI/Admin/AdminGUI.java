@@ -1,11 +1,8 @@
 package src.GUI.Admin;
 import src.Foo;
-import src.GUI.EinstellungenGUI;
+import src.GUI.*;
 import src.GUI.Kon.Kachel2;
-import src.GUI.ProfilGUI;
 import src.GUI.Sachbearbeiter.Kachel1;
-import src.GUI.StartfensterGUI;
-import src.GUI.StatistikenGUI;
 import src.roles.Administrator;
 
 import javax.swing.*;
@@ -15,7 +12,7 @@ import java.awt.event.ActionListener;
 
 import static src.Foo.*;
 
-public class AdminGUI extends JFrame implements ActionListener {
+public class AdminGUI extends GUI_Mama implements ActionListener {
 
     public static Administrator currentUser;
     public static JButton AdminAnlegen = new JButton();
@@ -27,7 +24,7 @@ public class AdminGUI extends JFrame implements ActionListener {
 
 
 
-    public AdminGUI(){
+    public AdminGUI(Frame parent){
 
         enableButtons();
 
@@ -79,7 +76,7 @@ public class AdminGUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                AdminAnlegenGUI.openAdminAnlegenGUI();
+                AdminAnlegenGUI.openAdminAnlegenGUI(getFrame());
                 AdminAnlegen.setEnabled(false);
             }
         });
@@ -105,7 +102,7 @@ public class AdminGUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                MitarbeiterVerwaltenGUI.openMitarbeiterVerwaltenGUI();
+                MitarbeiterVerwaltenGUI.openMitarbeiterVerwaltenGUI(getFrame());
                 MitarbeiterVerwalten.setEnabled(false);
             }
         });
@@ -133,7 +130,7 @@ public class AdminGUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                StatistikenGUI.openStatistikenGUI();
+                StatistikenGUI.openStatistikenGUI(getFrame());
                 Statistiken.setEnabled(false);
             }
         });
@@ -159,7 +156,7 @@ public class AdminGUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                ProfilGUI.openProfilGUI(getRootPane().getParent());
+                ProfilGUI.openProfilGUI(getParent());
                 Profil.setEnabled(false);
             }
         });
@@ -186,7 +183,7 @@ public class AdminGUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-               EinstellungenGUI.openEinstellungenGUI(getRootPane().getParent());
+                EinstellungenGUI.openEinstellungenGUI(getFrame());
                 Einstellungen.setEnabled(false);
             }
         });
@@ -212,9 +209,9 @@ public class AdminGUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                dispose();
                 currentUser.abmelden();
-                StartfensterGUI.startFenster(getRootPane().getParent());
+                StartfensterGUI.startFenster(getFrame());
+                dispose();
 
             }
         });
@@ -225,7 +222,7 @@ public class AdminGUI extends JFrame implements ActionListener {
         this.setTitle("Admin-Panel");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
-        this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(parent);
         this.setVisible(true);
         this.getContentPane().setBackground(dark);
 
@@ -260,9 +257,9 @@ public class AdminGUI extends JFrame implements ActionListener {
         Abmelden.setEnabled(true);
     }
 
-    public static void openAdminGUI(){
+    public static void openAdminGUI(Frame parent){
         Foo.getDirectoryData();
-        AdminGUI gui = new AdminGUI();
+        AdminGUI gui = new AdminGUI(parent);
     }
 
     @Override

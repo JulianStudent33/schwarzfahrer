@@ -1,12 +1,9 @@
 package src.GUI.Sachbearbeiter;
 
 import src.Foo;
+import src.GUI.*;
 import src.GUI.Admin.AdminGUI;
-import src.GUI.EinstellungenGUI;
 import src.GUI.Kon.KontrolleurGUI;
-import src.GUI.ProfilGUI;
-import src.GUI.StartfensterGUI;
-import src.GUI.StatistikenGUI;
 import src.roles.Sachbearbeiter;
 
 import javax.swing.*;
@@ -16,7 +13,7 @@ import java.awt.event.ActionListener;
 
 import static src.Foo.*;
 
-public class SachbearbeiterGUI extends JFrame implements ActionListener {
+public class SachbearbeiterGUI extends GUI_Mama implements ActionListener {
 
     public static Sachbearbeiter currentUser;
     public static JButton Kachel1 = new JButton();
@@ -29,9 +26,10 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
 
 
 
-    public SachbearbeiterGUI(){
-
+    public SachbearbeiterGUI(GUI_Mama parent){
+        this.name = "SachbearbeiterGUI";
         currentUser = currentSachbearbeiter;
+        parentGUI = parent;
         // Panelmanagement
         JPanel gridpanel = new JPanel();
         gridpanel.setBackground(dark);
@@ -107,7 +105,7 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                Kachel2GUI.openKachel2GUI();
+                Kachel2GUI.openKachel2GUI(getFrame());
 
             }
         });
@@ -135,7 +133,7 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                StatistikenGUI.openStatistikenGUI();
+                StatistikenGUI.openStatistikenGUI(getFrame());
 
             }
         });
@@ -162,7 +160,7 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                ProfilGUI.openProfilGUI(getRootPane().getParent());
+                ProfilGUI.openProfilGUI(getFrame());
 
             }
         });
@@ -189,7 +187,7 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                EinstellungenGUI.openEinstellungenGUI(getRootPane().getParent());
+               EinstellungenGUI.openEinstellungenGUI(getFrame());
 
             }
         });
@@ -217,9 +215,10 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                dispose();
+
                 currentUser.abmelden();
-                StartfensterGUI.startFenster(getRootPane().getParent());
+                StartfensterGUI.startFenster(getFrame());
+                dispose();
 
 
             }
@@ -230,7 +229,7 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
         this.setTitle("Sachbearbeiter");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
-        this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(parent);
         this.setVisible(true);
         this.getContentPane().setBackground(dark);
 
@@ -269,11 +268,9 @@ public class SachbearbeiterGUI extends JFrame implements ActionListener {
 
     }
 
-    public static void openSBGUI(){
+    public static void openSBGUI(GUI_Mama parent){
         Foo.getDirectoryData();
-        SachbearbeiterGUI gui = new SachbearbeiterGUI();
+        SachbearbeiterGUI gui = new SachbearbeiterGUI(parent);
     }
-    public static void main(String[] args) {
-        openSBGUI();
-    }
+
 }
