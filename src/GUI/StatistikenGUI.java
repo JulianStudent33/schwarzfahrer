@@ -275,9 +275,7 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
 
                 parentGUI.StartAutoLogout();
                 System.out.println("Starte AutoLogout für " + parentGUI.name);
-                SachbearbeiterGUI.Statistiken.setEnabled(true);
-                KontrolleurGUI.Statistiken.setEnabled(true);
-                AdminGUI.Statistiken.setEnabled(true);
+                parentGUI.Kachel3.setEnabled(true);
                 dispose();
             }
 

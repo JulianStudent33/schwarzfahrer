@@ -82,6 +82,7 @@ public abstract class Mitarbeiter extends Person{
         this.autoLogout = autoLogout;
         PersFile.speichern(this, this.userFile);
         Foo.autoLogoutTime = autoLogout;
+        System.out.println("Auto Logout gespeichert: " + autoLogout);
     }
 
     public void setMitarbeiternummer(String mitarbeiternummer) throws IOException {

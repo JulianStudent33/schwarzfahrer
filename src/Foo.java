@@ -137,6 +137,8 @@ public class Foo {
         if(!angemeldet){
             StartfensterGUI.openStartFenster(null);
         } else if (Foo.currentUser!=null) {
+            autoLogoutTime = getCurrentLogoutTime();
+            System.out.println("AutoLogout: " + getCurrentLogoutTime());
             if (currentUser.isAdmin()){
                 AdminGUI.openAdminGUI(null);
             } else if (Foo.currentUser.isKontrolleur()) {
@@ -144,7 +146,6 @@ public class Foo {
             } else if (Foo.currentUser.isSachbearbeiter()) {
                 SachbearbeiterGUI.openSBGUI(null);
             }
-            getCurrentLogoutTime();
         }
 
 
@@ -336,47 +337,12 @@ public class Foo {
 
 
     public static void saveAngemeldetBleiben(boolean angemeldetBleiben) throws IOException {
-        getCurrentLogoutTime();
+
         currentUser.setAngemeldetBleiben(angemeldetBleiben);
         Mitarbeiter userToSave = currentUser;
         userToSave.setUserFile(loggedINFile);
         Foo.angemeldetBleiben = angemeldetBleiben;
-        if (angemeldetBleiben){
 
-            //userToSave.setAngemeldetBleiben(true);
-
-            /*
-            if (currentUser.isKontrolleur()){
-                userToSave = new savedUser(currentUser, true, );
-                userToSave.saveStatus(loggedINFile);
-            } else if (currentUser.isAdmin()) {
-                userToSave = new savedUser(currentUser, true, autoLogoutTime);
-                userToSave.saveStatus(loggedINFile);
-            } else if (currentUser.isSachbearbeiter()) {
-                userToSave = new savedUser(currentUser, true, autoLogoutTime);
-                userToSave.saveStatus(loggedINFile);
-            }else{
-                System.out.println("Fehler");
-            }
-*/
-        }else{
-
-
-           /*
-            if (currentUser.isKontrolleur()){
-                userToSave = new savedUser(currentUser, false, autoLogoutTime);
-                userToSave.saveStatus(loggedINFile);
-            } else if (currentUser.isAdmin()) {
-                userToSave = new savedUser(currentUser, false, autoLogoutTime);
-                userToSave.saveStatus(loggedINFile);
-            } else if (currentUser.isSachbearbeiter()) {
-                userToSave = new savedUser(currentUser, false, autoLogoutTime);
-                userToSave.saveStatus(loggedINFile);
-            }else{
-                System.out.println("Fehler");
-            }
-           */
-        }
         PersFile.speichern(userToSave, userToSave.loggedInFile);
         System.out.println("Angemeldet bleiben auf " + angemeldetBleiben);
     }

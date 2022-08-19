@@ -191,6 +191,7 @@ public class EinstellungenGUI extends GUI_Mama implements ActionListener {
 
 
                     try {
+                        parentGUI.currentUser.setAutoLogout(ButtonAutoLogoutText.getText());
                         Foo.currentUser.setAutoLogout(ButtonAutoLogoutText.getText());
                     } catch (IOException ex) {
                         ex.printStackTrace();
@@ -204,9 +205,7 @@ public class EinstellungenGUI extends GUI_Mama implements ActionListener {
                 parentGUI.StartAutoLogout();
                 parentGUI.refreshCurrentUser();
                 System.out.println("Starte AutoLogout für " + parentGUI.name);
-                SachbearbeiterGUI.Einstellungen.setEnabled(true);
-                KontrolleurGUI.Einstellungen.setEnabled(true);
-                AdminGUI.Einstellungen.setEnabled(true);
+                parentGUI.Kachel5.setEnabled(true);
                 dispose();
             }
         });

@@ -1,5 +1,4 @@
 package src.GUI.Admin;
-import org.w3c.dom.Text;
 import src.Foo;
 import src.GUI.GUI_Mama;
 import src.PersFile;
@@ -13,9 +12,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
 import java.io.IOException;
-import java.util.Vector;
 
 public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener {
 
@@ -144,7 +141,7 @@ public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener 
          abbrechen.addActionListener(new ActionListener() {
              @Override
              public void actionPerformed(ActionEvent e) {
-                AdminGUI.MitarbeiterVerwalten.setEnabled(true);
+                parentGUI.Kachel2.setEnabled(true);
                  dispose();
              }
          });

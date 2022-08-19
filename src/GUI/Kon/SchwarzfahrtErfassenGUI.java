@@ -6,7 +6,6 @@ import src.Foo;
 import src.GUI.GUI_Mama;
 import src.GUI.elements.*;
 import src.roles.Kontrolleur;
-import src.roles.Mitarbeiter;
 import src.roles.Schwarzfahrer;
 
 import javax.swing.*;
@@ -215,7 +214,7 @@ public class SchwarzfahrtErfassenGUI extends GUI_Mama {
                         dispose();
                         throw new RuntimeException(ex);
                     }
-                    KontrolleurGUI.SchwarzfahrtErfassen.setEnabled(true);
+                    parentGUI.Kachel1.setEnabled(true);
                     dispose();
                 }else{
                    // OkayWindow.openOkayWindow("Es wurden nicht alle Pflichtfelder ausgefüllt");
@@ -257,7 +256,7 @@ public class SchwarzfahrtErfassenGUI extends GUI_Mama {
             public void actionPerformed(ActionEvent e) {
 
                 currentSf = null;
-                KontrolleurGUI.SchwarzfahrtErfassen.setEnabled(true);
+                parentGUI.Kachel1.setEnabled(true);
                 dispose();
             }
         });
