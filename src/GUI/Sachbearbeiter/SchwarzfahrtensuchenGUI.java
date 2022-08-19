@@ -115,7 +115,7 @@ public class SchwarzfahrtensuchenGUI extends GUI_Mama implements ActionListener 
         abbrechen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SachbearbeiterGUI.Schwarzfahrtensuchen.setEnabled(true);
+                parentGUI.Kachel2.setEnabled(true);
                 dispose();
             }
         });

@@ -217,9 +217,7 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
 
                 parentGUI.StartAutoLogout();
                 System.out.println("Starte AutoLogout für " + parentGUI.name);
-                SachbearbeiterGUI.Profil.setEnabled(true);
-                AdminGUI.Profil.setEnabled(true);
-                KontrolleurGUI.Profil.setEnabled(true);
+                parentGUI.Kachel4.setEnabled(true);
                 dispose();
             }
         });

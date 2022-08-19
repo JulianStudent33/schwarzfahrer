@@ -1,5 +1,4 @@
 package src.GUI.Admin;
-import org.w3c.dom.Text;
 import src.Foo;
 import src.GUI.GUI_Mama;
 import src.PersFile;
@@ -13,9 +12,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
 import java.io.IOException;
-import java.util.Vector;
 
 public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener {
 
@@ -128,14 +125,31 @@ public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener 
 
          loeschen.addActionListener(new ActionListener() {
              public void actionPerformed(ActionEvent event) {
-                 ListSelectionModel selmodel = list.getSelectionModel();
-                 int index = selmodel.getMinSelectionIndex();
-                 if (index >= 0){
-                     model.remove(index);
+
+                 String[] options = {"Ja","Abbrechen"};
+                 JPanel panel = new JPanel();
+                 JLabel lbl = new JLabel("Sind Sie sicher, dass Sie diesen Mitarbeiter löschen wollen?");
+                 panel.add(lbl);
+                 int result = JOptionPane.showOptionDialog(getFrame(), lbl,"Bestätigung",
+                         JOptionPane.YES_NO_OPTION,
+                         JOptionPane.WARNING_MESSAGE, null,options,options[1]);
+
+                 if(result == 0){
+
+                     ListSelectionModel selmodel = list.getSelectionModel();
+                     int index = selmodel.getMinSelectionIndex();
+                     if (index >= 0){
+                         model.remove(index);
+                     }
+                     if (index == 0){
+                         System.out.println("Index = 0");
+                     }
+                     System.out.println("Ja gedrückt");
+
+                 }else{
+                     System.out.println("Nein gedrückt");
                  }
-                 if (index == 0){
-                     System.out.println("Index = 0");
-                 }
+
 
              }
 
@@ -144,7 +158,7 @@ public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener 
          abbrechen.addActionListener(new ActionListener() {
              @Override
              public void actionPerformed(ActionEvent e) {
-                AdminGUI.MitarbeiterVerwalten.setEnabled(true);
+                parentGUI.Kachel2.setEnabled(true);
                  dispose();
              }
          });

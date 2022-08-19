@@ -152,7 +152,7 @@ public class TransaktionbearbeitenGUI extends GUI_Mama implements ActionListener
         abbrechen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SachbearbeiterGUI.Transaktionbearbeiten.setEnabled(true);
+                parentGUI.Kachel1.setEnabled(true);
                 dispose();
             }
         });
