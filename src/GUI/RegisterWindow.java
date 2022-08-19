@@ -294,7 +294,7 @@ public class RegisterWindow extends GUI_Mama {
         // Bot Registrieren Button Management
 
         // JButton "Registrieren"
-
+        reg.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         reg.setText("Registrieren");
         reg.setBackground(hellb);
         reg.setForeground(whitebg);
@@ -305,9 +305,9 @@ public class RegisterWindow extends GUI_Mama {
         reg.setVerticalAlignment(JLabel.CENTER);
         reg.setFocusable(true);
         reg.setBorderPainted(false);
-        reg.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         reg.setBounds(140,-10,190,50);
 
+        abr.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         abr.setText("Abbrechen");
         abr.setBackground(notSoDark);
         abr.setForeground(whitebg);
@@ -318,7 +318,6 @@ public class RegisterWindow extends GUI_Mama {
         abr.setVerticalAlignment(JLabel.CENTER);
         abr.setFocusable(true);
         abr.setBorderPainted(false);
-        abr.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         abr.setBounds(140,-10,190,50);
 
         // Hauptfenster
