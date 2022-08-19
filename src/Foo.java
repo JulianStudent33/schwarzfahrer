@@ -336,13 +336,18 @@ public class Foo {
 
 
     public static void saveAngemeldetBleiben(boolean angemeldetBleiben) throws IOException {
+        getCurrentLogoutTime();
+        currentUser.setAngemeldetBleiben(angemeldetBleiben);
+        Mitarbeiter userToSave = currentUser;
+        userToSave.setUserFile(loggedINFile);
+        Foo.angemeldetBleiben = angemeldetBleiben;
         if (angemeldetBleiben){
-            Foo.angemeldetBleiben = true;
-            System.out.println("Angemeldet bleiben auf true.");
-            savedUser userToSave;
-            getCurrentLogoutTime();
+
+            //userToSave.setAngemeldetBleiben(true);
+
+            /*
             if (currentUser.isKontrolleur()){
-                userToSave = new savedUser(currentUser, true, autoLogoutTime);
+                userToSave = new savedUser(currentUser, true, );
                 userToSave.saveStatus(loggedINFile);
             } else if (currentUser.isAdmin()) {
                 userToSave = new savedUser(currentUser, true, autoLogoutTime);
@@ -353,12 +358,11 @@ public class Foo {
             }else{
                 System.out.println("Fehler");
             }
-
+*/
         }else{
-            System.out.println("Angemeldet bleiben auf false.");
-            savedUser userToSave;
-            Foo.angemeldetBleiben = false;
 
+
+           /*
             if (currentUser.isKontrolleur()){
                 userToSave = new savedUser(currentUser, false, autoLogoutTime);
                 userToSave.saveStatus(loggedINFile);
@@ -371,25 +375,25 @@ public class Foo {
             }else{
                 System.out.println("Fehler");
             }
-            System.out.println("Angemeldet bleiben auf false.");
-            angemeldetBleiben = false;
-             userToSave = new savedUser(false);
-            userToSave.saveStatus(loggedINFile);
-
+           */
         }
-
+        PersFile.speichern(userToSave, userToSave.loggedInFile);
+        System.out.println("Angemeldet bleiben auf " + angemeldetBleiben);
     }
-    public boolean getAngemeldetBleiben() throws IOException, ClassNotFoundException {
+    public static boolean getAngemeldetBleiben() throws IOException, ClassNotFoundException {
         if (!loggedINFile.exists()){
             return false;
         }
-        savedUser userToGet;
-        userToGet = (savedUser) PersFile.laden(loggedINFile);
-
-        Foo.currentUser = (Mitarbeiter) userToGet;
-            return userToGet.angemeldetBleiben;
-
-
+        Mitarbeiter userToGet;
+        userToGet = (Mitarbeiter) PersFile.laden(loggedINFile);
+        if (userToGet.angemeldetBleiben){
+            Foo.currentUser = userToGet;
+            return true;
+        }else {
+            Foo.currentUser = null;
+            loggedINFile.delete();
+            return false;
+        }
     }
 
     public static String getCurrentDate(){
@@ -410,8 +414,7 @@ public class Foo {
     public static String getCurrentLogoutTime(){
         String s = autoLogoutTime;
 
-        s = currentUser.getAutoLogout();
-        autoLogoutTime = s;
+        autoLogoutTime = currentUser.getAutoLogout();
         return s;
     }
 

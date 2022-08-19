@@ -25,25 +25,18 @@ public abstract class Mitarbeiter extends Person{
     boolean isAdmin;
     boolean isKontrolleur;
     boolean isSachbearbeiter;
-    File userFile;
+    public File userFile;
+    public File loggedInFile = Foo.loggedINFile;
+    public boolean angemeldetBleiben;
+
+
 
     //Methoden
-    public void setBenutzername(String oldBenutzername, String newBenutzername){
-        this.benutzername = newBenutzername;
-    }
-    public void setPasswort(String oldPW, String newPW){
-
-    }
 
     public void createUserFile() throws IOException {
         PersFile.speichern(this, this.userFile);
         System.out.println("File geschrieben");
     }
-
-
-
-
-
     public void display(){
         System.out.println(getVorname() + " " + getName());
         System.out.println("Benutzername: " + getBenutzername() + " (" + getMitarbeiternummer() + ")");
@@ -60,7 +53,20 @@ public abstract class Mitarbeiter extends Person{
             System.out.println(getVorname() + "Ist Sachbearbeiter");
         }
     }
-
+    public void abmelden(){
+        try {
+            Foo.saveAngemeldetBleiben(false);
+            Foo.getAngemeldetBleiben();
+            Foo.setAngemeldet(false);
+            System.out.println("Ausgeloggt");
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
 
     //Getter und setter
     public String getMitarbeiternummer(){
@@ -82,7 +88,12 @@ public abstract class Mitarbeiter extends Person{
         this.mitarbeiternummer = mitarbeiternummer;
         PersFile.speichern(this, this.userFile);
     }
+    public void setBenutzername(String oldBenutzername, String newBenutzername){
+        this.benutzername = newBenutzername;
+    }
+    public void setPasswort(String oldPW, String newPW){
 
+    }
     public String getBenutzername() {
         return benutzername;
     }
@@ -138,23 +149,21 @@ public abstract class Mitarbeiter extends Person{
         this.userFile = userFile;
     }
 
-    public void abmelden(){
-        if(this.isAdmin){
-            Foo.currentAdmin = null;
-            System.out.println("Admin ausgeloggt.");
-        }else if(this.isKontrolleur){
-            Foo.currentKontrolleur = null;
-            System.out.println("Kontrolleur ausgeloggt.");
-        } else if (this.isSachbearbeiter) {
-            Foo.currentSachbearbeiter = null;
-            System.out.println("Sachbearbeiter ausgeloggt");
-        }
-        Foo.setAngemeldet(false);
-        try {
-            Foo.saveAngemeldetBleiben(false);
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+    public File getLoggedInFile() {
+        return loggedInFile;
     }
+
+    public void setLoggedInFile(File loggedInFile) {
+        this.loggedInFile = loggedInFile;
+    }
+
+    public boolean isAngemeldetBleiben() {
+        return angemeldetBleiben;
+    }
+
+    public void setAngemeldetBleiben(boolean angemeldetBleiben) {
+        this.angemeldetBleiben = angemeldetBleiben;
+    }
+
+
 }
