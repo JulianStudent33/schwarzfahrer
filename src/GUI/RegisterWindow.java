@@ -210,6 +210,14 @@ public class RegisterWindow extends GUI_Mama {
             rollenBox.setRenderer(renderer);
         }
 
+        if(colorchange) {
+            Color[] colorrollenn = {Grey,Grey,Grey,Grey};
+            ComboBoxRenderer rendererr = new ComboBoxRenderer(genderBox);
+            rendererr.setColors(colorrollenn);
+            rendererr.setStrings(geschlechter);
+            genderBox.setRenderer(rendererr);
+        }
+
         rollenBox.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
         rollenBox.setBackground(whitebg);
         if(rollenBox.getItemAt(0)=="Rolle*") {
