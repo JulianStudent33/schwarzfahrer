@@ -68,7 +68,7 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
 
         Text.setForeground(white);
         Text.setFont(fontMediumMedium);
-        Text.setText("<html><body><center><p>Profil von <br>... </p></center></body></html>");
+        Text.setText("<html><body><center><p>Profil von <br>"+ currentUser.getVorname() + "</p></center></body></html>");
         Text.setBounds(140,0,400,100);
 
         Benutzername.setForeground(white);
@@ -83,28 +83,28 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         Name.setFont(fontMedium);
         Name.setEnabled(false);
         Name.setBounds(75,80,250,40);
-        Name.setPlaceholder("Nachname");
+        Name.setPlaceholder(currentUser.getName());
 
         Vorname.setForeground(white);
         Vorname.setBackground(dark);
         Vorname.setFont(fontMedium);
         Vorname.setEnabled(false);
         Vorname.setBounds(75,20,250,40);
-        Vorname.setPlaceholder("Vorname");
+        Vorname.setPlaceholder(currentUser.getVorname());
 
         Gender.setForeground(white);
         Gender.setBackground(dark);
         Gender.setFont(fontMedium);
         Gender.setEnabled(false);
         Gender.setBounds(75,140,250,40);
-        Gender.setPlaceholder("Gender");
+        Gender.setPlaceholder(currentUser.getGeschlecht());
 
         Rolle.setForeground(white);
         Rolle.setBackground(dark);
         Rolle.setFont(fontMedium);
         Rolle.setEnabled(false);
         Rolle.setBounds(75,200,250,40);
-        Rolle.setPlaceholder("Rolle");
+        Rolle.setPlaceholder("");
 
         Geburtstag.setForeground(white);
         Geburtstag.setBackground(dark);
