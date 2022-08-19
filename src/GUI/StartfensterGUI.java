@@ -29,6 +29,8 @@ public class StartfensterGUI extends GUI_Mama implements ActionListener {
 
     private void frame(GUI_Mama parent) {
 
+        getDirectoryData();
+
         // Panelmanagement
         JPanel Background = new JPanel();
         Background.setBackground(dark);

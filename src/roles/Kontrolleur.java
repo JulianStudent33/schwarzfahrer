@@ -57,9 +57,6 @@ public class Kontrolleur extends Mitarbeiter{
         System.out.println("Kontrolleur erstellt.");
     }
 
-    public void schwarzfahrtErfassen(){
-
-    }
     public Schwarzfahrer schwarzfahrerSuchen(String ausweisnummer) throws IOException, ClassNotFoundException {
         Foo.getDirectoryData();
         File gesuchtenSF = Path.of(Foo.sfPath + Foo.fileSeperator + ausweisnummer + ".sf").toFile();

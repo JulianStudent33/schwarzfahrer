@@ -1,6 +1,7 @@
 package src.roles;
 
 import src.Foo;
+import src.GUI.elements.Dateswitcher;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -20,7 +21,7 @@ public class Administrator extends Mitarbeiter{
 
 
     //Konstruktoren
-    public Administrator(String benutzername, String passwort, String vorname, String nachname, String geschlecht, String telefonnummer, String email) throws IOException {
+    public Administrator(String benutzername, String passwort, String vorname, String nachname, String geschlecht, String telefonnummer, String email, int[] date) throws IOException {
         Foo.adminCount +=1;
         this.isAdmin = true;
         this.mitarbeiternummer = "A" + Foo.adminCount;
@@ -31,23 +32,12 @@ public class Administrator extends Mitarbeiter{
         this.geschlecht = geschlecht;
         this.telefonnummer = telefonnummer;
         this.email = email;
+        this.geburtsdatum = Dateswitcher.numbertodate(date[0], date[1], date[2]);
         this.userFile = Path.of
                 (Foo.adminPath + Foo.fileSeperator + benutzername +  ".mb").toFile();
         display();
         createUserFile();
         System.out.println("Administrator erstellt.");
-    }
-    public Administrator(String benutzername, String passwort) throws IOException {
-        Foo.adminCount +=1;
-        this.isAdmin = true;
-        this.mitarbeiternummer = "A" + Foo.adminCount;
-        this.benutzername = benutzername;
-        this.passwort = passwort;
-        this.userFile = Path.of
-                (Foo.adminPath + Foo.fileSeperator + benutzername +  ".mb").toFile();
-        System.out.println(this.benutzername);
-        createUserFile();
-        System.out.println("Created Admin mit Benutzername " + benutzername + " und mitarbeiternummer " + mitarbeiternummer);
     }
 
         private void benutzerSuchen(){

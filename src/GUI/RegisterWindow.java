@@ -1,12 +1,14 @@
 package src.GUI;
 
 import src.Foo;
+import src.GUI.Admin.AdminGUI;
 import src.GUI.Kon.KontrolleurGUI;
 import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
 import src.GUI.elements.PlaceholderPasswordField;
 import src.GUI.elements.PlaceholderTextField;
 import src.nickcode.pass;
 import src.GUI.elements.*;
+import src.roles.Administrator;
 import src.roles.Kontrolleur;
 import src.roles.Sachbearbeiter;
 
@@ -367,17 +369,32 @@ public class RegisterWindow extends GUI_Mama {
                 if (e.getSource()==reg) {
                     System.out.println("Nutzer anlegen wenn alles richtig und Hauptmenü der jeweiligen Rolle öffnen");
                     if (pflichtAusgefüllt()){
-                        int rollenSelection;
+
                         int[] date = Dateswitcher.datetonumber(dateButton.getText());
+
+                        if (firstUsage){
+                            try {
+                                Foo.currentUser = new Administrator(bname.getText(), pw.getText(),
+                                        vname.getText(), name.getText(), genderBox.getSelectedItem().toString(),
+                                        nummer.getText(), mail.getText().toLowerCase(Locale.ROOT), date);
+                                angemeldet = true;
+                                AdminGUI.openAdminGUI(getFrame());
+                                dispose();
+                            } catch (IOException ex) {
+                                ex.printStackTrace();
+                                throw new RuntimeException(ex);
+                            }
+
+
+                        }else{
+
+
+                        int rollenSelection;
                         if (rollenBox.getSelectedItem() == rollenBox.getItemAt(0)) {
                             rollenSelection = 1; //
                         } else {
                             rollenSelection = 2;
                         }
-
-
-
-
                         try {
 
                             switch (rollenSelection) {
@@ -409,6 +426,7 @@ public class RegisterWindow extends GUI_Mama {
                             dispose();
                             throw new RuntimeException(ex);
                         }
+                    }
                     }
                 }
             }
@@ -547,7 +565,7 @@ public class RegisterWindow extends GUI_Mama {
     }
     //Allgemeine Methoden
     private boolean pflichtAusgefüllt() {
-        if (rollenBox.getItemCount() == 2) {
+        if (rollenBox.getItemCount() == 2 || (firstUsage)) {
             if (genderBox.getItemCount() == 3) {
                 if (!vname.getText().isBlank()) {
                     if (!name.getText().isBlank()) {
