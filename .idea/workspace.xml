@@ -4,7 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="GUI_Mama macht jetzt das Styling für alle Hauptmenüs" />
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="GUI_Mama macht jetzt das Styling für alle Hauptmenüs">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Kontrolleur/Konni1.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Kontrolleur/kon.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Sachbearbeiter/Sachi.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Sachbearbeiter/Sachi2.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Sachbearbeiter/Sachi4.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/loggedIN.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Kontrolleur/Konni1.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Sachbearbeiter/Sachi.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Sachbearbeiter/Sachi1.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Sachbearbeiter/Sachi2.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Sachbearbeiter/Sachi4.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StatistikenGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StatistikenGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StatistikenGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StatistikenGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Admin/MitarbeiterVerwaltenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Admin/MitarbeiterVerwaltenGUI.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -241,21 +264,7 @@
       <workItem from="1660809228337" duration="3877000" />
       <workItem from="1660813486558" duration="14625000" />
       <workItem from="1660846184317" duration="1046000" />
-      <workItem from="1660853830588" duration="12311000" />
-    </task>
-    <task id="LOCAL-00046" summary="KonGUI, AdminGUI, SBGUi">
-      <created>1659966201206</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1659966201206</updated>
-    </task>
-    <task id="LOCAL-00047" summary="error fix">
-      <created>1659966447945</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1659966447945</updated>
+      <workItem from="1660853830588" duration="14147000" />
     </task>
     <task id="LOCAL-00048" summary="Important Changes">
       <created>1659968682492</created>
@@ -586,7 +595,21 @@
       <option name="project" value="LOCAL" />
       <updated>1660901479123</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="GUI_Mama macht jetzt das Styling für alle Hauptmenüs">
+      <created>1660901529046</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1660901529047</updated>
+    </task>
+    <task id="LOCAL-00096" summary="GUI_Mama macht jetzt das Styling für alle Hauptmenüs">
+      <created>1660901554498</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1660901554498</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -669,12 +692,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/Admin/MitarbeiterVerwaltenGUI.java</url>
-          <line>186</line>
+          <line>213</line>
           <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/Admin/MitarbeiterVerwaltenGUI.java</url>
-          <line>171</line>
+          <line>198</line>
           <option name="timeStamp" value="100" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -759,7 +782,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/StatistikenGUI.java</url>
-          <line>275</line>
+          <line>277</line>
           <option name="timeStamp" value="134" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
