@@ -189,7 +189,7 @@ public class StartfensterGUI extends GUI_Mama implements ActionListener {
         if (e.getSource()==reg) {
             if (Foo.firstUsage){
                 System.out.println("Öffne First-Register-GUI");
-                firstRegistrationGUI.openFirstRegister();
+                RegisterWindow.openRegisterGUI(getFrame());
                 dispose();
             }else{
                 System.out.println("Öffne Register-Window");
