@@ -1,0 +1,9 @@
+<changelist name="Uncommitted_changes_before_Update_at_18_08_22,_11_01_[Changes]" date="1660813319831" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_08_22,_11_01_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 18.08.22, 11:01 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/schwarzfahrer/src/GUI/Admin/AdminAnlegenGUI.class" />
+    <option name="AFTER_PATH" value="out/production/schwarzfahrer/src/GUI/Admin/AdminAnlegenGUI.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_08_22,_11_01_[Changes]/AdminAnlegenGUI.class" />
+  </binary>
+</changelist>
