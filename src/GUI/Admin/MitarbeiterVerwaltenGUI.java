@@ -128,14 +128,31 @@ public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener 
 
          loeschen.addActionListener(new ActionListener() {
              public void actionPerformed(ActionEvent event) {
-                 ListSelectionModel selmodel = list.getSelectionModel();
-                 int index = selmodel.getMinSelectionIndex();
-                 if (index >= 0){
-                     model.remove(index);
+
+                 String[] options = {"Ja","Abbrechen"};
+                 JPanel panel = new JPanel();
+                 JLabel lbl = new JLabel("Sind Sie sicher, dass Sie diesen Mitarbeiter löschen wollen?");
+                 panel.add(lbl);
+                 int result = JOptionPane.showOptionDialog(getFrame(), lbl,"Bestätigung",
+                         JOptionPane.YES_NO_OPTION,
+                         JOptionPane.WARNING_MESSAGE, null,options,options[1]);
+
+                 if(result == 0){
+
+                     ListSelectionModel selmodel = list.getSelectionModel();
+                     int index = selmodel.getMinSelectionIndex();
+                     if (index >= 0){
+                         model.remove(index);
+                     }
+                     if (index == 0){
+                         System.out.println("Index = 0");
+                     }
+                     System.out.println("Ja gedrückt");
+
+                 }else{
+                     System.out.println("Nein gedrückt");
                  }
-                 if (index == 0){
-                     System.out.println("Index = 0");
-                 }
+
 
              }
 

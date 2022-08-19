@@ -267,6 +267,10 @@ public class AdminGUI extends GUI_Mama implements ActionListener {
 
     }
 
+    public static void main(String[] args) {
+        //openAdminGUI();
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
 
