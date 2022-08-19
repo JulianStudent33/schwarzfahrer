@@ -2,10 +2,8 @@ package src.GUI.Admin;
 
 import src.Foo;
 import src.GUI.GUI_Mama;
-import src.GUI.firstRegistrationGUI;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class AdminAnlegenGUI extends JFrame {
 
