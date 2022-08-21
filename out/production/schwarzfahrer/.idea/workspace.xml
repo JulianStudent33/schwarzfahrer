@@ -4,15 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Profil">
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/loggedIN.save" beforeDir="false" afterPath="$PROJECT_DIR$/Saves/loggedIN.save" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Kontrolleur/Konni1.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Kontrolleur/Ron.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Kontrolleur/kon.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Sachbearbeiter/Nick.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Sachbearbeiter/Sachi.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Sachbearbeiter/Sachi123.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Sachbearbeiter/Sachi2.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Sachbearbeiter/Sachi4.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/loggedIN.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Admin/Admin1.mb" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Admin/Admin1.mb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Kontrolleur/Konni1.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Sachbearbeiter/Sachi.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Sachbearbeiter/Sachi1.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Sachbearbeiter/Sachi2.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Sachbearbeiter/Sachi4.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/loggedIN.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StatistikenGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StatistikenGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/ProfilGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ProfilGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StatistikenGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StatistikenGUI.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,21 +266,7 @@
       <workItem from="1660809228337" duration="3877000" />
       <workItem from="1660813486558" duration="14625000" />
       <workItem from="1660846184317" duration="1046000" />
-      <workItem from="1660853830588" duration="2075000" />
-    </task>
-    <task id="LOCAL-00044" summary="Neu">
-      <created>1659911080267</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1659911080267</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Neu">
-      <created>1659950492221</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1659950492221</updated>
+      <workItem from="1660853830588" duration="12311000" />
     </task>
     <task id="LOCAL-00046" summary="KonGUI, AdminGUI, SBGUi">
       <created>1659966201206</created>
@@ -588,14 +590,28 @@
       <option name="project" value="LOCAL" />
       <updated>1660846210488</updated>
     </task>
-    <task id="LOCAL-00092" summary="Profil">
-      <created>1660898006493</created>
+    <task id="LOCAL-00092" summary="angemeldet bleiben geht wieder">
+      <created>1660891362267</created>
       <option name="number" value="00092" />
       <option name="presentableId" value="LOCAL-00092" />
       <option name="project" value="LOCAL" />
-      <updated>1660898006493</updated>
+      <updated>1660891362267</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="angemeldet bleiben geht wieder">
+      <created>1660891379443</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1660891379444</updated>
+    </task>
+    <task id="LOCAL-00094" summary="GUI_Mama macht jetzt das Styling für alle Hauptmenüs">
+      <created>1660901479123</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1660901479123</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -616,8 +632,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Neu" />
-    <MESSAGE value="KonGUI, AdminGUI, SBGUi" />
     <MESSAGE value="error fix" />
     <MESSAGE value="Important Changes" />
     <MESSAGE value="LoginGUI Version Ron 1.0" />
@@ -640,8 +654,10 @@
     <MESSAGE value="changes" />
     <MESSAGE value="auto logout und location relative to parent" />
     <MESSAGE value="many changes" />
-    <MESSAGE value="Profil" />
-    <option name="LAST_COMMIT_MESSAGE" value="Profil" />
+    <MESSAGE value="angemeldet bleiben geht wieder" />
+    <MESSAGE value="GUI_Mama macht jetzt das Styling für alle Hauptmenüs" />
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -668,27 +684,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/Kon/SchwarzfahrtErfassenGUI.java</url>
-          <line>200</line>
+          <line>199</line>
           <option name="timeStamp" value="96" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/Kon/SchwarzfahrtErfassenGUI.java</url>
-          <line>206</line>
+          <line>205</line>
           <option name="timeStamp" value="98" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/Admin/MitarbeiterVerwaltenGUI.java</url>
-          <line>189</line>
+          <line>186</line>
           <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/Admin/MitarbeiterVerwaltenGUI.java</url>
-          <line>174</line>
+          <line>171</line>
           <option name="timeStamp" value="100" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/Kon/KontrolleurGUI.java</url>
-          <line>260</line>
+          <line>86</line>
           <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -708,7 +724,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/EinstellungenGUI.java</url>
-          <line>204</line>
+          <line>205</line>
           <option name="timeStamp" value="113" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -733,43 +749,33 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>343</line>
+          <line>344</line>
           <option name="timeStamp" value="125" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>344</line>
-          <option name="timeStamp" value="126" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/RegisterWindow.java</url>
-          <line>212</line>
+          <line>224</line>
           <option name="timeStamp" value="127" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/RegisterWindow.java</url>
-          <line>417</line>
+          <line>440</line>
           <option name="timeStamp" value="128" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/RegisterWindow.java</url>
-          <line>259</line>
+          <line>271</line>
           <option name="timeStamp" value="129" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/RegisterWindow.java</url>
-          <line>285</line>
+          <line>297</line>
           <option name="timeStamp" value="130" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/RegisterWindow.java</url>
-          <line>286</line>
+          <line>298</line>
           <option name="timeStamp" value="131" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>217</line>
-          <option name="timeStamp" value="132" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
@@ -785,6 +791,21 @@
           <url>file://$PROJECT_DIR$/src/GUI/StatistikenGUI.java</url>
           <line>52</line>
           <option name="timeStamp" value="135" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/roles/Mitarbeiter.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="136" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Foo.java</url>
+          <line>340</line>
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GUI/Admin/AdminGUI.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="138" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
@@ -804,7 +825,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/GUI/GUI_Mama.java</url>
-          <line>46</line>
+          <line>63</line>
           <properties class="src.GUI.GUI_Mama">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -813,7 +834,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/GUI/Kon/KontrolleurGUI.java</url>
-          <line>21</line>
+          <line>19</line>
           <properties class="src.GUI.Kon.KontrolleurGUI" method="&lt;init&gt;">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -822,7 +843,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>382</line>
+          <line>348</line>
           <properties class="src.Foo" method="getAngemeldetBleiben">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -831,7 +852,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/GUI/GUI_Mama.java</url>
-          <line>72</line>
+          <line>89</line>
           <properties class="src.GUI.GUI_Mama" method="getCurrentUser">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -840,7 +861,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/GUI/GUI_Mama.java</url>
-          <line>115</line>
+          <line>132</line>
           <properties class="src.GUI.GUI_Mama" method="refreshCurrentUser">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -858,7 +879,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>337</line>
+          <line>338</line>
           <properties class="src.Foo" method="saveAngemeldetBleiben">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
