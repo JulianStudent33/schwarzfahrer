@@ -4,6 +4,9 @@ import javax.swing.*;
 import javax.swing.text.Document;
 import java.awt.*;
 
+import static src.Foo.Grey;
+import static src.Foo.notSoDark;
+
 public class PlaceholderPasswordField extends JPasswordField {
 
     public static void main(final String[] args) {
@@ -57,7 +60,7 @@ public class PlaceholderPasswordField extends JPasswordField {
         g.setRenderingHint(
                 RenderingHints.KEY_ANTIALIASING,
                 RenderingHints.VALUE_ANTIALIAS_ON);
-        g.setColor(getDisabledTextColor());
+        g.setColor(notSoDark);
         g.drawString(placeholder, getInsets().left, pG.getFontMetrics()
                 .getMaxAscent() + getInsets().top);
     }
@@ -152,7 +155,6 @@ public class PlaceholderPasswordField extends JPasswordField {
             });
             timer.start();
         }
-
     }
     public void addRedFlashEffectWhiteField() {
         if (timer == null) {

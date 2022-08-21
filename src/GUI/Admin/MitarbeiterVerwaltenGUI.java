@@ -18,7 +18,7 @@ public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener 
 
     String[] mitarbeiter;
     final DefaultListModel<String> model = new DefaultListModel<>();
-    final JList<String> list = new JList<>(model);
+    JList<String> list = new JList<>(model);
     JScrollPane scrollpane = new JScrollPane(list);
     JButton loeschen = new JButton();
 
@@ -139,7 +139,17 @@ public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener 
                      ListSelectionModel selmodel = list.getSelectionModel();
                      int index = selmodel.getMinSelectionIndex();
                      if (index >= 0){
-                         model.remove(index);
+
+                         System.out.println("Index" + index);
+                         System.out.println(mitarbeiter[index]);
+
+
+
+
+                         //model.remove(index);
+
+
+
                      }
                      if (index == 0){
                          System.out.println("Index = 0");

@@ -1,12 +1,14 @@
 package src.GUI;
 
 import src.Foo;
+import src.GUI.Admin.AdminGUI;
 import src.GUI.Kon.KontrolleurGUI;
 import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
 import src.GUI.elements.PlaceholderPasswordField;
 import src.GUI.elements.PlaceholderTextField;
 import src.nickcode.pass;
 import src.GUI.elements.*;
+import src.roles.Administrator;
 import src.roles.Kontrolleur;
 import src.roles.Sachbearbeiter;
 
@@ -39,7 +41,7 @@ public class RegisterWindow extends GUI_Mama {
     customComboBox rollenBox = new customComboBox();
 
     String[] geschlechter = {"Geschlecht*", "Männlich", "Weiblich", "Divers"};
-
+    String[] month = {"M","1", "2","3","4","5","6","7","8","9","10","11","12"};
     customComboBox genderBox = new customComboBox();
 
     customButton dateButton = new customButton();
@@ -80,12 +82,6 @@ public class RegisterWindow extends GUI_Mama {
             rollenBox.addItem(rollen[1]);
             rollenBox.addItem(rollen[2]);
         }
-
-
-
-
-
-
 
         genderBox.addItem(geschlechter[0]);
         genderBox.addItem(geschlechter[1]);
@@ -214,6 +210,13 @@ public class RegisterWindow extends GUI_Mama {
             rollenBox.setRenderer(renderer);
         }
 
+        if(colorchange) {
+            Color[] colorrollenn = {Grey,Grey,Grey,Grey};
+            ComboBoxRenderer rendererr = new ComboBoxRenderer(genderBox);
+            rendererr.setColors(colorrollenn);
+            rendererr.setStrings(geschlechter);
+            genderBox.setRenderer(rendererr);
+        }
 
         rollenBox.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
         rollenBox.setBackground(whitebg);
@@ -249,50 +252,6 @@ public class RegisterWindow extends GUI_Mama {
         dateButton.setFocusable(true);
         dateButton.setBorder(new CompoundBorder(border, margin));
         dateButton.setHorizontalTextPosition(SwingConstants.LEFT);
-
-
-        // Geburtsdatum Eingabefeld
-        // Tag
-        String[] days = {"D","1", "2","3","4","5","6","7","8","9","10","11","12","13","14","15","16",
-                "17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"};
-
-        final JComboBox<String> tage = new JComboBox<>(days);
-        tage.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
-        tage.setBackground(whitebg);
-        tage.setForeground(dark);
-        tage.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        tage.setFocusable(false);
-        tage.setBorder(new CompoundBorder(border, margin));
-
-        // Monat
-        String[] month = {"M","1", "2","3","4","5","6","7","8","9","10","11","12"};
-
-        final JComboBox<String> monat = new JComboBox<>(month);
-        monat.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
-        monat.setBackground(whitebg);
-        monat.setForeground(dark);
-        monat.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        monat.setFocusable(false);
-        monat.setBorder(new CompoundBorder(border, margin));
-
-        // Jahr
-        // Jahresvariable erstellen
-        List<String> year = new ArrayList<>();
-        int n = Calendar.getInstance().get(Calendar.YEAR);
-        year.add("Y");
-        for (int i = 1900; i<=n;i++){
-            year.add(String.valueOf(i));
-        }
-        String[] yearr = year.toArray(new String[0]);
-
-        // Jahrescombobox
-        final JComboBox<String> jahr = new JComboBox<>(yearr);
-        jahr.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
-        jahr.setBackground(whitebg);
-        jahr.setForeground(dark);
-        jahr.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        jahr.setFocusable(false);
-        jahr.setBorder(new CompoundBorder(border, margin));
 
         // Bot Panel Management
         // E-Mail Textfeld
@@ -337,7 +296,7 @@ public class RegisterWindow extends GUI_Mama {
         // Bot Registrieren Button Management
 
         // JButton "Registrieren"
-
+        reg.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         reg.setText("Registrieren");
         reg.setBackground(hellb);
         reg.setForeground(whitebg);
@@ -348,9 +307,9 @@ public class RegisterWindow extends GUI_Mama {
         reg.setVerticalAlignment(JLabel.CENTER);
         reg.setFocusable(true);
         reg.setBorderPainted(false);
-        reg.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         reg.setBounds(140,-10,190,50);
 
+        abr.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         abr.setText("Abbrechen");
         abr.setBackground(notSoDark);
         abr.setForeground(whitebg);
@@ -361,7 +320,6 @@ public class RegisterWindow extends GUI_Mama {
         abr.setVerticalAlignment(JLabel.CENTER);
         abr.setFocusable(true);
         abr.setBorderPainted(false);
-        abr.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         abr.setBounds(140,-10,190,50);
 
         // Hauptfenster
@@ -374,11 +332,6 @@ public class RegisterWindow extends GUI_Mama {
         this.getContentPane().setBackground(dark);
 
         // Add Befehle
-
-
-
-
-
 
 
         // Add für einzelne Elemente innerhalb der Panel
@@ -416,17 +369,32 @@ public class RegisterWindow extends GUI_Mama {
                 if (e.getSource()==reg) {
                     System.out.println("Nutzer anlegen wenn alles richtig und Hauptmenü der jeweiligen Rolle öffnen");
                     if (pflichtAusgefüllt()){
-                        int rollenSelection;
+
                         int[] date = Dateswitcher.datetonumber(dateButton.getText());
+
+                        if (firstUsage){
+                            try {
+                                Foo.currentUser = new Administrator(bname.getText(), pw.getText(),
+                                        vname.getText(), name.getText(), genderBox.getSelectedItem().toString(),
+                                        nummer.getText(), mail.getText().toLowerCase(Locale.ROOT), date);
+                                angemeldet = true;
+                                AdminGUI.openAdminGUI(getFrame());
+                                dispose();
+                            } catch (IOException ex) {
+                                ex.printStackTrace();
+                                throw new RuntimeException(ex);
+                            }
+
+
+                        }else{
+
+
+                        int rollenSelection;
                         if (rollenBox.getSelectedItem() == rollenBox.getItemAt(0)) {
                             rollenSelection = 1; //
                         } else {
                             rollenSelection = 2;
                         }
-
-
-
-
                         try {
 
                             switch (rollenSelection) {
@@ -459,10 +427,10 @@ public class RegisterWindow extends GUI_Mama {
                             throw new RuntimeException(ex);
                         }
                     }
+                    }
                 }
             }
         });
-
         dateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -483,13 +451,8 @@ public class RegisterWindow extends GUI_Mama {
                         dateButton.setText(calender.Set_Picked_Date());
                     }
                 }
-
-
-
-
         });
         //ActionListener für Benutzername
-
         bname.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
@@ -545,7 +508,6 @@ public class RegisterWindow extends GUI_Mama {
 
             }
         });
-
         pwb.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
@@ -581,7 +543,6 @@ public class RegisterWindow extends GUI_Mama {
                 }
             }
         });
-
         genderBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -593,49 +554,18 @@ public class RegisterWindow extends GUI_Mama {
                 }
             }
         });
-        tage.addActionListener(new ActionListener() {
+        abr.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (tage.getItemAt(0).equals("D")){
-                    tage.removeItemAt(0);
-                    tage.setPrototypeDisplayValue(null);
-                }
-            }
-        });
-        monat.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (monat.getItemAt(0).equals("M")){
-                    monat.removeItemAt(0);
-                    monat.setPrototypeDisplayValue(null);
-                }
-            }
-        });
-
-        jahr.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (jahr.getItemAt(0).equals("Y")){
-                    jahr.removeItemAt(0);
-                    jahr.setPrototypeDisplayValue(null);
-                }
+                StartfensterGUI.openStartFenster(getFrame());
+                dispose();
             }
         });
 
     }
-
-
-
-
-    // ActionListener deklariert -> Was bei Klick auf den Button "Registrieren" passiert
-
-
-
     //Allgemeine Methoden
-
-
     private boolean pflichtAusgefüllt() {
-        if (rollenBox.getItemCount() == 2) {
+        if (rollenBox.getItemCount() == 2 || (firstUsage)) {
             if (genderBox.getItemCount() == 3) {
                 if (!vname.getText().isBlank()) {
                     if (!name.getText().isBlank()) {
@@ -754,9 +684,6 @@ public class RegisterWindow extends GUI_Mama {
 
         return false;
     }
-
-
-
 
     public static void openRegisterGUI(GUI_Mama parent){
 

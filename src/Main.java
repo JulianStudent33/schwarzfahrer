@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
 
         // True = LightMode - False = DarkMode
-        colorchange = false;
+        colorchange = true;
         colormode(colorchange);
         //Start
         try {

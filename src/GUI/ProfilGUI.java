@@ -210,7 +210,6 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
             }
         });
 
-
         AbbrechenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -224,9 +223,6 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
 
 
     }
-
-
-
 
     public static void openProfilGUI(GUI_Mama parent){
 
