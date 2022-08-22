@@ -18,7 +18,7 @@ import static src.Foo.*;
 public abstract class GUI_Mama extends JFrame {
 
     public String name;
-    String[] optionenLogout = {"Aus", "10", "15", "30"};
+    String[] optionenLogout = {"Aus", "5", "15", "30"};
     public Mitarbeiter currentUser;
     public boolean konAngemeldet;
     public boolean sbAngemeldet;
@@ -64,20 +64,25 @@ public abstract class GUI_Mama extends JFrame {
 
         int time = 1;
         refreshCurrentUser();
-        if (!Foo.getCurrentLogoutTime().equals(optionenLogout[0])){
-            if (Foo.getCurrentLogoutTime().equals(optionenLogout[1])){
+        System.out.println(currentUser.getAutoLogout());
+        System.out.println(optionenLogout[1]);
+        if (!currentUser.getAutoLogout().equals(optionenLogout[0])){
+            if (currentUser.getAutoLogout().equals(optionenLogout[1])){
                 time = 5;
             }
-            if (Foo.getCurrentLogoutTime().equals(optionenLogout[2])){
+            if (currentUser.getAutoLogout().equals(optionenLogout[2])){
                 time = 15;
             }
-            if (Foo.getCurrentLogoutTime().equals(optionenLogout[3])){
+            if (currentUser.getAutoLogout().equals(optionenLogout[3])){
                 time = 30;
             }
             listener.setInterval(time);
             listener.start();
             this.autoLogoutON = true;
             System.out.println("Logout nach " + time + " Minuten");
+        } else{
+            listener.stop();
+            System.out.println("Angemeldet bleiben false");
         }
 
     }
@@ -160,11 +165,6 @@ public abstract class GUI_Mama extends JFrame {
             }
         }
 
-
-
-
-
-
     }
 
     public void styleMenu(String[] text){
@@ -208,7 +208,7 @@ public abstract class GUI_Mama extends JFrame {
             buttons[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             buttons[i].setBounds(140,100,100,100);
 
-            System.out.println("Styled Kachel" + i+1);
+            System.out.println("Styled Kachel" + (i+1));
         }
         Kachel1 = buttons[0];
         Kachel1.setBackground(hellb);

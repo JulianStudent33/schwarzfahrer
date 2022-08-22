@@ -30,8 +30,8 @@ public class AdminGUI extends GUI_Mama {
         Kachel1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                AdminAnlegenGUI.openAdminAnlegenGUI(getFrame());
-                AdminGUI.this.Kachel1.setEnabled(false);
+                RegisterWindow.openAdminRegisterGUI(getFrame());
+                dispose();
             }
         });
         Kachel2.addActionListener(new ActionListener() {

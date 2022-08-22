@@ -77,6 +77,8 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         Benutzername.setEnabled(false);
         Benutzername.setBounds(75,440,250,40);
         Benutzername.setPlaceholder(currentUser.getBenutzername());
+        Benutzername.setText(currentUser.getBenutzername());
+
 
         Name.setForeground(white);
         Name.setBackground(dark);
@@ -84,6 +86,7 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         Name.setEnabled(false);
         Name.setBounds(75,80,250,40);
         Name.setPlaceholder(currentUser.getName());
+        Name.setText(currentUser.getName());
 
         Vorname.setForeground(white);
         Vorname.setBackground(dark);
@@ -91,6 +94,7 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         Vorname.setEnabled(false);
         Vorname.setBounds(75,20,250,40);
         Vorname.setPlaceholder(currentUser.getVorname());
+        Vorname.setText(currentUser.getVorname());
 
         Gender.setForeground(white);
         Gender.setBackground(dark);
@@ -98,6 +102,8 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         Gender.setEnabled(false);
         Gender.setBounds(75,140,250,40);
         Gender.setPlaceholder(currentUser.getGeschlecht());
+        Gender.setText(currentUser.getGeschlecht());
+
 
         Rolle.setForeground(white);
         Rolle.setBackground(dark);
@@ -106,11 +112,14 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         Rolle.setBounds(75,200,250,40);
         if(currentUser.isAdmin()){
             Rolle.setPlaceholder("Admin");
+            Rolle.setText("Admin");
         } else if (currentUser.isKontrolleur()) {
             Rolle.setPlaceholder("Kontrolleur");
+            Rolle.setText("Kontrolleur");
         }
         else{
             Rolle.setPlaceholder("Sachbearbeiter");
+            Rolle.setText("Sachbearbeiter");
         }
 
         Geburtstag.setForeground(white);
@@ -119,6 +128,8 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         Geburtstag.setEnabled(false);
         Geburtstag.setBounds(75,260,250,40);
         Geburtstag.setPlaceholder(currentUser.getGeburtsdatum());
+        Geburtstag.setText(currentUser.getGeburtsdatum());
+
 
         EMail.setForeground(white);
         EMail.setBackground(dark);
@@ -126,6 +137,8 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         EMail.setEnabled(false);
         EMail.setBounds(75,320,250,40);
         EMail.setPlaceholder(currentUser.getEmail());
+        EMail.setText(currentUser.getEmail());
+
 
         Telefonnummer.setForeground(white);
         Telefonnummer.setBackground(dark);
@@ -133,6 +146,7 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         Telefonnummer.setEnabled(false);
         Telefonnummer.setBounds(75,380,250,40);
         Telefonnummer.setPlaceholder(currentUser.getTelefonnummer());
+        Telefonnummer.setText(currentUser.getTelefonnummer());
 
 
         AbbrechenButton.setBackground(hellb);

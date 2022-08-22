@@ -16,6 +16,7 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
+import javax.swing.text.AbstractDocument;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -50,6 +51,7 @@ public class RegisterWindow extends GUI_Mama {
     PlaceholderPasswordField pw = new PlaceholderPasswordField();
     PlaceholderPasswordField pwb = new PlaceholderPasswordField();
 
+    boolean onlyAdmin;
 
     // Mid Texfelder
     // PlaceholderTextField rolle = new PlaceholderTextField();
@@ -61,10 +63,11 @@ public class RegisterWindow extends GUI_Mama {
     JButton abr = new JButton();
 
     //Konstruktor
-    public RegisterWindow(GUI_Mama parent) {
+    public RegisterWindow(GUI_Mama parent, boolean onlyAdmin) {
 
-        // Erneuter Aufruf des L&F sodass bei Rückgang auf vorheriges Fenster, das L&F bestehen bleibt
-
+        if (onlyAdmin || firstUsage){
+            this.onlyAdmin = true;  //Damit Ausschließlich ein Admin Registriert werden kann
+        }
 
         // Start des Fensters mit der void Methode frame()
         frame(parent);
@@ -72,21 +75,31 @@ public class RegisterWindow extends GUI_Mama {
 
     private void frame(GUI_Mama parent) {
 
-        if(Foo.firstUsage){
+
+        if (onlyAdmin){
             rollen[0]="Admin";
             rollenBox.addItem(rollen[0]);
             rollenBox.setEnabled(false);
-        } else {
+        }else{
             rollen[0]="Rolle*";
             rollenBox.addItem(rollen[0]);
             rollenBox.addItem(rollen[1]);
             rollenBox.addItem(rollen[2]);
         }
 
+
+
+
         genderBox.addItem(geschlechter[0]);
         genderBox.addItem(geschlechter[1]);
         genderBox.addItem(geschlechter[2]);
         genderBox.addItem(geschlechter[3]);
+
+        //Filter Definition
+        LetterFilter lfilter = new LetterFilter();
+        NumberFilter nfilter = new NumberFilter();
+        SizeFilter sfilter = new SizeFilter(15);
+
 
         // Panelmanagement
 
@@ -176,7 +189,11 @@ public class RegisterWindow extends GUI_Mama {
         bname.setSelectedTextColor(dark);
         bname.setSelectionColor(notSoDark);
         bname.setPlaceholder("Benutzername*");
+        ((AbstractDocument)bname.getDocument()).setDocumentFilter(sfilter);
         //bname.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Benutzername");
+
+
+
 
         // name anpassungen
         name.setBorder(new CompoundBorder(border, margin));
@@ -188,6 +205,8 @@ public class RegisterWindow extends GUI_Mama {
         name.setSelectedTextColor(dark);
         name.setSelectionColor(notSoDark);
         name.setPlaceholder("Nachname*");
+        ((AbstractDocument)name.getDocument()).setDocumentFilter(lfilter);
+
 
         // vname anpassungen
         vname.setBorder(new CompoundBorder(border, margin));
@@ -198,6 +217,9 @@ public class RegisterWindow extends GUI_Mama {
         vname.setSelectedTextColor(dark);
         vname.setSelectionColor(notSoDark);
         vname.setPlaceholder("Vorname*");
+        ((AbstractDocument)vname.getDocument()).setDocumentFilter(lfilter);
+
+
 
         // Mid Panel Management
         // Rolle Auswahlmenü
@@ -272,6 +294,8 @@ public class RegisterWindow extends GUI_Mama {
         nummer.setSelectedTextColor(dark);
         nummer.setSelectionColor(notSoDark);
         nummer.setPlaceholder("Telefonnummer");
+        ((AbstractDocument)nummer.getDocument()).setDocumentFilter(nfilter);
+
         // PW Textfeld
         pw.setBorder(new CompoundBorder(border, margin));
         pw.setForeground(white);
@@ -281,6 +305,7 @@ public class RegisterWindow extends GUI_Mama {
         pw.setSelectedTextColor(dark);
         pw.setSelectionColor(notSoDark);
         pw.setPlaceholder("Passwort*");
+        ((AbstractDocument)pw.getDocument()).setDocumentFilter(sfilter);
         // PW Bestätigen Textfeld
         pwb.setBorder(new CompoundBorder(border, margin));
         pwb.setForeground(white);
@@ -290,7 +315,7 @@ public class RegisterWindow extends GUI_Mama {
         pwb.setSelectedTextColor(dark);
         pwb.setSelectionColor(notSoDark);
         pwb.setPlaceholder("Passwort bestätigen*");
-
+        ((AbstractDocument)pwb.getDocument()).setDocumentFilter(sfilter);
         // Bot Text Panel Management
 
         // Bot Registrieren Button Management
@@ -368,7 +393,7 @@ public class RegisterWindow extends GUI_Mama {
 
                         int[] date = Dateswitcher.datetonumber(dateButton.getText());
 
-                        if (firstUsage){
+                        if (onlyAdmin){
                             try {
                                 Foo.currentUser = new Administrator(bname.getText(), pw.getText(),
                                         vname.getText(), name.getText(), genderBox.getSelectedItem().toString(),
@@ -561,7 +586,7 @@ public class RegisterWindow extends GUI_Mama {
     }
     //Allgemeine Methoden
     private boolean pflichtAusgefüllt() {
-        if (rollenBox.getItemCount() == 2 || (firstUsage)) {
+        if (rollenBox.getItemCount() == 2 || (onlyAdmin)) {
             if (genderBox.getItemCount() == 3) {
                 if (!vname.getText().isBlank()) {
                     if (!name.getText().isBlank()) {
@@ -684,9 +709,14 @@ public class RegisterWindow extends GUI_Mama {
     public static void openRegisterGUI(GUI_Mama parent){
 
         Foo.getDirectoryData();
-        RegisterWindow gui = new RegisterWindow(parent);
+        RegisterWindow gui = new RegisterWindow(parent, false);
+    }
+    public static void openAdminRegisterGUI(GUI_Mama parent){
+        Foo.getDirectoryData();
+        RegisterWindow gui = new RegisterWindow(parent, true);
 
     }
+
 
     public static void main(String[] args) {
         openRegisterGUI(null);
