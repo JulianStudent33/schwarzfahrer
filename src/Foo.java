@@ -385,12 +385,12 @@ public class Foo {
     }
 
 
-    public static void okWindow(String message){
+    public static void okWindow(String message, GUI_Mama parent){
         String[] option = {"OK"};
         JPanel panel = new JPanel();
         JLabel lbl = new JLabel(message);
         panel.add(lbl);
-        int selectedOption = JOptionPane.showOptionDialog(null, panel,
+        int selectedOption = JOptionPane.showOptionDialog(parent, panel,
                 "", JOptionPane.NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, option , option[0]);
     }
     public static void deleteDirs(){ //Methode, damit ich die firstRegistration testen kann

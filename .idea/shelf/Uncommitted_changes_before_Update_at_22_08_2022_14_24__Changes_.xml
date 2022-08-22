@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Update_at_22_08_2022_14_24_[Changes]" date="1661171056002" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_08_2022_14_24_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 22.08.2022 14:24 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/schwarzfahrer/src/GUI/elements/PlaceholderPasswordField.class" />
+    <option name="AFTER_PATH" value="out/production/schwarzfahrer/src/GUI/elements/PlaceholderPasswordField.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_08_2022_14_24_[Changes]/PlaceholderPasswordField.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Saves/loggedIN.save" />
+    <option name="AFTER_PATH" value="Saves/loggedIN.save" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_08_2022_14_24_[Changes]/loggedIN.save" />
+  </binary>
+</changelist>

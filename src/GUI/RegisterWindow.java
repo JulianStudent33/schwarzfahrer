@@ -16,6 +16,7 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
+import javax.swing.text.AbstractDocument;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -50,6 +51,7 @@ public class RegisterWindow extends GUI_Mama {
     PlaceholderPasswordField pw = new PlaceholderPasswordField();
     PlaceholderPasswordField pwb = new PlaceholderPasswordField();
 
+    boolean onlyAdmin;
 
     // Mid Texfelder
     // PlaceholderTextField rolle = new PlaceholderTextField();
@@ -61,10 +63,11 @@ public class RegisterWindow extends GUI_Mama {
     JButton abr = new JButton();
 
     //Konstruktor
-    public RegisterWindow(GUI_Mama parent) {
+    public RegisterWindow(GUI_Mama parent, boolean onlyAdmin) {
 
-        // Erneuter Aufruf des L&F sodass bei Rückgang auf vorheriges Fenster, das L&F bestehen bleibt
-
+        if (onlyAdmin || firstUsage){
+            this.onlyAdmin = true;  //Damit Ausschließlich ein Admin Registriert werden kann
+        }
 
         // Start des Fensters mit der void Methode frame()
         frame(parent);
@@ -72,21 +75,31 @@ public class RegisterWindow extends GUI_Mama {
 
     private void frame(GUI_Mama parent) {
 
-        if(Foo.firstUsage){
+
+        if (onlyAdmin){
             rollen[0]="Admin";
             rollenBox.addItem(rollen[0]);
             rollenBox.setEnabled(false);
-        } else {
+        }else{
             rollen[0]="Rolle*";
             rollenBox.addItem(rollen[0]);
             rollenBox.addItem(rollen[1]);
             rollenBox.addItem(rollen[2]);
         }
 
+
+
+
         genderBox.addItem(geschlechter[0]);
         genderBox.addItem(geschlechter[1]);
         genderBox.addItem(geschlechter[2]);
         genderBox.addItem(geschlechter[3]);
+
+        //Filter Definition
+        LetterFilter lfilter = new LetterFilter();
+        NumberFilter nfilter = new NumberFilter();
+        SizeFilter sfilter = new SizeFilter(15);
+
 
         // Panelmanagement
 
@@ -166,6 +179,7 @@ public class RegisterWindow extends GUI_Mama {
         // Border Variablen Erstellung
         Border border = bname.getBorder();
         Border margin = new EmptyBorder(0,5,0,0);
+        Border margin2 = new EmptyBorder(0,0,0,0);
 
 
         bname.setBorder(new CompoundBorder(border, margin));
@@ -176,7 +190,11 @@ public class RegisterWindow extends GUI_Mama {
         bname.setSelectedTextColor(dark);
         bname.setSelectionColor(notSoDark);
         bname.setPlaceholder("Benutzername*");
+        ((AbstractDocument)bname.getDocument()).setDocumentFilter(sfilter);
         //bname.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Benutzername");
+
+
+
 
         // name anpassungen
         name.setBorder(new CompoundBorder(border, margin));
@@ -188,6 +206,8 @@ public class RegisterWindow extends GUI_Mama {
         name.setSelectedTextColor(dark);
         name.setSelectionColor(notSoDark);
         name.setPlaceholder("Nachname*");
+        ((AbstractDocument)name.getDocument()).setDocumentFilter(lfilter);
+
 
         // vname anpassungen
         vname.setBorder(new CompoundBorder(border, margin));
@@ -198,6 +218,9 @@ public class RegisterWindow extends GUI_Mama {
         vname.setSelectedTextColor(dark);
         vname.setSelectionColor(notSoDark);
         vname.setPlaceholder("Vorname*");
+        ((AbstractDocument)vname.getDocument()).setDocumentFilter(lfilter);
+
+
 
         // Mid Panel Management
         // Rolle Auswahlmenü
@@ -244,14 +267,14 @@ public class RegisterWindow extends GUI_Mama {
         genderBox.setBorder(new CompoundBorder(border, margin));
 
         // Geburtsdatum Button
+        dateButton.setBorder(new CompoundBorder(border, margin2));
         dateButton.setText(datumButtonText);
-        dateButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
+        dateButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 24));
         dateButton.setBackground(whitebg);
         dateButton.setForeground(notSoDark);
         dateButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         dateButton.setFocusable(true);
-        dateButton.setBorder(new CompoundBorder(border, margin));
-        dateButton.setHorizontalTextPosition(SwingConstants.LEFT);
+        dateButton.setHorizontalAlignment(SwingConstants.LEFT);
 
         // Bot Panel Management
         // E-Mail Textfeld
@@ -272,6 +295,8 @@ public class RegisterWindow extends GUI_Mama {
         nummer.setSelectedTextColor(dark);
         nummer.setSelectionColor(notSoDark);
         nummer.setPlaceholder("Telefonnummer");
+        ((AbstractDocument)nummer.getDocument()).setDocumentFilter(nfilter);
+
         // PW Textfeld
         pw.setBorder(new CompoundBorder(border, margin));
         pw.setForeground(white);
@@ -281,6 +306,7 @@ public class RegisterWindow extends GUI_Mama {
         pw.setSelectedTextColor(dark);
         pw.setSelectionColor(notSoDark);
         pw.setPlaceholder("Passwort*");
+        ((AbstractDocument)pw.getDocument()).setDocumentFilter(sfilter);
         // PW Bestätigen Textfeld
         pwb.setBorder(new CompoundBorder(border, margin));
         pwb.setForeground(white);
@@ -290,7 +316,7 @@ public class RegisterWindow extends GUI_Mama {
         pwb.setSelectedTextColor(dark);
         pwb.setSelectionColor(notSoDark);
         pwb.setPlaceholder("Passwort bestätigen*");
-
+        ((AbstractDocument)pwb.getDocument()).setDocumentFilter(sfilter);
         // Bot Text Panel Management
 
         // Bot Registrieren Button Management
@@ -303,7 +329,6 @@ public class RegisterWindow extends GUI_Mama {
         reg.setHorizontalTextPosition(JLabel.CENTER);
         reg.setVerticalTextPosition(JLabel.CENTER);
         reg.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
-        reg.setHorizontalAlignment(JLabel.CENTER);
         reg.setFocusable(true);
         reg.setBorderPainted(false);
         reg.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -368,7 +393,7 @@ public class RegisterWindow extends GUI_Mama {
 
                         int[] date = Dateswitcher.datetonumber(dateButton.getText());
 
-                        if (firstUsage){
+                        if (onlyAdmin){
                             try {
                                 Foo.currentUser = new Administrator(bname.getText(), pw.getText(),
                                         vname.getText(), name.getText(), genderBox.getSelectedItem().toString(),
@@ -427,6 +452,7 @@ public class RegisterWindow extends GUI_Mama {
                 }
             }
         });
+
         dateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -436,18 +462,21 @@ public class RegisterWindow extends GUI_Mama {
                     if (!dateButton.getText().equals(datumButtonText)){
                         calender = new DatePick((JFrame) dateButton.getRootPane().getParent(), dateButton.getText());
                         txt = calender.Set_Picked_Date();
+                        dateButton.setForeground(white);
                     }else{
                         calender = new DatePick((JFrame) dateButton.getRootPane().getParent(), null);
                         txt = calender.Set_Picked_Date();
+
                     }
 
                     if (txt==""){
-
                     }else{
                         dateButton.setText(calender.Set_Picked_Date());
+                        dateButton.setForeground(white);
                     }
                 }
         });
+
         //ActionListener für Benutzername
         bname.addKeyListener(new KeyListener() {
             @Override
@@ -561,7 +590,7 @@ public class RegisterWindow extends GUI_Mama {
     }
     //Allgemeine Methoden
     private boolean pflichtAusgefüllt() {
-        if (rollenBox.getItemCount() == 2 || (firstUsage)) {
+        if (rollenBox.getItemCount() == 2 || (onlyAdmin)) {
             if (genderBox.getItemCount() == 3) {
                 if (!vname.getText().isBlank()) {
                     if (!name.getText().isBlank()) {
@@ -614,7 +643,7 @@ public class RegisterWindow extends GUI_Mama {
                 name.addRedFlashEffectWhiteField();
             }
         }
-        if (dateButton.getText().isBlank()){
+        if (dateButton.getText().equals(datumButtonText)){
             if(colorchange){
                 dateButton.addRedFlashEffect();
             } else {
@@ -684,9 +713,14 @@ public class RegisterWindow extends GUI_Mama {
     public static void openRegisterGUI(GUI_Mama parent){
 
         Foo.getDirectoryData();
-        RegisterWindow gui = new RegisterWindow(parent);
+        RegisterWindow gui = new RegisterWindow(parent, false);
+    }
+    public static void openAdminRegisterGUI(GUI_Mama parent){
+        Foo.getDirectoryData();
+        RegisterWindow gui = new RegisterWindow(parent, true);
 
     }
+
 
     public static void main(String[] args) {
         openRegisterGUI(null);

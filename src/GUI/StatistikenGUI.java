@@ -1,15 +1,14 @@
 package src.GUI;
 
-import src.Foo;
-import src.GUI.Admin.AdminGUI;
-import src.GUI.Kon.KontrolleurGUI;
-import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
-
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static src.Foo.*;
 import static src.Foo.dark;
@@ -80,7 +79,7 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
         label.setVerticalAlignment(JLabel.CENTER);
         label.setBounds(200,50, 500,50);
 
-        //JButton "Schwarzfahrt erfassen"
+
         //Styling
         AnzahlSchwarzfahrerUeberschrift.setForeground(white);
         AnzahlSchwarzfahrerUeberschrift.setFont(fontSmall);
@@ -89,7 +88,7 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
 
         AnzahlschwarzfahrerWert.setForeground(dark);
         AnzahlschwarzfahrerWert.setFont(fontSmall);
-        AnzahlschwarzfahrerWert.setText("0");
+        AnzahlschwarzfahrerWert.setText(String.valueOf(sfCount));
         AnzahlschwarzfahrerWert.setBorder(new EmptyBorder(30,100,30,0));
 
         AnzahlSchwarzfahrer.setBackground(hellb);
@@ -102,7 +101,7 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
         AnzahlSchwarzfahrer.setBounds(140,100,100,100);
         AnzahlSchwarzfahrer.setRolloverEnabled(false);
 
-        // JButton "Schwarzfahrer suchen"
+
         //Styling
         AnzahlKontrolleureUeberschrift.setForeground(white);
         AnzahlKontrolleureUeberschrift.setFont(fontSmall);
@@ -111,7 +110,7 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
 
         AnzahlKontrolleureWert.setForeground(dark);
         AnzahlKontrolleureWert.setFont(fontSmall);
-        AnzahlKontrolleureWert.setText("0");
+        AnzahlKontrolleureWert.setText(String.valueOf(konCount));
         AnzahlKontrolleureWert.setBorder(new EmptyBorder(30,100,40,0));
 
         AnzahlSacharbeiterUeberschrift.setForeground(white);
@@ -121,7 +120,7 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
 
         AnzahlSacharbeiterWert.setForeground(dark);
         AnzahlSacharbeiterWert.setFont(fontSmall);
-        AnzahlSacharbeiterWert.setText("0");
+        AnzahlSacharbeiterWert.setText(String.valueOf(sbCount));
         AnzahlSacharbeiterWert.setBorder(new EmptyBorder(110,100,0,0));
 
         AnzahlMitarbeiter.setBackground(dunkelb);
@@ -136,11 +135,11 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
         AnzahlMitarbeiter.setBounds(140,100,100,100);
         AnzahlMitarbeiter.setRolloverEnabled(false);
 
-        //JButton "Statistiken"
+
         //Styling
         HaeufigsteSchwarzfahrtUeberschrift.setForeground(white);
         HaeufigsteSchwarzfahrtUeberschrift.setFont(fontSmall);
-        HaeufigsteSchwarzfahrtUeberschrift.setText("<html><body><center><p>Häufigste Schwarzfahrt</p></center></body></html>");
+        HaeufigsteSchwarzfahrtUeberschrift.setText("<html><body><center><p>Schwarzfahrer Hotspot</p></center></body></html>");
         HaeufigsteSchwarzfahrtUeberschrift.setBorder(new EmptyBorder(0,40,80,40));
 
         HaeufigsteSchwarzfahrtWert.setForeground(dark);
@@ -157,7 +156,7 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
         HaeufigsteSchwarzfahrt.setBounds(140,100,100,100);
         HaeufigsteSchwarzfahrt.setRolloverEnabled(false);
 
-        //JButton "ProfilGUI"
+
         //Styling
         ErfassteSchwarzfahrtenUeberschrift.setForeground(white);
         ErfassteSchwarzfahrtenUeberschrift.setFont(fontSmall);
@@ -166,7 +165,7 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
 
         ErfassteSchwarzfahrtenWert.setForeground(dark);
         ErfassteSchwarzfahrtenWert.setFont(fontSmall);
-        ErfassteSchwarzfahrtenWert.setText("0");
+        ErfassteSchwarzfahrtenWert.setText(String.valueOf(sftCount));
         ErfassteSchwarzfahrtenWert.setBorder(new EmptyBorder(0,100,0,0));
 
         ErfassteSchwarzfahrten.setBackground(dunkelb);
@@ -179,7 +178,10 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
         ErfassteSchwarzfahrten.setBounds(140,100,100,100);
         ErfassteSchwarzfahrten.setRolloverEnabled(false);
 
-        //JButton "Einstellungen"
+        //Daten holen
+
+        int[] sftStatus = getStati();
+
         //Styling
         SchwarzfahrtenStatusUeberschrift.setForeground(white);
         SchwarzfahrtenStatusUeberschrift.setFont(fontSmall);
@@ -193,17 +195,17 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
 
         SchwarzfahrtenStatusOffen.setForeground(dark);
         SchwarzfahrtenStatusOffen.setFont(fontSmall);
-        SchwarzfahrtenStatusOffen.setText("0");
+        SchwarzfahrtenStatusOffen.setText(String.valueOf(sftStatus[0]));
         SchwarzfahrtenStatusOffen.setBorder(new EmptyBorder(0,100,40,0));
 
         SchwarzfahrtenStatusAusstehend.setForeground(dark);
         SchwarzfahrtenStatusAusstehend.setFont(fontSmall);
-        SchwarzfahrtenStatusAusstehend.setText("0");
+        SchwarzfahrtenStatusAusstehend.setText(String.valueOf(sftStatus[1]));
         SchwarzfahrtenStatusAusstehend.setBorder(new EmptyBorder(0,100,0,0));
 
         SchwarzfahrtenStatusBezahlt.setForeground(dark);
         SchwarzfahrtenStatusBezahlt.setFont(fontSmall);
-        SchwarzfahrtenStatusBezahlt.setText("0");
+        SchwarzfahrtenStatusBezahlt.setText(String.valueOf(sftStatus[2]));
         SchwarzfahrtenStatusBezahlt.setBorder(new EmptyBorder(40,100,0,0));
 
         SchwarzfahrtenStatus.setBackground(hellb);
@@ -220,8 +222,6 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
         SchwarzfahrtenStatus.setRolloverEnabled(false);
 
 
-
-        //JButton "Abmelden"
         //Styling
         Abbrechen.addActionListener(this);
         Abbrechen.setText("Abbrechen");
@@ -252,7 +252,6 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
         // Add Befehle
 
         // Daten aktualisieren
-        Foo.getDirectoryData();
 
         // Add für einzelnen Elemente innerhalb der Panels
         Text.add(label, BorderLayout.SOUTH);
@@ -288,13 +287,45 @@ public class StatistikenGUI extends GUI_Mama implements ActionListener {
 
     }
 
+
+    public int[] getStati(){
+        fillSftList();
+        int offenCount = 0;
+        int ausstehendCount = 0;
+        int bezahltCount = 0;
+
+        for (int i = 0; i < SchwarzfahrtenListe.size(); i++){
+
+            if (SchwarzfahrtenListe.get(i).status.isOffen){
+                offenCount++;
+            } else if (SchwarzfahrtenListe.get(i).status.isAusstehend) {
+                ausstehendCount++;
+            } else if (SchwarzfahrtenListe.get(i).status.isBezahlt) {
+                bezahltCount++;
+            }
+        }
+        System.out.println("Offen: " + offenCount);
+        System.out.println("Ausstehend: " + ausstehendCount);
+        System.out.println("Bezahlt: " + bezahltCount);
+        int[] arr = {offenCount, ausstehendCount, bezahltCount};
+        return arr;
+    }
+    public String getHotspot(){
+        List<String> linien = new ArrayList<>();
+        for (int i = 0; i < SchwarzfahrtenListe.size(); i++){
+            linien.add(SchwarzfahrtenListe.get(i).linie);
+        }
+
+        return "";
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
 
     }
 
     public static void openStatistikenGUI(GUI_Mama parent){
-        Foo.getDirectoryData();
+
         StatistikenGUI gui = new StatistikenGUI(parent);
     }
 

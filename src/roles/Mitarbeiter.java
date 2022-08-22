@@ -5,6 +5,8 @@ import src.PersFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public abstract class Mitarbeiter extends Person{
 
@@ -89,19 +91,35 @@ public abstract class Mitarbeiter extends Person{
         this.mitarbeiternummer = mitarbeiternummer;
         PersFile.speichern(this, this.userFile);
     }
-    public void setBenutzername(String oldBenutzername, String newBenutzername){
-        this.benutzername = newBenutzername;
-    }
-    public void setPasswort(String oldPW, String newPW){
-
-    }
     public String getBenutzername() {
         return benutzername;
     }
 
-    public void setBenutzername(String benutzername) throws IOException {
-        this.benutzername = benutzername;
-        PersFile.speichern(this, this.userFile);
+    public void setBenutzername(String benutzername1) throws IOException {
+
+        if (this.userFile.delete()){
+            this.benutzername = benutzername;
+            if (isAdmin){
+                this.userFile = Path.of
+                        (Foo.adminPath + Foo.fileSeperator + benutzername +  ".mb").toFile();
+            }
+            if (isKontrolleur){
+                this.userFile = Path.of
+                        (Foo.konPath + Foo.fileSeperator + benutzername +  ".mb").toFile();
+            }
+            if (isSachbearbeiter){
+                this.userFile = Path.of
+                        (Foo.sbPath + Foo.fileSeperator + benutzername +  ".mb").toFile();
+            }
+            PersFile.speichern(this, this.userFile);
+        }else{
+            System.out.println("Konnte File nicht löschen");
+            Files.delete(this.userFile.toPath());
+            //System.out.println(benutzername1);
+            //this.userFile.renameTo(Path.of
+            //        (Foo.adminPath + Foo.fileSeperator + benutzername1 +  ".mb").toFile());
+        }
+
     }
 
     public String getPasswort() {
@@ -111,7 +129,15 @@ public abstract class Mitarbeiter extends Person{
     public void setPasswort(String passwort) throws IOException {
         this.passwort = passwort;
         PersFile.speichern(this, this.userFile);
+    }
 
+    public void setEmail(String email) throws IOException {
+        this.email = email;
+        PersFile.speichern(this, this.userFile);
+    }
+    public void setTelefon(String telefon) throws IOException {
+        this.telefonnummer = telefon;
+        PersFile.speichern(this, this.userFile);
     }
 
 

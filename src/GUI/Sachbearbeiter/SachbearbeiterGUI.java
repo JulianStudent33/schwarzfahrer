@@ -89,7 +89,6 @@ public class SachbearbeiterGUI extends GUI_Mama {
 
     }
     public static void openSBGUI(GUI_Mama parent){
-        Foo.getDirectoryData();
         SachbearbeiterGUI gui = new SachbearbeiterGUI(parent);
     }
 }

@@ -1,5 +1,6 @@
 package src.roles;
 
+import java.io.IOException;
 import java.io.Serializable;
 
 public abstract class Person implements Serializable {
@@ -83,7 +84,7 @@ public abstract class Person implements Serializable {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(String email) throws IOException {
         this.email = email;
     }
 }

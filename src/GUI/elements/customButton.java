@@ -4,9 +4,10 @@ package src.GUI.elements;
 import javax.swing.*;
 import java.awt.*;
 
-public class customButton extends JToggleButton {
+public class customButton extends JButton {
 
     public Timer timer;
+
 
     public void addFlashEffect(){
         final Color baseColor = getBackground();

@@ -165,7 +165,7 @@ public class TransaktionbearbeitenGUI extends GUI_Mama implements ActionListener
         openTransaktionbearbeiten(null);
     }
     public static void openTransaktionbearbeiten(GUI_Mama parent){
-        Foo.getDirectoryData();
+
         TransaktionbearbeitenGUI gui = new TransaktionbearbeitenGUI(parent);
 
     }
