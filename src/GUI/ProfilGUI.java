@@ -104,28 +104,35 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         Rolle.setFont(fontMedium);
         Rolle.setEnabled(false);
         Rolle.setBounds(75,200,250,40);
-        Rolle.setPlaceholder("");
+        if(currentUser.isAdmin()){
+            Rolle.setPlaceholder("Admin");
+        } else if (currentUser.isKontrolleur()) {
+            Rolle.setPlaceholder("Kontrolleur");
+        }
+        else{
+            Rolle.setPlaceholder("Sachbearbeiter");
+        }
 
         Geburtstag.setForeground(white);
         Geburtstag.setBackground(dark);
         Geburtstag.setFont(fontMedium);
         Geburtstag.setEnabled(false);
         Geburtstag.setBounds(75,260,250,40);
-        Geburtstag.setPlaceholder("Geburtstag");
+        Geburtstag.setPlaceholder(currentUser.getGeburtsdatum());
 
         EMail.setForeground(white);
         EMail.setBackground(dark);
         EMail.setFont(fontMedium);
         EMail.setEnabled(false);
         EMail.setBounds(75,320,250,40);
-        EMail.setPlaceholder("E-Mail");
+        EMail.setPlaceholder(currentUser.getEmail());
 
         Telefonnummer.setForeground(white);
         Telefonnummer.setBackground(dark);
         Telefonnummer.setFont(fontMedium);
         Telefonnummer.setEnabled(false);
         Telefonnummer.setBounds(75,380,250,40);
-        Telefonnummer.setPlaceholder("Telefonnummer");
+        Telefonnummer.setPlaceholder(currentUser.getTelefonnummer());
 
 
         AbbrechenButton.setBackground(hellb);
