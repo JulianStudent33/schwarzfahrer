@@ -175,11 +175,29 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         PasswortVergessenLabel.setText("<html><body><p><center>Passwort<br>ändern</center></p></body></html>");
         PasswortVergessenLabel.setBorder(new EmptyBorder(0,0,18,13));
 
-        PasswortAendernButton.addActionListener(this);
         PasswortAendernButton.setBackground(dunkelb);
         PasswortAendernButton.add(PasswortVergessenLabel);
         PasswortAendernButton.setBounds(225, 55, 100, 40);
 
+        PasswortAendernButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+               String pwNeu = JOptionPane.showInputDialog(getFrame(), "Neues Passwort eingeben");
+               String pwConfirm = JOptionPane.showInputDialog(getFrame(), "Neues Passwort bestätigen");
+               if (pwNeu.equals(pwConfirm)){
+                   okWindow("Passwort wurde aktualisiert!", getFrame());
+                   try {
+                       currentUser.setPasswort(pwNeu);
+                   } catch (IOException ex) {
+                       ex.printStackTrace();
+                       throw new RuntimeException(ex);
+                   }
+               }else{
+                   okWindow("Die Passwörter stimmen nicht überein!", getFrame());
+               }
+            }
+        });
         SpeicherButton.setBackground(hellb);
         SpeicherButton.setForeground(white);
         SpeicherButton.setFont(fontSmall);
@@ -187,6 +205,23 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         SpeicherButton.setBounds(150,0,100,40);
         SpeicherButton.setVisible(false);
 
+        //E-Mail
+        //Telefon
+        // Benutzername
+
+
+        SpeicherButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                try {
+                    currentUser.setEmail(EMail.getText());
+                    currentUser.setTelefon(Telefonnummer.getText());
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
 
         // Elemente zu Panels adden
 
