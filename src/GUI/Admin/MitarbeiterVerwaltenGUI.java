@@ -181,7 +181,7 @@ public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener 
         openMitarbeiterVerwaltenGUI(null);
     }
     public static void openMitarbeiterVerwaltenGUI(GUI_Mama parent){
-        Foo.getDirectoryData();
+
         MitarbeiterVerwaltenGUI gui = new MitarbeiterVerwaltenGUI(parent);
 
     }

@@ -128,7 +128,7 @@ public class SchwarzfahrtensuchenGUI extends GUI_Mama implements ActionListener 
         openSchwarzfahrtensuchenGUI(null);
     }
     public static void openSchwarzfahrtensuchenGUI(GUI_Mama parent){
-        Foo.getDirectoryData();
+
         SchwarzfahrtensuchenGUI gui = new SchwarzfahrtensuchenGUI(parent);
 
     }

@@ -83,7 +83,6 @@ public class AdminGUI extends GUI_Mama {
     }
 
     public static void openAdminGUI(GUI_Mama parent){
-        Foo.getDirectoryData();
         AdminGUI gui = new AdminGUI(parent);
 
     }

@@ -83,7 +83,6 @@ public class KontrolleurGUI extends GUI_Mama {
                 });
     }
     public static void openKonGUI(GUI_Mama parent){
-        Foo.getDirectoryData();
         KontrolleurGUI gui = new KontrolleurGUI(parent);
     }
 }
