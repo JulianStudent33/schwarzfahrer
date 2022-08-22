@@ -36,7 +36,7 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
 
         JPanel Text = new JPanel();
         Text.setBackground(dark);
-        Text.setPreferredSize(new Dimension(200, 100));
+        Text.setPreferredSize(new Dimension(200, 80));
         Text.setLayout(null);
 
         JPanel Passwort = new JPanel();
@@ -65,7 +65,7 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
         label.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 30));
         label.setHorizontalAlignment(JLabel.CENTER);
         label.setVerticalAlignment(JLabel.CENTER);
-        label.setBounds(250, 50, 100, 35);
+        label.setBounds(250, 25, 100, 40);
 
         // Textfield Benutzer
         PlaceholderTextField benutzernameTextField = new PlaceholderTextField();
@@ -122,7 +122,7 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
         anmeldenButton.setFocusable(true);
         anmeldenButton.setBorderPainted(false);
         anmeldenButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        anmeldenButton.setBounds(190, 15, 100, 30);
+        anmeldenButton.setBounds(190, 0, 100, 30);
 
         // Button Abbrechen
         JButton abbrechenButton = new JButton();
@@ -138,7 +138,7 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
         abbrechenButton.setFocusable(false);
         abbrechenButton.setBorderPainted(false);
         abbrechenButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        abbrechenButton.setBounds(310, 15, 100, 30);
+        abbrechenButton.setBounds(310, 0, 100, 30);
 
         // Daten aktualisieren
         Foo.getDirectoryData();
@@ -147,7 +147,7 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
         Text.add(label, BorderLayout.NORTH);
         Passwort.add(benutzernameTextField, BorderLayout.CENTER);
         Passwort.add(passwortPasswordField, BorderLayout.CENTER);
-        Passwort.add(passwortVergessenButton, BorderLayout.CENTER);
+        //Passwort.add(passwortVergessenButton, BorderLayout.CENTER);
         Passwort.add(angemeldetBleibenCheckBox, BorderLayout.SOUTH);
 
         Bot.add(abbrechenButton, BorderLayout.SOUTH);
@@ -157,8 +157,9 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
         add(Text, BorderLayout.NORTH);
         //this.add(Benutzer, BorderLayout.CENTER);
         add(Passwort, BorderLayout.CENTER);
-        add(AngemeldetBleiben, BorderLayout.SOUTH);
         add(Bot, BorderLayout.SOUTH);
+
+
 
         // Gesamt Window
 
@@ -348,6 +349,12 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
         LoginGUI gui = new LoginGUI(parent);
 
     }
+
+
+    public static void main(String[] args) {
+        openLogin(null);
+    }
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
