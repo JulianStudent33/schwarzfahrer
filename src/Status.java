@@ -18,13 +18,19 @@ public Status() {
 public void setOffen(){
     this.status = "Offen";
     this.isOffen = true;
+    this.isBezahlt = false;
+    this.isAusstehend = false;
 }
 public void setAusstehend(){
     this.status = "Ausstehend";
     this.isAusstehend = true;
+    this.isOffen = false;
+    this.isBezahlt = false;
 }
 public void setBezahlt(){
     this.status = "Bezahlt";
     this.isBezahlt = true;
+    this.isOffen = false;
+    this.isAusstehend = false;
 }
 }
