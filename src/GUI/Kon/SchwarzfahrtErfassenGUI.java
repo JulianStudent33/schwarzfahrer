@@ -167,7 +167,7 @@ public class SchwarzfahrtErfassenGUI extends GUI_Mama {
 
                 if (currentSf == null){
                     ausweisnummerTextField.setBackground(Foo.red);
-                    Foo.okWindow("Keine Treffer");
+                    Foo.okWindow("Keine Treffer", getFrame());
                 }else{
                     ausweisnummerTextField.setBackground(Foo.green);
                     autofill();

@@ -118,7 +118,7 @@ public class PlaceholderTextField extends JTextField implements Flash{
         if (timer == null) {
             final Color baseColor = getBackground();
 
-            System.out.println(baseColor.getRed() + " " + baseColor.getGreen() + " " + baseColor.getBlue());
+            //System.out.println(baseColor.getRed() + " " + baseColor.getGreen() + " " + baseColor.getBlue());
             final int[] i = {baseColor.getRed(), baseColor.getGreen(), baseColor.getBlue()};
             final int i1 = baseColor.getRed();
             final int i2 = baseColor.getGreen();
@@ -133,20 +133,20 @@ public class PlaceholderTextField extends JTextField implements Flash{
 
 
                     if (ii[0] > 255 || ii[1] > 255 || ii[2] > 255) {
-                        System.out.println("Switching from 15 to -15");
+                        //System.out.println("Switching from 15 to -15");
                         ii[0] -= 15;
 
                         j[0] = -15;
                     } else if (ii[0] < i1) {
                         ii[0] += 15;
-                        System.out.println("Kleiner als");
+                        //System.out.println("Kleiner als");
                         timer.stop();
                         return;
                     }
 
 
                     setBackground(new Color(ii[0], ii[1], ii[2]));
-                    System.out.println(ii[0] + " " + ii[1] + " " + ii[2]);
+                    //System.out.println(ii[0] + " " + ii[1] + " " + ii[2]);
                 } catch (IllegalArgumentException ex) {
 
                     setBackground(baseColor);
@@ -160,7 +160,7 @@ public class PlaceholderTextField extends JTextField implements Flash{
         } else if (!timer.isRunning()) {
             final Color baseColor = getBackground();
 
-            System.out.println(baseColor.getRed() + " " + baseColor.getGreen() + " " + baseColor.getBlue());
+            //System.out.println(baseColor.getRed() + " " + baseColor.getGreen() + " " + baseColor.getBlue());
             final int[] i = {baseColor.getRed(), baseColor.getGreen(), baseColor.getBlue()};
             final int i1 = baseColor.getRed();
             final int i2 = baseColor.getGreen();
@@ -175,20 +175,20 @@ public class PlaceholderTextField extends JTextField implements Flash{
 
 
                     if (ii[0] > 255 || ii[1] > 255 || ii[2] > 255) {
-                        System.out.println("Switching from 15 to -15");
+                        //System.out.println("Switching from 15 to -15");
                         ii[0] -= 15;
 
                         j[0] = -15;
                     } else if (ii[0] < i1) {
                         ii[0] += 15;
-                        System.out.println("Ausgangs RGB unterschritten");
+                        //System.out.println("Ausgangs RGB unterschritten");
                         timer.stop();
                         return;
                     }
 
 
                     setBackground(new Color(ii[0], ii[1], ii[2]));
-                    System.out.println(ii[0] + " " + ii[1] + " " + ii[2]);
+                   // System.out.println(ii[0] + " " + ii[1] + " " + ii[2]);
                 } catch (IllegalArgumentException ex) {
 
                     setBackground(baseColor);
@@ -206,7 +206,7 @@ public class PlaceholderTextField extends JTextField implements Flash{
         if (timer == null) {
             final Color baseColor = getBackground();
 
-            System.out.println(baseColor.getRed() + " " + baseColor.getGreen() + " " + baseColor.getBlue());
+            //System.out.println(baseColor.getRed() + " " + baseColor.getGreen() + " " + baseColor.getBlue());
             final int[] i = {baseColor.getRed(), baseColor.getGreen(), baseColor.getBlue()};
             final int i1 = baseColor.getRed();
             final int i2 = baseColor.getGreen();
@@ -222,7 +222,7 @@ public class PlaceholderTextField extends JTextField implements Flash{
 
 
                     if (ii[0] < 0 || ii[1] < 0 || ii[2] < 0) {
-                        System.out.println("Switching from -15 to 15");
+                        //System.out.println("Switching from -15 to 15");
                         ii[1] += 15;
                         ii[2] += 15;
 
@@ -230,14 +230,14 @@ public class PlaceholderTextField extends JTextField implements Flash{
                     } else if (ii[1] > i2 || ii[2] > i3) {
                         ii[1] -= 15;
                         ii[2] -= 15;
-                        System.out.println("Ausgangs RGB überschritten");
+                        //System.out.println("Ausgangs RGB überschritten");
                         timer.stop();
                         return;
                     }
 
 
                     setBackground(new Color(ii[0], ii[1], ii[2]));
-                    System.out.println(ii[0] + " " + ii[1] + " " + ii[2]);
+                    //System.out.println(ii[0] + " " + ii[1] + " " + ii[2]);
                 } catch (IllegalArgumentException ex) {
 
                     setBackground(baseColor);
@@ -251,7 +251,7 @@ public class PlaceholderTextField extends JTextField implements Flash{
         } else if (!timer.isRunning()) {
             final Color baseColor = getBackground();
 
-            System.out.println(baseColor.getRed() + " " + baseColor.getGreen() + " " + baseColor.getBlue());
+            //System.out.println(baseColor.getRed() + " " + baseColor.getGreen() + " " + baseColor.getBlue());
             final int[] i = {baseColor.getRed(), baseColor.getGreen(), baseColor.getBlue()};
             final int i1 = baseColor.getRed();
             final int i2 = baseColor.getGreen();
@@ -267,7 +267,7 @@ public class PlaceholderTextField extends JTextField implements Flash{
 
 
                     if (ii[0] < 0 || ii[1] < 0 || ii[2] < 0) {
-                        System.out.println("Switching from -15 to 15");
+                       // System.out.println("Switching from -15 to 15");
                         ii[1] += 15;
                         ii[2] += 15;
 
@@ -275,14 +275,14 @@ public class PlaceholderTextField extends JTextField implements Flash{
                     } else if (ii[1] > i2 || ii[2] > i3) {
                         ii[1] -= 15;
                         ii[2] -= 15;
-                        System.out.println("Ausgangs RGB überschritten");
+                        //System.out.println("Ausgangs RGB überschritten");
                         timer.stop();
                         return;
                     }
 
 
                     setBackground(new Color(ii[0], ii[1], ii[2]));
-                    System.out.println(ii[0] + " " + ii[1] + " " + ii[2]);
+                    //System.out.println(ii[0] + " " + ii[1] + " " + ii[2]);
                 } catch (IllegalArgumentException ex) {
 
                     setBackground(baseColor);
