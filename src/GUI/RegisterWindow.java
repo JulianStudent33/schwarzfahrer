@@ -452,6 +452,7 @@ public class RegisterWindow extends GUI_Mama {
                 }
             }
         });
+        /*
         dateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -473,6 +474,7 @@ public class RegisterWindow extends GUI_Mama {
                     }
                 }
         });
+        */
         //ActionListener für Benutzername
         bname.addKeyListener(new KeyListener() {
             @Override
@@ -639,7 +641,7 @@ public class RegisterWindow extends GUI_Mama {
                 name.addRedFlashEffectWhiteField();
             }
         }
-        if (dateButton.getText().isBlank()){
+        if (dateButton.getText().equals(datumButtonText)){
             if(colorchange){
                 dateButton.addRedFlashEffect();
             } else {

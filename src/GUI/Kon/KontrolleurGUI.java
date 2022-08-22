@@ -39,7 +39,7 @@ public class KontrolleurGUI extends GUI_Mama {
             public void actionPerformed(ActionEvent e) {
 
                 //zu implementieren
-
+                Kachel2.setEnabled(false);
             }
         });
         Kachel3.addActionListener(new ActionListener() {
@@ -47,7 +47,7 @@ public class KontrolleurGUI extends GUI_Mama {
                     public void actionPerformed(ActionEvent e) {
 
                         StatistikenGUI.openStatistikenGUI(getFrame());
-
+                        Kachel3.setEnabled(false);
                     }
                 });
         Kachel4.addActionListener(new ActionListener() {
@@ -55,7 +55,7 @@ public class KontrolleurGUI extends GUI_Mama {
                     public void actionPerformed(ActionEvent e) {
 
                         ProfilGUI.openProfilGUI(getFrame());
-
+                        Kachel4.setEnabled(false);
 
                     }
                 });
@@ -64,7 +64,7 @@ public class KontrolleurGUI extends GUI_Mama {
                     public void actionPerformed(ActionEvent e) {
 
                          EinstellungenGUI.openEinstellungenGUI(getFrame());
-
+                        Kachel5.setEnabled(false);
                     }
                 });
         Kachel6.addActionListener(new ActionListener() {
