@@ -104,7 +104,14 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         Rolle.setFont(fontMedium);
         Rolle.setEnabled(false);
         Rolle.setBounds(75,200,250,40);
-        Rolle.setPlaceholder("");
+        if(currentUser.isAdmin()){
+            Rolle.setPlaceholder("Admin");
+        } else if (currentUser.isKontrolleur()) {
+            Rolle.setPlaceholder("Kontrolleur");
+        }
+        else{
+            Rolle.setPlaceholder("Sachbearbeiter");
+        }
 
         Geburtstag.setForeground(white);
         Geburtstag.setBackground(dark);

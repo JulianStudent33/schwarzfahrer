@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="GUI_Mama macht jetzt das Styling für alle Hauptmenüs">
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Admin/Admin1.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/loggedIN.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$3.class" afterDir="false" />
@@ -15,23 +19,8 @@
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$7.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$8.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StartfensterGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StartfensterGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/firstRegistrationGUI$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/firstRegistrationGUI$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/firstRegistrationGUI$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/firstRegistrationGUI$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/firstRegistrationGUI$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/firstRegistrationGUI$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/firstRegistrationGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/roles/Administrator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/roles/Administrator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/roles/Kontrolleur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/roles/Kontrolleur.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Admin/AdminAnlegenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Admin/AdminAnlegenGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/RegisterWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/StartfensterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/StartfensterGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/firstRegistrationGUI.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/firstRegistrationGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/roles/Administrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/roles/Administrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/roles/Kontrolleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/roles/Kontrolleur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/elements/PlaceholderPasswordField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/elements/PlaceholderPasswordField.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,6 +260,8 @@
       <workItem from="1660846184317" duration="1046000" />
       <workItem from="1660853830588" duration="14147000" />
       <workItem from="1660914596662" duration="2790000" />
+      <workItem from="1661109099236" duration="1764000" />
+      <workItem from="1661170107783" duration="603000" />
     </task>
     <task id="LOCAL-00050" summary="LoginGUI Version Ron 1.0">
       <created>1659973816010</created>
@@ -824,7 +815,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/GUI/Kon/KontrolleurGUI.java</url>
           <line>19</line>
-          <properties class="src.GUI.Kon.KontrolleurGUI">
+          <properties class="src.GUI.Kon.KontrolleurGUI" method="&lt;init&gt;">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

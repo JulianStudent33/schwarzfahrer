@@ -4,29 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="GUI_Mama macht jetzt das Styling für alle Hauptmenüs">
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/Users/Kontrolleur/Konni1.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/Users/Kontrolleur/kon.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/Users/Sachbearbeiter/Sachi.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/Users/Sachbearbeiter/Sachi2.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/Users/Sachbearbeiter/Sachi4.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Admin/Admin1.mb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Saves/loggedIN.save" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Kontrolleur/Konni1.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Sachbearbeiter/Sachi.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Sachbearbeiter/Sachi1.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Sachbearbeiter/Sachi2.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Sachbearbeiter/Sachi4.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StatistikenGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StatistikenGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StatistikenGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StatistikenGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Admin/MitarbeiterVerwaltenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Admin/MitarbeiterVerwaltenGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/elements/PlaceholderPasswordField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/elements/PlaceholderPasswordField.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +99,7 @@
       <recent name="src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.ProfilGUI">
     <configuration name="EinstellungenGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.GUI.EinstellungenGUI" />
       <module name="PigPen" />
@@ -173,8 +167,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.ProfilGUI" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.EinstellungenGUI" />
         <item itemvalue="Application.RegisterWindow" />
         <item itemvalue="Application.OkayWindow" />
@@ -265,20 +259,9 @@
       <workItem from="1660813486558" duration="14625000" />
       <workItem from="1660846184317" duration="1046000" />
       <workItem from="1660853830588" duration="14147000" />
-    </task>
-    <task id="LOCAL-00048" summary="Important Changes">
-      <created>1659968682492</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1659968682492</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Important Changes">
-      <created>1659969278709</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1659969278709</updated>
+      <workItem from="1660914596662" duration="2790000" />
+      <workItem from="1661109099236" duration="1764000" />
+      <workItem from="1661170107783" duration="603000" />
     </task>
     <task id="LOCAL-00050" summary="LoginGUI Version Ron 1.0">
       <created>1659973816010</created>
@@ -609,7 +592,21 @@
       <option name="project" value="LOCAL" />
       <updated>1660901554498</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="GUI_Mama macht jetzt das Styling für alle Hauptmenüs">
+      <created>1660914738317</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1660914738318</updated>
+    </task>
+    <task id="LOCAL-00098" summary="GUI_Mama macht jetzt das Styling für alle Hauptmenüs">
+      <created>1660916535708</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1660916535709</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -677,7 +674,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/roles/Kontrolleur.java</url>
-          <line>72</line>
+          <line>69</line>
           <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -692,12 +689,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/Admin/MitarbeiterVerwaltenGUI.java</url>
-          <line>213</line>
+          <line>214</line>
           <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/Admin/MitarbeiterVerwaltenGUI.java</url>
-          <line>198</line>
+          <line>199</line>
           <option name="timeStamp" value="100" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -752,28 +749,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/RegisterWindow.java</url>
-          <line>224</line>
+          <line>219</line>
           <option name="timeStamp" value="127" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/RegisterWindow.java</url>
-          <line>440</line>
+          <line>401</line>
           <option name="timeStamp" value="128" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/RegisterWindow.java</url>
-          <line>271</line>
-          <option name="timeStamp" value="129" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/RegisterWindow.java</url>
-          <line>297</line>
-          <option name="timeStamp" value="130" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/RegisterWindow.java</url>
-          <line>298</line>
-          <option name="timeStamp" value="131" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
@@ -833,7 +815,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/GUI/Kon/KontrolleurGUI.java</url>
           <line>19</line>
-          <properties class="src.GUI.Kon.KontrolleurGUI">
+          <properties class="src.GUI.Kon.KontrolleurGUI" method="&lt;init&gt;">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
