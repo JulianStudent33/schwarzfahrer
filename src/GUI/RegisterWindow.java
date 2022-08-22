@@ -269,11 +269,13 @@ public class RegisterWindow extends GUI_Mama {
         dateButton.setText(datumButtonText);
         dateButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
         dateButton.setBackground(whitebg);
-        dateButton.setForeground(notSoDark);
+        if(dateButton.getText() == datumButtonText){
+            dateButton.setForeground(notSoDark);
+        }
         dateButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         dateButton.setFocusable(true);
         dateButton.setBorder(new CompoundBorder(border, margin));
-        dateButton.setHorizontalTextPosition(JLabel.LEFT);
+        dateButton.setHorizontalTextPosition(SwingConstants.LEFT);
 
         // Bot Panel Management
         // E-Mail Textfeld
@@ -461,15 +463,18 @@ public class RegisterWindow extends GUI_Mama {
                     if (!dateButton.getText().equals(datumButtonText)){
                         calender = new DatePick((JFrame) dateButton.getRootPane().getParent(), dateButton.getText());
                         txt = calender.Set_Picked_Date();
+                        dateButton.setForeground(white);
                     }else{
                         calender = new DatePick((JFrame) dateButton.getRootPane().getParent(), null);
                         txt = calender.Set_Picked_Date();
+                        dateButton.setForeground(white);
                     }
 
                     if (txt==""){
-
+                        dateButton.setForeground(white);
                     }else{
                         dateButton.setText(calender.Set_Picked_Date());
+                        dateButton.setForeground(white);
                     }
                 }
         });

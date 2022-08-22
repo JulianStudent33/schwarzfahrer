@@ -21,7 +21,7 @@ public class Main {
         try {
 
             if (colorchange) {
-                UIManager.setLookAndFeel(new FlatLightLaf());
+               UIManager.setLookAndFeel(new FlatLightLaf());
             } else {
                 UIManager.setLookAndFeel(new FlatDarkLaf());
             }
