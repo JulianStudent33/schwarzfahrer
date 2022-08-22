@@ -22,11 +22,7 @@ public class DatePick {
     JButton[] J_Button = new JButton[49];
 
     public DatePick(JFrame J_Frame_Parent, String alteEingabe) {
-        try {
-            UIManager.setLookAndFeel(new FlatDarkLaf());
-        } catch (UnsupportedLookAndFeelException e) {
-            throw new RuntimeException(e);
-        }
+
         if(alteEingabe!=null){
             int[] d = Dateswitcher.datetonumber(alteEingabe);
 
