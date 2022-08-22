@@ -273,7 +273,7 @@ public class RegisterWindow extends GUI_Mama {
         dateButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         dateButton.setFocusable(true);
         dateButton.setBorder(new CompoundBorder(border, margin));
-        dateButton.setHorizontalTextPosition(SwingConstants.LEFT);
+        dateButton.setHorizontalTextPosition(JLabel.LEFT);
 
         // Bot Panel Management
         // E-Mail Textfeld

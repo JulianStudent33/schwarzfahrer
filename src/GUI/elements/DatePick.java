@@ -38,7 +38,7 @@ public class DatePick {
 
         J_Dialog = new JDialog();
         J_Dialog.setModal(true);
-        J_Dialog.setBackground(notSoDark);
+        J_Dialog.setBackground(dark);
         String[] Header = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
         JPanel J_Panel1 = new JPanel(new GridLayout(7, 7));
         J_Panel1.setPreferredSize(new Dimension(700, 120));
@@ -47,7 +47,8 @@ public class DatePick {
             final int selection = i;
             J_Button[i] = new JButton();
             J_Button[i].setFocusPainted(false);
-            J_Button[i].setBackground(notSoDark);
+            J_Button[i].setBackground(dark);
+            J_Button[i].setForeground(white);
             if (i > 6)
                 J_Button[i].addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent ae) {
@@ -63,10 +64,11 @@ public class DatePick {
             J_Panel1.add(J_Button[i]);
         }
         JPanel J_Panel2 = new JPanel(new GridLayout(1, 5));
-        J_Panel2.setBackground(notSoDark);
+        J_Panel2.setBackground(dark);
         J_Label.setForeground(J_Button[20].getForeground());
         J_Label.setFont(fontSmallSmall);
         JButton Previous_Button1 = new JButton("<<<");
+        Previous_Button1.setBackground(notSoDark);
         Previous_Button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 DATE_YEAR--;
@@ -74,6 +76,7 @@ public class DatePick {
             }
         });
         JButton Previous_Button2 = new JButton(" < ");
+        Previous_Button2.setBackground(notSoDark);
         Previous_Button2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 DATE_MONTH--;
@@ -84,6 +87,7 @@ public class DatePick {
         J_Panel2.add(Previous_Button2);
         J_Panel2.add(J_Label);
         JButton Next_Button1 = new JButton(">>>");
+        Next_Button1.setBackground(notSoDark);
         Next_Button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -94,6 +98,7 @@ public class DatePick {
             }
         });
         JButton Next_Button2 = new JButton(" > ");
+        Next_Button2.setBackground(notSoDark);
         Next_Button2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 if(DATE_MONTH != DATE_MONTH_ACTUAL){
