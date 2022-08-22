@@ -179,6 +179,7 @@ public class RegisterWindow extends GUI_Mama {
         // Border Variablen Erstellung
         Border border = bname.getBorder();
         Border margin = new EmptyBorder(0,5,0,0);
+        Border margin2 = new EmptyBorder(0,0,0,0);
 
 
         bname.setBorder(new CompoundBorder(border, margin));
@@ -266,16 +267,14 @@ public class RegisterWindow extends GUI_Mama {
         genderBox.setBorder(new CompoundBorder(border, margin));
 
         // Geburtsdatum Button
+        dateButton.setBorder(new CompoundBorder(border, margin2));
         dateButton.setText(datumButtonText);
-        dateButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
+        dateButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 24));
         dateButton.setBackground(whitebg);
-        if(dateButton.getText() == datumButtonText){
-            dateButton.setForeground(notSoDark);
-        }
+        dateButton.setForeground(notSoDark);
         dateButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         dateButton.setFocusable(true);
-        dateButton.setBorder(new CompoundBorder(border, margin));
-        dateButton.setHorizontalTextPosition(SwingConstants.LEFT);
+        dateButton.setHorizontalAlignment(SwingConstants.LEFT);
 
         // Bot Panel Management
         // E-Mail Textfeld
@@ -330,7 +329,6 @@ public class RegisterWindow extends GUI_Mama {
         reg.setHorizontalTextPosition(JLabel.CENTER);
         reg.setVerticalTextPosition(JLabel.CENTER);
         reg.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
-        reg.setHorizontalAlignment(JLabel.CENTER);
         reg.setFocusable(true);
         reg.setBorderPainted(false);
         reg.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -468,11 +466,10 @@ public class RegisterWindow extends GUI_Mama {
                     }else{
                         calender = new DatePick((JFrame) dateButton.getRootPane().getParent(), null);
                         txt = calender.Set_Picked_Date();
-                        dateButton.setForeground(white);
+
                     }
 
                     if (txt==""){
-                        dateButton.setForeground(white);
                     }else{
                         dateButton.setText(calender.Set_Picked_Date());
                         dateButton.setForeground(white);
