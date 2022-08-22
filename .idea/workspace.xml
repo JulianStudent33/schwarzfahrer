@@ -4,40 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Code Schneller gemacht">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/loggedIN.save" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/loggedIN.save" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/AdminAnlegenGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/AdminGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/AdminGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/KontrolleurGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/KontrolleurGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/KontrolleurGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/KontrolleurGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/KontrolleurGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/KontrolleurGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/KontrolleurGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/KontrolleurGUI$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/KontrolleurGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/KontrolleurGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Sachbearbeiter/SachbearbeiterGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Sachbearbeiter/SachbearbeiterGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StatistikenGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StatistikenGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/elements/PlaceholderPasswordField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/elements/PlaceholderPasswordField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/elements/PlaceholderTextField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/elements/PlaceholderTextField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Status.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Status.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/roles/Schwarzfahrer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/roles/Schwarzfahrer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Kon/KontrolleurGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Kon/KontrolleurGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/RegisterWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/StatistikenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/StatistikenGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/elements/PlaceholderPasswordField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/elements/PlaceholderPasswordField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/elements/PlaceholderTextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/elements/PlaceholderTextField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Status.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/roles/Schwarzfahrer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/roles/Schwarzfahrer.java" afterDir="false" />
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Statistiken fast fertig">
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Sachbearbeiter/SchwarzfahrtensuchenGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Sachbearbeiter/SchwarzfahrtensuchenGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Sachbearbeiter/TransaktionbearbeitenGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Sachbearbeiter/TransaktionbearbeitenGUI.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,21 +248,7 @@
       <workItem from="1660914596662" duration="5425000" />
       <workItem from="1661176418154" duration="269000" />
       <workItem from="1661176924783" duration="173000" />
-      <workItem from="1661182148585" duration="5119000" />
-    </task>
-    <task id="LOCAL-00056" summary="neue flash funktion in PlaceholderTextField">
-      <created>1660136533906</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1660136533907</updated>
-    </task>
-    <task id="LOCAL-00057" summary="neue flash funktion in PlaceholderTextField">
-      <created>1660136577704</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1660136577704</updated>
+      <workItem from="1661182148585" duration="5423000" />
     </task>
     <task id="LOCAL-00058" summary="Datum Picker hinzugefügt in Registrierung, Bug behoben mit erster Anmeldung, aktuelles Datum wird bei schwarzfahrt erfassen jetzt vorausgewählt">
       <created>1660147781191</created>
@@ -624,7 +579,21 @@
       <option name="project" value="LOCAL" />
       <updated>1661182475813</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="Statistiken fast fertig">
+      <created>1661187494323</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1661187494323</updated>
+    </task>
+    <task id="LOCAL-00106" summary="Statistiken fast fertig">
+      <created>1661187503080</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1661187503080</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -645,7 +614,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="okWindow Version Ron 1.0" />
     <MESSAGE value="neue flash funktion in PlaceholderTextField" />
     <MESSAGE value="Datum Picker hinzugefügt in Registrierung, Bug behoben mit erster Anmeldung, aktuelles Datum wird bei schwarzfahrt erfassen jetzt vorausgewählt" />
     <MESSAGE value="Flash Effekt fertig" />
@@ -670,7 +638,8 @@
     <MESSAGE value="Filter für Registration Window und Admin Anlegen" />
     <MESSAGE value="Profil daten ändern implementiert, Filter implementiert, Admin Anlegen implementiert" />
     <MESSAGE value="Code Schneller gemacht" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code Schneller gemacht" />
+    <MESSAGE value="Statistiken fast fertig" />
+    <option name="LAST_COMMIT_MESSAGE" value="Statistiken fast fertig" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

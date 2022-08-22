@@ -452,7 +452,7 @@ public class RegisterWindow extends GUI_Mama {
                 }
             }
         });
-        /*
+
         dateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -474,7 +474,7 @@ public class RegisterWindow extends GUI_Mama {
                     }
                 }
         });
-        */
+
         //ActionListener für Benutzername
         bname.addKeyListener(new KeyListener() {
             @Override
