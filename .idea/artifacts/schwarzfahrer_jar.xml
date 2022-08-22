@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="schwarzfahrer:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/schwarzfahrer_jar</output-path>
+    <root id="archive" name="schwarzfahrer.jar">
+      <element id="module-output" name="schwarzfahrer" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/flatlaf-2.4.jar" path-in-jar="/" />
+      <element id="library" level="project" name="flatlaf-2.4" />
+    </root>
+  </artifact>
+</component>

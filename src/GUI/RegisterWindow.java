@@ -304,11 +304,9 @@ public class RegisterWindow extends GUI_Mama {
         reg.setVerticalTextPosition(JLabel.CENTER);
         reg.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
         reg.setHorizontalAlignment(JLabel.CENTER);
-        reg.setVerticalAlignment(JLabel.CENTER);
         reg.setFocusable(true);
         reg.setBorderPainted(false);
         reg.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        reg.setBounds(140,-10,190,50);
 
         abr.setText("Abbrechen");
         abr.setBackground(notSoDark);
@@ -316,12 +314,9 @@ public class RegisterWindow extends GUI_Mama {
         abr.setHorizontalTextPosition(JLabel.CENTER);
         abr.setVerticalTextPosition(JLabel.CENTER);
         abr.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
-        abr.setHorizontalAlignment(JLabel.CENTER);
-        abr.setVerticalAlignment(JLabel.CENTER);
         abr.setFocusable(true);
         abr.setBorderPainted(false);
         abr.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        abr.setBounds(140,-10,190,50);
 
         // Hauptfenster
         this.setSize(600,820);
