@@ -185,7 +185,7 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
         bname.setBorder(new CompoundBorder(border, margin));
         bname.setForeground(white);
         bname.setBackground(whitebg);
-        bname.setCaretColor(dark);
+        bname.setCaretColor(notSoDark);
         bname.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         bname.setSelectedTextColor(dark);
         bname.setSelectionColor(notSoDark);
@@ -201,7 +201,7 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
         String focus = name.getText();
         name.setForeground(white);
         name.setBackground(whitebg);
-        name.setCaretColor(dark);
+        name.setCaretColor(notSoDark);
         name.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         name.setSelectedTextColor(dark);
         name.setSelectionColor(notSoDark);
@@ -213,7 +213,7 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
         vname.setBorder(new CompoundBorder(border, margin));
         vname.setForeground(white);
         vname.setBackground(whitebg);
-        vname.setCaretColor(dark);
+        vname.setCaretColor(notSoDark);
         vname.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         vname.setSelectedTextColor(dark);
         vname.setSelectionColor(notSoDark);
@@ -269,7 +269,7 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
         // Geburtsdatum Button
         dateButton.setBorder(new CompoundBorder(border, margin2));
         dateButton.setText(datumButtonText);
-        dateButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 24));
+        dateButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
         dateButton.setBackground(whitebg);
         dateButton.setForeground(notSoDark);
         dateButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -281,7 +281,7 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
         mail.setBorder(new CompoundBorder(border, margin));
         mail.setForeground(white);
         mail.setBackground(whitebg);
-        mail.setCaretColor(dark);
+        mail.setCaretColor(notSoDark);
         mail.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         mail.setSelectedTextColor(dark);
         mail.setSelectionColor(notSoDark);
@@ -290,7 +290,7 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
         nummer.setBorder(new CompoundBorder(border, margin));
         nummer.setForeground(white);
         nummer.setBackground(whitebg);
-        nummer.setCaretColor(dark);
+        nummer.setCaretColor(notSoDark);
         nummer.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         nummer.setSelectedTextColor(dark);
         nummer.setSelectionColor(notSoDark);
@@ -301,7 +301,7 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
         pw.setBorder(new CompoundBorder(border, margin));
         pw.setForeground(white);
         pw.setBackground(whitebg);
-        pw.setCaretColor(dark);
+        pw.setCaretColor(notSoDark);
         pw.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         pw.setSelectedTextColor(dark);
         pw.setSelectionColor(notSoDark);
@@ -311,7 +311,7 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
         pwb.setBorder(new CompoundBorder(border, margin));
         pwb.setForeground(white);
         pwb.setBackground(whitebg);
-        pwb.setCaretColor(dark);
+        pwb.setCaretColor(notSoDark);
         pwb.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         pwb.setSelectedTextColor(dark);
         pwb.setSelectionColor(notSoDark);
