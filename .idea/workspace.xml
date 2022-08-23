@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Das mit dem Admin anlegen gefixt">
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Passwort ändern Bug fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/ProfilGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ProfilGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +41,7 @@
   </component>
   <component name="ProjectId" id="29J1CEjujM4BAFlkhQyHvzouQdG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -250,21 +249,7 @@
       <workItem from="1661176418154" duration="269000" />
       <workItem from="1661176924783" duration="173000" />
       <workItem from="1661182148585" duration="7112000" />
-      <workItem from="1661235920008" duration="3642000" />
-    </task>
-    <task id="LOCAL-00061" summary="Bug behoben, dass der schwarzfahrt erfassen autocomplete nur nach neustarten getriggered wurde&#10;Date_Pick geht jetzt gleich auf die Seite vom Kalender, wo man stehen geblieben war &#10;Sachbearbeiter Kachel1 etwas angefangen&#10;Glaube das mit der Uhrzeit vorauswählen funktioniert jetzt ordentlich&#10;Überall wo datum ausgewählt wird ist ein +">
-      <created>1660215188221</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1660215188221</updated>
-    </task>
-    <task id="LOCAL-00062" summary="Dieses Rote Flash ding jetzt auch für weiße Textfelder">
-      <created>1660222724481</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1660222724481</updated>
+      <workItem from="1661235920008" duration="4457000" />
     </task>
     <task id="LOCAL-00063" summary="Dieses Rote Flash ding jetzt auch für weiße Textfelder">
       <created>1660222738272</created>
@@ -595,7 +580,21 @@
       <option name="project" value="LOCAL" />
       <updated>1661238542305</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="Passwort ändern Bug fixed">
+      <created>1661239696258</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1661239696258</updated>
+    </task>
+    <task id="LOCAL-00111" summary="Passwort ändern Bug fixed">
+      <created>1661239701941</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1661239701941</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -616,7 +615,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Flash Effekt fertig" />
     <MESSAGE value="Bug behoben, dass der schwarzfahrt erfassen autocomplete nur nach neustarten getriggered wurde&#10;Date_Pick geht jetzt gleich auf die Seite vom Kalender, wo man stehen geblieben war &#10;Sachbearbeiter Kachel1 etwas angefangen&#10;Glaube das mit der Uhrzeit vorauswählen funktioniert jetzt ordentlich&#10;Überall wo datum ausgewählt wird ist ein +" />
     <MESSAGE value="Dieses Rote Flash ding jetzt auch für weiße Textfelder" />
     <MESSAGE value="weiß nichtmehr was ich gemacht hab, achja Schwarzfahrten und Flash interface" />
@@ -641,7 +639,8 @@
     <MESSAGE value="Statistiken fast fertig" />
     <MESSAGE value="^Bug im DatePick fixed" />
     <MESSAGE value="Das mit dem Admin anlegen gefixt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Das mit dem Admin anlegen gefixt" />
+    <MESSAGE value="Passwort ändern Bug fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Passwort ändern Bug fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
