@@ -538,11 +538,6 @@ public class RegisterWindow extends GUI_Mama {
                     }
                 }
 
-                if (pwb.getText().equals(pw.getText())){
-                    pwb.setBackground(green);
-                }else{
-                    pwb.setBackground(Foo.red);
-                }
 
             }
         });
@@ -558,7 +553,12 @@ public class RegisterWindow extends GUI_Mama {
             @Override
             public void keyReleased(KeyEvent e) {
                 if(pwb.getText().equals(pw.getText())){
-                    pwb.setBackground(Foo.green);
+                    if (pw.getText().isBlank()) {
+                        pwb.setBackground(dark);
+                    } else if (pwb.getText().equals(pw.getText()) && !pwb.getText().isBlank()) {
+                        pwb.setBackground(Foo.green);
+                    }
+
                 }else{
                     if(!pwb.getText().isBlank()) {
                         pwb.setBackground(Foo.red);
