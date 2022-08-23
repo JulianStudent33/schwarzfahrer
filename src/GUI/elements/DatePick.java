@@ -97,8 +97,16 @@ public class DatePick {
         Next_Button2.setBackground(notSoDark);
         Next_Button2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
-                if(DATE_MONTH != DATE_MONTH_ACTUAL){
+                if(DATE_YEAR != DATE_YEAR_ACTUAL){
                     DATE_MONTH++;
+                    Display_Date();
+                }else if (DATE_MONTH != DATE_MONTH_ACTUAL){
+                    DATE_MONTH++;
+                    Display_Date();
+                }
+                if (DATE_MONTH >=12){
+                    DATE_MONTH = 0;
+                    DATE_YEAR++;
                     Display_Date();
                 }
             }

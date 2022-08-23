@@ -9,58 +9,12 @@ public class customButton extends JButton {
     public Timer timer;
 
     public void addFlashEffect(){
-        final Color baseColor = getBackground();
 
-        System.out.println(baseColor.getRed() + " " + baseColor.getGreen() + " " + baseColor.getBlue());
-        final int[] i = {baseColor.getRed(), baseColor.getGreen(), baseColor.getBlue()};
-        final int i1 = baseColor.getRed();
-        final int i2 = baseColor.getGreen();
-        final int i3 = baseColor.getBlue();
-
-        final int[] ii = i;
-        final int[] j = {15};
-        timer = new Timer(2, e -> {
-
-            try{
-                ii[0] += j[0];
-                ii[1] += j[0];
-                ii[2] += j[0];
-
-                if(ii[0] > 255 || ii[1] > 255 || ii[2] > 255) {
-                    System.out.println("Switching from 15 to -15");
-                    ii[0] -= 15;
-                    ii[1] -= 15;
-                    ii[2] -= 15;
-                    j[0] = -15;
-                }else if(ii[0] < i1 || ii[1] < i2 || ii[2] < i3){
-                    ii[0] += 15;
-                    ii[1] += 15;
-                    ii[2] += 15;
-                    System.out.println("Kleiner als");
-                    timer.stop();
-                    return;
-                }
-
-
-                setBackground(new Color(ii[0], ii[1], ii[2]));
-                System.out.println(ii[0] + " " + ii[1] + " " + ii[2]);
-            }catch (IllegalArgumentException ex){
-
-                setBackground(baseColor);
-                timer.stop();
-                return;
-            }
-
-
-        });
-        timer.start();
-
-    }
-    public void addRedFlashEffect() {
         if (timer == null) {
+
             final Color baseColor = getBackground();
 
-            System.out.println(baseColor.getRed() + " " + baseColor.getGreen() + " " + baseColor.getBlue());
+            //System.out.println(baseColor.getRed() + " " + baseColor.getGreen() + " " + baseColor.getBlue());
             final int[] i = {baseColor.getRed(), baseColor.getGreen(), baseColor.getBlue()};
             final int i1 = baseColor.getRed();
             final int i2 = baseColor.getGreen();
@@ -72,23 +26,27 @@ public class customButton extends JButton {
 
                 try {
                     ii[0] += j[0];
-
+                    ii[1] += j[0];
+                    ii[2] += j[0];
 
                     if (ii[0] > 255 || ii[1] > 255 || ii[2] > 255) {
-                        System.out.println("Switching from 15 to -15");
+                        //System.out.println("Switching from 15 to -15");
                         ii[0] -= 15;
-
+                        ii[1] -= 15;
+                        ii[2] -= 15;
                         j[0] = -15;
-                    } else if (ii[0] < i1) {
+                    } else if (ii[0] < i1 || ii[1] < i2 || ii[2] < i3) {
                         ii[0] += 15;
-                        System.out.println("Kleiner als");
+                        ii[1] += 15;
+                        ii[2] += 15;
+                        //System.out.println("Kleiner als");
                         timer.stop();
                         return;
                     }
 
 
                     setBackground(new Color(ii[0], ii[1], ii[2]));
-                    System.out.println(ii[0] + " " + ii[1] + " " + ii[2]);
+                    //System.out.println(ii[0] + " " + ii[1] + " " + ii[2]);
                 } catch (IllegalArgumentException ex) {
 
                     setBackground(baseColor);
@@ -102,7 +60,57 @@ public class customButton extends JButton {
         } else if (!timer.isRunning()) {
             final Color baseColor = getBackground();
 
-            System.out.println(baseColor.getRed() + " " + baseColor.getGreen() + " " + baseColor.getBlue());
+            //System.out.println(baseColor.getRed() + " " + baseColor.getGreen() + " " + baseColor.getBlue());
+            final int[] i = {baseColor.getRed(), baseColor.getGreen(), baseColor.getBlue()};
+            final int i1 = baseColor.getRed();
+            final int i2 = baseColor.getGreen();
+            final int i3 = baseColor.getBlue();
+
+            final int[] ii = i;
+            final int[] j = {15};
+            timer = new Timer(2, e -> {
+
+                try {
+                    ii[0] += j[0];
+                    ii[1] += j[0];
+                    ii[2] += j[0];
+
+                    if (ii[0] > 255 || ii[1] > 255 || ii[2] > 255) {
+                        //System.out.println("Switching from 15 to -15");
+                        ii[0] -= 15;
+                        ii[1] -= 15;
+                        ii[2] -= 15;
+                        j[0] = -15;
+                    } else if (ii[0] < i1 || ii[1] < i2 || ii[2] < i3) {
+                        ii[0] += 15;
+                        ii[1] += 15;
+                        ii[2] += 15;
+                        //System.out.println("Kleiner als");
+                        timer.stop();
+                        return;
+                    }
+
+
+                    setBackground(new Color(ii[0], ii[1], ii[2]));
+                    //System.out.println(ii[0] + " " + ii[1] + " " + ii[2]);
+                } catch (IllegalArgumentException ex) {
+
+                    setBackground(baseColor);
+                    timer.stop();
+                    return;
+                }
+
+
+            });
+            timer.start();
+        }
+    }
+
+    public void addRedFlashEffect() {
+        if (timer == null) {
+            final Color baseColor = getBackground();
+
+            //System.out.println(baseColor.getRed() + " " + baseColor.getGreen() + " " + baseColor.getBlue());
             final int[] i = {baseColor.getRed(), baseColor.getGreen(), baseColor.getBlue()};
             final int i1 = baseColor.getRed();
             final int i2 = baseColor.getGreen();
@@ -117,20 +125,62 @@ public class customButton extends JButton {
 
 
                     if (ii[0] > 255 || ii[1] > 255 || ii[2] > 255) {
-                        System.out.println("Switching from 15 to -15");
+                        //System.out.println("Switching from 15 to -15");
                         ii[0] -= 15;
 
                         j[0] = -15;
                     } else if (ii[0] < i1) {
                         ii[0] += 15;
-                        System.out.println("Ausgangs RGB unterschritten");
+                        //System.out.println("Kleiner als");
                         timer.stop();
                         return;
                     }
 
 
                     setBackground(new Color(ii[0], ii[1], ii[2]));
-                    System.out.println(ii[0] + " " + ii[1] + " " + ii[2]);
+                    //System.out.println(ii[0] + " " + ii[1] + " " + ii[2]);
+                } catch (IllegalArgumentException ex) {
+
+                    setBackground(baseColor);
+                    timer.stop();
+                    return;
+                }
+
+
+            });
+            timer.start();
+        } else if (!timer.isRunning()) {
+            final Color baseColor = getBackground();
+
+            //System.out.println(baseColor.getRed() + " " + baseColor.getGreen() + " " + baseColor.getBlue());
+            final int[] i = {baseColor.getRed(), baseColor.getGreen(), baseColor.getBlue()};
+            final int i1 = baseColor.getRed();
+            final int i2 = baseColor.getGreen();
+            final int i3 = baseColor.getBlue();
+
+            final int[] ii = i;
+            final int[] j = {15};
+            timer = new Timer(2, e -> {
+
+                try {
+                    ii[0] += j[0];
+
+
+                    if (ii[0] > 255 || ii[1] > 255 || ii[2] > 255) {
+                        //System.out.println("Switching from 15 to -15");
+                        ii[0] -= 15;
+
+                        j[0] = -15;
+                    } else if (ii[0] < i1) {
+                        ii[0] += 15;
+                        //System.out.println("Ausgangs RGB unterschritten");
+                        timer.stop();
+                        return;
+                    }
+
+
+                    setBackground(new Color(ii[0], ii[1], ii[2]));
+                    // System.out.println(ii[0] + " " + ii[1] + " " + ii[2]);
                 } catch (IllegalArgumentException ex) {
 
                     setBackground(baseColor);
@@ -148,7 +198,7 @@ public class customButton extends JButton {
         if (timer == null) {
             final Color baseColor = getBackground();
 
-            System.out.println(baseColor.getRed() + " " + baseColor.getGreen() + " " + baseColor.getBlue());
+            //System.out.println(baseColor.getRed() + " " + baseColor.getGreen() + " " + baseColor.getBlue());
             final int[] i = {baseColor.getRed(), baseColor.getGreen(), baseColor.getBlue()};
             final int i1 = baseColor.getRed();
             final int i2 = baseColor.getGreen();
@@ -164,7 +214,7 @@ public class customButton extends JButton {
 
 
                     if (ii[0] < 0 || ii[1] < 0 || ii[2] < 0) {
-                        System.out.println("Switching from -15 to 15");
+                        //System.out.println("Switching from -15 to 15");
                         ii[1] += 15;
                         ii[2] += 15;
 
@@ -172,14 +222,14 @@ public class customButton extends JButton {
                     } else if (ii[1] > i2 || ii[2] > i3) {
                         ii[1] -= 15;
                         ii[2] -= 15;
-                        System.out.println("Ausgangs RGB überschritten");
+                        //System.out.println("Ausgangs RGB überschritten");
                         timer.stop();
                         return;
                     }
 
 
                     setBackground(new Color(ii[0], ii[1], ii[2]));
-                    System.out.println(ii[0] + " " + ii[1] + " " + ii[2]);
+                    //System.out.println(ii[0] + " " + ii[1] + " " + ii[2]);
                 } catch (IllegalArgumentException ex) {
 
                     setBackground(baseColor);
@@ -193,7 +243,7 @@ public class customButton extends JButton {
         } else if (!timer.isRunning()) {
             final Color baseColor = getBackground();
 
-            System.out.println(baseColor.getRed() + " " + baseColor.getGreen() + " " + baseColor.getBlue());
+            //System.out.println(baseColor.getRed() + " " + baseColor.getGreen() + " " + baseColor.getBlue());
             final int[] i = {baseColor.getRed(), baseColor.getGreen(), baseColor.getBlue()};
             final int i1 = baseColor.getRed();
             final int i2 = baseColor.getGreen();
@@ -209,7 +259,7 @@ public class customButton extends JButton {
 
 
                     if (ii[0] < 0 || ii[1] < 0 || ii[2] < 0) {
-                        System.out.println("Switching from -15 to 15");
+                        // System.out.println("Switching from -15 to 15");
                         ii[1] += 15;
                         ii[2] += 15;
 
@@ -217,14 +267,14 @@ public class customButton extends JButton {
                     } else if (ii[1] > i2 || ii[2] > i3) {
                         ii[1] -= 15;
                         ii[2] -= 15;
-                        System.out.println("Ausgangs RGB überschritten");
+                        //System.out.println("Ausgangs RGB überschritten");
                         timer.stop();
                         return;
                     }
 
 
                     setBackground(new Color(ii[0], ii[1], ii[2]));
-                    System.out.println(ii[0] + " " + ii[1] + " " + ii[2]);
+                    //System.out.println(ii[0] + " " + ii[1] + " " + ii[2]);
                 } catch (IllegalArgumentException ex) {
 
                     setBackground(baseColor);
@@ -238,6 +288,8 @@ public class customButton extends JButton {
         }
 
     }
+    public void stopFlashEffect(){
+        timer.stop();
 
-
+    }
 }

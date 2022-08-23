@@ -613,7 +613,7 @@ public class RegisterWindow extends GUI_Mama {
             }
         }
         if (rollenBox.getItemCount() == 3) {
-            if(colorchange){
+            if(!colorchange){
                 rollenBox.addRedFlashEffect();
             } else {
                 rollenBox.addRedFlashEffectWhiteField();
@@ -621,35 +621,35 @@ public class RegisterWindow extends GUI_Mama {
             
         }
         if (genderBox.getItemCount() == 4) {
-            if(colorchange){
+            if(!colorchange){
                 genderBox.addRedFlashEffect();
             } else {
                 genderBox.addRedFlashEffectWhiteField();
             }
         }
         if (vname.getText().isBlank()) {
-            if(colorchange){
+            if(!colorchange){
                 vname.addRedFlashEffect();
             } else {
                 vname.addRedFlashEffectWhiteField();
             }
         }
         if (name.getText().isBlank()) {
-            if(colorchange){
+            if(!colorchange){
                 name.addRedFlashEffect();
             } else {
                 name.addRedFlashEffectWhiteField();
             }
         }
         if (dateButton.getText().equals(datumButtonText)){
-            if(colorchange){
+            if(!colorchange){
                 dateButton.addRedFlashEffect();
             } else {
                 dateButton.addRedFlashEffectWhiteField();
             }
         }
         if (mail.getText().isBlank()) {
-            if(colorchange){
+            if(!colorchange){
                 mail.addRedFlashEffect();
             } else {
                 mail.addRedFlashEffectWhiteField();
@@ -657,7 +657,7 @@ public class RegisterWindow extends GUI_Mama {
         }
         if (!mail.getText().contains("@")) {
             mail.setText("");
-            if(colorchange){
+            if(!colorchange){
                 mail.addRedFlashEffect();
             } else {
                 mail.addRedFlashEffectWhiteField();
@@ -666,7 +666,7 @@ public class RegisterWindow extends GUI_Mama {
         }
         if (Foo.userExistiertBereits(bname.getText())) {
             bname.setText("");
-            if(colorchange){
+            if(!colorchange){
                 bname.addRedFlashEffect();
             } else {
                 bname.addRedFlashEffectWhiteField();
@@ -674,21 +674,21 @@ public class RegisterWindow extends GUI_Mama {
             bname.setPlaceholder("Benutzername bereits vergeben");
         }
         if (bname.getText().isBlank()) {
-            if(colorchange){
+            if(!colorchange){
                 bname.addRedFlashEffect();
             } else {
                 bname.addRedFlashEffectWhiteField();
             }
         }
         if (!pass.passwordOk(pw.getText())) {
-            if(colorchange){
+            if(!colorchange){
                 pw.addRedFlashEffect();
             } else {
                 pw.addRedFlashEffectWhiteField();
             }
         }
         if (!pass.passwordOk(pw.getText())) {
-            if(colorchange){
+            if(!colorchange){
                 pwb.addRedFlashEffect();
             } else {
                 pwb.addRedFlashEffectWhiteField();
@@ -696,7 +696,7 @@ public class RegisterWindow extends GUI_Mama {
         }
         if (!pw.getText().equals(pwb.getText())) {
 
-            if(colorchange){
+            if(!colorchange){
                 pwb.addRedFlashEffect();
             } else {
                 pwb.addRedFlashEffectWhiteField();
