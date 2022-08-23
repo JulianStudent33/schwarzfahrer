@@ -36,8 +36,8 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
 
         JPanel Text = new JPanel();
         Text.setBackground(dark);
-        Text.setPreferredSize(new Dimension(200, 80));
-        Text.setLayout(null);
+        Text.setPreferredSize(new Dimension(200, 70));
+        Text.setLayout(new GridLayout());
 
         JPanel Passwort = new JPanel();
         Passwort.setBackground(dark);
@@ -61,24 +61,26 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
         label.setText("<html><body><center><p>Login</p></center></body></html>");
         label.setForeground(white);
         label.setHorizontalTextPosition(JLabel.CENTER);
-        label.setVerticalTextPosition(JLabel.CENTER);
+        label.setVerticalTextPosition(JLabel.BOTTOM);
         label.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 30));
         label.setHorizontalAlignment(JLabel.CENTER);
-        label.setVerticalAlignment(JLabel.CENTER);
+        label.setVerticalAlignment(JLabel.BOTTOM);
         label.setBounds(250, 25, 100, 40);
 
         // Textfield Benutzer
         PlaceholderTextField benutzernameTextField = new PlaceholderTextField();
-        benutzernameTextField.setBackground(white);
-        benutzernameTextField.setForeground(dark);
+        benutzernameTextField.setBackground(whitebg);
+        benutzernameTextField.setForeground(white);
+        benutzernameTextField.setCaretColor(notSoDark);
         benutzernameTextField.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
         benutzernameTextField.setBounds(200, 25, 200,30);
         benutzernameTextField.setPlaceholder("Benutzername");
 
         // Textfield Passwort
         PlaceholderPasswordField passwortPasswordField = new PlaceholderPasswordField();
-        passwortPasswordField.setBackground(white);
-        passwortPasswordField.setForeground(dark);
+        passwortPasswordField.setBackground(whitebg);
+        passwortPasswordField.setForeground(white);
+        passwortPasswordField.setCaretColor(notSoDark);
         passwortPasswordField.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
         passwortPasswordField.setBounds(200,75, 200,30);
         passwortPasswordField.setPlaceholder("Passwort");
@@ -105,7 +107,7 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
         angemeldetBleibenCheckBox.addActionListener(this);
         angemeldetBleibenCheckBox.isEnabled();
         angemeldetBleibenCheckBox.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 8));
-        angemeldetBleibenCheckBox.setBounds(244, 150, 112,20);
+        angemeldetBleibenCheckBox.setBounds(235, 113, 200,20);
 
 
         //JButton "Login"
@@ -113,7 +115,7 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
         anmeldenButton.addActionListener(this);
         anmeldenButton.setText("Login");
         anmeldenButton.setBackground(dunkelb);
-        anmeldenButton.setForeground(white);
+        anmeldenButton.setForeground(dark);
         anmeldenButton.setHorizontalTextPosition(JLabel.CENTER);
         anmeldenButton.setVerticalTextPosition(JLabel.CENTER);
         anmeldenButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 10));
@@ -129,7 +131,7 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
         abbrechenButton.addActionListener(this);
         abbrechenButton.setText("Abbrechen");
         abbrechenButton.setBackground(notSoDark);
-        abbrechenButton.setForeground(white);
+        abbrechenButton.setForeground(dark);
         abbrechenButton.setHorizontalTextPosition(JLabel.CENTER);
         abbrechenButton.setVerticalTextPosition(JLabel.CENTER);
         abbrechenButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 10));
@@ -166,7 +168,7 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
         setTitle("Login");
         Point center = GraphicsEnvironment.getLocalGraphicsEnvironment().getCenterPoint();
         int width = 600;
-        int height = 400;
+        int height = 350;
         setResizable(false);
         getContentPane().setBackground(dark);
         setBounds(center.x - width / 2, center.y - height / 2, width, height);
@@ -208,7 +210,7 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
 
                     }
                 }else{
-                    benutzernameTextField.setBackground(Color.lightGray);
+                    benutzernameTextField.setBackground(dark);
                     if (passwortVergessenButton instanceof AbstractButton) {
                         AbstractButton btn = passwortVergessenButton;
                         btn.setEnabled(false);
