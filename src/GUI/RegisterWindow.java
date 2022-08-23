@@ -29,7 +29,7 @@ import java.util.List;
 import static src.Foo.*;
 import static src.Main.colorchange;
 
-public class RegisterWindow extends GUI_Mama {
+public class RegisterWindow extends GUI_Mama implements ActionListener {
 
     // Top Textfelder
     PlaceholderTextField bname = new PlaceholderTextField();
@@ -58,9 +58,9 @@ public class RegisterWindow extends GUI_Mama {
     // PlaceholderTextField gender = new PlaceholderTextField();
 
     // Registrieren Button deklaration
-    JButton reg = new JButton();
+    private JButton regbt = new JButton();
 
-    JButton abr = new JButton();
+    private JButton abr = new JButton();
 
     //Konstruktor
     public RegisterWindow(GUI_Mama parent, boolean onlyAdmin) {
@@ -146,7 +146,7 @@ public class RegisterWindow extends GUI_Mama {
         fix.setBackground(dark);
         fix.setSize(400, 140);
         fix.setLocation(100, 240);
-        fix.setLayout(new GridLayout());
+        fix.setLayout(null);
 
         // JLabel für Titel
         JLabel label = new JLabel();
@@ -167,11 +167,11 @@ public class RegisterWindow extends GUI_Mama {
         bed.setText("<html><body><center><p>Passwort benötigt: 6-15 Zeichen, mind. 1 Großbuchstabe,<br>mind. 1 Kleinbuchstabe und mind. 1 Zahl</p></center></body></html>");
         bed.setForeground(Grey);
         bed.setHorizontalTextPosition(JLabel.CENTER);
-        bed.setVerticalTextPosition(JLabel.CENTER);
+        bed.setVerticalTextPosition(JLabel.BOTTOM);
         bed.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
         bed.setHorizontalAlignment(JLabel.CENTER);
-        bed.setVerticalAlignment(JLabel.CENTER);
-        bed.setBounds(100,560,400,200);
+        bed.setVerticalAlignment(JLabel.BOTTOM);
+        bed.setBounds(100,585,400,100);
 
         // Top Panel Textfelder
         // bname anpassungen
@@ -323,15 +323,15 @@ public class RegisterWindow extends GUI_Mama {
 
         // JButton "Registrieren"
 
-        reg.setText("Registrieren");
-        reg.setBackground(hellb);
-        reg.setForeground(whitebg);
-        reg.setHorizontalTextPosition(JLabel.CENTER);
-        reg.setVerticalTextPosition(JLabel.CENTER);
-        reg.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
-        reg.setFocusable(true);
-        reg.setBorderPainted(false);
-        reg.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        regbt.setText("Registrieren");
+        regbt.setBackground(hellb);
+        regbt.setForeground(whitebg);
+        regbt.setHorizontalTextPosition(JLabel.CENTER);
+        regbt.setVerticalTextPosition(JLabel.CENTER);
+        regbt.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
+        regbt.setFocusable(true);
+        regbt.setBorderPainted(false);
+        regbt.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         abr.setText("Abbrechen");
         abr.setBackground(notSoDark);
@@ -351,6 +351,7 @@ public class RegisterWindow extends GUI_Mama {
         this.setLocationRelativeTo(parent);
         this.setVisible(true);
         this.getContentPane().setBackground(dark);
+        this.setLayout(null);
 
         // Add Befehle
 
@@ -371,7 +372,7 @@ public class RegisterWindow extends GUI_Mama {
         dMid.add(pwb);
         dMid.add(bed);
 
-        Bot.add(reg);
+        Bot.add(regbt);
         Bot.add(abr);
 
         // Add für vollständige Panel
@@ -381,13 +382,13 @@ public class RegisterWindow extends GUI_Mama {
         this.add(dMid);
         this.add(bed);
         this.add(Bot);
-        this.add(fix);
+        //this.add(fix);
 
         //ActionListener für Buttons
-        reg.addActionListener(new ActionListener() {
+        regbt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (e.getSource()==reg) {
+                if (e.getSource()==regbt) {
                     System.out.println("Nutzer anlegen wenn alles richtig und Hauptmenü der jeweiligen Rolle öffnen");
                     if (pflichtAusgefüllt()){
 
@@ -742,5 +743,10 @@ public class RegisterWindow extends GUI_Mama {
 
     public static void main(String[] args) {
         openRegisterGUI(null);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
     }
 }
