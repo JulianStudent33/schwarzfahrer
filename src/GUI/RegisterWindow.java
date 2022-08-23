@@ -74,7 +74,7 @@ public class RegisterWindow extends GUI_Mama {
     }
 
     private void frame(GUI_Mama parent) {
-
+        parentGUI = parent;
 
         if (onlyAdmin){
             rollen[0]="Admin";
@@ -394,11 +394,24 @@ public class RegisterWindow extends GUI_Mama {
                         int[] date = Dateswitcher.datetonumber(dateButton.getText());
 
                         if (onlyAdmin){
+
+
+
                             try {
+
+                                if (parent.getClass().getName().equals("src.GUI.Admin.AdminGUI")){
+                                    parent.currentUser.abmelden();
+                                    parent.dispose();
+
+                                }
+
                                 Foo.currentUser = new Administrator(bname.getText(), pw.getText(),
                                         vname.getText(), name.getText(), genderBox.getSelectedItem().toString(),
                                         nummer.getText(), mail.getText().toLowerCase(Locale.ROOT), date);
                                 angemeldet = true;
+
+
+
                                 AdminGUI.openAdminGUI(getFrame());
                                 dispose();
                             } catch (IOException ex) {
@@ -582,8 +595,13 @@ public class RegisterWindow extends GUI_Mama {
         abr.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                StartfensterGUI.openStartFenster(getFrame());
-                dispose();
+                if (!parent.getClass().getName().equals("src.GUI.Admin.AdminGUI")){
+                    StartfensterGUI.openStartFenster(getFrame());
+                    dispose();
+                }else{
+                    parent.setVisible(true);
+                    dispose();
+                }
             }
         });
 

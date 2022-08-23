@@ -31,7 +31,7 @@ public class AdminGUI extends GUI_Mama {
             @Override
             public void actionPerformed(ActionEvent e) {
                 RegisterWindow.openAdminRegisterGUI(getFrame());
-                dispose();
+                setVisible(false);
             }
         });
         Kachel2.addActionListener(new ActionListener() {
