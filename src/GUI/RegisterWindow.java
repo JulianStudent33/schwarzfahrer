@@ -29,7 +29,7 @@ import java.util.List;
 import static src.Foo.*;
 import static src.Main.colorchange;
 
-public class RegisterWindow extends GUI_Mama {
+public class RegisterWindow extends GUI_Mama implements ActionListener {
 
     // Top Textfelder
     PlaceholderTextField bname = new PlaceholderTextField();
@@ -58,9 +58,9 @@ public class RegisterWindow extends GUI_Mama {
     // PlaceholderTextField gender = new PlaceholderTextField();
 
     // Registrieren Button deklaration
-    JButton reg = new JButton();
+    private JButton regbt = new JButton();
 
-    JButton abr = new JButton();
+    private JButton abr = new JButton();
 
     //Konstruktor
     public RegisterWindow(GUI_Mama parent, boolean onlyAdmin) {
@@ -146,7 +146,7 @@ public class RegisterWindow extends GUI_Mama {
         fix.setBackground(dark);
         fix.setSize(400, 140);
         fix.setLocation(100, 240);
-        fix.setLayout(new GridLayout());
+        fix.setLayout(null);
 
         // JLabel für Titel
         JLabel label = new JLabel();
@@ -167,11 +167,11 @@ public class RegisterWindow extends GUI_Mama {
         bed.setText("<html><body><center><p>Passwort benötigt: 6-15 Zeichen, mind. 1 Großbuchstabe,<br>mind. 1 Kleinbuchstabe und mind. 1 Zahl</p></center></body></html>");
         bed.setForeground(Grey);
         bed.setHorizontalTextPosition(JLabel.CENTER);
-        bed.setVerticalTextPosition(JLabel.CENTER);
+        bed.setVerticalTextPosition(JLabel.BOTTOM);
         bed.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
         bed.setHorizontalAlignment(JLabel.CENTER);
-        bed.setVerticalAlignment(JLabel.CENTER);
-        bed.setBounds(100,560,400,200);
+        bed.setVerticalAlignment(JLabel.BOTTOM);
+        bed.setBounds(100,585,400,100);
 
         // Top Panel Textfelder
         // bname anpassungen
@@ -185,7 +185,7 @@ public class RegisterWindow extends GUI_Mama {
         bname.setBorder(new CompoundBorder(border, margin));
         bname.setForeground(white);
         bname.setBackground(whitebg);
-        bname.setCaretColor(dark);
+        bname.setCaretColor(notSoDark);
         bname.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         bname.setSelectedTextColor(dark);
         bname.setSelectionColor(notSoDark);
@@ -201,7 +201,7 @@ public class RegisterWindow extends GUI_Mama {
         String focus = name.getText();
         name.setForeground(white);
         name.setBackground(whitebg);
-        name.setCaretColor(dark);
+        name.setCaretColor(notSoDark);
         name.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         name.setSelectedTextColor(dark);
         name.setSelectionColor(notSoDark);
@@ -213,7 +213,7 @@ public class RegisterWindow extends GUI_Mama {
         vname.setBorder(new CompoundBorder(border, margin));
         vname.setForeground(white);
         vname.setBackground(whitebg);
-        vname.setCaretColor(dark);
+        vname.setCaretColor(notSoDark);
         vname.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         vname.setSelectedTextColor(dark);
         vname.setSelectionColor(notSoDark);
@@ -269,7 +269,7 @@ public class RegisterWindow extends GUI_Mama {
         // Geburtsdatum Button
         dateButton.setBorder(new CompoundBorder(border, margin2));
         dateButton.setText(datumButtonText);
-        dateButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 24));
+        dateButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
         dateButton.setBackground(whitebg);
         dateButton.setForeground(notSoDark);
         dateButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -281,7 +281,7 @@ public class RegisterWindow extends GUI_Mama {
         mail.setBorder(new CompoundBorder(border, margin));
         mail.setForeground(white);
         mail.setBackground(whitebg);
-        mail.setCaretColor(dark);
+        mail.setCaretColor(notSoDark);
         mail.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         mail.setSelectedTextColor(dark);
         mail.setSelectionColor(notSoDark);
@@ -290,7 +290,7 @@ public class RegisterWindow extends GUI_Mama {
         nummer.setBorder(new CompoundBorder(border, margin));
         nummer.setForeground(white);
         nummer.setBackground(whitebg);
-        nummer.setCaretColor(dark);
+        nummer.setCaretColor(notSoDark);
         nummer.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         nummer.setSelectedTextColor(dark);
         nummer.setSelectionColor(notSoDark);
@@ -301,7 +301,7 @@ public class RegisterWindow extends GUI_Mama {
         pw.setBorder(new CompoundBorder(border, margin));
         pw.setForeground(white);
         pw.setBackground(whitebg);
-        pw.setCaretColor(dark);
+        pw.setCaretColor(notSoDark);
         pw.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         pw.setSelectedTextColor(dark);
         pw.setSelectionColor(notSoDark);
@@ -311,7 +311,7 @@ public class RegisterWindow extends GUI_Mama {
         pwb.setBorder(new CompoundBorder(border, margin));
         pwb.setForeground(white);
         pwb.setBackground(whitebg);
-        pwb.setCaretColor(dark);
+        pwb.setCaretColor(notSoDark);
         pwb.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
         pwb.setSelectedTextColor(dark);
         pwb.setSelectionColor(notSoDark);
@@ -323,15 +323,15 @@ public class RegisterWindow extends GUI_Mama {
 
         // JButton "Registrieren"
 
-        reg.setText("Registrieren");
-        reg.setBackground(hellb);
-        reg.setForeground(whitebg);
-        reg.setHorizontalTextPosition(JLabel.CENTER);
-        reg.setVerticalTextPosition(JLabel.CENTER);
-        reg.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
-        reg.setFocusable(true);
-        reg.setBorderPainted(false);
-        reg.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        regbt.setText("Registrieren");
+        regbt.setBackground(hellb);
+        regbt.setForeground(whitebg);
+        regbt.setHorizontalTextPosition(JLabel.CENTER);
+        regbt.setVerticalTextPosition(JLabel.CENTER);
+        regbt.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
+        regbt.setFocusable(true);
+        regbt.setBorderPainted(false);
+        regbt.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         abr.setText("Abbrechen");
         abr.setBackground(notSoDark);
@@ -351,6 +351,7 @@ public class RegisterWindow extends GUI_Mama {
         this.setLocationRelativeTo(parent);
         this.setVisible(true);
         this.getContentPane().setBackground(dark);
+        this.setLayout(null);
 
         // Add Befehle
 
@@ -371,7 +372,7 @@ public class RegisterWindow extends GUI_Mama {
         dMid.add(pwb);
         dMid.add(bed);
 
-        Bot.add(reg);
+        Bot.add(regbt);
         Bot.add(abr);
 
         // Add für vollständige Panel
@@ -381,13 +382,13 @@ public class RegisterWindow extends GUI_Mama {
         this.add(dMid);
         this.add(bed);
         this.add(Bot);
-        this.add(fix);
+        //this.add(fix);
 
         //ActionListener für Buttons
-        reg.addActionListener(new ActionListener() {
+        regbt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (e.getSource()==reg) {
+                if (e.getSource()==regbt) {
                     System.out.println("Nutzer anlegen wenn alles richtig und Hauptmenü der jeweiligen Rolle öffnen");
                     if (pflichtAusgefüllt()){
 
@@ -538,11 +539,6 @@ public class RegisterWindow extends GUI_Mama {
                     }
                 }
 
-                if (pwb.getText().equals(pw.getText())){
-                    pwb.setBackground(green);
-                }else{
-                    pwb.setBackground(Foo.red);
-                }
 
             }
         });
@@ -558,7 +554,12 @@ public class RegisterWindow extends GUI_Mama {
             @Override
             public void keyReleased(KeyEvent e) {
                 if(pwb.getText().equals(pw.getText())){
-                    pwb.setBackground(Foo.green);
+                    if (pw.getText().isBlank()) {
+                        pwb.setBackground(dark);
+                    } else if (pwb.getText().equals(pw.getText()) && !pwb.getText().isBlank()) {
+                        pwb.setBackground(Foo.green);
+                    }
+
                 }else{
                     if(!pwb.getText().isBlank()) {
                         pwb.setBackground(Foo.red);
@@ -742,5 +743,10 @@ public class RegisterWindow extends GUI_Mama {
 
     public static void main(String[] args) {
         openRegisterGUI(null);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
     }
 }
