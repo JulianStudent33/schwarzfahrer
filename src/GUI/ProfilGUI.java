@@ -3,12 +3,14 @@ import src.Foo;
 import src.GUI.Admin.AdminGUI;
 import src.GUI.Kon.KontrolleurGUI;
 import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
+import src.GUI.elements.NumberFilter;
 import src.GUI.elements.PlaceholderTextField;
 import src.nickcode.pass;
 import src.roles.Administrator;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.text.AbstractDocument;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -48,6 +50,7 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
 
         setupGUI(parent, "ProfilGUI");
 
+        NumberFilter nfilter = new NumberFilter();
 
         //Panelmanagement
 
@@ -147,7 +150,7 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
         Telefonnummer.setBounds(75,380,250,40);
         Telefonnummer.setPlaceholder(currentUser.getTelefonnummer());
         Telefonnummer.setText(currentUser.getTelefonnummer());
-
+        ((AbstractDocument)Telefonnummer.getDocument()).setDocumentFilter(nfilter);
 
         AbbrechenButton.setBackground(hellb);
         AbbrechenButton.setForeground(white);
@@ -184,18 +187,29 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
             public void actionPerformed(ActionEvent e) {
 
                String pwNeu = JOptionPane.showInputDialog(getFrame(), "Neues Passwort eingeben");
-               String pwConfirm = JOptionPane.showInputDialog(getFrame(), "Neues Passwort bestätigen");
-               if (pwNeu.equals(pwConfirm)){
-                   okWindow("Passwort wurde aktualisiert!", getFrame());
-                   try {
-                       currentUser.setPasswort(pwNeu);
-                   } catch (IOException ex) {
-                       ex.printStackTrace();
-                       throw new RuntimeException(ex);
+               if (pwNeu!=null){
+                   if (pass.passwordOk(pwNeu)){
+                       String pwConfirm = JOptionPane.showInputDialog(getFrame(), "Neues Passwort bestätigen");
+                       if (pwConfirm!=null){
+                           if (pwNeu.equals(pwConfirm)){
+                               okWindow("Passwort wurde aktualisiert!", getFrame());
+                               try {
+                                   currentUser.setPasswort(pwNeu);
+                               } catch (IOException ex) {
+                                   ex.printStackTrace();
+                                   throw new RuntimeException(ex);
+                               }
+                           }else{
+                               okWindow("Die Passwörter stimmen nicht überein!", getFrame());
+                           }
+                       }
+                   }else{
+                       okWindow("Passwort muss enthalten: \n 6-10 zeichen \n Mindestens 1 Großbuchstabe \n Mindestens 1 Kleinbuchstabe \n Mindestens eine Zahl.", getFrame());
                    }
-               }else{
-                   okWindow("Die Passwörter stimmen nicht überein!", getFrame());
+
+
                }
+
             }
         });
         SpeicherButton.setBackground(hellb);
