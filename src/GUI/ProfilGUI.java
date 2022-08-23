@@ -297,7 +297,6 @@ public class ProfilGUI extends GUI_Mama implements ActionListener {
 
             Telefonnummer.setEnabled(true);
             EMail.setEnabled(true);
-            Benutzername.setEnabled(true);
             AngabenAendern.setEnabled(false);
 
 

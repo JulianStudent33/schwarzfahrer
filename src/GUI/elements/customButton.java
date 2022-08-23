@@ -8,6 +8,7 @@ public class customButton extends JButton {
 
     public Timer timer;
 
+
     public void addFlashEffect(){
 
         if (timer == null) {
