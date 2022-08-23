@@ -39,7 +39,7 @@ public abstract class GUI_Mama extends JFrame {
     public JButton Kachel5;
     public JButton Kachel6;
 
-    Action logout = new AbstractAction() {
+    public Action logout = new AbstractAction() {
         public void actionPerformed(ActionEvent e) {
             dispose();
 

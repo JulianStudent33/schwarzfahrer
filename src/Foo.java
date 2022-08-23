@@ -31,11 +31,9 @@ public class Foo {
      * /Schwarzfahrten ... .
      * */
     //Array File Variablen für Profile (Noch als Liste (Array alternative für einfache Suche) zu implementieren)
-    public static File[] admins;
     public static List<File> AdminFileListe = new ArrayList<File>();
-    public static File[] sachbearbeiter;
     public static List<File> SachbearbeiterFileListe = new ArrayList<File>();
-    public static File[] kontrolleure;
+
     public static List<File> KontrolleurFileListe = new ArrayList<File>();
     public static File[] schwarzfahrer;
     public static List<File> SchwarzfahrerFileListe = new ArrayList<File>();
@@ -56,10 +54,6 @@ public class Foo {
     public static boolean angemeldetBleiben;
     public static String autoLogoutTime = "Aus";
 
-    public static Sachbearbeiter currentSachbearbeiter;
-    public static Kontrolleur currentKontrolleur;
-    public static Administrator currentAdmin;
-
     public static Mitarbeiter currentUser;
 
         public static Path savesPath = Paths.get("Saves");
@@ -69,6 +63,7 @@ public class Foo {
         public static Path konPath = Paths.get("Saves" + fileSeperator + "Users" + fileSeperator + "Kontrolleur");
         public static Path sfPath = Paths.get("Saves" + fileSeperator + "Schwarzfahrer");
         public static Path loginPath = Paths.get("Saves" + fileSeperator + "loggedIN.save");
+        public static Path deleteFilePath = Path.of(savesPath + fileSeperator + "deleteFile.save");
 
     public static File savesDir = savesPath.toFile();
     public static File userDir = userPath.toFile();
@@ -77,6 +72,7 @@ public class Foo {
     public static File konDir = konPath.toFile();
     public static File sfDir = sfPath.toFile();
     public static File loggedINFile = loginPath.toFile();
+    public static File deleteFileFile = deleteFilePath.toFile();
     public static boolean firstUsage;
 
     public static Color dark;
@@ -118,6 +114,11 @@ public class Foo {
     public Foo() throws IOException, ClassNotFoundException {
         //Programm startet grundsätzlich immer hier
         System.out.println("Starting Application");
+
+
+        checkForDeleteRequest();
+
+
         getDirectoryData();
         if (firstUsage){
             System.out.println("Erste Benutzung");
@@ -134,6 +135,9 @@ public class Foo {
         System.out.println(currentDate);
 
 
+
+
+
         if(!angemeldet){
             StartfensterGUI.openStartFenster(null);
         } else if (Foo.currentUser!=null) {
@@ -147,15 +151,7 @@ public class Foo {
                 SachbearbeiterGUI.openSBGUI(null);
             }
         }
-
-
-
-
     }
-
-
-
-
     private static void createDirectories(){
         if(savesDir.mkdir()){
             System.out.println("Created SavesDir succesfully");
@@ -208,9 +204,6 @@ public class Foo {
          * konList
          * sfList
          * sftList
-         * admins[]
-         * kontrolleure[]
-         * sachbearbeiter[]
          * schwarzfahrer[]
          * schwarzfahrten[]
          * */
@@ -224,7 +217,7 @@ public class Foo {
                 for (int i = 0; i < adminDir.listFiles().length; i++){
                     Collections.addAll(AdminFileListe, adminDir.listFiles()[i]);
                 }
-                admins = adminDir.listFiles();
+
             } else{
                 System.out.println("AdminDir Is Empty.");
                 firstUsage = true;
@@ -239,7 +232,7 @@ public class Foo {
                 for (int i = 0; i < sbDir.listFiles().length; i++){
                     Collections.addAll(SachbearbeiterFileListe, sbDir.listFiles()[i]);
                 }
-                sachbearbeiter = sbDir.listFiles();
+
             } else {
                 System.out.println("SBDir Is Empty.");
             }
@@ -251,7 +244,7 @@ public class Foo {
                 for (int i = 0; i < konDir.listFiles().length; i++){
                     Collections.addAll(KontrolleurFileListe, konDir.listFiles()[i]);
                 }
-                kontrolleure = konDir.listFiles();
+
 
             }else{
                 System.out.println("KonDir Is Empty.");
@@ -278,7 +271,17 @@ public class Foo {
         System.out.println("Filled sftList with " + sftCount + " Files.");
         System.out.println("User in Total: " + userCount);
     }
+    public static void getDirectoryDataExclude(String mbNummer){
+        if (mbNummer.charAt(0) == 'K'){
+            KontrolleurFileListe.clear();
+        }else if(mbNummer.charAt(0) == 'S'){
+            SachbearbeiterFileListe.clear();
+        }else if (mbNummer.charAt(0) == 'A'){
+            AdminFileListe.clear();
+        }
 
+
+    }
     public static void fillSfList(){
         SchwarzfahrerListe.clear();
         int x = SchwarzfahrerFileListe.size();
@@ -361,6 +364,28 @@ public class Foo {
             return false;
         }
     }
+    public void checkForDeleteRequest() throws IOException, ClassNotFoundException {
+        if (deleteFileFile.exists()) {
+            ArrayList<File> filesToDelete = (ArrayList<File>) PersFile.laden(deleteFileFile);
+
+            for (int i = 0; i < filesToDelete.size(); i++) {
+                if (filesToDelete.get(i).delete()) {
+                    System.out.println("Deleted UserFile succesfully");
+                    okWindow("Mitarbeiter wurde(n) erfolgreich aus dem System gelöscht (" + (i+1) + "/" + filesToDelete.size() + ")", null);
+                }
+            }
+
+        }else{
+              PersFile.fi.close();
+              PersFile.in.close();
+              PersFile.fi = null;
+              PersFile.in = null;
+              if (deleteFileFile.delete()){
+                  System.out.println("Deleted delete File");
+              }
+          }
+        }
+
 
     public static String getCurrentDate(){
         final int DATE_YEAR = java.util.Calendar.getInstance().get(Calendar.YEAR);

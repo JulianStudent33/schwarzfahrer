@@ -1,9 +1,11 @@
 package src.GUI.Admin;
 import src.Foo;
 import src.GUI.GUI_Mama;
+import src.Main;
 import src.PersFile;
 import src.roles.Administrator;
 import src.roles.Kontrolleur;
+import src.roles.Mitarbeiter;
 import src.roles.Sachbearbeiter;
 
 import static src.Foo.*;
@@ -12,11 +14,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener {
 
-    String[] mitarbeiter;
+    String[] mitarbeiterStrings;
+    File[] mitarbeiterFiles;
     final DefaultListModel<String> model = new DefaultListModel<>();
     JList<String> list = new JList<>(model);
     JScrollPane scrollpane = new JScrollPane(list);
@@ -25,15 +31,16 @@ public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener 
     JButton abbrechen = new JButton();
 
 
+
      public MitarbeiterVerwaltenGUI(GUI_Mama parent){
         //Setup
-        getMitarbeiter();
+
         setupGUI(parent, "MitarbeiterVerwaltenGUI");
+         getMitarbeiter();
 
 
-
-        for (int i = 0; i< mitarbeiter.length;i++){
-            model.addElement(String.valueOf(mitarbeiter[i]));
+        for (int i = 0; i< mitarbeiterStrings.length; i++){
+            model.addElement(String.valueOf(mitarbeiterStrings[i]));
         }
 
          list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -67,6 +74,9 @@ public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener 
          label.setBounds(200,50, 500,50);
 
          //Button löschen
+         if (mitarbeiterStrings.length == 0){
+            loeschen.setEnabled(false);
+         }
          loeschen.addActionListener(this);
          loeschen.setText("Löschen");
          loeschen.setBackground(dunkelb);
@@ -76,11 +86,12 @@ public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener 
          loeschen.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
          loeschen.setHorizontalAlignment(JLabel.CENTER);
          loeschen.setVerticalAlignment(JLabel.CENTER);
-         loeschen.setFocusable(false);
+         loeschen.setFocusable(true);
          loeschen.setBorderPainted(false);
          loeschen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
          loeschen.setBounds(70,10,100,30);
 
+         //Button abbrechen
          abbrechen.addActionListener(this);
          abbrechen.setText("Abbrechen");
          abbrechen.setBackground(dunkelb);
@@ -90,7 +101,7 @@ public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener 
          abbrechen.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
          abbrechen.setHorizontalAlignment(JLabel.CENTER);
          abbrechen.setVerticalAlignment(JLabel.CENTER);
-         abbrechen.setFocusable(false);
+         abbrechen.setFocusable(true);
          abbrechen.setBorderPainted(false);
          abbrechen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
          abbrechen.setBounds(315,10,100,30);
@@ -141,14 +152,18 @@ public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener 
                      if (index >= 0){
 
                          System.out.println("Index" + index);
-                         System.out.println(mitarbeiter[index]);
+                         System.out.println(mitarbeiterStrings[index]);
 
 
+                         try {
+                             writeDeleteRequest(mitarbeiterFiles[index]);
+                             model.remove(index);
+                         } catch (IOException e) {
+                             e.printStackTrace();
+                             throw new RuntimeException(e);
+                         }
 
-
-                         //model.remove(index);
-
-
+                         okWindow("Die Änderungen treten beim nächsten Programm-Neustart in Kraft!" , getFrame());
 
                      }
                      if (index == 0){
@@ -194,14 +209,21 @@ public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener 
     public void getMitarbeiter() {
         Foo.getDirectoryData();
         int anzahlMitarbeiter = userCount;
-        String[] stringArray = new String[anzahlMitarbeiter];
+        String[] stringArray = new String[anzahlMitarbeiter-(1+AdminGUI.deletedFiles.size())];
+        File[] fileArray = new File[anzahlMitarbeiter-(1+AdminGUI.deletedFiles.size())];
+        int foundDeletedFiles = 0;
 
         if (konCount>=1){
             for (int i = 0; i < konCount; i++){
                 try {
                     Kontrolleur k = (Kontrolleur) PersFile.laden(KontrolleurFileListe.get(i));
-                    System.out.println(k.getVorname());
-                    stringArray[i]  = k.getName() + ", " + k.getVorname() + " (" + k.getMitarbeiternummer() + ")";
+                    if (!AdminGUI.deletedFiles.contains(k.getUserFile())){
+                        stringArray[i-foundDeletedFiles]  = k.getName() + ", " + k.getVorname() + " (" + k.getMitarbeiternummer() + ")";
+                        fileArray[i-foundDeletedFiles] = k.getUserFile();
+                    }else{
+                        foundDeletedFiles++;
+                    }
+
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 } catch (ClassNotFoundException e) {
@@ -215,8 +237,12 @@ public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener 
             for (int i = konCount; i < sbCount + konCount; i++){
                 try {
                     Sachbearbeiter s = (Sachbearbeiter) PersFile.laden(SachbearbeiterFileListe.get(i-konCount));
-                    System.out.println(s.getVorname());
-                    stringArray[i] = s.getName() + ", " + s.getVorname() + " (" + s.getMitarbeiternummer() + ")";
+                    if (!AdminGUI.deletedFiles.contains(s.getUserFile())){
+                        stringArray[i-foundDeletedFiles]  = s.getName() + ", " + s.getVorname() + " (" + s.getMitarbeiternummer() + ")";
+                        fileArray[i-foundDeletedFiles] = s.getUserFile();
+                    }else{
+                        foundDeletedFiles++;
+                    }
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 } catch (ClassNotFoundException e) {
@@ -225,12 +251,28 @@ public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener 
 
             }
         }
-
+        boolean hitYourself = false;
         for (int i = konCount + sbCount; i < userCount; i++){
             try {
+
                 Administrator a = (Administrator) PersFile.laden(AdminFileListe.get(i-konCount-sbCount));
-                System.out.println(a.getVorname());
-                stringArray[i] = a.getName() + ", " + a.getVorname() + " (" + a.getMitarbeiternummer() + ")";
+
+                if (!a.getMitarbeiternummer().equals(currentUser.getMitarbeiternummer())){
+                    if (hitYourself){
+                        stringArray[i-1-foundDeletedFiles] = a.getName() + ", " + a.getVorname() + " (" + a.getMitarbeiternummer() + ")";
+                        fileArray[i-1-foundDeletedFiles] = a.getUserFile();
+                    }else{
+                        if (!AdminGUI.deletedFiles.contains(a.getUserFile())){
+                            stringArray[i-foundDeletedFiles]  = a.getName() + ", " + a.getVorname() + " (" + a.getMitarbeiternummer() + ")";
+                            fileArray[i-foundDeletedFiles] = a.getUserFile();
+                        }else{
+                            foundDeletedFiles++;
+                        }
+                    }
+                }else{
+                    System.out.println("Sich selbst excluded");
+                    hitYourself = true;
+                }
             } catch (IOException e) {
                 throw new RuntimeException(e);
             } catch (ClassNotFoundException e) {
@@ -239,10 +281,15 @@ public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener 
 
         }
 
-        this.mitarbeiter = stringArray;
+        this.mitarbeiterStrings = stringArray;
+        this.mitarbeiterFiles = fileArray;
 
+        if (mitarbeiterStrings.length==0){
+            loeschen.setEnabled(false);
+        }
     }
-    public void deleteMitarbeiter(){
-
+    public void writeDeleteRequest(File userToDelete) throws IOException {
+        AdminGUI.deletedFiles.add(userToDelete);
+         PersFile.speichern(AdminGUI.deletedFiles, deleteFileFile);
     }
 }

@@ -6,10 +6,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.util.ArrayList;
 
 import static src.Foo.*;
 
 public class AdminGUI extends GUI_Mama {
+    public static ArrayList<File> deletedFiles = new ArrayList<>();
 
     String[] texts = {"<html><body><center><p>Administrator<br>anlegen</p></center></body></html>",
             "<html><body><center><p>Mitarbeiter<br>verwalten</p></center></body></html>",
