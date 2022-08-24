@@ -40,6 +40,9 @@ public class NumberFilter extends DocumentFilter {
             } else if (str.equals("-") && (offset != 0 || !allowNegative)) { //Next, can we put a negative sign?
                 Toolkit.getDefaultToolkit().beep();
                 accept = false;
+            }else if (str.equals(" ")){
+                Toolkit.getDefaultToolkit().beep();
+                accept = false;
             }
         }
         return accept;

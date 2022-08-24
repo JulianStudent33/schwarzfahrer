@@ -26,6 +26,12 @@ public class LetterFilter extends DocumentFilter {
             } else if (str.equals(".") && currentText.contains(".")) { //Next, can we place a decimal here?
                 Toolkit.getDefaultToolkit().beep();
                 accept = false;
+            } else if (str.equals(" ") || str.equals(' ')) {
+                Toolkit.getDefaultToolkit().beep();
+                accept = false;
+            }
+            if (str.equals(" ")){
+                accept = false;
             }
         }
         return accept;

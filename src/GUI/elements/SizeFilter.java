@@ -20,16 +20,27 @@ public class SizeFilter extends DocumentFilter {
         } else {
             Toolkit.getDefaultToolkit().beep();
         }
+        if (fb.getDocument().getText(0, fb.getDocument().getLength()).equals("")) {
+            Toolkit.getDefaultToolkit().beep();
+        }
     }
 
     public void replace(FilterBypass fb, int offs, int length, String str, AttributeSet a)
             throws BadLocationException {
 
-        if ((fb.getDocument().getLength() + str.length()
-                - length) <= maxCharacters) {
-            super.replace(fb, offs, length, str, a);
-        } else {
+        if (fb.getDocument().getText(0, length).equals("")) {
             Toolkit.getDefaultToolkit().beep();
+        }else{
+            if ((fb.getDocument().getLength() + str.length()
+                    - length) <= maxCharacters) {
+                super.replace(fb, offs, length, str, a);
+            }  else {
+                Toolkit.getDefaultToolkit().beep();
+            }
         }
+
+
+
+
     }
 }

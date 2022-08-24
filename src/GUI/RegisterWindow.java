@@ -220,8 +220,6 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
         vname.setPlaceholder("Vorname*");
         ((AbstractDocument)vname.getDocument()).setDocumentFilter(lfilter);
 
-
-
         // Mid Panel Management
         // Rolle Auswahlmenü
         // Auswahlmöglichkeiten
