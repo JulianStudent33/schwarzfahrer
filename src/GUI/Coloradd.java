@@ -1,10 +1,9 @@
 package src.GUI;
 
 import java.awt.*;
-import static src.Main.*;
 
-import static src.Foo.dark;
-import static src.Foo.whitebg;
+import static src.Foo.*;
+import static src.Main.*;
 
 public class Coloradd {
 
@@ -22,7 +21,7 @@ public class Coloradd {
         //Addition der Array und Ergebnis -> Deklaration als neue Farbe
         int[] addforecolor = new int[0];
         int[] addbackcolor = new int[0];
-        if (colorchange) {
+        if (colorChange) {
             addforecolor = new int[]{forecolor[0] - colorevar1[0], backcolor[1] - colorevar1[1], forecolor[2] - colorevar1[2]};
             addbackcolor = new int[]{backcolor[0] - colorvar2[0], backcolor[1] - colorvar2[1], backcolor[2] - colorvar2[2]};
         } else {

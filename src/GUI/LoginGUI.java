@@ -27,7 +27,16 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
 
     public LoginGUI(GUI_Mama parent){
 
+        try {
+            getColorChange();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
         // Panelmanagement
+
 
         JPanel Bot = new JPanel();
         Bot.setBackground(dark);

@@ -6,6 +6,8 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+
 import static src.Foo.*;
 
 public class StartfensterGUI extends GUI_Mama implements ActionListener {
@@ -30,6 +32,13 @@ public class StartfensterGUI extends GUI_Mama implements ActionListener {
     private void frame(GUI_Mama parent) {
 
         getDirectoryData();
+        try {
+            getColorChange();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
         // Panelmanagement
         JPanel Background = new JPanel();

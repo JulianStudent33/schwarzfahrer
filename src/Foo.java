@@ -1,5 +1,7 @@
 package src;
 
+import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.FlatLightLaf;
 import src.GUI.*;
 import src.GUI.Admin.AdminGUI;
 import src.GUI.Kon.KontrolleurGUI;
@@ -52,6 +54,7 @@ public class Foo {
     public static int sftCount;
     public static boolean angemeldet = false;
     public static boolean angemeldetBleiben;
+    public static boolean colorChange = false;
     public static String autoLogoutTime = "Aus";
 
     public static Mitarbeiter currentUser;
@@ -64,6 +67,7 @@ public class Foo {
         public static Path sfPath = Paths.get("Saves" + fileSeperator + "Schwarzfahrer");
         public static Path loginPath = Paths.get("Saves" + fileSeperator + "loggedIN.save");
         public static Path deleteFilePath = Path.of(savesPath + fileSeperator + "deleteFile.save");
+        public static Path colorChangePath = Path.of(savesPath + fileSeperator + "colorChange.save");
 
     public static File savesDir = savesPath.toFile();
     public static File userDir = userPath.toFile();
@@ -73,6 +77,7 @@ public class Foo {
     public static File sfDir = sfPath.toFile();
     public static File loggedINFile = loginPath.toFile();
     public static File deleteFileFile = deleteFilePath.toFile();
+    public static File colorChangeFile = colorChangePath.toFile();
     public static boolean firstUsage;
 
     public static Color dark;
@@ -131,7 +136,8 @@ public class Foo {
 
         currentDate = getCurrentDate();
         currentTime = getCurrentTime();
-
+        getColorChange();
+        colormode(colorChange);
         System.out.println(currentDate);
 
 
@@ -182,6 +188,17 @@ public class Foo {
             System.out.println("Created schwarzfahrerDir succesfully.");
         }else{
             System.out.println("Did not create schwarzfahrerDir");
+        }
+        try {
+            if (colorChangeFile.createNewFile()){
+                System.out.println("Created colorChangeFile succesfully.");
+                PersFile.speichern(colorChange, colorChangeFile);
+            }else{
+                System.out.println("Did not create colorChangeFile.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
 
@@ -406,6 +423,38 @@ public class Foo {
 
         autoLogoutTime = currentUser.getAutoLogout();
         return s;
+    }
+    public static void getColorChange() throws IOException, ClassNotFoundException {
+
+        boolean colorc = (boolean) PersFile.laden(colorChangeFile);
+        colorChange = colorc;
+
+        colormode(colorChange);
+        if (colorChange) {
+            try {
+                UIManager.setLookAndFeel(new FlatLightLaf());
+                System.out.println("Colormode: bright");
+            } catch (UnsupportedLookAndFeelException e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+            try {
+                UIManager.setLookAndFeel(new FlatDarkLaf());
+                System.out.println("Colormode: dark");
+            } catch (UnsupportedLookAndFeelException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+    }
+    public static void setColorChange(boolean change) throws IOException {
+        colorChange = change;
+        PersFile.speichern(colorChange, colorChangeFile);
+        try {
+            getColorChange();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 

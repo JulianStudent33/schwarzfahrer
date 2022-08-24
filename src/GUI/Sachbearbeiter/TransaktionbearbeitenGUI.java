@@ -2,6 +2,7 @@ package src.GUI.Sachbearbeiter;
 import src.Foo;
 import src.GUI.GUI_Mama;
 import src.PersFile;
+import src.Schwarzfahrt;
 import src.roles.Administrator;
 import src.roles.Kontrolleur;
 import src.roles.Sachbearbeiter;
@@ -16,7 +17,7 @@ import java.io.IOException;
 
 public class TransaktionbearbeitenGUI extends GUI_Mama implements ActionListener {
 
-    String[] mitarbeiter;
+    String[] schwarzfahrten;
     final DefaultListModel<String> model = new DefaultListModel<>();
     final JList<String> list = new JList<>(model);
     JScrollPane scrollpane = new JScrollPane(list);
@@ -30,10 +31,16 @@ public class TransaktionbearbeitenGUI extends GUI_Mama implements ActionListener
         //Setup
         //getMitarbeiter();
         setupGUI(parent, "MitarbeiterBearbeitenGUI");
+        displaySft();
+
+
 
         list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         list.setBackground(notSoDark);
         list.setForeground(white);
+
+
+
 
         JPanel Textpan = new JPanel();
         Textpan.setLayout(new BorderLayout());
@@ -134,6 +141,20 @@ public class TransaktionbearbeitenGUI extends GUI_Mama implements ActionListener
         this.setVisible(true);
         this.setBackground(dark);
 
+
+        bearbeiten.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                ListSelectionModel selmodel = list.getSelectionModel();
+                int index = selmodel.getMinSelectionIndex();
+
+                System.out.println(index);
+                SchwarzfahrtenListe.get(index).incrementStatus();
+                displaySft();
+            }
+        });
+
         loeschen.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent event) {
                 ListSelectionModel selmodel = list.getSelectionModel();
@@ -178,58 +199,28 @@ public class TransaktionbearbeitenGUI extends GUI_Mama implements ActionListener
     //CODE KOPIERT AUS MITARBEITERVERWALTENGUI, weiß nicht inwiefern das hier drin bleiben muss, kannst du ja dann
     //einfach rausschmeißen oder ändern bezüglich der Transaktionen etc ~Nick
 
-    public void getMitarbeiter() {
+    public void displaySft() {
+
+
+
         Foo.getDirectoryData();
-        int anzahlMitarbeiter = userCount;
-        String[] stringArray = new String[anzahlMitarbeiter];
 
-        if (konCount>=1){
-            for (int i = 0; i < konCount; i++){
-                try {
-                    Kontrolleur k = (Kontrolleur) PersFile.laden(KontrolleurFileListe.get(i));
-                    System.out.println(k.getVorname());
-                    stringArray[i]  = k.getName() + ", " + k.getVorname() + " (" + k.getMitarbeiternummer() + ")";
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                } catch (ClassNotFoundException e) {
-                    throw new RuntimeException(e);
-                }
+        String[] stringArray = new String[sftCount];
 
+
+            for (int i = 0; i < SchwarzfahrtenListe.size(); i++){
+
+                    Schwarzfahrt sft = SchwarzfahrtenListe.get(i);
+                    System.out.println(sft.sf.getVorname());
+                    stringArray[i]  = sft.getLinie() + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getName() + "   " +sft.getStatus().status;
             }
+        System.out.println(stringArray[0]);
+
+        this.schwarzfahrten = stringArray;
+
+        model.clear();
+        for (int i = 0; i< schwarzfahrten.length; i++){
+            model.addElement(String.valueOf(schwarzfahrten[i]));
         }
-
-        if (SachbearbeiterFileListe.size()>=1){
-            for (int i = konCount; i < sbCount + konCount; i++){
-                try {
-                    Sachbearbeiter s = (Sachbearbeiter) PersFile.laden(SachbearbeiterFileListe.get(i-konCount));
-                    System.out.println(s.getVorname());
-                    stringArray[i] = s.getName() + ", " + s.getVorname() + " (" + s.getMitarbeiternummer() + ")";
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                } catch (ClassNotFoundException e) {
-                    throw new RuntimeException(e);
-                }
-
-            }
-        }
-
-        for (int i = konCount + sbCount; i < userCount; i++){
-            try {
-                Administrator a = (Administrator) PersFile.laden(AdminFileListe.get(i-konCount-sbCount));
-                System.out.println(a.getVorname());
-                stringArray[i] = a.getName() + ", " + a.getVorname() + " (" + a.getMitarbeiternummer() + ")";
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
-            }
-
-        }
-
-        this.mitarbeiter = stringArray;
-
-    }
-    public void deleteMitarbeiter(){
-
     }
 }

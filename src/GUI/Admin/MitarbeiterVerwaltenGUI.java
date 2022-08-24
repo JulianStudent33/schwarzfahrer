@@ -1,11 +1,9 @@
 package src.GUI.Admin;
 import src.Foo;
 import src.GUI.GUI_Mama;
-import src.Main;
 import src.PersFile;
 import src.roles.Administrator;
 import src.roles.Kontrolleur;
-import src.roles.Mitarbeiter;
 import src.roles.Sachbearbeiter;
 
 import static src.Foo.*;
@@ -16,8 +14,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 
 public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener {
 
@@ -36,7 +32,7 @@ public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener 
         //Setup
 
         setupGUI(parent, "MitarbeiterVerwaltenGUI");
-         getMitarbeiter();
+         displayMitarbeiter();
 
 
         for (int i = 0; i< mitarbeiterStrings.length; i++){
@@ -206,7 +202,7 @@ public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener 
 
     }
 
-    public void getMitarbeiter() {
+    public void displayMitarbeiter() {
         Foo.getDirectoryData();
         int anzahlMitarbeiter = userCount;
         String[] stringArray = new String[anzahlMitarbeiter-(1+AdminGUI.deletedFiles.size())];

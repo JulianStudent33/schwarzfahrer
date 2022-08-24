@@ -27,7 +27,6 @@ import java.util.*;
 import java.util.List;
 
 import static src.Foo.*;
-import static src.Main.colorchange;
 
 public class RegisterWindow extends GUI_Mama implements ActionListener {
 
@@ -62,6 +61,10 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
 
     private JButton abr = new JButton();
 
+    Border border;
+    Border margin;
+    Border margin2;
+
     //Konstruktor
     public RegisterWindow(GUI_Mama parent, boolean onlyAdmin) {
 
@@ -74,7 +77,15 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
     }
 
     private void frame(GUI_Mama parent) {
+
         parentGUI = parent;
+        try {
+            getColorChange();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
         if (onlyAdmin){
             rollen[0]="Admin";
@@ -173,22 +184,35 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
         bed.setVerticalAlignment(JLabel.BOTTOM);
         bed.setBounds(100,585,400,100);
 
+        //ColorChange
+        if(colorChange) {
+            Color[] colorrollen = {Grey,Grey,Grey};
+            ComboBoxRenderer renderer = new ComboBoxRenderer(rollenBox);
+            renderer.setColors(colorrollen);
+            renderer.setStrings(rollen);
+            rollenBox.setRenderer(renderer);
+        }
+
+        if(colorChange) {
+            Color[] colorrollenn = {Grey,Grey,Grey,Grey};
+            ComboBoxRenderer rendererr = new ComboBoxRenderer(genderBox);
+            rendererr.setColors(colorrollenn);
+            rendererr.setStrings(geschlechter);
+            genderBox.setRenderer(rendererr);
+        }
+
+
         // Top Panel Textfelder
         // bname anpassungen
 
         // Border Variablen Erstellung
-        Border border = bname.getBorder();
-        Border margin = new EmptyBorder(0,5,0,0);
-        Border margin2 = new EmptyBorder(0,0,0,0);
+        border = bname.getBorder();
+        margin = new EmptyBorder(0,5,0,0);
+        margin2 = new EmptyBorder(0,0,0,0);
 
 
-        bname.setBorder(new CompoundBorder(border, margin));
-        bname.setForeground(white);
-        bname.setBackground(whitebg);
-        bname.setCaretColor(notSoDark);
-        bname.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
-        bname.setSelectedTextColor(dark);
-        bname.setSelectionColor(notSoDark);
+
+        styleTextField(bname);
         bname.setPlaceholder("Benutzername*");
         ((AbstractDocument)bname.getDocument()).setDocumentFilter(sfilter);
         //bname.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Benutzername");
@@ -197,47 +221,18 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
 
 
         // name anpassungen
-        name.setBorder(new CompoundBorder(border, margin));
-        String focus = name.getText();
-        name.setForeground(white);
-        name.setBackground(whitebg);
-        name.setCaretColor(notSoDark);
-        name.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
-        name.setSelectedTextColor(dark);
-        name.setSelectionColor(notSoDark);
+        styleTextField(name);
         name.setPlaceholder("Nachname*");
         ((AbstractDocument)name.getDocument()).setDocumentFilter(lfilter);
 
-
         // vname anpassungen
-        vname.setBorder(new CompoundBorder(border, margin));
-        vname.setForeground(white);
-        vname.setBackground(whitebg);
-        vname.setCaretColor(notSoDark);
-        vname.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
-        vname.setSelectedTextColor(dark);
-        vname.setSelectionColor(notSoDark);
+        styleTextField(vname);
         vname.setPlaceholder("Vorname*");
         ((AbstractDocument)vname.getDocument()).setDocumentFilter(lfilter);
 
         // Mid Panel Management
         // Rolle Auswahlmenü
         // Auswahlmöglichkeiten
-        if(colorchange) {
-            Color[] colorrollen = {Grey,Grey,Grey};
-            ComboBoxRenderer renderer = new ComboBoxRenderer(rollenBox);
-            renderer.setColors(colorrollen);
-            renderer.setStrings(rollen);
-            rollenBox.setRenderer(renderer);
-        }
-
-        if(colorchange) {
-            Color[] colorrollenn = {Grey,Grey,Grey,Grey};
-            ComboBoxRenderer rendererr = new ComboBoxRenderer(genderBox);
-            rendererr.setColors(colorrollenn);
-            rendererr.setStrings(geschlechter);
-            genderBox.setRenderer(rendererr);
-        }
 
         rollenBox.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
         rollenBox.setBackground(whitebg);
@@ -276,22 +271,12 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
 
         // Bot Panel Management
         // E-Mail Textfeld
-        mail.setBorder(new CompoundBorder(border, margin));
-        mail.setForeground(white);
-        mail.setBackground(whitebg);
-        mail.setCaretColor(notSoDark);
-        mail.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
-        mail.setSelectedTextColor(dark);
-        mail.setSelectionColor(notSoDark);
+
+        styleTextField(mail);
         mail.setPlaceholder("E-Mail*");
+
         // Telefonnumer Textfeld
-        nummer.setBorder(new CompoundBorder(border, margin));
-        nummer.setForeground(white);
-        nummer.setBackground(whitebg);
-        nummer.setCaretColor(notSoDark);
-        nummer.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
-        nummer.setSelectedTextColor(dark);
-        nummer.setSelectionColor(notSoDark);
+        styleTextField(nummer);
         nummer.setPlaceholder("Telefonnummer");
         ((AbstractDocument)nummer.getDocument()).setDocumentFilter(nfilter);
 
@@ -594,6 +579,23 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
         abr.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (colorChange){
+                    try {
+                        setColorChange(false);
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                }else{
+                    try {
+                        setColorChange(true);
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                }
+
+
+
+
                 if (!parent.getClass().getName().equals("src.GUI.Admin.AdminGUI")){
                     StartfensterGUI.openStartFenster(getFrame());
                     dispose();
@@ -615,7 +617,7 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
                             if (!mail.getText().isBlank()) {
                                 if (mail.getText().contains("@")) {
                                     if (!bname.getText().isBlank()) {
-                                        if (!Foo.userExistiertBereits(bname.getText())) {
+                                        if (!userExistiertBereits(bname.getText())) {
                                             if (pass.passwordOk(pw.getText())) {
 
                                                 return true;
@@ -632,7 +634,7 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
             }
         }
         if (rollenBox.getItemCount() == 3) {
-            if(!colorchange){
+            if(!colorChange){
                 rollenBox.addRedFlashEffect();
             } else {
                 rollenBox.addRedFlashEffectWhiteField();
@@ -640,35 +642,35 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
             
         }
         if (genderBox.getItemCount() == 4) {
-            if(!colorchange){
+            if(!colorChange){
                 genderBox.addRedFlashEffect();
             } else {
                 genderBox.addRedFlashEffectWhiteField();
             }
         }
         if (vname.getText().isBlank()) {
-            if(!colorchange){
+            if(!colorChange){
                 vname.addRedFlashEffect();
             } else {
                 vname.addRedFlashEffectWhiteField();
             }
         }
         if (name.getText().isBlank()) {
-            if(!colorchange){
+            if(!colorChange){
                 name.addRedFlashEffect();
             } else {
                 name.addRedFlashEffectWhiteField();
             }
         }
         if (dateButton.getText().equals(datumButtonText)){
-            if(!colorchange){
+            if(!colorChange){
                 dateButton.addRedFlashEffect();
             } else {
                 dateButton.addRedFlashEffectWhiteField();
             }
         }
         if (mail.getText().isBlank()) {
-            if(!colorchange){
+            if(!colorChange){
                 mail.addRedFlashEffect();
             } else {
                 mail.addRedFlashEffectWhiteField();
@@ -676,16 +678,16 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
         }
         if (!mail.getText().contains("@")) {
             mail.setText("");
-            if(!colorchange){
+            if(!colorChange){
                 mail.addRedFlashEffect();
             } else {
                 mail.addRedFlashEffectWhiteField();
             }
             mail.setPlaceholder("Bitte eine gültige E-Mail eingeben");
         }
-        if (Foo.userExistiertBereits(bname.getText())) {
+        if (userExistiertBereits(bname.getText())) {
             bname.setText("");
-            if(!colorchange){
+            if(!colorChange){
                 bname.addRedFlashEffect();
             } else {
                 bname.addRedFlashEffectWhiteField();
@@ -693,21 +695,21 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
             bname.setPlaceholder("Benutzername bereits vergeben");
         }
         if (bname.getText().isBlank()) {
-            if(!colorchange){
+            if(!colorChange){
                 bname.addRedFlashEffect();
             } else {
                 bname.addRedFlashEffectWhiteField();
             }
         }
         if (!pass.passwordOk(pw.getText())) {
-            if(!colorchange){
+            if(!colorChange){
                 pw.addRedFlashEffect();
             } else {
                 pw.addRedFlashEffectWhiteField();
             }
         }
         if (!pass.passwordOk(pw.getText())) {
-            if(!colorchange){
+            if(!colorChange){
                 pwb.addRedFlashEffect();
             } else {
                 pwb.addRedFlashEffectWhiteField();
@@ -715,7 +717,7 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
         }
         if (!pw.getText().equals(pwb.getText())) {
 
-            if(!colorchange){
+            if(!colorChange){
                 pwb.addRedFlashEffect();
             } else {
                 pwb.addRedFlashEffectWhiteField();
@@ -726,7 +728,15 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
 
         return false;
     }
-
+    public void styleTextField(PlaceholderTextField field){
+        field.setBorder(new CompoundBorder(border, margin)); // same
+        field.setForeground(white); //same
+        field.setBackground(whitebg); //same
+        field.setCaretColor(notSoDark); //same
+        field.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25)); //same
+        field.setSelectedTextColor(dark); //same
+        field.setSelectionColor(notSoDark); //same
+    }
     public static void openRegisterGUI(GUI_Mama parent){
 
         Foo.getDirectoryData();

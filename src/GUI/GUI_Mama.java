@@ -1,5 +1,7 @@
 package src.GUI;
 
+import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.FlatLightLaf;
 import src.Foo;
 import src.GUI.elements.InactivityListener;
 import src.PersFile;
@@ -130,7 +132,13 @@ public abstract class GUI_Mama extends JFrame {
         }
         StartAutoLogout();
 
-
+        try {
+            getColorChange();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
     public void setCurrentUser(Mitarbeiter currentUser){
         this.currentUser = currentUser;

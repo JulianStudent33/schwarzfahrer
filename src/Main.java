@@ -11,16 +11,18 @@ import static src.Foo.*;
 
 public class Main {
 
-    public static boolean colorchange;
+
     public static void main(String[] args) {
 
         // True = LightMode - False = DarkMode
-        colorchange = false;
-        colormode(colorchange);
+
+        //colorChange = true;
+        colorChange = false;
+        colormode(colorChange);
         //Start
         try {
 
-            if (colorchange) {
+            if (colorChange) {
                UIManager.setLookAndFeel(new FlatLightLaf());
             } else {
                 UIManager.setLookAndFeel(new FlatDarkLaf());
@@ -56,6 +58,8 @@ public class Main {
                 try {
 
                     Foo foo = new Foo();
+
+
                     } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 } catch (ClassNotFoundException ex) {

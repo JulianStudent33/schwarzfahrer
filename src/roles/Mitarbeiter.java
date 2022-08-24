@@ -32,7 +32,6 @@ public abstract class Mitarbeiter extends Person{
     public boolean angemeldetBleiben;
 
 
-
     //Methoden
 
     public void createUserFile() throws IOException {
