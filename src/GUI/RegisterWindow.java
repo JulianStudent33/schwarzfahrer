@@ -30,21 +30,25 @@ import static src.Foo.*;
 
 public class RegisterWindow extends GUI_Mama implements ActionListener {
 
-    // Top Textfelder
+    // Deklaration bname Benutzername, name Nachname, vname Vorname
     PlaceholderTextField bname = new PlaceholderTextField();
     PlaceholderTextField name = new PlaceholderTextField();
     PlaceholderTextField vname = new PlaceholderTextField();
 
+    // Deklaration Arrays String
     String[] rollen = {"Rolle*", "Kontrolleur", "Sachbearbeiter"};
-    String datumButtonText = "Bitte Geburtsdatum auswählen*";
-
-    customComboBox rollenBox = new customComboBox();
-
     String[] geschlechter = {"Geschlecht*", "Männlich", "Weiblich", "Divers"};
     String[] month = {"M","1", "2","3","4","5","6","7","8","9","10","11","12"};
+    String datumButtonText = "Bitte Geburtsdatum auswählen*";
+
+    // Deklaration JComboBoxen
+    customComboBox rollenBox = new customComboBox();
+
+
     customComboBox genderBox = new customComboBox();
 
     customButton dateButton = new customButton();
+    // Deklaration der restlichen Textfelder und Passwortfelder
     PlaceholderTextField mail = new PlaceholderTextField();
     PlaceholderTextField nummer = new PlaceholderTextField();
     PlaceholderPasswordField pw = new PlaceholderPasswordField();
