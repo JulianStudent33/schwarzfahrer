@@ -367,12 +367,18 @@ public class Foo {
     public void checkForDeleteRequest() throws IOException, ClassNotFoundException {
         if (deleteFileFile.exists()) {
             ArrayList<File> filesToDelete = (ArrayList<File>) PersFile.laden(deleteFileFile);
-
+            boolean deletedSomething = false;
+            int deletedAccs = 0;
             for (int i = 0; i < filesToDelete.size(); i++) {
                 if (filesToDelete.get(i).delete()) {
+                    deletedAccs++;
+                    deletedSomething = true;
                     System.out.println("Deleted UserFile succesfully");
-                    okWindow("Mitarbeiter wurde(n) erfolgreich aus dem System gelöscht (" + (i+1) + "/" + filesToDelete.size() + ")", null);
-                }
+                     }
+            }
+            if (deletedSomething){
+                okWindow("Mitarbeiter wurde(n) erfolgreich aus dem System gelöscht (" + deletedAccs + "/" + filesToDelete.size() + ")", null);
+
             }
 
         }

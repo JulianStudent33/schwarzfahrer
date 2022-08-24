@@ -9,16 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="f">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Space nicht mehr möglich wenn Filter applied">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/schwarzfahrer_jar/schwarzfahrer.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/schwarzfahrer_jar/schwarzfahrer.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Foo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Foo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/RegisterWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/elements/LetterFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/elements/LetterFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/elements/NumberFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/elements/NumberFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Foo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Foo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/elements/SizeFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/elements/SizeFilter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -259,14 +253,7 @@
       <workItem from="1661261409804" duration="8517000" />
       <workItem from="1661324627439" duration="2789000" />
       <workItem from="1661331301536" duration="133000" />
-      <workItem from="1661331537133" duration="2480000" />
-    </task>
-    <task id="LOCAL-00067" summary="customButton für flash effect">
-      <created>1660549887647</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1660549887647</updated>
+      <workItem from="1661331537133" duration="3133000" />
     </task>
     <task id="LOCAL-00068" summary="customButton für flash effect">
       <created>1660638990909</created>
@@ -604,7 +591,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661331943075</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="Space nicht mehr möglich wenn Filter applied">
+      <created>1661334287786</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1661334287786</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -625,7 +619,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="weiß nichtmehr was ich gemacht hab, achja Schwarzfahrten und Flash interface" />
     <MESSAGE value="Foo.getDirectoryData allen open...GUI Methoden hinzugefügt" />
     <MESSAGE value="hjiknhiuzuh" />
     <MESSAGE value="customButton für flash effect" />
@@ -650,7 +643,8 @@
     <MESSAGE value="Passwort ändern Bug fixed" />
     <MESSAGE value="Mitarbeiterverwaltung Fertig endlich digga heiliger jesu hurensohn" />
     <MESSAGE value="f" />
-    <option name="LAST_COMMIT_MESSAGE" value="f" />
+    <MESSAGE value="Space nicht mehr möglich wenn Filter applied" />
+    <option name="LAST_COMMIT_MESSAGE" value="Space nicht mehr möglich wenn Filter applied" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -722,7 +716,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/RegisterWindow.java</url>
-          <line>464</line>
+          <line>441</line>
           <option name="timeStamp" value="128" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -767,7 +761,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/RegisterWindow.java</url>
-          <line>657</line>
+          <line>634</line>
           <option name="timeStamp" value="145" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -779,16 +773,6 @@
           <url>file://$PROJECT_DIR$/src/GUI/Admin/MitarbeiterVerwaltenGUI.java</url>
           <line>38</line>
           <option name="timeStamp" value="157" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/elements/SizeFilter.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="159" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/RegisterWindow.java</url>
-          <line>236</line>
-          <option name="timeStamp" value="160" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
