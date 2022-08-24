@@ -375,16 +375,9 @@ public class Foo {
                 }
             }
 
-        }else{
-              PersFile.fi.close();
-              PersFile.in.close();
-              PersFile.fi = null;
-              PersFile.in = null;
-              if (deleteFileFile.delete()){
-                  System.out.println("Deleted delete File");
-              }
-          }
         }
+          }
+
 
 
     public static String getCurrentDate(){
