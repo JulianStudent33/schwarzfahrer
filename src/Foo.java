@@ -446,6 +446,19 @@ public class Foo {
             }
         }
 
+        UIManager.put("ComboBox.disabledForeground", white);
+        UIManager.put("ComboBox.disabledBackground", dark);
+        UIManager.put("ComboBox.buttonDisabledArrowColor", dark);
+        UIManager.put("ComboBox.buttonArrowColor", notSoDark);
+        UIManager.put("ComboBox.buttonBackground", whitebg);
+        UIManager.put("ComboBox.buttonHoverArrowColor", notSoDark);
+        UIManager.put("ComboBox.buttonPressedArrowColor", white);
+        UIManager.put("Component.arrowType", "triangle");
+        UIManager.put("ComboBox.popupBackground", white);
+        UIManager.put("ComboBox.selectionForeground", dark);
+        UIManager.put("ComboBox.selectionBackground", dunkelb);
+        UIManager.put("PasswordField.showRevealButton", true);
+
     }
     public static void setColorChange(boolean change) throws IOException {
         colorChange = change;
