@@ -10,6 +10,8 @@ import src.roles.Sachbearbeiter;
 import static src.Foo.*;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -38,7 +40,13 @@ public class TransaktionbearbeitenGUI extends GUI_Mama implements ActionListener
         list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         list.setBackground(notSoDark);
         list.setForeground(white);
-
+        list.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                bearbeiten.setEnabled(true);
+                loeschen.setEnabled(true);
+            }
+        });
 
 
 
@@ -78,6 +86,7 @@ public class TransaktionbearbeitenGUI extends GUI_Mama implements ActionListener
         bearbeiten.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
         bearbeiten.setHorizontalAlignment(JLabel.CENTER);
         bearbeiten.setVerticalAlignment(JLabel.CENTER);
+        bearbeiten.setEnabled(false);
         bearbeiten.setFocusable(false);
         bearbeiten.setBorderPainted(false);
         bearbeiten.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -93,6 +102,7 @@ public class TransaktionbearbeitenGUI extends GUI_Mama implements ActionListener
         loeschen.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
         loeschen.setHorizontalAlignment(JLabel.CENTER);
         loeschen.setVerticalAlignment(JLabel.CENTER);
+        loeschen.setEnabled(false);
         loeschen.setFocusable(false);
         loeschen.setBorderPainted(false);
         loeschen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -146,12 +156,17 @@ public class TransaktionbearbeitenGUI extends GUI_Mama implements ActionListener
             @Override
             public void actionPerformed(ActionEvent e) {
 
+
                 ListSelectionModel selmodel = list.getSelectionModel();
                 int index = selmodel.getMinSelectionIndex();
 
-                System.out.println(index);
-                SchwarzfahrtenListe.get(index).incrementStatus();
-                displaySft();
+                if (index>=0){
+                    System.out.println(index);
+                    SchwarzfahrtenListe.get(index).incrementStatus();
+                    displaySft();
+                }
+                bearbeiten.setEnabled(false);
+                loeschen.setEnabled(false);
             }
         });
 
@@ -161,10 +176,12 @@ public class TransaktionbearbeitenGUI extends GUI_Mama implements ActionListener
                 int index = selmodel.getMinSelectionIndex();
                 if (index >= 0){
                     model.remove(index);
+                    SchwarzfahrtenListe.get(index).deleteSFT();
+                    displaySft();
                 }
-                if (index == 0){
-                    System.out.println("Index = 0");
-                }
+
+                bearbeiten.setEnabled(false);
+                loeschen.setEnabled(false);
 
             }
 
@@ -196,9 +213,6 @@ public class TransaktionbearbeitenGUI extends GUI_Mama implements ActionListener
 
     }
 
-    //CODE KOPIERT AUS MITARBEITERVERWALTENGUI, weiß nicht inwiefern das hier drin bleiben muss, kannst du ja dann
-    //einfach rausschmeißen oder ändern bezüglich der Transaktionen etc ~Nick
-
     public void displaySft() {
 
 
@@ -222,5 +236,6 @@ public class TransaktionbearbeitenGUI extends GUI_Mama implements ActionListener
         for (int i = 0; i< schwarzfahrten.length; i++){
             model.addElement(String.valueOf(schwarzfahrten[i]));
         }
+
     }
 }

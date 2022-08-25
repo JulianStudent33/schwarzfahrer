@@ -3,9 +3,14 @@ package src.GUI.elements;
 import com.formdev.flatlaf.FlatDarkLaf;
 
 import javax.swing.*;
+import javax.swing.text.AbstractDocument;
+import javax.swing.text.BadLocationException;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.security.Key;
 import java.util.Calendar;
 
 import static src.Foo.*;
@@ -17,6 +22,7 @@ public class DatePick {
     final int DATE_YEAR_ACTUAL = java.util.Calendar.getInstance().get(Calendar.YEAR);
     ;
     JLabel J_Label = new JLabel("", JLabel.CENTER);
+    JTextField J_tfield = new JTextField("", JLabel.CENTER);
     String DATE_DAY = "";
     JDialog J_Dialog;
     JButton[] J_Button = new JButton[49];
@@ -59,10 +65,60 @@ public class DatePick {
             }
             J_Panel1.add(J_Button[i]);
         }
-        JPanel J_Panel2 = new JPanel(new GridLayout(1, 5));
+        JPanel J_Panel2 = new JPanel(new GridLayout(1, 6));
         J_Panel2.setBackground(dark);
         J_Label.setForeground(J_Button[20].getForeground());
         J_Label.setFont(fontSmallSmall);
+        J_tfield.setForeground(J_Button[20].getForeground());
+        J_tfield.setFont(fontSmallSmall);
+        ((AbstractDocument)J_tfield.getDocument()).setDocumentFilter(new NumberFilter());
+        J_tfield.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+
+
+
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+
+                    System.out.println(e.getKeyCode());
+                    if (e.getKeyCode() != KeyEvent.VK_ENTER){
+                        System.out.println(e.getKeyCode());
+                        if (e.getKeyCode() != KeyEvent.VK_BACK_SPACE){
+                            System.out.println(e.getKeyChar());
+                            DATE_YEAR = Integer.parseInt(J_tfield.getText());
+                            Display_Date();
+                        }
+                    }
+                    if (J_tfield.getText().length() > 4){
+                        DATE_YEAR = DATE_YEAR_ACTUAL;
+                        J_tfield.setText(String.valueOf(DATE_YEAR));
+                        Display_Date();
+                    }
+                if(DATE_YEAR > DATE_YEAR_ACTUAL){
+                    DATE_YEAR = DATE_YEAR_ACTUAL;
+                    Display_Date();
+                }
+                if (DATE_YEAR == DATE_MONTH_ACTUAL && DATE_MONTH > DATE_MONTH_ACTUAL) {
+                    DATE_MONTH = DATE_MONTH_ACTUAL;
+                    Display_Date();
+                }
+
+
+            }
+        });
+
+
+
         JButton Previous_Button1 = new JButton("<<<");
         Previous_Button1.setBackground(notSoDark);
         Previous_Button1.addActionListener(new ActionListener() {
@@ -82,15 +138,26 @@ public class DatePick {
         J_Panel2.add(Previous_Button1);
         J_Panel2.add(Previous_Button2);
         J_Panel2.add(J_Label);
+        J_Panel2.add(J_tfield);
         JButton Next_Button1 = new JButton(">>>");
         Next_Button1.setBackground(notSoDark);
         Next_Button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(DATE_YEAR != DATE_YEAR_ACTUAL){
+                if(DATE_YEAR < DATE_YEAR_ACTUAL){
                     DATE_YEAR++;
+                    if (DATE_YEAR == DATE_YEAR_ACTUAL){
+                        DATE_MONTH = DATE_MONTH_ACTUAL;
+                    }
                     Display_Date();
+                } else{
+                        if (DATE_MONTH < DATE_MONTH_ACTUAL){
+                            DATE_YEAR++;
+                            Display_Date();
+
+                    }
                 }
+
             }
         });
         JButton Next_Button2 = new JButton(" > ");
@@ -132,7 +199,9 @@ public class DatePick {
         int Days_In_Month = Calendar.getActualMaximum(java.util.Calendar.DAY_OF_MONTH);
         for (int i = 6 + Day_Of_Week, Day = 1; Day <= Days_In_Month; i++, Day++)
             J_Button[i].setText("" + Day);
-        J_Label.setText(Simple_Date_Format.format(Calendar.getTime()));
+        String t = Simple_Date_Format.format(Calendar.getTime());
+        J_Label.setText(t.split(" ")[0]);
+        J_tfield.setText(t.split(" ")[1]);
         J_Dialog.setTitle("Date Picker");
     }
 

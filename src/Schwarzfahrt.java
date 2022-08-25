@@ -80,6 +80,20 @@ saveSFT();
             throw new RuntimeException(e);
         }
     }
+    public void deleteSFT(){
+        for (int i = 0; i < sf.sftList.size(); i++){
+            if (this.equals(sf.sftList.get(i))){
+                sf.sftList.remove(i);
+                System.out.println("Schwarzfahrt entfernt.");
+            }
+        }
+        try {
+            PersFile.speichern(sf, sf.getSfFile());
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
     public Schwarzfahrer getSf() {
         return sf;
     }
