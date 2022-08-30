@@ -1,20 +1,16 @@
 package src.GUI.elements;
 
-import com.formdev.flatlaf.FlatDarkLaf;
-
 import javax.swing.*;
 import javax.swing.text.AbstractDocument;
-import javax.swing.text.BadLocationException;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.security.Key;
 import java.util.Calendar;
 
 import static src.Foo.*;
-import static src.GUI.GUI_Mama.*;
+import static src.GUI.Parent_GUI.*;
 
 public class DatePick {
     int DATE_MONTH = java.util.Calendar.getInstance().get(Calendar.MONTH);
@@ -31,7 +27,7 @@ public class DatePick {
     public DatePick(JFrame J_Frame_Parent, String alteEingabe) {
 
         if(alteEingabe!=null){
-            int[] d = datetonumber(alteEingabe);
+            int[] d = dateToNumber(alteEingabe);
 
             DATE_MONTH = d[1]-1; //-1 weil ist bei Monaten so
             DATE_YEAR = d [2];

@@ -5,9 +5,9 @@ import com.formdev.flatlaf.FlatLightLaf;
 import src.GUI.*;
 import src.GUI.Admin.AdminGUI;
 import src.GUI.Kon.KontrolleurGUI;
-import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
-import src.roles.*;
-import static src.GUI.GUI_Mama.*;
+import src.GUI.SB.SachbearbeiterGUI;
+import src.Rollen.*;
+import static src.GUI.Parent_GUI.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,20 +21,17 @@ import java.util.*;
 import java.util.List;
 
 public class Foo {
-    //File Struktur:
-    /*Users/Admin/ ... .user PersFiles
-     * Users/Kontrolleur/ ... .user PersFiles
-     * Users/Sachbearbeiter/ ... .user PersFiles
-     * /Schwarzfahrer/ ... .rider
-     * /Schwarzfahrten ... .
-     * */
+
+    public static Mitarbeiter currentUser;
+    public static boolean firstUsage;
+
     public static FileSystem fs = FileSystems.getDefault();
     public static final String fileSeperator = fs.getSeparator();
 
         public static Path savesPath = Paths.get("Saves");
         public static Path userPath = Paths.get("Saves" + fileSeperator + "Users");
         public static Path adminPath = Paths.get("Saves" + fileSeperator + "Users" + fileSeperator + "Admin");
-        public static Path sbPath = Paths.get("Saves" + fileSeperator + "Users" + fileSeperator + "Sachbearbeiter");
+        public static Path sbPath = Paths.get("Saves" + fileSeperator + "Users" + fileSeperator + "SB");
         public static Path konPath = Paths.get("Saves" + fileSeperator + "Users" + fileSeperator + "Kontrolleur");
         public static Path sfPath = Paths.get("Saves" + fileSeperator + "Schwarzfahrer");
         public static Path loginPath = Paths.get("Saves" + fileSeperator + "loggedIN.save");
@@ -56,18 +53,17 @@ public class Foo {
     public static String currentDate;
     public static String currentTime;
 
-    //Array File Variablen für Profile (Noch als Liste (Array alternative für einfache Suche) zu implementieren)
+
     public static List<File> AdminFileListe = new ArrayList<File>();
     public static List<File> SachbearbeiterFileListe = new ArrayList<File>();
 
     public static List<File> KontrolleurFileListe = new ArrayList<File>();
-    public static File[] schwarzfahrer;
     public static List<File> SchwarzfahrerFileListe = new ArrayList<File>();
     public static List<Schwarzfahrer> SchwarzfahrerListe = new ArrayList<Schwarzfahrer>();
     public static List<Schwarzfahrt> SchwarzfahrtenListe = new ArrayList<Schwarzfahrt>();
 
-    //Count Variablen (Noch Als Liste<int> zu implementieren)
 
+    //Count Variablen
 
     public static int adminCount;
     public static int konCount;
@@ -79,22 +75,6 @@ public class Foo {
     public static boolean angemeldetBleiben;
     public static boolean colorChange = false;
     public static String autoLogoutTime = "Aus";
-
-    public static Mitarbeiter currentUser;
-
-
-    public static boolean firstUsage;
-
-
-
-    //Schriftart
-    public static Font fontLargeLarge = new Font("IBM Plex Mono Medium", Font.BOLD, 38);
-    public static Font fontLarge = new Font("IBM Plex Mono Medium", Font.BOLD, 28);
-    public static Font fontMediumMedium = new Font ("IBM Plex Mono Medium", Font.BOLD, 25);
-    public static Font fontMedium = new Font("IBM Plex Mono Medium", Font.BOLD, 20);
-    public static Font fontSmall = new Font("IBM Plex Mono Medium", Font.BOLD, 15);
-    public static Font fontSmallPlain = new Font("IBM Plex Mono Medium", Font.PLAIN, 15);
-    public static Font fontSmallSmall = new Font("IBM Plex Mono Medium", Font.BOLD, 10);
 
     //Konstruktoren
 
@@ -132,7 +112,7 @@ public class Foo {
             } else if (Foo.currentUser.isKontrolleur()) {
                 KontrolleurGUI.openKonGUI(null);//////////////////////---------Kontrolleur-------------------------------------------------(KontrolleurGUI)---------
             } else if (Foo.currentUser.isSachbearbeiter()) {
-                SachbearbeiterGUI.openSBGUI(null);////////////////////---------Sachbearbeiter----------------------------------------------(SachbearbeiterGUI)------
+                SachbearbeiterGUI.openSBGUI(null);////////////////////---------SB----------------------------------------------(SachbearbeiterGUI)------
             }
         }
     }
@@ -143,7 +123,7 @@ public class Foo {
         *  savesPath = "Saves"
         *  userPath = "Saves/Users"
         *  adminPath = "Saves/Users/Admin"
-        *  sbPath = "Saves/Users/Sachbearbeiter"
+        *  sbPath = "Saves/Users/SB"
         *  konPath = "Saves/Users/Kontrolleur"
         *  sfPath = "Saves/Schwarzfahrer"
         *  colorChangePath = "Saves/fileSeperator/colorChange.save"
@@ -256,7 +236,6 @@ public class Foo {
                 for (int i = 0; i < sfDir.listFiles().length; i++){
                     Collections.addAll(SchwarzfahrerFileListe, sfDir.listFiles()[i]);///Befüllen der SchwarzfahrerFileListe
                 }
-                schwarzfahrer = sfDir.listFiles();
             } else {
                 System.out.println("SFDir Is Empty.");
             }
@@ -354,7 +333,6 @@ public class Foo {
             return false;
         }
     }
-
     public void checkForDeleteRequest() throws IOException, ClassNotFoundException {
         /** Methode zum Auslesen der zu löschenden Mitarbeiter aus der deleteFile Datei
          *
@@ -396,7 +374,7 @@ public class Foo {
     public static String getCurrentTime(){
         return String.valueOf(Calendar.getInstance().get(Calendar.HOUR_OF_DAY)).concat(":").concat(String.valueOf(java.util.Calendar.getInstance().get(Calendar.MINUTE)));
     }
-    public static String numbertodate(int day, int month,int year){
+    public static String numberToDate(int day, int month, int year){
        /** String datestring = String.valueOf(number);
         String daymonth = datestring.substring(0, datestring.length() / 2);  // gives 2606
         String year = datestring.substring(datestring.length() / 2);     //gives 2003
@@ -408,7 +386,7 @@ public class Foo {
 
         return ges;
     }
-    public static int[] datetonumber(String date){
+    public static int[] dateToNumber(String date){
 
         String[] parts = date.split("-");
         String part1 = parts[0];
@@ -509,7 +487,7 @@ public class Foo {
             white = new Color(255, 255, 255);
         }
     }
-    public static void okWindow(String message, GUI_Mama parent){
+    public static void okWindow(String message, Parent_GUI parent){
         /** Einfaches Fenster zum Bestätigen einer Nachricht
          * */
         String[] option = {"OK"};

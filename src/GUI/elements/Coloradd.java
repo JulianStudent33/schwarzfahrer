@@ -3,8 +3,7 @@ package src.GUI.elements;
 import java.awt.*;
 
 import static src.Foo.*;
-import static src.Main.*;
-import static src.GUI.GUI_Mama.*;
+import static src.GUI.Parent_GUI.*;
 
 public class Coloradd {
 

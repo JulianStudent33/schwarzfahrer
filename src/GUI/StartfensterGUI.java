@@ -10,7 +10,7 @@ import java.io.IOException;
 
 import static src.Foo.*;
 
-public class StartfensterGUI extends GUI_Mama implements ActionListener {
+public class StartfensterGUI extends Parent_GUI {
 
     //
     private JButton reg = new JButton();
@@ -23,14 +23,9 @@ public class StartfensterGUI extends GUI_Mama implements ActionListener {
 
 
     //Konstruktor
-    StartfensterGUI(GUI_Mama parent) {
+    public StartfensterGUI(Parent_GUI parent) {
 
         // Start des Fensters
-        frame(parent);
-    }
-
-    private void frame(GUI_Mama parent) {
-
         getDirectoryData();
         try {
             getColorChange();
@@ -101,7 +96,6 @@ public class StartfensterGUI extends GUI_Mama implements ActionListener {
         label1.setBounds(-9,-10, 500,100);
 
         // JButton "registrieren"
-        reg.addActionListener(this);
         reg.setText("Registrieren");
         reg.setBackground(hellb);
         reg.setForeground(white);
@@ -114,10 +108,16 @@ public class StartfensterGUI extends GUI_Mama implements ActionListener {
         reg.setBorderPainted(false);
         reg.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         reg.setBounds(140,0,200,100);
-
+        reg.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                    System.out.println("Öffne Register GUI");
+                    RegisterGUI.openRegisterGUI(getFrame());
+                    dispose();
+            }
+        });
 
         // JButton "anmelden"
-        anm.addActionListener(this);
         anm.setText("Anmelden");
         anm.setBackground(dunkelb);
         anm.setForeground(white);
@@ -130,10 +130,14 @@ public class StartfensterGUI extends GUI_Mama implements ActionListener {
         anm.setBorderPainted(false);
         anm.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         anm.setBounds(140,10,200,100);
-
-
-
-
+        anm.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Öffne Login-Window");
+                LoginGUI.openLogin(getFrame());
+                dispose();
+            }
+        });
 
         // Gesamt Window
         int width = 500;
@@ -147,11 +151,6 @@ public class StartfensterGUI extends GUI_Mama implements ActionListener {
         setLocationRelativeTo(parent);
         this.setVisible(true);
         this.getContentPane().setBackground(dark);
-
-        // Add Befehle
-
-        // Daten aktualisieren
-        Foo.getDirectoryData();
 
         // Add für einzelnen Elemente innerhalb der Panels
         Text.add(label, BorderLayout.SOUTH);
@@ -184,43 +183,8 @@ public class StartfensterGUI extends GUI_Mama implements ActionListener {
                 System.out.println("Anmelden: enabled");
             }
         }
-
-
-
-
-
-
-
-
-
     }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource()==reg) {
-            if (Foo.firstUsage){
-                System.out.println("Öffne First-Register-GUI");
-                RegisterWindow.openRegisterGUI(getFrame());
-                dispose();
-            }else{
-                System.out.println("Öffne Register-Window");
-                RegisterWindow.openRegisterGUI(getFrame());
-                dispose();
-            }
-        } else if (e.getSource()==anm) {
-            System.out.println("Öffne Login-Window");
-            LoginGUI.openLogin(getFrame());
-            dispose();
-        }
-    }
-
-
-
-    public static void openStartFenster(GUI_Mama parent){
-        Foo.getDirectoryData();
+    public static void openStartFenster(Parent_GUI parent){
         StartfensterGUI gui = new StartfensterGUI(parent);
     }
-
-
-
 }

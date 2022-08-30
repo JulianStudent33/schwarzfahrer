@@ -1,14 +1,12 @@
 package src;
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
-import src.GUI.RegisterWindow;
 
 import javax.swing.*;
-import java.awt.*;
 import java.io.IOException;
 
 import static src.Foo.*;
-import static src.GUI.GUI_Mama.*;
+import static src.GUI.Parent_GUI.*;
 
 public class Main {
 

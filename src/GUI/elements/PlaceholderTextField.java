@@ -1,12 +1,10 @@
 package src.GUI.elements;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.*;
 import javax.swing.text.Document;
 
-import static src.GUI.GUI_Mama.*;
+import static src.GUI.Parent_GUI.*;
 
 @SuppressWarnings("serial")
 public class PlaceholderTextField extends JTextField implements Flash{

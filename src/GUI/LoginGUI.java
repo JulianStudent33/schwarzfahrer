@@ -3,14 +3,14 @@ package src.GUI;
 import src.Foo;
 import src.GUI.Admin.AdminGUI;
 import src.GUI.Kon.KontrolleurGUI;
-import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
+import src.GUI.SB.SachbearbeiterGUI;
 import src.GUI.elements.PlaceholderPasswordField;
 import src.GUI.elements.PlaceholderTextField;
 import src.PersFile;
 import src.pass;
-import src.roles.Administrator;
-import src.roles.Kontrolleur;
-import src.roles.Sachbearbeiter;
+import src.Rollen.Administrator;
+import src.Rollen.Kontrolleur;
+import src.Rollen.Sachbearbeiter;
 import static src.Foo.*;
 import javax.swing.*;
 import java.awt.*;
@@ -19,11 +19,11 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Arrays;
 
-public class LoginGUI extends GUI_Mama implements ActionListener {
+public class LoginGUI extends Parent_GUI implements ActionListener {
 
 
 
-    public LoginGUI(GUI_Mama parent){
+    public LoginGUI(Parent_GUI parent){
 
         try {
             getColorChange();
@@ -320,7 +320,7 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
                                     }
 
                                     SachbearbeiterGUI.openSBGUI(getFrame());
-                                    System.out.println("Starting Sachbearbeiter User-Interface.");
+                                    System.out.println("Starting SB User-Interface.");
                                     dispose();
                                 }
                             } catch (IOException | ClassNotFoundException io) {
@@ -353,7 +353,7 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
 
     }
 
-    public static void openLogin(GUI_Mama parent){
+    public static void openLogin(Parent_GUI parent){
         Foo.getDirectoryData();
         LoginGUI gui = new LoginGUI(parent);
 

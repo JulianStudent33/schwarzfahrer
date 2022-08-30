@@ -1,10 +1,10 @@
 package src.GUI.Admin;
 import src.Foo;
-import src.GUI.GUI_Mama;
+import src.GUI.Parent_GUI;
 import src.PersFile;
-import src.roles.Administrator;
-import src.roles.Kontrolleur;
-import src.roles.Sachbearbeiter;
+import src.Rollen.Administrator;
+import src.Rollen.Kontrolleur;
+import src.Rollen.Sachbearbeiter;
 
 import static src.Foo.*;
 
@@ -15,7 +15,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
-public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener {
+public class MitarbeiterVerwaltenGUI extends Parent_GUI implements ActionListener {
 
     String[] mitarbeiterStrings;
     File[] mitarbeiterFiles;
@@ -28,7 +28,7 @@ public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener 
 
 
 
-     public MitarbeiterVerwaltenGUI(GUI_Mama parent){
+     public MitarbeiterVerwaltenGUI(Parent_GUI parent){
         //Setup
 
         setupGUI(parent, "MitarbeiterVerwaltenGUI");
@@ -191,7 +191,7 @@ public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener 
     public static void main(String[] args) {
         openMitarbeiterVerwaltenGUI(null);
     }
-    public static void openMitarbeiterVerwaltenGUI(GUI_Mama parent){
+    public static void openMitarbeiterVerwaltenGUI(Parent_GUI parent){
 
         MitarbeiterVerwaltenGUI gui = new MitarbeiterVerwaltenGUI(parent);
 
@@ -214,7 +214,7 @@ public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener 
                 try {
                     Kontrolleur k = (Kontrolleur) PersFile.laden(KontrolleurFileListe.get(i));
                     if (!AdminGUI.deletedFiles.contains(k.getUserFile())){
-                        stringArray[i-foundDeletedFiles]  = k.getName() + ", " + k.getVorname() + " (" + k.getMitarbeiternummer() + ")";
+                        stringArray[i-foundDeletedFiles]  = k.getNachname() + ", " + k.getVorname() + " (" + k.getMitarbeiternummer() + ")";
                         fileArray[i-foundDeletedFiles] = k.getUserFile();
                     }else{
                         foundDeletedFiles++;
@@ -234,7 +234,7 @@ public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener 
                 try {
                     Sachbearbeiter s = (Sachbearbeiter) PersFile.laden(SachbearbeiterFileListe.get(i-konCount));
                     if (!AdminGUI.deletedFiles.contains(s.getUserFile())){
-                        stringArray[i-foundDeletedFiles]  = s.getName() + ", " + s.getVorname() + " (" + s.getMitarbeiternummer() + ")";
+                        stringArray[i-foundDeletedFiles]  = s.getNachname() + ", " + s.getVorname() + " (" + s.getMitarbeiternummer() + ")";
                         fileArray[i-foundDeletedFiles] = s.getUserFile();
                     }else{
                         foundDeletedFiles++;
@@ -255,11 +255,11 @@ public class MitarbeiterVerwaltenGUI extends GUI_Mama implements ActionListener 
 
                 if (!a.getMitarbeiternummer().equals(currentUser.getMitarbeiternummer())){
                     if (hitYourself){
-                        stringArray[i-1-foundDeletedFiles] = a.getName() + ", " + a.getVorname() + " (" + a.getMitarbeiternummer() + ")";
+                        stringArray[i-1-foundDeletedFiles] = a.getNachname() + ", " + a.getVorname() + " (" + a.getMitarbeiternummer() + ")";
                         fileArray[i-1-foundDeletedFiles] = a.getUserFile();
                     }else{
                         if (!AdminGUI.deletedFiles.contains(a.getUserFile())){
-                            stringArray[i-foundDeletedFiles]  = a.getName() + ", " + a.getVorname() + " (" + a.getMitarbeiternummer() + ")";
+                            stringArray[i-foundDeletedFiles]  = a.getNachname() + ", " + a.getVorname() + " (" + a.getMitarbeiternummer() + ")";
                             fileArray[i-foundDeletedFiles] = a.getUserFile();
                         }else{
                             foundDeletedFiles++;

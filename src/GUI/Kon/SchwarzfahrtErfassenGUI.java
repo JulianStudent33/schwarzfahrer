@@ -3,10 +3,10 @@ package src.GUI.Kon;
 import com.formdev.flatlaf.FlatDarkLaf;
 import src.Adresse;
 import src.Foo;
-import src.GUI.GUI_Mama;
+import src.GUI.Parent_GUI;
 import src.GUI.elements.*;
-import src.roles.Kontrolleur;
-import src.roles.Schwarzfahrer;
+import src.Rollen.Kontrolleur;
+import src.Rollen.Schwarzfahrer;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,7 +17,7 @@ import java.util.Calendar;
 
 import static src.Foo.*;
 
-public class SchwarzfahrtErfassenGUI extends GUI_Mama {
+public class SchwarzfahrtErfassenGUI extends Parent_GUI {
 
     public static boolean isOpen = false;
     private static Kontrolleur currentUser;
@@ -52,7 +52,7 @@ public class SchwarzfahrtErfassenGUI extends GUI_Mama {
     private JCheckBox bereitsBezahltCheckBox;
     private JToggleButton löschenToggleButton;
 
-    public SchwarzfahrtErfassenGUI(GUI_Mama parent){
+    public SchwarzfahrtErfassenGUI(Parent_GUI parent){
         parentGUI = parent;
 
         this.currentUser = (Kontrolleur) parentGUI.currentUser;
@@ -83,7 +83,7 @@ public class SchwarzfahrtErfassenGUI extends GUI_Mama {
 
 
 
-        nameLabel.setText("Angemeldet als " + currentUser.getVorname() + " " + currentUser.getName() + " (" + currentUser.getMitarbeiternummer() + ").");
+        nameLabel.setText("Angemeldet als " + currentUser.getVorname() + " " + currentUser.getNachname() + " (" + currentUser.getMitarbeiternummer() + ").");
 
 
         setVisible(true);
@@ -189,12 +189,12 @@ public class SchwarzfahrtErfassenGUI extends GUI_Mama {
             public void actionPerformed(ActionEvent e) {
 
                 if (pflichtAusgefuellt()){
-                    Adresse neueAdresse = new Adresse(landComboBox.getSelectedItem().toString(), plzTextField.getText(), ortTextField.getText(), strasseTextField.getText(), hausnummerTextField.getText(), zusatzTextField.getText(), landComboBox.getSelectedIndex());
+                    Adresse neueAdresse = new Adresse(landComboBox.getSelectedItem().toString(), plzTextField.getText(), ortTextField.getText(), strasseTextField.getText(), hausnummerTextField.getText(), zusatzTextField.getText());
 
                     try {
 
 
-                        int geburtsdatum[] = datetonumber(datumButton2.getText());
+                        int geburtsdatum[] = dateToNumber(datumButton2.getText());
 
 
 
@@ -274,7 +274,7 @@ public class SchwarzfahrtErfassenGUI extends GUI_Mama {
         }
 
         vornameTextField.setText(currentSf.getVorname());
-        nachnameTextField.setText(currentSf.getName());
+        nachnameTextField.setText(currentSf.getNachname());
         datumButton2.setText(currentSf.getGeburtsdatum());
         geburtsortTextField.setText(currentSf.getGeburtsort());
         emailTextField.setText(currentSf.getEmail());
@@ -284,7 +284,6 @@ public class SchwarzfahrtErfassenGUI extends GUI_Mama {
         plzTextField.setText(currentSf.getAdresse().getPLZ());
         ortTextField.setText(currentSf.getAdresse().getOrt());
         zusatzTextField.setText(currentSf.getAdresse().getZusatz());
-        landComboBox.setSelectedIndex(currentSf.getAdresse().getLandIndex());
 
         vornameTextField.addFlashEffect();
         nachnameTextField.addFlashEffect();
@@ -377,7 +376,7 @@ public class SchwarzfahrtErfassenGUI extends GUI_Mama {
 
         return false;
     }
-    public static void open(GUI_Mama parent) {
+    public static void open(Parent_GUI parent) {
         Foo.getDirectoryData();
         isOpen = true;
         SchwarzfahrtErfassenGUI gui = new SchwarzfahrtErfassenGUI(parent);

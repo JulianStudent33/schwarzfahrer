@@ -1,15 +1,15 @@
 package src.GUI.Kon;
 
 import src.GUI.*;
-import src.GUI.Kacheln.EinstellungenGUI;
-import src.GUI.Kacheln.ProfilGUI;
-import src.GUI.Kacheln.StatistikenGUI;
+import src.GUI.EinstellungenGUI;
+import src.GUI.ProfilGUI;
+import src.GUI.StatistikenGUI;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class KontrolleurGUI extends GUI_Mama {
+public class KontrolleurGUI extends Parent_GUI {
     String[] texts = {"<html><body><center><p>Schwarzfahrt<br>erfassen</p></center></body></html>",
             "<html><body><center><p>Schwarzfahrer<br>suchen</p></center></body></html>",
             "<html><body><center><p>Statistiken</p></center></body></html>",
@@ -17,7 +17,7 @@ public class KontrolleurGUI extends GUI_Mama {
             "<html><body><center><p>Einstellungen</p></center></body></html>",
             "<html><body><center><p>Abmelden</p></center></body></html>"
     };
-    public KontrolleurGUI(GUI_Mama parent) {
+    public KontrolleurGUI(Parent_GUI parent) {
 
         setupGUI(parent, "KontrolleurGUI");
         this.currentUser.display();
@@ -82,7 +82,7 @@ public class KontrolleurGUI extends GUI_Mama {
                     }
                 });
     }
-    public static void openKonGUI(GUI_Mama parent){
+    public static void openKonGUI(Parent_GUI parent){
         KontrolleurGUI gui = new KontrolleurGUI(parent);
     }
 }

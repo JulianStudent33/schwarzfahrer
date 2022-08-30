@@ -3,22 +3,20 @@ package src;
 import java.io.Serializable;
 
 public class Adresse implements Serializable {
-   String Land;
-   String PLZ;
-   String Ort;
-   String Strasse;
-   String Hausnummer;
-   String Zusatz;
-   int landIndex;
+    String Land;
+    String PLZ;
+    String Ort;
+    String Strasse;
+    String Hausnummer;
+    String Zusatz;
 
-    public Adresse(String land, String plz, String ort, String strasse, String hausnummer, String zusatz, int index) {
+    public Adresse(String land, String plz, String ort, String strasse, String hausnummer, String zusatz) {
         this.Land = land;
         this.PLZ = plz;
         this.Ort = ort;
         this.Strasse = strasse;
         this.Hausnummer = hausnummer;
         this.Zusatz = zusatz;
-        this.landIndex = index;
     }
 
     public String getLand() {
@@ -68,12 +66,5 @@ public class Adresse implements Serializable {
     public void setZusatz(String zusatz) {
         Zusatz = zusatz;
     }
-
-    public int getLandIndex() {
-        return landIndex;
-    }
-
-    public void setLandIndex(int landIndex) {
-        this.landIndex = landIndex;
-    }
 }
+

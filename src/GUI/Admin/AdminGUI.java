@@ -1,8 +1,8 @@
 package src.GUI.Admin;
 import src.GUI.*;
-import src.GUI.Kacheln.EinstellungenGUI;
-import src.GUI.Kacheln.ProfilGUI;
-import src.GUI.Kacheln.StatistikenGUI;
+import src.GUI.EinstellungenGUI;
+import src.GUI.ProfilGUI;
+import src.GUI.StatistikenGUI;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
 
-public class AdminGUI extends GUI_Mama {
+public class AdminGUI extends Parent_GUI {
     public static ArrayList<File> deletedFiles = new ArrayList<>();
 
     String[] texts = {"<html><body><center><p>Administrator<br>anlegen</p></center></body></html>",
@@ -20,7 +20,7 @@ public class AdminGUI extends GUI_Mama {
             "<html><body><center><p>Einstellungen</p></center></body></html>",
             "<html><body><center><p>Abmelden</p></center></body></html>"
     };
-    public AdminGUI(GUI_Mama parent){
+    public AdminGUI(Parent_GUI parent){
 
         setupGUI(parent, "AdminGUI");
         this.currentUser.display();
@@ -32,7 +32,7 @@ public class AdminGUI extends GUI_Mama {
         Kachel1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                RegisterWindow.openAdminRegisterGUI(getFrame());
+                RegisterGUI.openAdminRegisterGUI(getFrame());
                 setVisible(false);
             }
         });
@@ -84,7 +84,7 @@ public class AdminGUI extends GUI_Mama {
         });
     }
 
-    public static void openAdminGUI(GUI_Mama parent){
+    public static void openAdminGUI(Parent_GUI parent){
         AdminGUI gui = new AdminGUI(parent);
 
     }
