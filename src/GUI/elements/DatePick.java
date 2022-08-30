@@ -14,6 +14,7 @@ import java.security.Key;
 import java.util.Calendar;
 
 import static src.Foo.*;
+import static src.GUI.GUI_Mama.*;
 
 public class DatePick {
     int DATE_MONTH = java.util.Calendar.getInstance().get(Calendar.MONTH);
@@ -30,7 +31,7 @@ public class DatePick {
     public DatePick(JFrame J_Frame_Parent, String alteEingabe) {
 
         if(alteEingabe!=null){
-            int[] d = Dateswitcher.datetonumber(alteEingabe);
+            int[] d = datetonumber(alteEingabe);
 
             DATE_MONTH = d[1]-1; //-1 weil ist bei Monaten so
             DATE_YEAR = d [2];

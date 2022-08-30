@@ -18,44 +18,65 @@ import java.io.IOException;
 import static src.Foo.*;
 
 public abstract class GUI_Mama extends JFrame {
+    /** Die MAMA der GUIs
+     * Superklasse für
+     *
+     * */
 
-    public String name;
-    String[] optionenLogout = {"Aus", "5", "15", "30"};
-    public Mitarbeiter currentUser;
-    public boolean konAngemeldet;
-    public boolean sbAngemeldet;
-    public  boolean adminAngemeldet;
-    public boolean autoLogoutON;
-    public GUI_Mama parentGUI;
 
-    //Elements
 
-    public JPanel gridPanel;
-    public JPanel textPanel;
-    public JLabel textLabel;
+    //Statische Variablen
 
-    public JButton Kachel1;
-    public JButton Kachel2;
-    public JButton Kachel3;
-    public JButton Kachel4;
-    public JButton Kachel5;
-    public JButton Kachel6;
+        public static Color dark;
+        public static Color white;
+        public static Color whitebg;
+        public static Color notSoDark;
+        public static Color darky = new Color(60,60,60);
+        public static Color Grey = new Color(150, 150, 150);
+        public static Color hellb = new Color(133, 179, 255);
+        public static Color dunkelb = new Color(74, 142, 255);
 
-    public Action logout = new AbstractAction() {
-        public void actionPerformed(ActionEvent e) {
-            dispose();
+        public static Color red = new Color(255, 107, 107);
+        public static Color green = new Color(143, 255, 107);
 
-            if (parentGUI!=null){
-                parentGUI.dispose();
+
+    //Objektbezogene Variablen
+
+        public String name;
+        String[] optionenLogout = {"Aus", "5", "15", "30"};
+        public Mitarbeiter currentUser;
+        public boolean konAngemeldet;
+        public boolean sbAngemeldet;
+        public  boolean adminAngemeldet;
+        public boolean autoLogoutON;
+        public GUI_Mama parentGUI;
+
+        public Action logout = new AbstractAction() {
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+
+                if (parentGUI!=null){
+                    parentGUI.dispose();
+                }
+                StartfensterGUI.openStartFenster(null);
+
+
             }
-            StartfensterGUI.openStartFenster(null);
+        };
+        public InactivityListener listener = new InactivityListener(this, logout, 0);
 
+    //Objektbezogene graphische Element
 
-        }
-    };
-    public InactivityListener listener = new InactivityListener(this, logout, 0);
+        public JPanel gridPanel;
+        public JPanel textPanel;
+        public JLabel textLabel;
 
-
+        public JButton Kachel1;
+        public JButton Kachel2;
+        public JButton Kachel3;
+        public JButton Kachel4;
+        public JButton Kachel5;
+        public JButton Kachel6;
 
     public GUI_Mama(){
 

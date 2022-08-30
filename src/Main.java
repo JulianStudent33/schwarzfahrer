@@ -8,6 +8,7 @@ import java.awt.*;
 import java.io.IOException;
 
 import static src.Foo.*;
+import static src.GUI.GUI_Mama.*;
 
 public class Main {
 

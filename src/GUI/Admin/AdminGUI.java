@@ -1,15 +1,14 @@
 package src.GUI.Admin;
-import src.Foo;
 import src.GUI.*;
+import src.GUI.Kacheln.EinstellungenGUI;
+import src.GUI.Kacheln.ProfilGUI;
+import src.GUI.Kacheln.StatistikenGUI;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
-
-import static src.Foo.*;
 
 public class AdminGUI extends GUI_Mama {
     public static ArrayList<File> deletedFiles = new ArrayList<>();

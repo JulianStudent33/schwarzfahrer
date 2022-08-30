@@ -2,9 +2,7 @@ package src.roles;
 
 import src.Adresse;
 import src.Foo;
-import src.GUI.elements.Dateswitcher;
 import src.PersFile;
-import src.Schwarzfahrt;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,7 +10,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-import static src.GUI.elements.Dateswitcher.datetonumber;
+import static src.Foo.*;
 
 public class Schwarzfahrer extends Person{
     /* Attribute
@@ -44,7 +42,7 @@ public class Schwarzfahrer extends Person{
                          String telefonnummer, String email, int day, int month, int year) throws IOException {
         this.ausweisnummer = ausweisnummer;
         this.geburtsort = geburtsort;
-        this.geburtsdatum = Dateswitcher.numbertodate(day, month, year);
+        this.geburtsdatum = numbertodate(day, month, year);
         this.adresse = adresse;
         this.vorname = vorname;
         this.name = nachname;

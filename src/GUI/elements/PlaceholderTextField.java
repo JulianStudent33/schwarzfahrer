@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.text.Document;
 
-import static src.Foo.notSoDark;
+import static src.GUI.GUI_Mama.*;
 
 @SuppressWarnings("serial")
 public class PlaceholderTextField extends JTextField implements Flash{

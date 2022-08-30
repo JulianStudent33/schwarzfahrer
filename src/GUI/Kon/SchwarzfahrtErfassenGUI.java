@@ -15,6 +15,8 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Calendar;
 
+import static src.Foo.*;
+
 public class SchwarzfahrtErfassenGUI extends GUI_Mama {
 
     public static boolean isOpen = false;
@@ -166,10 +168,10 @@ public class SchwarzfahrtErfassenGUI extends GUI_Mama {
                 }
 
                 if (currentSf == null){
-                    ausweisnummerTextField.setBackground(Foo.red);
+                    ausweisnummerTextField.setBackground(red);
                     Foo.okWindow("Keine Treffer", getFrame());
                 }else{
-                    ausweisnummerTextField.setBackground(Foo.green);
+                    ausweisnummerTextField.setBackground(green);
                     autofill();
                     geschlechtBox.setEnabled(false);
                     vornameTextField.setEnabled(false);
@@ -192,7 +194,7 @@ public class SchwarzfahrtErfassenGUI extends GUI_Mama {
                     try {
 
 
-                        int geburtsdatum[] = Dateswitcher.datetonumber(datumButton2.getText());
+                        int geburtsdatum[] = datetonumber(datumButton2.getText());
 
 
 

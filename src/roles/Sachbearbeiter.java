@@ -1,10 +1,11 @@
 package src.roles;
 
 import src.Foo;
-import src.GUI.elements.Dateswitcher;
 
 import java.io.IOException;
 import java.nio.file.Path;
+
+import static src.Foo.*;
 
 public class Sachbearbeiter extends Mitarbeiter{
      /* Attribute:
@@ -45,7 +46,7 @@ public class Sachbearbeiter extends Mitarbeiter{
         this.geschlecht = geschlecht;
         this.telefonnummer = telefonnummer;
         this.email = email;
-        this.geburtsdatum = Dateswitcher.numbertodate(date[0], date[1], date[2]);
+        this.geburtsdatum = numbertodate(date[0], date[1], date[2]);
         this.userFile = Path.of
                 (Foo.sbPath + Foo.fileSeperator + benutzername +  ".mb").toFile();
         display();

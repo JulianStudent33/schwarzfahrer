@@ -7,14 +7,12 @@ import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
 import src.GUI.elements.PlaceholderPasswordField;
 import src.GUI.elements.PlaceholderTextField;
 import src.PersFile;
-import src.nickcode.pass;
+import src.pass;
 import src.roles.Administrator;
 import src.roles.Kontrolleur;
-import src.roles.Mitarbeiter;
 import src.roles.Sachbearbeiter;
 import static src.Foo.*;
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
@@ -212,7 +210,7 @@ public class LoginGUI extends GUI_Mama implements ActionListener {
                 System.out.println(benutzernameTextField.getText()+e.getKeyChar());
 
                 if (Foo.userExistiertBereits(benutzernameTextField.getText())){
-                    benutzernameTextField.setBackground(Foo.green);
+                    benutzernameTextField.setBackground(green);
                     if (passwortVergessenButton instanceof AbstractButton) {
                         AbstractButton btn = passwortVergessenButton;
                         btn.setEnabled(true);

@@ -6,7 +6,7 @@ import src.GUI.Kon.KontrolleurGUI;
 import src.GUI.Sachbearbeiter.SachbearbeiterGUI;
 import src.GUI.elements.PlaceholderPasswordField;
 import src.GUI.elements.PlaceholderTextField;
-import src.nickcode.pass;
+import src.pass;
 import src.GUI.elements.*;
 import src.roles.Administrator;
 import src.roles.Kontrolleur;
@@ -24,7 +24,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.IOException;
 import java.util.*;
-import java.util.List;
 
 import static src.Foo.*;
 
@@ -379,7 +378,7 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
                     System.out.println("Nutzer anlegen wenn alles richtig und Hauptmenü der jeweiligen Rolle öffnen");
                     if (pflichtAusgefüllt()){
 
-                        int[] date = Dateswitcher.datetonumber(dateButton.getText());
+                        int[] date = datetonumber(dateButton.getText());
 
                         if (onlyAdmin){
 
@@ -495,10 +494,10 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
 
                 if (Foo.userExistiertBereits(bname.getText())){
                     float[] values = new float[3];
-                    bname.setBackground(Foo.red);
+                    bname.setBackground(red);
                 }else{
                     if(!bname.getText().isBlank()) {
-                        bname.setBackground(Foo.green);
+                        bname.setBackground(green);
                     } else {
                         bname.setBackground(dark);
                     }
@@ -517,10 +516,10 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
             @Override
             public void keyReleased(KeyEvent e) {
                 if(pass.passwordOk(pw.getText())){
-                    pw.setBackground(Foo.green);
+                    pw.setBackground(green);
                 }else{
                     if(!pw.getText().isBlank()) {
-                        pw.setBackground(Foo.red);
+                        pw.setBackground(red);
                     } else {
                         pw.setBackground(dark);
                     }
@@ -544,12 +543,12 @@ public class RegisterWindow extends GUI_Mama implements ActionListener {
                     if (pw.getText().isBlank()) {
                         pwb.setBackground(dark);
                     } else if (pwb.getText().equals(pw.getText()) && !pwb.getText().isBlank()) {
-                        pwb.setBackground(Foo.green);
+                        pwb.setBackground(green);
                     }
 
                 }else{
                     if(!pwb.getText().isBlank()) {
-                        pwb.setBackground(Foo.red);
+                        pwb.setBackground(red);
                     } else {
                         pwb.setBackground(dark);
                     }

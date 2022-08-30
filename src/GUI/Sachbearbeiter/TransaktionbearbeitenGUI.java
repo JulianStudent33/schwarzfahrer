@@ -1,11 +1,7 @@
 package src.GUI.Sachbearbeiter;
 import src.Foo;
 import src.GUI.GUI_Mama;
-import src.PersFile;
-import src.Schwarzfahrt;
-import src.roles.Administrator;
-import src.roles.Kontrolleur;
-import src.roles.Sachbearbeiter;
+import src.roles.Schwarzfahrt;
 
 import static src.Foo.*;
 
@@ -15,7 +11,6 @@ import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
 public class TransaktionbearbeitenGUI extends GUI_Mama implements ActionListener {
 
@@ -47,8 +42,6 @@ public class TransaktionbearbeitenGUI extends GUI_Mama implements ActionListener
                 loeschen.setEnabled(true);
             }
         });
-
-
 
         JPanel Textpan = new JPanel();
         Textpan.setLayout(new BorderLayout());

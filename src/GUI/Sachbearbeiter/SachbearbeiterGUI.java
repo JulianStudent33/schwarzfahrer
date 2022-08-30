@@ -1,14 +1,13 @@
 package src.GUI.Sachbearbeiter;
 
-import src.Foo;
 import src.GUI.*;
+import src.GUI.Kacheln.EinstellungenGUI;
+import src.GUI.Kacheln.ProfilGUI;
+import src.GUI.Kacheln.StatistikenGUI;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import static src.Foo.*;
 
 public class SachbearbeiterGUI extends GUI_Mama {
     String[] texts = {"<html><body><center><p>Transaktion<br>bearbeiten</p></center></body></html>",

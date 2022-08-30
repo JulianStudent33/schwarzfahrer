@@ -3,9 +3,7 @@ package src.GUI.elements;
 import javax.swing.*;
 import javax.swing.text.Document;
 import java.awt.*;
-
-import static src.Foo.Grey;
-import static src.Foo.notSoDark;
+import static src.GUI.GUI_Mama.*;
 
 public class PlaceholderPasswordField extends JPasswordField implements Flash{
 
