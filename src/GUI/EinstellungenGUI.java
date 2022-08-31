@@ -211,12 +211,6 @@ public class EinstellungenGUI extends Parent_GUI implements ActionListener {
         });
 
     }
-
-
-
-
-
-
         public static void openEinstellungenGUI (Parent_GUI parent){
 
             if (parent.getClass().equals(KontrolleurGUI.class)){

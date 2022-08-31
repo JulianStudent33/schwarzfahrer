@@ -148,13 +148,7 @@ public class SchwarzfahrtErfassenGUI extends Parent_GUI {
                 }
             }
         });
-
-
-
         //Button Funktion Zuweisung
-
-
-
         suchenToggleButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -183,7 +177,6 @@ public class SchwarzfahrtErfassenGUI extends Parent_GUI {
 
             }
         });
-
         speichernToggleButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -224,7 +217,6 @@ public class SchwarzfahrtErfassenGUI extends Parent_GUI {
 
             }
         });
-
         löschenToggleButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -249,10 +241,6 @@ public class SchwarzfahrtErfassenGUI extends Parent_GUI {
                 geburtsortTextField.setEnabled(true);
             }
         });
-
-
-
-
         abbrechenToggleButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -263,7 +251,6 @@ public class SchwarzfahrtErfassenGUI extends Parent_GUI {
             }
         });
     }
-
     void autofill(){
         if (currentSf.getGeschlecht().equals("M")){
             geschlechtBox.setSelectedIndex(0);
@@ -305,7 +292,6 @@ public class SchwarzfahrtErfassenGUI extends Parent_GUI {
         }
 
     }
-
     private boolean pflichtAusgefuellt(){
         if (!datumButton1.getText().isBlank()){
             if (!linieTextField.getText().isBlank()){

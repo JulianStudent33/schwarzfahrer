@@ -15,13 +15,6 @@ public class StartfensterGUI extends Parent_GUI {
     //
     private JButton reg = new JButton();
     private JButton anm = new JButton();
-
-
-
-
-
-
-
     //Konstruktor
     public StartfensterGUI(Parent_GUI parent) {
 

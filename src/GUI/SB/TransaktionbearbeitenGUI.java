@@ -189,9 +189,6 @@ public class TransaktionbearbeitenGUI extends Parent_GUI implements ActionListen
         });
 
     }
-
-
-
     public static void main(String[] args) {
         openTransaktionbearbeiten(null);
     }

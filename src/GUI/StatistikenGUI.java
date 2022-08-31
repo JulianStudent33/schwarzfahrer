@@ -12,13 +12,6 @@ import static src.Foo.*;
 
 public class StatistikenGUI extends Parent_GUI implements ActionListener {
 
-
-    public static void main(String[] args) {
-        new StatistikenGUI(null);
-    }
-
-
-
     JButton AnzahlSchwarzfahrer = new JButton();
     JLabel AnzahlSchwarzfahrerUeberschrift = new JLabel();
     JLabel AnzahlschwarzfahrerWert = new JLabel();

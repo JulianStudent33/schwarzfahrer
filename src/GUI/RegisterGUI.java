@@ -37,7 +37,6 @@ public class RegisterGUI extends Parent_GUI implements ActionListener {
     // Deklaration Arrays String
     String[] rollen = {"Rolle*", "Kontrolleur", "SB"};
     String[] geschlechter = {"Geschlecht*", "Männlich", "Weiblich", "Divers"};
-    String[] month = {"M","1", "2","3","4","5","6","7","8","9","10","11","12"};
     String datumButtonText = "Bitte Geburtsdatum auswählen*";
 
     // Deklaration JComboBoxen
@@ -555,8 +554,6 @@ public class RegisterGUI extends Parent_GUI implements ActionListener {
                 }
             }
         });
-
-        // Placeholder der JComboboxen löschen
         rollenBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -748,7 +745,6 @@ public class RegisterGUI extends Parent_GUI implements ActionListener {
     public static void openAdminRegisterGUI(Parent_GUI parent){
         Foo.getDirectoryData();
         RegisterGUI gui = new RegisterGUI(parent, true);
-
     }
 
 

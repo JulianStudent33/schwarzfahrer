@@ -121,9 +121,6 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
         });
 
     }
-
-
-
     public static void main(String[] args) {
         openSchwarzfahrtensuchenGUI(null);
     }

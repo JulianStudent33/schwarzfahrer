@@ -1,7 +1,4 @@
 package src.GUI;
-import src.GUI.Admin.AdminGUI;
-import src.GUI.Kon.KontrolleurGUI;
-import src.GUI.SB.SachbearbeiterGUI;
 import src.GUI.elements.NumberFilter;
 import src.GUI.elements.PlaceholderTextField;
 import src.pass;
@@ -17,10 +14,6 @@ import java.io.IOException;
 
 import static src.Foo.*;
 public class ProfilGUI extends Parent_GUI implements ActionListener {
-
-    public SachbearbeiterGUI parentS = null;
-    public KontrolleurGUI parentK = null;
-    public AdminGUI parentA = null;
 
     JPanel label = new JPanel();
     JLabel Text = new JLabel();
@@ -40,8 +33,6 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
     JButton PasswortAendernButton = new JButton();
     JLabel AngabenAendernLabel = new JLabel();
     JLabel PasswortVergessenLabel = new JLabel();
-    String rollenString;
-
     JButton SpeicherButton = new JButton();
 
     public ProfilGUI(Parent_GUI parent){
@@ -168,7 +159,7 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
         AngabenAendern.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                angabenAendernMethod(false);
+                angabenAendern(true);
             }
         });
 
@@ -226,6 +217,7 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                angabenAendern(false);
                 try {
                     currentUser.setEmail(EMail.getText());
                     currentUser.setTelefon(Telefonnummer.getText());
@@ -301,17 +293,20 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
     public void actionPerformed(ActionEvent e){
     }
 
-   public void angabenAendernMethod(boolean angabenAendern){
-        if(angabenAendern == false){
-
+   public void angabenAendern(boolean angabenAendern){
+        if(angabenAendern){
 
             SpeicherButton.setVisible(true);
 
             Telefonnummer.setEnabled(true);
             EMail.setEnabled(true);
             AngabenAendern.setEnabled(false);
+        }else{
+            SpeicherButton.setVisible(false);
 
-
+            Telefonnummer.setEnabled(false);
+            EMail.setEnabled(false);
+            AngabenAendern.setEnabled(true);
         }
     }
 
