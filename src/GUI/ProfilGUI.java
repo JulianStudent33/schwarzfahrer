@@ -1,7 +1,7 @@
 package src.GUI;
 import src.GUI.elements.NumberFilter;
 import src.GUI.elements.PlaceholderTextField;
-import src.pass;
+import src.GUI.elements.pass;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -63,82 +63,38 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
         Text.setText("<html><body><center><p>Profil von <br>"+ currentUser.getVorname() + "</p></center></body></html>");
         Text.setBounds(140,0,400,100);
 
-        Benutzername.setForeground(white);
-        Benutzername.setBackground(dark);
-        Benutzername.setFont(fontMedium);
-        Benutzername.setEnabled(false);
+
+        styleTextField(Benutzername, currentUser.getBenutzername());
         Benutzername.setBounds(75,440,250,40);
-        Benutzername.setPlaceholder(currentUser.getBenutzername());
-        Benutzername.setText(currentUser.getBenutzername());
 
-
-        Name.setForeground(white);
-        Name.setBackground(dark);
-        Name.setFont(fontMedium);
-        Name.setEnabled(false);
+        styleTextField(Name, currentUser.getNachname());
         Name.setBounds(75,80,250,40);
-        Name.setPlaceholder(currentUser.getNachname());
-        Name.setText(currentUser.getNachname());
 
-        Vorname.setForeground(white);
-        Vorname.setBackground(dark);
-        Vorname.setFont(fontMedium);
-        Vorname.setEnabled(false);
+        styleTextField(Vorname, currentUser.getVorname());
         Vorname.setBounds(75,20,250,40);
-        Vorname.setPlaceholder(currentUser.getVorname());
-        Vorname.setText(currentUser.getVorname());
 
-        Gender.setForeground(white);
-        Gender.setBackground(dark);
-        Gender.setFont(fontMedium);
-        Gender.setEnabled(false);
+        styleTextField(Gender, currentUser.getGeschlecht());
         Gender.setBounds(75,140,250,40);
-        Gender.setPlaceholder(currentUser.getGeschlecht());
-        Gender.setText(currentUser.getGeschlecht());
 
 
-        Rolle.setForeground(white);
-        Rolle.setBackground(dark);
-        Rolle.setFont(fontMedium);
-        Rolle.setEnabled(false);
         Rolle.setBounds(75,200,250,40);
         if(currentUser.isAdmin()){
-            Rolle.setPlaceholder("Admin");
-            Rolle.setText("Admin");
+            styleTextField(Rolle, "Admin");
         } else if (currentUser.isKontrolleur()) {
-            Rolle.setPlaceholder("Kontrolleur");
-            Rolle.setText("Kontrolleur");
+            styleTextField(Rolle, "Kontrolleur");
         }
         else{
-            Rolle.setPlaceholder("SB");
-            Rolle.setText("SB");
+            styleTextField(Rolle, "Sachbearbeiter");
         }
 
-        Geburtstag.setForeground(white);
-        Geburtstag.setBackground(dark);
-        Geburtstag.setFont(fontMedium);
-        Geburtstag.setEnabled(false);
+        styleTextField(Geburtstag, currentUser.getGeburtsdatum());
         Geburtstag.setBounds(75,260,250,40);
-        Geburtstag.setPlaceholder(currentUser.getGeburtsdatum());
-        Geburtstag.setText(currentUser.getGeburtsdatum());
 
-
-        EMail.setForeground(white);
-        EMail.setBackground(dark);
-        EMail.setFont(fontMedium);
-        EMail.setEnabled(false);
+        styleTextField(EMail, currentUser.getEmail());
         EMail.setBounds(75,320,250,40);
-        EMail.setPlaceholder(currentUser.getEmail());
-        EMail.setText(currentUser.getEmail());
 
-
-        Telefonnummer.setForeground(white);
-        Telefonnummer.setBackground(dark);
-        Telefonnummer.setFont(fontMedium);
-        Telefonnummer.setEnabled(false);
+        styleTextField(Telefonnummer, currentUser.getTelefonnummer());
         Telefonnummer.setBounds(75,380,250,40);
-        Telefonnummer.setPlaceholder(currentUser.getTelefonnummer());
-        Telefonnummer.setText(currentUser.getTelefonnummer());
         ((AbstractDocument)Telefonnummer.getDocument()).setDocumentFilter(nfilter);
 
         AbbrechenButton.setBackground(hellb);
@@ -156,12 +112,7 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
         AngabenAendern.add(AngabenAendernLabel);
         AngabenAendern.setBounds(75,55,100,40);
 
-        AngabenAendern.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                angabenAendern(true);
-            }
-        });
+
 
         PasswortVergessenLabel.setForeground(white);
         PasswortVergessenLabel.setText("<html><body><p><center>Passwort<br>ändern</center></p></body></html>");
@@ -208,24 +159,6 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
         SpeicherButton.setBounds(150,0,100,40);
         SpeicherButton.setVisible(false);
 
-        //E-Mail
-        //Telefon
-        // Benutzername
-
-
-        SpeicherButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                angabenAendern(false);
-                try {
-                    currentUser.setEmail(EMail.getText());
-                    currentUser.setTelefon(Telefonnummer.getText());
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
-            }
-        });
 
         // Elemente zu Panels adden
 
@@ -261,15 +194,6 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
         setVisible(true);
         setLocationRelativeTo(parent);
 
-        SpeichernButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-
-
-            }
-        });
-
         AbbrechenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -280,10 +204,35 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
                 dispose();
             }
         });
+        SpeicherButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
+                angabenAendern(false);
+                try {
+                    currentUser.setEmail(EMail.getText());
+                    currentUser.setTelefon(Telefonnummer.getText());
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+        AngabenAendern.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                angabenAendern(true);
+            }
+        });
 
     }
 
+    void styleTextField(PlaceholderTextField field, String txt){
+        field.setForeground(white);
+        field.setBackground(dark);
+        field.setFont(fontMedium);
+        field.setEnabled(false);
+        field.setText(txt);
+    }
     public static void openProfilGUI(Parent_GUI parent){
 
             ProfilGUI gui1 = new ProfilGUI(parent);

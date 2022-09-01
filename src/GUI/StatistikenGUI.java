@@ -1,11 +1,13 @@
 package src.GUI;
 
+import src.Rollen.Schwarzfahrt;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
+import java.util.*;
 import java.util.List;
 
 import static src.Foo.*;
@@ -20,7 +22,7 @@ public class StatistikenGUI extends Parent_GUI implements ActionListener {
     JLabel AnzahlKontrolleureWert = new JLabel();
     JLabel AnzahlSacharbeiterUeberschrift = new JLabel();
     JLabel AnzahlSacharbeiterWert = new JLabel();
-    JButton HaeufigsteSchwarzfahrt  = new JButton();
+    JButton sfHotspot = new JButton();
     JLabel HaeufigsteSchwarzfahrtUeberschrift = new JLabel();
     JLabel HaeufigsteSchwarzfahrtWert = new JLabel();
     JButton ErfassteSchwarzfahrten = new JButton();
@@ -81,15 +83,11 @@ public class StatistikenGUI extends Parent_GUI implements ActionListener {
         AnzahlschwarzfahrerWert.setText(String.valueOf(sfCount));
         AnzahlschwarzfahrerWert.setBorder(new EmptyBorder(30,100,30,0));
 
+        styleKachel(AnzahlSchwarzfahrer);
         AnzahlSchwarzfahrer.setBackground(hellb);
         AnzahlSchwarzfahrer.add(AnzahlSchwarzfahrerUeberschrift);
         AnzahlSchwarzfahrer.add(AnzahlschwarzfahrerWert);
-        AnzahlSchwarzfahrer.setFocusable(false);
-        AnzahlSchwarzfahrer.setFocusPainted(false);
-        AnzahlSchwarzfahrer.setBorderPainted(false);
-        AnzahlSchwarzfahrer.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         AnzahlSchwarzfahrer.setBounds(140,100,100,100);
-        AnzahlSchwarzfahrer.setRolloverEnabled(false);
 
 
         //Styling
@@ -113,17 +111,14 @@ public class StatistikenGUI extends Parent_GUI implements ActionListener {
         AnzahlSacharbeiterWert.setText(String.valueOf(sbCount));
         AnzahlSacharbeiterWert.setBorder(new EmptyBorder(110,100,0,0));
 
+        styleKachel(AnzahlMitarbeiter);
         AnzahlMitarbeiter.setBackground(dunkelb);
         AnzahlMitarbeiter.setForeground(white);
         AnzahlMitarbeiter.add(AnzahlKontrolleureUeberschrift);
         AnzahlMitarbeiter.add(AnzahlKontrolleureWert);
         AnzahlMitarbeiter.add(AnzahlSacharbeiterUeberschrift);
         AnzahlMitarbeiter.add(AnzahlSacharbeiterWert);
-        AnzahlMitarbeiter.setFocusable(false);
-        AnzahlMitarbeiter.setBorderPainted(false);
-        AnzahlMitarbeiter.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         AnzahlMitarbeiter.setBounds(140,100,100,100);
-        AnzahlMitarbeiter.setRolloverEnabled(false);
 
 
         //Styling
@@ -134,17 +129,15 @@ public class StatistikenGUI extends Parent_GUI implements ActionListener {
 
         HaeufigsteSchwarzfahrtWert.setForeground(dark);
         HaeufigsteSchwarzfahrtWert.setFont(fontSmall);
-        HaeufigsteSchwarzfahrtWert.setText("0");
+        HaeufigsteSchwarzfahrtWert.setText(getHotspot());
         HaeufigsteSchwarzfahrtWert.setBorder(new EmptyBorder(0,100,0,0));
 
-        HaeufigsteSchwarzfahrt.setBackground(hellb);
-        HaeufigsteSchwarzfahrt.add(HaeufigsteSchwarzfahrtUeberschrift);
-        HaeufigsteSchwarzfahrt.add(HaeufigsteSchwarzfahrtWert);
-        HaeufigsteSchwarzfahrt.setFocusable(false);
-        HaeufigsteSchwarzfahrt.setBorderPainted(false);
-        HaeufigsteSchwarzfahrt.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-        HaeufigsteSchwarzfahrt.setBounds(140,100,100,100);
-        HaeufigsteSchwarzfahrt.setRolloverEnabled(false);
+        styleKachel(sfHotspot);
+        sfHotspot.setBackground(hellb);
+        sfHotspot.add(HaeufigsteSchwarzfahrtUeberschrift);
+        sfHotspot.add(HaeufigsteSchwarzfahrtWert);
+        sfHotspot.setBounds(140,100,100,100);
+
 
 
         //Styling
@@ -158,15 +151,13 @@ public class StatistikenGUI extends Parent_GUI implements ActionListener {
         ErfassteSchwarzfahrtenWert.setText(String.valueOf(sftCount));
         ErfassteSchwarzfahrtenWert.setBorder(new EmptyBorder(0,100,0,0));
 
+        styleKachel(ErfassteSchwarzfahrten);
         ErfassteSchwarzfahrten.setBackground(dunkelb);
         ErfassteSchwarzfahrten.setForeground(white);
         ErfassteSchwarzfahrten.add(ErfassteSchwarzfahrtenUeberschrift);
         ErfassteSchwarzfahrten.add(ErfassteSchwarzfahrtenWert);
-        ErfassteSchwarzfahrten.setFocusable(false);
-        ErfassteSchwarzfahrten.setBorderPainted(false);
-        ErfassteSchwarzfahrten.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         ErfassteSchwarzfahrten.setBounds(140,100,100,100);
-        ErfassteSchwarzfahrten.setRolloverEnabled(false);
+
 
         //Daten holen
 
@@ -198,6 +189,7 @@ public class StatistikenGUI extends Parent_GUI implements ActionListener {
         SchwarzfahrtenStatusBezahlt.setText(String.valueOf(sftStatus[2]));
         SchwarzfahrtenStatusBezahlt.setBorder(new EmptyBorder(40,100,0,0));
 
+        styleKachel(SchwarzfahrtenStatus);
         SchwarzfahrtenStatus.setBackground(hellb);
         SchwarzfahrtenStatus.setForeground(white);
         SchwarzfahrtenStatus.add(SchwarzfahrtenStatusUeberschrift);
@@ -205,27 +197,26 @@ public class StatistikenGUI extends Parent_GUI implements ActionListener {
         SchwarzfahrtenStatus.add(SchwarzfahrtenStatusOffen);
         SchwarzfahrtenStatus.add(SchwarzfahrtenStatusAusstehend);
         SchwarzfahrtenStatus.add(SchwarzfahrtenStatusBezahlt);
-        SchwarzfahrtenStatus.setFocusable(false);
-        SchwarzfahrtenStatus.setBorderPainted(false);
-        SchwarzfahrtenStatus.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         SchwarzfahrtenStatus.setBounds(140,100,100,100);
-        SchwarzfahrtenStatus.setRolloverEnabled(false);
 
 
         //Styling
+
         Abbrechen.addActionListener(this);
         Abbrechen.setText("Abbrechen");
         Abbrechen.setBackground(dunkelb);
         Abbrechen.setForeground(white);
         Abbrechen.setHorizontalTextPosition(JLabel.CENTER);
         Abbrechen.setVerticalTextPosition(JLabel.CENTER);
-        Abbrechen.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
+        Abbrechen.setFont(fontMedium);
         Abbrechen.setHorizontalAlignment(JLabel.CENTER);
         Abbrechen.setVerticalAlignment(JLabel.CENTER);
-        Abbrechen.setFocusable(false);
-        Abbrechen.setBorderPainted(false);
-        Abbrechen.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         Abbrechen.setBounds(140,100,100,100);
+        Abbrechen.setRolloverEnabled(true);
+        Abbrechen.setFocusable(true);
+        Abbrechen.setFocusPainted(true);
+        Abbrechen.setBorderPainted(false);
+        Abbrechen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
 
 
@@ -249,7 +240,7 @@ public class StatistikenGUI extends Parent_GUI implements ActionListener {
         //Text.add(Trennlinie,BorderLayout.SOUTH);
         gridpanel.add(AnzahlSchwarzfahrer);
         gridpanel.add(AnzahlMitarbeiter);
-        gridpanel.add(HaeufigsteSchwarzfahrt);
+        gridpanel.add(sfHotspot);
         gridpanel.add(ErfassteSchwarzfahrten);
         gridpanel.add(SchwarzfahrtenStatus);
         gridpanel.add(Abbrechen);
@@ -259,7 +250,20 @@ public class StatistikenGUI extends Parent_GUI implements ActionListener {
         this.add(Text, BorderLayout.NORTH);
 
 
+
+
         //ActionListener
+
+        sfHotspot.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                getHotspot();
+
+            }
+        });
+
+
         Abbrechen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -277,7 +281,13 @@ public class StatistikenGUI extends Parent_GUI implements ActionListener {
 
     }
 
-
+    void styleKachel(JButton btn){
+        btn.setRolloverEnabled(false);
+        btn.setFocusable(false);
+        btn.setFocusPainted(false);
+        btn.setBorderPainted(false);
+        btn.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+    }
     public int[] getStati(){
         fillSftList();
         int offenCount = 0;
@@ -302,11 +312,39 @@ public class StatistikenGUI extends Parent_GUI implements ActionListener {
     }
     public String getHotspot(){
         List<String> linien = new ArrayList<>();
-        for (int i = 0; i < SchwarzfahrtenListe.size(); i++){
-            linien.add(SchwarzfahrtenListe.get(i).linie);
+        Map<String,Integer> valueCounter = new HashMap<>();
+        for (Schwarzfahrt sft : SchwarzfahrtenListe){
+            linien.add(sft.linie);
+            System.out.println(SchwarzfahrtenListe.indexOf(sft));
+        }
+        for (String str : linien){
+            Integer val = valueCounter.get(str);
+            if (valueCounter.get(str) == null){
+                valueCounter.put(str, 1);
+
+            } else{
+                val = val+1;
+                valueCounter.put(str, val);
+            }
+        }
+        int highestCount = 0;
+        String hotstopLinie = "Kein Hotspot";
+        Set<Map.Entry<String, Integer>> entrySet = valueCounter.entrySet();
+        for (Map.Entry<String, Integer> entry : entrySet){
+            if (entry.getValue() > 1){
+                System.out.println(entry.getKey() + "=>" + entry.getValue());
+                if (entry.getValue() > highestCount){
+                    highestCount = entry.getValue();
+                    hotstopLinie = entry.getKey();
+                } else if (entry.getValue() == highestCount) {
+                    hotstopLinie = hotstopLinie.concat(", " + entry.getKey());
+                }
+            }
         }
 
-        return "";
+        System.out.println(hotstopLinie);
+       // System.out.println(linien.size());
+        return hotstopLinie;
     }
 
     @Override

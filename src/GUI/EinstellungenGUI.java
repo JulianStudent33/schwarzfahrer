@@ -36,11 +36,6 @@ public class EinstellungenGUI extends Parent_GUI implements ActionListener {
         setupGUI(parent, "EinstellungenGUI");
         this.angemeldetBleiben = Foo.angemeldetBleiben;
 
-
-
-
-
-
         // Panelmanagement
         Background.setBackground(dark);
         Background.setBounds(1, 1, 300, 500);

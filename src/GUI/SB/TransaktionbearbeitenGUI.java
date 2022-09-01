@@ -19,6 +19,11 @@ public class TransaktionbearbeitenGUI extends Parent_GUI implements ActionListen
     final JList<String> list = new JList<>(model);
     JScrollPane scrollpane = new JScrollPane(list);
 
+    JPanel Textpan = new JPanel();
+    JPanel listpan = new JPanel();
+    JPanel Buttonpan = new JPanel();
+
+    JLabel label = new JLabel();
     JButton bearbeiten = new JButton();
     JButton loeschen = new JButton();
     JButton abbrechen = new JButton();
@@ -43,23 +48,22 @@ public class TransaktionbearbeitenGUI extends Parent_GUI implements ActionListen
             }
         });
 
-        JPanel Textpan = new JPanel();
+
         Textpan.setLayout(new BorderLayout());
         Textpan.setBackground(dark);
         Textpan.setPreferredSize(new Dimension(100,150));
 
-        JPanel listpan = new JPanel();
+
         listpan.setLayout(new BorderLayout());
         listpan.setBackground(dark);
         listpan.setPreferredSize(new Dimension(100,150));
 
-        JPanel Buttonpan = new JPanel();
+
         Buttonpan.setLayout(new BorderLayout());
         Buttonpan.setBackground(dark);
         Buttonpan.setPreferredSize(new Dimension(100,150));
         Buttonpan.setLayout(null);
 
-        JLabel label = new JLabel();
         label.setText("<html><body><center><p>Transaktion bearbeiten</p></center></body></html>");
         label.setForeground(white);
         label.setHorizontalTextPosition(JLabel.CENTER);
@@ -70,49 +74,20 @@ public class TransaktionbearbeitenGUI extends Parent_GUI implements ActionListen
         label.setBounds(200,50, 500,50);
 
 
-        bearbeiten.addActionListener(this);
-        bearbeiten.setText("Bearbeiten");
+        styleButton(bearbeiten, "Bearbeiten");
         bearbeiten.setBackground(dunkelb);
-        bearbeiten.setForeground(white);
-        bearbeiten.setHorizontalTextPosition(JLabel.CENTER);
-        bearbeiten.setVerticalTextPosition(JLabel.CENTER);
-        bearbeiten.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
-        bearbeiten.setHorizontalAlignment(JLabel.CENTER);
-        bearbeiten.setVerticalAlignment(JLabel.CENTER);
-        bearbeiten.setEnabled(false);
-        bearbeiten.setFocusable(false);
-        bearbeiten.setBorderPainted(false);
         bearbeiten.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         bearbeiten.setBounds(70,10,100,30);
 
         //Button löschen
-        loeschen.addActionListener(this);
-        loeschen.setText("Löschen");
+        styleButton(loeschen, "Löschen");
         loeschen.setBackground(hellb);
-        loeschen.setForeground(white);
-        loeschen.setHorizontalTextPosition(JLabel.CENTER);
-        loeschen.setVerticalTextPosition(JLabel.CENTER);
-        loeschen.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
-        loeschen.setHorizontalAlignment(JLabel.CENTER);
-        loeschen.setVerticalAlignment(JLabel.CENTER);
-        loeschen.setEnabled(false);
-        loeschen.setFocusable(false);
-        loeschen.setBorderPainted(false);
-        loeschen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         loeschen.setBounds(195,10,100,30);
 
-        abbrechen.addActionListener(this);
-        abbrechen.setText("Abbrechen");
+        //Button abbrechen
+        styleButton(abbrechen, "Abbrechen");
         abbrechen.setBackground(dunkelb);
-        abbrechen.setForeground(white);
-        abbrechen.setHorizontalTextPosition(JLabel.CENTER);
-        abbrechen.setVerticalTextPosition(JLabel.CENTER);
-        abbrechen.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
-        abbrechen.setHorizontalAlignment(JLabel.CENTER);
-        abbrechen.setVerticalAlignment(JLabel.CENTER);
-        abbrechen.setFocusable(false);
-        abbrechen.setBorderPainted(false);
-        abbrechen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        abbrechen.setEnabled(true);
         abbrechen.setBounds(315,10,100,30);
 
 
@@ -189,6 +164,20 @@ public class TransaktionbearbeitenGUI extends Parent_GUI implements ActionListen
         });
 
     }
+    void styleButton(JButton btn, String txt){
+        btn.setText(txt);
+        btn.setBackground(dunkelb);
+        btn.setForeground(white);
+        btn.setHorizontalTextPosition(JLabel.CENTER);
+        btn.setVerticalTextPosition(JLabel.CENTER);
+        btn.setFont(fontSmallSmall);
+        btn.setHorizontalAlignment(JLabel.CENTER);
+        btn.setVerticalAlignment(JLabel.CENTER);
+        btn.setEnabled(false);
+        btn.setFocusable(true);
+        btn.setBorderPainted(false);
+        btn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }
     public static void main(String[] args) {
         openTransaktionbearbeiten(null);
     }
@@ -218,7 +207,7 @@ public class TransaktionbearbeitenGUI extends Parent_GUI implements ActionListen
                     System.out.println(sft.sf.getVorname());
                     stringArray[i]  = sft.getLinie() + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status;
             }
-        System.out.println(stringArray[0]);
+
 
         this.schwarzfahrten = stringArray;
 

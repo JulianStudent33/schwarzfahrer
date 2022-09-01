@@ -1,4 +1,4 @@
-package src;
+package src.GUI.elements;
 
 import javax.swing.*;
 

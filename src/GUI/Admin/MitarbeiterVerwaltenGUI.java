@@ -9,6 +9,8 @@ import src.Rollen.Sachbearbeiter;
 import static src.Foo.*;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,6 +24,11 @@ public class MitarbeiterVerwaltenGUI extends Parent_GUI implements ActionListene
     final DefaultListModel<String> model = new DefaultListModel<>();
     JList<String> list = new JList<>(model);
     JScrollPane scrollpane = new JScrollPane(list);
+
+    JPanel Textpan = new JPanel();
+    JPanel listpan = new JPanel();
+    JPanel Buttonpan = new JPanel();
+    JLabel label = new JLabel();
     JButton loeschen = new JButton();
 
     JButton abbrechen = new JButton();
@@ -43,23 +50,22 @@ public class MitarbeiterVerwaltenGUI extends Parent_GUI implements ActionListene
          list.setBackground(notSoDark);
          list.setForeground(white);
 
-         JPanel Textpan = new JPanel();
+
          Textpan.setLayout(new BorderLayout());
          Textpan.setBackground(dark);
          Textpan.setPreferredSize(new Dimension(100,150));
 
-         JPanel listpan = new JPanel();
+
          listpan.setLayout(new BorderLayout());
          listpan.setBackground(dark);
          listpan.setPreferredSize(new Dimension(100,150));
 
-         JPanel Buttonpan = new JPanel();
          Buttonpan.setLayout(new BorderLayout());
          Buttonpan.setBackground(dark);
          Buttonpan.setPreferredSize(new Dimension(100,150));
          Buttonpan.setLayout(null);
 
-         JLabel label = new JLabel();
+
          label.setText("<html><body><center><p>Mitarbeiter verwalten</p></center></body></html>");
          label.setForeground(white);
          label.setHorizontalTextPosition(JLabel.CENTER);
@@ -73,33 +79,12 @@ public class MitarbeiterVerwaltenGUI extends Parent_GUI implements ActionListene
          if (mitarbeiterStrings.length == 0){
             loeschen.setEnabled(false);
          }
-         loeschen.addActionListener(this);
-         loeschen.setText("Löschen");
-         loeschen.setBackground(dunkelb);
-         loeschen.setForeground(white);
-         loeschen.setHorizontalTextPosition(JLabel.CENTER);
-         loeschen.setVerticalTextPosition(JLabel.CENTER);
-         loeschen.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
-         loeschen.setHorizontalAlignment(JLabel.CENTER);
-         loeschen.setVerticalAlignment(JLabel.CENTER);
-         loeschen.setFocusable(true);
-         loeschen.setBorderPainted(false);
-         loeschen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+         styleButton(loeschen, "Löschen");
          loeschen.setBounds(70,10,100,30);
 
          //Button abbrechen
-         abbrechen.addActionListener(this);
-         abbrechen.setText("Abbrechen");
-         abbrechen.setBackground(dunkelb);
-         abbrechen.setForeground(white);
-         abbrechen.setHorizontalTextPosition(JLabel.CENTER);
-         abbrechen.setVerticalTextPosition(JLabel.CENTER);
-         abbrechen.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
-         abbrechen.setHorizontalAlignment(JLabel.CENTER);
-         abbrechen.setVerticalAlignment(JLabel.CENTER);
-         abbrechen.setFocusable(true);
-         abbrechen.setBorderPainted(false);
-         abbrechen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+         styleButton(abbrechen, "Abbrechen");
+         abbrechen.setEnabled(true);
          abbrechen.setBounds(315,10,100,30);
 
 
@@ -130,6 +115,12 @@ public class MitarbeiterVerwaltenGUI extends Parent_GUI implements ActionListene
          this.setVisible(true);
          this.setBackground(dark);
 
+         list.addListSelectionListener(new ListSelectionListener() {
+             @Override
+             public void valueChanged(ListSelectionEvent e) {
+                 loeschen.setEnabled(true);
+             }
+         });
          loeschen.addActionListener(new ActionListener() {
              public void actionPerformed(ActionEvent event) {
 
@@ -175,7 +166,6 @@ public class MitarbeiterVerwaltenGUI extends Parent_GUI implements ActionListene
              }
 
          });
-         
          abbrechen.addActionListener(new ActionListener() {
              @Override
              public void actionPerformed(ActionEvent e) {
@@ -183,11 +173,21 @@ public class MitarbeiterVerwaltenGUI extends Parent_GUI implements ActionListene
                  dispose();
              }
          });
-
     }
-
-
-
+    void styleButton(JButton btn, String txt){
+        btn.setText(txt);
+        btn.setBackground(dunkelb);
+        btn.setForeground(white);
+        btn.setHorizontalTextPosition(JLabel.CENTER);
+        btn.setVerticalTextPosition(JLabel.CENTER);
+        btn.setFont(fontSmallSmall);
+        btn.setHorizontalAlignment(JLabel.CENTER);
+        btn.setVerticalAlignment(JLabel.CENTER);
+        btn.setEnabled(false);
+        btn.setFocusable(true);
+        btn.setBorderPainted(false);
+        btn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }
     public static void main(String[] args) {
         openMitarbeiterVerwaltenGUI(null);
     }
@@ -205,15 +205,15 @@ public class MitarbeiterVerwaltenGUI extends Parent_GUI implements ActionListene
     public void displayMitarbeiter() {
         Foo.getDirectoryData();
         int anzahlMitarbeiter = userCount;
-        String[] stringArray = new String[anzahlMitarbeiter-(1+AdminGUI.deletedFiles.size())];
-        File[] fileArray = new File[anzahlMitarbeiter-(1+AdminGUI.deletedFiles.size())];
+        String[] stringArray = new String[anzahlMitarbeiter-(1+deletedFiles.size())];
+        File[] fileArray = new File[anzahlMitarbeiter-(1+deletedFiles.size())];
         int foundDeletedFiles = 0;
 
         if (konCount>=1){
             for (int i = 0; i < konCount; i++){
                 try {
                     Kontrolleur k = (Kontrolleur) PersFile.laden(KontrolleurFileListe.get(i));
-                    if (!AdminGUI.deletedFiles.contains(k.getUserFile())){
+                    if (!deletedFiles.contains(k.getUserFile())){
                         stringArray[i-foundDeletedFiles]  = k.getNachname() + ", " + k.getVorname() + " (" + k.getMitarbeiternummer() + ")";
                         fileArray[i-foundDeletedFiles] = k.getUserFile();
                     }else{
@@ -233,7 +233,7 @@ public class MitarbeiterVerwaltenGUI extends Parent_GUI implements ActionListene
             for (int i = konCount; i < sbCount + konCount; i++){
                 try {
                     Sachbearbeiter s = (Sachbearbeiter) PersFile.laden(SachbearbeiterFileListe.get(i-konCount));
-                    if (!AdminGUI.deletedFiles.contains(s.getUserFile())){
+                    if (!deletedFiles.contains(s.getUserFile())){
                         stringArray[i-foundDeletedFiles]  = s.getNachname() + ", " + s.getVorname() + " (" + s.getMitarbeiternummer() + ")";
                         fileArray[i-foundDeletedFiles] = s.getUserFile();
                     }else{
@@ -258,7 +258,7 @@ public class MitarbeiterVerwaltenGUI extends Parent_GUI implements ActionListene
                         stringArray[i-1-foundDeletedFiles] = a.getNachname() + ", " + a.getVorname() + " (" + a.getMitarbeiternummer() + ")";
                         fileArray[i-1-foundDeletedFiles] = a.getUserFile();
                     }else{
-                        if (!AdminGUI.deletedFiles.contains(a.getUserFile())){
+                        if (!deletedFiles.contains(a.getUserFile())){
                             stringArray[i-foundDeletedFiles]  = a.getNachname() + ", " + a.getVorname() + " (" + a.getMitarbeiternummer() + ")";
                             fileArray[i-foundDeletedFiles] = a.getUserFile();
                         }else{
@@ -285,7 +285,7 @@ public class MitarbeiterVerwaltenGUI extends Parent_GUI implements ActionListene
         }
     }
     public void writeDeleteRequest(File userToDelete) throws IOException {
-        AdminGUI.deletedFiles.add(userToDelete);
-         PersFile.speichern(AdminGUI.deletedFiles, deleteFileFile);
+        deletedFiles.add(userToDelete);
+         PersFile.speichern(deletedFiles, deleteFileFile);
     }
 }

@@ -7,12 +7,13 @@ import src.GUI.SB.SachbearbeiterGUI;
 import src.GUI.elements.PlaceholderPasswordField;
 import src.GUI.elements.PlaceholderTextField;
 import src.PersFile;
-import src.pass;
+import src.GUI.elements.pass;
 import src.Rollen.Administrator;
 import src.Rollen.Kontrolleur;
 import src.Rollen.Sachbearbeiter;
 import static src.Foo.*;
 import javax.swing.*;
+import javax.swing.text.JTextComponent;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
@@ -22,6 +23,17 @@ import java.util.Arrays;
 public class LoginGUI extends Parent_GUI implements ActionListener {
 
 
+    JPanel Bot = new JPanel();
+    JPanel Text = new JPanel();
+    JPanel Passwort = new JPanel();
+    JPanel loginButton = new JPanel();
+    JPanel AngemeldetBleiben = new JPanel();
+    JLabel label = new JLabel();
+    PlaceholderTextField bname = new PlaceholderTextField();
+    PlaceholderPasswordField passwortPasswordField = new PlaceholderPasswordField();
+    JCheckBox angemeldetBleibenCheckBox = new JCheckBox();
+    JButton anmeldenButton = new JButton();
+    JButton abbrechenButton = new JButton();
 
     public LoginGUI(Parent_GUI parent){
 
@@ -36,35 +48,35 @@ public class LoginGUI extends Parent_GUI implements ActionListener {
         // Panelmanagement
 
 
-        JPanel Bot = new JPanel();
+
         Bot.setBackground(dark);
         Bot.setPreferredSize(new Dimension(100, 100));
         Bot.setLayout(null);
 
-        JPanel Text = new JPanel();
+
         Text.setBackground(dark);
         Text.setPreferredSize(new Dimension(200, 70));
         Text.setLayout(new GridLayout());
 
-        JPanel Passwort = new JPanel();
+
         Passwort.setBackground(dark);
         Passwort.setPreferredSize(new Dimension(600, 100));
         Passwort.setLayout(null);
 
         // Button
-        JPanel loginButton = new JPanel();
+
         loginButton.setBackground(dark);
         loginButton.setPreferredSize(new Dimension(100, 50));
         loginButton.setLayout(null);
 
         //AngemeldetBleiben
-        JPanel AngemeldetBleiben = new JPanel();
+
         AngemeldetBleiben.setBackground(dark);
         AngemeldetBleiben.setPreferredSize((new Dimension(100, 50)));
         AngemeldetBleiben.setLayout(null);
 
         // "Login" Text
-        JLabel label = new JLabel();
+
         label.setText("<html><body><center><p>Login</p></center></body></html>");
         label.setForeground(white);
         label.setHorizontalTextPosition(JLabel.CENTER);
@@ -75,41 +87,19 @@ public class LoginGUI extends Parent_GUI implements ActionListener {
         label.setBounds(250, 25, 100, 40);
 
         // Textfield Benutzer
-        PlaceholderTextField benutzernameTextField = new PlaceholderTextField();
-        benutzernameTextField.setBackground(whitebg);
-        benutzernameTextField.setForeground(white);
-        benutzernameTextField.setCaretColor(notSoDark);
-        benutzernameTextField.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
-        benutzernameTextField.setBounds(200, 25, 200,30);
-        benutzernameTextField.setPlaceholder("Benutzername");
+        styleTextField(bname, "Benutzername");
+
+        bname.setBounds(200, 25, 200,30);
+
 
         // Textfield Passwort
-        PlaceholderPasswordField passwortPasswordField = new PlaceholderPasswordField();
-        passwortPasswordField.setBackground(whitebg);
-        passwortPasswordField.setForeground(white);
-        passwortPasswordField.setCaretColor(notSoDark);
-        passwortPasswordField.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
-        passwortPasswordField.setBounds(200,75, 200,30);
-        passwortPasswordField.setPlaceholder("Passwort");
+        stylePwField(passwortPasswordField, "Passwort");
 
-        // Passwort vergessen
-        JButton passwortVergessenButton = new JButton();
-        passwortVergessenButton.addActionListener(this);
-        passwortVergessenButton.setText("<html><body>Passwort vergessen?</body></html>");
-        passwortVergessenButton.setBackground(Color.darkGray);
-        passwortVergessenButton.setForeground(white);
-        passwortVergessenButton.setHorizontalTextPosition(JLabel.CENTER);
-        passwortVergessenButton.setVerticalTextPosition(JLabel.CENTER);
-        passwortVergessenButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 10));
-        passwortVergessenButton.setVerticalAlignment(JLabel.CENTER);
-        passwortVergessenButton.setHorizontalAlignment(JLabel.CENTER);
-        passwortVergessenButton.setFocusable(false);
-        passwortVergessenButton.setBorderPainted(false);
-        passwortVergessenButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        passwortVergessenButton.setBounds(225,120,150,20);
+        passwortPasswordField.setBounds(200,75, 200,30);
+
 
         // Angemeldet bleiben CheckBox
-        JCheckBox angemeldetBleibenCheckBox = new JCheckBox();
+
         angemeldetBleibenCheckBox.setText("Angemeldet bleiben?");
         angemeldetBleibenCheckBox.addActionListener(this);
         angemeldetBleibenCheckBox.isEnabled();
@@ -118,35 +108,13 @@ public class LoginGUI extends Parent_GUI implements ActionListener {
 
 
         //JButton "Login"
-        JButton anmeldenButton = new JButton();
-        anmeldenButton.addActionListener(this);
-        anmeldenButton.setText("Login");
+       styleButton(anmeldenButton, "Login");
         anmeldenButton.setBackground(dunkelb);
-        anmeldenButton.setForeground(dark);
-        anmeldenButton.setHorizontalTextPosition(JLabel.CENTER);
-        anmeldenButton.setVerticalTextPosition(JLabel.CENTER);
-        anmeldenButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 10));
-        anmeldenButton.setHorizontalAlignment(JLabel.CENTER);
-        anmeldenButton.setVerticalAlignment(JLabel.CENTER);
-        anmeldenButton.setFocusable(true);
-        anmeldenButton.setBorderPainted(false);
-        anmeldenButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         anmeldenButton.setBounds(190, 0, 100, 30);
 
         // Button Abbrechen
-        JButton abbrechenButton = new JButton();
-        abbrechenButton.addActionListener(this);
-        abbrechenButton.setText("Abbrechen");
+        styleButton(abbrechenButton, "Abbrechen");
         abbrechenButton.setBackground(notSoDark);
-        abbrechenButton.setForeground(dark);
-        abbrechenButton.setHorizontalTextPosition(JLabel.CENTER);
-        abbrechenButton.setVerticalTextPosition(JLabel.CENTER);
-        abbrechenButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 10));
-        abbrechenButton.setHorizontalAlignment(JLabel.CENTER);
-        abbrechenButton.setVerticalAlignment(JLabel.CENTER);
-        abbrechenButton.setFocusable(false);
-        abbrechenButton.setBorderPainted(false);
-        abbrechenButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         abbrechenButton.setBounds(310, 0, 100, 30);
 
         // Daten aktualisieren
@@ -154,7 +122,7 @@ public class LoginGUI extends Parent_GUI implements ActionListener {
 
         // Add für einzelnen Elemente innerhalb der Panels
         Text.add(label, BorderLayout.NORTH);
-        Passwort.add(benutzernameTextField, BorderLayout.CENTER);
+        Passwort.add(bname, BorderLayout.CENTER);
         Passwort.add(passwortPasswordField, BorderLayout.CENTER);
         //Passwort.add(passwortVergessenButton, BorderLayout.CENTER);
         Passwort.add(angemeldetBleibenCheckBox, BorderLayout.SOUTH);
@@ -184,18 +152,11 @@ public class LoginGUI extends Parent_GUI implements ActionListener {
 
         setVisible(true);
 
-        benutzernameTextField.setPlaceholder("Benutzername");
+        bname.setPlaceholder("Benutzername");
         passwortPasswordField.setPlaceholder("Passwort");
-        if (passwortVergessenButton instanceof AbstractButton) {
-            AbstractButton btn = passwortVergessenButton;
-            btn.setEnabled(false);
-
-        }
-        benutzernameTextField.addMouseListener(new MouseAdapter() {
-
+        bname.addMouseListener(new MouseAdapter() {
         });
-
-        benutzernameTextField.addKeyListener(new KeyListener() {
+        bname.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
 
@@ -207,34 +168,15 @@ public class LoginGUI extends Parent_GUI implements ActionListener {
 
             @Override
             public void keyReleased(KeyEvent e) {
-                System.out.println(benutzernameTextField.getText()+e.getKeyChar());
+                System.out.println(bname.getText()+e.getKeyChar());
 
-                if (Foo.userExistiertBereits(benutzernameTextField.getText())){
-                    benutzernameTextField.setBackground(green);
-                    if (passwortVergessenButton instanceof AbstractButton) {
-                        AbstractButton btn = passwortVergessenButton;
-                        btn.setEnabled(true);
+                if (Foo.userExistiertBereits(bname.getText())){
+                    bname.setBackground(green);
 
-                    }
                 }else{
-                    benutzernameTextField.setBackground(dark);
-                    if (passwortVergessenButton instanceof AbstractButton) {
-                        AbstractButton btn = passwortVergessenButton;
-                        btn.setEnabled(false);
+                    bname.setBackground(dark);
 
-                    }
                 }
-
-
-
-
-
-            }
-        });
-        passwortVergessenButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
             }
         });
         abbrechenButton.addActionListener(new ActionListener() {
@@ -244,17 +186,16 @@ public class LoginGUI extends Parent_GUI implements ActionListener {
                 dispose();
             }
         });
-
         anmeldenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                if (!benutzernameTextField.getText().isBlank()){
+                if (!bname.getText().isBlank()){
                     if (!passwortPasswordField.getText().isBlank()) {
 
-                        if (Foo.AdminFileListe.contains(Path.of(Foo.adminPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())) {
+                        if (Foo.AdminFileListe.contains(Path.of(Foo.adminPath + Foo.fileSeperator + bname.getText() + ".mb").toFile())) {
                             try {
-                                Administrator mb = (Administrator) PersFile.laden(Path.of(Foo.adminPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile());
+                                Administrator mb = (Administrator) PersFile.laden(Path.of(Foo.adminPath + Foo.fileSeperator + bname.getText() + ".mb").toFile());
                                 System.out.println("Datei gelesen");
 
                                 if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())) {
@@ -282,9 +223,9 @@ public class LoginGUI extends Parent_GUI implements ActionListener {
                                 dispose();
                             }
                         }
-                        if (Foo.KontrolleurFileListe.contains(Path.of(Foo.konPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())) {
+                        if (Foo.KontrolleurFileListe.contains(Path.of(Foo.konPath + Foo.fileSeperator + bname.getText() + ".mb").toFile())) {
                             try {
-                                Kontrolleur mb = (Kontrolleur) PersFile.laden(Path.of(Foo.konPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile());
+                                Kontrolleur mb = (Kontrolleur) PersFile.laden(Path.of(Foo.konPath + Foo.fileSeperator + bname.getText() + ".mb").toFile());
                                 System.out.println("Datei gelesen");
                                 if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())) {
                                     System.out.println("Passwort stimmt");
@@ -306,9 +247,9 @@ public class LoginGUI extends Parent_GUI implements ActionListener {
                                 dispose();
                             }
                         }
-                        if (Foo.SachbearbeiterFileListe.contains(Path.of(Foo.sbPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile())) {
+                        if (Foo.SachbearbeiterFileListe.contains(Path.of(Foo.sbPath + Foo.fileSeperator + bname.getText() + ".mb").toFile())) {
                             try {
-                                Sachbearbeiter mb = (Sachbearbeiter) PersFile.laden(Path.of(Foo.sbPath + Foo.fileSeperator + benutzernameTextField.getText() + ".mb").toFile());
+                                Sachbearbeiter mb = (Sachbearbeiter) PersFile.laden(Path.of(Foo.sbPath + Foo.fileSeperator + bname.getText() + ".mb").toFile());
                                 System.out.println("Datei gelesen");
                                 if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())) {
                                     System.out.println("Passwort stimmt");
@@ -334,25 +275,65 @@ public class LoginGUI extends Parent_GUI implements ActionListener {
 
                     }
                 }
+                if (colorChange){
+                    if (bname.getText().isBlank()){
+                        bname.addRedFlashEffectWhiteField();
+                    }
+                    if (!userExistiertBereits(bname.getText())){
+                        bname.addRedFlashEffectWhiteField();
+                    }
+                    if (passwortPasswordField.getText().isBlank()){
+                        passwortPasswordField.addRedFlashEffectWhiteField();
+                    }
+                    if (pass.passwordOk(passwortPasswordField.getText())){
+                        passwortPasswordField.addRedFlashEffectWhiteField();
+                    }
+                }else{
+                    if (bname.getText().isBlank()){
+                        bname.addRedFlashEffect();
+                    }
+                    if (!userExistiertBereits(bname.getText())){
+                        bname.addRedFlashEffect();
+                    }
+                    if (passwortPasswordField.getText().isBlank()){
+                        passwortPasswordField.addRedFlashEffect();
+                    }
+                    if (pass.passwordOk(passwortPasswordField.getText())){
+                        passwortPasswordField.addRedFlashEffect();
+                    }
+                }
 
-                if (benutzernameTextField.getText().isBlank()){
-                    benutzernameTextField.addRedFlashEffectWhiteField();
-                }
-                if (!userExistiertBereits(benutzernameTextField.getText())){
-                    benutzernameTextField.addRedFlashEffectWhiteField();
-                }
-                if (passwortPasswordField.getText().isBlank()){
-                    passwortPasswordField.addRedFlashEffectWhiteField();
-                }
-                if (pass.passwordOk(passwortPasswordField.getText())){
-                    passwortPasswordField.addRedFlashEffectWhiteField();
-                }
 
             }
         });
 
     }
-
+    void stylePwField(PlaceholderPasswordField field, String txt){
+        field.setBackground(whitebg);
+        field.setForeground(white);
+        field.setCaretColor(notSoDark);
+        field.setFont(fontSmallSmall);
+        field.setPlaceholder(txt);
+    }
+    void styleTextField(PlaceholderTextField field, String txt){
+        field.setBackground(whitebg);
+        field.setForeground(white);
+        field.setCaretColor(notSoDark);
+        field.setFont(fontSmallSmall);
+        field.setPlaceholder(txt);
+    }
+    void styleButton(JButton btn, String txt){
+        btn.setText(txt);
+        btn.setForeground(dark);
+        btn.setHorizontalTextPosition(JLabel.CENTER);
+        btn.setVerticalTextPosition(JLabel.CENTER);
+        btn.setFont(fontSmallSmall);
+        btn.setHorizontalAlignment(JLabel.CENTER);
+        btn.setVerticalAlignment(JLabel.CENTER);
+        btn.setFocusable(true);
+        btn.setBorderPainted(false);
+        btn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }
     public static void openLogin(Parent_GUI parent){
         Foo.getDirectoryData();
         LoginGUI gui = new LoginGUI(parent);

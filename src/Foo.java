@@ -4,6 +4,7 @@ import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 import src.GUI.*;
 import src.GUI.Admin.AdminGUI;
+import src.GUI.Admin.MitarbeiterVerwaltenGUI;
 import src.GUI.Kon.KontrolleurGUI;
 import src.GUI.SB.SachbearbeiterGUI;
 import src.Rollen.*;
@@ -61,7 +62,7 @@ public class Foo {
     public static List<File> SchwarzfahrerFileListe = new ArrayList<File>();
     public static List<Schwarzfahrer> SchwarzfahrerListe = new ArrayList<Schwarzfahrer>();
     public static List<Schwarzfahrt> SchwarzfahrtenListe = new ArrayList<Schwarzfahrt>();
-
+    public static ArrayList<File> deletedFiles = new ArrayList<>();
 
     //Count Variablen
 
@@ -342,15 +343,21 @@ public class Foo {
             ArrayList<File> filesToDelete = (ArrayList<File>) PersFile.laden(deleteFileFile);
             boolean deletedSomething = false;
             int deletedAccs = 0;
-            for (int i = 0; i < filesToDelete.size(); i++) {
-                if (filesToDelete.get(i).delete()) {
-                    deletedAccs++;
-                    deletedSomething = true;
-                    System.out.println("Deleted UserFile succesfully");
-                     }
-            }
-            if (deletedSomething){
-                okWindow("Mitarbeiter wurde(n) erfolgreich aus dem System gelöscht (" + deletedAccs + "/" + filesToDelete.size() + ")", null);
+
+            if (filesToDelete!=null){
+
+                for (int i = 0; i < filesToDelete.size(); i++) {
+                    if (filesToDelete.get(i).delete()) {
+                        deletedAccs++;
+                        deletedSomething = true;
+                        System.out.println("Deleted UserFile succesfully");
+                    }
+                }
+                if (deletedSomething){
+                    okWindow("Mitarbeiter wurde(n) erfolgreich aus dem System gelöscht (" + deletedAccs + "/" + filesToDelete.size() + ")", null);
+                    PersFile.speichern(null, deleteFileFile);
+                }
+
 
             }
 

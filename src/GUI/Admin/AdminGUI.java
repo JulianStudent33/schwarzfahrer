@@ -11,7 +11,8 @@ import java.io.File;
 import java.util.ArrayList;
 
 public class AdminGUI extends Parent_GUI {
-    public static ArrayList<File> deletedFiles = new ArrayList<>();
+
+
 
     String[] texts = {"<html><body><center><p>Administrator<br>anlegen</p></center></body></html>",
             "<html><body><center><p>Mitarbeiter<br>verwalten</p></center></body></html>",

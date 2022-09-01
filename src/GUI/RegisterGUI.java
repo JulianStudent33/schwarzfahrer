@@ -6,7 +6,7 @@ import src.GUI.Kon.KontrolleurGUI;
 import src.GUI.SB.SachbearbeiterGUI;
 import src.GUI.elements.PlaceholderPasswordField;
 import src.GUI.elements.PlaceholderTextField;
-import src.pass;
+import src.GUI.elements.pass;
 import src.GUI.elements.*;
 import src.Rollen.Administrator;
 import src.Rollen.Kontrolleur;
@@ -29,15 +29,26 @@ import static src.Foo.*;
 
 public class RegisterGUI extends Parent_GUI implements ActionListener {
 
+    // Deklaration Arrays String
+    String[] rollen = {"Rolle*", "Kontrolleur", "Sachbearbeiter"};
+    String[] geschlechter = {"Geschlecht*", "Männlich", "Weiblich", "Divers"};
+    String datumButtonText = "Bitte Geburtsdatum auswählen*";
+
+    //Deklaration Panel
+    JPanel Text = new JPanel();
+    JPanel Top = new JPanel();
+    JPanel Mid = new JPanel();
+    JPanel dMid = new JPanel();
+    JPanel Bot = new JPanel();
+    JPanel fix = new JPanel();
+
+    //Deklaration Label
+    JLabel label = new JLabel();
+    JLabel bed = new JLabel();
     // Deklaration bname Benutzername, name Nachname, vname Vorname
     PlaceholderTextField bname = new PlaceholderTextField();
     PlaceholderTextField name = new PlaceholderTextField();
     PlaceholderTextField vname = new PlaceholderTextField();
-
-    // Deklaration Arrays String
-    String[] rollen = {"Rolle*", "Kontrolleur", "SB"};
-    String[] geschlechter = {"Geschlecht*", "Männlich", "Weiblich", "Divers"};
-    String datumButtonText = "Bitte Geburtsdatum auswählen*";
 
     // Deklaration JComboBoxen
     customComboBox rollenBox = new customComboBox();
@@ -52,20 +63,22 @@ public class RegisterGUI extends Parent_GUI implements ActionListener {
     PlaceholderPasswordField pw = new PlaceholderPasswordField();
     PlaceholderPasswordField pwb = new PlaceholderPasswordField();
 
-    boolean onlyAdmin;
-
-    // Mid Texfelder
-    // PlaceholderTextField rolle = new PlaceholderTextField();
-    // PlaceholderTextField gender = new PlaceholderTextField();
-
-    // Registrieren Button deklaration
+   //Deklaration der Button Registrieren und Abbrechen
     private JButton regbt = new JButton();
 
     private JButton abr = new JButton();
 
+    //Deklaration von Borders
     Border border;
     Border margin;
     Border margin2;
+
+    //Deklaration von TextField Filtern
+    LetterFilter lfilter = new LetterFilter();
+    NumberFilter nfilter = new NumberFilter();
+    SizeFilter sfilter = new SizeFilter(15);
+    //Hilfsvariable
+    boolean onlyAdmin;
 
     //Konstruktor
     public RegisterGUI(Parent_GUI parent, boolean onlyAdmin) {
@@ -100,51 +113,44 @@ public class RegisterGUI extends Parent_GUI implements ActionListener {
             rollenBox.addItem(rollen[2]);
         }
 
-
-
-
         genderBox.addItem(geschlechter[0]);
         genderBox.addItem(geschlechter[1]);
         genderBox.addItem(geschlechter[2]);
         genderBox.addItem(geschlechter[3]);
 
         //Filter Definition
-        LetterFilter lfilter = new LetterFilter();
-        NumberFilter nfilter = new NumberFilter();
-        SizeFilter sfilter = new SizeFilter(15);
-
 
         // Panelmanagement
 
         // Panel für Text "Registrieren"
-        JPanel Text = new JPanel();
+
         Text.setBackground(dark);
         Text.setSize(new Dimension(600, 100));
         Text.setLocation(0, 0);
         Text.setLayout(null);
 
         // Panel für Oberen drei Textfelder
-        JPanel Top = new JPanel();
+
         Top.setBackground(dark);
         Top.setSize(400, 250);
         Top.setLocation(93, 100);
         Top.setLayout(new GridLayout(5, 1, 0, 20));
 
         // Panel für die Mittleren Felder (Rolle, Gender, Geburtsdatum)
-        JPanel Mid = new JPanel();
+
         Mid.setBackground(dark);
         Mid.setSize(401, 35);
         Mid.setLocation(92, 370);
         Mid.setLayout(new GridLayout(1, 3, 10, 0));
 
-        JPanel dMid = new JPanel();
+
         dMid.setBackground(dark);
         dMid.setSize(401, 200);
         dMid.setLocation(92, 425);
         dMid.setLayout(new GridLayout(4, 1, 0, 20));
 
         // Panel für die Unterden Felder
-        JPanel Bot = new JPanel();
+
         Bot.setBackground(dark);
         Bot.setSize(400, 50);
         Bot.setLocation(93, 700);
@@ -155,14 +161,14 @@ public class RegisterGUI extends Parent_GUI implements ActionListener {
         // Panel für den Registrieren Button
 
         // Panel zum fixen
-        JPanel fix = new JPanel();
+
         fix.setBackground(dark);
         fix.setSize(400, 140);
         fix.setLocation(100, 240);
         fix.setLayout(null);
 
         // JLabel für Titel
-        JLabel label = new JLabel();
+
         if(firstUsage){
             label.setText("Admin Registrieren");
         } else {
@@ -171,17 +177,17 @@ public class RegisterGUI extends Parent_GUI implements ActionListener {
         label.setForeground(white);
         label.setHorizontalTextPosition(JLabel.CENTER);
         label.setVerticalTextPosition(JLabel.CENTER);
-        label.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 35));
+        label.setFont(fontLargeLarge);
         label.setHorizontalAlignment(JLabel.CENTER);
         label.setVerticalAlignment(JLabel.CENTER);
         label.setBounds(-8, 0, 600, 100);
 
-        JLabel bed = new JLabel();
+
         bed.setText("<html><body><center><p>Passwort benötigt: 6-15 Zeichen, mind. 1 Großbuchstabe,<br>mind. 1 Kleinbuchstabe und mind. 1 Zahl</p></center></body></html>");
         bed.setForeground(Grey);
         bed.setHorizontalTextPosition(JLabel.CENTER);
         bed.setVerticalTextPosition(JLabel.BOTTOM);
-        bed.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
+        bed.setFont(fontSmallSmall);
         bed.setHorizontalAlignment(JLabel.CENTER);
         bed.setVerticalAlignment(JLabel.BOTTOM);
         bed.setBounds(100,585,400,100);
@@ -213,30 +219,24 @@ public class RegisterGUI extends Parent_GUI implements ActionListener {
         margin2 = new EmptyBorder(0,0,0,0);
 
 
-
-        styleTextField(bname);
-        bname.setPlaceholder("Benutzername*");
+        styleTextField(bname, "Benutzername*");
         ((AbstractDocument)bname.getDocument()).setDocumentFilter(sfilter);
         //bname.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Benutzername");
 
 
-
-
         // name anpassungen
-        styleTextField(name);
-        name.setPlaceholder("Nachname*");
+        styleTextField(name, "Nachname*");
         ((AbstractDocument)name.getDocument()).setDocumentFilter(lfilter);
 
         // vname anpassungen
-        styleTextField(vname);
-        vname.setPlaceholder("Vorname*");
+        styleTextField(vname, "Vorname*");
         ((AbstractDocument)vname.getDocument()).setDocumentFilter(lfilter);
 
         // Mid Panel Management
         // Rolle Auswahlmenü
         // Auswahlmöglichkeiten
 
-        rollenBox.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
+        rollenBox.setFont(fontMedium);
         rollenBox.setBackground(whitebg);
         if(rollenBox.getItemAt(0)=="Rolle*") {
             rollenBox.setForeground(notSoDark);
@@ -250,7 +250,7 @@ public class RegisterGUI extends Parent_GUI implements ActionListener {
         // Gender Auswahlmenü
 
         //gender.setPrototypeDisplayValue("XXXXXXXXXXXX");
-        genderBox.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 26));
+        genderBox.setFont(fontMedium);
         genderBox.setBackground(whitebg);
         if(genderBox.getItemAt(0)=="Geschlecht*") {
             genderBox.setForeground(notSoDark);
@@ -264,7 +264,7 @@ public class RegisterGUI extends Parent_GUI implements ActionListener {
         // Geburtsdatum Button
         dateButton.setBorder(new CompoundBorder(border, margin2));
         dateButton.setText(datumButtonText);
-        dateButton.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
+        dateButton.setFont(fontMedium);
         dateButton.setBackground(whitebg);
         dateButton.setForeground(notSoDark);
         dateButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -274,38 +274,17 @@ public class RegisterGUI extends Parent_GUI implements ActionListener {
         // Bot Panel Management
         // E-Mail Textfeld
 
-        styleTextField(mail);
-        mail.setPlaceholder("E-Mail*");
+        styleTextField(mail, "E-Mail*");
 
         // Telefonnumer Textfeld
-        styleTextField(nummer);
-        nummer.setPlaceholder("Telefonnummer");
+        styleTextField(nummer, "Telefonnummer");
         ((AbstractDocument)nummer.getDocument()).setDocumentFilter(nfilter);
 
-        // PW Textfeld
-        pw.setBorder(new CompoundBorder(border, margin));
-        pw.setForeground(white);
-        pw.setBackground(whitebg);
-        pw.setCaretColor(notSoDark);
-        pw.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
-        pw.setSelectedTextColor(dark);
-        pw.setSelectionColor(notSoDark);
-        pw.setPlaceholder("Passwort*");
-        ((AbstractDocument)pw.getDocument()).setDocumentFilter(sfilter);
-        // PW Bestätigen Textfeld
-        pwb.setBorder(new CompoundBorder(border, margin));
-        pwb.setForeground(white);
-        pwb.setBackground(whitebg);
-        pwb.setCaretColor(notSoDark);
-        pwb.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25));
-        pwb.setSelectedTextColor(dark);
-        pwb.setSelectionColor(notSoDark);
-        pwb.setPlaceholder("Passwort bestätigen*");
-        ((AbstractDocument)pwb.getDocument()).setDocumentFilter(sfilter);
+        // PW Textfelds
+        stylePwField(pw, "Passwort");
+        stylePwField(pwb, "Passwort bestätigen");
+
         // Bot Text Panel Management
-
-        // Bot Registrieren Button Management
-
         // JButton "Registrieren"
 
         regbt.setText("Registrieren");
@@ -313,7 +292,7 @@ public class RegisterGUI extends Parent_GUI implements ActionListener {
         regbt.setForeground(whitebg);
         regbt.setHorizontalTextPosition(JLabel.CENTER);
         regbt.setVerticalTextPosition(JLabel.CENTER);
-        regbt.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
+        regbt.setFont(fontMedium);
         regbt.setFocusable(true);
         regbt.setBorderPainted(false);
         regbt.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -323,7 +302,7 @@ public class RegisterGUI extends Parent_GUI implements ActionListener {
         abr.setForeground(whitebg);
         abr.setHorizontalTextPosition(JLabel.CENTER);
         abr.setVerticalTextPosition(JLabel.CENTER);
-        abr.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 20));
+        abr.setFont(fontMedium);
         abr.setFocusable(true);
         abr.setBorderPainted(false);
         abr.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -448,6 +427,35 @@ public class RegisterGUI extends Parent_GUI implements ActionListener {
                         }
                     }
                     }
+                }
+            }
+        });
+        abr.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (colorChange){
+                    try {
+                        setColorChange(false);
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                }else{
+                    try {
+                        setColorChange(true);
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                }
+
+
+
+
+                if (!parent.getClass().getName().equals("src.GUI.Admin.AdminGUI")){
+                    StartfensterGUI.openStartFenster(getFrame());
+                    dispose();
+                }else{
+                    parent.setVisible(true);
+                    dispose();
                 }
             }
         });
@@ -576,35 +584,6 @@ public class RegisterGUI extends Parent_GUI implements ActionListener {
                 }
             }
         });
-        abr.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (colorChange){
-                    try {
-                        setColorChange(false);
-                    } catch (IOException ex) {
-                        throw new RuntimeException(ex);
-                    }
-                }else{
-                    try {
-                        setColorChange(true);
-                    } catch (IOException ex) {
-                        throw new RuntimeException(ex);
-                    }
-                }
-
-
-
-
-                if (!parent.getClass().getName().equals("src.GUI.Admin.AdminGUI")){
-                    StartfensterGUI.openStartFenster(getFrame());
-                    dispose();
-                }else{
-                    parent.setVisible(true);
-                    dispose();
-                }
-            }
-        });
 
     }
     //Allgemeine Methoden
@@ -728,14 +707,26 @@ public class RegisterGUI extends Parent_GUI implements ActionListener {
 
         return false;
     }
-    public void styleTextField(PlaceholderTextField field){
+    public void styleTextField(PlaceholderTextField field, String txt){
         field.setBorder(new CompoundBorder(border, margin)); // same
         field.setForeground(white); //same
         field.setBackground(whitebg); //same
         field.setCaretColor(notSoDark); //same
-        field.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 25)); //same
+        field.setFont(fontMedium); //same
         field.setSelectedTextColor(dark); //same
         field.setSelectionColor(notSoDark); //same
+        field.setPlaceholder(txt);
+    }
+    public void stylePwField(PlaceholderPasswordField field, String txt){
+        field.setBorder(new CompoundBorder(border, margin));
+        field.setForeground(white);
+        field.setBackground(whitebg);
+        field.setCaretColor(notSoDark);
+        field.setFont(fontMedium);
+        field.setSelectedTextColor(dark);
+        field.setSelectionColor(notSoDark);
+        field.setPlaceholder(txt);
+        ((AbstractDocument)pwb.getDocument()).setDocumentFilter(sfilter);
     }
     public static void openRegisterGUI(Parent_GUI parent){
 
@@ -746,12 +737,6 @@ public class RegisterGUI extends Parent_GUI implements ActionListener {
         Foo.getDirectoryData();
         RegisterGUI gui = new RegisterGUI(parent, true);
     }
-
-
-    public static void main(String[] args) {
-        openRegisterGUI(null);
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
 
