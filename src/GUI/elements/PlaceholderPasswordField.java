@@ -7,15 +7,6 @@ import static src.GUI.Parent_GUI.*;
 
 public class PlaceholderPasswordField extends JPasswordField implements Flash{
 
-    public static void main(final String[] args) {
-        final PlaceholderTextField tf = new PlaceholderTextField("");
-        tf.setColumns(20);
-        tf.setPlaceholder("All your base are belong to us!");
-        final Font f = tf.getFont();
-        tf.setFont(new Font(f.getName(), f.getStyle(), 30));
-        JOptionPane.showMessageDialog(null, tf);
-    }
-
     private String placeholder;
     public Timer timer;
 

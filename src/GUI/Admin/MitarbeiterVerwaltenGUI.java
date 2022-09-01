@@ -151,7 +151,7 @@ public class MitarbeiterVerwaltenGUI extends Parent_GUI implements ActionListene
                          }
 
                          okWindow("Die Änderungen treten beim nächsten Programm-Neustart in Kraft!" , getFrame());
-
+                         loeschen.setEnabled(false);
                      }
                      if (index == 0){
                          System.out.println("Index = 0");

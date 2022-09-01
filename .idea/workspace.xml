@@ -9,72 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Comments und Verschönerungen">
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Gui styling zusammengefasst wo es ging, Bug gefixt, bei dem delete request wiederholt wurden wenn der benutzer neu erstellt wurde. GUIs verbessert generell">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/Users/Admin/Admin2.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/colorChange.save" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/deleteFile.save" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/loggedIN.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/schwarzfahrer_jar/schwarzfahrer.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/schwarzfahrer_jar/schwarzfahrer.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Klassendiagramm_neu.mdj" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/Klassendiagramm_neu.mdj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Admin/Admin2.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/colorChange.save" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/colorChange.save" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/deleteFile.save" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/deleteFile.save" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/loggedIN.save" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/loggedIN.save" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Foo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Foo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/AdminGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/AdminGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/AdminGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/AdminGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/AdminGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/AdminGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/AdminGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/AdminGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/AdminGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/AdminGUI$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/AdminGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/AdminGUI$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/AdminGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/AdminGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Admin/MitarbeiterVerwaltenGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Parent_GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Parent_GUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StartfensterGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StartfensterGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StartfensterGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StartfensterGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StatistikenGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StatistikenGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StatistikenGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/StatistikenGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/pass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Foo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Admin/AdminGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Admin/AdminGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/elements/PlaceholderPasswordField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/elements/PlaceholderPasswordField.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/Admin/MitarbeiterVerwaltenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Admin/MitarbeiterVerwaltenGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/EinstellungenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/EinstellungenGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/LoginGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Parent_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Parent_GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/ProfilGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ProfilGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/SB/TransaktionbearbeitenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/SB/TransaktionbearbeitenGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/StartfensterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/StartfensterGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/StatistikenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/StatistikenGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/elements/pass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/elements/Flash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/elements/Flash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/elements/PlaceholderPasswordField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/elements/PlaceholderPasswordField.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -324,21 +266,8 @@
       <workItem from="1661850816131" duration="11957000" />
       <workItem from="1661927222509" duration="5543000" />
       <workItem from="1661934476374" duration="1809000" />
-      <workItem from="1662013842157" duration="7617000" />
-    </task>
-    <task id="LOCAL-00082" summary="changes">
-      <created>1660732619106</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1660732619106</updated>
-    </task>
-    <task id="LOCAL-00083" summary="changes">
-      <created>1660737318191</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1660737318191</updated>
+      <workItem from="1662013842157" duration="7838000" />
+      <workItem from="1662037842125" duration="2367000" />
     </task>
     <task id="LOCAL-00084" summary="changes">
       <created>1660743919557</created>
@@ -669,7 +598,21 @@
       <option name="project" value="LOCAL" />
       <updated>1661933500832</updated>
     </task>
-    <option name="localTasksCounter" value="131" />
+    <task id="LOCAL-00131" summary="Gui styling zusammengefasst wo es ging, Bug gefixt, bei dem delete request wiederholt wurden wenn der benutzer neu erstellt wurde. GUIs verbessert generell">
+      <created>1662025362053</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1662025362054</updated>
+    </task>
+    <task id="LOCAL-00132" summary="Gui styling zusammengefasst wo es ging, Bug gefixt, bei dem delete request wiederholt wurden wenn der benutzer neu erstellt wurde. GUIs verbessert generell">
+      <created>1662025367247</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1662025367247</updated>
+    </task>
+    <option name="localTasksCounter" value="133" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -690,7 +633,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="EinstellungenGUI fast fertig" />
     <MESSAGE value="Inactivity Listener und logout implementiert" />
     <MESSAGE value="dfg" />
     <MESSAGE value="Button enable diswbale" />
@@ -715,7 +657,8 @@
     <MESSAGE value="f" />
     <MESSAGE value="Comments" />
     <MESSAGE value="Comments und Verschönerungen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Comments und Verschönerungen" />
+    <MESSAGE value="Gui styling zusammengefasst wo es ging, Bug gefixt, bei dem delete request wiederholt wurden wenn der benutzer neu erstellt wurde. GUIs verbessert generell" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gui styling zusammengefasst wo es ging, Bug gefixt, bei dem delete request wiederholt wurden wenn der benutzer neu erstellt wurde. GUIs verbessert generell" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -807,7 +750,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>428</line>
+          <line>434</line>
           <option name="timeStamp" value="165" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
