@@ -43,6 +43,7 @@ public abstract class Parent_GUI extends JFrame {
         public static Font fontMediumMedium = new Font ("IBM Plex Mono Medium", Font.BOLD, 25);
         public static Font fontMedium = new Font("IBM Plex Mono Medium", Font.BOLD, 20);
         public static Font fontSmall = new Font("IBM Plex Mono Medium", Font.BOLD, 15);
+        public static Font fontverySmall = new Font("IBM Plex Mono Medium", Font.BOLD, 12);
         public static Font fontSmallPlain = new Font("IBM Plex Mono Medium", Font.PLAIN, 15);
         public static Font fontSmallSmall = new Font("IBM Plex Mono Medium", Font.BOLD, 12);
 

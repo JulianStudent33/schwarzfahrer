@@ -19,6 +19,7 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
     JLabel Text = new JLabel();
     JPanel Textfelder = new JPanel();
     JPanel Buttons = new JPanel();
+    JPanel Buttonsbg = new JPanel();
     PlaceholderTextField Benutzername = new PlaceholderTextField();
     PlaceholderTextField Name = new PlaceholderTextField();
     PlaceholderTextField Vorname = new PlaceholderTextField();
@@ -52,9 +53,13 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
         Textfelder.setPreferredSize(new Dimension(400,600));
 
 
+        Buttonsbg.setBackground(dark);
+        Buttonsbg.setPreferredSize(new Dimension(400,150));
+        Buttonsbg.setLayout(null);
+
         Buttons.setBackground(dark);
-        Buttons.setPreferredSize(new Dimension(400,150));
-        Buttons.setLayout(null);
+        Buttons.setBounds(50,0,300,80);
+        Buttons.setLayout(new GridLayout(2,2,10,10));
 
         // Elemente
 
@@ -65,16 +70,16 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
 
 
         styleTextField(Benutzername, currentUser.getBenutzername());
-        Benutzername.setBounds(75,440,250,40);
+        Benutzername.setBounds(75,20,250,40);
 
         styleTextField(Name, currentUser.getNachname());
-        Name.setBounds(75,80,250,40);
+        Name.setBounds(75,140,250,40);
 
         styleTextField(Vorname, currentUser.getVorname());
-        Vorname.setBounds(75,20,250,40);
+        Vorname.setBounds(75,80,250,40);
 
         styleTextField(Gender, currentUser.getGeschlecht());
-        Gender.setBounds(75,140,250,40);
+        Gender.setBounds(75,320,250,40);
 
 
         Rolle.setBounds(75,200,250,40);
@@ -91,7 +96,7 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
         Geburtstag.setBounds(75,260,250,40);
 
         styleTextField(EMail, currentUser.getEmail());
-        EMail.setBounds(75,320,250,40);
+        EMail.setBounds(75,440,250,40);
 
         styleTextField(Telefonnummer, currentUser.getTelefonnummer());
         Telefonnummer.setBounds(75,380,250,40);
@@ -100,26 +105,25 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
         AbbrechenButton.setBackground(hellb);
         AbbrechenButton.setForeground(white);
         AbbrechenButton.setText("Abbrechen");
+        AbbrechenButton.setFont(fontverySmall);
         AbbrechenButton.setBounds(150,100,100,40);
 
-        AngabenAendernLabel.setForeground(white);
-        AngabenAendernLabel.setText("<html><body><p><center>Angaben <br>ändern?</center></p></body></html>");
-        AngabenAendernLabel.setBorder(new EmptyBorder(0,10,18,10));
 
 
 
         AngabenAendern.setBackground(dunkelb);
-        AngabenAendern.add(AngabenAendernLabel);
+        AngabenAendern.setText("Angaben ändern");
+        AngabenAendern.setForeground(white);
+        AngabenAendern.setFont(fontverySmall);
         AngabenAendern.setBounds(75,55,100,40);
 
 
 
-        PasswortVergessenLabel.setForeground(white);
-        PasswortVergessenLabel.setText("<html><body><p><center>Passwort<br>ändern</center></p></body></html>");
-        PasswortVergessenLabel.setBorder(new EmptyBorder(0,0,18,13));
 
         PasswortAendernButton.setBackground(dunkelb);
-        PasswortAendernButton.add(PasswortVergessenLabel);
+        PasswortAendernButton.setText("Passwort ändern");
+        PasswortAendernButton.setForeground(white);
+        PasswortAendernButton.setFont(fontverySmall);
         PasswortAendernButton.setBounds(225, 55, 100, 40);
 
         PasswortAendernButton.addActionListener(new ActionListener() {
@@ -154,10 +158,10 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
         });
         SpeicherButton.setBackground(hellb);
         SpeicherButton.setForeground(white);
-        SpeicherButton.setFont(fontSmall);
+        SpeicherButton.setFont(fontverySmall);
         SpeicherButton.setText("Speichern");
         SpeicherButton.setBounds(150,0,100,40);
-        SpeicherButton.setVisible(false);
+        SpeicherButton.setEnabled(false);
 
 
         // Elemente zu Panels adden
@@ -173,17 +177,20 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
         Textfelder.add(EMail);
         Textfelder.add(Telefonnummer);
 
-        Buttons.add(AbbrechenButton);
+
         Buttons.add(AngabenAendern);
         Buttons.add(PasswortAendernButton);
         Buttons.add(SpeicherButton);
+        Buttons.add(AbbrechenButton);
+
+        Buttonsbg.add(Buttons);
 
 
         // Panels zu Frame adden
 
         add(label,BorderLayout.NORTH);
         add(Textfelder,BorderLayout.CENTER);
-        add(Buttons,BorderLayout.SOUTH);
+        add(Buttonsbg,BorderLayout.SOUTH);
 
 
         setSize(400, 800);
@@ -245,13 +252,13 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
    public void angabenAendern(boolean angabenAendern){
         if(angabenAendern){
 
-            SpeicherButton.setVisible(true);
+            SpeicherButton.setEnabled(true);
 
             Telefonnummer.setEnabled(true);
             EMail.setEnabled(true);
             AngabenAendern.setEnabled(false);
         }else{
-            SpeicherButton.setVisible(false);
+            SpeicherButton.setEnabled(false);
 
             Telefonnummer.setEnabled(false);
             EMail.setEnabled(false);
