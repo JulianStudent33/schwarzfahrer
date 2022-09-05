@@ -24,10 +24,16 @@ public class EinstellungenGUI extends Parent_GUI implements ActionListener {
     JLabel Ueberschrift = new JLabel();
     JButton AnButton = new JButton();
     JButton LogoutButton = new JButton();
+
+    JButton ColorChange = new JButton();
     JButton SpeichernButton = new JButton();
     JLabel ButtonTextAn = new JLabel();
     JLabel ButtonTextAus = new JLabel();
     JLabel ButtonUeberschriftAnmelden = new JLabel();
+
+    JLabel ButtonUeberschriftColor = new JLabel();
+
+    JLabel ButtonTextColor = new JLabel();
     JLabel ButtonAutoLogoutUeberschrift = new JLabel();
     JLabel ButtonAutoLogoutText = new JLabel();
     public EinstellungenGUI(Parent_GUI parent) {
@@ -61,8 +67,13 @@ public class EinstellungenGUI extends Parent_GUI implements ActionListener {
             ButtonTextAus.setFont(fontSmall);
         }
 
+
+
         ButtonTextAn.setText("An");
         ButtonTextAn.setBorder(new EmptyBorder(35, 10, 0, 0));
+
+        ButtonTextColor.setText("<html><body><center><p>Änderung nach <br>Programmneustart!</p></center></body></html>");
+        ButtonTextColor.setBorder(new EmptyBorder(35, 8, 0, 0));
 
 
         ButtonTextAus.setText("Aus");
@@ -73,6 +84,11 @@ public class EinstellungenGUI extends Parent_GUI implements ActionListener {
         ButtonUeberschriftAnmelden.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 18));
         ButtonUeberschriftAnmelden.setText("<html><body><center><p>Angemeldet <br>bleiben</p></center></body></html>");
         ButtonUeberschriftAnmelden.setBorder(new EmptyBorder(10, 8, 40, 8));
+
+        ButtonUeberschriftColor.setForeground(dark);
+        ButtonUeberschriftColor.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 15));
+        ButtonUeberschriftColor.setText("<html><body><center><p>Dark-/Whitemode</p></center></body></html>");
+        ButtonUeberschriftColor.setBorder(new EmptyBorder(10, 0, 40, 8));
 
         AnButton.addActionListener(this);
         AnButton.setBackground(dunkelb);
@@ -121,15 +137,24 @@ public class EinstellungenGUI extends Parent_GUI implements ActionListener {
         SpeichernButton.setForeground(white);
         SpeichernButton.setFont(fontSmall);
         SpeichernButton.setText("<html><body>Speichern</body></html>");
-        SpeichernButton.setBounds(75, 310, 150, 80);
+        SpeichernButton.setBounds(75, 410, 150, 80);
+
+        ColorChange.addActionListener(this);
+        ColorChange.add(ButtonUeberschriftColor);
+        ColorChange.add(ButtonTextColor);
+        ColorChange.setBackground(dunkelb);
+        ColorChange.setForeground(white);
+        ColorChange.setFont(fontSmall);
+        ColorChange.setBounds(75, 310, 150, 80);
 
         Background.add(Ueberschrift);
         Background.add(AnButton);
         Background.add(LogoutButton);
+        Background.add(ColorChange);
         Background.add(SpeichernButton);
 
 
-        this.setSize(300, 500);
+        this.setSize(300, 600);
         this.setTitle("Einstellungen");
         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.setResizable(false);
@@ -138,7 +163,18 @@ public class EinstellungenGUI extends Parent_GUI implements ActionListener {
 
         this.setLocationRelativeTo(parent);
 
-
+        ColorChange.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (colorChange) {
+                    ButtonUeberschriftColor.setForeground(dark);
+                    colorChange=false;
+                } else {
+                    ButtonUeberschriftColor.setForeground(white);
+                    colorChange=true;
+                }
+            }
+        });
         AnButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

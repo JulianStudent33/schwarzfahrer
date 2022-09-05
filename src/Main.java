@@ -16,7 +16,7 @@ public class Main {
         // True = LightMode - False = DarkMode
 
         //colorChange = true;
-        colorChange = false;
+
         colormode(colorChange);
         //Start
         try {
