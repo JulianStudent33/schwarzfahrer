@@ -9,14 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Gui styling zusammengefasst wo es ging, Bug gefixt, bei dem delete request wiederholt wurden wenn der benutzer neu erstellt wurde. GUIs verbessert generell">
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="g">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/schwarzfahrer_jar/schwarzfahrer.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/schwarzfahrer_jar/schwarzfahrer.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/elements/PlaceholderPasswordField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/elements/PlaceholderPasswordField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Admin/MitarbeiterVerwaltenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Admin/MitarbeiterVerwaltenGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/elements/Flash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/elements/Flash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/elements/PlaceholderPasswordField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/elements/PlaceholderPasswordField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/schwarzfahrer_jar/Saves/colorChange.save" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/schwarzfahrer_jar/Saves/colorChange.save" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,21 +262,8 @@
       <workItem from="1661927222509" duration="5543000" />
       <workItem from="1661934476374" duration="1809000" />
       <workItem from="1662013842157" duration="7838000" />
-      <workItem from="1662037842125" duration="1646000" />
-    </task>
-    <task id="LOCAL-00084" summary="changes">
-      <created>1660743919557</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1660743919558</updated>
-    </task>
-    <task id="LOCAL-00085" summary="auto logout und location relative to parent">
-      <created>1660811950874</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1660811950875</updated>
+      <workItem from="1662037842125" duration="2417000" />
+      <workItem from="1662128955827" duration="115000" />
     </task>
     <task id="LOCAL-00086" summary="auto logout und location relative to parent">
       <created>1660811981616</created>
@@ -612,7 +594,21 @@
       <option name="project" value="LOCAL" />
       <updated>1662025367247</updated>
     </task>
-    <option name="localTasksCounter" value="133" />
+    <task id="LOCAL-00133" summary="g">
+      <created>1662054520023</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1662054520023</updated>
+    </task>
+    <task id="LOCAL-00134" summary="g">
+      <created>1662054529282</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1662054529282</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -642,7 +638,6 @@
     <MESSAGE value="angemeldet bleiben geht wieder" />
     <MESSAGE value="GUI_Mama macht jetzt das Styling für alle Hauptmenüs" />
     <MESSAGE value="FirstRegistration implementiert und Admin hat jetzt alle Werte" />
-    <MESSAGE value="g" />
     <MESSAGE value="Filter für Registration Window und Admin Anlegen" />
     <MESSAGE value="Profil daten ändern implementiert, Filter implementiert, Admin Anlegen implementiert" />
     <MESSAGE value="Code Schneller gemacht" />
@@ -658,7 +653,8 @@
     <MESSAGE value="Comments" />
     <MESSAGE value="Comments und Verschönerungen" />
     <MESSAGE value="Gui styling zusammengefasst wo es ging, Bug gefixt, bei dem delete request wiederholt wurden wenn der benutzer neu erstellt wurde. GUIs verbessert generell" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gui styling zusammengefasst wo es ging, Bug gefixt, bei dem delete request wiederholt wurden wenn der benutzer neu erstellt wurde. GUIs verbessert generell" />
+    <MESSAGE value="g" />
+    <option name="LAST_COMMIT_MESSAGE" value="g" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
