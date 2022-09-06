@@ -261,14 +261,8 @@
       <workItem from="1662013842157" duration="7838000" />
       <workItem from="1662037842125" duration="2417000" />
       <workItem from="1662128955827" duration="115000" />
-      <workItem from="1662365478650" duration="882000" />
-    </task>
-    <task id="LOCAL-00087" summary="auto logout und location relative to parent">
-      <created>1660812003175</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1660812003175</updated>
+      <workItem from="1662365478650" duration="2278000" />
+      <workItem from="1662444212992" duration="732000" />
     </task>
     <task id="LOCAL-00088" summary="auto logout und location relative to parent">
       <created>1660812843344</created>
@@ -606,7 +600,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662366296609</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="g">
+      <created>1662444333793</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1662444333794</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -679,17 +680,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/EinstellungenGUI.java</url>
-          <line>92</line>
+          <line>108</line>
           <option name="timeStamp" value="112" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/EinstellungenGUI.java</url>
-          <line>200</line>
+          <line>236</line>
           <option name="timeStamp" value="113" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/EinstellungenGUI.java</url>
-          <line>145</line>
+          <line>181</line>
           <option name="timeStamp" value="118" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -749,7 +750,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/ProfilGUI.java</url>
-          <line>45</line>
+          <line>46</line>
           <option name="timeStamp" value="168" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
@@ -774,7 +775,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/GUI/EinstellungenGUI.java</url>
-          <line>170</line>
+          <line>206</line>
           <properties method="actionPerformed">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

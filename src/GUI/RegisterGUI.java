@@ -433,23 +433,6 @@ public class RegisterGUI extends Parent_GUI implements ActionListener {
         abr.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (colorChange){
-                    try {
-                        setColorChange(false);
-                    } catch (IOException ex) {
-                        throw new RuntimeException(ex);
-                    }
-                }else{
-                    try {
-                        setColorChange(true);
-                    } catch (IOException ex) {
-                        throw new RuntimeException(ex);
-                    }
-                }
-
-
-
-
                 if (!parent.getClass().getName().equals("src.GUI.Admin.AdminGUI")){
                     StartfensterGUI.openStartFenster(getFrame());
                     dispose();

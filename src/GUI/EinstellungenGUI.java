@@ -66,18 +66,23 @@ public class EinstellungenGUI extends Parent_GUI implements ActionListener {
             ButtonTextAus.setForeground(white);
             ButtonTextAus.setFont(fontSmall);
         }
-
+        if (colorChange){
+            ButtonTextColor.setText("White");
+        }else{
+            ButtonTextColor.setText("Dark");
+        }
 
 
         ButtonTextAn.setText("An");
         ButtonTextAn.setBorder(new EmptyBorder(35, 10, 0, 0));
-
-        ButtonTextColor.setText("<html><body><center><p>Änderung nach <br>Programmneustart!</p></center></body></html>");
-        ButtonTextColor.setBorder(new EmptyBorder(35, 8, 0, 0));
-
-
         ButtonTextAus.setText("Aus");
         ButtonTextAus.setBorder(new EmptyBorder(35, 90, 0, 0));
+
+        ButtonTextColor.setForeground(white);
+        ButtonTextColor.setFont(fontSmall);
+        ButtonTextColor.setBorder(new EmptyBorder(28, 35, 0, 35));
+
+
 
 
         ButtonUeberschriftAnmelden.setForeground(dark);
@@ -86,8 +91,8 @@ public class EinstellungenGUI extends Parent_GUI implements ActionListener {
         ButtonUeberschriftAnmelden.setBorder(new EmptyBorder(10, 8, 40, 8));
 
         ButtonUeberschriftColor.setForeground(dark);
-        ButtonUeberschriftColor.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 15));
-        ButtonUeberschriftColor.setText("<html><body><center><p>Dark-/Whitemode</p></center></body></html>");
+        ButtonUeberschriftColor.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 18));
+        ButtonUeberschriftColor.setText("<html><body><center><p>Color-Mode</p></center></body></html>");
         ButtonUeberschriftColor.setBorder(new EmptyBorder(10, 0, 40, 8));
 
         AnButton.addActionListener(this);
@@ -97,6 +102,7 @@ public class EinstellungenGUI extends Parent_GUI implements ActionListener {
         AnButton.add(ButtonUeberschriftAnmelden);
         AnButton.add(ButtonTextAn);
         AnButton.add(ButtonTextAus);
+        AnButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         AnButton.setBounds(75, 110, 150, 80);
 
         ButtonAutoLogoutUeberschrift.setForeground(dark);
@@ -130,6 +136,7 @@ public class EinstellungenGUI extends Parent_GUI implements ActionListener {
         LogoutButton.setFont(fontSmall);
         LogoutButton.add(ButtonAutoLogoutUeberschrift);
         LogoutButton.add(ButtonAutoLogoutText);
+        LogoutButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         LogoutButton.setBounds(75, 210, 150, 80);
 
         SpeichernButton.addActionListener(this);
@@ -137,6 +144,7 @@ public class EinstellungenGUI extends Parent_GUI implements ActionListener {
         SpeichernButton.setForeground(white);
         SpeichernButton.setFont(fontSmall);
         SpeichernButton.setText("<html><body>Speichern</body></html>");
+        SpeichernButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         SpeichernButton.setBounds(75, 410, 150, 80);
 
         ColorChange.addActionListener(this);
@@ -145,6 +153,7 @@ public class EinstellungenGUI extends Parent_GUI implements ActionListener {
         ColorChange.setBackground(dunkelb);
         ColorChange.setForeground(white);
         ColorChange.setFont(fontSmall);
+        ColorChange.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         ColorChange.setBounds(75, 310, 150, 80);
 
         Background.add(Ueberschrift);
@@ -166,15 +175,56 @@ public class EinstellungenGUI extends Parent_GUI implements ActionListener {
         ColorChange.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (colorChange) {
-                    ButtonUeberschriftColor.setForeground(dark);
-                    colorChange=false;
-                } else {
-                    ButtonUeberschriftColor.setForeground(white);
-                    colorChange=true;
+                if (ButtonTextColor.getText().equals("White")){
+                    ButtonTextColor.setText("Dark");
+                }else{
+                    ButtonTextColor.setText("White");
                 }
             }
         });
+        SpeichernButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                if (colorChange){
+                    if (ButtonTextColor.getText().equals("Dark")){
+                        try {
+                            setColorChange(false);
+                        } catch (IOException ex) {
+                            ex.printStackTrace();
+                            throw new RuntimeException(ex);
+                        }
+                    }
+                }else{
+                    if (ButtonTextColor.getText().equals("White")){
+                        try {
+                            setColorChange(true);
+                        } catch (IOException ex) {
+                            ex.printStackTrace();
+                            throw new RuntimeException(ex);
+                        }
+                    }
+                }
+
+                try {
+                    Foo.saveAngemeldetBleiben(angemeldetBleiben);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+                if (konAngemeldet){
+                    KontrolleurGUI.openKonGUI(parentGUI.parentGUI);
+                }
+                if (adminAngemeldet){
+                    AdminGUI.openAdminGUI(parentGUI.parentGUI);
+                }
+                if (sbAngemeldet){
+                    SachbearbeiterGUI.openSBGUI(parentGUI.parentGUI);
+                }
+                parentGUI.dispose();
+                dispose();
+            }
+        });
+
         AnButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -216,30 +266,6 @@ public class EinstellungenGUI extends Parent_GUI implements ActionListener {
             }
         });
 
-        SpeichernButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-
-                    try {
-                        parentGUI.currentUser.setAutoLogout(ButtonAutoLogoutText.getText());
-                        Foo.currentUser.setAutoLogout(ButtonAutoLogoutText.getText());
-                    } catch (IOException ex) {
-                        ex.printStackTrace();
-                        throw new RuntimeException(ex);
-                    }
-                    try {
-                    Foo.saveAngemeldetBleiben(angemeldetBleiben);
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
-                parentGUI.StartAutoLogout();
-                parentGUI.refreshCurrentUser();
-                System.out.println("Starte AutoLogout für " + parentGUI.name);
-                parentGUI.Kachel5.setEnabled(true);
-                dispose();
-            }
-        });
 
     }
         public static void openEinstellungenGUI (Parent_GUI parent){

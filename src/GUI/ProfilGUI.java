@@ -10,6 +10,8 @@ import javax.swing.text.AbstractDocument;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.IOException;
 
 import static src.Foo.*;
@@ -28,13 +30,11 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
     PlaceholderTextField Geburtstag = new PlaceholderTextField();
     PlaceholderTextField EMail = new PlaceholderTextField();
     PlaceholderTextField Telefonnummer = new PlaceholderTextField();
-    JButton SpeichernButton = new JButton();
+    JButton SpeicherButton = new JButton();
     JButton AbbrechenButton = new JButton();
     JButton AngabenAendern = new JButton();
     JButton PasswortAendernButton = new JButton();
-    JLabel AngabenAendernLabel = new JLabel();
-    JLabel PasswortVergessenLabel = new JLabel();
-    JButton SpeicherButton = new JButton();
+
 
     public ProfilGUI(Parent_GUI parent){
 
@@ -97,15 +97,67 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
 
         styleTextField(EMail, currentUser.getEmail());
         EMail.setBounds(75,440,250,40);
+        EMail.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+                if (EMail.getText().isBlank()){
+                    EMail.setPlaceholder("E-Mail*");
+                    EMail.setBackground(red);
+                }else{
+                    EMail.setBackground(dark);
+                }
+                if (!EMail.getText().contains("@")){
+                    EMail.setBackground(red);
+                }else{
+                    EMail.setBackground(dark);
+                }
+            }
+        });
+
 
         styleTextField(Telefonnummer, currentUser.getTelefonnummer());
         Telefonnummer.setBounds(75,380,250,40);
         ((AbstractDocument)Telefonnummer.getDocument()).setDocumentFilter(nfilter);
 
+        Telefonnummer.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+                if (Telefonnummer.getText().isBlank()){
+
+                    Telefonnummer.setPlaceholder("Telefonnummer");
+                }
+
+
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        });
+
         AbbrechenButton.setBackground(hellb);
         AbbrechenButton.setForeground(white);
         AbbrechenButton.setText("Abbrechen");
         AbbrechenButton.setFont(fontverySmall);
+        AbbrechenButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         AbbrechenButton.setBounds(150,100,100,40);
 
 
@@ -115,6 +167,7 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
         AngabenAendern.setText("Angaben ändern");
         AngabenAendern.setForeground(white);
         AngabenAendern.setFont(fontverySmall);
+        AngabenAendern.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         AngabenAendern.setBounds(75,55,100,40);
 
 
@@ -124,6 +177,7 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
         PasswortAendernButton.setText("Passwort ändern");
         PasswortAendernButton.setForeground(white);
         PasswortAendernButton.setFont(fontverySmall);
+        PasswortAendernButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         PasswortAendernButton.setBounds(225, 55, 100, 40);
 
         PasswortAendernButton.addActionListener(new ActionListener() {
@@ -161,6 +215,7 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
         SpeicherButton.setFont(fontverySmall);
         SpeicherButton.setText("Speichern");
         SpeicherButton.setBounds(150,0,100,40);
+        SpeicherButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         SpeicherButton.setEnabled(false);
 
 
@@ -215,13 +270,16 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                angabenAendern(false);
-                try {
-                    currentUser.setEmail(EMail.getText());
-                    currentUser.setTelefon(Telefonnummer.getText());
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
+                if (pflichtAusgefüllt()){
+                    angabenAendern(false);
+                    try {
+                        currentUser.setEmail(EMail.getText());
+                        currentUser.setTelefon(Telefonnummer.getText());
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
+                    }
                 }
+
             }
         });
         AngabenAendern.addActionListener(new ActionListener() {
@@ -232,7 +290,23 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
         });
 
     }
+    private boolean pflichtAusgefüllt(){
+        boolean b = false;
+        if (!EMail.getText().isBlank()){
+                if (EMail.getText().contains("@")){
+                    return true;
+                }
+        }
+        if (!EMail.getText().contains("@")){
+            if(!colorChange){
+                EMail.addRedFlashEffect();
+            } else {
+                EMail.addRedFlashEffectWhiteField();
+            }
+        }
 
+        return b;
+    }
     void styleTextField(PlaceholderTextField field, String txt){
         field.setForeground(white);
         field.setBackground(dark);
