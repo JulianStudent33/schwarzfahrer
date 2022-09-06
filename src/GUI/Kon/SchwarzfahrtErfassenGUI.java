@@ -18,8 +18,6 @@ import java.util.Calendar;
 import static src.Foo.*;
 
 public class SchwarzfahrtErfassenGUI extends Parent_GUI {
-
-    public static boolean isOpen = false;
     private static Kontrolleur currentUser;
     private static Schwarzfahrer currentSf;
     private JPanel mainPanel;
@@ -109,7 +107,6 @@ public class SchwarzfahrtErfassenGUI extends Parent_GUI {
             }
         });
 
-
         datumButton2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -136,9 +133,6 @@ public class SchwarzfahrtErfassenGUI extends Parent_GUI {
 
             }
         });
-
-
-
 
         landComboBox.addActionListener(new ActionListener() {
             @Override
@@ -362,9 +356,8 @@ public class SchwarzfahrtErfassenGUI extends Parent_GUI {
 
         return false;
     }
-    public static void open(Parent_GUI parent) {
+    public static void openSfErfassen(Parent_GUI parent) {
         Foo.getDirectoryData();
-        isOpen = true;
         SchwarzfahrtErfassenGUI gui = new SchwarzfahrtErfassenGUI(parent);
     }
 
