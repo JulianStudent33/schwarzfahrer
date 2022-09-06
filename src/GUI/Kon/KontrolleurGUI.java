@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 
 public class KontrolleurGUI extends Parent_GUI {
     String[] texts = {"<html><body><center><p>Schwarzfahrt<br>erfassen</p></center></body></html>",
-            "<html><body><center><p>Schwarzfahrer<br>suchen</p></center></body></html>",
+            "<html><body><center><p>Linie<br>festlegen</p></center></body></html>",
             "<html><body><center><p>Statistiken</p></center></body></html>",
             "<html><body><center><p>Profil</p></center></body></html>",
             "<html><body><center><p>Einstellungen</p></center></body></html>",
@@ -39,6 +39,7 @@ public class KontrolleurGUI extends Parent_GUI {
             public void actionPerformed(ActionEvent e) {
 
                 //zu implementieren
+                LinieFestlegenGUI.openLfErfassen(getFrame());
                 Kachel2.setEnabled(false);
             }
         });
