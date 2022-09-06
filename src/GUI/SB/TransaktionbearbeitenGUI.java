@@ -193,9 +193,6 @@ public class TransaktionbearbeitenGUI extends Parent_GUI implements ActionListen
     }
 
     public void displaySft() {
-
-
-
         Foo.getDirectoryData();
 
         String[] stringArray = new String[sftCount];

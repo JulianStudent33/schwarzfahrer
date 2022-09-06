@@ -2,34 +2,43 @@ package src.GUI.SB;
 import src.Foo;
 import src.GUI.Parent_GUI;
 import src.PersFile;
-import src.Rollen.Administrator;
-import src.Rollen.Kontrolleur;
-import src.Rollen.Sachbearbeiter;
+import src.Rollen.*;
 
 import static src.Foo.*;
+import src.GUI.elements.customComboBox;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListener {
 
-    String[] mitarbeiter;
+    String[] options = {"Schwarzfahrer", "Linie", "Status", "Jahr", "Monat", "Tag", "Datum"};
+    List<String> schwarzfahrten = new ArrayList<>();
+    customComboBox dropDown = new customComboBox();
     final DefaultListModel<String> model = new DefaultListModel<>();
     final JList<String> list = new JList<>(model);
     JScrollPane scrollpane = new JScrollPane(list);
 
-    JButton bearbeiten = new JButton();
     JButton loeschen = new JButton();
     JButton abbrechen = new JButton();
+
+
+
+
 
 
     public SchwarzfahrtensuchenGUI(Parent_GUI parent){
         //Setup
         //getMitarbeiter();
         setupGUI(parent, "Schwarzfahrten suchen");
+
+
+        dropDown.addStringArray(options);
 
         list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         list.setBackground(notSoDark);
@@ -121,6 +130,109 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
         });
 
     }
+
+    public void displaySFT(String param, String arg){
+        Foo.getDirectoryData();
+        List<String> stringList = new ArrayList<>();
+
+        if (param.equals(options[0])){
+            System.out.println("Suche alle SFT von Schwarzfahrer " + arg);
+            for (Schwarzfahrer S : SchwarzfahrerListe){
+                if (S.getAusweisnummer().equals(arg)){
+
+                    for (Schwarzfahrt sft : S.sftList){
+                        stringList.add(sft.getLinie() + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
+
+                    }
+                    this.schwarzfahrten = stringList;
+                }else{
+                    System.out.println("Keine Treffer");
+                }
+                return;
+            }
+
+        } else if (param.equals(options[1])) {
+            System.out.println("Suche alle SFT von Linie " + arg);
+
+            for (Schwarzfahrt sft : SchwarzfahrtenListe){
+                if (sft.getLinie().equals(arg)){
+                    stringList.add(sft.getLinie() + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
+                }
+            }
+            if (stringList.isEmpty()){
+                System.out.println("Keine Treffer");
+            }else{
+                this.schwarzfahrten = stringList;
+            }
+
+
+        }else if (param.equals(options[2])) {
+            System.out.println("Suche alle SFT nach Status " + arg);
+            for (Schwarzfahrt sft : SchwarzfahrtenListe){
+                if (sft.getStatus().equals(arg)){
+                    stringList.add(sft.getLinie() + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
+                }
+            }
+            if (stringList.isEmpty()){
+                System.out.println("Keine Treffer");
+            }else{
+                this.schwarzfahrten = stringList;
+            }
+
+        }else if (param.equals(options[3])) {
+            System.out.println("Suche alle SFT von Jahr" + arg);
+            for (Schwarzfahrt sft : SchwarzfahrtenListe){
+                if (String.valueOf(sft.getYEAR()).equals(arg)){
+                    stringList.add(sft.getLinie() + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
+                }
+            }
+            if (stringList.isEmpty()){
+                System.out.println("Keine Treffer");
+            }else{
+                this.schwarzfahrten = stringList;
+            }
+
+        }else if (param.equals(options[4])) {
+            System.out.println("Suche alle SFT von Monat" + arg);
+            for (Schwarzfahrt sft : SchwarzfahrtenListe){
+                if (String.valueOf(sft.getMONTH()).equals(arg)){
+                    stringList.add(sft.getLinie() + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
+                }
+            }
+            if (stringList.isEmpty()){
+                System.out.println("Keine Treffer");
+            }else{
+                this.schwarzfahrten = stringList;
+            }
+        }else if (param.equals(options[5])) {
+            System.out.println("Suche alle SFT von Tag" + arg);
+            for (Schwarzfahrt sft : SchwarzfahrtenListe){
+                if (String.valueOf(sft.getDAY()).equals(arg)){
+                    stringList.add(sft.getLinie() + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
+                }
+            }
+            if (stringList.isEmpty()){
+                System.out.println("Keine Treffer");
+            }else{
+                this.schwarzfahrten = stringList;
+            }
+
+        }else if (param.equals(options[6])) {
+            System.out.println("Suche alle SFT von Datum " + arg);
+            for (Schwarzfahrt sft : SchwarzfahrtenListe){
+                if (sft.getZeitpunkt().equals(arg)){
+                    stringList.add(sft.getLinie() + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
+                }
+            }
+            if (stringList.isEmpty()){
+                System.out.println("Keine Treffer");
+            }else{
+                this.schwarzfahrten = stringList;
+            }
+
+        }
+
+    }
     public static void main(String[] args) {
         openSchwarzfahrtensuchenGUI(null);
     }
@@ -135,61 +247,5 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
 
     }
 
-    //CODE KOPIERT AUS MITARBEITERVERWALTENGUI, weiß nicht inwiefern das hier drin bleiben muss, kannst du ja dann
-    //einfach rausschmeißen oder ändern bezüglich der Transaktionen etc ~Nick
 
-    public void getMitarbeiter() {
-        Foo.getDirectoryData();
-        int anzahlMitarbeiter = userCount;
-        String[] stringArray = new String[anzahlMitarbeiter];
-
-        if (konCount>=1){
-            for (int i = 0; i < konCount; i++){
-                try {
-                    Kontrolleur k = (Kontrolleur) PersFile.laden(KontrolleurFileListe.get(i));
-                    System.out.println(k.getVorname());
-                    stringArray[i]  = k.getNachname() + ", " + k.getVorname() + " (" + k.getMitarbeiternummer() + ")";
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                } catch (ClassNotFoundException e) {
-                    throw new RuntimeException(e);
-                }
-
-            }
-        }
-
-        if (SachbearbeiterFileListe.size()>=1){
-            for (int i = konCount; i < sbCount + konCount; i++){
-                try {
-                    Sachbearbeiter s = (Sachbearbeiter) PersFile.laden(SachbearbeiterFileListe.get(i-konCount));
-                    System.out.println(s.getVorname());
-                    stringArray[i] = s.getNachname() + ", " + s.getVorname() + " (" + s.getMitarbeiternummer() + ")";
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                } catch (ClassNotFoundException e) {
-                    throw new RuntimeException(e);
-                }
-
-            }
-        }
-
-        for (int i = konCount + sbCount; i < userCount; i++){
-            try {
-                Administrator a = (Administrator) PersFile.laden(AdminFileListe.get(i-konCount-sbCount));
-                System.out.println(a.getVorname());
-                stringArray[i] = a.getNachname() + ", " + a.getVorname() + " (" + a.getMitarbeiternummer() + ")";
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
-            }
-
-        }
-
-        this.mitarbeiter = stringArray;
-
-    }
-    public void deleteMitarbeiter(){
-
-    }
 }

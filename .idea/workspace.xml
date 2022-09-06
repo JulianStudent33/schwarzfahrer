@@ -9,37 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="g">
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Colorbutton implementiert, Curser angepasst, Profil gefixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Schwarzfahrer/ABC.sf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Admin/Admin4.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Kontrolleur/Konni1.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Kontrolleur/Konni2.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/SB/Sachi2.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/deleteFile.save" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/loggedIN.save" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/loggedIN.save" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/ProfilGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/RegisterGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/EinstellungenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/EinstellungenGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/ProfilGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ProfilGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/loggedIN.save" beforeDir="false" afterPath="$PROJECT_DIR$/Saves/loggedIN.save" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/SB/SchwarzfahrtensuchenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/SB/SchwarzfahrtensuchenGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/SB/TransaktionbearbeitenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/SB/TransaktionbearbeitenGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -293,21 +267,7 @@
       <workItem from="1662037842125" duration="2417000" />
       <workItem from="1662128955827" duration="115000" />
       <workItem from="1662365478650" duration="2278000" />
-      <workItem from="1662444212992" duration="4675000" />
-    </task>
-    <task id="LOCAL-00088" summary="auto logout und location relative to parent">
-      <created>1660812843344</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1660812843344</updated>
-    </task>
-    <task id="LOCAL-00089" summary="auto logout und location relative to parent">
-      <created>1660814905168</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1660814905169</updated>
+      <workItem from="1662444212992" duration="9226000" />
     </task>
     <task id="LOCAL-00090" summary="many changes">
       <created>1660832787073</created>
@@ -638,7 +598,21 @@
       <option name="project" value="LOCAL" />
       <updated>1662444333794</updated>
     </task>
-    <option name="localTasksCounter" value="137" />
+    <task id="LOCAL-00137" summary="Colorbutton implementiert, Curser angepasst, Profil gefixed">
+      <created>1662450062950</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1662450062951</updated>
+    </task>
+    <task id="LOCAL-00138" summary="Colorbutton implementiert, Curser angepasst, Profil gefixed">
+      <created>1662450073655</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1662450073655</updated>
+    </task>
+    <option name="localTasksCounter" value="139" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -659,7 +633,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Inactivity Listener und logout implementiert" />
     <MESSAGE value="dfg" />
     <MESSAGE value="Button enable diswbale" />
     <MESSAGE value="changes" />
@@ -684,7 +657,8 @@
     <MESSAGE value="Comments und Verschönerungen" />
     <MESSAGE value="Gui styling zusammengefasst wo es ging, Bug gefixt, bei dem delete request wiederholt wurden wenn der benutzer neu erstellt wurde. GUIs verbessert generell" />
     <MESSAGE value="g" />
-    <option name="LAST_COMMIT_MESSAGE" value="g" />
+    <MESSAGE value="Colorbutton implementiert, Curser angepasst, Profil gefixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Colorbutton implementiert, Curser angepasst, Profil gefixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -716,7 +690,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/EinstellungenGUI.java</url>
-          <line>236</line>
+          <line>231</line>
           <option name="timeStamp" value="118" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -801,7 +775,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/GUI/EinstellungenGUI.java</url>
-          <line>261</line>
+          <line>256</line>
           <properties method="actionPerformed">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
