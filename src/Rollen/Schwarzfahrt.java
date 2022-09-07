@@ -19,26 +19,24 @@ public class Schwarzfahrt implements Serializable {
     public String linie;
     public Status status;
 
-    public Schwarzfahrt(Schwarzfahrer sf, String date, int hour, int minute , String linie, boolean isBezahlt){
+    public Schwarzfahrt(Schwarzfahrer sf, String date, String hour, String minute , String linie, boolean isBezahlt){
         this.sf = sf;
         int[] date1 = dateToNumber(date);
         this.DAY = date1[0];
         this.MONTH = date1[1];
         this.YEAR = date1[2];
-        this.HOUR = hour;
-        this.MINUTE = minute;
+        this.HOUR = Integer.parseInt(hour);
+        this.MINUTE = Integer.parseInt(minute);
         this.linie = linie;
 
 
-        this.zeitpunkt = date.concat(" um ").concat(String.valueOf(hour).concat(":").concat(String.valueOf(minute)));
+        this.zeitpunkt = date.concat(" um ").concat(hour.concat(":").concat(minute));
         status = new Status();
         if (isBezahlt){
             status.setBezahlt();
         }else{
             status.setOffen();
         }
-
-        //sf.sftList.add(this);
 
         try {
             sf.createSfFile();

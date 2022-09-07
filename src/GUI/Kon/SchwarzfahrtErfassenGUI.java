@@ -9,6 +9,7 @@ import src.Rollen.Kontrolleur;
 import src.Rollen.Schwarzfahrer;
 
 import javax.swing.*;
+import javax.swing.text.AbstractDocument;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -65,19 +66,14 @@ public class SchwarzfahrtErfassenGUI extends Parent_GUI {
 
         setResizable(false);
 
-        try {
-            UIManager.setLookAndFeel(new FlatDarkLaf());
-        } catch (UnsupportedLookAndFeelException e) {
-            throw new RuntimeException(e);
-        }
-
-
-
         datumButton1.setText(Foo.getCurrentDate());
         stundenBox.setSelectedIndex(java.util.Calendar.getInstance().get(Calendar.HOUR_OF_DAY));
         minutenBox.setSelectedIndex(java.util.Calendar.getInstance().get(Calendar.MINUTE));
         linieTextField.setPlaceholder("z.B. S41");
-
+        ((AbstractDocument)linieTextField.getDocument()).setDocumentFilter(new SizeFilter(4));
+        if (KontrolleurGUI.currentLine!=null && KontrolleurGUI.currentLine!=""){
+            linieTextField.setText(KontrolleurGUI.currentLine);
+        }
 
 
 
@@ -187,13 +183,13 @@ public class SchwarzfahrtErfassenGUI extends Parent_GUI {
 
                         if (currentSf ==null){
                             currentSf = new Schwarzfahrer(ausweisnummerTextField.getText(), geburtsortTextField.getText(), neueAdresse, vornameTextField.getText(), nachnameTextField.getText(), geschlechtBox.getSelectedItem().toString(), telefonTextField.getText(), emailTextField.getText(), geburtsdatum[0], geburtsdatum[1], geburtsdatum[2]);
-                            currentSf.appendSFT(datumButton1.getText(), Integer.parseInt(stundenBox.getSelectedItem().toString()), Integer.parseInt(minutenBox.getSelectedItem().toString()), linieTextField.getText(), bereitsBezahltCheckBox.isSelected());
+                            currentSf.appendSFT(datumButton1.getText(), stundenBox.getSelectedItem().toString(), minutenBox.getSelectedItem().toString(), linieTextField.getText(), bereitsBezahltCheckBox.isSelected());
                             //Übergibt dem Schwarzfahrerobjekt die Variablen zur Schwarzfahrt, int[], int, int, String, boolean
                         }
 
                         else{
                            Schwarzfahrer.updateExistingSF(ausweisnummerTextField.getText(), geburtsortTextField.getText(), neueAdresse, vornameTextField.getText(), nachnameTextField.getText(), geschlechtBox.getSelectedItem().toString(), telefonTextField.getText(), emailTextField.getText(), geburtsdatum[0], geburtsdatum[1], geburtsdatum[2], currentSf.sftList);
-                                 currentSf.appendSFT(datumButton1.getText(), Integer.parseInt(stundenBox.getSelectedItem().toString()), Integer.parseInt(minutenBox.getSelectedItem().toString()), linieTextField.getText(), bereitsBezahltCheckBox.isSelected());
+                                 currentSf.appendSFT(datumButton1.getText(), stundenBox.getSelectedItem().toString(), minutenBox.getSelectedItem().toString(), linieTextField.getText(), bereitsBezahltCheckBox.isSelected());
                             //Übergibt dem Schwarzfahrerobjekt die Variablen zur Schwarzfahrt, int[], int, int, String, boolean
                         }
 

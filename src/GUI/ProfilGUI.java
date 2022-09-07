@@ -275,6 +275,7 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
                     try {
                         currentUser.setEmail(EMail.getText());
                         currentUser.setTelefon(Telefonnummer.getText());
+                        refreshCurrentUser();
                     } catch (IOException ex) {
                         throw new RuntimeException(ex);
                     }

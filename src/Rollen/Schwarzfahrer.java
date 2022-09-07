@@ -68,7 +68,7 @@ public class Schwarzfahrer extends Person{
         System.out.println("File geschrieben.");
     }
 
-    public void appendSFT(String date, int hour, int minute, String linie, boolean isBezahlt) throws IOException {
+    public void appendSFT(String date, String hour, String minute, String linie, boolean isBezahlt) throws IOException {
         System.out.println("Elemente in sftList: " + sftList.size());
         Schwarzfahrt sft = new Schwarzfahrt(this, date, hour, minute, linie, isBezahlt);
         sftList.add(sft);

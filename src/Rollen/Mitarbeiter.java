@@ -55,6 +55,20 @@ public abstract class Mitarbeiter extends Person{
         }
     }
     public void abmelden(){
+
+        //Debugg
+        System.out.println("Telefonnummer this " + this.telefonnummer);
+        try {
+            Mitarbeiter mb = (Mitarbeiter) PersFile.laden(this.userFile);
+            System.out.println("Telefonnummer thisUserFile " + mb.telefonnummer);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+
+
         try {
             Foo.saveAngemeldetBleiben(false);
             Foo.getAngemeldetBleiben();
@@ -67,6 +81,10 @@ public abstract class Mitarbeiter extends Person{
             e.printStackTrace();
             throw new RuntimeException(e);
         }
+
+
+
+
     }
 
     //Getter und setter

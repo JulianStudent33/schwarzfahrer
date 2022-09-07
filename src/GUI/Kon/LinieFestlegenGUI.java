@@ -4,11 +4,13 @@ import src.Foo;
 import src.GUI.EinstellungenGUI;
 import src.GUI.Parent_GUI;
 import src.GUI.elements.PlaceholderTextField;
+import src.GUI.elements.SizeFilter;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
+import javax.swing.text.AbstractDocument;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,6 +27,7 @@ public class LinieFestlegenGUI extends Parent_GUI{
     private JPanel BG = new JPanel();
 
     private JPanel buttonPanel = new JPanel();
+    SizeFilter sfilter = new SizeFilter(4);
 
     public LinieFestlegenGUI(Parent_GUI parent) {
         setupGUI(parent, "LinieFestlegenGUI");
@@ -45,6 +48,13 @@ public class LinieFestlegenGUI extends Parent_GUI{
 
         styleTextField(linienTextfield, "z.B. S41");
         linienTextfield.setBounds(100,30,150,30);
+        ((AbstractDocument)linienTextfield.getDocument()).setDocumentFilter(sfilter);
+        if (KontrolleurGUI.currentLine!=null & KontrolleurGUI.currentLine!=""){
+            linienTextfield.setText(KontrolleurGUI.currentLine);
+        }
+
+
+
 
         linienText.setText("Linie:");
         linienText.setForeground(white); //same
@@ -88,6 +98,7 @@ public class LinieFestlegenGUI extends Parent_GUI{
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                KontrolleurGUI.currentLine = linienTextfield.getText();
                 parentGUI.Kachel2.setEnabled(true);
                 dispose();
             }

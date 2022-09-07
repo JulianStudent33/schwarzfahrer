@@ -17,6 +17,7 @@ public class KontrolleurGUI extends Parent_GUI {
             "<html><body><center><p>Einstellungen</p></center></body></html>",
             "<html><body><center><p>Abmelden</p></center></body></html>"
     };
+    public static String currentLine;
     public KontrolleurGUI(Parent_GUI parent) {
 
         setupGUI(parent, "KontrolleurGUI");
@@ -78,7 +79,9 @@ public class KontrolleurGUI extends Parent_GUI {
                             frames[i].dispose();
                         }
                         StartfensterGUI.openStartFenster(getFrame());
+                        currentLine = null;
                         dispose();
+
 
                     }
                 });

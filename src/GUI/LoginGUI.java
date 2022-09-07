@@ -10,6 +10,7 @@ import src.PersFile;
 import src.GUI.elements.pass;
 import src.Rollen.Administrator;
 import src.Rollen.Kontrolleur;
+import src.Rollen.Mitarbeiter;
 import src.Rollen.Sachbearbeiter;
 import static src.Foo.*;
 import javax.swing.*;
@@ -195,8 +196,8 @@ public class LoginGUI extends Parent_GUI implements ActionListener {
 
                         if (Foo.AdminFileListe.contains(Path.of(Foo.adminPath + Foo.fileSeperator + bname.getText() + ".mb").toFile())) {
                             try {
-                                Administrator mb = (Administrator) PersFile.laden(Path.of(Foo.adminPath + Foo.fileSeperator + bname.getText() + ".mb").toFile());
-                                System.out.println("Datei gelesen");
+                                Mitarbeiter mb = (Mitarbeiter) PersFile.laden(Path.of(Foo.adminPath + Foo.fileSeperator + bname.getText() + ".mb").toFile());
+                                System.out.println("Datei gelesen, telefonnummer: " + mb.getTelefonnummer());
 
                                 if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())) {
                                     System.out.println("Passwort stimmt");

@@ -123,6 +123,7 @@ public abstract class Parent_GUI extends JFrame {
     }
 
     public Mitarbeiter getCurrentUser(){
+        /*
         if (parentGUI!=null && parentGUI.currentUser!=null){
             if (parentGUI.currentUser.isKontrolleur()){
                 this.konAngemeldet = true;
@@ -135,6 +136,8 @@ public abstract class Parent_GUI extends JFrame {
             return parentGUI.currentUser;
 
         }else{
+
+         */
             System.out.println("Current User aus Foo geholt");
             if (Foo.currentUser.isKontrolleur()){
                 this.konAngemeldet = true;
@@ -145,7 +148,7 @@ public abstract class Parent_GUI extends JFrame {
             }
             return Foo.currentUser;
 
-        }
+        //}
 
     }
     public void setupGUI(Parent_GUI parent, String name){
@@ -200,7 +203,8 @@ public abstract class Parent_GUI extends JFrame {
                 throw new RuntimeException(e);
             }
         }
-
+        Foo.currentUser = this.currentUser;
+        System.out.println("Foo currentuser telefon: " + Foo.currentUser.getTelefonnummer());;
     }
 
     public void styleMenu(String[] text){

@@ -202,7 +202,15 @@ public class TransaktionbearbeitenGUI extends Parent_GUI implements ActionListen
 
                     Schwarzfahrt sft = SchwarzfahrtenListe.get(i);
                     System.out.println(sft.sf.getVorname());
-                    stringArray[i]  = sft.getLinie() + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status;
+                    String l = sft.getLinie();
+                    switch (l.length()){
+                        case 1: l = l.concat("      ");
+                        break;
+                        case 2: l = l.concat("    ");
+                        break;
+                        case 3: l = l.concat("  ");
+                    }
+                    stringArray[i]  = l + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status;
             }
 
 
