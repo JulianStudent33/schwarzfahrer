@@ -1,6 +1,7 @@
 package src.GUI.SB;
 import src.Foo;
 import src.GUI.Parent_GUI;
+import src.GUI.elements.PlaceholderTextField;
 import src.PersFile;
 import src.Rollen.*;
 
@@ -27,12 +28,36 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
     JButton loeschen = new JButton();
     JButton abbrechen = new JButton();
 
+    JButton suchen = new JButton();
 
+    customComboBox suchFilter = new customComboBox();
+
+    String[] filter = {"Filter", "Linie", "Status","Ausweisnr.","Datum", "Jahr","Monat","Tag"};
+
+    PlaceholderTextField textSearchfield = new PlaceholderTextField();
 
 
 
 
     public SchwarzfahrtensuchenGUI(Parent_GUI parent){
+
+        suchFilter.addItem(filter[0]);
+        suchFilter.addItem(filter[1]);
+        suchFilter.addItem(filter[2]);
+        suchFilter.addItem(filter[3]);
+        suchFilter.addItem(filter[4]);
+        suchFilter.addItem(filter[5]);
+        suchFilter.addItem(filter[6]);
+        suchFilter.addItem(filter[7]);
+
+        if(suchFilter.getItemAt(0)=="Geschlecht*") {
+            suchFilter.setForeground(notSoDark);
+        } else {
+            suchFilter.setForeground(white);
+        }
+        suchFilter.setBackground(dark);
+        suchFilter.setFont(fontverySmall);
+
         //Setup
         //getMitarbeiter();
         setupGUI(parent, "Schwarzfahrten suchen");
@@ -55,10 +80,21 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
         listpan.setPreferredSize(new Dimension(100,150));
 
         JPanel Buttonpan = new JPanel();
-        Buttonpan.setLayout(new BorderLayout());
         Buttonpan.setBackground(dark);
         Buttonpan.setPreferredSize(new Dimension(100,150));
         Buttonpan.setLayout(null);
+
+        JPanel Buttonsize = new JPanel();
+        Buttonsize.setBackground(dark);
+        Buttonsize.setBounds(66,60,350,30);
+        Buttonsize.setLayout(new GridLayout(1,3,10,0));
+
+        JPanel textSearch = new JPanel();
+        textSearch.setBackground(dark);
+        textSearch.setBounds(66,10,350,30);
+        textSearch.setLayout(null);
+
+
 
         JLabel label = new JLabel();
         label.setText("<html><body><center><p>Schwarzfahrten suchen</p></center></body></html>");
@@ -69,6 +105,28 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
         label.setHorizontalAlignment(JLabel.CENTER);
         label.setVerticalAlignment(JLabel.CENTER);
         label.setBounds(200,50, 500,50);
+
+        textSearchfield.setBackground(whitebg);
+        textSearchfield.setForeground(white);
+        textSearchfield.setPlaceholder("Suchbegriff");
+        textSearchfield.setCaretColor(notSoDark); //same
+        textSearchfield.setFont(fontMedium); //same
+        textSearchfield.setSelectedTextColor(dark); //same
+        textSearchfield.setSelectionColor(notSoDark); //same
+        textSearchfield.setBounds(0,0,350,30);
+
+        suchen.setBackground(dunkelb);
+        suchen.setForeground(white);
+        suchen.setText("Suchen");
+        suchen.setHorizontalTextPosition(JLabel.CENTER);
+        suchen.setVerticalTextPosition(JLabel.CENTER);
+        suchen.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
+        suchen.setHorizontalAlignment(JLabel.CENTER);
+        suchen.setVerticalAlignment(JLabel.CENTER);
+        suchen.setFocusable(false);
+        suchen.setBorderPainted(false);
+        suchen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+
 
         abbrechen.addActionListener(this);
         abbrechen.setText("Abbrechen");
@@ -82,7 +140,6 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
         abbrechen.setFocusable(false);
         abbrechen.setBorderPainted(false);
         abbrechen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        abbrechen.setBounds(195,10,100,30);
 
         listpan.setBorder(BorderFactory.createEmptyBorder(0, 70, 20, 70));
         scrollpane.setBounds(0,200,300,400);
@@ -91,7 +148,13 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
         //Add to panel
         Textpan.add(label);
         listpan.add(new JScrollPane(list));
-        Buttonpan.add(abbrechen);
+        textSearch.add(textSearchfield);
+        Buttonsize.add(suchFilter);
+        Buttonsize.add(suchen);
+        Buttonsize.add(abbrechen);
+        Buttonpan.add(textSearch);
+        Buttonpan.add(Buttonsize);
+
 
         //add panels to window
         this.add(Textpan,BorderLayout.NORTH);
@@ -126,6 +189,18 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
             public void actionPerformed(ActionEvent e) {
                 parentGUI.Kachel2.setEnabled(true);
                 dispose();
+            }
+        });
+
+        suchFilter.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                if (suchFilter.getItemAt(0).equals("Filter")){
+                    suchFilter.removeItemAt(0);
+                    suchFilter.setForeground(white);
+                    suchFilter.setPrototypeDisplayValue(null);
+                }
             }
         });
 
