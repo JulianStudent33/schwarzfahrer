@@ -2,7 +2,6 @@ package src.GUI.SB;
 import src.Foo;
 import src.GUI.Parent_GUI;
 import src.GUI.elements.PlaceholderTextField;
-import src.PersFile;
 import src.Rollen.*;
 
 import static src.Foo.*;
@@ -12,13 +11,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListener {
 
-    String[] options = {"Schwarzfahrer", "Linie", "Status", "Jahr", "Monat", "Tag", "Datum"};
+    String[] options = {"Filter","Ausweisnr.", "Linie", "Status", "Jahr", "Monat", "Tag", "Datum"};
     List<String> schwarzfahrten = new ArrayList<>();
     customComboBox dropDown = new customComboBox();
     final DefaultListModel<String> model = new DefaultListModel<>();
@@ -30,9 +28,13 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
 
     JButton suchen = new JButton();
 
-    customComboBox suchFilter = new customComboBox();
+    JButton datePickerfilter = new JButton();
+    customComboBox Status = new customComboBox();
+    String[] Statusfilter = {"Status", "Offen","Ausstehend" ,"Bezahlt"};
+
 
     String[] filter = {"Filter", "Linie", "Status","Ausweisnr.","Datum", "Jahr","Monat","Tag"};
+
 
     PlaceholderTextField textSearchfield = new PlaceholderTextField();
 
@@ -41,29 +43,19 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
 
     public SchwarzfahrtensuchenGUI(Parent_GUI parent){
 
-        suchFilter.addItem(filter[0]);
-        suchFilter.addItem(filter[1]);
-        suchFilter.addItem(filter[2]);
-        suchFilter.addItem(filter[3]);
-        suchFilter.addItem(filter[4]);
-        suchFilter.addItem(filter[5]);
-        suchFilter.addItem(filter[6]);
-        suchFilter.addItem(filter[7]);
-
-        if(suchFilter.getItemAt(0)=="Geschlecht*") {
-            suchFilter.setForeground(notSoDark);
-        } else {
-            suchFilter.setForeground(white);
-        }
-        suchFilter.setBackground(dark);
-        suchFilter.setFont(fontverySmall);
-
         //Setup
         //getMitarbeiter();
         setupGUI(parent, "Schwarzfahrten suchen");
 
 
-        dropDown.addStringArray(options);
+        dropDown.addItem(options[0]);
+        dropDown.addItem(options[1]);
+        dropDown.addItem(options[2]);
+        dropDown.addItem(options[3]);
+        dropDown.addItem(options[4]);
+        dropDown.addItem(options[5]);
+        dropDown.addItem(options[6]);
+        dropDown.addItem(options[7]);
 
         list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         list.setBackground(notSoDark);
@@ -106,6 +98,9 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
         label.setVerticalAlignment(JLabel.CENTER);
         label.setBounds(200,50, 500,50);
 
+        // Oberes Panel mit Suchbegriff !!!.setBounds!!! immer gleich
+
+        //Textfeld -> Linie, Tag, Monat, Jahr, Ausweisnr.
         textSearchfield.setBackground(whitebg);
         textSearchfield.setForeground(white);
         textSearchfield.setPlaceholder("Suchbegriff");
@@ -114,6 +109,45 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
         textSearchfield.setSelectedTextColor(dark); //same
         textSearchfield.setSelectionColor(notSoDark); //same
         textSearchfield.setBounds(0,0,350,30);
+
+        // Status Dropdown
+        Status.addItem(Statusfilter[0]);
+        Status.addItem(Statusfilter[1]);
+        Status.addItem(Statusfilter[2]);
+        Status.addItem(Statusfilter[3]);
+        if(Status.getItemAt(0)=="Status") {
+            Status.setForeground(notSoDark);
+        } else {
+            Status.setForeground(white);
+        }
+        Status.setBackground(dark);
+        Status.setFont(fontMedium);
+        Status.setBounds(0,0,350,30);
+
+        // Datepick Button
+        datePickerfilter.setBackground(whitebg);
+        datePickerfilter.setForeground(white);
+        datePickerfilter.setText("Datum auswählen");
+        datePickerfilter.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
+        datePickerfilter.setHorizontalAlignment(SwingConstants.LEFT);
+        datePickerfilter.setVerticalAlignment(SwingConstants.CENTER);
+        datePickerfilter.setFocusable(true);
+        datePickerfilter.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        datePickerfilter.setBounds(0,0,350,30);
+
+        // Unteres Panel
+
+        if (dropDown.getItemAt(0).equals("Filter")){
+            suchen.setEnabled(false);
+        }
+
+        if(dropDown.getItemAt(0)=="Filter") {
+            dropDown.setForeground(notSoDark);
+        } else {
+            dropDown.setForeground(white);
+        }
+        dropDown.setBackground(dark);
+        dropDown.setFont(fontverySmall);
 
         suchen.setBackground(dunkelb);
         suchen.setForeground(white);
@@ -126,7 +160,6 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
         suchen.setFocusable(false);
         suchen.setBorderPainted(false);
         suchen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-
 
         abbrechen.addActionListener(this);
         abbrechen.setText("Abbrechen");
@@ -149,7 +182,7 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
         Textpan.add(label);
         listpan.add(new JScrollPane(list));
         textSearch.add(textSearchfield);
-        Buttonsize.add(suchFilter);
+        Buttonsize.add(dropDown);
         Buttonsize.add(suchen);
         Buttonsize.add(abbrechen);
         Buttonpan.add(textSearch);
@@ -192,14 +225,27 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
             }
         });
 
-        suchFilter.addActionListener(new ActionListener() {
+        dropDown.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                if (suchFilter.getItemAt(0).equals("Filter")){
-                    suchFilter.removeItemAt(0);
-                    suchFilter.setForeground(white);
-                    suchFilter.setPrototypeDisplayValue(null);
+                if (dropDown.getItemAt(0).equals("Filter")){
+                    dropDown.removeItemAt(0);
+                    dropDown.setForeground(white);
+                    dropDown.setPrototypeDisplayValue(null);
+                    suchen.setEnabled(true);
+                }
+            }
+        });
+
+        Status.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                if (Status.getItemAt(0).equals("Status")){
+                    Status.removeItemAt(0);
+                    Status.setForeground(white);
+                    Status.setPrototypeDisplayValue(null);
                 }
             }
         });
