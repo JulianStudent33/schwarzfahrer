@@ -140,7 +140,6 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         datuml.setText(Foo.getCurrentDate());
         datuml.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
-        hour.addItem("Stunde");
         hour.setBackground(dark);
         hour.setForeground(white);
         hour.setFont(fontSmall);

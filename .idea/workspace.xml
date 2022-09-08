@@ -9,21 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="bugfix endlich ich raste aus man bin ich geil">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_09_2022_20_16__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_09_2022_20_16__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_10_33__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_10_33__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_10_33__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_10_33__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_12_58__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_12_58__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_19_52__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_19_52__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/loggedIN.save" beforeDir="false" afterPath="$PROJECT_DIR$/Saves/loggedIN.save" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Admin/JM.mb" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Admin/JM.mb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/loggedIN.save" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/loggedIN.save" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/KontrolleurGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/KontrolleurGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/LinieFestlegenGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/LinieFestlegenGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Kon/schwarzfahrtenerfassengui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Kon/schwarzfahrtenerfassengui.java" afterDir="false" />
-    </list>
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="gui fertig" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
