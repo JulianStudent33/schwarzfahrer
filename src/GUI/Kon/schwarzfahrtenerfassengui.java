@@ -190,7 +190,7 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         info.setForeground(notSoDark);
         info.setBounds(100,285,400,50);
 
-        ausweis.setText("Ausweisnr.:");
+        ausweis.setText("Ausweisnr:");
         ausweis.setFont(fontSmall);
         ausweis.setBackground(dark);
         ausweis.setForeground(white);
@@ -241,13 +241,13 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         genderBox.setBorder(new CompoundBorder(border, margin));
         genderBox.setBounds(15,65,150,30);
 
-        vname.setPlaceholder("Vorname");
+        vname.setPlaceholder("Vorname*");
         vname.setFont(fontSmall);
         vname.setBackground(dark);
         vname.setForeground(white);
         vname.setBounds(175,65,150,30);
 
-        name.setPlaceholder("Nachname");
+        name.setPlaceholder("Nachname*");
         name.setFont(fontSmall);
         name.setBackground(dark);
         name.setForeground(white);
@@ -255,12 +255,12 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
 
         datumr.setBackground(dark);
         datumr.setForeground(white);
-        datumr.setText("Geburtsdatum auswählen");
+        datumr.setText("Geburtsdatum auswählen*");
         datumr.setFont(fontSmall);
         datumr.setBounds(15,105,230,30);
         datumr.setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
 
-        ort.setPlaceholder("Geburtsort");
+        ort.setPlaceholder("Geburtsort*");
         ort.setFont(fontSmall);
         ort.setBackground(dark);
         ort.setForeground(white);
@@ -278,35 +278,35 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         nr.setForeground(white);
         nr.setBounds(225,145,260,30);
 
-        strasse.setPlaceholder("Straße");
+        strasse.setPlaceholder("Straße*");
         strasse.setFont(fontSmall);
         strasse.setBackground(dark);
         strasse.setForeground(white);
         strasse.setBounds(15,185,310,30);
 
-        hausnr.setPlaceholder("Hausnummer");
+        hausnr.setPlaceholder("Hausnummer*");
         hausnr.setFont(fontSmall);
         hausnr.setBackground(dark);
         hausnr.setForeground(white);
         hausnr.setBounds(335,185,150,30);
 
-        plz.setPlaceholder("PLZ");
+        plz.setPlaceholder("PLZ*");
         plz.setFont(fontSmall);
         plz.setBackground(dark);
         plz.setForeground(white);
         plz.setBounds(15,225,150,30);
 
-        stadt.setPlaceholder("Stadt");
+        stadt.setPlaceholder("Stadt*");
         stadt.setFont(fontSmall);
         stadt.setBackground(dark);
         stadt.setForeground(white);
         stadt.setBounds(175,225,310,30);
 
-        land.addItem("Staatsangehörigkeit");
+        land.addItem("Staatsangehörigkeit*");
 
         land.setFont(fontSmall);
         land.setBackground(whitebg);
-        if(land.getItemAt(0)=="Staatsangehörigkeit") {
+        if(land.getItemAt(0)=="Staatsangehörigkeit*") {
             land.setForeground(notSoDark);
         } else {
             land.setForeground(white);
