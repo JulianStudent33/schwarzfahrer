@@ -1,0 +1,906 @@
+Index: .idea/schwarzfahrerr.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/schwarzfahrerr.iml b/.idea/schwarzfahrerr.iml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/schwarzfahrerr.iml	
+@@ -0,0 +1,12 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="library" name="flatlaf-2.4" level="project" />
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ArtifactsWorkspaceSettings\">\r\n    <artifacts-to-build>\r\n      <artifact name=\"schwarzfahrer:jar\" />\r\n    </artifacts-to-build>\r\n  </component>\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"0c57573a-8ff0-4a69-a18d-b7f15a8cd475\" name=\"Changes\" comment=\"c\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/GUI/Kon/KontrolleurGUI.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/GUI/Kon/KontrolleurGUI.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/GUI/Kon/SchwarzfahrtErfassenGUI.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/GUI/Kon/SchwarzfahrtErfassenGUI.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Enum\" />\r\n        <option value=\"UML Class\" />\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"Neuer_Branch\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitToolBoxStore\">\r\n    <option name=\"projectConfigVersion\" value=\"5\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"29J1CEjujM4BAFlkhQyHvzouQdG\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <OptionsSetting value=\"false\" id=\"Update\" />\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Class&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;true&quot;,\r\n    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;238&quot;,\r\n    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,\r\n    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;211&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/CBleck/Desktop/UNI Skripte/OOP/SchwarzfahrerProjekt&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\CBleck\\Desktop\\UNI Skripte\\OOP\\SchwarzfahrerProjekt\\src\\GUI\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\CBleck\\Desktop\\UNI Skripte\\OOP\\SchwarzfahrerProjekt\\src\\GUI\\Kon\" />\r\n      <recent name=\"C:\\Users\\CBleck\\Desktop\\UNI Skripte\\OOP\\SchwarzfahrerProjekt\\src\\GUI\\Admin\" />\r\n      <recent name=\"C:\\Users\\CBleck\\Desktop\\UNI Skripte\\OOP\\SchwarzfahrerProjekt\\src\\GUI\\Sachbearbeiter\" />\r\n      <recent name=\"C:\\Users\\CBleck\\Desktop\\UNI Skripte\\OOP\\SchwarzfahrerProjekt\\src\\GUI\\Kontrolleur\" />\r\n      <recent name=\"C:\\Users\\CBleck\\Desktop\\UNI Skripte\\OOP\\SchwarzfahrerProjekt\\src\\GUI\" />\r\n    </key>\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"src\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.Main\">\r\n    <configuration name=\"EinstellungenGUI\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"src.GUI.EinstellungenGUI\" />\r\n      <module name=\"schwarzfahrer\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"src.GUI.elements.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"src.Main\" />\r\n      <module name=\"schwarzfahrer\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"src.Rollen.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"MenuButton\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"src.GUI.elements.MenuButton\" />\r\n      <module name=\"schwarzfahrer\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"src.GUI.elements.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"ProfilGUI\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"src.GUI.ProfilGUI\" />\r\n      <module name=\"schwarzfahrer\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"src.GUI.elements.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"schwarzfahrer.jar\" type=\"JarApplication\" temporary=\"true\">\r\n      <option name=\"JAR_PATH\" value=\"$PROJECT_DIR$/out/artifacts/schwarzfahrer_jar/schwarzfahrer.jar\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.MenuButton\" />\r\n        <item itemvalue=\"JAR Application.schwarzfahrer.jar\" />\r\n        <item itemvalue=\"Application.ProfilGUI\" />\r\n        <item itemvalue=\"Application.EinstellungenGUI\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"0c57573a-8ff0-4a69-a18d-b7f15a8cd475\" name=\"Changes\" comment=\"\" />\r\n      <created>1652816249415</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1652816249415</updated>\r\n      <workItem from=\"1652816250427\" duration=\"35000\" />\r\n      <workItem from=\"1652816290096\" duration=\"3700000\" />\r\n      <workItem from=\"1652874625500\" duration=\"3731000\" />\r\n      <workItem from=\"1652885452314\" duration=\"10345000\" />\r\n      <workItem from=\"1652959087958\" duration=\"10359000\" />\r\n      <workItem from=\"1653169341358\" duration=\"1132000\" />\r\n      <workItem from=\"1653838855442\" duration=\"3406000\" />\r\n      <workItem from=\"1654012003489\" duration=\"1306000\" />\r\n      <workItem from=\"1654034086109\" duration=\"2063000\" />\r\n      <workItem from=\"1655125975838\" duration=\"297000\" />\r\n      <workItem from=\"1655126402365\" duration=\"759000\" />\r\n      <workItem from=\"1655196711769\" duration=\"20000\" />\r\n      <workItem from=\"1655289272319\" duration=\"912000\" />\r\n      <workItem from=\"1655371792546\" duration=\"1184000\" />\r\n      <workItem from=\"1655413475807\" duration=\"16473000\" />\r\n      <workItem from=\"1655479661852\" duration=\"5686000\" />\r\n      <workItem from=\"1655882181208\" duration=\"1006000\" />\r\n      <workItem from=\"1655894310049\" duration=\"5070000\" />\r\n      <workItem from=\"1655906091828\" duration=\"13000\" />\r\n      <workItem from=\"1655907207253\" duration=\"3443000\" />\r\n      <workItem from=\"1655911950056\" duration=\"1599000\" />\r\n      <workItem from=\"1655962346797\" duration=\"9354000\" />\r\n      <workItem from=\"1655994394906\" duration=\"1310000\" />\r\n      <workItem from=\"1655995726497\" duration=\"58000\" />\r\n      <workItem from=\"1655995901795\" duration=\"70000\" />\r\n      <workItem from=\"1656072636078\" duration=\"5908000\" />\r\n      <workItem from=\"1656085681996\" duration=\"160000\" />\r\n      <workItem from=\"1657181234999\" duration=\"78000\" />\r\n      <workItem from=\"1657181344036\" duration=\"3623000\" />\r\n      <workItem from=\"1657521444443\" duration=\"37000\" />\r\n      <workItem from=\"1657521507403\" duration=\"30673000\" />\r\n      <workItem from=\"1657557408759\" duration=\"2906000\" />\r\n      <workItem from=\"1657572313942\" duration=\"43000\" />\r\n      <workItem from=\"1657614413573\" duration=\"15008000\" />\r\n      <workItem from=\"1657641492772\" duration=\"1570000\" />\r\n      <workItem from=\"1657696410698\" duration=\"22600000\" />\r\n      <workItem from=\"1657731578260\" duration=\"3880000\" />\r\n      <workItem from=\"1657803381580\" duration=\"5339000\" />\r\n      <workItem from=\"1657870884233\" duration=\"3971000\" />\r\n      <workItem from=\"1657874911454\" duration=\"8152000\" />\r\n      <workItem from=\"1657885716702\" duration=\"36000\" />\r\n      <workItem from=\"1657886105846\" duration=\"3196000\" />\r\n      <workItem from=\"1657958711775\" duration=\"2971000\" />\r\n      <workItem from=\"1658256201664\" duration=\"2936000\" />\r\n      <workItem from=\"1658312610844\" duration=\"1240000\" />\r\n      <workItem from=\"1659883325166\" duration=\"9216000\" />\r\n      <workItem from=\"1659942065114\" duration=\"12541000\" />\r\n      <workItem from=\"1660023757005\" duration=\"5069000\" />\r\n      <workItem from=\"1660059117171\" duration=\"1553000\" />\r\n      <workItem from=\"1660120670153\" duration=\"672000\" />\r\n      <workItem from=\"1660132461830\" duration=\"5742000\" />\r\n      <workItem from=\"1660140451149\" duration=\"5358000\" />\r\n      <workItem from=\"1660147707052\" duration=\"89000\" />\r\n      <workItem from=\"1660148862685\" duration=\"28352000\" />\r\n      <workItem from=\"1660237530296\" duration=\"712000\" />\r\n      <workItem from=\"1660289329166\" duration=\"4032000\" />\r\n      <workItem from=\"1660500563051\" duration=\"1652000\" />\r\n      <workItem from=\"1660502315496\" duration=\"256000\" />\r\n      <workItem from=\"1660549839766\" duration=\"658000\" />\r\n      <workItem from=\"1660552450767\" duration=\"5000\" />\r\n      <workItem from=\"1660552792941\" duration=\"3312000\" />\r\n      <workItem from=\"1660559546716\" duration=\"2399000\" />\r\n      <workItem from=\"1660565713008\" duration=\"3365000\" />\r\n      <workItem from=\"1660572706785\" duration=\"2787000\" />\r\n      <workItem from=\"1660638938877\" duration=\"7993000\" />\r\n      <workItem from=\"1660657927237\" duration=\"860000\" />\r\n      <workItem from=\"1660722223472\" duration=\"12068000\" />\r\n      <workItem from=\"1660739586517\" duration=\"593000\" />\r\n      <workItem from=\"1660743418422\" duration=\"6720000\" />\r\n      <workItem from=\"1660806560123\" duration=\"2415000\" />\r\n      <workItem from=\"1660809048015\" duration=\"6000\" />\r\n      <workItem from=\"1660809072155\" duration=\"92000\" />\r\n      <workItem from=\"1660809228337\" duration=\"3877000\" />\r\n      <workItem from=\"1660813486558\" duration=\"14625000\" />\r\n      <workItem from=\"1660846184317\" duration=\"1046000\" />\r\n      <workItem from=\"1660853830588\" duration=\"14147000\" />\r\n      <workItem from=\"1660914596662\" duration=\"5425000\" />\r\n      <workItem from=\"1661176418154\" duration=\"269000\" />\r\n      <workItem from=\"1661176924783\" duration=\"173000\" />\r\n      <workItem from=\"1661182148585\" duration=\"7112000\" />\r\n      <workItem from=\"1661235920008\" duration=\"7578000\" />\r\n      <workItem from=\"1661249439985\" duration=\"783000\" />\r\n      <workItem from=\"1661261409804\" duration=\"8517000\" />\r\n      <workItem from=\"1661324627439\" duration=\"2789000\" />\r\n      <workItem from=\"1661331301536\" duration=\"133000\" />\r\n      <workItem from=\"1661331537133\" duration=\"5609000\" />\r\n      <workItem from=\"1661351018971\" duration=\"4647000\" />\r\n      <workItem from=\"1661415356867\" duration=\"6099000\" />\r\n      <workItem from=\"1661426888296\" duration=\"2398000\" />\r\n      <workItem from=\"1661435956916\" duration=\"2811000\" />\r\n      <workItem from=\"1661444043000\" duration=\"29000\" />\r\n      <workItem from=\"1661444190806\" duration=\"3814000\" />\r\n      <workItem from=\"1661850816131\" duration=\"11957000\" />\r\n      <workItem from=\"1661927222509\" duration=\"5543000\" />\r\n      <workItem from=\"1661934476374\" duration=\"1809000\" />\r\n      <workItem from=\"1662013842157\" duration=\"7838000\" />\r\n      <workItem from=\"1662037842125\" duration=\"2417000\" />\r\n      <workItem from=\"1662128955827\" duration=\"115000\" />\r\n      <workItem from=\"1662365478650\" duration=\"2278000\" />\r\n      <workItem from=\"1662444212992\" duration=\"11217000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00091\" summary=\"many changes\">\r\n      <created>1660846210488</created>\r\n      <option name=\"number\" value=\"00091\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00091\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1660846210488</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00092\" summary=\"angemeldet bleiben geht wieder\">\r\n      <created>1660891362267</created>\r\n      <option name=\"number\" value=\"00092\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00092\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1660891362267</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00093\" summary=\"angemeldet bleiben geht wieder\">\r\n      <created>1660891379443</created>\r\n      <option name=\"number\" value=\"00093\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00093\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1660891379444</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00094\" summary=\"GUI_Mama macht jetzt das Styling für alle Hauptmenüs\">\r\n      <created>1660901479123</created>\r\n      <option name=\"number\" value=\"00094\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00094\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1660901479123</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00095\" summary=\"GUI_Mama macht jetzt das Styling für alle Hauptmenüs\">\r\n      <created>1660901529046</created>\r\n      <option name=\"number\" value=\"00095\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00095\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1660901529047</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00096\" summary=\"GUI_Mama macht jetzt das Styling für alle Hauptmenüs\">\r\n      <created>1660901554498</created>\r\n      <option name=\"number\" value=\"00096\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00096\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1660901554498</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00097\" summary=\"GUI_Mama macht jetzt das Styling für alle Hauptmenüs\">\r\n      <created>1660914738317</created>\r\n      <option name=\"number\" value=\"00097\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00097\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1660914738318</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00098\" summary=\"GUI_Mama macht jetzt das Styling für alle Hauptmenüs\">\r\n      <created>1660916535708</created>\r\n      <option name=\"number\" value=\"00098\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00098\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1660916535709</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00099\" summary=\"FirstRegistration implementiert und Admin hat jetzt alle Werte\">\r\n      <created>1660917611604</created>\r\n      <option name=\"number\" value=\"00099\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00099\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1660917611604</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00100\" summary=\"g\">\r\n      <created>1661165529512</created>\r\n      <option name=\"number\" value=\"00100\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00100\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661165529512</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00101\" summary=\"Filter für Registration Window und Admin Anlegen\">\r\n      <created>1661174973053</created>\r\n      <option name=\"number\" value=\"00101\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00101\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661174973053</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00102\" summary=\"Filter für Registration Window und Admin Anlegen\">\r\n      <created>1661174977400</created>\r\n      <option name=\"number\" value=\"00102\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00102\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661174977400</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00103\" summary=\"Profil daten ändern implementiert, Filter implementiert, Admin Anlegen implementiert\">\r\n      <created>1661177081049</created>\r\n      <option name=\"number\" value=\"00103\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00103\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661177081050</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00104\" summary=\"Code Schneller gemacht\">\r\n      <created>1661182475813</created>\r\n      <option name=\"number\" value=\"00104\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00104\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661182475813</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00105\" summary=\"Statistiken fast fertig\">\r\n      <created>1661187494323</created>\r\n      <option name=\"number\" value=\"00105\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00105\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661187494323</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00106\" summary=\"Statistiken fast fertig\">\r\n      <created>1661187503080</created>\r\n      <option name=\"number\" value=\"00106\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00106\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661187503080</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00107\" summary=\"Statistiken fast fertig\">\r\n      <created>1661187697766</created>\r\n      <option name=\"number\" value=\"00107\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00107\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661187697767</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00108\" summary=\"^Bug im DatePick fixed\">\r\n      <created>1661237030597</created>\r\n      <option name=\"number\" value=\"00108\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00108\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661237030597</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00109\" summary=\"Das mit dem Admin anlegen gefixt\">\r\n      <created>1661238542305</created>\r\n      <option name=\"number\" value=\"00109\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00109\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661238542305</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00110\" summary=\"Passwort ändern Bug fixed\">\r\n      <created>1661239696258</created>\r\n      <option name=\"number\" value=\"00110\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00110\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661239696258</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00111\" summary=\"Passwort ändern Bug fixed\">\r\n      <created>1661239701941</created>\r\n      <option name=\"number\" value=\"00111\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00111\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661239701941</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00112\" summary=\"Passwort ändern Bug fixed\">\r\n      <created>1661244841401</created>\r\n      <option name=\"number\" value=\"00112\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00112\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661244841402</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00113\" summary=\"Mitarbeiterverwaltung Fertig endlich digga heiliger jesu hurensohn\">\r\n      <created>1661269922521</created>\r\n      <option name=\"number\" value=\"00113\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00113\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661269922522</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00114\" summary=\"Mitarbeiterverwaltung Fertig endlich digga heiliger jesu hurensohn\">\r\n      <created>1661329607648</created>\r\n      <option name=\"number\" value=\"00114\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00114\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661329607649</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00115\" summary=\"f\">\r\n      <created>1661331943074</created>\r\n      <option name=\"number\" value=\"00115\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00115\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661331943075</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00116\" summary=\"Space nicht mehr möglich wenn Filter applied\">\r\n      <created>1661334287786</created>\r\n      <option name=\"number\" value=\"00116\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00116\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661334287786</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00117\" summary=\"Space nicht mehr möglich wenn Filter applied\">\r\n      <created>1661334931253</created>\r\n      <option name=\"number\" value=\"00117\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00117\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661334931253</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00118\" summary=\"Alle einmal saves löschen. Transaktionen bearbeiten drin und colorchange mit abbrechen button bei reg\">\r\n      <created>1661357531383</created>\r\n      <option name=\"number\" value=\"00118\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00118\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661357531383</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00119\" summary=\"Alle einmal saves löschen. Transaktionen bearbeiten drin und colorchange mit abbrechen button bei reg\">\r\n      <created>1661415640055</created>\r\n      <option name=\"number\" value=\"00119\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00119\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661415640055</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00120\" summary=\"BugFix im Datepick bei dem man in die zukunft gehen konnte\">\r\n      <created>1661421497020</created>\r\n      <option name=\"number\" value=\"00120\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00120\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661421497020</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00121\" summary=\"f\">\r\n      <created>1661426950033</created>\r\n      <option name=\"number\" value=\"00121\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00121\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661426950033</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00122\" summary=\"f\">\r\n      <created>1661426956047</created>\r\n      <option name=\"number\" value=\"00122\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00122\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661426956047</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00123\" summary=\"f\">\r\n      <created>1661426960941</created>\r\n      <option name=\"number\" value=\"00123\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00123\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661426960941</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00124\" summary=\"f\">\r\n      <created>1661426969940</created>\r\n      <option name=\"number\" value=\"00124\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00124\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661426969940</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00125\" summary=\"f\">\r\n      <created>1661426978189</created>\r\n      <option name=\"number\" value=\"00125\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00125\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661426978189</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00126\" summary=\"f\">\r\n      <created>1661428937221</created>\r\n      <option name=\"number\" value=\"00126\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00126\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661428937221</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00127\" summary=\"Comments\">\r\n      <created>1661852630233</created>\r\n      <option name=\"number\" value=\"00127\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00127\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661852630234</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00128\" summary=\"Comments und Verschönerungen\">\r\n      <created>1661875303459</created>\r\n      <option name=\"number\" value=\"00128\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00128\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661875303459</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00129\" summary=\"Comments und Verschönerungen\">\r\n      <created>1661933482508</created>\r\n      <option name=\"number\" value=\"00129\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00129\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661933482509</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00130\" summary=\"Comments und Verschönerungen\">\r\n      <created>1661933500832</created>\r\n      <option name=\"number\" value=\"00130\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00130\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1661933500832</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00131\" summary=\"Gui styling zusammengefasst wo es ging, Bug gefixt, bei dem delete request wiederholt wurden wenn der benutzer neu erstellt wurde. GUIs verbessert generell\">\r\n      <created>1662025362053</created>\r\n      <option name=\"number\" value=\"00131\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00131\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1662025362054</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00132\" summary=\"Gui styling zusammengefasst wo es ging, Bug gefixt, bei dem delete request wiederholt wurden wenn der benutzer neu erstellt wurde. GUIs verbessert generell\">\r\n      <created>1662025367247</created>\r\n      <option name=\"number\" value=\"00132\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00132\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1662025367247</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00133\" summary=\"g\">\r\n      <created>1662054520023</created>\r\n      <option name=\"number\" value=\"00133\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00133\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1662054520023</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00134\" summary=\"g\">\r\n      <created>1662054529282</created>\r\n      <option name=\"number\" value=\"00134\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00134\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1662054529282</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00135\" summary=\"g\">\r\n      <created>1662366296608</created>\r\n      <option name=\"number\" value=\"00135\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00135\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1662366296609</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00136\" summary=\"g\">\r\n      <created>1662444333793</created>\r\n      <option name=\"number\" value=\"00136\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00136\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1662444333794</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00137\" summary=\"Colorbutton implementiert, Curser angepasst, Profil gefixed\">\r\n      <created>1662450062950</created>\r\n      <option name=\"number\" value=\"00137\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00137\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1662450062951</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00138\" summary=\"Colorbutton implementiert, Curser angepasst, Profil gefixed\">\r\n      <created>1662450073655</created>\r\n      <option name=\"number\" value=\"00138\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00138\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1662450073655</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00139\" summary=\"c\">\r\n      <created>1662457561099</created>\r\n      <option name=\"number\" value=\"00139\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00139\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1662457561099</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"140\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <ignored-roots>\r\n      <path value=\"$PROJECT_DIR$/..\" />\r\n    </ignored-roots>\r\n    <MESSAGE value=\"Button enable diswbale\" />\r\n    <MESSAGE value=\"changes\" />\r\n    <MESSAGE value=\"auto logout und location relative to parent\" />\r\n    <MESSAGE value=\"many changes\" />\r\n    <MESSAGE value=\"angemeldet bleiben geht wieder\" />\r\n    <MESSAGE value=\"GUI_Mama macht jetzt das Styling für alle Hauptmenüs\" />\r\n    <MESSAGE value=\"FirstRegistration implementiert und Admin hat jetzt alle Werte\" />\r\n    <MESSAGE value=\"Filter für Registration Window und Admin Anlegen\" />\r\n    <MESSAGE value=\"Profil daten ändern implementiert, Filter implementiert, Admin Anlegen implementiert\" />\r\n    <MESSAGE value=\"Code Schneller gemacht\" />\r\n    <MESSAGE value=\"Statistiken fast fertig\" />\r\n    <MESSAGE value=\"^Bug im DatePick fixed\" />\r\n    <MESSAGE value=\"Das mit dem Admin anlegen gefixt\" />\r\n    <MESSAGE value=\"Passwort ändern Bug fixed\" />\r\n    <MESSAGE value=\"Mitarbeiterverwaltung Fertig endlich digga heiliger jesu hurensohn\" />\r\n    <MESSAGE value=\"Space nicht mehr möglich wenn Filter applied\" />\r\n    <MESSAGE value=\"Alle einmal saves löschen. Transaktionen bearbeiten drin und colorchange mit abbrechen button bei reg\" />\r\n    <MESSAGE value=\"BugFix im Datepick bei dem man in die zukunft gehen konnte\" />\r\n    <MESSAGE value=\"f\" />\r\n    <MESSAGE value=\"Comments\" />\r\n    <MESSAGE value=\"Comments und Verschönerungen\" />\r\n    <MESSAGE value=\"Gui styling zusammengefasst wo es ging, Bug gefixt, bei dem delete request wiederholt wurden wenn der benutzer neu erstellt wurde. GUIs verbessert generell\" />\r\n    <MESSAGE value=\"g\" />\r\n    <MESSAGE value=\"Colorbutton implementiert, Curser angepasst, Profil gefixed\" />\r\n    <MESSAGE value=\"c\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"c\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/PersFile.java</url>\r\n          <line>25</line>\r\n          <option name=\"timeStamp\" value=\"50\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/GUI/elements/pass.java</url>\r\n          <line>20</line>\r\n          <option name=\"timeStamp\" value=\"66\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/GUI/elements/pass.java</url>\r\n          <line>22</line>\r\n          <option name=\"timeStamp\" value=\"67\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/Rollen/Kontrolleur.java</url>\r\n          <line>70</line>\r\n          <option name=\"timeStamp\" value=\"88\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/GUI/EinstellungenGUI.java</url>\r\n          <line>114</line>\r\n          <option name=\"timeStamp\" value=\"112\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/GUI/EinstellungenGUI.java</url>\r\n          <line>231</line>\r\n          <option name=\"timeStamp\" value=\"118\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/Foo.java</url>\r\n          <line>312</line>\r\n          <option name=\"timeStamp\" value=\"125\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/GUI/RegisterGUI.java</url>\r\n          <line>407</line>\r\n          <option name=\"timeStamp\" value=\"128\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/GUI/StatistikenGUI.java</url>\r\n          <line>273</line>\r\n          <option name=\"timeStamp\" value=\"134\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/GUI/StatistikenGUI.java</url>\r\n          <line>46</line>\r\n          <option name=\"timeStamp\" value=\"135\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/Rollen/Mitarbeiter.java</url>\r\n          <line>58</line>\r\n          <option name=\"timeStamp\" value=\"136\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/Foo.java</url>\r\n          <line>309</line>\r\n          <option name=\"timeStamp\" value=\"137\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/GUI/Admin/AdminGUI.java</url>\r\n          <line>75</line>\r\n          <option name=\"timeStamp\" value=\"138\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/GUI/RegisterGUI.java</url>\r\n          <line>598</line>\r\n          <option name=\"timeStamp\" value=\"145\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/GUI/Admin/MitarbeiterVerwaltenGUI.java</url>\r\n          <line>40</line>\r\n          <option name=\"timeStamp\" value=\"156\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/GUI/Admin/MitarbeiterVerwaltenGUI.java</url>\r\n          <line>41</line>\r\n          <option name=\"timeStamp\" value=\"157\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/Foo.java</url>\r\n          <line>434</line>\r\n          <option name=\"timeStamp\" value=\"165\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/GUI/ProfilGUI.java</url>\r\n          <line>46</line>\r\n          <option name=\"timeStamp\" value=\"168\" />\r\n        </line-breakpoint>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.NullPointerException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"18\" />\r\n        </breakpoint>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.IllegalMonitorStateException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"80\" />\r\n        </breakpoint>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.time.temporal.UnsupportedTemporalTypeException\" package=\"java.time.temporal\" />\r\n          <option name=\"timeStamp\" value=\"87\" />\r\n        </breakpoint>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.ArrayIndexOutOfBoundsException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"89\" />\r\n        </breakpoint>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.nio.file.FileSystemException\" package=\"java.nio.file\" />\r\n          <option name=\"timeStamp\" value=\"158\" />\r\n        </breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-method\">\r\n          <url>file://$PROJECT_DIR$/src/GUI/EinstellungenGUI.java</url>\r\n          <line>256</line>\r\n          <properties method=\"actionPerformed\">\r\n            <option name=\"EMULATED\" value=\"true\" />\r\n            <option name=\"WATCH_EXIT\" value=\"false\" />\r\n          </properties>\r\n          <option name=\"timeStamp\" value=\"116\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\r\n    <SUITE FILE_PATH=\"coverage/PigPen$Main.ic\" NAME=\"Main Coverage Results\" MODIFIED=\"1654034627101\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\">\r\n      <FILTER>src.*</FILTER>\r\n    </SUITE>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -1,143 +1,78 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ArtifactsWorkspaceSettings">
+-    <artifacts-to-build>
+-      <artifact name="schwarzfahrer:jar" />
+-    </artifacts-to-build>
+-  </component>
+-  <component name="AutoImportSettings">
+-    <option name="autoReloadType" value="SELECTIVE" />
+-  </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="c">
++    <list default="true" id="0130c780-d656-4083-8432-e44a73026e2c" name="Changes" comment="">
++      <change afterPath="$PROJECT_DIR$/.idea/schwarzfahrerr.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/GUI/Kon/KontrolleurGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Kon/KontrolleurGUI.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/GUI/Kon/SchwarzfahrtErfassenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Kon/SchwarzfahrtErfassenGUI.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Saves/colorChange.save" beforeDir="false" afterPath="$PROJECT_DIR$/Saves/colorChange.save" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Saves/loggedIN.save" beforeDir="false" afterPath="$PROJECT_DIR$/Saves/loggedIN.save" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+-  </component>
+-  <component name="FileTemplateManagerImpl">
+-    <option name="RECENT_TEMPLATES">
+-      <list>
+-        <option value="Enum" />
+-        <option value="UML Class" />
+-        <option value="Interface" />
+-        <option value="Class" />
+-      </list>
+-    </option>
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="Neuer_Branch" />
++        <entry key="$PROJECT_DIR$" value="main" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="GitToolBoxStore">
+-    <option name="projectConfigVersion" value="5" />
++    <option name="recentBranches">
++      <RecentBranches>
++        <option name="branchesForRepo">
++          <list>
++            <RecentBranchesForRepo>
++              <option name="branches">
++                <list>
++                  <RecentBranch>
++                    <option name="branchName" value="master" />
++                    <option name="lastUsedInstant" value="1662470767" />
++                  </RecentBranch>
++                  <RecentBranch>
++                    <option name="branchName" value="main" />
++                    <option name="lastUsedInstant" value="1662470766" />
++                  </RecentBranch>
++                </list>
++              </option>
++              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
++            </RecentBranchesForRepo>
++          </list>
++        </option>
++      </RecentBranches>
++    </option>
+   </component>
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+   </component>
+-  <component name="ProblemsViewState">
+-    <option name="selectedTabId" value="CurrentFile" />
+-  </component>
+-  <component name="ProjectId" id="29J1CEjujM4BAFlkhQyHvzouQdG" />
+-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+-    <OptionsSetting value="false" id="Update" />
+-    <ConfirmationsSetting value="1" id="Add" />
+-  </component>
++  <component name="ProjectId" id="2EOdgmUekN0nSppiEBtowcaULp0" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Class&quot;,
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;true&quot;,
+-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;238&quot;,
+-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
+-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;211&quot;,
+-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/Users/CBleck/Desktop/UNI Skripte/OOP/SchwarzfahrerProjekt&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+-  }
+-}</component>
+-  <component name="RecentsManager">
+-    <key name="CopyFile.RECENT_KEYS">
+-      <recent name="C:\Users\CBleck\Desktop\UNI Skripte\OOP\SchwarzfahrerProjekt\src\GUI" />
+-    </key>
+-    <key name="MoveFile.RECENT_KEYS">
+-      <recent name="C:\Users\CBleck\Desktop\UNI Skripte\OOP\SchwarzfahrerProjekt\src\GUI\Kon" />
+-      <recent name="C:\Users\CBleck\Desktop\UNI Skripte\OOP\SchwarzfahrerProjekt\src\GUI\Admin" />
+-      <recent name="C:\Users\CBleck\Desktop\UNI Skripte\OOP\SchwarzfahrerProjekt\src\GUI\Sachbearbeiter" />
+-      <recent name="C:\Users\CBleck\Desktop\UNI Skripte\OOP\SchwarzfahrerProjekt\src\GUI\Kontrolleur" />
+-      <recent name="C:\Users\CBleck\Desktop\UNI Skripte\OOP\SchwarzfahrerProjekt\src\GUI" />
+-    </key>
+-    <key name="CopyClassDialog.RECENTS_KEY">
+-      <recent name="src" />
+-    </key>
+-  </component>
+-  <component name="RunManager" selected="Application.Main">
+-    <configuration name="EinstellungenGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="src.GUI.EinstellungenGUI" />
+-      <module name="schwarzfahrer" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="src.GUI.elements.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "WebServerToolWindowFactoryState": "false",
++    "last_opened_file_path": "C:/Users/julian.menzel/IdeaProjects/schwarzfahrerr/lib/flatlaf-2.4.jar",
++    "project.structure.last.edited": "Libraries",
++    "project.structure.proportion": "0.0",
++    "project.structure.side.proportion": "0.2"
++  }
++}]]></component>
++  <component name="RunManager">
+     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="src.Main" />
+-      <module name="schwarzfahrer" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="src.Rollen.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration name="MenuButton" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="src.GUI.elements.MenuButton" />
+-      <module name="schwarzfahrer" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="src.GUI.elements.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration name="ProfilGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="src.GUI.ProfilGUI" />
+-      <module name="schwarzfahrer" />
++      <module name="schwarzfahrerr" />
+       <extension name="coverage">
+         <pattern>
+-          <option name="PATTERN" value="src.GUI.elements.*" />
++          <option name="PATTERN" value="src.*" />
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
+@@ -145,473 +80,22 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="schwarzfahrer.jar" type="JarApplication" temporary="true">
+-      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/schwarzfahrer_jar/schwarzfahrer.jar" />
+-      <method v="2" />
+-    </configuration>
+     <recent_temporary>
+       <list>
+         <item itemvalue="Application.Main" />
+-        <item itemvalue="Application.MenuButton" />
+-        <item itemvalue="JAR Application.schwarzfahrer.jar" />
+-        <item itemvalue="Application.ProfilGUI" />
+-        <item itemvalue="Application.EinstellungenGUI" />
+       </list>
+     </recent_temporary>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+-      <changelist id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="" />
+-      <created>1652816249415</created>
++      <changelist id="0130c780-d656-4083-8432-e44a73026e2c" name="Changes" comment="" />
++      <created>1662470677831</created>
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+-      <updated>1652816249415</updated>
+-      <workItem from="1652816250427" duration="35000" />
+-      <workItem from="1652816290096" duration="3700000" />
+-      <workItem from="1652874625500" duration="3731000" />
+-      <workItem from="1652885452314" duration="10345000" />
+-      <workItem from="1652959087958" duration="10359000" />
+-      <workItem from="1653169341358" duration="1132000" />
+-      <workItem from="1653838855442" duration="3406000" />
+-      <workItem from="1654012003489" duration="1306000" />
+-      <workItem from="1654034086109" duration="2063000" />
+-      <workItem from="1655125975838" duration="297000" />
+-      <workItem from="1655126402365" duration="759000" />
+-      <workItem from="1655196711769" duration="20000" />
+-      <workItem from="1655289272319" duration="912000" />
+-      <workItem from="1655371792546" duration="1184000" />
+-      <workItem from="1655413475807" duration="16473000" />
+-      <workItem from="1655479661852" duration="5686000" />
+-      <workItem from="1655882181208" duration="1006000" />
+-      <workItem from="1655894310049" duration="5070000" />
+-      <workItem from="1655906091828" duration="13000" />
+-      <workItem from="1655907207253" duration="3443000" />
+-      <workItem from="1655911950056" duration="1599000" />
+-      <workItem from="1655962346797" duration="9354000" />
+-      <workItem from="1655994394906" duration="1310000" />
+-      <workItem from="1655995726497" duration="58000" />
+-      <workItem from="1655995901795" duration="70000" />
+-      <workItem from="1656072636078" duration="5908000" />
+-      <workItem from="1656085681996" duration="160000" />
+-      <workItem from="1657181234999" duration="78000" />
+-      <workItem from="1657181344036" duration="3623000" />
+-      <workItem from="1657521444443" duration="37000" />
+-      <workItem from="1657521507403" duration="30673000" />
+-      <workItem from="1657557408759" duration="2906000" />
+-      <workItem from="1657572313942" duration="43000" />
+-      <workItem from="1657614413573" duration="15008000" />
+-      <workItem from="1657641492772" duration="1570000" />
+-      <workItem from="1657696410698" duration="22600000" />
+-      <workItem from="1657731578260" duration="3880000" />
+-      <workItem from="1657803381580" duration="5339000" />
+-      <workItem from="1657870884233" duration="3971000" />
+-      <workItem from="1657874911454" duration="8152000" />
+-      <workItem from="1657885716702" duration="36000" />
+-      <workItem from="1657886105846" duration="3196000" />
+-      <workItem from="1657958711775" duration="2971000" />
+-      <workItem from="1658256201664" duration="2936000" />
+-      <workItem from="1658312610844" duration="1240000" />
+-      <workItem from="1659883325166" duration="9216000" />
+-      <workItem from="1659942065114" duration="12541000" />
+-      <workItem from="1660023757005" duration="5069000" />
+-      <workItem from="1660059117171" duration="1553000" />
+-      <workItem from="1660120670153" duration="672000" />
+-      <workItem from="1660132461830" duration="5742000" />
+-      <workItem from="1660140451149" duration="5358000" />
+-      <workItem from="1660147707052" duration="89000" />
+-      <workItem from="1660148862685" duration="28352000" />
+-      <workItem from="1660237530296" duration="712000" />
+-      <workItem from="1660289329166" duration="4032000" />
+-      <workItem from="1660500563051" duration="1652000" />
+-      <workItem from="1660502315496" duration="256000" />
+-      <workItem from="1660549839766" duration="658000" />
+-      <workItem from="1660552450767" duration="5000" />
+-      <workItem from="1660552792941" duration="3312000" />
+-      <workItem from="1660559546716" duration="2399000" />
+-      <workItem from="1660565713008" duration="3365000" />
+-      <workItem from="1660572706785" duration="2787000" />
+-      <workItem from="1660638938877" duration="7993000" />
+-      <workItem from="1660657927237" duration="860000" />
+-      <workItem from="1660722223472" duration="12068000" />
+-      <workItem from="1660739586517" duration="593000" />
+-      <workItem from="1660743418422" duration="6720000" />
+-      <workItem from="1660806560123" duration="2415000" />
+-      <workItem from="1660809048015" duration="6000" />
+-      <workItem from="1660809072155" duration="92000" />
+-      <workItem from="1660809228337" duration="3877000" />
+-      <workItem from="1660813486558" duration="14625000" />
+-      <workItem from="1660846184317" duration="1046000" />
+-      <workItem from="1660853830588" duration="14147000" />
+-      <workItem from="1660914596662" duration="5425000" />
+-      <workItem from="1661176418154" duration="269000" />
+-      <workItem from="1661176924783" duration="173000" />
+-      <workItem from="1661182148585" duration="7112000" />
+-      <workItem from="1661235920008" duration="7578000" />
+-      <workItem from="1661249439985" duration="783000" />
+-      <workItem from="1661261409804" duration="8517000" />
+-      <workItem from="1661324627439" duration="2789000" />
+-      <workItem from="1661331301536" duration="133000" />
+-      <workItem from="1661331537133" duration="5609000" />
+-      <workItem from="1661351018971" duration="4647000" />
+-      <workItem from="1661415356867" duration="6099000" />
+-      <workItem from="1661426888296" duration="2398000" />
+-      <workItem from="1661435956916" duration="2811000" />
+-      <workItem from="1661444043000" duration="29000" />
+-      <workItem from="1661444190806" duration="3814000" />
+-      <workItem from="1661850816131" duration="11957000" />
+-      <workItem from="1661927222509" duration="5543000" />
+-      <workItem from="1661934476374" duration="1809000" />
+-      <workItem from="1662013842157" duration="7838000" />
+-      <workItem from="1662037842125" duration="2417000" />
+-      <workItem from="1662128955827" duration="115000" />
+-      <workItem from="1662365478650" duration="2278000" />
+-      <workItem from="1662444212992" duration="11217000" />
+-    </task>
+-    <task id="LOCAL-00091" summary="many changes">
+-      <created>1660846210488</created>
+-      <option name="number" value="00091" />
+-      <option name="presentableId" value="LOCAL-00091" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1660846210488</updated>
+-    </task>
+-    <task id="LOCAL-00092" summary="angemeldet bleiben geht wieder">
+-      <created>1660891362267</created>
+-      <option name="number" value="00092" />
+-      <option name="presentableId" value="LOCAL-00092" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1660891362267</updated>
+-    </task>
+-    <task id="LOCAL-00093" summary="angemeldet bleiben geht wieder">
+-      <created>1660891379443</created>
+-      <option name="number" value="00093" />
+-      <option name="presentableId" value="LOCAL-00093" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1660891379444</updated>
+-    </task>
+-    <task id="LOCAL-00094" summary="GUI_Mama macht jetzt das Styling für alle Hauptmenüs">
+-      <created>1660901479123</created>
+-      <option name="number" value="00094" />
+-      <option name="presentableId" value="LOCAL-00094" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1660901479123</updated>
+-    </task>
+-    <task id="LOCAL-00095" summary="GUI_Mama macht jetzt das Styling für alle Hauptmenüs">
+-      <created>1660901529046</created>
+-      <option name="number" value="00095" />
+-      <option name="presentableId" value="LOCAL-00095" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1660901529047</updated>
+-    </task>
+-    <task id="LOCAL-00096" summary="GUI_Mama macht jetzt das Styling für alle Hauptmenüs">
+-      <created>1660901554498</created>
+-      <option name="number" value="00096" />
+-      <option name="presentableId" value="LOCAL-00096" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1660901554498</updated>
+-    </task>
+-    <task id="LOCAL-00097" summary="GUI_Mama macht jetzt das Styling für alle Hauptmenüs">
+-      <created>1660914738317</created>
+-      <option name="number" value="00097" />
+-      <option name="presentableId" value="LOCAL-00097" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1660914738318</updated>
+-    </task>
+-    <task id="LOCAL-00098" summary="GUI_Mama macht jetzt das Styling für alle Hauptmenüs">
+-      <created>1660916535708</created>
+-      <option name="number" value="00098" />
+-      <option name="presentableId" value="LOCAL-00098" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1660916535709</updated>
+-    </task>
+-    <task id="LOCAL-00099" summary="FirstRegistration implementiert und Admin hat jetzt alle Werte">
+-      <created>1660917611604</created>
+-      <option name="number" value="00099" />
+-      <option name="presentableId" value="LOCAL-00099" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1660917611604</updated>
+-    </task>
+-    <task id="LOCAL-00100" summary="g">
+-      <created>1661165529512</created>
+-      <option name="number" value="00100" />
+-      <option name="presentableId" value="LOCAL-00100" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661165529512</updated>
+-    </task>
+-    <task id="LOCAL-00101" summary="Filter für Registration Window und Admin Anlegen">
+-      <created>1661174973053</created>
+-      <option name="number" value="00101" />
+-      <option name="presentableId" value="LOCAL-00101" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661174973053</updated>
+-    </task>
+-    <task id="LOCAL-00102" summary="Filter für Registration Window und Admin Anlegen">
+-      <created>1661174977400</created>
+-      <option name="number" value="00102" />
+-      <option name="presentableId" value="LOCAL-00102" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661174977400</updated>
+-    </task>
+-    <task id="LOCAL-00103" summary="Profil daten ändern implementiert, Filter implementiert, Admin Anlegen implementiert">
+-      <created>1661177081049</created>
+-      <option name="number" value="00103" />
+-      <option name="presentableId" value="LOCAL-00103" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661177081050</updated>
+-    </task>
+-    <task id="LOCAL-00104" summary="Code Schneller gemacht">
+-      <created>1661182475813</created>
+-      <option name="number" value="00104" />
+-      <option name="presentableId" value="LOCAL-00104" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661182475813</updated>
+-    </task>
+-    <task id="LOCAL-00105" summary="Statistiken fast fertig">
+-      <created>1661187494323</created>
+-      <option name="number" value="00105" />
+-      <option name="presentableId" value="LOCAL-00105" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661187494323</updated>
+-    </task>
+-    <task id="LOCAL-00106" summary="Statistiken fast fertig">
+-      <created>1661187503080</created>
+-      <option name="number" value="00106" />
+-      <option name="presentableId" value="LOCAL-00106" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661187503080</updated>
+-    </task>
+-    <task id="LOCAL-00107" summary="Statistiken fast fertig">
+-      <created>1661187697766</created>
+-      <option name="number" value="00107" />
+-      <option name="presentableId" value="LOCAL-00107" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661187697767</updated>
+-    </task>
+-    <task id="LOCAL-00108" summary="^Bug im DatePick fixed">
+-      <created>1661237030597</created>
+-      <option name="number" value="00108" />
+-      <option name="presentableId" value="LOCAL-00108" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661237030597</updated>
+-    </task>
+-    <task id="LOCAL-00109" summary="Das mit dem Admin anlegen gefixt">
+-      <created>1661238542305</created>
+-      <option name="number" value="00109" />
+-      <option name="presentableId" value="LOCAL-00109" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661238542305</updated>
+-    </task>
+-    <task id="LOCAL-00110" summary="Passwort ändern Bug fixed">
+-      <created>1661239696258</created>
+-      <option name="number" value="00110" />
+-      <option name="presentableId" value="LOCAL-00110" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661239696258</updated>
+-    </task>
+-    <task id="LOCAL-00111" summary="Passwort ändern Bug fixed">
+-      <created>1661239701941</created>
+-      <option name="number" value="00111" />
+-      <option name="presentableId" value="LOCAL-00111" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661239701941</updated>
+-    </task>
+-    <task id="LOCAL-00112" summary="Passwort ändern Bug fixed">
+-      <created>1661244841401</created>
+-      <option name="number" value="00112" />
+-      <option name="presentableId" value="LOCAL-00112" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661244841402</updated>
+-    </task>
+-    <task id="LOCAL-00113" summary="Mitarbeiterverwaltung Fertig endlich digga heiliger jesu hurensohn">
+-      <created>1661269922521</created>
+-      <option name="number" value="00113" />
+-      <option name="presentableId" value="LOCAL-00113" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661269922522</updated>
+-    </task>
+-    <task id="LOCAL-00114" summary="Mitarbeiterverwaltung Fertig endlich digga heiliger jesu hurensohn">
+-      <created>1661329607648</created>
+-      <option name="number" value="00114" />
+-      <option name="presentableId" value="LOCAL-00114" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661329607649</updated>
+-    </task>
+-    <task id="LOCAL-00115" summary="f">
+-      <created>1661331943074</created>
+-      <option name="number" value="00115" />
+-      <option name="presentableId" value="LOCAL-00115" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661331943075</updated>
+-    </task>
+-    <task id="LOCAL-00116" summary="Space nicht mehr möglich wenn Filter applied">
+-      <created>1661334287786</created>
+-      <option name="number" value="00116" />
+-      <option name="presentableId" value="LOCAL-00116" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661334287786</updated>
+-    </task>
+-    <task id="LOCAL-00117" summary="Space nicht mehr möglich wenn Filter applied">
+-      <created>1661334931253</created>
+-      <option name="number" value="00117" />
+-      <option name="presentableId" value="LOCAL-00117" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661334931253</updated>
+-    </task>
+-    <task id="LOCAL-00118" summary="Alle einmal saves löschen. Transaktionen bearbeiten drin und colorchange mit abbrechen button bei reg">
+-      <created>1661357531383</created>
+-      <option name="number" value="00118" />
+-      <option name="presentableId" value="LOCAL-00118" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661357531383</updated>
+-    </task>
+-    <task id="LOCAL-00119" summary="Alle einmal saves löschen. Transaktionen bearbeiten drin und colorchange mit abbrechen button bei reg">
+-      <created>1661415640055</created>
+-      <option name="number" value="00119" />
+-      <option name="presentableId" value="LOCAL-00119" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661415640055</updated>
+-    </task>
+-    <task id="LOCAL-00120" summary="BugFix im Datepick bei dem man in die zukunft gehen konnte">
+-      <created>1661421497020</created>
+-      <option name="number" value="00120" />
+-      <option name="presentableId" value="LOCAL-00120" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661421497020</updated>
+-    </task>
+-    <task id="LOCAL-00121" summary="f">
+-      <created>1661426950033</created>
+-      <option name="number" value="00121" />
+-      <option name="presentableId" value="LOCAL-00121" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661426950033</updated>
+-    </task>
+-    <task id="LOCAL-00122" summary="f">
+-      <created>1661426956047</created>
+-      <option name="number" value="00122" />
+-      <option name="presentableId" value="LOCAL-00122" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661426956047</updated>
+-    </task>
+-    <task id="LOCAL-00123" summary="f">
+-      <created>1661426960941</created>
+-      <option name="number" value="00123" />
+-      <option name="presentableId" value="LOCAL-00123" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661426960941</updated>
+-    </task>
+-    <task id="LOCAL-00124" summary="f">
+-      <created>1661426969940</created>
+-      <option name="number" value="00124" />
+-      <option name="presentableId" value="LOCAL-00124" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661426969940</updated>
+-    </task>
+-    <task id="LOCAL-00125" summary="f">
+-      <created>1661426978189</created>
+-      <option name="number" value="00125" />
+-      <option name="presentableId" value="LOCAL-00125" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661426978189</updated>
+-    </task>
+-    <task id="LOCAL-00126" summary="f">
+-      <created>1661428937221</created>
+-      <option name="number" value="00126" />
+-      <option name="presentableId" value="LOCAL-00126" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661428937221</updated>
+-    </task>
+-    <task id="LOCAL-00127" summary="Comments">
+-      <created>1661852630233</created>
+-      <option name="number" value="00127" />
+-      <option name="presentableId" value="LOCAL-00127" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661852630234</updated>
+-    </task>
+-    <task id="LOCAL-00128" summary="Comments und Verschönerungen">
+-      <created>1661875303459</created>
+-      <option name="number" value="00128" />
+-      <option name="presentableId" value="LOCAL-00128" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661875303459</updated>
+-    </task>
+-    <task id="LOCAL-00129" summary="Comments und Verschönerungen">
+-      <created>1661933482508</created>
+-      <option name="number" value="00129" />
+-      <option name="presentableId" value="LOCAL-00129" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661933482509</updated>
+-    </task>
+-    <task id="LOCAL-00130" summary="Comments und Verschönerungen">
+-      <created>1661933500832</created>
+-      <option name="number" value="00130" />
+-      <option name="presentableId" value="LOCAL-00130" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1661933500832</updated>
+-    </task>
+-    <task id="LOCAL-00131" summary="Gui styling zusammengefasst wo es ging, Bug gefixt, bei dem delete request wiederholt wurden wenn der benutzer neu erstellt wurde. GUIs verbessert generell">
+-      <created>1662025362053</created>
+-      <option name="number" value="00131" />
+-      <option name="presentableId" value="LOCAL-00131" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1662025362054</updated>
+-    </task>
+-    <task id="LOCAL-00132" summary="Gui styling zusammengefasst wo es ging, Bug gefixt, bei dem delete request wiederholt wurden wenn der benutzer neu erstellt wurde. GUIs verbessert generell">
+-      <created>1662025367247</created>
+-      <option name="number" value="00132" />
+-      <option name="presentableId" value="LOCAL-00132" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1662025367247</updated>
+-    </task>
+-    <task id="LOCAL-00133" summary="g">
+-      <created>1662054520023</created>
+-      <option name="number" value="00133" />
+-      <option name="presentableId" value="LOCAL-00133" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1662054520023</updated>
+-    </task>
+-    <task id="LOCAL-00134" summary="g">
+-      <created>1662054529282</created>
+-      <option name="number" value="00134" />
+-      <option name="presentableId" value="LOCAL-00134" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1662054529282</updated>
+-    </task>
+-    <task id="LOCAL-00135" summary="g">
+-      <created>1662366296608</created>
+-      <option name="number" value="00135" />
+-      <option name="presentableId" value="LOCAL-00135" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1662366296609</updated>
+-    </task>
+-    <task id="LOCAL-00136" summary="g">
+-      <created>1662444333793</created>
+-      <option name="number" value="00136" />
+-      <option name="presentableId" value="LOCAL-00136" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1662444333794</updated>
+-    </task>
+-    <task id="LOCAL-00137" summary="Colorbutton implementiert, Curser angepasst, Profil gefixed">
+-      <created>1662450062950</created>
+-      <option name="number" value="00137" />
+-      <option name="presentableId" value="LOCAL-00137" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1662450062951</updated>
+-    </task>
+-    <task id="LOCAL-00138" summary="Colorbutton implementiert, Curser angepasst, Profil gefixed">
+-      <created>1662450073655</created>
+-      <option name="number" value="00138" />
+-      <option name="presentableId" value="LOCAL-00138" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1662450073655</updated>
+-    </task>
+-    <task id="LOCAL-00139" summary="c">
+-      <created>1662457561099</created>
+-      <option name="number" value="00139" />
+-      <option name="presentableId" value="LOCAL-00139" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1662457561099</updated>
++      <updated>1662470677831</updated>
++      <workItem from="1662470679418" duration="749000" />
+     </task>
+-    <option name="localTasksCounter" value="140" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -628,165 +112,4 @@
+       </map>
+     </option>
+   </component>
+-  <component name="VcsManagerConfiguration">
+-    <ignored-roots>
+-      <path value="$PROJECT_DIR$/.." />
+-    </ignored-roots>
+-    <MESSAGE value="Button enable diswbale" />
+-    <MESSAGE value="changes" />
+-    <MESSAGE value="auto logout und location relative to parent" />
+-    <MESSAGE value="many changes" />
+-    <MESSAGE value="angemeldet bleiben geht wieder" />
+-    <MESSAGE value="GUI_Mama macht jetzt das Styling für alle Hauptmenüs" />
+-    <MESSAGE value="FirstRegistration implementiert und Admin hat jetzt alle Werte" />
+-    <MESSAGE value="Filter für Registration Window und Admin Anlegen" />
+-    <MESSAGE value="Profil daten ändern implementiert, Filter implementiert, Admin Anlegen implementiert" />
+-    <MESSAGE value="Code Schneller gemacht" />
+-    <MESSAGE value="Statistiken fast fertig" />
+-    <MESSAGE value="^Bug im DatePick fixed" />
+-    <MESSAGE value="Das mit dem Admin anlegen gefixt" />
+-    <MESSAGE value="Passwort ändern Bug fixed" />
+-    <MESSAGE value="Mitarbeiterverwaltung Fertig endlich digga heiliger jesu hurensohn" />
+-    <MESSAGE value="Space nicht mehr möglich wenn Filter applied" />
+-    <MESSAGE value="Alle einmal saves löschen. Transaktionen bearbeiten drin und colorchange mit abbrechen button bei reg" />
+-    <MESSAGE value="BugFix im Datepick bei dem man in die zukunft gehen konnte" />
+-    <MESSAGE value="f" />
+-    <MESSAGE value="Comments" />
+-    <MESSAGE value="Comments und Verschönerungen" />
+-    <MESSAGE value="Gui styling zusammengefasst wo es ging, Bug gefixt, bei dem delete request wiederholt wurden wenn der benutzer neu erstellt wurde. GUIs verbessert generell" />
+-    <MESSAGE value="g" />
+-    <MESSAGE value="Colorbutton implementiert, Curser angepasst, Profil gefixed" />
+-    <MESSAGE value="c" />
+-    <option name="LAST_COMMIT_MESSAGE" value="c" />
+-  </component>
+-  <component name="XDebuggerManager">
+-    <breakpoint-manager>
+-      <breakpoints>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/PersFile.java</url>
+-          <line>25</line>
+-          <option name="timeStamp" value="50" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/GUI/elements/pass.java</url>
+-          <line>20</line>
+-          <option name="timeStamp" value="66" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/GUI/elements/pass.java</url>
+-          <line>22</line>
+-          <option name="timeStamp" value="67" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/Rollen/Kontrolleur.java</url>
+-          <line>70</line>
+-          <option name="timeStamp" value="88" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/GUI/EinstellungenGUI.java</url>
+-          <line>114</line>
+-          <option name="timeStamp" value="112" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/GUI/EinstellungenGUI.java</url>
+-          <line>231</line>
+-          <option name="timeStamp" value="118" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/Foo.java</url>
+-          <line>312</line>
+-          <option name="timeStamp" value="125" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/GUI/RegisterGUI.java</url>
+-          <line>407</line>
+-          <option name="timeStamp" value="128" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/GUI/StatistikenGUI.java</url>
+-          <line>273</line>
+-          <option name="timeStamp" value="134" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/GUI/StatistikenGUI.java</url>
+-          <line>46</line>
+-          <option name="timeStamp" value="135" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/Rollen/Mitarbeiter.java</url>
+-          <line>58</line>
+-          <option name="timeStamp" value="136" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/Foo.java</url>
+-          <line>309</line>
+-          <option name="timeStamp" value="137" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/GUI/Admin/AdminGUI.java</url>
+-          <line>75</line>
+-          <option name="timeStamp" value="138" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/GUI/RegisterGUI.java</url>
+-          <line>598</line>
+-          <option name="timeStamp" value="145" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/GUI/Admin/MitarbeiterVerwaltenGUI.java</url>
+-          <line>40</line>
+-          <option name="timeStamp" value="156" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/GUI/Admin/MitarbeiterVerwaltenGUI.java</url>
+-          <line>41</line>
+-          <option name="timeStamp" value="157" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/Foo.java</url>
+-          <line>434</line>
+-          <option name="timeStamp" value="165" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/GUI/ProfilGUI.java</url>
+-          <line>46</line>
+-          <option name="timeStamp" value="168" />
+-        </line-breakpoint>
+-        <breakpoint enabled="true" type="java-exception">
+-          <properties class="java.lang.NullPointerException" package="java.lang" />
+-          <option name="timeStamp" value="18" />
+-        </breakpoint>
+-        <breakpoint enabled="true" type="java-exception">
+-          <properties class="java.lang.IllegalMonitorStateException" package="java.lang" />
+-          <option name="timeStamp" value="80" />
+-        </breakpoint>
+-        <breakpoint enabled="true" type="java-exception">
+-          <properties class="java.time.temporal.UnsupportedTemporalTypeException" package="java.time.temporal" />
+-          <option name="timeStamp" value="87" />
+-        </breakpoint>
+-        <breakpoint enabled="true" type="java-exception">
+-          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+-          <option name="timeStamp" value="89" />
+-        </breakpoint>
+-        <breakpoint enabled="true" type="java-exception">
+-          <properties class="java.nio.file.FileSystemException" package="java.nio.file" />
+-          <option name="timeStamp" value="158" />
+-        </breakpoint>
+-        <line-breakpoint enabled="true" type="java-method">
+-          <url>file://$PROJECT_DIR$/src/GUI/EinstellungenGUI.java</url>
+-          <line>256</line>
+-          <properties method="actionPerformed">
+-            <option name="EMULATED" value="true" />
+-            <option name="WATCH_EXIT" value="false" />
+-          </properties>
+-          <option name="timeStamp" value="116" />
+-        </line-breakpoint>
+-      </breakpoints>
+-    </breakpoint-manager>
+-  </component>
+-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+-    <SUITE FILE_PATH="coverage/PigPen$Main.ic" NAME="Main Coverage Results" MODIFIED="1654034627101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+-      <FILTER>src.*</FILTER>
+-    </SUITE>
+-  </component>
+ </project>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectModuleManager\">\r\n    <modules>\r\n      <module fileurl=\"file://$PROJECT_DIR$/.idea/schwarzfahrer.iml\" filepath=\"$PROJECT_DIR$/.idea/schwarzfahrer.iml\" />\r\n    </modules>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+--- a/.idea/modules.xml	
++++ b/.idea/modules.xml	
+@@ -2,7 +2,7 @@
+ <project version="4">
+   <component name="ProjectModuleManager">
+     <modules>
+-      <module fileurl="file://$PROJECT_DIR$/.idea/schwarzfahrer.iml" filepath="$PROJECT_DIR$/.idea/schwarzfahrer.iml" />
++      <module fileurl="file://$PROJECT_DIR$/.idea/schwarzfahrerr.iml" filepath="$PROJECT_DIR$/.idea/schwarzfahrerr.iml" />
+     </modules>
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_18\" default=\"true\" project-jdk-name=\"openjdk-18 (2)\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="openjdk-18 (2)" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="openjdk-18 (2)" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file

@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Update_at_13_07_2022_11_33_[Changes]" date="1657704827097" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_07_2022_11_33_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 13.07.2022 11:33 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_23_06_2022_10_23_[Changes]/Administrator.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/PigPen/src/GUI/firstRegistrationGUI.class" />
+    <option name="AFTER_PATH" value="out/production/PigPen/src/GUI/firstRegistrationGUI.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_07_2022_11_33_[Changes]/firstRegistrationGUI.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_23_06_2022_10_23_[Changes]/Main.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+</changelist>
