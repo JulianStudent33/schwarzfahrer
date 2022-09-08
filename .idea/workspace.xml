@@ -9,7 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="gui fertig" />
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="schwarzfahrt erfassen code">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_00_08__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_00_08__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_00_10__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_00_10__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/loggedIN.save" beforeDir="false" afterPath="$PROJECT_DIR$/Saves/loggedIN.save" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Komponentendiagramm.mdj" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/Komponentendiagramm.mdj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Kontrolleur/JMMM.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/loggedIN.save" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/loggedIN.save" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Kon/schwarzfahrtenerfassengui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Kon/schwarzfahrtenerfassengui.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -263,21 +275,7 @@
       <workItem from="1662128955827" duration="115000" />
       <workItem from="1662365478650" duration="2278000" />
       <workItem from="1662444212992" duration="15117000" />
-      <workItem from="1662533239128" duration="34048000" />
-    </task>
-    <task id="LOCAL-00102" summary="Filter für Registration Window und Admin Anlegen">
-      <created>1661174977400</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1661174977400</updated>
-    </task>
-    <task id="LOCAL-00103" summary="Profil daten ändern implementiert, Filter implementiert, Admin Anlegen implementiert">
-      <created>1661177081049</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1661177081050</updated>
+      <workItem from="1662533239128" duration="36115000" />
     </task>
     <task id="LOCAL-00104" summary="Code Schneller gemacht">
       <created>1661182475813</created>
@@ -608,7 +606,21 @@
       <option name="project" value="LOCAL" />
       <updated>1662652691170</updated>
     </task>
-    <option name="localTasksCounter" value="151" />
+    <task id="LOCAL-00151" summary="schwarzfahrt erfassen code">
+      <created>1662673608558</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1662673608559</updated>
+    </task>
+    <task id="LOCAL-00152" summary="schwarzfahrt erfassen code">
+      <created>1662673958895</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1662673958896</updated>
+    </task>
+    <option name="localTasksCounter" value="153" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -629,7 +641,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="FirstRegistration implementiert und Admin hat jetzt alle Werte" />
     <MESSAGE value="Filter für Registration Window und Admin Anlegen" />
     <MESSAGE value="Profil daten ändern implementiert, Filter implementiert, Admin Anlegen implementiert" />
     <MESSAGE value="Code Schneller gemacht" />
@@ -654,7 +665,8 @@
     <MESSAGE value="c" />
     <MESSAGE value="bugfix" />
     <MESSAGE value="bugfix endlich ich raste aus man bin ich geil" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugfix endlich ich raste aus man bin ich geil" />
+    <MESSAGE value="schwarzfahrt erfassen code" />
+    <option name="LAST_COMMIT_MESSAGE" value="schwarzfahrt erfassen code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

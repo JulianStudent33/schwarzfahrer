@@ -436,7 +436,9 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         });
 
     }
+    void addBorders(){
 
+    }
     private void autofill(){
             /*
             if (currentSf.getGeschlecht().equals("M")){
