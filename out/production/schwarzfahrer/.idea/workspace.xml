@@ -9,39 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="bugfix">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/Schwarzfahrer/ABC.sf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/Schwarzfahrer/CED.sf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/Users/Admin/Admin1.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/Users/Kontrolleur/Konni1.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/Users/SB/Sachi1.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/colorChange.save" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/loggedIN.save" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Schwarzfahrer/ABC.sf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Schwarzfahrer/CED.sf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Admin/Admin1.mb" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Admin/Admin1.mb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Kontrolleur/Konni1.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/SB/Sachi1.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/loggedIN.save" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/loggedIN.save" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Foo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Foo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Parent_GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Parent_GUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Rollen/Administrator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Rollen/Administrator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Rollen/Kontrolleur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Rollen/Kontrolleur.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Rollen/Mitarbeiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Rollen/Mitarbeiter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Rollen/Sachbearbeiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Rollen/Sachbearbeiter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Foo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/EinstellungenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/EinstellungenGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Parent_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Parent_GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rollen/Administrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rollen/Administrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rollen/Kontrolleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rollen/Kontrolleur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rollen/Mitarbeiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rollen/Mitarbeiter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rollen/Sachbearbeiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rollen/Sachbearbeiter.java" afterDir="false" />
-    </list>
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="gui fertig" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -295,14 +263,7 @@
       <workItem from="1662128955827" duration="115000" />
       <workItem from="1662365478650" duration="2278000" />
       <workItem from="1662444212992" duration="15117000" />
-      <workItem from="1662533239128" duration="28548000" />
-    </task>
-    <task id="LOCAL-00101" summary="Filter für Registration Window und Admin Anlegen">
-      <created>1661174973053</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1661174973053</updated>
+      <workItem from="1662533239128" duration="34048000" />
     </task>
     <task id="LOCAL-00102" summary="Filter für Registration Window und Admin Anlegen">
       <created>1661174977400</created>
@@ -640,7 +601,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662644763049</updated>
     </task>
-    <option name="localTasksCounter" value="150" />
+    <task id="LOCAL-00150" summary="bugfix endlich ich raste aus man bin ich geil">
+      <created>1662652691170</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1662652691170</updated>
+    </task>
+    <option name="localTasksCounter" value="151" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -661,7 +629,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="GUI_Mama macht jetzt das Styling für alle Hauptmenüs" />
     <MESSAGE value="FirstRegistration implementiert und Admin hat jetzt alle Werte" />
     <MESSAGE value="Filter für Registration Window und Admin Anlegen" />
     <MESSAGE value="Profil daten ändern implementiert, Filter implementiert, Admin Anlegen implementiert" />
@@ -686,7 +653,8 @@
     <MESSAGE value="fertig ist die zweite sb kachel" />
     <MESSAGE value="c" />
     <MESSAGE value="bugfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugfix" />
+    <MESSAGE value="bugfix endlich ich raste aus man bin ich geil" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugfix endlich ich raste aus man bin ich geil" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -788,7 +756,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Foo.java</url>
-          <line>327</line>
+          <line>326</line>
           <option name="timeStamp" value="178" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
