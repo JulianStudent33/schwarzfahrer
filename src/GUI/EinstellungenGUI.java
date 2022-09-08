@@ -220,7 +220,14 @@ public class EinstellungenGUI extends Parent_GUI implements ActionListener {
                 if (sbAngemeldet){
                     SachbearbeiterGUI.openSBGUI(parentGUI.parentGUI);
                 }
+
+                try {
+                    currentUser.setAutoLogout(ButtonAutoLogoutText.getText());
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
                 parentGUI.dispose();
+
                 dispose();
             }
         });

@@ -256,9 +256,9 @@ public class LoginGUI extends Parent_GUI implements ActionListener {
                                     System.out.println("Passwort stimmt");
                                     Foo.currentUser = mb;
                                     if (angemeldetBleibenCheckBox.isSelected()) {
-                                        // Foo.saveAngemeldetBleiben(true);
+                                        Foo.saveAngemeldetBleiben(true);
                                     } else {
-                                        // Erneuter Aufruf des L&F sodass bei Rückgang auf vorheriges Fenster, das L&F bestehen bleibt            // Foo.saveAngemeldetBleiben(false);
+                                        Foo.saveAngemeldetBleiben(false);
                                     }
 
                                     SachbearbeiterGUI.openSBGUI(getFrame());

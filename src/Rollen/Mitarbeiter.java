@@ -100,8 +100,14 @@ public abstract class Mitarbeiter extends Person{
     public void setAutoLogout(String autoLogout) throws IOException {
         this.autoLogout = autoLogout;
         PersFile.speichern(this, this.userFile);
-        Foo.autoLogoutTime = autoLogout;
         System.out.println("Auto Logout gespeichert: " + autoLogout);
+
+        try {
+            Mitarbeiter mb = (Mitarbeiter) PersFile.laden(this.userFile);
+            System.out.println("Get auto logout " + mb.getAutoLogout());
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void setMitarbeiternummer(String mitarbeiternummer) throws IOException {

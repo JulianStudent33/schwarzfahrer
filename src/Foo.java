@@ -75,7 +75,6 @@ public class Foo {
     public static boolean angemeldet = false;
     public static boolean angemeldetBleiben;
     public static boolean colorChange = false;
-    public static String autoLogoutTime = "Aus";
 
     //Konstruktoren
 
@@ -106,7 +105,6 @@ public class Foo {
         if(!angemeldet){
             StartfensterGUI.openStartFenster(null);///////////////////Ist kein Benutzer vorangemeldet, wird das Startfenster geöffnet
         } else if (Foo.currentUser!=null) {
-            autoLogoutTime = getCurrentLogoutTime();
             System.out.println("AutoLogout: " + getCurrentLogoutTime());
             if (currentUser.isAdmin()){
                 AdminGUI.openAdminGUI(null);//////////////////////////Wenn ein Admin bereits angemeldet ist, wird dieser in sein Hauptmenü (AdminGUI) weitergeleitet
@@ -424,9 +422,7 @@ public class Foo {
         /** liefert einen String der mitteilt, wann der currentUser automatisch ausgeloggt werden möchte
         *
         * */
-        String s = autoLogoutTime;
-        autoLogoutTime = currentUser.getAutoLogout();
-        return s;
+        return currentUser.getAutoLogout();
     }
     public static void getColorChange() throws IOException, ClassNotFoundException {
         /** Liest den boolean aus der colorChangeFile aus und setzt dementsprechend das Farbdesign der GUIs
