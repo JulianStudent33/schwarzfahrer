@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Update_at_08_09_2022_00_06_[Changes]" date="1662588393596" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_00_06_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 08.09.2022 00:06 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/schwarzfahrer/src/GUI/SB/SchwarzfahrtensuchenGUI.class" />
+    <option name="AFTER_PATH" value="out/production/schwarzfahrer/src/GUI/SB/SchwarzfahrtensuchenGUI.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_00_06_[Changes]/SchwarzfahrtensuchenGUI.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/schwarzfahrer/src/GUI/SB/SchwarzfahrtensuchenGUI$1.class" />
+    <option name="AFTER_PATH" value="out/production/schwarzfahrer/src/GUI/SB/SchwarzfahrtensuchenGUI$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_00_06_[Changes]/SchwarzfahrtensuchenGUI$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/schwarzfahrer/src/GUI/SB/SchwarzfahrtensuchenGUI$2.class" />
+    <option name="AFTER_PATH" value="out/production/schwarzfahrer/src/GUI/SB/SchwarzfahrtensuchenGUI$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_00_06_[Changes]/SchwarzfahrtensuchenGUI$2.class" />
+  </binary>
+</changelist>

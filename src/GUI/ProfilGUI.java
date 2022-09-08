@@ -299,11 +299,7 @@ public class ProfilGUI extends Parent_GUI implements ActionListener {
                 }
         }
         if (!EMail.getText().contains("@")){
-            if(!colorChange){
                 EMail.addRedFlashEffect();
-            } else {
-                EMail.addRedFlashEffectWhiteField();
-            }
         }
 
         return b;

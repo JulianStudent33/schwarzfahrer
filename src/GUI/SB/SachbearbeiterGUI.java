@@ -1,10 +1,11 @@
 package src.GUI.SB;
 
+import src.Foo;
 import src.GUI.*;
 import src.GUI.EinstellungenGUI;
 import src.GUI.ProfilGUI;
 import src.GUI.StatistikenGUI;
-
+import static src.Foo.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,7 +26,10 @@ public class SachbearbeiterGUI extends Parent_GUI {
 
         //Styling
         styleMenu(texts);
-
+        if (SchwarzfahrtenListe.isEmpty()){
+            Kachel1.setEnabled(false);
+            Kachel2.setEnabled(false);
+        }
         //ActionListener
         Kachel1.addActionListener(new ActionListener() {
             @Override

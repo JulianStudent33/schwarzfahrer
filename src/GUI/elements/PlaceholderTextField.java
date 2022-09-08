@@ -1,4 +1,6 @@
 package src.GUI.elements;
+import src.Foo;
+
 import java.awt.*;
 
 import javax.swing.*;
@@ -161,92 +163,96 @@ public class PlaceholderTextField extends JTextField implements Flash{
     }
 
     public void addRedFlashEffect() {
-        if (timer == null) {
-            final Color baseColor = getBackground();
+        if (Foo.colorChange){
+            addRedFlashEffectWhiteField();
+        }else {
 
-            //System.out.println(baseColor.getRed() + " " + baseColor.getGreen() + " " + baseColor.getBlue());
-            final int[] i = {baseColor.getRed(), baseColor.getGreen(), baseColor.getBlue()};
-            final int i1 = baseColor.getRed();
-            final int i2 = baseColor.getGreen();
-            final int i3 = baseColor.getBlue();
+            if (timer == null) {
+                final Color baseColor = getBackground();
 
-            final int[] ii = i;
-            final int[] j = {15};
-            timer = new Timer(2, e -> {
+                //System.out.println(baseColor.getRed() + " " + baseColor.getGreen() + " " + baseColor.getBlue());
+                final int[] i = {baseColor.getRed(), baseColor.getGreen(), baseColor.getBlue()};
+                final int i1 = baseColor.getRed();
+                final int i2 = baseColor.getGreen();
+                final int i3 = baseColor.getBlue();
 
-                try {
-                    ii[0] += j[0];
+                final int[] ii = i;
+                final int[] j = {15};
+                timer = new Timer(2, e -> {
+
+                    try {
+                        ii[0] += j[0];
 
 
-                    if (ii[0] > 255 || ii[1] > 255 || ii[2] > 255) {
-                        //System.out.println("Switching from 15 to -15");
-                        ii[0] -= 15;
+                        if (ii[0] > 255 || ii[1] > 255 || ii[2] > 255) {
+                            //System.out.println("Switching from 15 to -15");
+                            ii[0] -= 15;
 
-                        j[0] = -15;
-                    } else if (ii[0] < i1) {
-                        ii[0] += 15;
-                        //System.out.println("Kleiner als");
+                            j[0] = -15;
+                        } else if (ii[0] < i1) {
+                            ii[0] += 15;
+                            //System.out.println("Kleiner als");
+                            timer.stop();
+                            return;
+                        }
+
+
+                        setBackground(new Color(ii[0], ii[1], ii[2]));
+                        //System.out.println(ii[0] + " " + ii[1] + " " + ii[2]);
+                    } catch (IllegalArgumentException ex) {
+
+                        setBackground(baseColor);
                         timer.stop();
                         return;
                     }
 
 
-                    setBackground(new Color(ii[0], ii[1], ii[2]));
-                    //System.out.println(ii[0] + " " + ii[1] + " " + ii[2]);
-                } catch (IllegalArgumentException ex) {
+                });
+                timer.start();
+            } else if (!timer.isRunning()) {
+                final Color baseColor = getBackground();
 
-                    setBackground(baseColor);
-                    timer.stop();
-                    return;
-                }
+                //System.out.println(baseColor.getRed() + " " + baseColor.getGreen() + " " + baseColor.getBlue());
+                final int[] i = {baseColor.getRed(), baseColor.getGreen(), baseColor.getBlue()};
+                final int i1 = baseColor.getRed();
+                final int i2 = baseColor.getGreen();
+                final int i3 = baseColor.getBlue();
 
+                final int[] ii = i;
+                final int[] j = {15};
+                timer = new Timer(2, e -> {
 
-            });
-            timer.start();
-        } else if (!timer.isRunning()) {
-            final Color baseColor = getBackground();
-
-            //System.out.println(baseColor.getRed() + " " + baseColor.getGreen() + " " + baseColor.getBlue());
-            final int[] i = {baseColor.getRed(), baseColor.getGreen(), baseColor.getBlue()};
-            final int i1 = baseColor.getRed();
-            final int i2 = baseColor.getGreen();
-            final int i3 = baseColor.getBlue();
-
-            final int[] ii = i;
-            final int[] j = {15};
-            timer = new Timer(2, e -> {
-
-                try {
-                    ii[0] += j[0];
+                    try {
+                        ii[0] += j[0];
 
 
-                    if (ii[0] > 255 || ii[1] > 255 || ii[2] > 255) {
-                        //System.out.println("Switching from 15 to -15");
-                        ii[0] -= 15;
+                        if (ii[0] > 255 || ii[1] > 255 || ii[2] > 255) {
+                            //System.out.println("Switching from 15 to -15");
+                            ii[0] -= 15;
 
-                        j[0] = -15;
-                    } else if (ii[0] < i1) {
-                        ii[0] += 15;
-                        //System.out.println("Ausgangs RGB unterschritten");
+                            j[0] = -15;
+                        } else if (ii[0] < i1) {
+                            ii[0] += 15;
+                            //System.out.println("Ausgangs RGB unterschritten");
+                            timer.stop();
+                            return;
+                        }
+
+
+                        setBackground(new Color(ii[0], ii[1], ii[2]));
+                        // System.out.println(ii[0] + " " + ii[1] + " " + ii[2]);
+                    } catch (IllegalArgumentException ex) {
+
+                        setBackground(baseColor);
                         timer.stop();
                         return;
                     }
 
 
-                    setBackground(new Color(ii[0], ii[1], ii[2]));
-                   // System.out.println(ii[0] + " " + ii[1] + " " + ii[2]);
-                } catch (IllegalArgumentException ex) {
-
-                    setBackground(baseColor);
-                    timer.stop();
-                    return;
-                }
-
-
-            });
-            timer.start();
+                });
+                timer.start();
+            }
         }
-
     }
     public void addRedFlashEffectWhiteField() {
         if (timer == null) {
