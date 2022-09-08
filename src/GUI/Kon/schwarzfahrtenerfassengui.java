@@ -152,14 +152,14 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
 
         //----------------------Einzelne Objekte rechtes Panel--------------------
 
-        schwarz.setText("Schwarzfahrt");
-        schwarz.setFont(fontLargeLarge);
-        schwarz.setForeground(white);
-        schwarz.setBackground(dark);
-        schwarz.setBounds(105,0,400,50);
+        erf.setText("erfassen");
+        erf.setFont(fontLargeLarge);
+        erf.setForeground(white);
+        erf.setBackground(dark);
+        erf.setBounds(175,0,400,50);
 
-        trennlinie.setBackground(white);
-        trennlinie.setBounds(105,55,240,5);
+        trennerf.setBackground(white);
+        trennerf.setBounds(175,55,155,5);
 
 
         //----------------------JFRAME BEFEHLE--------------------
@@ -187,6 +187,9 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         leftp.add(ausweislinie);
         leftp.add(autofill);
         leftp.add(info);
+
+        rightp.add(erf);
+        rightp.add(trennerf);
 
         BGdark.add(leftp);
         BGdark.add(rightp);
