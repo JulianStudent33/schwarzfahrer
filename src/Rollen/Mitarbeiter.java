@@ -23,7 +23,7 @@ public abstract class Mitarbeiter extends Person{
     String benutzername;
     String passwort;
 
-    String autoLogout = "Aus"; //Initialer Wert der in den Einstellungen überschrieben werden kann
+    String autoLogout; //Initialer Wert der in den Einstellungen überschrieben werden kann
     boolean isAdmin;
     boolean isKontrolleur;
     boolean isSachbearbeiter;
@@ -46,6 +46,7 @@ public abstract class Mitarbeiter extends Person{
         System.out.println("Telefonnummer: " + getTelefonnummer());
         System.out.println("E-Mail: " + getEmail());
         System.out.println("Dateipfad: " + getUserFile().toPath());
+        System.out.println("AutoLogout: " + getAutoLogout());
         if (isAdmin){
             System.out.println(getVorname() + "Ist Administrator");
         } else if (isKontrolleur) {
@@ -100,13 +101,13 @@ public abstract class Mitarbeiter extends Person{
     public void setAutoLogout(String autoLogout) throws IOException {
         this.autoLogout = autoLogout;
         PersFile.speichern(this, this.userFile);
-        Foo.autoLogoutTime = autoLogout;
-        System.out.println("Auto Logout gespeichert: " + autoLogout);
+        Foo.currentUser = this;
     }
 
     public void setMitarbeiternummer(String mitarbeiternummer) throws IOException {
         this.mitarbeiternummer = mitarbeiternummer;
         PersFile.speichern(this, this.userFile);
+        Foo.currentUser = this;
     }
     public String getBenutzername() {
         return benutzername;
@@ -118,15 +119,18 @@ public abstract class Mitarbeiter extends Person{
     public void setPasswort(String passwort) throws IOException {
         this.passwort = passwort;
         PersFile.speichern(this, this.userFile);
+        Foo.currentUser = this;
     }
 
     public void setEmail(String email) throws IOException {
         this.email = email;
         PersFile.speichern(this, this.userFile);
+        Foo.currentUser = this;
     }
     public void setTelefon(String telefon) throws IOException {
         this.telefonnummer = telefon;
         PersFile.speichern(this, this.userFile);
+        Foo.currentUser = this;
     }
 
 

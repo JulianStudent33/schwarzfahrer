@@ -659,7 +659,7 @@ public class RegisterGUI extends Parent_GUI implements ActionListener {
         field.setSelectedTextColor(dark);
         field.setSelectionColor(notSoDark);
         field.setPlaceholder(txt);
-        ((AbstractDocument)pwb.getDocument()).setDocumentFilter(sfilter);
+        ((AbstractDocument)field.getDocument()).setDocumentFilter(sfilter);
     }
     public static void openRegisterGUI(Parent_GUI parent){
 

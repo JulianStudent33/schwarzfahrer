@@ -197,7 +197,7 @@ public class LoginGUI extends Parent_GUI implements ActionListener {
                         if (Foo.AdminFileListe.contains(Path.of(Foo.adminPath + Foo.fileSeperator + bname.getText() + ".mb").toFile())) {
                             try {
                                 Mitarbeiter mb = (Mitarbeiter) PersFile.laden(Path.of(Foo.adminPath + Foo.fileSeperator + bname.getText() + ".mb").toFile());
-                                System.out.println("Datei gelesen, telefonnummer: " + mb.getTelefonnummer());
+
 
                                 if (Arrays.equals(mb.getPasswort().toCharArray(), passwortPasswordField.getPassword())) {
                                     System.out.println("Passwort stimmt");
@@ -256,9 +256,9 @@ public class LoginGUI extends Parent_GUI implements ActionListener {
                                     System.out.println("Passwort stimmt");
                                     Foo.currentUser = mb;
                                     if (angemeldetBleibenCheckBox.isSelected()) {
-                                        // Foo.saveAngemeldetBleiben(true);
+                                        Foo.saveAngemeldetBleiben(true);
                                     } else {
-                                        // Erneuter Aufruf des L&F sodass bei Rückgang auf vorheriges Fenster, das L&F bestehen bleibt            // Foo.saveAngemeldetBleiben(false);
+                                        Foo.saveAngemeldetBleiben(false);
                                     }
 
                                     SachbearbeiterGUI.openSBGUI(getFrame());

@@ -75,7 +75,6 @@ public class Foo {
     public static boolean angemeldet = false;
     public static boolean angemeldetBleiben;
     public static boolean colorChange = false;
-    public static String autoLogoutTime = "Aus";
 
     //Konstruktoren
 
@@ -106,7 +105,6 @@ public class Foo {
         if(!angemeldet){
             StartfensterGUI.openStartFenster(null);///////////////////Ist kein Benutzer vorangemeldet, wird das Startfenster geöffnet
         } else if (Foo.currentUser!=null) {
-            autoLogoutTime = getCurrentLogoutTime();
             System.out.println("AutoLogout: " + getCurrentLogoutTime());
             if (currentUser.isAdmin()){
                 AdminGUI.openAdminGUI(null);//////////////////////////Wenn ein Admin bereits angemeldet ist, wird dieser in sein Hauptmenü (AdminGUI) weitergeleitet
@@ -309,11 +307,9 @@ public class Foo {
 
         currentUser.setAngemeldetBleiben(angemeldetBleiben);
         Mitarbeiter userToSave = currentUser;
-        userToSave.setUserFile(loggedINFile);
         Foo.angemeldetBleiben = angemeldetBleiben;
-        PersFile.speichern(userToSave, userToSave.loggedInFile);
+        PersFile.speichern(userToSave, loggedINFile);
         System.out.println("Angemeldet bleiben auf " + angemeldetBleiben);
-        System.out.println("Telefonnummer: " + userToSave.getTelefonnummer());
     }
     public static boolean getAngemeldetBleiben() throws IOException, ClassNotFoundException {
         /** Liest den User in der LoggedInFile aus und checkt, ob dieser angemeldet bleiben wollte
@@ -326,7 +322,8 @@ public class Foo {
         }
         Mitarbeiter userToGet;
         userToGet = (Mitarbeiter) PersFile.laden(loggedINFile);
-        userToGet = (Mitarbeiter) PersFile.laden(userToGet.userFile);
+        System.out.println("Autologout logged in " + userToGet.getAutoLogout());
+        System.out.println("Autologout userFile " + userToGet.getAutoLogout());
         if (userToGet.angemeldetBleiben){
             Foo.currentUser = userToGet;
             return true;
@@ -424,9 +421,7 @@ public class Foo {
         /** liefert einen String der mitteilt, wann der currentUser automatisch ausgeloggt werden möchte
         *
         * */
-        String s = autoLogoutTime;
-        autoLogoutTime = currentUser.getAutoLogout();
-        return s;
+        return currentUser.getAutoLogout();
     }
     public static void getColorChange() throws IOException, ClassNotFoundException {
         /** Liest den boolean aus der colorChangeFile aus und setzt dementsprechend das Farbdesign der GUIs
