@@ -392,6 +392,7 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
                     datePickerfilter.setText(calender.Set_Picked_Date());
                     datePickerfilter.setForeground(white);
                 }
+                suchen.setEnabled(true);
             }
         });
 
@@ -411,8 +412,6 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
                         stringList.add(formatLinie(sft.getLinie()) + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
                     }
                     this.schwarzfahrten = stringList;
-                }else{
-                    System.out.println("Keine Treffer");
                 }
             }
 
@@ -424,50 +423,26 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
                     stringList.add(formatLinie(sft.getLinie()) + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
                 }
             }
-            if (stringList.isEmpty()){
-                System.out.println("Keine Treffer");
-            }else{
-                this.schwarzfahrten = stringList;
-            }
-
-
         }else if (param.equals(options[3])) {
             System.out.println("Suche alle SFT nach Status " + arg);
             for (Schwarzfahrt sft : SchwarzfahrtenListe){
-                if (sft.getStatus().equals(arg)){
+                if (sft.getStatus().status.equals(arg)){
                     stringList.add(formatLinie(sft.getLinie()) + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
                 }
             }
-            if (stringList.isEmpty()){
-                System.out.println("Keine Treffer");
-            }else{
-                this.schwarzfahrten = stringList;
-            }
-
-        }else if (param.equals(options[4])) {
+         }else if (param.equals(options[4])) {
             System.out.println("Suche alle SFT von Jahr" + arg);
             for (Schwarzfahrt sft : SchwarzfahrtenListe){
                 if (String.valueOf(sft.getYEAR()).equals(arg)){
                     stringList.add(formatLinie(sft.getLinie()) + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
                 }
             }
-            if (stringList.isEmpty()){
-                System.out.println("Keine Treffer");
-            }else{
-                this.schwarzfahrten = stringList;
-            }
-
         }else if (param.equals(options[5])) {
             System.out.println("Suche alle SFT von Monat" + arg);
             for (Schwarzfahrt sft : SchwarzfahrtenListe){
                 if (String.valueOf(sft.getMONTH()).equals(arg)){
                     stringList.add(formatLinie(sft.getLinie()) + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
                 }
-            }
-            if (stringList.isEmpty()){
-                System.out.println("Keine Treffer");
-            }else{
-                this.schwarzfahrten = stringList;
             }
         }else if (param.equals(options[6])) {
             System.out.println("Suche alle SFT von Tag" + arg);
@@ -476,25 +451,18 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
                     stringList.add(formatLinie(sft.getLinie()) + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
                 }
             }
-            if (stringList.isEmpty()){
-                System.out.println("Keine Treffer");
-            }else{
-                this.schwarzfahrten = stringList;
-            }
-
         }else if (param.equals(options[7])) {
             System.out.println("Suche alle SFT von Datum " + arg);
             for (Schwarzfahrt sft : SchwarzfahrtenListe){
-                if (sft.getZeitpunkt().equals(arg)){
+                if (sft.getDate().equals(arg)){
                     stringList.add(formatLinie(sft.getLinie()) + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
                 }
             }
-            if (stringList.isEmpty()){
-                System.out.println("Keine Treffer");
-            }else{
-                this.schwarzfahrten = stringList;
-            }
-
+        }
+        if (stringList.isEmpty()){
+            System.out.println("Keine Treffer");
+        }else{
+            this.schwarzfahrten = stringList;
         }
         model.clear();
         if (!schwarzfahrten.isEmpty()){

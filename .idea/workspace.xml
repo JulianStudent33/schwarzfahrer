@@ -9,33 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Linie festlegen und updates in Schwarzfahrt erfassen und sdf">
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Schwarzfahrten suchen fast fertig">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/colorChange.save" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SchwarzfahrtensuchenGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SchwarzfahrtensuchenGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SchwarzfahrtensuchenGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SchwarzfahrtensuchenGUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/loggedIN.save" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/loggedIN.save" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SchwarzfahrtensuchenGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SchwarzfahrtensuchenGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/elements/PlaceholderTextField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/elements/PlaceholderTextField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Rollen/Schwarzfahrt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Rollen/Schwarzfahrt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/LoginGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/ProfilGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ProfilGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/SB/SachbearbeiterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/SB/SachbearbeiterGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/SB/SchwarzfahrtensuchenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/SB/SchwarzfahrtensuchenGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/elements/PlaceholderPasswordField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/elements/PlaceholderPasswordField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/elements/PlaceholderTextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/elements/PlaceholderTextField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/elements/customComboBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/elements/customComboBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rollen/Schwarzfahrt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rollen/Schwarzfahrt.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,21 +268,7 @@
       <workItem from="1662128955827" duration="115000" />
       <workItem from="1662365478650" duration="2278000" />
       <workItem from="1662444212992" duration="15117000" />
-      <workItem from="1662533239128" duration="17972000" />
-    </task>
-    <task id="LOCAL-00097" summary="GUI_Mama macht jetzt das Styling für alle Hauptmenüs">
-      <created>1660914738317</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1660914738318</updated>
-    </task>
-    <task id="LOCAL-00098" summary="GUI_Mama macht jetzt das Styling für alle Hauptmenüs">
-      <created>1660916535708</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1660916535709</updated>
+      <workItem from="1662533239128" duration="19386000" />
     </task>
     <task id="LOCAL-00099" summary="FirstRegistration implementiert und Admin hat jetzt alle Werte">
       <created>1660917611604</created>
@@ -635,7 +599,21 @@
       <option name="project" value="LOCAL" />
       <updated>1662576970501</updated>
     </task>
-    <option name="localTasksCounter" value="146" />
+    <task id="LOCAL-00146" summary="Schwarzfahrten suchen fast fertig">
+      <created>1662626938167</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1662626938167</updated>
+    </task>
+    <task id="LOCAL-00147" summary="Schwarzfahrten suchen fast fertig">
+      <created>1662626945245</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1662626945245</updated>
+    </task>
+    <option name="localTasksCounter" value="148" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -656,7 +634,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="auto logout und location relative to parent" />
     <MESSAGE value="many changes" />
     <MESSAGE value="angemeldet bleiben geht wieder" />
     <MESSAGE value="GUI_Mama macht jetzt das Styling für alle Hauptmenüs" />
@@ -681,7 +658,8 @@
     <MESSAGE value="c" />
     <MESSAGE value="Linie festlegen und updates in Schwarzfahrt erfassen und TransaktionbearbeitenGUI" />
     <MESSAGE value="Linie festlegen und updates in Schwarzfahrt erfassen und sdf" />
-    <option name="LAST_COMMIT_MESSAGE" value="Linie festlegen und updates in Schwarzfahrt erfassen und sdf" />
+    <MESSAGE value="Schwarzfahrten suchen fast fertig" />
+    <option name="LAST_COMMIT_MESSAGE" value="Schwarzfahrten suchen fast fertig" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
