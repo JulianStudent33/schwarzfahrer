@@ -3,19 +3,30 @@ package src.GUI.Kon;
 import src.Foo;
 import src.GUI.Parent_GUI;
 import src.GUI.ProfilGUI;
+import src.GUI.elements.DatePick;
 import src.GUI.elements.PlaceholderTextField;
 import src.GUI.elements.customComboBox;
 import src.Rollen.Kontrolleur;
+import src.Rollen.Schwarzfahrer;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.util.Calendar;
 
 public class schwarzfahrtenerfassengui extends Parent_GUI {
 
-    // MAIN
+    String[] hours = {"00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"};
+    String[] minutes = {"00", "01", "02", "03", "04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28", "29","30",
+            "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59"};
+    private Kontrolleur currentKon;
+    private Schwarzfahrer currentSf;
+    //     MAIN
     JPanel BGdark = new JPanel();
 
     JPanel leftp = new JPanel();
@@ -29,6 +40,7 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
     JButton datuml = new JButton();
 
     customComboBox hour = new customComboBox();
+
     customComboBox minute = new customComboBox();
 
     JLabel linie = new JLabel();
@@ -90,7 +102,7 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
 
     public schwarzfahrtenerfassengui(Parent_GUI parent) {
         setupGUI(parent, "SchwarzfahrtenErfassungGUI");
-
+        currentKon = (Kontrolleur) currentUser;
 
         //----------------------HAUPTPANEL--------------------
 
@@ -125,19 +137,29 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         datuml.setText("Ereignisdatum auswählen");
         datuml.setFont(fontSmall);
         datuml.setBounds(75,70,300,30);
+        datuml.setText(Foo.getCurrentDate());
+        datuml.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         hour.addItem("Stunde");
         hour.setBackground(dark);
         hour.setForeground(white);
         hour.setFont(fontSmall);
         hour.setBounds(75,110,145,30);
+        for(String s : hours){
+            hour.addItem(s);
+        }
+        hour.setSelectedIndex(java.util.Calendar.getInstance().get(Calendar.HOUR_OF_DAY));
         hour.setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
 
-        minute.addItem("Minute");
+
         minute.setBackground(dark);
         minute.setForeground(white);
         minute.setFont(fontSmall);
         minute.setBounds(230,110,145,30);
+        for (String s : minutes){
+            minute.addItem(s);
+        }
+        minute.setSelectedIndex(java.util.Calendar.getInstance().get(Calendar.MINUTE));
         minute.setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
 
         linie.setText("Linie:");
@@ -190,6 +212,7 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         autofill.setText("Auto-Fill");
         autofill.setFont(fontSmall);
         autofill.setBounds(150,260,150,30);
+        autofill.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         //----------------------Einzelne Objekte rechtes Panel--------------------
 
@@ -363,8 +386,101 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
 
         this.add(BGdark);
 
+
+        datuml.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+
+                DatePick calender = new DatePick((JFrame) datuml.getRootPane().getParent(), datuml.getText());
+                String txt = calender.Set_Picked_Date();
+                if (txt==""){
+
+                }else{
+                    datuml.setText(calender.Set_Picked_Date());
+                }
+
+
+            }
+        });
+
+        autofill.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    currentSf = currentKon.schwarzfahrerSuchen(ausweisfield.getText());
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                    throw new RuntimeException(ex);
+                } catch (ClassNotFoundException ex) {
+                    ex.printStackTrace();
+                    throw new RuntimeException(ex);
+                }
+
+                if (currentSf == null){
+                    ausweisfield.setBackground(red);
+                    Foo.okWindow("Keine Treffer", getFrame());
+                }else{
+                    ausweisfield.setBackground(green);
+                    autofill();
+                    /*
+                    geschlechtBox.setEnabled(false);
+                    vornameTextField.setEnabled(false);
+                    nachnameTextField.setEnabled(false);
+                    geburtsortTextField.setEnabled(false);
+                    datumButton2.setEnabled(false);
+                    */
+
+                }
+
+            }
+        });
+
     }
 
+    private void autofill(){
+            /*
+            if (currentSf.getGeschlecht().equals("M")){
+                .setSelectedIndex(0);
+            } else if (currentSf.getGeschlecht().equals("W")) {
+                geschlechtBox.setSelectedIndex(1);
+            } else if (currentSf.getGeschlecht().equals("D")){
+                geschlechtBox.setSelectedIndex(2);
+            }
+
+            vornameTextField.setText(currentSf.getVorname());
+            nachnameTextField.setText(currentSf.getNachname());
+            datumButton2.setText(currentSf.getGeburtsdatum());
+            geburtsortTextField.setText(currentSf.getGeburtsort());
+            emailTextField.setText(currentSf.getEmail());
+            telefonTextField.setText(currentSf.getTelefonnummer());
+            strasseTextField.setText(currentSf.getAdresse().getStrasse());
+            hausnummerTextField.setText(currentSf.getAdresse().getHausnummer());
+            plzTextField.setText(currentSf.getAdresse().getPLZ());
+            ortTextField.setText(currentSf.getAdresse().getOrt());
+            zusatzTextField.setText(currentSf.getAdresse().getZusatz());
+
+            vornameTextField.addFlashEffect();
+            nachnameTextField.addFlashEffect();
+            datumButton2.addFlashEffect();
+            geburtsortTextField.addFlashEffect();
+
+            telefonTextField.addFlashEffect();
+            strasseTextField.addFlashEffect();
+            hausnummerTextField.addFlashEffect();
+            plzTextField.addFlashEffect();
+            ortTextField.addFlashEffect();
+            landComboBox.addFlashEffect();
+            geschlechtBox.addFlashEffect();
+            if (!emailTextField.getText().isBlank()){
+                emailTextField.addFlashEffect();
+            }
+            if (!zusatzTextField.getText().isBlank()){
+                zusatzTextField.addFlashEffect();
+            }
+*/
+
+    }
     public static void openSfErfassung(Parent_GUI parent) {
         Foo.getDirectoryData();
         schwarzfahrtenerfassengui gui = new schwarzfahrtenerfassengui(parent);
