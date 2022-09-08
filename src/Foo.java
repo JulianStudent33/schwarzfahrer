@@ -307,11 +307,9 @@ public class Foo {
 
         currentUser.setAngemeldetBleiben(angemeldetBleiben);
         Mitarbeiter userToSave = currentUser;
-        userToSave.setUserFile(loggedINFile);
         Foo.angemeldetBleiben = angemeldetBleiben;
-        PersFile.speichern(userToSave, userToSave.loggedInFile);
+        PersFile.speichern(userToSave, loggedINFile);
         System.out.println("Angemeldet bleiben auf " + angemeldetBleiben);
-        System.out.println("Telefonnummer: " + userToSave.getTelefonnummer());
     }
     public static boolean getAngemeldetBleiben() throws IOException, ClassNotFoundException {
         /** Liest den User in der LoggedInFile aus und checkt, ob dieser angemeldet bleiben wollte
@@ -324,7 +322,8 @@ public class Foo {
         }
         Mitarbeiter userToGet;
         userToGet = (Mitarbeiter) PersFile.laden(loggedINFile);
-        userToGet = (Mitarbeiter) PersFile.laden(userToGet.userFile);
+        System.out.println("Autologout logged in " + userToGet.getAutoLogout());
+        System.out.println("Autologout userFile " + userToGet.getAutoLogout());
         if (userToGet.angemeldetBleiben){
             Foo.currentUser = userToGet;
             return true;

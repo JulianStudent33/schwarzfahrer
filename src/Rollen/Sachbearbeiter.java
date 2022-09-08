@@ -34,6 +34,7 @@ public class Sachbearbeiter extends Mitarbeiter{
         this.telefonnummer = telefonnummer;
         this.email = email;
         this.geburtsdatum = numberToDate(date[0], date[1], date[2]);
+        this.autoLogout = "Aus";
         this.userFile = Path.of
                 (Foo.sbPath + Foo.fileSeperator + benutzername +  ".mb").toFile();
         display();

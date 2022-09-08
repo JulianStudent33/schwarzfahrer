@@ -207,10 +207,13 @@ public class EinstellungenGUI extends Parent_GUI implements ActionListener {
                 }
 
                 try {
+                    currentUser.setAutoLogout(ButtonAutoLogoutText.getText());
                     Foo.saveAngemeldetBleiben(angemeldetBleiben);
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
+
+
                 if (konAngemeldet){
                     KontrolleurGUI.openKonGUI(parentGUI.parentGUI);
                 }
@@ -220,14 +223,7 @@ public class EinstellungenGUI extends Parent_GUI implements ActionListener {
                 if (sbAngemeldet){
                     SachbearbeiterGUI.openSBGUI(parentGUI.parentGUI);
                 }
-
-                try {
-                    currentUser.setAutoLogout(ButtonAutoLogoutText.getText());
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
                 parentGUI.dispose();
-
                 dispose();
             }
         });

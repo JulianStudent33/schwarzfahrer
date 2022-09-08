@@ -95,7 +95,6 @@ public abstract class Parent_GUI extends JFrame {
         int time = 1;
         refreshCurrentUser();
         System.out.println(currentUser.getAutoLogout());
-        System.out.println(optionenLogout[1]);
         if (!currentUser.getAutoLogout().equals(optionenLogout[0])){
             if (currentUser.getAutoLogout().equals(optionenLogout[1])){
                 time = 5;
@@ -204,7 +203,6 @@ public abstract class Parent_GUI extends JFrame {
             }
         }
         Foo.currentUser = this.currentUser;
-        System.out.println("Foo currentuser telefon: " + Foo.currentUser.getTelefonnummer());;
     }
 
     public void styleMenu(String[] text){
