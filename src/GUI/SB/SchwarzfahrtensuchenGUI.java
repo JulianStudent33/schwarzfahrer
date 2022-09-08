@@ -1,6 +1,7 @@
 package src.GUI.SB;
 import src.Foo;
 import src.GUI.Parent_GUI;
+import src.GUI.elements.DatePick;
 import src.GUI.elements.PlaceholderTextField;
 import src.Rollen.*;
 
@@ -8,9 +9,14 @@ import static src.Foo.*;
 import src.GUI.elements.customComboBox;
 
 import javax.swing.*;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.EtchedBorder;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +29,6 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
     final JList<String> list = new JList<>(model);
     JScrollPane scrollpane = new JScrollPane(list);
 
-    JButton loeschen = new JButton();
     JButton abbrechen = new JButton();
 
     JButton suchen = new JButton();
@@ -31,10 +36,6 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
     JButton datePickerfilter = new JButton();
     customComboBox Status = new customComboBox();
     String[] Statusfilter = {"Status", "Offen","Ausstehend" ,"Bezahlt"};
-
-
-    String[] filter = {"Filter", "Linie", "Status","Ausweisnr.","Datum", "Jahr","Monat","Tag"};
-
 
     PlaceholderTextField textSearchfield = new PlaceholderTextField();
 
@@ -88,6 +89,7 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
 
 
 
+
         JLabel label = new JLabel();
         label.setText("<html><body><center><p>Schwarzfahrten suchen</p></center></body></html>");
         label.setForeground(white);
@@ -128,8 +130,8 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
         datePickerfilter.setBackground(whitebg);
         datePickerfilter.setForeground(white);
         datePickerfilter.setText("Datum auswählen");
-        datePickerfilter.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 12));
-        datePickerfilter.setHorizontalAlignment(SwingConstants.LEFT);
+        datePickerfilter.setFont(fontMedium);
+        datePickerfilter.setHorizontalAlignment(SwingConstants.CENTER);
         datePickerfilter.setVerticalAlignment(SwingConstants.CENTER);
         datePickerfilter.setFocusable(true);
         datePickerfilter.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -148,8 +150,84 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
         }
         dropDown.setBackground(dark);
         dropDown.setFont(fontverySmall);
+        dropDown.setBorder(new LineBorder(dunkelb));
 
-        suchen.setBackground(dunkelb);
+        dropDown.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               switch (dropDown.getSelectedIndex()){
+                   case 0:
+                       System.out.println("Ausweisnummer");
+                       textSearchfield.setText("");
+                       textSearch.remove(0);
+                       textSearch.add(textSearchfield);
+                       textSearchfield.setPlaceholder("z.B. " + SchwarzfahrtenListe.get(0).getSf().getAusweisnummer());
+                       textSearch.repaint();
+                   break;
+                   case 1:
+                       System.out.println("Linie");
+                       textSearchfield.setText("");
+                       textSearch.remove(0);
+                       textSearch.add(textSearchfield);
+                       textSearchfield.setPlaceholder("z.B. " + SchwarzfahrtenListe.get(0).getLinie());
+                       textSearch.repaint();
+
+                   break;
+                   case 2:
+                       System.out.println("Status");
+                       textSearchfield.setText("");
+                       textSearch.remove(0);
+                       textSearch.add(Status);
+                       textSearch.repaint();
+                       break;
+                   case 3:
+                       System.out.println("Jahr");
+                       textSearchfield.setText("");
+                       textSearch.remove(0);
+                       textSearch.add(textSearchfield);
+                       textSearchfield.setPlaceholder("z.B. " + SchwarzfahrtenListe.get(0).YEAR);
+                       textSearch.repaint();
+                       break;
+                   case 4:
+                       System.out.println("Monat");
+                       textSearchfield.setText("");
+                       textSearch.remove(0);
+                       textSearch.add(textSearchfield);
+                       textSearchfield.setPlaceholder("z.B. " + SchwarzfahrtenListe.get(0).MONTH);
+                       textSearch.repaint();
+                       break;
+                   case 5:
+                       System.out.println("Tag");
+                       textSearchfield.setText("");
+                       textSearch.remove(0);
+                       textSearch.add(textSearchfield);
+                       textSearchfield.setPlaceholder("z.B. " + SchwarzfahrtenListe.get(0).DAY);
+                       textSearch.repaint();
+                       break;
+                   case 6:
+                       System.out.println("Datum");
+                       textSearchfield.setText("");
+                       textSearch.remove(0);
+                       textSearch.add(datePickerfilter);
+                       datePickerfilter.setText(SchwarzfahrtenListe.get(0).getDate());
+                       textSearch.repaint();
+
+                       break;
+                   default:
+                       System.out.println("default");
+                       textSearchfield.setText("");
+                       textSearch.remove(0);
+                       textSearch.add(textSearchfield);
+                       textSearchfield.setPlaceholder("dd-MM-yyyy");
+                       textSearch.repaint();
+                       break;
+
+               }
+            }
+        });
+
+
+        suchen.setBackground(hellb);
         suchen.setForeground(white);
         suchen.setText("Suchen");
         suchen.setHorizontalTextPosition(JLabel.CENTER);
@@ -202,21 +280,54 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
         this.setVisible(true);
         this.setBackground(dark);
 
-        loeschen.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent event) {
-                ListSelectionModel selmodel = list.getSelectionModel();
-                int index = selmodel.getMinSelectionIndex();
-                if (index >= 0){
-                    model.remove(index);
-                }
-                if (index == 0){
-                    System.out.println("Index = 0");
-                }
 
+        textSearchfield.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (!textSearchfield.getText().isBlank()){
+                    suchen.setEnabled(true);
+                }else{
+                    suchen.setEnabled(false);
+                }
             }
 
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (!textSearchfield.getText().isBlank()){
+                    suchen.setEnabled(true);
+                }else{
+                    suchen.setEnabled(false);
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                if (!textSearchfield.getText().isBlank()){
+                    suchen.setEnabled(true);
+                }else{
+                    suchen.setEnabled(false);
+                }
+            }
         });
 
+        suchen.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int selection = dropDown.getSelectedIndex();
+                System.out.println("Selection: " + options[selection+1]);
+                if (selection == 2){
+                    displaySFT(dropDown.getItemAt(selection).toString(), Status.getSelectedItem().toString());
+
+                } else if (selection == 6) {
+                    displaySFT(dropDown.getItemAt(selection).toString(), datePickerfilter.getText() );
+                }else{
+                    displaySFT(dropDown.getItemAt(selection).toString(), textSearchfield.getText());
+                    textSearchfield.setText("");
+                }
+
+                suchen.setEnabled(false);
+            }
+        });
         abbrechen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -233,8 +344,16 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
                     dropDown.removeItemAt(0);
                     dropDown.setForeground(white);
                     dropDown.setPrototypeDisplayValue(null);
-                    suchen.setEnabled(true);
                 }
+                if (dropDown.getSelectedItem().toString().equals(options[7])){
+                    suchen.setEnabled(true);
+                } else if (dropDown.getSelectedItem().toString().equals(options[3])) {
+                    if (!Status.getItemAt(0).equals(Statusfilter[0]))
+                        suchen.setEnabled(true);
+                } else{
+                    suchen.setEnabled(false);
+                }
+
             }
         });
 
@@ -242,10 +361,36 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
             @Override
             public void actionPerformed(ActionEvent e) {
 
+
                 if (Status.getItemAt(0).equals("Status")){
                     Status.removeItemAt(0);
                     Status.setForeground(white);
                     Status.setPrototypeDisplayValue(null);
+                }
+                if (!Status.getItemAt(0).equals(Statusfilter[0])){
+                    suchen.setEnabled(true);
+                }
+                else{
+                    suchen.setEnabled(false);
+                }
+            }
+        });
+        datePickerfilter.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String txt;
+                DatePick calender;
+
+                    calender = new DatePick(getFrame(), datePickerfilter.getText());
+                    txt = calender.Set_Picked_Date();
+                    datePickerfilter.setForeground(white);
+
+
+                if (txt==""){
+                }else{
+                    datePickerfilter.setText(calender.Set_Picked_Date());
+                    datePickerfilter.setForeground(white);
                 }
             }
         });
@@ -255,29 +400,28 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
     public void displaySFT(String param, String arg){
         Foo.getDirectoryData();
         List<String> stringList = new ArrayList<>();
+        schwarzfahrten.clear();
 
-        if (param.equals(options[0])){
+        if (param.equals(options[1])){
             System.out.println("Suche alle SFT von Schwarzfahrer " + arg);
             for (Schwarzfahrer S : SchwarzfahrerListe){
                 if (S.getAusweisnummer().equals(arg)){
 
                     for (Schwarzfahrt sft : S.sftList){
-                        stringList.add(sft.getLinie() + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
-
+                        stringList.add(formatLinie(sft.getLinie()) + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
                     }
                     this.schwarzfahrten = stringList;
                 }else{
                     System.out.println("Keine Treffer");
                 }
-                return;
             }
 
-        } else if (param.equals(options[1])) {
+        } else if (param.equals(options[2])) {
             System.out.println("Suche alle SFT von Linie " + arg);
 
             for (Schwarzfahrt sft : SchwarzfahrtenListe){
                 if (sft.getLinie().equals(arg)){
-                    stringList.add(sft.getLinie() + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
+                    stringList.add(formatLinie(sft.getLinie()) + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
                 }
             }
             if (stringList.isEmpty()){
@@ -287,24 +431,11 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
             }
 
 
-        }else if (param.equals(options[2])) {
+        }else if (param.equals(options[3])) {
             System.out.println("Suche alle SFT nach Status " + arg);
             for (Schwarzfahrt sft : SchwarzfahrtenListe){
                 if (sft.getStatus().equals(arg)){
-                    stringList.add(sft.getLinie() + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
-                }
-            }
-            if (stringList.isEmpty()){
-                System.out.println("Keine Treffer");
-            }else{
-                this.schwarzfahrten = stringList;
-            }
-
-        }else if (param.equals(options[3])) {
-            System.out.println("Suche alle SFT von Jahr" + arg);
-            for (Schwarzfahrt sft : SchwarzfahrtenListe){
-                if (String.valueOf(sft.getYEAR()).equals(arg)){
-                    stringList.add(sft.getLinie() + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
+                    stringList.add(formatLinie(sft.getLinie()) + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
                 }
             }
             if (stringList.isEmpty()){
@@ -314,22 +445,10 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
             }
 
         }else if (param.equals(options[4])) {
-            System.out.println("Suche alle SFT von Monat" + arg);
+            System.out.println("Suche alle SFT von Jahr" + arg);
             for (Schwarzfahrt sft : SchwarzfahrtenListe){
-                if (String.valueOf(sft.getMONTH()).equals(arg)){
-                    stringList.add(sft.getLinie() + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
-                }
-            }
-            if (stringList.isEmpty()){
-                System.out.println("Keine Treffer");
-            }else{
-                this.schwarzfahrten = stringList;
-            }
-        }else if (param.equals(options[5])) {
-            System.out.println("Suche alle SFT von Tag" + arg);
-            for (Schwarzfahrt sft : SchwarzfahrtenListe){
-                if (String.valueOf(sft.getDAY()).equals(arg)){
-                    stringList.add(sft.getLinie() + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
+                if (String.valueOf(sft.getYEAR()).equals(arg)){
+                    stringList.add(formatLinie(sft.getLinie()) + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
                 }
             }
             if (stringList.isEmpty()){
@@ -338,11 +457,36 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
                 this.schwarzfahrten = stringList;
             }
 
+        }else if (param.equals(options[5])) {
+            System.out.println("Suche alle SFT von Monat" + arg);
+            for (Schwarzfahrt sft : SchwarzfahrtenListe){
+                if (String.valueOf(sft.getMONTH()).equals(arg)){
+                    stringList.add(formatLinie(sft.getLinie()) + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
+                }
+            }
+            if (stringList.isEmpty()){
+                System.out.println("Keine Treffer");
+            }else{
+                this.schwarzfahrten = stringList;
+            }
         }else if (param.equals(options[6])) {
+            System.out.println("Suche alle SFT von Tag" + arg);
+            for (Schwarzfahrt sft : SchwarzfahrtenListe){
+                if (String.valueOf(sft.getDAY()).equals(arg)){
+                    stringList.add(formatLinie(sft.getLinie()) + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
+                }
+            }
+            if (stringList.isEmpty()){
+                System.out.println("Keine Treffer");
+            }else{
+                this.schwarzfahrten = stringList;
+            }
+
+        }else if (param.equals(options[7])) {
             System.out.println("Suche alle SFT von Datum " + arg);
             for (Schwarzfahrt sft : SchwarzfahrtenListe){
                 if (sft.getZeitpunkt().equals(arg)){
-                    stringList.add(sft.getLinie() + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
+                    stringList.add(formatLinie(sft.getLinie()) + "   " + sft.getZeitpunkt() + "   " + sft.getSf().getVorname() + " " + sft.getSf().getNachname() + "   " +sft.getStatus().status);
                 }
             }
             if (stringList.isEmpty()){
@@ -352,7 +496,25 @@ public class SchwarzfahrtensuchenGUI extends Parent_GUI implements ActionListene
             }
 
         }
+        model.clear();
+        if (!schwarzfahrten.isEmpty()){
+            for (String s : schwarzfahrten){
+                model.addElement(s);
+            }
+            model.addElement(schwarzfahrten.size() + " Treffer");
+        }else{
+            model.addElement("Keine Treffer");
+        }
 
+
+    }
+    private String formatLinie(String l){
+        switch (l.length()) {
+            case 1 -> l = l.concat("      ");
+            case 2 -> l = l.concat("    ");
+            case 3 -> l = l.concat("  ");
+        }
+        return l;
     }
     public static void main(String[] args) {
         openSchwarzfahrtensuchenGUI(null);

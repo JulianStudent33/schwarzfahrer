@@ -108,6 +108,11 @@ public class Schwarzfahrt implements Serializable {
     public void setZeitpunkt(String zeitpunkt) {
         this.zeitpunkt = zeitpunkt;
     }
+    public String getDate(){
+        String s = getZeitpunkt();
+        s = s.substring(0, 10);
+        return s;
+    }
 
     public int getDAY() {
         return DAY;

@@ -9,9 +9,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Linie festlegen und updates in Schwarzfahrt erfassen und TransaktionbearbeitenGUI">
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Linie festlegen und updates in Schwarzfahrt erfassen und sdf">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Klassendiagramm_neu.mdj" beforeDir="false" afterPath="$PROJECT_DIR$/Klassendiagramm_neu.mdj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/colorChange.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SachbearbeiterGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SchwarzfahrtensuchenGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SchwarzfahrtensuchenGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SchwarzfahrtensuchenGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SchwarzfahrtensuchenGUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SchwarzfahrtensuchenGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/SB/SchwarzfahrtensuchenGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/elements/PlaceholderTextField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/elements/PlaceholderTextField.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Rollen/Schwarzfahrt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Rollen/Schwarzfahrt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/LoginGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/ProfilGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ProfilGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegisterGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/SB/SachbearbeiterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/SB/SachbearbeiterGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/SB/SchwarzfahrtensuchenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/SB/SchwarzfahrtensuchenGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/elements/PlaceholderPasswordField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/elements/PlaceholderPasswordField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/elements/PlaceholderTextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/elements/PlaceholderTextField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/elements/customComboBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/elements/customComboBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Rollen/Schwarzfahrt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rollen/Schwarzfahrt.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,21 +290,7 @@
       <workItem from="1662128955827" duration="115000" />
       <workItem from="1662365478650" duration="2278000" />
       <workItem from="1662444212992" duration="15117000" />
-      <workItem from="1662533239128" duration="7455000" />
-    </task>
-    <task id="LOCAL-00095" summary="GUI_Mama macht jetzt das Styling für alle Hauptmenüs">
-      <created>1660901529046</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1660901529047</updated>
-    </task>
-    <task id="LOCAL-00096" summary="GUI_Mama macht jetzt das Styling für alle Hauptmenüs">
-      <created>1660901554498</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1660901554498</updated>
+      <workItem from="1662533239128" duration="17972000" />
     </task>
     <task id="LOCAL-00097" summary="GUI_Mama macht jetzt das Styling für alle Hauptmenüs">
       <created>1660914738317</created>
@@ -611,7 +621,21 @@
       <option name="project" value="LOCAL" />
       <updated>1662541299391</updated>
     </task>
-    <option name="localTasksCounter" value="144" />
+    <task id="LOCAL-00144" summary="Linie festlegen und updates in Schwarzfahrt erfassen und sdf">
+      <created>1662576965114</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1662576965114</updated>
+    </task>
+    <task id="LOCAL-00145" summary="Linie festlegen und updates in Schwarzfahrt erfassen und sdf">
+      <created>1662576970501</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1662576970501</updated>
+    </task>
+    <option name="localTasksCounter" value="146" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -632,7 +656,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="changes" />
     <MESSAGE value="auto logout und location relative to parent" />
     <MESSAGE value="many changes" />
     <MESSAGE value="angemeldet bleiben geht wieder" />
@@ -657,7 +680,8 @@
     <MESSAGE value="Colorbutton implementiert, Curser angepasst, Profil gefixed" />
     <MESSAGE value="c" />
     <MESSAGE value="Linie festlegen und updates in Schwarzfahrt erfassen und TransaktionbearbeitenGUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Linie festlegen und updates in Schwarzfahrt erfassen und TransaktionbearbeitenGUI" />
+    <MESSAGE value="Linie festlegen und updates in Schwarzfahrt erfassen und sdf" />
+    <option name="LAST_COMMIT_MESSAGE" value="Linie festlegen und updates in Schwarzfahrt erfassen und sdf" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -728,11 +752,6 @@
           <option name="timeStamp" value="138" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/RegisterGUI.java</url>
-          <line>598</line>
-          <option name="timeStamp" value="145" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/Admin/MitarbeiterVerwaltenGUI.java</url>
           <line>40</line>
           <option name="timeStamp" value="156" />
@@ -761,6 +780,11 @@
           <url>file://$PROJECT_DIR$/src/GUI/SB/TransaktionbearbeitenGUI.java</url>
           <line>205</line>
           <option name="timeStamp" value="175" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GUI/SB/SchwarzfahrtensuchenGUI.java</url>
+          <line>400</line>
+          <option name="timeStamp" value="176" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />

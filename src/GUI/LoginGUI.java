@@ -276,20 +276,7 @@ public class LoginGUI extends Parent_GUI implements ActionListener {
 
                     }
                 }
-                if (colorChange){
-                    if (bname.getText().isBlank()){
-                        bname.addRedFlashEffectWhiteField();
-                    }
-                    if (!userExistiertBereits(bname.getText())){
-                        bname.addRedFlashEffectWhiteField();
-                    }
-                    if (passwortPasswordField.getText().isBlank()){
-                        passwortPasswordField.addRedFlashEffectWhiteField();
-                    }
-                    if (pass.passwordOk(passwortPasswordField.getText())){
-                        passwortPasswordField.addRedFlashEffectWhiteField();
-                    }
-                }else{
+
                     if (bname.getText().isBlank()){
                         bname.addRedFlashEffect();
                     }
@@ -302,10 +289,7 @@ public class LoginGUI extends Parent_GUI implements ActionListener {
                     if (pass.passwordOk(passwortPasswordField.getText())){
                         passwortPasswordField.addRedFlashEffect();
                     }
-                }
-
-
-            }
+               }
         });
 
     }

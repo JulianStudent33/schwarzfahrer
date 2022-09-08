@@ -596,97 +596,47 @@ public class RegisterGUI extends Parent_GUI implements ActionListener {
             }
         }
         if (rollenBox.getItemCount() == 3) {
-            if(!colorChange){
                 rollenBox.addRedFlashEffect();
-            } else {
-                rollenBox.addRedFlashEffectWhiteField();
-            }
-            
         }
         if (genderBox.getItemCount() == 4) {
-            if(!colorChange){
                 genderBox.addRedFlashEffect();
-            } else {
-                genderBox.addRedFlashEffectWhiteField();
-            }
         }
         if (vname.getText().isBlank()) {
-            if(!colorChange){
                 vname.addRedFlashEffect();
-            } else {
-                vname.addRedFlashEffectWhiteField();
-            }
         }
         if (name.getText().isBlank()) {
-            if(!colorChange){
                 name.addRedFlashEffect();
-            } else {
-                name.addRedFlashEffectWhiteField();
-            }
         }
         if (dateButton.getText().equals(datumButtonText)){
-            if(!colorChange){
                 dateButton.addRedFlashEffect();
-            } else {
-                dateButton.addRedFlashEffectWhiteField();
-            }
         }
         if (mail.getText().isBlank()) {
-            if(!colorChange){
                 mail.addRedFlashEffect();
-            } else {
-                mail.addRedFlashEffectWhiteField();
-            }
         }
         if (!mail.getText().contains("@")) {
             mail.setText("");
-            if(!colorChange){
                 mail.addRedFlashEffect();
-            } else {
-                mail.addRedFlashEffectWhiteField();
-            }
+
             mail.setPlaceholder("Bitte eine gültige E-Mail eingeben");
         }
         if (userExistiertBereits(bname.getText())) {
             bname.setText("");
-            if(!colorChange){
                 bname.addRedFlashEffect();
-            } else {
-                bname.addRedFlashEffectWhiteField();
-            }
             bname.setPlaceholder("Benutzername bereits vergeben");
         }
         if (bname.getText().isBlank()) {
-            if(!colorChange){
                 bname.addRedFlashEffect();
-            } else {
-                bname.addRedFlashEffectWhiteField();
-            }
         }
         if (!pass.passwordOk(pw.getText())) {
-            if(!colorChange){
                 pw.addRedFlashEffect();
-            } else {
-                pw.addRedFlashEffectWhiteField();
-            }
+
         }
         if (!pass.passwordOk(pw.getText())) {
-            if(!colorChange){
                 pwb.addRedFlashEffect();
-            } else {
-                pwb.addRedFlashEffectWhiteField();
-            }
         }
         if (!pw.getText().equals(pwb.getText())) {
-
-            if(!colorChange){
                 pwb.addRedFlashEffect();
-            } else {
-                pwb.addRedFlashEffectWhiteField();
-            }
         }
-
-
 
         return false;
     }
