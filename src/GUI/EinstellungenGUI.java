@@ -44,7 +44,7 @@ public class EinstellungenGUI extends Parent_GUI implements ActionListener {
 
         // Panelmanagement
         Background.setBackground(dark);
-        Background.setBounds(1, 1, 300, 500);
+        Background.setBounds(0, 0, 300, 500);
         Background.setLayout(null);
 
         // Elementemanagement
@@ -52,7 +52,7 @@ public class EinstellungenGUI extends Parent_GUI implements ActionListener {
         Ueberschrift.setForeground(white);
         Ueberschrift.setFont(fontMediumMedium);
         Ueberschrift.setText("Einstellungen");
-        Ueberschrift.setBounds(63, 45, 173, 40);
+        Ueberschrift.setBounds(40, 45, 250, 40);
 
         if (angemeldetBleiben) {
             ButtonTextAn.setForeground(white);
@@ -74,26 +74,26 @@ public class EinstellungenGUI extends Parent_GUI implements ActionListener {
 
 
         ButtonTextAn.setText("An");
-        ButtonTextAn.setBorder(new EmptyBorder(35, 10, 0, 0));
+        ButtonTextAn.setBorder(new EmptyBorder(35, 8, 0, 0));
         ButtonTextAus.setText("Aus");
         ButtonTextAus.setBorder(new EmptyBorder(35, 90, 0, 0));
 
         ButtonTextColor.setForeground(white);
         ButtonTextColor.setFont(fontSmall);
-        ButtonTextColor.setBorder(new EmptyBorder(28, 35, 0, 35));
+        ButtonTextColor.setBorder(new EmptyBorder(28, 40, 0, 0));
 
 
 
 
         ButtonUeberschriftAnmelden.setForeground(dark);
         ButtonUeberschriftAnmelden.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 18));
-        ButtonUeberschriftAnmelden.setText("<html><body><center><p>Angemeldet <br>bleiben</p></center></body></html>");
-        ButtonUeberschriftAnmelden.setBorder(new EmptyBorder(10, 8, 40, 8));
+        ButtonUeberschriftAnmelden.setText("<html><body><center><p>Angemeldet<br>bleiben</p></center></body></html>");
+        ButtonUeberschriftAnmelden.setBorder(new EmptyBorder(10, 2, 40, 2));
 
         ButtonUeberschriftColor.setForeground(dark);
         ButtonUeberschriftColor.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 18));
         ButtonUeberschriftColor.setText("<html><body><center><p>Color-Mode</p></center></body></html>");
-        ButtonUeberschriftColor.setBorder(new EmptyBorder(10, 0, 40, 8));
+        ButtonUeberschriftColor.setBorder(new EmptyBorder(10, 2, 40, 2));
 
         AnButton.addActionListener(this);
         AnButton.setBackground(dunkelb);
@@ -106,7 +106,7 @@ public class EinstellungenGUI extends Parent_GUI implements ActionListener {
         AnButton.setBounds(75, 110, 150, 80);
 
         ButtonAutoLogoutUeberschrift.setForeground(dark);
-        ButtonAutoLogoutUeberschrift.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 18));
+        ButtonAutoLogoutUeberschrift.setFont(new Font("IBM Plex Mono Medium", Font.BOLD, 16));
         ButtonAutoLogoutUeberschrift.setText("Auto-Logout");
         ButtonAutoLogoutUeberschrift.setBorder(new EmptyBorder(10, 0, 40, 0));
 
@@ -128,7 +128,7 @@ public class EinstellungenGUI extends Parent_GUI implements ActionListener {
 
         ButtonAutoLogoutText.setForeground(white);
         ButtonAutoLogoutText.setFont(fontSmall);
-        ButtonAutoLogoutText.setBorder(new EmptyBorder(28, 35, 0, 35));
+        ButtonAutoLogoutText.setBorder(new EmptyBorder(28, 46, 0, 0));
 
         LogoutButton.addActionListener(this);
         LogoutButton.setBackground(hellb);
