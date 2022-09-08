@@ -33,7 +33,7 @@ public class LinieFestlegenGUI extends Parent_GUI{
         setupGUI(parent, "LinieFestlegenGUI");
 
         buttonPanel.setBackground(dark);
-        buttonPanel.setBounds(50,80,200,30);
+        buttonPanel.setBounds(45,80,200,30);
         buttonPanel.setLayout(new GridLayout(1,2,10,0));
 
         SpeicherButton1.setText("Speichern");
@@ -47,7 +47,7 @@ public class LinieFestlegenGUI extends Parent_GUI{
         AbbrechenButton1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         styleTextField(linienTextfield, "z.B. S41");
-        linienTextfield.setBounds(100,30,150,30);
+        linienTextfield.setBounds(110,30,150,30);
         ((AbstractDocument)linienTextfield.getDocument()).setDocumentFilter(sfilter);
         if (KontrolleurGUI.currentLine!=null & KontrolleurGUI.currentLine!=""){
             linienTextfield.setText(KontrolleurGUI.currentLine);

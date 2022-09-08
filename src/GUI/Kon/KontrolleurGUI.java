@@ -31,7 +31,7 @@ public class KontrolleurGUI extends Parent_GUI {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                SchwarzfahrtErfassenGUI.openSfErfassen(getFrame());
+                schwarzfahrtenerfassengui.openSfErfassung(getFrame());
                 Kachel1.setEnabled(false);
             }
         });
