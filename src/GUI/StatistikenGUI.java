@@ -328,23 +328,23 @@ public class StatistikenGUI extends Parent_GUI implements ActionListener {
             }
         }
         int highestCount = 0;
-        String hotstopLinie = "Kein Hotspot";
+        String hotspotLinie = "Kein Hotspot";
         Set<Map.Entry<String, Integer>> entrySet = valueCounter.entrySet();
         for (Map.Entry<String, Integer> entry : entrySet){
-            if (entry.getValue() > 1){
+            if (entry.getValue() > 0){
                 System.out.println(entry.getKey() + "=>" + entry.getValue());
                 if (entry.getValue() > highestCount){
                     highestCount = entry.getValue();
-                    hotstopLinie = entry.getKey();
+                    hotspotLinie = entry.getKey();
                 } else if (entry.getValue() == highestCount) {
-                    hotstopLinie = hotstopLinie.concat(", " + entry.getKey());
+                    hotspotLinie = hotspotLinie.concat(", " + entry.getKey());
                 }
             }
         }
 
-        System.out.println(hotstopLinie);
+        System.out.println(hotspotLinie);
        // System.out.println(linien.size());
-        return hotstopLinie;
+        return hotspotLinie;
     }
 
     @Override

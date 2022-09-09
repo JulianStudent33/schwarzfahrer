@@ -150,7 +150,9 @@ public class TransaktionbearbeitenGUI extends Parent_GUI implements ActionListen
 
                 bearbeiten.setEnabled(false);
                 loeschen.setEnabled(false);
-
+                if (model.size()==0){
+                    parentGUI.Kachel2.setEnabled(false);
+                }
             }
 
         });
@@ -158,7 +160,9 @@ public class TransaktionbearbeitenGUI extends Parent_GUI implements ActionListen
         abbrechen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                parentGUI.Kachel1.setEnabled(true);
+                if (model.size()>0){
+                    parentGUI.Kachel1.setEnabled(true);
+                }
                 dispose();
             }
         });
