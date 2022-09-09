@@ -581,8 +581,12 @@ public class RegisterGUI extends Parent_GUI implements ActionListener {
                                     if (!bname.getText().isBlank()) {
                                         if (!userExistiertBereits(bname.getText())) {
                                             if (pass.passwordOk(pw.getText())) {
+                                                if (pw.getText().equals(pwb.getText())){
+                                                    return true;
+                                                }else{
+                                                    JOptionPane.showMessageDialog(new JDialog(), "Passwörter stimmen nicht überein");
+                                                }
 
-                                                return true;
                                             } else {
                                                 JOptionPane.showMessageDialog(new JDialog(), "Passwort erfüllt nicht die formalen Bedingungen!");
                                             }
@@ -636,6 +640,9 @@ public class RegisterGUI extends Parent_GUI implements ActionListener {
         }
         if (!pw.getText().equals(pwb.getText())) {
                 pwb.addRedFlashEffect();
+        }
+        if (!pw.getText().equals(pwb.getText())){
+            pwb.addRedFlashEffect();
         }
 
         return false;
