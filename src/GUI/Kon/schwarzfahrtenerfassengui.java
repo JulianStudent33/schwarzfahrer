@@ -124,7 +124,7 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         //--------------------Einzelne Objekte linkes Panel---------------------
 
         schwarz.setText("Delikt");
-        schwarz.setFont(fontLargeLarge);
+        schwarz.setFont(fontLarge);
         schwarz.setForeground(white);
         schwarz.setBackground(dark);
         schwarz.setBounds(170,0,400,50);
@@ -135,14 +135,14 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         datuml.setBackground(dark);
         datuml.setForeground(white);
         datuml.setText("Ereignisdatum auswählen");
-        datuml.setFont(fontSmall);
+        datuml.setFont(fontverySmall);
         datuml.setBounds(75,70,300,30);
         datuml.setText(Foo.getCurrentDate());
         datuml.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         hour.setBackground(dark);
         hour.setForeground(white);
-        hour.setFont(fontSmall);
+        hour.setFont(fontverySmall);
         hour.setBounds(75,110,145,30);
         for(String s : hours){
             hour.addItem(s);
@@ -153,7 +153,7 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
 
         minute.setBackground(dark);
         minute.setForeground(white);
-        minute.setFont(fontSmall);
+        minute.setFont(fontverySmall);
         minute.setBounds(230,110,145,30);
         for (String s : minutes){
             minute.addItem(s);
@@ -162,7 +162,7 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         minute.setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
 
         linie.setText("Linie:");
-        linie.setFont(fontSmall);
+        linie.setFont(fontverySmall);
         linie.setBackground(dark);
         linie.setForeground(white);
         linie.setBounds(130,150,145,30);
@@ -172,16 +172,16 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         borderlinie.setBorder(BorderFactory.createLineBorder(notSoDark));
 
         linienfield.setPlaceholder("z.B. S41");
-        linienfield.setFont(fontSmall);
+        linienfield.setFont(fontverySmall);
         linienfield.setBackground(dark);
         linienfield.setForeground(white);
         linienfield.setBounds(175,150,145,30);
 
         bezahlt.setText("Bereits bezahlt");
-        bezahlt.setFont(fontSmall);
+        bezahlt.setFont(fontverySmall);
         bezahlt.setBackground(dark);
         bezahlt.setForeground(white);
-        bezahlt.setBounds(160,185,145,30);
+        bezahlt.setBounds(160,185,200,30);
         bezahlt.setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
 
         info.setText("<html><body><center><p>Mit Auto-Fill bei bekannter Ausweisnr.<br>rechte Seite automatisch füllen</p></center></body></html>");
@@ -191,7 +191,7 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         info.setBounds(100,285,400,50);
 
         ausweis.setText("Ausweisnr:");
-        ausweis.setFont(fontSmall);
+        ausweis.setFont(fontverySmall);
         ausweis.setBackground(dark);
         ausweis.setForeground(white);
         ausweis.setBounds(75,220,145,30);
@@ -201,7 +201,7 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         ausweislinie.setBorder(BorderFactory.createLineBorder(notSoDark));
 
         ausweisfield.setPlaceholder("Hier Eingeben");
-        ausweisfield.setFont(fontSmall);
+        ausweisfield.setFont(fontverySmall);
         ausweisfield.setBackground(dark);
         ausweisfield.setForeground(white);
         ausweisfield.setBounds(160,220,215,30);
@@ -209,27 +209,27 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         autofill.setBackground(dunkelb);
         autofill.setForeground(white);
         autofill.setText("Auto-Fill");
-        autofill.setFont(fontSmall);
+        autofill.setFont(fontverySmall);
         autofill.setBounds(150,260,150,30);
         autofill.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         //----------------------Einzelne Objekte rechtes Panel--------------------
 
         erf.setText("Schwarzfahrer");
-        erf.setFont(fontLargeLarge);
+        erf.setFont(fontLarge);
         erf.setForeground(white);
         erf.setBackground(dark);
         erf.setBounds(120,0,400,50);
 
         trennerf.setBackground(white);
-        trennerf.setBounds(120,50,260,5);
+        trennerf.setBounds(120,50,240,5);
 
         genderBox.addItem(geschlechter[0]);
         genderBox.addItem(geschlechter[1]);
         genderBox.addItem(geschlechter[2]);
         genderBox.addItem(geschlechter[3]);
 
-        genderBox.setFont(fontSmall);
+        genderBox.setFont(fontverySmall);
         genderBox.setBackground(whitebg);
         if(genderBox.getItemAt(0)=="Geschlecht*") {
             genderBox.setForeground(notSoDark);
@@ -242,69 +242,70 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         genderBox.setBounds(15,65,150,30);
 
         vname.setPlaceholder("Vorname*");
-        vname.setFont(fontSmall);
+        vname.setFont(fontverySmall);
         vname.setBackground(dark);
         vname.setForeground(white);
         vname.setBounds(175,65,150,30);
 
         name.setPlaceholder("Nachname*");
-        name.setFont(fontSmall);
+        name.setFont(fontverySmall);
         name.setBackground(dark);
         name.setForeground(white);
         name.setBounds(335,65,150,30);
 
         datumr.setBackground(dark);
-        datumr.setForeground(white);
-        datumr.setText("Geburtsdatum auswählen*");
-        datumr.setFont(fontSmall);
+        datumr.setForeground(notSoDark);
+        datumr.setText("Geburtsdatum*");
+        datumr.setFont(fontverySmall);
+        datumr.setHorizontalAlignment(SwingConstants.LEFT);
         datumr.setBounds(15,105,230,30);
         datumr.setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
 
         ort.setPlaceholder("Geburtsort*");
-        ort.setFont(fontSmall);
+        ort.setFont(fontverySmall);
         ort.setBackground(dark);
         ort.setForeground(white);
         ort.setBounds(255,105,230,30);
 
         mail.setPlaceholder("E-Mail");
-        mail.setFont(fontSmall);
+        mail.setFont(fontverySmall);
         mail.setBackground(dark);
         mail.setForeground(white);
         mail.setBounds(15,145,200,30);
 
         nr.setPlaceholder("Telefonnummer");
-        nr.setFont(fontSmall);
+        nr.setFont(fontverySmall);
         nr.setBackground(dark);
         nr.setForeground(white);
         nr.setBounds(225,145,260,30);
 
         strasse.setPlaceholder("Straße*");
-        strasse.setFont(fontSmall);
+        strasse.setFont(fontverySmall);
         strasse.setBackground(dark);
         strasse.setForeground(white);
         strasse.setBounds(15,185,310,30);
 
         hausnr.setPlaceholder("Hausnummer*");
-        hausnr.setFont(fontSmall);
+        hausnr.setFont(fontverySmall);
         hausnr.setBackground(dark);
         hausnr.setForeground(white);
         hausnr.setBounds(335,185,150,30);
 
         plz.setPlaceholder("PLZ*");
-        plz.setFont(fontSmall);
+        plz.setFont(fontverySmall);
         plz.setBackground(dark);
         plz.setForeground(white);
         plz.setBounds(15,225,150,30);
 
         stadt.setPlaceholder("Stadt*");
-        stadt.setFont(fontSmall);
+        stadt.setFont(fontverySmall);
         stadt.setBackground(dark);
         stadt.setForeground(white);
         stadt.setBounds(175,225,310,30);
 
         land.addItem("Staatsangehörigkeit*");
 
-        land.setFont(fontSmall);
+        land.setFont(fontverySmall);
         land.setBackground(whitebg);
         if(land.getItemAt(0)=="Staatsangehörigkeit*") {
             land.setForeground(notSoDark);
@@ -317,7 +318,7 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         land.setBounds(15,265,260,30);
 
         adr.setPlaceholder("Adresszusatz");
-        adr.setFont(fontSmall);
+        adr.setFont(fontverySmall);
         adr.setBackground(dark);
         adr.setForeground(white);
         adr.setBounds(285,265,200,30);
@@ -325,27 +326,31 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         erfs.setBackground(dunkelb);
         erfs.setForeground(white);
         erfs.setText("Schwarzfahrt erfassen");
-        erfs.setFont(fontSmall);
+        erfs.setFont(fontverySmall);
         erfs.setBounds(15,305,290,30);
         erfs.setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
 
         abr.setBackground(notSoDark);
         abr.setForeground(white);
         abr.setText("Abbrechen");
-        abr.setFont(fontSmall);
+        abr.setFont(fontverySmall);
         abr.setBounds(315,305,170,30);
         abr.setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
 
         //----------------------JFRAME BEFEHLE--------------------
 
+
         this.setTitle("Schwarzfahrt erfassen");
         this.setBackground(dark);
         this.setSize(1000,400);
-        this.setLayout(null);
         this.setLocationRelativeTo(parent);
         this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         this.setResizable(false);
+        this.setLayout(null);
         this.setVisible(true);
+
+
+
 
         leftp.add(schwarz);
         leftp.add(trennlinie);
@@ -386,6 +391,17 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         this.add(BGdark);
 
 
+        datumr.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+
+                if (datumr.getText().equals("Geburtsdatum*")){
+                    datumr.setForeground(white);
+                }
+
+            }
+        });
         datuml.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

@@ -9,14 +9,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="schwarzfahrt erfassen code">
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="Schwarzfahrt erfassen gui implementiert, muss noch designed und gefüllt werden... LOGIK kommt nachher von Cedric">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_08_38_[Changes]/EinstellungenGUI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_08_38_[Changes]/loggedIN1.save" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_08_38_[Changes]/schwarzfahrtenerfassengui.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_08_38_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_08_39_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_08_39__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_19_57_[Changes]/colorChange1.save" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_19_57_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_19_57__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_22_09_[Changes]/loggedIN1.save" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_22_09_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_22_09__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_09_2022_20_16__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_09_2022_20_16__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_19_52__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_19_52__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_22_48__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_22_48__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_00_08__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_00_08__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_00_10__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_00_10__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_00_22__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_00_22__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/loggedIN.save" beforeDir="false" afterPath="$PROJECT_DIR$/Saves/loggedIN.save" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Komponentendiagramm.mdj" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/Komponentendiagramm.mdj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Admin/J.mb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_08_38_[Changes]/loggedIN.save" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Kontrolleur/JM.mb" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_19_57_[Changes]/loggedIN1.save" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Kontrolleur/JMM.mb" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_19_57_[Changes]/loggedIN.save" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Kontrolleur/JMMMM.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Kontrolleur/Konni1.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/colorChange.save" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_19_57_[Changes]/colorChange.save" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/loggedIN.save" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_22_09_[Changes]/loggedIN.save" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_22_48__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_22_48__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_00_08__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_00_08__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_00_10__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_00_10__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Kontrolleur/JMM.mb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Kontrolleur/JMMM.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/loggedIN.save" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/loggedIN.save" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui.class" afterDir="false" />
@@ -276,6 +302,8 @@
       <workItem from="1662365478650" duration="2278000" />
       <workItem from="1662444212992" duration="15117000" />
       <workItem from="1662533239128" duration="36115000" />
+      <workItem from="1662709011512" duration="130000" />
+      <workItem from="1662709177671" duration="997000" />
     </task>
     <task id="LOCAL-00104" summary="Code Schneller gemacht">
       <created>1661182475813</created>
@@ -641,7 +669,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Filter für Registration Window und Admin Anlegen" />
     <MESSAGE value="Profil daten ändern implementiert, Filter implementiert, Admin Anlegen implementiert" />
     <MESSAGE value="Code Schneller gemacht" />
     <MESSAGE value="Statistiken fast fertig" />
@@ -666,7 +693,8 @@
     <MESSAGE value="bugfix" />
     <MESSAGE value="bugfix endlich ich raste aus man bin ich geil" />
     <MESSAGE value="schwarzfahrt erfassen code" />
-    <option name="LAST_COMMIT_MESSAGE" value="schwarzfahrt erfassen code" />
+    <MESSAGE value="Schwarzfahrt erfassen gui implementiert, muss noch designed und gefüllt werden... LOGIK kommt nachher von Cedric" />
+    <option name="LAST_COMMIT_MESSAGE" value="Schwarzfahrt erfassen gui implementiert, muss noch designed und gefüllt werden... LOGIK kommt nachher von Cedric" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

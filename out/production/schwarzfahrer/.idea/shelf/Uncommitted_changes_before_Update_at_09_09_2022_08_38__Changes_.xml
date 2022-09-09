@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_Update_at_09_09_2022_08_38_[Changes]" date="1662705517604" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_08_38_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 09.09.2022 08:38 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/schwarzfahrer/Saves/loggedIN.save" />
+    <option name="AFTER_PATH" value="out/production/schwarzfahrer/Saves/loggedIN.save" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_08_38_[Changes]/loggedIN.save" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui.class" />
+    <option name="AFTER_PATH" value="out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_08_38_[Changes]/schwarzfahrtenerfassengui.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Saves/loggedIN.save" />
+    <option name="AFTER_PATH" value="Saves/loggedIN.save" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_08_38_[Changes]/loggedIN1.save" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/schwarzfahrer/src/GUI/EinstellungenGUI.class" />
+    <option name="AFTER_PATH" value="out/production/schwarzfahrer/src/GUI/EinstellungenGUI.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_09_2022_08_38_[Changes]/EinstellungenGUI.class" />
+  </binary>
+</changelist>
