@@ -188,7 +188,7 @@ public class SchwarzfahrtErfassenGUI extends Parent_GUI {
                         }
 
                         else{
-                           Schwarzfahrer.updateExistingSF(ausweisnummerTextField.getText(), geburtsortTextField.getText(), neueAdresse, vornameTextField.getText(), nachnameTextField.getText(), geschlechtBox.getSelectedItem().toString(), telefonTextField.getText(), emailTextField.getText(), geburtsdatum[0], geburtsdatum[1], geburtsdatum[2], currentSf.sftList);
+                           currentSf.updateExistingSF(ausweisnummerTextField.getText(), geburtsortTextField.getText(), neueAdresse, vornameTextField.getText(), nachnameTextField.getText(), geschlechtBox.getSelectedItem().toString(), telefonTextField.getText(), emailTextField.getText(), geburtsdatum[0], geburtsdatum[1], geburtsdatum[2], currentSf.sftList);
                                  currentSf.appendSFT(datumButton1.getText(), stundenBox.getSelectedItem().toString(), minutenBox.getSelectedItem().toString(), linieTextField.getText(), bereitsBezahltCheckBox.isSelected());
                             //Übergibt dem Schwarzfahrerobjekt die Variablen zur Schwarzfahrt, int[], int, int, String, boolean
                         }

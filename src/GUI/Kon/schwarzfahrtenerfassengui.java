@@ -204,11 +204,14 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         borderlinie.setBorder(BorderFactory.createLineBorder(notSoDark));
 
         linienfield.setPlaceholder("z.B. S41");
+        if (KontrolleurGUI.currentLine!=null && KontrolleurGUI.currentLine!=""){
+            linienfield.setText(KontrolleurGUI.currentLine);
+        }
         linienfield.setFont(fontverySmall);
         linienfield.setBackground(dark);
         linienfield.setForeground(white);
         linienfield.setBounds(175,150,145,30);
-        ((AbstractDocument)name.getDocument()).setDocumentFilter(sfilter);
+        ((AbstractDocument)linienfield.getDocument()).setDocumentFilter(sfilter);
 
         bezahlt.setText("Bereits bezahlt");
         bezahlt.setFont(fontverySmall);
@@ -223,7 +226,7 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         info.setForeground(notSoDark);
         info.setBounds(100,285,400,50);
 
-        ausweis.setText("Ausweisnr:");
+        ausweis.setText("Ausweisnr*:");
         ausweis.setFont(fontverySmall);
         ausweis.setBackground(dark);
         ausweis.setForeground(white);
@@ -321,7 +324,7 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         strasse.setBackground(dark);
         strasse.setForeground(white);
         strasse.setBounds(15,185,310,30);
-        ((AbstractDocument)strasse.getDocument()).setDocumentFilter(lfilter);
+
 
         hausnr.setPlaceholder("Hausnummer*");
         hausnr.setFont(fontverySmall);
@@ -342,7 +345,7 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         stadt.setBackground(dark);
         stadt.setForeground(white);
         stadt.setBounds(175,225,310,30);
-        ((AbstractDocument)stadt.getDocument()).setDocumentFilter(lfilter);
+
 
         land.setFont(fontverySmall);
         land.setBackground(whitebg);
@@ -530,6 +533,7 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
 
                 }else{
                     datumr.setText(calender.Set_Picked_Date());
+                    datumr.setForeground(white);
                 }
             }
         });
@@ -555,17 +559,18 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
 
 
 
-                        if (currentSf ==null){
+                        if (currentSf == null){
                             currentSf = new Schwarzfahrer(ausweisfield.getText(), ort.getText(), neueAdresse, vname.getText(), name.getText(), genderBox.getSelectedItem().toString(), nr.getText(), mail.getText(), geburtsdatum[0], geburtsdatum[1], geburtsdatum[2]);
+                            currentSf.appendSFT(datuml.getText(), hour.getSelectedItem().toString(), minute.getSelectedItem().toString(), linienfield.getText(), bezahlt.isSelected());
+
+                            //Übergibt dem Schwarzfahrerobjekt die Variablen zur Schwarzfahrt, int[], int, int, String, boolean
+                        } else {
+                            currentSf.updateExistingSF(ausweisfield.getText(), ort.getText(), neueAdresse, vname.getText(), name.getText(), genderBox.getSelectedItem().toString(), nr.getText(), mail.getText(), geburtsdatum[0], geburtsdatum[1], geburtsdatum[2], currentSf.sftList);
                             currentSf.appendSFT(datuml.getText(), hour.getSelectedItem().toString(), minute.getSelectedItem().toString(), linienfield.getText(), bezahlt.isSelected());
                             //Übergibt dem Schwarzfahrerobjekt die Variablen zur Schwarzfahrt, int[], int, int, String, boolean
                         }
 
-                        else{
-                            Schwarzfahrer.updateExistingSF(ausweisfield.getText(), ort.getText(), neueAdresse, vname.getText(), name.getText(), genderBox.getSelectedItem().toString(), nr.getText(), mail.getText(), geburtsdatum[0], geburtsdatum[1], geburtsdatum[2], currentSf.sftList);
-                            currentSf.appendSFT(datuml.getText(), hour.getSelectedItem().toString(), minute.getSelectedItem().toString(), linienfield.getText(), bezahlt.isSelected());
-                            //Übergibt dem Schwarzfahrerobjekt die Variablen zur Schwarzfahrt, int[], int, int, String, boolean
-                        }
+
 
 
                     } catch (IOException ex) {
@@ -607,11 +612,11 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
     }
     private void autofill(){
 
-            if (currentSf.getGeschlecht().equals("M")){
+            if (currentSf.getGeschlecht().equals("Männlich")){
                 genderBox.setSelectedIndex(0);
-            } else if (currentSf.getGeschlecht().equals("W")) {
+            } else if (currentSf.getGeschlecht().equals("Weiblich")) {
                 genderBox.setSelectedIndex(1);
-            } else if (currentSf.getGeschlecht().equals("D")){
+            } else if (currentSf.getGeschlecht().equals("Divers")){
                 genderBox.setSelectedIndex(2);
             }
 
@@ -649,11 +654,14 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
                 adr.addFlashEffect();
             }
 
+            datumr.setForeground(white);
+            genderBox.setForeground(white);
+
     }
     private boolean pflichtAusgefuellt(){
         if (!datuml.getText().isBlank()){
             if (!datumr.getText().equals("Geburtsdatum auswählen*")){
-                if (!linie.getText().isBlank()){
+                if (!linienfield.getText().isBlank()){
                     if (!ausweisfield.getText().isBlank()) {
                         if (!vname.getText().isBlank()) {
                             if (!name.getText().isBlank()) {

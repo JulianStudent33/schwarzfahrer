@@ -52,15 +52,21 @@ public class Schwarzfahrer extends Person{
         System.out.println("Schwarzfahrer Profil erstellt.");
     }
 
-    public static void updateExistingSF(String ausweisnummer, String geburtsort,
+    public void updateExistingSF(String ausweisnummer, String geburtsort,
                                         Adresse adresse, String vorname, String nachname, String geschlecht,
                                         String telefonnummer, String email, int day, int month, int year, List<Schwarzfahrt> sftListe) throws IOException {
+                setAusweisnummer(ausweisnummer);
+                setGeburtsort(geburtsort);
+                setAdresse(adresse);
+                setVorname(vorname);
+                setNachname(nachname);
+                setGeschlecht(geschlecht);
+                setTelefonnummer(telefonnummer);
+                setEmail(email);
+                setGeburtsTag(day);
+                setGeburtsMonat(month);
+                setGeburtsJahr(year);
 
-                Schwarzfahrer sf = new Schwarzfahrer(ausweisnummer, geburtsort,
-                adresse, vorname, nachname, geschlecht,
-                telefonnummer, email, day, month, year);
-
-                sf.sftList = sftListe;
     }
 
 

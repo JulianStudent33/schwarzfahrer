@@ -9,11 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="länder array">
+    <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="schwarzfahrt erfassen fertig">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/Users/Kontrolleur/Konni1.mb" beforeDir="false" afterPath="$PROJECT_DIR$/Saves/Users/Kontrolleur/Konni1.mb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/loggedIN.save" beforeDir="false" afterPath="$PROJECT_DIR$/Saves/loggedIN.save" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Admin/Admin1.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/Users/Kontrolleur/Konni1.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/colorChange.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/loggedIN.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Admin/Admin1.mb" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Admin/Admin1.mb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Kontrolleur/Konni1.mb" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Kontrolleur/Konni1.mb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/loggedIN.save" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/loggedIN.save" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/SchwarzfahrtErfassenGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/SchwarzfahrtErfassenGUI$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui$3.class" afterDir="false" />
@@ -24,7 +29,11 @@
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui$8.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui$9.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Kon/schwarzfahrtenerfassengui.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Rollen/Schwarzfahrer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Rollen/Schwarzfahrer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Kon/SchwarzfahrtErfassenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Kon/SchwarzfahrtErfassenGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/Kon/schwarzfahrtenerfassengui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Kon/schwarzfahrtenerfassengui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/elements/LetterFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/elements/LetterFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Rollen/Schwarzfahrer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rollen/Schwarzfahrer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,14 +290,7 @@
       <workItem from="1662365478650" duration="2278000" />
       <workItem from="1662444212992" duration="15117000" />
       <workItem from="1662533239128" duration="36566000" />
-      <workItem from="1662705192818" duration="8290000" />
-    </task>
-    <task id="LOCAL-00110" summary="Passwort ändern Bug fixed">
-      <created>1661239696258</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1661239696258</updated>
+      <workItem from="1662705192818" duration="10097000" />
     </task>
     <task id="LOCAL-00111" summary="Passwort ändern Bug fixed">
       <created>1661239701941</created>
@@ -626,7 +628,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662712533515</updated>
     </task>
-    <option name="localTasksCounter" value="159" />
+    <task id="LOCAL-00159" summary="schwarzfahrt erfassen fertig">
+      <created>1662713978878</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1662713978878</updated>
+    </task>
+    <option name="localTasksCounter" value="160" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -647,7 +656,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Code Schneller gemacht" />
     <MESSAGE value="Statistiken fast fertig" />
     <MESSAGE value="^Bug im DatePick fixed" />
     <MESSAGE value="Das mit dem Admin anlegen gefixt" />
@@ -672,7 +680,8 @@
     <MESSAGE value="schwarzfahrt erfassen code" />
     <MESSAGE value="schwarzfahrt df code" />
     <MESSAGE value="länder array" />
-    <option name="LAST_COMMIT_MESSAGE" value="länder array" />
+    <MESSAGE value="schwarzfahrt erfassen fertig" />
+    <option name="LAST_COMMIT_MESSAGE" value="schwarzfahrt erfassen fertig" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

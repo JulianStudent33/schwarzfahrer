@@ -9,7 +9,6 @@ public class LetterFilter extends DocumentFilter {
 
 
 
-
     public LetterFilter() {
     }
 
