@@ -13,6 +13,7 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -103,6 +104,7 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
     public schwarzfahrtenerfassengui(Parent_GUI parent) {
         setupGUI(parent, "SchwarzfahrtenErfassungGUI");
         currentKon = (Kontrolleur) currentUser;
+        addBorders();
 
         //----------------------HAUPTPANEL--------------------
 
@@ -437,6 +439,19 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
 
     }
     void addBorders(){
+        genderBox.setBorder(new LineBorder(dunkelb));
+        vname.setBorder(new LineBorder(dunkelb));
+        name.setBorder(new LineBorder(dunkelb));
+        datumr.setBorder(new LineBorder(dunkelb));
+        ort.setBorder(new LineBorder(dunkelb));
+        mail.setBorder(new LineBorder(dunkelb));
+        nr.setBorder(new LineBorder(dunkelb));
+        strasse.setBorder(new LineBorder(dunkelb));
+        hausnr.setBorder(new LineBorder(dunkelb));
+        plz.setBorder(new LineBorder(dunkelb));
+        stadt.setBorder(new LineBorder(dunkelb));
+        land.setBorder(new LineBorder(dunkelb));
+        adr.setBorder(new LineBorder(dunkelb));
 
     }
     private void autofill(){
