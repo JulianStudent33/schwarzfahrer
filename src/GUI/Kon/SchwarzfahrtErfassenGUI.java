@@ -38,7 +38,7 @@ public class SchwarzfahrtErfassenGUI extends Parent_GUI {
     private PlaceholderTextField plzTextField;
     private PlaceholderTextField ortTextField;
     private PlaceholderTextField zusatzTextField;
-    private customComboBox landComboBox;
+    public customComboBox landComboBox;
     private JToggleButton speichernToggleButton;
     private JLabel nameLabel;
     private JToggleButton abbrechenToggleButton;
@@ -172,7 +172,7 @@ public class SchwarzfahrtErfassenGUI extends Parent_GUI {
             public void actionPerformed(ActionEvent e) {
 
                 if (pflichtAusgefuellt()){
-                    Adresse neueAdresse = new Adresse(landComboBox.getSelectedItem().toString(), plzTextField.getText(), ortTextField.getText(), strasseTextField.getText(), hausnummerTextField.getText(), zusatzTextField.getText());
+                    Adresse neueAdresse = new Adresse(landComboBox.getSelectedItem().toString(),landComboBox.getSelectedIndex(), plzTextField.getText(), ortTextField.getText(), strasseTextField.getText(), hausnummerTextField.getText(), zusatzTextField.getText());
 
                     try {
 
@@ -342,13 +342,6 @@ public class SchwarzfahrtErfassenGUI extends Parent_GUI {
         if (ortTextField.getText().isBlank()){
             ortTextField.addRedFlashEffect();
         }
-
-
-
-
-
-
-
 
         return false;
     }

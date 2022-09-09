@@ -4,14 +4,16 @@ import java.io.Serializable;
 
 public class Adresse implements Serializable {
     String Land;
+    int landIndex;
     String PLZ;
     String Ort;
     String Strasse;
     String Hausnummer;
     String Zusatz;
 
-    public Adresse(String land, String plz, String ort, String strasse, String hausnummer, String zusatz) {
+    public Adresse(String land, int landIndex, String plz, String ort, String strasse, String hausnummer, String zusatz) {
         this.Land = land;
+        this.landIndex = landIndex;
         this.PLZ = plz;
         this.Ort = ort;
         this.Strasse = strasse;
@@ -25,6 +27,14 @@ public class Adresse implements Serializable {
 
     public void setLand(String land) {
         Land = land;
+    }
+
+    public int getLandIndex() {
+        return landIndex;
+    }
+
+    public void setLandIndex(int landIndex) {
+        this.landIndex = landIndex;
     }
 
     public String getPLZ() {

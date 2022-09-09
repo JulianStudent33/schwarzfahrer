@@ -1,10 +1,12 @@
 package src.GUI.Kon;
 
+import src.Adresse;
 import src.Foo;
 import src.GUI.Parent_GUI;
 import src.GUI.ProfilGUI;
 import src.GUI.elements.DatePick;
 import src.GUI.elements.PlaceholderTextField;
+import src.GUI.elements.customButton;
 import src.GUI.elements.customComboBox;
 import src.Rollen.Kontrolleur;
 import src.Rollen.Schwarzfahrer;
@@ -17,14 +19,39 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.IOException;
 import java.util.Calendar;
+
+import static src.Foo.dateToNumber;
 
 public class schwarzfahrtenerfassengui extends Parent_GUI {
 
     String[] hours = {"00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"};
     String[] minutes = {"00", "01", "02", "03", "04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28", "29","30",
             "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59"};
+    String[] countries = {"Deutschland", "------------","Afghanistan","\u00c4gypten","\u00c5landinseln","Albanien","Algerien","Amerikanisch-Samoa","Amerikanische Jungferninseln","Amerikanische \u00dcberseeinseln","Andorra","Angola","Anguilla","Antarktis","Antigua und Barbuda","\u00c4quatorialguinea","Argentinien","Armenien","Aruba","Aserbaidschan","\u00c4thiopien","Australien","Bahamas","Bahrain","Bangladesch","Barbados","Belarus",
+            "Belgien","Belize","Benin", "Bermuda", "Bhutan","Bolivien","Bonaire, Sint Eustatius und Saba","Bosnien und Herzegowina","Botsuana","Bouvetinsel","Brasilien",
+        "Britische Jungferninseln","Britisches Territorium im Indischen Ozean", "Brunei Darussalam","Bulgarien","Burkina Faso","Burundi","Cabo Verde","Chile",
+        "China","Cookinseln","Costa Rica","C\u00f4te d\u2019Ivoire","Cura\u00e7ao","D\u00e4nemark","Dominica","Dominikanische Republik",
+        "Dschibuti","Ecuador","El Salvador","Eritrea","Estland","Eswatini","Falklandinseln","F\u00e4r\u00f6er","Fidschi","Finnland","Frankreich",
+        "Franz\u00f6sisch-Guayana","Franz\u00f6sisch-Polynesien","Franz\u00f6sische S\u00fcd- und Antarktisgebiete","Gabun","Gambia","Georgien","Ghana","Gibraltar",
+        "Grenada","Griechenland","Gr\u00f6nland","Guadeloupe","Guam","Guatemala","Guernsey","Guinea","Guinea-Bissau","Guyana","Haiti","Heard und McDonaldinseln"
+        ,"Honduras","Indien","Indonesien","Irak","Iran","Irland","Island","Isle of Man","Israel","Italien","Jamaika","Japan","Jemen","Jersey","Jordanien",
+        "Kaimaninseln","Kambodscha","Kamerun","Kanada","Kasachstan","Katar","Kenia","Kirgisistan","Kiribati","Kokosinseln","Kolumbien","Komoren","Kongo-Brazzaville",
+        "Kongo-Kinshasa","Kroatien","Kuba","Kuwait","Laos","Lesotho","Lettland","Libanon","Liberia","Libyen","Liechtenstein","Litauen","Luxemburg","Madagaskar",
+        "Malawi","Malaysia","Malediven","Mali","Malta","Marokko","Marshallinseln","Martinique","Mauretanien","Mauritius","Mayotte","Mexiko","Mikronesien","Monaco",
+        "Mongolei","Montenegro","Montserrat","Mosambik","Myanmar","Namibia","Nauru","Nepal","Neukaledonien","Neuseeland","Nicaragua","Niederlande","Niger","Nigeria",
+        "Niue","Nordkorea","N\u00f6rdliche Marianen","Nordmazedonien","Norfolkinsel","Norwegen","Oman","\u00d6sterreich","Pakistan","Pal\u00e4stinensische Autonomiegebiete","Palau",
+        "Panama","Papua-Neuguinea","Paraguay","Peru","Philippinen","Pitcairninseln","Polen","Portugal","Puerto Rico","Republik Moldau","R\u00e9union","Ruanda","Rum\u00e4nien",
+        "Russland","Salomonen","Sambia","Samoa","San Marino","S\u00e3o Tom\u00e9 und Pr\u00edncipe","Saudi-Arabien","Schweden","Schweiz","Senegal","Serbien","Seychellen","Sierra Leone",
+        "Simbabwe","Singapur","Sint Maarten","Slowakei","Slowenien","Somalia","Sonderverwaltungsregion Hongkong","Sonderverwaltungsregion Macau","Spanien","Spitzbergen und Jan Mayen","Sri Lanka",
+        "St. Barth\u00e9lemy","St. Helena","St. Kitts und Nevis","St. Lucia","St. Martin","St. Pierre und Miquelon","St. Vincent und die Grenadinen","S\u00fcdafrika","Sudan",
+        "S\u00fcdgeorgien und die S\u00fcdlichen Sandwichinseln","S\u00fcdkorea","S\u00fcdsudan","Suriname","Syrien","Tadschikistan","Taiwan","Tansania","Thailand","Timor-Leste","Togo","Tokelau",
+        "Tonga","Trinidad und Tobago","Tschad","Tschechien","Tunesien","T\u00fcrkei","Turkmenistan","Turks- und Caicosinseln","Tuvalu","Uganda","Ukraine","Ungarn","Uruguay","Usbekistan",
+        "Vanuatu","Vatikanstadt","Venezuela","Vereinigte Arabische Emirate","Vereinigte Staaten","Vereinigtes K\u00f6nigreich","Vietnam","Wallis und Futuna","Weihnachtsinsel","Westsahara","Zentralafrikanische Republik","Zypern"};
+
     private Kontrolleur currentKon;
     private Schwarzfahrer currentSf;
     //     MAIN
@@ -77,7 +104,7 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
 
     PlaceholderTextField name = new PlaceholderTextField();
 
-    JButton datumr = new JButton();
+     customButton datumr = new customButton();
 
     PlaceholderTextField ort = new PlaceholderTextField();
 
@@ -136,7 +163,6 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
 
         datuml.setBackground(dark);
         datuml.setForeground(white);
-        datuml.setText("Ereignisdatum auswählen");
         datuml.setFont(fontSmall);
         datuml.setBounds(75,70,300,30);
         datuml.setText(Foo.getCurrentDate());
@@ -163,7 +189,7 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         minute.setSelectedIndex(java.util.Calendar.getInstance().get(Calendar.MINUTE));
         minute.setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
 
-        linie.setText("Linie:");
+        linie.setText("Linie*:");
         linie.setFont(fontSmall);
         linie.setBackground(dark);
         linie.setForeground(white);
@@ -260,7 +286,7 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         datumr.setText("Geburtsdatum auswählen*");
         datumr.setFont(fontSmall);
         datumr.setBounds(15,105,230,30);
-        datumr.setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+        datumr.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         ort.setPlaceholder("Geburtsort*");
         ort.setFont(fontSmall);
@@ -387,6 +413,7 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
 
         this.add(BGdark);
 
+        //----------------------Listener--------------------
 
         datuml.addActionListener(new ActionListener() {
             @Override
@@ -404,7 +431,24 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
 
             }
         });
+        ausweisfield.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
 
+                ausweisfield.setBackground(dark);
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+                ausweisfield.setBackground(dark);
+            }
+        });
         autofill.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -437,65 +481,210 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
             }
         });
 
+        genderBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                if (genderBox.getItemAt(0).equals("Geschlecht*")){
+                    genderBox.removeItemAt(0);
+                    genderBox.setForeground(white);
+                    genderBox.setPrototypeDisplayValue(null);
+                    //gender.setPreferredSize(new Dimension(100, gender.getHeight()));
+                }
+            }
+        });
+
+        datumr.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                DatePick calender = new DatePick((JFrame) datumr.getRootPane().getParent(), null);
+                String txt = calender.Set_Picked_Date();
+                if (txt==""){
+
+                }else{
+                    datumr.setText(calender.Set_Picked_Date());
+                }
+            }
+        });
+        land.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (land.getSelectedIndex() == 1){
+                    land.setSelectedIndex(0);
+                }
+            }
+        });
+        erfs.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                if (pflichtAusgefuellt()){
+                    Adresse neueAdresse = new Adresse(land.getSelectedItem().toString(), land.getSelectedIndex(), plz.getText(), ort.getText(), strasse.getText(), hausnr.getText(), adr.getText());
+
+                    try {
+
+
+                        int geburtsdatum[] = dateToNumber(datumr.getText());
+
+
+
+                        if (currentSf ==null){
+                            currentSf = new Schwarzfahrer(ausweisfield.getText(), ort.getText(), neueAdresse, vname.getText(), name.getText(), genderBox.getSelectedItem().toString(), nr.getText(), mail.getText(), geburtsdatum[0], geburtsdatum[1], geburtsdatum[2]);
+                            currentSf.appendSFT(datuml.getText(), hour.getSelectedItem().toString(), minute.getSelectedItem().toString(), linienfield.getText(), bezahlt.isSelected());
+                            //Übergibt dem Schwarzfahrerobjekt die Variablen zur Schwarzfahrt, int[], int, int, String, boolean
+                        }
+
+                        else{
+                            Schwarzfahrer.updateExistingSF(ausweisfield.getText(), ort.getText(), neueAdresse, vname.getText(), name.getText(), genderBox.getSelectedItem().toString(), nr.getText(), mail.getText(), geburtsdatum[0], geburtsdatum[1], geburtsdatum[2], currentSf.sftList);
+                            currentSf.appendSFT(datuml.getText(), hour.getSelectedItem().toString(), minute.getSelectedItem().toString(), linienfield.getText(), bezahlt.isSelected());
+                            //Übergibt dem Schwarzfahrerobjekt die Variablen zur Schwarzfahrt, int[], int, int, String, boolean
+                        }
+
+
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                        dispose();
+                        throw new RuntimeException(ex);
+                    }
+                    parentGUI.Kachel1.setEnabled(true);
+                    dispose();
+                }else{
+                     Foo.okWindow("Es wurden nicht alle Pflichtfelder ausgefüllt", getFrame());
+                }
+            }
+        });
+        abr.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                currentSf = null;
+                parentGUI.Kachel1.setEnabled(true);
+                dispose();
+            }
+        });
     }
     void addBorders(){
-        genderBox.setBorder(new LineBorder(dunkelb));
-        vname.setBorder(new LineBorder(dunkelb));
-        name.setBorder(new LineBorder(dunkelb));
-        datumr.setBorder(new LineBorder(dunkelb));
-        ort.setBorder(new LineBorder(dunkelb));
-        mail.setBorder(new LineBorder(dunkelb));
-        nr.setBorder(new LineBorder(dunkelb));
-        strasse.setBorder(new LineBorder(dunkelb));
-        hausnr.setBorder(new LineBorder(dunkelb));
-        plz.setBorder(new LineBorder(dunkelb));
-        stadt.setBorder(new LineBorder(dunkelb));
-        land.setBorder(new LineBorder(dunkelb));
-        adr.setBorder(new LineBorder(dunkelb));
+        genderBox.setBorder(new LineBorder(Color.gray));
+        vname.setBorder(new LineBorder(Color.gray));
+        name.setBorder(new LineBorder(Color.gray));
+        datumr.setBorder(new LineBorder(Color.gray));
+        ort.setBorder(new LineBorder(Color.gray));
+        mail.setBorder(new LineBorder(Color.gray));
+        nr.setBorder(new LineBorder(Color.gray));
+        strasse.setBorder(new LineBorder(Color.gray));
+        hausnr.setBorder(new LineBorder(Color.gray));
+        plz.setBorder(new LineBorder(Color.gray));
+        stadt.setBorder(new LineBorder(Color.gray));
+        land.setBorder(new LineBorder(Color.gray));
+        adr.setBorder(new LineBorder(Color.gray));
 
     }
     private void autofill(){
-            /*
+
             if (currentSf.getGeschlecht().equals("M")){
-                .setSelectedIndex(0);
+                genderBox.setSelectedIndex(0);
             } else if (currentSf.getGeschlecht().equals("W")) {
-                geschlechtBox.setSelectedIndex(1);
+                genderBox.setSelectedIndex(1);
             } else if (currentSf.getGeschlecht().equals("D")){
-                geschlechtBox.setSelectedIndex(2);
+                genderBox.setSelectedIndex(2);
             }
 
-            vornameTextField.setText(currentSf.getVorname());
-            nachnameTextField.setText(currentSf.getNachname());
-            datumButton2.setText(currentSf.getGeburtsdatum());
-            geburtsortTextField.setText(currentSf.getGeburtsort());
-            emailTextField.setText(currentSf.getEmail());
-            telefonTextField.setText(currentSf.getTelefonnummer());
-            strasseTextField.setText(currentSf.getAdresse().getStrasse());
-            hausnummerTextField.setText(currentSf.getAdresse().getHausnummer());
-            plzTextField.setText(currentSf.getAdresse().getPLZ());
-            ortTextField.setText(currentSf.getAdresse().getOrt());
-            zusatzTextField.setText(currentSf.getAdresse().getZusatz());
+            vname.setText(currentSf.getVorname());
+            name.setText(currentSf.getNachname());
+            datumr.setText(currentSf.getGeburtsdatum());
+            ort.setText(currentSf.getGeburtsort());
+            mail.setText(currentSf.getEmail());
+            nr.setText(currentSf.getTelefonnummer());
+            strasse.setText(currentSf.getAdresse().getStrasse());
+            hausnr.setText(currentSf.getAdresse().getHausnummer());
+            plz.setText(currentSf.getAdresse().getPLZ());
+            stadt.setText(currentSf.getAdresse().getOrt());
+            adr.setText(currentSf.getAdresse().getZusatz());
+            land.setSelectedIndex(currentSf.getAdresse().getLandIndex());
 
-            vornameTextField.addFlashEffect();
-            nachnameTextField.addFlashEffect();
-            datumButton2.addFlashEffect();
-            geburtsortTextField.addFlashEffect();
-
-            telefonTextField.addFlashEffect();
-            strasseTextField.addFlashEffect();
-            hausnummerTextField.addFlashEffect();
-            plzTextField.addFlashEffect();
-            ortTextField.addFlashEffect();
-            landComboBox.addFlashEffect();
-            geschlechtBox.addFlashEffect();
-            if (!emailTextField.getText().isBlank()){
-                emailTextField.addFlashEffect();
+            vname.addFlashEffect();
+            name.addFlashEffect();
+            datumr.addFlashEffect();
+            ort.addFlashEffect();
+            strasse.addFlashEffect();
+            hausnr.addFlashEffect();
+            plz.addFlashEffect();
+            stadt.addFlashEffect();
+            ort.addFlashEffect();
+            land.addFlashEffect();
+            genderBox.addFlashEffect();
+            if (!mail.getText().isBlank()){
+                mail.addFlashEffect();
             }
-            if (!zusatzTextField.getText().isBlank()){
-                zusatzTextField.addFlashEffect();
+            if (!nr.getText().isBlank()){
+                nr.addFlashEffect();
             }
-*/
+            if (!adr.getText().isBlank()){
+                adr.addFlashEffect();
+            }
 
+    }
+    private boolean pflichtAusgefuellt(){
+        if (!datuml.getText().isBlank()){
+            if (!datumr.getText().equals("Geburtsdatum auswählen*")){
+                if (!linie.getText().isBlank()){
+                    if (!ausweisfield.getText().isBlank()) {
+                        if (!vname.getText().isBlank()) {
+                            if (!name.getText().isBlank()) {
+                                        if (!strasse.getText().isBlank()) {
+                                            if (!hausnr.getText().isBlank()) {
+                                                if (!plz.getText().isBlank()) {
+                                                    if (!stadt.getText().isBlank()) {
+                                                        return true;
+                                                    }
+                                                }
+                                            }
+                                        }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        if (genderBox.getSelectedItem().equals("Geschlecht*")){
+            genderBox.addRedFlashEffect();
+        }
+        if (land.getSelectedItem().equals("Staatsangehörigkeit*")){
+            land.addRedFlashEffect();
+        }
+        if (linienfield.getText().isBlank()){
+            linienfield.addRedFlashEffect();
+        }
+        if (ausweisfield.getText().isBlank()){
+            ausweisfield.addRedFlashEffect();
+
+        }
+        if (vname.getText().isBlank()){
+            vname.addRedFlashEffect();
+        }
+        if (name.getText().isBlank()){
+            name.addRedFlashEffect();
+        }
+        if (datumr.getText().equals("Geburtsdatum auswählen*")){
+            datumr.addRedFlashEffect();
+        }
+        if (strasse.getText().isBlank()){
+            strasse.addRedFlashEffect();
+        }
+        if (hausnr.getText().isBlank()){
+            hausnr.addRedFlashEffect();
+        }
+        if (plz.getText().isBlank()){
+            plz.addRedFlashEffect();
+        }
+        if (stadt.getText().isBlank()){
+            stadt.addRedFlashEffect();
+        }
+        if (ort.getText().isBlank()){
+            ort.addRedFlashEffect();
+        }
+        return false;
     }
     public static void openSfErfassung(Parent_GUI parent) {
         Foo.getDirectoryData();

@@ -24,6 +24,7 @@ public class Schwarzfahrer extends Person{
      */
     String ausweisnummer;
     String geburtsort;
+    int landIndex;
     Adresse adresse;
     File sfFile;
 
