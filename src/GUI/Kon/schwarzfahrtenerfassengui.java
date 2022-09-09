@@ -4,10 +4,7 @@ import src.Adresse;
 import src.Foo;
 import src.GUI.Parent_GUI;
 import src.GUI.ProfilGUI;
-import src.GUI.elements.DatePick;
-import src.GUI.elements.PlaceholderTextField;
-import src.GUI.elements.customButton;
-import src.GUI.elements.customComboBox;
+import src.GUI.elements.*;
 import src.Rollen.Kontrolleur;
 import src.Rollen.Schwarzfahrer;
 
@@ -16,6 +13,7 @@ import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
+import javax.swing.text.AbstractDocument;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -128,6 +126,11 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
 
     JButton abr = new JButton();
 
+    //Filter
+    LetterFilter lfilter = new LetterFilter();
+    NumberFilter nfilter = new NumberFilter();
+    SizeFilter sfilter = new SizeFilter(4);
+
     public schwarzfahrtenerfassengui(Parent_GUI parent) {
         setupGUI(parent, "SchwarzfahrtenErfassungGUI");
         currentKon = (Kontrolleur) currentUser;
@@ -205,6 +208,7 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         linienfield.setBackground(dark);
         linienfield.setForeground(white);
         linienfield.setBounds(175,150,145,30);
+        ((AbstractDocument)name.getDocument()).setDocumentFilter(sfilter);
 
         bezahlt.setText("Bereits bezahlt");
         bezahlt.setFont(fontverySmall);
@@ -275,12 +279,14 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         vname.setBackground(dark);
         vname.setForeground(white);
         vname.setBounds(175,65,150,30);
+        ((AbstractDocument)vname.getDocument()).setDocumentFilter(lfilter);
 
         name.setPlaceholder("Nachname*");
         name.setFont(fontverySmall);
         name.setBackground(dark);
         name.setForeground(white);
         name.setBounds(335,65,150,30);
+        ((AbstractDocument)name.getDocument()).setDocumentFilter(lfilter);
 
         datumr.setBackground(dark);
         datumr.setForeground(notSoDark);
@@ -295,6 +301,7 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         ort.setBackground(dark);
         ort.setForeground(white);
         ort.setBounds(255,105,230,30);
+        ((AbstractDocument)ort.getDocument()).setDocumentFilter(lfilter);
 
         mail.setPlaceholder("E-Mail");
         mail.setFont(fontverySmall);
@@ -307,31 +314,35 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         nr.setBackground(dark);
         nr.setForeground(white);
         nr.setBounds(225,145,260,30);
+        ((AbstractDocument)nr.getDocument()).setDocumentFilter(nfilter);
 
         strasse.setPlaceholder("Straße*");
         strasse.setFont(fontverySmall);
         strasse.setBackground(dark);
         strasse.setForeground(white);
         strasse.setBounds(15,185,310,30);
+        ((AbstractDocument)strasse.getDocument()).setDocumentFilter(lfilter);
 
         hausnr.setPlaceholder("Hausnummer*");
         hausnr.setFont(fontverySmall);
         hausnr.setBackground(dark);
         hausnr.setForeground(white);
         hausnr.setBounds(335,185,150,30);
+        ((AbstractDocument)hausnr.getDocument()).setDocumentFilter(sfilter);
 
         plz.setPlaceholder("PLZ*");
         plz.setFont(fontverySmall);
         plz.setBackground(dark);
         plz.setForeground(white);
         plz.setBounds(15,225,150,30);
+        ((AbstractDocument)plz.getDocument()).setDocumentFilter(nfilter);
 
         stadt.setPlaceholder("Stadt*");
         stadt.setFont(fontverySmall);
         stadt.setBackground(dark);
         stadt.setForeground(white);
         stadt.setBounds(175,225,310,30);
-
+        ((AbstractDocument)stadt.getDocument()).setDocumentFilter(lfilter);
 
         land.setFont(fontverySmall);
         land.setBackground(whitebg);
@@ -648,14 +659,14 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
                             if (!name.getText().isBlank()) {
                                         if (!strasse.getText().isBlank()) {
                                             if (!hausnr.getText().isBlank()) {
-                                                if (!plz.getText().isBlank()) {
-                                                    if (!stadt.getText().isBlank()) {
-                                                        return true;
-                                                    }
-                                                }
-                                            }
-                                        }
+                                if (!plz.getText().isBlank()) {
+                                    if (!stadt.getText().isBlank()) {
+                                        return true;
+                                    }
+                                }
                             }
+                        }
+                    }
                         }
                     }
                 }
@@ -681,7 +692,7 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         if (name.getText().isBlank()){
             name.addRedFlashEffect();
         }
-        if (datumr.getText().equals("Geburtsdatum auswählen*")){
+        if (datumr.getText().equals("Geburtsdatum*")){
             datumr.addRedFlashEffect();
         }
         if (strasse.getText().isBlank()){

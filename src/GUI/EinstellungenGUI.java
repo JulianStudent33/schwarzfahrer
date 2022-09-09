@@ -215,13 +215,13 @@ public class EinstellungenGUI extends Parent_GUI implements ActionListener {
 
 
                 if (konAngemeldet){
-                    KontrolleurGUI.openKonGUI(parentGUI.parentGUI);
+                    KontrolleurGUI.openKonGUI(parentGUI);
                 }
                 if (adminAngemeldet){
-                    AdminGUI.openAdminGUI(parentGUI.parentGUI);
+                    AdminGUI.openAdminGUI(parentGUI);
                 }
                 if (sbAngemeldet){
-                    SachbearbeiterGUI.openSBGUI(parentGUI.parentGUI);
+                    SachbearbeiterGUI.openSBGUI(parentGUI);
                 }
                 parentGUI.dispose();
                 dispose();
