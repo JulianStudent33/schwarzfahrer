@@ -10,37 +10,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c57573a-8ff0-4a69-a18d-b7f15a8cd475" name="Changes" comment="bugfix">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_00_06__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_00_06__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/Schwarzfahrer/ABC.sf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/Schwarzfahrer/CED.sf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/Users/Admin/Admin1.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/Users/Kontrolleur/Konni1.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/Users/SB/Sachi1.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/colorChange.save" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/loggedIN.save" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Schwarzfahrer/ABC.sf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Schwarzfahrer/CED.sf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/loggedIN.save" beforeDir="false" afterPath="$PROJECT_DIR$/Saves/loggedIN.save" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_07_2022_11_29__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_07_2022_11_29__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_07_08_2022_15_47__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_07_08_2022_15_47__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_07_09_2022_08_48__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_07_09_2022_08_48__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_00_06__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_08_09_2022_00_06__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_10_08_2022_10_38__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_10_08_2022_10_38__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_10_08_2022_10_42__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_10_08_2022_10_42__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_11_08_2022_10_39__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_11_08_2022_10_39__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_13_07_2022_11_33__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_13_07_2022_11_33__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_13_07_2022_11_34__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_13_07_2022_11_34__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_14_07_2022_08_46__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_14_07_2022_08_46__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_14_07_2022_09_26__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_14_07_2022_09_26__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_14_07_2022_15_20__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_14_07_2022_15_20__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_15_08_2022_10_16__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_15_08_2022_10_16__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_15_08_22__14_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_15_08_22__14_02__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_15_08_22__14_02__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_15_08_22__14_02__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_2022_14_27__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_2022_14_27__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_2022_15_47__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_2022_15_47__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_22__10_37__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_22__10_37__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_22__16_09__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_22__16_09__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_17_08_2022_10_51__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_17_08_2022_10_51__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_18_08_2022_09_56__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_18_08_2022_09_56__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_18_08_2022_10_54__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_18_08_2022_10_54__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_18_08_22__11_01__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_18_08_22__11_01__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_22_06_2022_16_03__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_22_06_2022_16_03__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_22_08_2022_14_24__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/shelf/Uncommitted_changes_before_Update_at_22_08_2022_14_24__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Admin/Admin1.mb" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Admin/Admin1.mb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/Kontrolleur/Konni1.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/Users/SB/Sachi1.mb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/loggedIN.save" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/Saves/loggedIN.save" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Foo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Foo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/EinstellungenGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/LoginGUI$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Parent_GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/GUI/Parent_GUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Rollen/Administrator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Rollen/Administrator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Rollen/Kontrolleur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Rollen/Kontrolleur.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Rollen/Mitarbeiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Rollen/Mitarbeiter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Rollen/Sachbearbeiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/schwarzfahrer/src/Rollen/Sachbearbeiter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Foo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/EinstellungenGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/EinstellungenGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Parent_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Parent_GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rollen/Administrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rollen/Administrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rollen/Kontrolleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rollen/Kontrolleur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rollen/Mitarbeiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rollen/Mitarbeiter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rollen/Sachbearbeiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rollen/Sachbearbeiter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,6 +180,19 @@
     <configuration name="schwarzfahrer.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/schwarzfahrer_jar/schwarzfahrer.jar" />
       <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="schwarzfahrer" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="schwarzfahrer" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
@@ -819,7 +836,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/GUI/EinstellungenGUI.java</url>
           <line>259</line>
-          <properties method="actionPerformed">
+          <properties>
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
