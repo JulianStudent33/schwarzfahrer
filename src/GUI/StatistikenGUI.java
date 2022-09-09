@@ -130,7 +130,7 @@ public class StatistikenGUI extends Parent_GUI implements ActionListener {
         HaeufigsteSchwarzfahrtWert.setForeground(dark);
         HaeufigsteSchwarzfahrtWert.setFont(fontSmall);
         HaeufigsteSchwarzfahrtWert.setText(getHotspot());
-        HaeufigsteSchwarzfahrtWert.setBorder(new EmptyBorder(0,100,0,0));
+        HaeufigsteSchwarzfahrtWert.setBorder(new EmptyBorder(0,45,0,0));
 
         styleKachel(sfHotspot);
         sfHotspot.setBackground(hellb);
@@ -167,7 +167,7 @@ public class StatistikenGUI extends Parent_GUI implements ActionListener {
         SchwarzfahrtenStatusUeberschrift.setForeground(white);
         SchwarzfahrtenStatusUeberschrift.setFont(fontSmall);
         SchwarzfahrtenStatusUeberschrift.setText("<html><body><center><p>Schwarzfahrten-Status</p></center></body></html>");
-        SchwarzfahrtenStatusUeberschrift.setBorder(new EmptyBorder(0,20,90,20));
+        SchwarzfahrtenStatusUeberschrift.setBorder(new EmptyBorder(0,0,90,20));
 
         SchwarzfahrtenStatusText.setForeground(white);
         SchwarzfahrtenStatusText.setFont(fontSmall);
@@ -177,17 +177,17 @@ public class StatistikenGUI extends Parent_GUI implements ActionListener {
         SchwarzfahrtenStatusOffen.setForeground(dark);
         SchwarzfahrtenStatusOffen.setFont(fontSmall);
         SchwarzfahrtenStatusOffen.setText(String.valueOf(sftStatus[0]));
-        SchwarzfahrtenStatusOffen.setBorder(new EmptyBorder(0,100,40,0));
+        SchwarzfahrtenStatusOffen.setBorder(new EmptyBorder(0,110,40,0));
 
         SchwarzfahrtenStatusAusstehend.setForeground(dark);
         SchwarzfahrtenStatusAusstehend.setFont(fontSmall);
         SchwarzfahrtenStatusAusstehend.setText(String.valueOf(sftStatus[1]));
-        SchwarzfahrtenStatusAusstehend.setBorder(new EmptyBorder(0,100,0,0));
+        SchwarzfahrtenStatusAusstehend.setBorder(new EmptyBorder(0,110,0,0));
 
         SchwarzfahrtenStatusBezahlt.setForeground(dark);
         SchwarzfahrtenStatusBezahlt.setFont(fontSmall);
         SchwarzfahrtenStatusBezahlt.setText(String.valueOf(sftStatus[2]));
-        SchwarzfahrtenStatusBezahlt.setBorder(new EmptyBorder(40,100,0,0));
+        SchwarzfahrtenStatusBezahlt.setBorder(new EmptyBorder(40,110,0,0));
 
         styleKachel(SchwarzfahrtenStatus);
         SchwarzfahrtenStatus.setBackground(hellb);
