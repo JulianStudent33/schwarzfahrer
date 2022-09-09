@@ -332,19 +332,17 @@ public class schwarzfahrtenerfassengui extends Parent_GUI {
         stadt.setForeground(white);
         stadt.setBounds(175,225,310,30);
 
-        land.addItem("Staatsangehörigkeit*");
 
         land.setFont(fontverySmall);
         land.setBackground(whitebg);
-        if(land.getItemAt(0)=="Staatsangehörigkeit*") {
-            land.setForeground(notSoDark);
-        } else {
-            land.setForeground(white);
-        }
+        land.setForeground(white);
         land.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         land.setFocusable(true);
         land.setBorder(new CompoundBorder(border, margin));
         land.setBounds(15,265,260,30);
+        for (String s : countries){
+            land.addItem(s);
+        }
 
         adr.setPlaceholder("Adresszusatz");
         adr.setFont(fontverySmall);
